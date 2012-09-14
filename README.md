@@ -1,17 +1,13 @@
+# OWASP ModSecurity Core Rule Set (CRS)
 
-===============================
-ModSecurity Core Rule Set (CRS)
-===============================
-
+Licensing
+=========
 (c) 2006-2012 Trustwave 
 
 The ModSecurity Core Rule Set is provided to you under the terms and 
 conditions of Apache Software License Version 2 (ASLv2)
 
 http://www.apache.org/licenses/LICENSE-2.0.txt 
-
-This directory contains the files for Core ModSecurity Rule Set
-The rules are compatible with ModSecurity 2.5 (as of version 1.4.3)
 
 Mail-List
 =========
