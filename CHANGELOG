@@ -18,7 +18,10 @@ Improvements:
 Bug Fixes:
 * Fixed missing ending double-quotes in XSS rules file
 * Moved SecDefaultAction setting from phase:2 to phase:1
-
+* Fixed Session Hijacking SessionID Regex
+  https://www.modsecurity.org/tracker/browse/CORERULES-79
+* Changed the variable listing for many generic attack rules to exclude REQUEST_FILENAME
+  https://www.modsecurity.org/tracker/browse/CORERULES-78
 
 == Version 2.2.5 - 06/14/2012 ==
 
