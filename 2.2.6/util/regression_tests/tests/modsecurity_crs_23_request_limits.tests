@@ -1,6 +1,6 @@
 %timeout 10
 
-# FILE 21 - protocol anomalies 
+# FILE 23 - Request Limits 
 
 %test Argument name too long (960209)
 #####################################################

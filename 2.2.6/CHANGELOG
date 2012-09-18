@@ -13,7 +13,7 @@ Improvements:
 * Added more regression tests (util/regression_tests/)
 * Modified Rule ID 960342 to block large file attachments in phase:1
 * Removed all PARANOID rule checks
-
+* Added new Session Fixation rules
 
 Bug Fixes:
 * Fixed missing ending double-quotes in XSS rules file

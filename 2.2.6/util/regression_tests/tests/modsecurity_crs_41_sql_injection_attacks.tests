@@ -7,6 +7,32 @@ User-Agent:  Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/2
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.
 
 
+%test SQL Comment Sequence Detected (981231)
+########################################
+%output 981231
+%var sig=SELECT%2F*avoid-spaces*%2Fpassword%2F**%2FFROM%2F**%2FMembers
+%var sig=%E2%80%98%20or%201%3D1%23%0A
+%var sig=%E2%80%98%20or%201%3D1--%20-
+%endtest
+
+
+%test SQL Hex Encoding Identified (981260)
+########################################
+%output 981260
+%var sig=1%20and%201%3D0%20%20Union%20Select%20%20%20UNHEX(HEX(concat(0x5B6B65795D%2Ctable_name%2C0x5B6B65795D)))%20%20%20FROM%20INFORMATION_SCHEMA.tables%20where%20table_schema%3DConcat(char(109)%2Cchar(101)%2Cchar(115)%2Cchar(115)%2Cchar(110)%2Cchar(101)%2Cchar(114)%2Cchar(98)%2Cchar(95)%2Cchar(119)%2Cchar(114)%2Cchar(100)%2Cchar(49)%2Cchar(50))%20LIMIT%201%2C1--
+%var sig=999999.9%20union%20all%20select%200x31303235343830303536%2C0x31303235343830303536--
+%endtest
+
+
+%test SQL Injection Attack: Common Injection Testing Detected (981318)
+########################################
+%output 981318
+%var sig='%20and%200%20union%20select%201%2C2%2C3%2Cusername%2C5%2Cpassword%2C7%2C8%2C9%2C10%2C11%20from%20%23__users%23
+%var sig=-1)%20UNION%20SELECT%201%2C2%2C3%2Cconcat(USER()%2C'
+%endtest
+
+
+
 %test SQL injection - sp_addextendedproc
 ########################################
 %event 959037
