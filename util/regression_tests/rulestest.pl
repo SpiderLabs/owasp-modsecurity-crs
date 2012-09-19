@@ -478,7 +478,7 @@ sub report_header
 {
     my ($outfile, $outfilename) = @_;
     print $outfile "\nModSecurity rules test report generated to $outfilename on " . localtime() . "\n";
-    print $outfile "Produced by rulestest.pl, (c) Trustwave Holdings Inc, 2011\n";
+    print $outfile "Produced by rulestest.pl, (c) Trustwave Holdings Inc, 2012\n";
 }
 
 sub report_file_header
@@ -497,8 +497,9 @@ sub report_test
     print $outfile "$test->{'name'}";
     print $outfile " ($vars)" if $vars;
     print $outfile ", status = $test->{'response_status'}";
+    #print $outfile ", X-WAF-Event Match" if ($test->{'match_output'});
     my (@events) = ($test->{'mslog'} =~ /\[id \"(\d+)\"\]/gim);
-    print $outfile $#events < 0 ? ", no events recieved" : ", event(s) = " . (join ",", @events) ;
+    print $outfile $#events < 0 ? ", no events received" : ", event(s) = " . (join ",", @events) ;
     if ($result eq "FAIL") {
 	print $outfile "\n";
 	if (!$test->{'match_status'}) {

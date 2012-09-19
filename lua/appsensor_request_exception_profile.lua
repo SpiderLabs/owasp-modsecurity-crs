@@ -182,7 +182,7 @@ function ProfileArgCharClass()
 
 
 		--[[ Check for URL Class ]]
-                elseif string.match(value, "[A-Za-z]+://[A-Za-z0-9-_]+\.[A-Za-z0-9-_.]+/?") then
+                elseif string.match(value, "[A-Za-z]+://[A-Za-z0-9-_]+%.[A-Za-z0-9-_.]+/?") then
                         m.log(4, "Parameter " ..name.. " payload matches url class.")
 			local EnforceArgCharClassUrl = m.getvar("RESOURCE.enforce_charclass_url")
 			if not (EnforceArgCharClassUrl) then
@@ -485,7 +485,7 @@ function ProfileArgCharClass()
 
 
 		--[[ Check for SafeText Character Class ]]
-                elseif string.match(value, "^[a-zA-Z0-9%s_\.\-]+$") then
+                elseif string.match(value, "^[a-zA-Z0-9%s_%.%-]+$") then
                         m.log(4, "Parameter " ..name.. " payload matches safetext class.")
 			local EnforceArgCharClassSafeText = m.getvar("RESOURCE.enforce_charclass_safetext")
 			if not (EnforceArgCharClassSafeText) then

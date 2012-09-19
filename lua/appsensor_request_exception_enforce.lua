@@ -74,7 +74,7 @@ function EnforceArgCharClass()
                         local CheckArgCharClassUrl = string.find(EnforceArgCharClassUrl, name)
                         if (CheckArgCharClassUrl) then
                                 m.log(4, "Arg Name: " .. name .. " in Url Enforcement list.")
-                                if string.match(value, "[A-Za-z]+://[A-Za-z0-9-_]+\.[A-Za-z0-9-_.]+/?") then
+                                if string.match(value, "[A-Za-z]+://[A-Za-z0-9-_]+%.[A-Za-z0-9-_.]+/?") then
                                         m.log(4, "Parameter " ..name.. " payload matches url class.")
                                 else
                                         m.log(4, "Parameter " ..name.. " payload does not match url class.")
@@ -151,7 +151,7 @@ function EnforceArgCharClass()
                         local CheckArgCharClassSafeText = string.find(EnforceArgCharClassSafeText, name)
                         if (CheckArgCharClassSafeText) then
                                 m.log(4, "Arg Name: " .. name .. " in SafeText Enforcement list.")
-                                if string.match(value, "^[a-zA-Z0-9%s_\.\-]+$") then
+                                if string.match(value, "^[a-zA-Z0-9%s_%.%-]+$") then
                                         m.log(4, "Parameter " ..name.. " payload matches safetext class.")
                                 else
                                         m.log(4, "Parameter " ..name.. " payload does not match safetext class.")

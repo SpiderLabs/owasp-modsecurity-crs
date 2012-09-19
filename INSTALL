@@ -11,14 +11,14 @@ To activate the rules for your web server installation:
      the SecRuleEngine setting (On by default) and that the SecDefaultAction
      directive is set to "pass".  The 49 inbound blocking and 59 outbound blocking
      rules files use the "block" action which
-     inherits this setting.  The effectively means that you can toggle the
+     inherits this setting.  This effectively means that you can toggle the
      SecDefaultAction setting to decide if you would like to deny on an
      anomaly scoring/correlation match.
 
      Update the PARANOID_MODE variable setting if you want to become more 
      aggressive in your detection.  Caution - this will cause more false positives.
 
-     Should also update the appropriate anomaly scoring levels that will be propagated
+     Update the appropriate anomaly scoring levels that will be propagated
      to the inbound/outbound blocking files.
 
      Update the TX policy settings for allowed Request Methods, File Extensions, etc...
@@ -29,7 +29,7 @@ To activate the rules for your web server installation:
 
      1) The main modsecurity_crs_10_config.conf file
      2) Any rules from the base_rules directory
-     3) Any remaining rules from the optional_rules, slr_rules or experimental_rules directories.
+     3) Any remaining rules from the optional_rules, slr_rules or experimental_rules directories
 
 	$ pwd
 	/usr/local/apache/conf/crs

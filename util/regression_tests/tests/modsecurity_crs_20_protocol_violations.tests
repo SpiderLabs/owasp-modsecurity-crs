@@ -1,10 +1,9 @@
 %timeout 10
 # FILE 20 - protocol violations
 
-%test Invalid request line 1 
+%test Invalid HTTP Request Line (960911) - Test 1
 #####################################################
-%status 400
-%event 981227
+%output 960911
 %request
 	GET / HTTP/1.1
 Host: local
@@ -12,10 +11,9 @@ User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
 
 
-%test Invalid request line 2
+%test Invalid HTTP Request Line (960911) - Test 2
 #####################################################
-%status 400
-%event 981227
+%output 960911
 %request
 GET \index.html HTTP\1.0
 Host: local
@@ -23,10 +21,9 @@ User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
 
 
-%test Invalid request line 3 
+%test Invalid HTTP Request Line (960911) - Test 3
 #####################################################
-%status 501
-%event 960911
+%output 960911
 %request
 |GET / HTTP/1.0
 Host: local
@@ -34,26 +31,33 @@ User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
 
 
-%test POST without content length
+%test Attempted multipart/form-data bypass (960000)
 #####################################################
-%output 960012
-%event 960012
+%output 960000
 %request
-POST / HTTP/1.0
-Host: local
-User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7
-Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
-Accept-Language: en-us,en;q=0.5
-Accept-Encoding: gzip,deflate
-Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
-Content-Type: application/x-www-form-urlencoded
+POST /?mXX HTTP/1.0
+Content-Type: multipart/form-data; boundary=0000
+Content-Length: 293
+
+--0000
+Content-Disposition: form-data; name=x';filename="';name=name;"
+
+Ivan Ristic
+--0000
+Content-Disposition: form-data; name="email"
+
+ivan.ristic@gmail.com
+--0000
+Content-Disposition: form-data; name="image"; filename="image.jpg"
+Content-Type: image/jpeg
+
+BINARYDATA
+--0000--
 
 
-%test Invalid Request Body (multipart) 1
+%test Failed to parse request body (960912)
 #####################################################
-%event 960912|960914
-#%event 960914
-%output 960912|960914
+%output 960912
 %request
 POST / HTTP/1.1
 Host: local
@@ -85,10 +89,9 @@ Submit
 -----------------------------265001916915724--
 
 
-%test Invalid Request Body (multipart) 2 
+%test Multipart request body failed strict validation (960914) 
 #####################################################
-%event 960912|960914
-%output 960912|960914
+%output 960914
 %request
 POST / HTTP/1.1
 Host: local
@@ -120,7 +123,7 @@ Submit
 -----------------------------265001916915724--
 
 
-%test Invalid Request Body (multipart) 3 
+%test Multipart parser detected a possible unmatched boundary (960915) 
 #####################################################
 %event 960915
 %output 960915
@@ -155,9 +158,8 @@ Submit
 -----------------------------265001916915725--
 
 
-%test Invalid Request Body (multipart) 4 
+%test Invalid Request Body (960000) 
 #####################################################
-%event 960000
 %output 960000
 %request
 POST / HTTP/1.1
@@ -190,9 +192,8 @@ Submit
 -----------------------------265001916915724--
 
 
-%test Invalid Request Body (XML)
+%test Invalid Request Body/XML (960912)
 #####################################################
-%event 960912
 %output 960912
 %request
 POST / HTTP/1.1
@@ -218,7 +219,7 @@ Content-Length: $CONTENT_LENGTH
 </SOAP-ENV:Envelope>
 
 
-%test Accept only digits in content length 1
+%test Content-Length HTTP header is not numeric (960016) 
 #####################################################
 %status 413
 %event 960016
@@ -237,7 +238,7 @@ Content-Length: 3
 abc
 
 
-%test Accept only digits in content length 2 
+%test Content-Length HTTP header is not numeric (960016) 
 #####################################################
 %status 413
 %event 960016
@@ -255,7 +256,7 @@ Content-Length: 3;
 abc
 
 
-%test GET/HEAD Request with Body 
+%test GET or HEAD Request with Body Content (960011) 
 #####################################################
 %output 960011
 %event 960011
@@ -273,7 +274,23 @@ Content-Length: 3
 abc
 
 
-%test Identity Content Encodings
+
+%test POST request missing Content-Length Header (960012)
+#####################################################
+%output 960012
+%request
+POST / HTTP/1.0
+Host: local
+User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7
+Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip,deflate
+Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Content-Type: application/x-www-form-urlencoded
+
+
+
+%test Invalid Use of Identity Encoding (960902) 
 #####################################################
 %output 960902
 %event 960902
@@ -288,7 +305,7 @@ Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 Content-Encoding: Identity 
 
 
-%test Expect Header 
+%test Expect Header Not Allowed for HTTP 1.0 (960022) 
 #####################################################
 %output 960022
 %event 960022
@@ -303,7 +320,7 @@ Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 Expect: 100-continue
 
 
-%test Pragma Header Requires Cache-Control 
+%test Pragma Header requires Cache-Control Header for HTTP/1.1 requests (960020) 
 #####################################################
 %output 960020
 %event 960020
@@ -318,7 +335,7 @@ Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 Pragma: no-cache
 
 
-%test Range Header 
+%test Range: field exists and begins with 0 (958291) 
 #####################################################
 %output 958291
 %event 958291
@@ -333,7 +350,29 @@ Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 Range: bytes=0-
 
 
-%test Duplicate Connection Headers 
+%test Range: Invalid Last Byte Value (958230)
+#####################################################
+%output 958230
+%request
+GET / HTTP/1.1
+Host: local 
+Range: bytes=0-,5-0,5-1,5-2,5-3,5-4,5-5,5-6,5-7,5-8,5-9,5-10,5-11,5-12,5-13,5-14,5-15
+Accept-Encoding: gzip
+Connection: close
+
+
+%test Range: Too many fields (958231)
+#####################################################
+%output 958231
+%request
+GET / HTTP/1.1
+Host: local
+Range: bytes=0-,5-0,5-1,5-2,5-3,5-4,5-5,5-6,5-7,5-8,5-9,5-10,5-11,5-12,5-13,5-14,5-15
+Accept-Encoding: gzip
+Connection: close
+
+
+%test Multiple/Conflicting Connection Header Data Found (958295) 
 #####################################################
 %output 958295
 %event 958295
@@ -349,7 +388,8 @@ Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 Connection: $connection, $connection 
 
-%test Validate Encoding (Request URI) 
+
+%test URL Encoding Abuse Attack Attempt (950107) 
 #####################################################
 %output 950107
 %event 950107
@@ -365,7 +405,24 @@ Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 
 
-%test Validate Encoding (Request Body)
+%test Multiple URL Encoding Detected (950109)
+#####################################################
+%output 950109
+%event 950109
+%var encoded_arg=%25%37%33%25%36%46%25%36%44%25%36%35%25%37%34%25%36%35%25%37%38%25%37%34%25%35%46%25%33%31%25%33%32%25%33%33%25%33%34
+#%var encoded_arg=%7%6F%6D%65%74%65%78%74%5F%31%32%33%
+%request
+GET /?parm=$encoded_arg HTTP/1.1
+Host: local
+User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7
+Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip,deflate
+Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+
+
+
+%test URL Encoding Abuse Attack Attempt (950108) 
 #####################################################
 %output 950108
 %event 950108
@@ -386,25 +443,10 @@ Content-Length: $CONTENT_LENGTH
 param=$encoded_arg
 
 
-%test Multiple URL Encoding
-#####################################################
-%output 950109
-%event 950109
-%var encoded_arg=%25%37%33%25%36%46%25%36%44%25%36%35%25%37%34%25%36%35%25%37%38%25%37%34%25%35%46%25%33%31%25%33%32%25%33%33%25%33%34
-#%var encoded_arg=%7%6F%6D%65%74%65%78%74%5F%31%32%33%
-%request
-GET /?parm=$encoded_arg HTTP/1.1
-Host: local
-User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7
-Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
-Accept-Language: en-us,en;q=0.5
-Accept-Encoding: gzip,deflate
-Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 
 
-%test Validate Encoding (XML)
+%test URL Encoding Abuse Attack Attempt/XML (950108) 
 #####################################################
-%event 950108
 %output 950108
 %request
 POST / HTTP/1.1
@@ -429,31 +471,9 @@ Content-Length: $CONTENT_LENGTH
 </SOAP-ENV:Envelope>
 
 
-%test Validate encoding (negative, %u in req)
-#####################################################
-#%status 200
-%event !50107
-%request
-GET / HTTP/1.1
-X-Real-Content-Length: 803
-Accept: */*
-X-Original-Client: 212.199.066.195:01078
-X-Unique-Transaction-Id: 54222
-x-flash-version: 8,0,22,0
-Cache-Control: no-transform
-Accept-Encoding: gzip, deflate
-If-Modified-Since: Wed, 04 Aug 2004 13:45:45 GMT
-If-None-Match: "2c011d-1708-4110e889"
-User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)
-Host: galim.org.il
-Connection: Keep-Alive
-Cookie: _HangMan=%u05D0%u05D0%u05D1%u05D2%u05D3%u05D4%u05D5%u05D6%u05D7%u05D8%u05D9%u05DB%u05DC%u05DE%u05E0%u05E1%u05E2%u05E4%u05E6%u05E7%u05E8%u05E9%u05EA%u05DC%u05D9%u05D1%20%u05D4%u05D0%u05D8%u05DC%u05D4*; request_uri=http%3A%2F%2Fpopup.galim.org.il%2Fcgi-bin%2Fgalim%2Fmywaves%2Fclick_milon.pl%3Fword%3D%EE%F9%E7%F7%E9%ED%26act%3Dhh%26visual%3D0
-
-
-%test Validate utf-8 encoding
+%test UTF8 Encoding Abuse Attack Attempt (950801) 
 #####################################################
 %output 950801
-%event 950801
 %var arg=%c0%af
 %var arg=%c0
 %var arg=%F5%80%BF%BF
@@ -467,10 +487,9 @@ Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 
 
-%test Identify full-width unicode encoding
+%test Unicode Full/Half Width Abuse Attack Attempt (950116) 
 #####################################################
 %output 950116
-%event 950116
 %request
 GET /?param=foo%uFF01 HTTP/1.0
 Host: local
@@ -481,10 +500,9 @@ Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 
 
-%test Proxy access attempt
+%test Proxy access attempt (960014)
 #####################################################
 %output 960014
-%event 960014
 %request
 GET http://www.some_remote_site.com/ HTTP/1.0
 Host: www.some_remote_site.com 
@@ -495,7 +513,7 @@ Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 
 
-%test Validate Byte Range 1 (NulBytes) 
+%test Invalid character in request (960901)V
 #####################################################
 %output 960901
 %event 960901
@@ -508,19 +526,6 @@ Accept-Language: en-us,en;q=0.5
 Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 
-
-%test Validate Byte Range 2 (NulBytes)
-#####################################################
-%output 960018
-%event 960018
-%request
-GET /?param=foo%09 HTTP/1.0
-Host: local
-User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7
-Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
-Accept-Language: en-us,en;q=0.5
-Accept-Encoding: gzip,deflate
-Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 
 %endtest
 
