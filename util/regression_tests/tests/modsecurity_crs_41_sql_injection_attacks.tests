@@ -130,7 +130,12 @@ Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plai
 %endtest
 
 
-
+%test Detects basic SQL authentication bypass attempts 1/3 (981244)
+########################################
+%output 981244
+%var sig=aaa'%20or%20(1)%3D(1)%20%23!asd
+%var sig=aa'%20LIKE%20md5(1)%20or%20'1
+%endtest
 
 
 
