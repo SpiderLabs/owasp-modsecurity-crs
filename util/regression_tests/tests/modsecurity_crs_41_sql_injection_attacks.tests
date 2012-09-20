@@ -167,8 +167,59 @@ Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plai
 %test Detects SQL benchmark and sleep injection attempts including conditional queries (981250)
 ########################################
 %output 981250
-%var sig=13%20and%20sleep(3)%23
+%var sig=SELECT%20BENCHMARK(1000000%2CMD5(%E2%80%98A%E2%80%99))%3B
+%var sig=SELECT%20SLEEP(5)%3B%20%23%20%3E%3D%205.0.12
 %endtest
+
+
+%test Detects conditional SQL injection attempts (981241)
+########################################
+%output 981241
+%var sig=1194%20or%201%20group%20by%20concat(version()%2Cfloor(rand(0)*2))having%20min(0)%20or%201--
+%endtest
+
+
+%test Detects MySQL charset switch and MSSQL DoS attempts (981252)
+########################################
+%output 981252
+%var sig=-1'%3B%20if%20'1'%3D'1'%3B%20waitfor%20time%20'00%3A00%3A01'--
+%endtest
+
+
+
+%test Detects MATCH AGAINST, MERGE, EXECUTE IMMEDIATE and HAVING injections (981256)
+########################################
+%output 98156
+%var sig=-148)%20or%201%20group%20by%20concat(%40%40version%2Cfloor(rand(0)*2))%20having%20min(0)%20or%201%20--
+%endtest
+
+
+%test Detects basic SQL authentication bypass attempts 2/3 (981245)
+########################################
+%output 981245
+%var sig=-121%20union%20all%20select%201%2Cgroup_concat(Username%2C0x3a%2CPassword%2C0x3a%2CUserGroup)%2C3%2C4%2C5%20from%20uvp_Users
+%var sig=-10'%20union%20select%201%2Cconcat_ws(0x3a%2Ctable_name%2Ctable_schema)%2C3%20from%20information_schema.columns%20where%20column_name%20like%20'name'%23
+%endtest
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

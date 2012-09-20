@@ -24,7 +24,7 @@ Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 %output 960010
 %var type=multipart/;
 %var type=multipart/foo;
-%var type=multipart/form-data,
+%var type=application/foo;
 %request
 POST / HTTP/1.1
 Host: local
