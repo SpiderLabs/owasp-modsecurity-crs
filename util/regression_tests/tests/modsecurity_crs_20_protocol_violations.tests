@@ -1,70 +1,99 @@
 %timeout 10
+
 # FILE 20 - protocol violations
 
 %test Invalid HTTP Request Line (960911) - Test 1
 #####################################################
-%output 960911
+%remark
+This test has a TAB character before the request method.
+%endremark
+%status 400|403
 %request
 	GET / HTTP/1.1
-Host: local
+Host: $hostname 
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 
 
 %test Invalid HTTP Request Line (960911) - Test 2
 #####################################################
-%output 960911
+%remark
+This test uses backslashes instead of forward slashes.
+%endremark
+%status 400|403
 %request
 GET \index.html HTTP\1.0
-Host: local
+Host: $hostname
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 
 
 %test Invalid HTTP Request Line (960911) - Test 3
 #####################################################
+%remark
+This test has a pipe character before the request method.
+%endremark
+%status 400|403
 %output 960911
 %request
 |GET / HTTP/1.0
-Host: local
+Host: $hostname
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+Keep-Alive: 300
+Proxy-Connection: keep-alive
+
 
 
 %test Attempted multipart/form-data bypass (960000)
 #####################################################
+%remark
+This test attempts form name parsing evasion using '.
+%endremark
 %output 960000
 %request
-POST /?mXX HTTP/1.0
-Content-Type: multipart/form-data; boundary=0000
-Content-Length: 293
+POST /cgi-bin/fup.cgi HTTP/1.1
+Host: $hostname
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.6; rv:15.0) Gecko/20100101 Firefox/15.0.1
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://localhost/upload.html
+Keep-Alive: 300
+Proxy-Connection: keep-alive
+Content-Type: multipart/form-data; boundary=---------------------------627652292512397580456702590
+Content-Length: $CONTENT_LENGTH 
 
---0000
-Content-Disposition: form-data; name=x';filename="';name=name;"
+-----------------------------627652292512397580456702590
+Content-Disposition: form-data; name=x';filename="';name=contact.txt;"
+Content-Type: text/plain
 
-Ivan Ristic
---0000
-Content-Disposition: form-data; name="email"
+email: security@modsecurity.org
 
-ivan.ristic@gmail.com
---0000
-Content-Disposition: form-data; name="image"; filename="image.jpg"
-Content-Type: image/jpeg
+-----------------------------627652292512397580456702590
+Content-Disposition: form-data; name="note"
 
-BINARYDATA
---0000--
+Contact info.
+-----------------------------627652292512397580456702590--
 
 
 %test Failed to parse request body (960912)
 #####################################################
+%remark
+Part missing Content-Disposition header
+%endremark
 %output 960912
 %request
 POST / HTTP/1.1
-Host: local
+Host: $hostname
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1) Gecko/20061010 Firefox/2.0
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
 Accept-Language: en-us,en;q=0.5
-Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 Keep-Alive: 300
 Proxy-Connection: keep-alive
@@ -92,13 +121,15 @@ Submit
 %test Multipart request body failed strict validation (960914) 
 #####################################################
 %output 960914
+%remark
+Invalid Quoting
+%endremark
 %request
 POST / HTTP/1.1
-Host: local
+Host: $hostname
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1) Gecko/20061010 Firefox/2.0
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
 Accept-Language: en-us,en;q=0.5
-Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 Keep-Alive: 300
 Proxy-Connection: keep-alive
@@ -125,15 +156,16 @@ Submit
 
 %test Multipart parser detected a possible unmatched boundary (960915) 
 #####################################################
-%event 960915
+%remark
+Unmatched final boundary
+%endremark
 %output 960915
 %request
 POST / HTTP/1.1
-Host: local
+Host: $hostname
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1) Gecko/20061010 Firefox/2.0
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
 Accept-Language: en-us,en;q=0.5
-Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 Keep-Alive: 300
 Proxy-Connection: keep-alive
@@ -160,14 +192,16 @@ Submit
 
 %test Invalid Request Body (960000) 
 #####################################################
+%remark
+Invalid Quoting
+%endremark
 %output 960000
 %request
 POST / HTTP/1.1
-Host: local
+Host: $hostname
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1) Gecko/20061010 Firefox/2.0
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
 Accept-Language: en-us,en;q=0.5
-Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 Keep-Alive: 300
 Proxy-Connection: keep-alive
@@ -194,14 +228,16 @@ Submit
 
 %test Invalid Request Body/XML (960912)
 #####################################################
+%remark
+Incorrect ending error tag </err>
+%endremark
 %output 960912
 %request
 POST / HTTP/1.1
-Host: local
+Host: $hostname
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1) Gecko/20061010 Firefox/2.0
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
 Accept-Language: en-us,en;q=0.5
-Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 Keep-Alive: 300
 Proxy-Connection: keep-alive
@@ -221,16 +257,19 @@ Content-Length: $CONTENT_LENGTH
 
 %test Content-Length HTTP header is not numeric (960016) 
 #####################################################
-%status 413
-%event 960016
+%remark
+When Apache received multiple headers with the same name, it will contat them into one header with commas separating the individual payloads.
+%endremark
+%status 413|400
 %request
 POST / HTTP/1.0
-Host: local
+Host: $hostname
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
 Accept-Language: en-us,en;q=0.5
-Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 Content-Type: application/x-www-form-urlencoded
 Content-Length: 3
 Content-Length: 3
@@ -240,16 +279,19 @@ abc
 
 %test Content-Length HTTP header is not numeric (960016) 
 #####################################################
-%status 413
-%event 960016
+%remark
+Content-Length should only contain digits.  This has a semi-colon.
+%endremark
+%status 413|400
 %request
 POST / HTTP/1.0
-Host: local
+Host: $hostname
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
 Accept-Language: en-us,en;q=0.5
-Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 Content-Type: application/x-www-form-urlencoded
 Content-Length: 3;
 
@@ -258,18 +300,22 @@ abc
 
 %test GET or HEAD Request with Body Content (960011) 
 #####################################################
+%remark
+This request sends a request body while using a GET request.
+%endremark
+%status 400
 %output 960011
-%event 960011
 %request
 GET / HTTP/1.0
-Host: local
+Host: $hostname
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
 Accept-Language: en-us,en;q=0.5
-Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 Content-Type: application/x-www-form-urlencoded 
-Content-Length: 3
+Content-Length: $CONTENT_LENGTH 
 
 abc
 
@@ -280,12 +326,13 @@ abc
 %output 960012
 %request
 POST / HTTP/1.0
-Host: local
+Host: $hostname
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
 Accept-Language: en-us,en;q=0.5
-Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 Content-Type: application/x-www-form-urlencoded
 
 
@@ -296,12 +343,13 @@ Content-Type: application/x-www-form-urlencoded
 %event 960902
 %request
 GET / HTTP/1.0
-Host: local
+Host: $hostname
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
 Accept-Language: en-us,en;q=0.5
-Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 Content-Encoding: Identity 
 
 
@@ -311,12 +359,13 @@ Content-Encoding: Identity
 %event 960022
 %request
 GET / HTTP/1.0
-Host: local
+Host: $hostname
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
 Accept-Language: en-us,en;q=0.5
-Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 Expect: 100-continue
 
 
@@ -326,12 +375,13 @@ Expect: 100-continue
 %event 960020
 %request
 GET / HTTP/1.1
-Host: local
+Host: $hostname
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
 Accept-Language: en-us,en;q=0.5
-Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 Pragma: no-cache
 
 
@@ -341,12 +391,13 @@ Pragma: no-cache
 %event 958291
 %request
 GET / HTTP/1.1
-Host: local
+Host: $hostname
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
 Accept-Language: en-us,en;q=0.5
-Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 Range: bytes=0-
 
 
@@ -355,9 +406,14 @@ Range: bytes=0-
 %output 958230
 %request
 GET / HTTP/1.1
-Host: local 
+Host: $hostname
+User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7
+Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 Range: bytes=0-,5-0,5-1,5-2,5-3,5-4,5-5,5-6,5-7,5-8,5-9,5-10,5-11,5-12,5-13,5-14,5-15
-Accept-Encoding: gzip
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 Connection: close
 
 
@@ -366,9 +422,14 @@ Connection: close
 %output 958231
 %request
 GET / HTTP/1.1
-Host: local
+Host: $hostname
+User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7
+Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 Range: bytes=0-,5-0,5-1,5-2,5-3,5-4,5-5,5-6,5-7,5-8,5-9,5-10,5-11,5-12,5-13,5-14,5-15
-Accept-Encoding: gzip
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 Connection: close
 
 
@@ -380,12 +441,13 @@ Connection: close
 %var connection=close
 %request
 GET / HTTP/1.1
-Host: local
+Host: $hostname
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
 Accept-Language: en-us,en;q=0.5
-Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 Connection: $connection, $connection 
 
 
@@ -397,12 +459,13 @@ Connection: $connection, $connection
 %var encoded_arg=%7%6F%6D%65%74%65%78%74%5F%31%32%33%
 %request
 GET /?parm=$encoded_arg HTTP/1.1
-Host: local
+Host: $hostname
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
 Accept-Language: en-us,en;q=0.5
-Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 
 
 %test Multiple URL Encoding Detected (950109)
@@ -413,12 +476,13 @@ Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 #%var encoded_arg=%7%6F%6D%65%74%65%78%74%5F%31%32%33%
 %request
 GET /?parm=$encoded_arg HTTP/1.1
-Host: local
+Host: $hostname
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
 Accept-Language: en-us,en;q=0.5
-Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 
 
 
@@ -430,10 +494,10 @@ Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 %var encoded_arg=%7%6F%6D%65%74%65%78%74%5F%31%32%33%
 %request
 POST / HTTP/1.1
-Host: local
+Host: $hostname
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1) Gecko/20061010 Firefox/2.0
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
-Accept-Language: en-us,en;q=0.5Accept-Encoding: gzip,deflate
+Accept-Language: en-us,en;q=0.5
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 Keep-Alive: 300
 Proxy-Connection: keep-alive
@@ -450,11 +514,10 @@ param=$encoded_arg
 %output 950108
 %request
 POST / HTTP/1.1
-Host: local
+Host: $hostname
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1) Gecko/20061010 Firefox/2.0
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
 Accept-Language: en-us,en;q=0.5
-Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 Keep-Alive: 300
 Proxy-Connection: keep-alive
@@ -479,12 +542,13 @@ Content-Length: $CONTENT_LENGTH
 %var arg=%F5%80%BF%BF
 %request
 GET /?param=$arg HTTP/1.0
-Host: local
+Host: $hostname
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
 Accept-Language: en-us,en;q=0.5
-Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 
 
 %test Unicode Full/Half Width Abuse Attack Attempt (950116) 
@@ -492,12 +556,13 @@ Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 %output 950116
 %request
 GET /?param=foo%uFF01 HTTP/1.0
-Host: local
+Host: $hostname
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
 Accept-Language: en-us,en;q=0.5
-Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 
 
 %test Proxy access attempt (960014)
@@ -505,26 +570,29 @@ Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 %output 960014
 %request
 GET http://www.some_remote_site.com/ HTTP/1.0
-Host: www.some_remote_site.com 
+Host: $hostname
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
 Accept-Language: en-us,en;q=0.5
-Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 
 
-%test Invalid character in request (960901)V
+%test Invalid character in request (960901)
 #####################################################
 %output 960901
 %event 960901
 %request
 GET /?param=foo%00 HTTP/1.0
-Host: local
+Host: $hostname
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
 Accept-Language: en-us,en;q=0.5
-Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+Proxy-Connection: keep-alive
+
 
 
 %endtest

@@ -59,6 +59,7 @@ GetOptions
 (
     $global_state,
     'server|s:s',
+    'hostname:s',
     'port|p:s',
     'timeout|t:f',
     'mslog:s',
@@ -242,7 +243,7 @@ sub use_test_directive
     my ($state, $cmd, $operand, $global) = @_;
 
     # -- Simple directives
-    if ($cmd =~ /^(?:server|port|timeout|verbose|relevant|mslog|msdebug|request|uri|request|fuzz|clean|pause)$/i) {
+    if ($cmd =~ /^(?:server|port|hostname|timeout|verbose|relevant|mslog|msdebug|request|uri|request|fuzz|clean|pause)$/i) {
         if ($global) {
             $state->{'global'}->{$cmd} = $operand;
         }
@@ -392,6 +393,9 @@ sub run_test
 	    $server = $1;
 	    $port = $2;
 	}
+        if ($test->{'hostname'}) {
+            my $hostname = ($test->{'hostname'});
+        }
         my $sock = IO::Socket::INET->new(PeerAddr => $server, PeerPort => $port);
         if (!$sock) {
             print STDERR "Error 104: error connecting to server $server. $@\n";
@@ -562,7 +566,7 @@ sub generate_vectors
     my $results;
     foreach our $vector (@$vectors) {
         my $var = join ",", map { "$_=$vector->{$_}" } keys %$vector;
-        $vector->{'CONTENT_LENGTH'} = '$CONTENT_LENGHT';
+        $vector->{'CONTENT_LENGTH'} = '$CONTENT_LENGTH';
         my $result;
         if (!defined($result = eval_expression ($script, $vector, $verbose))) {
             print STDERR "Error 109: unable to fuzz request. Not fuzzing test.\n";
