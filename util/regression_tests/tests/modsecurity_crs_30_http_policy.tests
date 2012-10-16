@@ -10,12 +10,14 @@
 %var request_method=SUBSCRIBE
 %request
 $request_method / HTTP/1.0
-Host: local
+Host: $hostname
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
 Accept-Language: en-us,en;q=0.5
 Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 
 
 
@@ -27,12 +29,14 @@ Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 %var type=application/foo;
 %request
 POST / HTTP/1.1
-Host: local
+Host: $hostname
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
 Accept-Language: en-us,en;q=0.5
 Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 Content-Type: $type boundary=0000
 Content-Length: $CONTENT_LENGTH
 
@@ -60,12 +64,14 @@ BINARYDATA
 %var http=JUNK/1.0
 %request
 GET / $http
-Host: local
+Host: $hostname
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
 Accept-Language: en-us,en;q=0.5
 Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 
 
 
@@ -77,12 +83,14 @@ Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 %var ext=.old
 %request
 GET /foo$ext HTTP/1.1
-Host: local
+Host: $hostname
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
 Accept-Language: en-us,en;q=0.5
 Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 
 
 
@@ -94,7 +102,7 @@ Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 %var restricted_header=Lock-Token: <opaquelocktoken:a515cfa4-5da4-22e1-f5bf-00a0451e6bf7>
 %request
 GET / HTTP/1.1
-Host: local
+Host: $hostname
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
 Accept-Language: en-us,en;q=0.5

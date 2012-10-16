@@ -12,6 +12,8 @@ Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plai
 Accept-Language: en-us,en;q=0.5
 Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 
 
 %test Empty Host Header (960007)
@@ -25,6 +27,8 @@ Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plai
 Accept-Language: en-us,en;q=0.5
 Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 
 
 %test Request Missing an Accept Header (960015)
@@ -32,24 +36,27 @@ Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 %output 960015
 %request
 GET / HTTP/1.0
-Host: $host
+Host: $hostname 
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7
 Accept-Language: en-us,en;q=0.5
 Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
-
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 
 %test Request Has an Empty Accept Header (960021)
 #####################################################
 %output 960021
 %request
 GET / HTTP/1.0
-Host: local
+Host: $hostname 
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7
 Accept:
 Accept-Language: en-us,en;q=0.5
 Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 
 
 %test Request Missing a User Agent Header (960009)
@@ -57,11 +64,13 @@ Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 %output 960009
 %request
 GET / HTTP/1.0
-Host: local
+Host: $hostname 
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
 Accept-Language: en-us,en;q=0.5
 Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 
 
 %test Request Has an Empty User Agent Header (960006)
@@ -69,12 +78,14 @@ Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 %output 960006
 %request
 GET / HTTP/1.0
-Host: local
+Host: $hostname 
 User-Agent:
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
 Accept-Language: en-us,en;q=0.5
 Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 
 
 %test Request Containing Content, but Missing Content-Type header (960904)
@@ -82,12 +93,14 @@ Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 %output 960904
 %request
 POST / HTTP/1.0
-Host: local
+Host: $hostname 
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
 Accept-Language: en-us,en;q=0.5
 Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 Content-Length: 5
 
 foo=1
@@ -104,6 +117,8 @@ Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plai
 Accept-Language: en-us,en;q=0.5
 Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 
 
 

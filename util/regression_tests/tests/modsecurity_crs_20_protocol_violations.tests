@@ -37,7 +37,7 @@ Proxy-Connection: keep-alive
 %remark
 This test has a pipe character before the request method.
 %endremark
-%status 400|403
+%status 400|403|501
 %output 960911
 %request
 |GET / HTTP/1.0
