@@ -303,7 +303,7 @@ abc
 %remark
 This request sends a request body while using a GET request.
 %endremark
-%status 400
+#%status 400
 %output 960011
 %request
 GET / HTTP/1.0
