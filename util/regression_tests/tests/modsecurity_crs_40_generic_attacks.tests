@@ -240,7 +240,7 @@ Referer: http://www.mummy.com/index.html
 Accept-Language: zh-sg
 Accept-Encoding: gzip, deflate
 User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)
-Host: www.victim.com
+Host: $hostname 
 Keep-Alive: 300
 Proxy-Connection: keep-alive
 
@@ -368,7 +368,7 @@ Proxy-Connection: keep-alive
 
 %test PHP Injection Attack (958976)
 ###################################
-%output 958976
+%output 958976|958977
 %var php_code=%20%20if%20(!function_exists(%22fs_copy_dir%22))%20%7B%0A%20%20%20%20function%20fs_copy_dir(%24d%2C%24t)%20%7B%0A%20%20%20%20%20%20%24d%20%3D%20str_replace(%22%5C%5C%22%2CDIRECTORY_SEPARATOR%2C%24d)%3B%0A%20%20%20%20%20%20if%20(substr(%24d%2C-1)%20!%3D%20DIRECTORY_SEPARATOR)%20%7B%24d%20.%3D%20DIRECTORY_SEPARATOR%3B%7D%0A%20%20%20%20%20%20%24h%20%3D%20opendir(%24d)%3B%0A%20%20%20%20%20%20while%20((%24o%20%3D%20readdir(%24h))%20!%3D%3D%20FALSE)%20%7B%0A%20%20%20%20%20%20%20%20if%20((%24o%20!%3D%20%22.%22)%20and%20(%24o%20!%3D%20%22..%22))%20%7B%0A%20%20%20%20%20%20%20%20%20%20if%20(!is_dir(%24d.DIRECTORY_SEPARATOR.%24o))%20%7B%24ret%20%3D%20copy(%24d.DIRECTORY_SEPARATOR.%24o%2C%24t.DIRECTORY_SEPARATOR.%24o)%3B%7D%0A%20%20%20%20%20%20%20%20%20%20else%20%7B%24ret%20%3D%20mkdir(%24t.DIRECTORY_SEPARATOR.%24o)%3B%20fs_copy_dir(%24d.DIRECTORY_SEPARATOR.%24o%2C%24t.DIRECTORY_SEPARATOR.%24o)%3B%7D%0A%20%20%20%20%20%20%20%20%20%20if%20(!%24ret)%20%7Breturn%20%24ret%3B%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20closedir(%24h)%3B%0A%20%20%20%20%20%20return%20TRUE%3B%0A%20%20%20%20%7D
 %var php_code=echo%20sr(15%2C%22%3Cb%3E%22.%24lang%5B%24language.'_text16'%5D.%24arrow.%22%3C%2Fb%3E%22%2C%22%3Cselect%20name%3D%5C%22method%5C%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%20value%3D%5C%22system%5C%22%20%3C%3F%20if%20(%24method%3D%3D%5C%22system%5C%22)%20%7B%20echo%20%5C%22selected%5C%22%3B%20%7D%20%3F%3Esystem%3C%2Foption%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%20value%3D%5C%22passthru%5C%22%20%3C%3F%20if%20(%24method%3D%3D%5C%22passthru%5C%22)%20%7B%20echo%20%5C%22selected%5C%22%3B%20%7D%20%3F%3Epassthru%3C%2Foption%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%20value%3D%5C%22exec%5C%22%20%3C%3F%20if%20(%24method%3D%3D%5C%22exec%5C%22)%20%7B%20echo%20%5C%22selected%5C%22%3B%20%7D%20%3F%3Eexec%3C%2Foption%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%20value%3D%5C%22shell_exec%5C%22%20%3C%3F%20if%20(%24method%3D%3D%5C%22shell_exec%5C%22)%20%7B%20echo%20%5C%22selected%5C%22%3B%20%7D%20%3F%3Eshell_exec%3C%2Foption%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%20value%3D%5C%22popen%5C%22%20%3C%3F%20if%20(%24method%3D%3D%5C%22popen%5C%22)%20%7B%20echo%20%5C%22selected%5C%22%3B%20%7D%20%3F%3Epopen%3C%2Foption%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%20value%3D%5C%22proc_open%5C%22%20%3C%3F%20if%20(%24method%3D%3D%5C%22proc_open%5C%22)%20%7B%20echo%20%5C%22selected%5C%22%3B%20%7D%20%3F%3Eproc_open%3C%2Foption%3E
 %request

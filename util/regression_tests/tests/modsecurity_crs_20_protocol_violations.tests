@@ -67,7 +67,7 @@ Referer: http://localhost/upload.html
 Keep-Alive: 300
 Proxy-Connection: keep-alive
 Content-Type: multipart/form-data; boundary=---------------------------627652292512397580456702590
-Content-Length: $CONTENT_LENGTH 
+Content-Length: $CONTENT_LENGTH
 
 -----------------------------627652292512397580456702590
 Content-Disposition: form-data; name=x';filename="';name=contact.txt;"
@@ -570,7 +570,7 @@ Proxy-Connection: keep-alive
 %output 960014
 %request
 GET http://www.some_remote_site.com/ HTTP/1.0
-Host: $hostname
+Host: www.some_remote_site.com 
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
 Accept-Language: en-us,en;q=0.5

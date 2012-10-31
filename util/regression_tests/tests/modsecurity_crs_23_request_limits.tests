@@ -50,7 +50,8 @@ Proxy-Connection: keep-alive
 
 %test Total arguments size exceeded (960341)
 #####################################################
-%output 960341
+#%output 960341
+%status 413
 %request
 POST / HTTP/1.1
 Host: $hostname
@@ -69,7 +70,7 @@ foo=1111111111111111111111111111111111111111111111111111111111111111111111111111
 
 %test Uploaded file size too large (960342) 
 #####################################################
-%event 960342
+%status 413
 %output 960342
 %request
 POST / HTTP/1.1
@@ -83,7 +84,7 @@ Keep-Alive: 300
 Proxy-Connection: keep-alive
 Referer: http://192.168.3.2/form.html
 Content-Type: multipart/form-data; boundary=---------------------------265001916915724
-Content-Length: 10485760 
+Content-Length: 10485760
 
 -----------------------------265001916915724
 Content-Disposition: form-data; name="file"; filename="test"

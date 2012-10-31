@@ -109,7 +109,8 @@ Accept-Language: en-us,en;q=0.5
 Accept-Encoding: gzip,deflate
 Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 $restricted_header
-
+Keep-Alive: 300
+Proxy-Connection: keep-alive
 
 
 

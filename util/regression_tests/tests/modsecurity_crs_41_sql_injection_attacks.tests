@@ -191,7 +191,7 @@ Proxy-Connection: keep-alive
 
 %test Detects MATCH AGAINST, MERGE, EXECUTE IMMEDIATE and HAVING injections (981256)
 ########################################
-%output 98156
+%output 981256
 %var sig=-148)%20or%201%20group%20by%20concat(%40%40version%2Cfloor(rand(0)*2))%20having%20min(0)%20or%201%20--
 %endtest
 
