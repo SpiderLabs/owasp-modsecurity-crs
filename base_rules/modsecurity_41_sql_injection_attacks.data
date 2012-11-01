@@ -163,7 +163,7 @@ radians
 uncompressed_length
 acos
 'sqloledb'
-dbms_pipe.receive_message
+dbms_
 utl_http
 cieling
 row_count
@@ -275,7 +275,6 @@ elt
 pow
 'dbo'
 sp_makewebtask
-dbms_java
 to_
 format
 xp_regwrite
