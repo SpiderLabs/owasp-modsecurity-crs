@@ -165,6 +165,7 @@ acos
 'sqloledb'
 dbms_
 utl_http
+utl_inaddr
 cieling
 row_count
 benchmark
