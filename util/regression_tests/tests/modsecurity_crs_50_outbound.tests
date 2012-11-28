@@ -110,8 +110,8 @@ Response-Content: <o:documentproperties>
 
 %test Directory Listing (apache)
 ########################################
-%event 971200
-%output 971200
+%event 970013
+%output 970013
 %request
 GET /cgi-bin/testserver.cgi HTTP/1.1
 Host: $hostname

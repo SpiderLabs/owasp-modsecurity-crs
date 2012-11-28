@@ -2,6 +2,13 @@
 * https://www.modsecurity.org/tracker/browse/CORERULES
 
 
+== Version 2.2.7 - 11/28/2012 ==
+
+Improvements:
+* Added JS Overrides file to identify successfull XSS probes 
+
+Bug Fixes:
+
 
 == Version 2.2.6 - 09/14/2012 ==
 
@@ -23,8 +30,8 @@ Bug Fixes:
 * Changed the variable listing for many generic attack rules to exclude REQUEST_FILENAME
   https://www.modsecurity.org/tracker/browse/CORERULES-78
 
-== Version 2.2.5 - 06/14/2012 ==
 
+== Version 2.2.5 - 06/14/2012 ==
 
 Improvements:
 * Renamed main config file to modsecurity_crs_10_setup.conf
