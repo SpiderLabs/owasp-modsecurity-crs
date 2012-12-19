@@ -8,6 +8,9 @@ Improvements:
 * Added JS Overrides file to identify successfull XSS probes 
 * Added new XSS Detection Rules from Ashar Javed (http://twitter.com/soaj1664ashar)
   - http://jsfiddle.net/U9RmU/4/
+* Updated the SQLi Filters to add in Oracle specific functions
+  - https://github.com/SpiderLabs/owasp-modsecurity-crs/pull/7
+
 
 Bug Fixes:
 
