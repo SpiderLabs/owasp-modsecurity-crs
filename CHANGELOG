@@ -2,10 +2,12 @@
 * https://www.modsecurity.org/tracker/browse/CORERULES
 
 
-== Version 2.2.7 - 11/28/2012 ==
+== Version 2.2.7 - 12/19/2012 ==
 
 Improvements:
 * Added JS Overrides file to identify successfull XSS probes 
+* Added new XSS Detection Rules from Ashar Javed (http://twitter.com/soaj1664ashar)
+  - http://jsfiddle.net/U9RmU/4/
 
 Bug Fixes:
 
