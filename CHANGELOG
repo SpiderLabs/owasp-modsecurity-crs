@@ -11,8 +11,9 @@ Improvements:
 * Updated the SQLi Filters to add in Oracle specific functions
   - https://github.com/SpiderLabs/owasp-modsecurity-crs/pull/7
 
-
 Bug Fixes:
+* Fixed Session Hijacking rules
+  - https://github.com/SpiderLabs/owasp-modsecurity-crs/pull/8
 
 
 == Version 2.2.6 - 09/14/2012 ==
