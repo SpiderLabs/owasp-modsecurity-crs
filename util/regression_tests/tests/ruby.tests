@@ -14,23 +14,14 @@ Content-Type: text/xml
 Content-Length: $CONTENT_LENGTH
 
 <xml version="1.0" encoding="UTF-8">
-<boom type="yaml"><![CDATA[$sig]]></boom>
+<boom type="$type"><![CDATA[$sig]]></boom>
 </xml>
 
 
 %test Ruby on Rails Vuln - CVE-2013-0156 - 1 
 ########################################
-%event 999010 
 %output 999010
 %var sig=--- !ruby/object:UnsafeObject attribute1: value1
-%endtest
-
-
-%test Ruby on Rails Vuln - CVE-2013-0156 -2
-########################################
-%event 999010
-%output 999010
 %var sig=--- !ruby/string:Arel::Nodes::SqlLiteral \"' OR '2' < '6';--\"
+%var type=yaml
 %endtest
-
-
