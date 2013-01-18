@@ -14,6 +14,7 @@ Improvements:
 Bug Fixes:
 * Fixed Session Hijacking rules
   - https://github.com/SpiderLabs/owasp-modsecurity-crs/pull/8
+* Fixed bug in XSS rules checking TX:PM_XSS_SCORE variable
 
 
 == Version 2.2.6 - 09/14/2012 ==
