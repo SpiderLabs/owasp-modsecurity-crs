@@ -424,5 +424,6 @@ SecRule &TX:REAL_IP "@eq 0" \
   t:none, \
   initcol:global=global, \
   initcol:ip=%{remote_addr}_%{tx.ua_hash}, \
+  setvar:tx.real_ip=%{remote_addr}, \
   nolog, \
   pass"
