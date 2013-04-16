@@ -9,7 +9,7 @@ INSTALLATION STEPS:
 3) Copy the testserver.cgi script to the /cgi-bin directory if you wish to
    test the outbound/response rules.
 
-4) Edit the modsecurity_crs_10_config.conf file and update/enable the
+4) Edit the modsecurity_crs_10_setup.conf file and update/enable the
    Regression Testing variable settings.
 
 5) Copy/Symlink the modsecurity_crs_59_header_tagging.conf file to the

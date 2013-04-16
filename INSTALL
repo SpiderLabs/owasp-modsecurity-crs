@@ -3,10 +3,10 @@ Core Rule Set Quick Setup
 
 To activate the rules for your web server installation:
 
-  1) Copy the modsecurity_crs_10_config.conf.example file to modsecurity_crs_10_config.conf
+  1) Copy the modsecurity_crs_10_setup.conf.example file to modsecurity_crs_10_setup.conf
      and customize the settings for your local environment.
 
-     The modsecurity_crs_10_config.conf file includes management rules and directives
+     The modsecurity_crs_10_setup.conf file includes management rules and directives
      that can control important CRS functions. Pay attention to
      the SecRuleEngine setting (On by default) and that the SecDefaultAction
      directive is set to "pass".  The 49 inbound blocking and 59 outbound blocking
@@ -27,18 +27,18 @@ To activate the rules for your web server installation:
      "activated_rules" directory location.  You will want to create symlinks for the
      following:
 
-     1) The main modsecurity_crs_10_config.conf file
+     1) The main modsecurity_crs_10_setup.conf file
      2) Any rules from the base_rules directory
      3) Any remaining rules from the optional_rules, slr_rules or experimental_rules directories
 
 	$ pwd
 	/usr/local/apache/conf/crs
 	$ ls
-	CHANGELOG                               app_sensor                              modsecurity_crs_10_config.conf          slr_rules
-	LICENSE                                 base_rules                              modsecurity_crs_10_config.conf.example  util
+	CHANGELOG                               app_sensor                              modsecurity_crs_10_setup.conf          slr_rules
+	LICENSE                                 base_rules                              modsecurity_crs_10_setup.conf.example  util
 	README                                  experimental_rules                      modsecurity_crs_15_customrules.conf
 	activated_rules                         lua                                     optional_rules
-	$ sudo ln -s /usr/local/apache/conf/crs/modsecurity_crs_10_config.conf activated_rules/modsecurity_crs_10_config.conf
+	$ sudo ln -s /usr/local/apache/conf/crs/modsecurity_crs_10_setup.conf activated_rules/modsecurity_crs_10_setup.conf
 	$ for f in `ls base_rules/` ; do sudo ln -s /usr/local/apache/conf/crs/base_rules/$f activated_rules/$f ; done
 	$ for f in `ls optional_rules/ | grep comment_spam` ; do sudo ln -s /usr/local/apache/conf/crs/optional_rules/$f activated_rules/$f ; done
 	$ ls -l activated_rules
@@ -52,7 +52,7 @@ To activate the rules for your web server installation:
 	lrwxr-xr-x  1 root  wheel  66 May 17 14:01 modsecurity_50_outbound.data -> /usr/local/apache/conf/crs/base_rules/modsecurity_50_outbound.data
 	lrwxr-xr-x  1 root  wheel  74 May 17 14:01 modsecurity_50_outbound_malware.data -> /usr/local/apache/conf/crs/base_rules/modsecurity_50_outbound_malware.data
 	lrwxr-xr-x  1 root  wheel  73 May 17 14:01 modsecurity_crs_14_customrules.conf -> /usr/local/apache/conf/crs/base_rules/modsecurity_crs_14_customrules.conf
-	lrwxr-xr-x  1 root  wheel  57 May 17 14:22 modsecurity_crs_10_config.conf -> /usr/local/apache/conf/crs/modsecurity_crs_10_config.conf
+	lrwxr-xr-x  1 root  wheel  57 May 17 14:22 modsecurity_crs_10_setup.conf -> /usr/local/apache/conf/crs/modsecurity_crs_10_setup.conf
 	lrwxr-xr-x  1 root  wheel  81 May 17 14:01 modsecurity_crs_20_protocol_violations.conf -> /usr/local/apache/conf/crs/base_rules/modsecurity_crs_20_protocol_violations.conf
 	lrwxr-xr-x  1 root  wheel  80 May 17 14:01 modsecurity_crs_21_protocol_anomalies.conf -> /usr/local/apache/conf/crs/base_rules/modsecurity_crs_21_protocol_anomalies.conf
 	lrwxr-xr-x  1 root  wheel  76 May 17 14:01 modsecurity_crs_23_request_limits.conf -> /usr/local/apache/conf/crs/base_rules/modsecurity_crs_23_request_limits.conf
@@ -77,7 +77,7 @@ To activate the rules for your web server installation:
      you've placed the rule files into conf/crs/):
 
         <IfModule security2_module>
-                Include conf/crs/modsecurity_crs_10_config.conf
+                Include conf/crs/modsecurity_crs_10_setup.conf
                 Include conf/crs/activated_rules/*.conf
         </IfModule>
 
