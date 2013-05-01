@@ -23,7 +23,7 @@
 # You should use the modsecurity.conf-recommended file that comes with the
 # ModSecurity source code archive.
 #
-# Ref: http://mod-security.svn.sourceforge.net/viewvc/mod-security/m2/trunk/modsecurity.conf-recommended
+# Ref: https://github.com/SpiderLabs/ModSecurity/blob/master/modsecurity.conf-recommended 
 #
 
 
@@ -34,7 +34,7 @@
 #
 # - Producer: ModSecurity for Apache/2.7.0-rc1 (http://www.modsecurity.org/); OWASP_CRS/2.2.4.
 #
-# Ref: https://sourceforge.net/apps/mediawiki/mod-security/index.php?title=Reference_Manual#SecComponentSignature
+# Ref: https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#wiki-SecComponentSignature 
 #
 SecComponentSignature "OWASP_CRS/2.2.7"
 
@@ -61,7 +61,7 @@ SecComponentSignature "OWASP_CRS/2.2.7"
 # - To log *only* to the Apache error_log file use: "log,noauditlog"
 #
 # Ref: http://blog.spiderlabs.com/2010/11/advanced-topic-of-the-week-traditional-vs-anomaly-scoring-detection-modes.html
-# Ref: https://sourceforge.net/apps/mediawiki/mod-security/index.php?title=Reference_Manual#SecDefaultAction
+# Ref: https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#wiki-SecDefaultAction 
 #
 SecDefaultAction "phase:1,deny,log"
 
