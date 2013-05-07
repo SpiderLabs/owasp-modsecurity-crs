@@ -98,7 +98,7 @@ SecAction \
 
 
 #
-# -- [[ Collaborative Detection Scoring Threshold Levels ]] ------------------------------
+# -- [[ Collaborative Detection Scoring Initialization and Threshold Levels ]] ------------------------------
 #
 # These variables are used in macro expansion in the 49 inbound blocking and 59
 # outbound blocking files.
@@ -107,18 +107,23 @@ SecAction \
 # operators.  If you have an earlier version, edit the 49/59 files directly to
 # set the appropriate anomaly score levels.
 #
-# You should set the score to the proper threshold you would prefer. If set to "5"
-# it will work similarly to previous Mod CRS rules and will create an event in the error_log
-# file if there are any rules that match.  If you would like to lessen the number of events
-# generated in the error_log file, you should increase the anomaly score threshold to
-# something like "20".  This would only generate an event in the error_log file if
-# there are multiple lower severity rule matches or if any 1 higher severity item matches.
+# You should set the score level (rule 900003) to the proper threshold you 
+# would prefer.  If set to "5" it will work similarly to previous Mod CRS rules
+# and will create an event in the error_log file if there are any rules that
+# match.  If you would like to lessen the number of events generated in the 
+# error_log file, you should increase the anomaly score threshold to something 
+# like "20".  This would only generate an event in the error_log file if there
+# are multiple lower severity rule matches or if any 1 higher severity item matches.
 #
 SecAction \
   "id:'900002', \
   phase:1, \
   t:none, \
-  setvar:tx.inbound_anomaly_score_level=5, \
+  setvar:tx.anomaly_score=0, \
+  setvar:tx.sql_injection_score=0, \
+  setvar:tx.xss_score=0, \
+  setvar:tx.inbound_anomaly_score=0, \
+  setvar:tx.outbound_anomaly_score=0, \
   nolog, \
   pass"
 
@@ -127,6 +132,7 @@ SecAction \
   "id:'900003', \
   phase:1, \
   t:none, \
+  setvar:tx.inbound_anomaly_score_level=5, \
   setvar:tx.outbound_anomaly_score_level=4, \
   nolog, \
   pass"
