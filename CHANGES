@@ -1,8 +1,11 @@
-== OWASP ModSecurity Core Rule Set (CRS) JIRA CHANGELOG ==
-* https://www.modsecurity.org/tracker/browse/CORERULES
+== OWASP ModSecurity Core Rule Set (CRS) CHANGES ==
 
+== Report Bugs/Issues to GitHub Issues Tracker ==
+* https://github.com/SpiderLabs/owasp-modsecurity-crs/issues
 
 == Version 2.2.7 - 12/19/2012 ==
+
+Security Fixes:
 
 Improvements:
 * Added JS Overrides file to identify successfull XSS probes 
@@ -18,6 +21,8 @@ Bug Fixes:
 
 
 == Version 2.2.6 - 09/14/2012 ==
+
+Security Fixes:
 
 Improvements:
 * Started rule formatting update for better readability
@@ -40,6 +45,14 @@ Bug Fixes:
 
 == Version 2.2.5 - 06/14/2012 ==
 
+Security Fixes:
+* Updated the anomaly scoring value for rule ID 960000 to critical
+  (Identified by Qualys Vulnerability & Malware Research Labs (VMRL))
+  (https://community.qualys.com/blogs/securitylabs/2012/06/15/modsecurity-and-modsecurity-core-rule-set-multipart-bypasses)
+* Updated Content-Type check to fix possible evasion with @within
+  (Identified by Qualys Vulnerability & Malware Research Labs (VMRL))
+  (https://community.qualys.com/blogs/securitylabs/2012/06/15/modsecurity-and-modsecurity-core-rule-set-multipart-bypasses)
+
 Improvements:
 * Renamed main config file to modsecurity_crs_10_setup.conf
 * Updated the rule IDs to start from CRS reserved range: 900000
@@ -52,14 +65,9 @@ Improvements:
 
 Bug Fixes:
 * Added forceRequestBodyVariable action to rule ID 960904
-* Updated the anomaly scoring value for rule ID 960000 to critical
-  (Identified by Qualys Vulnerability & Malware Research Labs (VMRL))
-* Updated Content-Type check to fix possible evasion with @within
-  (Identified by Qualys Vulnerability & Malware Research Labs (VMRL))
 
 
 == Version 2.2.4 - 03/14/2012 ==
-
 
 Improvements:
 * Added Location and Set-Cookie checks to Response Splitting rule ID 950910
@@ -76,7 +84,6 @@ Bug Fixes:
 
 
 == Version 2.2.3 - 12/19/2011 ==
-
 
 Improvements:
 * Added Watcher Cookie Checks to optional_rules/modsecurity_crs_55_appication_defects.conf file
