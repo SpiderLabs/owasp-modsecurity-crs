@@ -3,6 +3,19 @@
 == Report Bugs/Issues to GitHub Issues Tracker ==
 * https://github.com/SpiderLabs/owasp-modsecurity-crs/issues
 
+
+== Version 3.0.0 - 06/03/2013 ==
+
+Security Fixes:
+
+Improvements:
+* Added new IP Reputation Checks.
+* Updated "phase" actions to use request/response/logging aliases.
+* Updated "severity" action to use words (CRITICAL, WARNING, etc...) vs. numbers (5, 4, etc..) 
+
+Bug Fixes:
+
+
 == Version 2.2.7 - 12/19/2012 ==
 
 Security Fixes:
