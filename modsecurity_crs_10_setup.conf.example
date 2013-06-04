@@ -311,7 +311,7 @@ SecAction \
 #
 SecAction \
  "id:'900012',\
-  phase:request,\
+  phase:1,\
   nolog,\
   pass,\
   t:none,\
