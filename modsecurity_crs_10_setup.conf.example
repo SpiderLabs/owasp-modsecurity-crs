@@ -366,7 +366,7 @@ SecAction \
   nolog,\
   pass,\
   t:none,\
-  setvar:'tx.brute_force_protected_urls=/login.jsp /partner_login.php',\
+  setvar:'tx.brute_force_protected_urls=#/login.jsp# #/partner_login.php#',\
   setvar:'tx.brute_force_burst_time_slice=60',\
   setvar:'tx.brute_force_counter_threshold=10',\
   setvar:'tx.brute_force_block_timeout=300'"
