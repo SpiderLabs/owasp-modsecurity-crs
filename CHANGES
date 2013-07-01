@@ -20,6 +20,9 @@ Bug Fixes:
   - https://github.com/SpiderLabs/owasp-modsecurity-crs/pull/44
 * Updated the Regex in 981244 to include word boundaries
   - https://github.com/SpiderLabs/owasp-modsecurity-crs/issues/36
+* Problem with Regression Test (Invalid use of backslash) - Rule 960911 - Test2
+  - https://github.com/SpiderLabs/owasp-modsecurity-crs/issues/34
+
 
 == Version 2.2.7 - 12/19/2012 ==
 
