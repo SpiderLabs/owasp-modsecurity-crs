@@ -22,7 +22,8 @@ Bug Fixes:
   - https://github.com/SpiderLabs/owasp-modsecurity-crs/issues/36
 * Problem with Regression Test (Invalid use of backslash) - Rule 960911 - Test2
   - https://github.com/SpiderLabs/owasp-modsecurity-crs/issues/34
-
+* "Bad robots" rule blocks all Java applets on Windows XP machines
+  - https://github.com/SpiderLabs/owasp-modsecurity-crs/issues/16
 
 == Version 2.2.7 - 12/19/2012 ==
 
