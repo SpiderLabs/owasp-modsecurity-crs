@@ -24,7 +24,7 @@ This test uses backslashes instead of forward slashes.
 %endremark
 %status 400|403
 %request
-GET \index.html HTTP\1.0
+GET \\index.html HTTP\1.0
 Host: $hostname
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5

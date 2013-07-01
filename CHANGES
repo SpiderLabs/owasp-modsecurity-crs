@@ -18,7 +18,8 @@ Bug Fixes:
   - https://github.com/SpiderLabs/owasp-modsecurity-crs/pull/48
 * fix regex error
   - https://github.com/SpiderLabs/owasp-modsecurity-crs/pull/44
-
+* Updated the Regex in 981244 to include word boundaries
+  - https://github.com/SpiderLabs/owasp-modsecurity-crs/issues/36
 
 == Version 2.2.7 - 12/19/2012 ==
 
