@@ -3,24 +3,23 @@
 == Report Bugs/Issues to GitHub Issues Tracker ==
 * https://github.com/SpiderLabs/owasp-modsecurity-crs/issues
 
-<<<<<<< HEAD
 == Version 2.2.8 - 06/30/2013 ==
-=======
-== Version 2.2.8 - 06/30/13 ==
->>>>>>> 4ft35t-master
 
 Security Fixes:
 
 Improvements:
+* Added scripts to check Rule ID duplicates
+* Added script to remove v2.7 actions so older ModSecurity rules will work
+  - https://github.com/SpiderLabs/owasp-modsecurity-crs/pull/43
+
 
 Bug Fixes:
 * fix 950901 - word boundary added
   - https://github.com/SpiderLabs/owasp-modsecurity-crs/pull/48
+* fix regex error
+  - https://github.com/SpiderLabs/owasp-modsecurity-crs/pull/44
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 4ft35t-master
 == Version 2.2.7 - 12/19/2012 ==
 
 Security Fixes:
