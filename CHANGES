@@ -3,6 +3,17 @@
 == Report Bugs/Issues to GitHub Issues Tracker ==
 * https://github.com/SpiderLabs/owasp-modsecurity-crs/issues
 
+== Version 2.2.8 - 06/30/13 ==
+
+Security Fixes:
+
+Improvements:
+
+Bug Fixes:
+* fix 950901 - word boundary added
+  - https://github.com/SpiderLabs/owasp-modsecurity-crs/pull/48
+
+
 == Version 2.2.7 - 12/19/2012 ==
 
 Security Fixes:
