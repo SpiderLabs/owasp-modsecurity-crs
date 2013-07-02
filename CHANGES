@@ -8,9 +8,13 @@
 Security Fixes:
 
 Improvements:
+* Updatd the /util directory structure
 * Added scripts to check Rule ID duplicates
 * Added script to remove v2.7 actions so older ModSecurity rules will work
   - https://github.com/SpiderLabs/owasp-modsecurity-crs/pull/43
+* Added new PHP rule (958977) to detect PHP exploits (Plesk 0-day from king cope)
+  - http://seclists.org/fulldisclosure/2013/Jun/21
+  - http://blog.spiderlabs.com/2013/06/honeypot-alert-active-exploits-attempts-for-plesk-vulnerability-.html
 
 
 Bug Fixes:
@@ -22,8 +26,13 @@ Bug Fixes:
   - https://github.com/SpiderLabs/owasp-modsecurity-crs/issues/36
 * Problem with Regression Test (Invalid use of backslash) - Rule 960911 - Test2
   - https://github.com/SpiderLabs/owasp-modsecurity-crs/issues/34
+* ModSecurity: No action id present within the rule - ignore_static.conf
+  - https://github.com/SpiderLabs/owasp-modsecurity-crs/issues/17
 * "Bad robots" rule blocks all Java applets on Windows XP machines
   - https://github.com/SpiderLabs/owasp-modsecurity-crs/issues/16
+* duplicated rules id 981173
+  - https://github.com/SpiderLabs/owasp-modsecurity-crs/issues/18
+
 
 == Version 2.2.7 - 12/19/2012 ==
 
