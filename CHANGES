@@ -12,6 +12,7 @@ Improvements:
 * Added new IP Reputation Checks.
 * Updated "phase" actions to use request/response/logging aliases.
 * Updated "severity" action to use words (CRITICAL, WARNING, etc...) vs. numbers (5, 4, etc..) 
+* Updated the XSS filters, included new ones and removed old/duplicate ones.
 
 Bug Fixes:
 
