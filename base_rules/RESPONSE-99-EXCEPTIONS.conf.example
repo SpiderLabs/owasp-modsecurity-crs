@@ -1,0 +1,34 @@
+# ---------------------------------------------------------------
+# Core ModSecurity Rule Set ver.3.0.0
+# Copyright (C) 2006-2013 Trustwave All rights reserved.
+#
+# The OWASP ModSecurity Core Rule Set is distributed under 
+# Apache Software License (ASL) version 2
+# Please see the enclosed LICENCE file for full details.
+# ---------------------------------------------------------------
+
+#
+# The purpose of this file is to hold LOCAL exceptions for your site.
+# The types of rules that would go into this file are one where you want
+# to unconditionally disable rules or modify their actions.
+#
+
+#
+# Example - To unconditionally disable a rule ID
+# 
+# These directives MUST be specified AFTER the rules they are disabling
+# at startup time
+#
+# SecRuleRemoveById 950010
+
+#
+# Example - To unconditionally modify a rule Action
+#
+# SecRuleUpdateActionById 915900 "pass"
+
+#
+# Example - To unconditionally remove parameter "foo" from inspection
+# for XSS and SQLi rules
+#
+# SecRuleUpdateTargetByTag "WEB_ATTACK/XSS" "!ARGS:foo"
+# SecRuleUpdateTargetByTag "WEB_ATTACK/SQL_INJECTION" "!ARGS:foo"
