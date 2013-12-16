@@ -8,12 +8,13 @@
 Security Fixes:
 
 Improvements:
-* Updatd the /util directory structure
+* Updated the /util directory structure
 
 
 Bug Fixes:
 * fix 950901 - word boundary added
-
+* modsecurity_35_bad_robots.data - gecko/25 blocks Firefox Android
+  https://github.com/SpiderLabs/owasp-modsecurity-crs/issues/157
 
 
 == Version 2.2.8 - 06/30/2013 ==
