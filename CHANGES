@@ -4,11 +4,12 @@
 * https://github.com/SpiderLabs/owasp-modsecurity-crs/issues
 
 
-== Version 3.0.0 - 07/26/2013 ==
+== Version 3.0.0-dev - 01/17/2014 ==
 
 Security Fixes:
 
 Improvements:
+* Updating to new rule file naming convention (REQUEST-, RESPONSE-)
 * Added new IP Reputation Checks.
 * Updated "phase" actions to use request/response/logging aliases.
 * Updated "severity" action to use words (CRITICAL, WARNING, etc...) vs. numbers (5, 4, etc..) 
@@ -16,6 +17,51 @@ Improvements:
 * Added NoScript XSS Fitlers
 
 Bug Fixes:
+
+
+== Version 2.2.9 - 09/30/2013 ==
+
+Security Fixes:
+
+Improvements:
+* Updated the /util directory structure
+
+
+Bug Fixes:
+* fix 950901 - word boundary added
+* modsecurity_35_bad_robots.data - gecko/25 blocks Firefox Android
+  https://github.com/SpiderLabs/owasp-modsecurity-crs/issues/157
+
+
+== Version 2.2.8 - 06/30/2013 ==
+
+Security Fixes:
+
+Improvements:
+* Updatd the /util directory structure
+* Added scripts to check Rule ID duplicates
+* Added script to remove v2.7 actions so older ModSecurity rules will work
+  - https://github.com/SpiderLabs/owasp-modsecurity-crs/pull/43
+* Added new PHP rule (958977) to detect PHP exploits (Plesk 0-day from king cope)
+  - http://seclists.org/fulldisclosure/2013/Jun/21
+  - http://blog.spiderlabs.com/2013/06/honeypot-alert-active-exploits-attempts-for-plesk-vulnerability-.html
+
+
+Bug Fixes:
+* fix 950901 - word boundary added
+  - https://github.com/SpiderLabs/owasp-modsecurity-crs/pull/48
+* fix regex error
+  - https://github.com/SpiderLabs/owasp-modsecurity-crs/pull/44
+* Updated the Regex in 981244 to include word boundaries
+  - https://github.com/SpiderLabs/owasp-modsecurity-crs/issues/36
+* Problem with Regression Test (Invalid use of backslash) - Rule 960911 - Test2
+  - https://github.com/SpiderLabs/owasp-modsecurity-crs/issues/34
+* ModSecurity: No action id present within the rule - ignore_static.conf
+  - https://github.com/SpiderLabs/owasp-modsecurity-crs/issues/17
+* "Bad robots" rule blocks all Java applets on Windows XP machines
+  - https://github.com/SpiderLabs/owasp-modsecurity-crs/issues/16
+* duplicated rules id 981173
+  - https://github.com/SpiderLabs/owasp-modsecurity-crs/issues/18
 
 
 == Version 2.2.7 - 12/19/2012 ==
