@@ -63,7 +63,7 @@ SecComponentSignature "OWASP_CRS/3.0.0"
 # Ref: http://blog.spiderlabs.com/2010/11/advanced-topic-of-the-week-traditional-vs-anomaly-scoring-detection-modes.html
 # Ref: https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#wiki-SecDefaultAction 
 #
-SecDefaultAction "phase:request,deny,log"
+SecDefaultAction "phase:1,deny,log"
 
 
 #
@@ -123,6 +123,12 @@ SecAction \
   setvar:tx.anomaly_score=0,\
   setvar:tx.sql_injection_score=0,\
   setvar:tx.xss_score=0,\
+  setvar:tx.rfi_score=0,\
+  setvar:tx.lfi_score=0,\
+  setvar:tx.command_injection_score=0,\
+  setvar:tx.php_injection_score=0,\
+  setvar:tx.http_violation_score=0,\
+  setvar:tx.trojan_score=0,\
   setvar:tx.inbound_anomaly_score=0,\
   setvar:tx.outbound_anomaly_score=0"
 
