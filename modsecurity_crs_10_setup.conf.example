@@ -53,6 +53,9 @@ SecComponentSignature "OWASP_CRS/3.0.0"
 # the "pass" action and will only contribute to anomaly scores.  Transactional blocking
 # can be applied 
 #
+# Ref: http://blog.spiderlabs.com/2010/11/advanced-topic-of-the-week-traditional-vs-anomaly-scoring-detection-modes.html
+# Ref: https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#wiki-SecDefaultAction
+#
 # -- [[ Alert Logging Control ]] --
 # You have three options -
 #
@@ -60,11 +63,16 @@ SecComponentSignature "OWASP_CRS/3.0.0"
 # - To log *only* to the ModSecurity audit_log file use: "nolog,auditlog"
 # - To log *only* to the Apache error_log file use: "log,noauditlog"
 #
-# Ref: http://blog.spiderlabs.com/2010/11/advanced-topic-of-the-week-traditional-vs-anomaly-scoring-detection-modes.html
-# Ref: https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#wiki-SecDefaultAction 
+# -- [[ Disruptive Action Control ]] --
+# The default action is to issue a 302 redirect sending the client back to the main
+# index page.
 #
-SecDefaultAction "phase:1,deny,log"
-
+# -- [[ Host Meta-Data ]] --
+# The tag action will include the Host header data in the alert, which helps to identify
+# which Vhost triggered the rule.
+#
+SecDefaultAction "phase:1,log,redirect:'http://%{request_headers.host}/',tag:'Host: %{request_headers.host}'"
+SecDefaultAction "phase:2,log,redirect:'http://%{request_headers.host}/',tag:'Host: %{request_headers.host}'"
 
 #
 # -- [[ Collaborative Detection Severity Levels ]] ----------------------------------------
@@ -138,8 +146,16 @@ SecAction \
   nolog,\
   pass,\
   t:none,\
-  setvar:tx.inbound_anomaly_score_level=5,\
-  setvar:tx.outbound_anomaly_score_level=4"
+  setvar:tx.sql_injection_score_threshold=5,\
+  setvar:tx.xss_score_threshold=5,\
+  setvar:tx.rfi_score_threshold=5,\
+  setvar:tx.lfi_score_threshold=5,\
+  setvar:tx.command_injection_score_threshold=5,\
+  setvar:tx.php_injection_score_threshold=5,\
+  setvar:tx.http_violation_score_threshold=5,\
+  setvar:tx.trojan_score_threshold=5,\
+  setvar:tx.inbound_anomaly_score_threshold=5,\
+  setvar:tx.outbound_anomaly_score_threshold=4"
 
 
 # 
@@ -167,7 +183,10 @@ SecAction \
 #
 # There are some rulesets that need to inspect the GEO data of the REMOTE_ADDR data.
 # 
-# You must first download the MaxMind GeoIP Lite City DB -
+# This product includes GeoLite data created by MaxMind, available from:
+# http://www.maxmind.com.
+#
+# You should periodically download the MaxMind GeoIP Lite City DB for updates -
 #
 #       http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz
 #
@@ -176,7 +195,7 @@ SecAction \
 # Ref: http://blog.spiderlabs.com/2010/10/detecting-malice-with-modsecurity-geolocation-data.html
 # Ref: http://blog.spiderlabs.com/2010/11/detecting-malice-with-modsecurity-ip-forensics.html
 #
-#SecGeoLookupDb /opt/modsecurity/lib/GeoLiteCity.dat
+SecGeoLookupDb util/geo-location/GeoLiteCity.dat
 
 
 #
@@ -197,16 +216,18 @@ SecAction \
 # - Pakistan
 # - Malaysia
 #
+# Additionally, based on WAF alert analysis reports, China is also included.
+#
 # If you have legitimate customers originating from one of these countries, you should
 # remove it from this list.
 #
-#SecAction \
+SecAction \
  "id:'900022',\
   phase:request,\
   nolog,\
   pass,\
   t:none,\
-  setvar:'tx.high_risk_country_codes=UA ID YU LT EG RO BG TR RU PK MY'"
+  setvar:'tx.high_risk_country_codes=UA ID YU LT EG RO BG TR RU PK MY CN'"
 
 #
 # -- [[ Project Honeypot HTTP Blacklist API Key ]] --------------------------------------------------------
