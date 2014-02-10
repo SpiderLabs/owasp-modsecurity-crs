@@ -13,6 +13,33 @@
                         </payloads>
                 </test>
         </rule>
+        <rule>
+                <id>950104</id>
+                <description>Path Traversal Attack (/../)</description>
+                <tag>LFI</tag>
+		<regex><![CDATA[]]></regex>
+		<regex_analysis></regex_analysis>
+                <test>
+                        <payloads>
+                                <payload><![CDATA[../../../etc/passwd]]></payload>
+                                <payload><![CDATA[..\..\..\boot.ini]]></payload>
+                        </payloads>
+                </test>
+        </rule>
+        <rule>
+                <id>950005</id>
+                <description>OS File Access Attempt</description>
+                <tag>LFI</tag>
+                <regex><![CDATA[]]></regex>
+                <regex_analysis></regex_analysis>
+                <test>
+                        <payloads>
+                                <payload><![CDATA[../../../etc/passwd]]></payload>
+                                <payload><![CDATA[..\..\..\boot.ini]]></payload>
+				<payload><![CDATA[../../opt/apache2/conf/apache.conf]]></payload>
+                        </payloads>
+                </test>
+        </rule>
 	<rule>
 		<id>973336</id>
 		<description>XSS Filter - Category 1: Script Tag Vector</description>
