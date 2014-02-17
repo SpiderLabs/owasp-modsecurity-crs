@@ -1,4 +1,3 @@
-
 MySqlClient.
 Server message
 SQL error
