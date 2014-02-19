@@ -354,6 +354,27 @@ SecAction \
 
 
 #
+# -- [[ XSS Settings ]] -----------------------------------------
+#
+# The purpose of these settings is to specify if your site allows
+# clients to submit ANY HTML at all.  If the answer is "No" then
+# use the default setting of "0".  With this setting, the XSS rules
+# can be more aggressive is blocking all inbound HTML data.
+#
+# If your site does allow clients to submit some HTML data, then
+# set this variable to "1".  This will disable some of the more
+# aggressive checks looking for all HTML data. 
+#
+SecAction \
+ "id:'900023',\
+  phase:request,\
+  nolog,\
+  pass,\
+  t:none,\
+  setvar:tx.allow_html=0"
+
+
+#
 # -- [[ Content Security Policy (CSP) Settings ]] -----------------------------------------
 #
 # The purpose of these settings is to send CSP response headers to
