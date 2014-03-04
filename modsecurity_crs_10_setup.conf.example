@@ -64,7 +64,7 @@ SecComponentSignature "OWASP_CRS/2.2.9"
 # Ref: https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#wiki-SecDefaultAction 
 #
 SecDefaultAction "phase:1,deny,log"
-
+SecDefaultAction "phase:2,deny,log"
 
 #
 # -- [[ Collaborative Detection Severity Levels ]] ----------------------------------------
