@@ -1,3 +1,13 @@
+<b>Warning</b>:
+No row with the given identifier
+open_basedir restriction in effect
+eval()'d code</b> on line <b>
+Cannot execute a blank command in
+Fatal error</b>:  preg_replace
+thrown in <b>
+#0 {main}
+Stack trace:
+</b> on line <b>
 () cannot be called statically
 - not a Class::Method
 ::__toString() must not throw an exception
