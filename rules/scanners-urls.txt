@@ -1,0 +1,15 @@
+/.adSensepostnottherenonobook
+/<invalid>hello.html
+/actSensepostnottherenonotive
+/acunetix-wvs-test-for-some-inexistent-file
+/antidisestablishmentarianism
+/appscan_fingerprint/mac_address
+/arachni-
+/cybercop
+/nessus_is_probing_you_
+/nessustest
+/netsparker-
+/rfiinc.txt
+/thereisnowaythat-you-canbethere
+/w3af/remotefileinclude.html
+appscan_fingerprint
