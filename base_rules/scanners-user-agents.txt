@@ -30,7 +30,7 @@ havij
 inspath [path disclosure finder
 internet ninja
 jaascois
-made by zmeu
+zmeu
 metis
 morfeus fucking scanner
 mozilla/4.0 (compatible)
