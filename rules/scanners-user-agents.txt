@@ -54,6 +54,7 @@ prog.customcrawler
 prowebwalker
 pymills-spider/
 python-httplib2
+qualys was
 s.t.a.l.k.e.r.
 security scan
 springenwerk
