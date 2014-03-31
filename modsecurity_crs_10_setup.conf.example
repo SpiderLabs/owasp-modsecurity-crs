@@ -149,8 +149,8 @@ SecAction \
   nolog,\
   pass,\
   t:none,\
-  setvar:tx.sql_injection_score_threshold=5,\
-  setvar:tx.xss_score_threshold=5,\
+  setvar:tx.sql_injection_score_threshold=15,\
+  setvar:tx.xss_score_threshold=15,\
   setvar:tx.rfi_score_threshold=5,\
   setvar:tx.lfi_score_threshold=5,\
   setvar:tx.command_injection_score_threshold=5,\
