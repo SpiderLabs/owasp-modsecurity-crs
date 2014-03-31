@@ -4,7 +4,7 @@
 * https://github.com/SpiderLabs/owasp-modsecurity-crs/issues
 
 
-== Version 3.0.0-dev - 01/17/2014 ==
+== Version 3.0.0 - 03/31/2014 ==
 
 Security Fixes:
 
@@ -15,6 +15,7 @@ Improvements:
 * Updated "severity" action to use words (CRITICAL, WARNING, etc...) vs. numbers (5, 4, etc..) 
 * Updated the XSS filters, included new ones and removed old/duplicate ones.
 * Added NoScript XSS Fitlers
+* Added new PHP RCE attack detection files
 
 Bug Fixes:
 
