@@ -364,13 +364,18 @@ SecAction \
 # set this variable to "1".  This will disable some of the more
 # aggressive checks looking for all HTML data. 
 #
-SecAction \
+# If you allow HTML on certain pages, edit the tx.allowed_html_urls
+# parameter data below.  When these URLs are accessed, the XSS checks
+# will be skipped.
+#
+#SecAction \
  "id:'900023',\
   phase:request,\
   nolog,\
   pass,\
   t:none,\
-  setvar:tx.allow_html=0"
+  setvar:tx.allow_html=1,\
+  setvar:'tx.allowed_html_urls=#/update.php# #/save_page.php#'"
 
 
 #
