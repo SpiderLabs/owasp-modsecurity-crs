@@ -4,7 +4,7 @@
 * https://github.com/SpiderLabs/owasp-modsecurity-crs/issues
 
 
-== Version 3.0.0 - 05/22/2014 ==
+== Version 3.0.0 - 06/05/2014 ==
 
 Security Fixes:
 
@@ -24,6 +24,9 @@ Bug Fixes:
   https://github.com/SpiderLabs/owasp-modsecurity-crs/issues/186
 * Fixed false positive on "xor" SQLi rule by adding word boundary checks
   https://github.com/SpiderLabs/owasp-modsecurity-crs/issues/185
+* Fixed variable exception for "pk_ref" cookie value
+  https://github.com/SpiderLabs/owasp-modsecurity-crs/issues/181
+
 
 == Version 2.2.9 - 09/30/2013 ==
 
