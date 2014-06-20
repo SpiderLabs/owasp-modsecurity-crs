@@ -49,6 +49,7 @@ def test_query_string(payload, target, rule_id)
 	url = URI.parse("http://#{target}/?test=#{payload}")
 	req = Net::HTTP::Get.new(url.request_uri)
         req.initialize_http_header({'User-Agent' => "ModSecurity-CRS-Regression-Testing"})
+        req.add_field("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8")
         resp = Net::HTTP.new(url.host, url.port).start do |http|
                 http.request(req)
         end
@@ -69,7 +70,8 @@ def test_post_payload(payload, target, rule_id)
 	http = Net::HTTP.new(url.host, url.port)
 	req = Net::HTTP::Post.new(url.request_uri)
 	req.initialize_http_header({'User-Agent' => "ModSecurity-CRS-Regression-Testing"})
-	req.set_form_data({"test" => "#{payload}"})
+        req.add_field("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8")
+        req.set_form_data({"test" => "#{payload}"})
 	resp = http.request(req)
 	header = resp['X-WAF-Events']
 	if header != nil
@@ -88,7 +90,8 @@ def test_request_header(payload, target, rule_id)
 	url = URI.parse("http://#{target}/")
 	req = Net::HTTP::Get.new(url.path)
 	req.initialize_http_header({'User-Agent' => "ModSecurity-CRS-Regression-Testing"})
-	req.add_field("MODSEC-TEST", "#{payload}")
+	req.add_field("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8")
+        req.add_field("MODSEC-TEST", "#{payload}")
 
 	resp = Net::HTTP.new(url.host, url.port).start do |http|
   		http.request(req)
@@ -111,6 +114,7 @@ def test_cookie(payload, target, rule_id)
         url = URI.parse("http://#{target}/")
         req = Net::HTTP::Get.new(url.request_uri)
         req.initialize_http_header({'User-Agent' => "ModSecurity-CRS-Regression-Testing"})
+        req.add_field("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8")
         req.add_field("Cookie", "test=#{payload}")
         resp = Net::HTTP.new(url.host, url.port).start do |http|
                 http.request(req)
