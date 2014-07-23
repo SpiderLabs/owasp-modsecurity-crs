@@ -78,6 +78,7 @@ webtrends security analyzer
 webvulnscan
 whatweb
 whcc/
+winhttp.winhttprequest.5
 wordpress hash grabber
 wordpress/4.01
 xmlrpc exploit
