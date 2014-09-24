@@ -158,6 +158,7 @@ SecAction \
   setvar:tx.php_injection_score_threshold=5,\
   setvar:tx.http_violation_score_threshold=5,\
   setvar:tx.trojan_score_threshold=5,\
+  setvar:tx.session_fixation_score_threshold=5,\
   setvar:tx.inbound_anomaly_score_threshold=5,\
   setvar:tx.outbound_anomaly_score_threshold=4"
 
