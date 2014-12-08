@@ -4,7 +4,7 @@
 .bash_logout
 .bashrc
 .cache/notify-osd.log
-.config/oDesk/oDesk Team.conf
+.config/odesk/odesk team.conf
 .cshrc
 .gitconfig
 .hplip/hplip.conf
@@ -27,7 +27,7 @@
 .subversion/servers
 .tconn/tconn.conf
 .vidalia/vidalia.conf
-.Xauthority
+.xauthority
 .zshrc
 /etc/php.ini
 /bin/php.ini
@@ -50,7 +50,7 @@
 /etc/php/apache/php.ini
 /etc/php/apache2/php.ini
 /web/conf/php.ini
-/usr/local/Zend/etc/php.ini
+/usr/local/zend/etc/php.ini
 /opt/xampp/etc/php.ini
 /var/local/www/conf/php.ini
 /etc/php/cgi/php.ini
@@ -62,13 +62,13 @@
 /php5/php.ini
 /php4/php.ini
 /php/php.ini
-/PHP/php.ini
-/WINDOWS/php.ini
-/WINNT/php.ini
+/php/php.ini
+/windows/php.ini
+/winnt/php.ini
 /apache/php/php.ini
 /xampp/apache/bin/php.ini
-/NetServer/bin/stable/apache/php.ini
-/Volumes/Macintosh_HD1/usr/local/php/lib/php.ini
+/netserver/bin/stable/apache/php.ini
+/volumes/macintosh_hd1/usr/local/php/lib/php.ini
 /etc/mono/1.0/machine.config
 /etc/mono/2.0/machine.config
 /etc/mono/2.0/web.config
@@ -103,37 +103,37 @@
 /var/mysql.log
 /var/mysql-bin.index
 /var/data/mysql-bin.index
-/Program Files/MySQL/MySQL Server 5.0/data/{HOST}.err
-/Program Files/MySQL/MySQL Server 5.0/data/mysql.log
-/Program Files/MySQL/MySQL Server 5.0/data/mysql.err
-/Program Files/MySQL/MySQL Server 5.0/data/mysql-bin.log
-/Program Files/MySQL/MySQL Server 5.0/data/mysql-bin.index
-/Program Files/MySQL/data/{HOST}.err
-/Program Files/MySQL/data/mysql.log
-/Program Files/MySQL/data/mysql.err
-/Program Files/MySQL/data/mysql-bin.log
-/Program Files/MySQL/data/mysql-bin.index
-/MySQL/data/{HOST}.err
-/MySQL/data/mysql.log
-/MySQL/data/mysql.err
-/MySQL/data/mysql-bin.log
-/MySQL/data/mysql-bin.index
+/program files/mysql/mysql server 5.0/data/{host}.err
+/program files/mysql/mysql server 5.0/data/mysql.log
+/program files/mysql/mysql server 5.0/data/mysql.err
+/program files/mysql/mysql server 5.0/data/mysql-bin.log
+/program files/mysql/mysql server 5.0/data/mysql-bin.index
+/program files/mysql/data/{host}.err
+/program files/mysql/data/mysql.log
+/program files/mysql/data/mysql.err
+/program files/mysql/data/mysql-bin.log
+/program files/mysql/data/mysql-bin.index
+/mysql/data/{host}.err
+/mysql/data/mysql.log
+/mysql/data/mysql.err
+/mysql/data/mysql-bin.log
+/mysql/data/mysql-bin.index
 /usr/local/mysql/data/mysql.log
 /usr/local/mysql/data/mysql.err
 /usr/local/mysql/data/mysql-bin.log
 /usr/local/mysql/data/mysql-slow.log
 /usr/local/mysql/data/mysqlderror.log
-/usr/local/mysql/data/{HOST}.err
+/usr/local/mysql/data/{host}.err
 /usr/local/mysql/data/mysql-bin.index
 /var/lib/mysql/my.cnf
 /etc/mysql/my.cnf
 /etc/my.cnf
-/Program Files/MySQL/MySQL Server 5.0/my.ini
-/Program Files/MySQL/MySQL Server 5.0/my.cnf
-/Program Files/MySQL/my.ini
-/Program Files/MySQL/my.cnf
-/MySQL/my.ini
-/MySQL/my.cnf
+/program files/mysql/mysql server 5.0/my.ini
+/program files/mysql/mysql server 5.0/my.cnf
+/program files/mysql/my.ini
+/program files/mysql/my.cnf
+/mysql/my.ini
+/mysql/my.cnf
 /mysql/bin/my.ini
 /var/postgresql/log/postgresql.log
 /var/log/postgresql/postgresql.log
@@ -154,7 +154,7 @@
 /usr/internet/pgsql/data/postmaster.log
 /usr/local/pgsql/data/postgresql.log
 /usr/local/pgsql/data/pg_log
-/PostgreSQL/log/pgadmin.log
+/postgresql/log/pgadmin.log
 /var/lib/pgsql/data/postgresql.conf
 /var/postgresql/db/postgresql.conf
 /var/nm2/postgresql.conf
@@ -166,21 +166,21 @@
 /etc/postgresql/postgresql.conf
 /etc/postgresql/pg_hba.conf
 /home/postgres/data/postgresql.conf
-/home/postgres/data/PG_VERSION
+/home/postgres/data/pg_version
 /home/postgres/data/pg_ident.conf
 /home/postgres/data/pg_hba.conf
-/Program Files/PostgreSQL/8.3/data/pg_hba.conf
-/Program Files/PostgreSQL/8.3/data/pg_ident.conf
-/Program Files/PostgreSQL/8.3/data/postgresql.conf
-/Program Files/PostgreSQL/8.4/data/pg_hba.conf
-/Program Files/PostgreSQL/8.4/data/pg_ident.conf
-/Program Files/PostgreSQL/8.4/data/postgresql.conf
-/Program Files/PostgreSQL/9.0/data/pg_hba.conf
-/Program Files/PostgreSQL/9.0/data/pg_ident.conf
-/Program Files/PostgreSQL/9.0/data/postgresql.conf
-/Program Files/PostgreSQL/9.1/data/pg_hba.conf
-/Program Files/PostgreSQL/9.1/data/pg_ident.conf
-/Program Files/PostgreSQL/9.1/data/postgresql.conf
+/program files/postgresql/8.3/data/pg_hba.conf
+/program files/postgresql/8.3/data/pg_ident.conf
+/program files/postgresql/8.3/data/postgresql.conf
+/program files/postgresql/8.4/data/pg_hba.conf
+/program files/postgresql/8.4/data/pg_ident.conf
+/program files/postgresql/8.4/data/postgresql.conf
+/program files/postgresql/9.0/data/pg_hba.conf
+/program files/postgresql/9.0/data/pg_ident.conf
+/program files/postgresql/9.0/data/postgresql.conf
+/program files/postgresql/9.1/data/pg_hba.conf
+/program files/postgresql/9.1/data/pg_ident.conf
+/program files/postgresql/9.1/data/postgresql.conf
 /wamp/logs/access.log
 /wamp/logs/apache_error.log
 /wamp/logs/genquery.log
@@ -207,13 +207,13 @@
 /xampp/apache/logs/error.log
 /xampp/mysql/data/mysql-bin.index
 /xampp/mysql/data/mysql.err
-/xampp/mysql/data/{HOST}.err
+/xampp/mysql/data/{host}.err
 /xampp/sendmail/sendmail.log
 /xampp/apache/conf/httpd.conf
-/xampp/FileZillaFTP/FileZilla Server.xml
-/xampp/MercuryMail/mercury.ini
+/xampp/filezillaftp/filezilla server.xml
+/xampp/mercurymail/mercury.ini
 /xampp/php/php.ini
-/xampp/phpMyAdmin/config.inc.php
+/xampp/phpmyadmin/config.inc.php
 /xampp/sendmail/sendmail.ini
 /xampp/webalizer/webalizer.conf
 /opt/lampp/etc/httpd.conf
@@ -226,12 +226,12 @@
 /logs/security_log
 /usr/local/apache/conf/modsec.conf
 /usr/local/apache2/conf/modsec.conf
-/WINNT/system32/logfiles/MSFTPSVC
-/WINNT/system32/logfiles/MSFTPSVC1
-/WINNT/system32/logfiles/MSFTPSVC2
-/WINDOWS/system32/logfiles/MSFTPSVC
-/WINDOWS/system32/logfiles/MSFTPSVC1
-/WINDOWS/system32/logfiles/MSFTPSVC2
+/winnt/system32/logfiles/msftpsvc
+/winnt/system32/logfiles/msftpsvc1
+/winnt/system32/logfiles/msftpsvc2
+/windows/system32/logfiles/msftpsvc
+/windows/system32/logfiles/msftpsvc1
+/windows/system32/logfiles/msftpsvc2
 /etc/logrotate.d/proftpd
 /www/logs/proftpd.system.log
 /var/log/proftpd
@@ -248,7 +248,7 @@
 /etc/logrotate.d/vsftpd.log
 /etc/vsftpd/vsftpd.conf
 /etc/vsftpd.conf
-/etc/chrootUsers
+/etc/chrootusers
 /var/log/xferlog
 /var/adm/log/xferlog
 /etc/wu-ftpd/ftpaccess
@@ -306,21 +306,21 @@
 /var/log/exim/paniclog
 /var/log/exim/rejectlog
 /var/log/exim_rejectlog
-/WINNT/system32/logfiles/SMTPSVC
-/WINNT/system32/logfiles/SMTPSVC1
-/WINNT/system32/logfiles/SMTPSVC2
-/WINNT/system32/logfiles/SMTPSVC3
-/WINNT/system32/logfiles/SMTPSVC4
-/WINNT/system32/logfiles/SMTPSVC5
-/WINDOWS/system32/logfiles/SMTPSVC
-/WINDOWS/system32/logfiles/SMTPSVC1
-/WINDOWS/system32/logfiles/SMTPSVC2
-/WINDOWS/system32/logfiles/SMTPSVC3
-/WINDOWS/system32/logfiles/SMTPSVC4
-/WINDOWS/system32/logfiles/SMTPSVC5
+/winnt/system32/logfiles/smtpsvc
+/winnt/system32/logfiles/smtpsvc1
+/winnt/system32/logfiles/smtpsvc2
+/winnt/system32/logfiles/smtpsvc3
+/winnt/system32/logfiles/smtpsvc4
+/winnt/system32/logfiles/smtpsvc5
+/windows/system32/logfiles/smtpsvc
+/windows/system32/logfiles/smtpsvc1
+/windows/system32/logfiles/smtpsvc2
+/windows/system32/logfiles/smtpsvc3
+/windows/system32/logfiles/smtpsvc4
+/windows/system32/logfiles/smtpsvc5
 /etc/osxhttpd/osxhttpd.conf
-/System/Library/WebObjects/Adaptors/Apache2.2/apache.conf
-/Library/WebServer/Documents/.htaccess
+/system/library/webobjects/adaptors/apache2.2/apache.conf
+/library/webserver/documents/.htaccess
 /etc/apache2/sites-available/default
 /etc/apache2/sites-available/default-ssl
 /etc/apache2/sites-enabled/000-default
@@ -373,25 +373,25 @@
 /etc/rc.conf
 /www/logs/freebsddiary-error.log
 /www/logs/freebsddiary-access_log
-/Library/WebServer/Documents/index.html
-/Library/WebServer/Documents/index.htm
-/Library/WebServer/Documents/default.html
-/Library/WebServer/Documents/default.htm
-/Library/WebServer/Documents/index.php
-/Library/WebServer/Documents/default.php
+/library/webserver/documents/index.html
+/library/webserver/documents/index.htm
+/library/webserver/documents/default.html
+/library/webserver/documents/default.htm
+/library/webserver/documents/index.php
+/library/webserver/documents/default.php
 /var/log/webmin/miniserv.log
 /usr/local/etc/webmin/miniserv.conf
 /etc/webmin/miniserv.conf
 /usr/local/etc/webmin/miniserv.users
 /etc/webmin/miniserv.users
-/WINNT/system32/logfiles/W3SVC/inetsvn1.log
-/WINNT/system32/logfiles/W3SVC1/inetsvn1.log
-/WINNT/system32/logfiles/W3SVC2/inetsvn1.log
-/WINNT/system32/logfiles/W3SVC3/inetsvn1.log
-/WINDOWS/system32/logfiles/W3SVC/inetsvn1.log
-/WINDOWS/system32/logfiles/W3SVC1/inetsvn1.log
-/WINDOWS/system32/logfiles/W3SVC2/inetsvn1.log
-/WINDOWS/system32/logfiles/W3SVC3/inetsvn1.log
+/winnt/system32/logfiles/w3svc/inetsvn1.log
+/winnt/system32/logfiles/w3svc1/inetsvn1.log
+/winnt/system32/logfiles/w3svc2/inetsvn1.log
+/winnt/system32/logfiles/w3svc3/inetsvn1.log
+/windows/system32/logfiles/w3svc/inetsvn1.log
+/windows/system32/logfiles/w3svc1/inetsvn1.log
+/windows/system32/logfiles/w3svc2/inetsvn1.log
+/windows/system32/logfiles/w3svc3/inetsvn1.log
 /var/log/httpd/access_log
 /var/log/httpd/error_log
 /apache/logs/error.log
@@ -438,10 +438,10 @@
 /opt/lampp/logs/error.log
 /opt/xampp/logs/access.log
 /opt/xampp/logs/error.log
-/Program Files/Apache Group/Apache/logs/access.log
-/Program Files/Apache Group/Apache/logs/error.log
-/Program Files/Apache Software Foundation/Apache2.2/logs/error.log
-/Program Files/Apache Software Foundation/Apache2.2/logs/access.log
+/program files/apache group/apache/logs/access.log
+/program files/apache group/apache/logs/error.log
+/program files/apache software foundation/apache2.2/logs/error.log
+/program files/apache software foundation/apache2.2/logs/access.log
 /opt/apache/apache.conf
 /opt/apache/conf/apache.conf
 /opt/apache2/apache.conf
@@ -532,27 +532,27 @@
 /etc/apache2/mods-enabled/negotiation.conf
 /etc/apache2/mods-enabled/php5.conf
 /etc/apache2/mods-enabled/status.conf
-/Program Files/Apache Group/Apache/conf/httpd.conf
-/Program Files/Apache Group/Apache2/conf/httpd.conf
-/Program Files/xampp/apache/conf/apache.conf
-/Program Files/xampp/apache/conf/apache2.conf
-/Program Files/xampp/apache/conf/httpd.conf
-/Program Files/Apache Group/Apache/apache.conf
-/Program Files/Apache Group/Apache/conf/apache.conf
-/Program Files/Apache Group/Apache2/conf/apache.conf
-/Program Files/Apache Group/Apache/apache2.conf
-/Program Files/Apache Group/Apache/conf/apache2.conf
-/Program Files/Apache Group/Apache2/conf/apache2.conf
-/Program Files/Apache Software Foundation/Apache2.2/conf/httpd.conf
-/Volumes/Macintosh_HD1/opt/httpd/conf/httpd.conf
-/Volumes/Macintosh_HD1/opt/apache/conf/httpd.conf
-/Volumes/Macintosh_HD1/opt/apache2/conf/httpd.conf
-/Volumes/Macintosh_HD1/usr/local/php/httpd.conf.php
-/Volumes/Macintosh_HD1/usr/local/php4/httpd.conf.php
-/Volumes/Macintosh_HD1/usr/local/php5/httpd.conf.php
-/Volumes/webBackup/opt/apache2/conf/httpd.conf
-/Volumes/webBackup/private/etc/httpd/httpd.conf
-/Volumes/webBackup/private/etc/httpd/httpd.conf.default
+/program files/apache group/apache/conf/httpd.conf
+/program files/apache group/apache2/conf/httpd.conf
+/program files/xampp/apache/conf/apache.conf
+/program files/xampp/apache/conf/apache2.conf
+/program files/xampp/apache/conf/httpd.conf
+/program files/apache group/apache/apache.conf
+/program files/apache group/apache/conf/apache.conf
+/program files/apache group/apache2/conf/apache.conf
+/program files/apache group/apache/apache2.conf
+/program files/apache group/apache/conf/apache2.conf
+/program files/apache group/apache2/conf/apache2.conf
+/program files/apache software foundation/apache2.2/conf/httpd.conf
+/volumes/macintosh_hd1/opt/httpd/conf/httpd.conf
+/volumes/macintosh_hd1/opt/apache/conf/httpd.conf
+/volumes/macintosh_hd1/opt/apache2/conf/httpd.conf
+/volumes/macintosh_hd1/usr/local/php/httpd.conf.php
+/volumes/macintosh_hd1/usr/local/php4/httpd.conf.php
+/volumes/macintosh_hd1/usr/local/php5/httpd.conf.php
+/volumes/webbackup/opt/apache2/conf/httpd.conf
+/volumes/webbackup/private/etc/httpd/httpd.conf
+/volumes/webbackup/private/etc/httpd/httpd.conf.default
 /usr/local/etc/apache/vhosts.conf
 /usr/local/jakarta/tomcat/conf/jakarta.conf
 /usr/local/jakarta/tomcat/conf/server.xml
@@ -583,72 +583,72 @@
 /usr/local/apache/logs/mod_jk.log
 /usr/local/jakarta/tomcat/logs/mod_jk.log
 /usr/local/jakarta/dist/tomcat/logs/mod_jk.log
-/opt/[JBOSS]/server/default/conf/jboss-minimal.xml
-/opt/[JBOSS]/server/default/conf/jboss-service.xml
-/opt/[JBOSS]/server/default/conf/jndi.properties
-/opt/[JBOSS]/server/default/conf/log4j.xml
-/opt/[JBOSS]/server/default/conf/login-config.xml
-/opt/[JBOSS]/server/default/conf/standardjaws.xml
-/opt/[JBOSS]/server/default/conf/standardjboss.xml
-/opt/[JBOSS]/server/default/conf/server.log.properties
-/opt/[JBOSS]/server/default/deploy/jboss-logging.xml
-/usr/local/[JBOSS]/server/default/conf/jboss-minimal.xml
-/usr/local/[JBOSS]/server/default/conf/jboss-service.xml
-/usr/local/[JBOSS]/server/default/conf/jndi.properties
-/usr/local/[JBOSS]/server/default/conf/log4j.xml
-/usr/local/[JBOSS]/server/default/conf/login-config.xml
-/usr/local/[JBOSS]/server/default/conf/standardjaws.xml
-/usr/local/[JBOSS]/server/default/conf/standardjboss.xml
-/usr/local/[JBOSS]/server/default/conf/server.log.properties
-/usr/local/[JBOSS]/server/default/deploy/jboss-logging.xml
-/private/tmp/[JBOSS]/server/default/conf/jboss-minimal.xml
-/private/tmp/[JBOSS]/server/default/conf/jboss-service.xml
-/private/tmp/[JBOSS]/server/default/conf/jndi.properties
-/private/tmp/[JBOSS]/server/default/conf/log4j.xml
-/private/tmp/[JBOSS]/server/default/conf/login-config.xml
-/private/tmp/[JBOSS]/server/default/conf/standardjaws.xml
-/private/tmp/[JBOSS]/server/default/conf/standardjboss.xml
-/private/tmp/[JBOSS]/server/default/conf/server.log.properties
-/private/tmp/[JBOSS]/server/default/deploy/jboss-logging.xml
-/tmp/[JBOSS]/server/default/conf/jboss-minimal.xml
-/tmp/[JBOSS]/server/default/conf/jboss-service.xml
-/tmp/[JBOSS]/server/default/conf/jndi.properties
-/tmp/[JBOSS]/server/default/conf/log4j.xml
-/tmp/[JBOSS]/server/default/conf/login-config.xml
-/tmp/[JBOSS]/server/default/conf/standardjaws.xml
-/tmp/[JBOSS]/server/default/conf/standardjboss.xml
-/tmp/[JBOSS]/server/default/conf/server.log.properties
-/tmp/[JBOSS]/server/default/deploy/jboss-logging.xml
-/Program Files/[JBOSS]/server/default/conf/jboss-minimal.xml
-/Program Files/[JBOSS]/server/default/conf/jboss-service.xml
-/Program Files/[JBOSS]/server/default/conf/jndi.properties
-/Program Files/[JBOSS]/server/default/conf/log4j.xml
-/Program Files/[JBOSS]/server/default/conf/login-config.xml
-/Program Files/[JBOSS]/server/default/conf/standardjaws.xml
-/Program Files/[JBOSS]/server/default/conf/standardjboss.xml
-/Program Files/[JBOSS]/server/default/conf/server.log.properties
-/Program Files/[JBOSS]/server/default/deploy/jboss-logging.xml
-/[JBOSS]/server/default/conf/jboss-minimal.xml
-/[JBOSS]/server/default/conf/jboss-service.xml
-/[JBOSS]/server/default/conf/jndi.properties
-/[JBOSS]/server/default/conf/log4j.xml
-/[JBOSS]/server/default/conf/login-config.xml
-/[JBOSS]/server/default/conf/standardjaws.xml
-/[JBOSS]/server/default/conf/standardjboss.xml
-/[JBOSS]/server/default/conf/server.log.properties
-/[JBOSS]/server/default/deploy/jboss-logging.xml
-/opt/[JBOSS]/server/default/log/server.log
-/opt/[JBOSS]/server/default/log/boot.log
-/usr/local/[JBOSS]/server/default/log/server.log
-/usr/local/[JBOSS]/server/default/log/boot.log
-/private/tmp/[JBOSS]/server/default/log/server.log
-/private/tmp/[JBOSS]/server/default/log/boot.log
-/tmp/[JBOSS]/server/default/log/server.log
-/tmp/[JBOSS]/server/default/log/boot.log
-/Program Files/[JBOSS]/server/default/log/server.log
-/Program Files/[JBOSS]/server/default/log/boot.log
-/[JBOSS]/server/default/log/server.log
-/[JBOSS]/server/default/log/boot.log
+/opt/[jboss]/server/default/conf/jboss-minimal.xml
+/opt/[jboss]/server/default/conf/jboss-service.xml
+/opt/[jboss]/server/default/conf/jndi.properties
+/opt/[jboss]/server/default/conf/log4j.xml
+/opt/[jboss]/server/default/conf/login-config.xml
+/opt/[jboss]/server/default/conf/standardjaws.xml
+/opt/[jboss]/server/default/conf/standardjboss.xml
+/opt/[jboss]/server/default/conf/server.log.properties
+/opt/[jboss]/server/default/deploy/jboss-logging.xml
+/usr/local/[jboss]/server/default/conf/jboss-minimal.xml
+/usr/local/[jboss]/server/default/conf/jboss-service.xml
+/usr/local/[jboss]/server/default/conf/jndi.properties
+/usr/local/[jboss]/server/default/conf/log4j.xml
+/usr/local/[jboss]/server/default/conf/login-config.xml
+/usr/local/[jboss]/server/default/conf/standardjaws.xml
+/usr/local/[jboss]/server/default/conf/standardjboss.xml
+/usr/local/[jboss]/server/default/conf/server.log.properties
+/usr/local/[jboss]/server/default/deploy/jboss-logging.xml
+/private/tmp/[jboss]/server/default/conf/jboss-minimal.xml
+/private/tmp/[jboss]/server/default/conf/jboss-service.xml
+/private/tmp/[jboss]/server/default/conf/jndi.properties
+/private/tmp/[jboss]/server/default/conf/log4j.xml
+/private/tmp/[jboss]/server/default/conf/login-config.xml
+/private/tmp/[jboss]/server/default/conf/standardjaws.xml
+/private/tmp/[jboss]/server/default/conf/standardjboss.xml
+/private/tmp/[jboss]/server/default/conf/server.log.properties
+/private/tmp/[jboss]/server/default/deploy/jboss-logging.xml
+/tmp/[jboss]/server/default/conf/jboss-minimal.xml
+/tmp/[jboss]/server/default/conf/jboss-service.xml
+/tmp/[jboss]/server/default/conf/jndi.properties
+/tmp/[jboss]/server/default/conf/log4j.xml
+/tmp/[jboss]/server/default/conf/login-config.xml
+/tmp/[jboss]/server/default/conf/standardjaws.xml
+/tmp/[jboss]/server/default/conf/standardjboss.xml
+/tmp/[jboss]/server/default/conf/server.log.properties
+/tmp/[jboss]/server/default/deploy/jboss-logging.xml
+/program files/[jboss]/server/default/conf/jboss-minimal.xml
+/program files/[jboss]/server/default/conf/jboss-service.xml
+/program files/[jboss]/server/default/conf/jndi.properties
+/program files/[jboss]/server/default/conf/log4j.xml
+/program files/[jboss]/server/default/conf/login-config.xml
+/program files/[jboss]/server/default/conf/standardjaws.xml
+/program files/[jboss]/server/default/conf/standardjboss.xml
+/program files/[jboss]/server/default/conf/server.log.properties
+/program files/[jboss]/server/default/deploy/jboss-logging.xml
+/[jboss]/server/default/conf/jboss-minimal.xml
+/[jboss]/server/default/conf/jboss-service.xml
+/[jboss]/server/default/conf/jndi.properties
+/[jboss]/server/default/conf/log4j.xml
+/[jboss]/server/default/conf/login-config.xml
+/[jboss]/server/default/conf/standardjaws.xml
+/[jboss]/server/default/conf/standardjboss.xml
+/[jboss]/server/default/conf/server.log.properties
+/[jboss]/server/default/deploy/jboss-logging.xml
+/opt/[jboss]/server/default/log/server.log
+/opt/[jboss]/server/default/log/boot.log
+/usr/local/[jboss]/server/default/log/server.log
+/usr/local/[jboss]/server/default/log/boot.log
+/private/tmp/[jboss]/server/default/log/server.log
+/private/tmp/[jboss]/server/default/log/boot.log
+/tmp/[jboss]/server/default/log/server.log
+/tmp/[jboss]/server/default/log/boot.log
+/program files/[jboss]/server/default/log/server.log
+/program files/[jboss]/server/default/log/boot.log
+/[jboss]/server/default/log/server.log
+/[jboss]/server/default/log/boot.log
 /var/log/lighttpd.error.log
 /var/log/lighttpd.access.log
 /var/lighttpd.log
@@ -664,8 +664,8 @@
 /usr/local/apache/logs/lighttpd.log
 /usr/local/lighttpd/log/lighttpd.error.log
 /usr/local/lighttpd/log/access.log
-/var/log/lighttpd/{DOMAIN}/access.log
-/var/log/lighttpd/{DOMAIN}/error.log
+/var/log/lighttpd/{domain}/access.log
+/var/log/lighttpd/{domain}/error.log
 /usr/home/user/var/log/lighttpd.error.log
 /usr/home/user/var/log/apache.log
 /home/user/lighttpd/lighttpd.conf
@@ -717,7 +717,7 @@
 /etc/dhcp3/dhclient.conf
 /etc/dhcp3/dhcpd.conf
 /etc/dhcp/dhclient.conf
-/Program Files/Vidalia Bundle/Polipo/polipo.conf
+/program files/vidalia bundle/polipo/polipo.conf
 /etc/tor/tor-tsocks.conf
 /etc/stunnel/stunnel.conf
 /etc/tsocks.conf
@@ -737,17 +737,17 @@
 /etc/ipfw.rules
 /etc/ipfw.conf
 /etc/firewall.rules
-/WINNT/system32/logfiles/Firewall/pfirewall.log
-/WINNT/system32/logfiles/Firewall/pfirewall.log.old
-/WINDOWS/system32/logfiles/Firewall/pfirewall.log
-/WINDOWS/system32/logfiles/Firewall/pfirewall.log.old
+/winnt/system32/logfiles/firewall/pfirewall.log
+/winnt/system32/logfiles/firewall/pfirewall.log.old
+/windows/system32/logfiles/firewall/pfirewall.log
+/windows/system32/logfiles/firewall/pfirewall.log.old
 /etc/clamav/clamd.conf
 /etc/clamav/freshclam.conf
-/etc/X11/xorg.conf
-/etc/X11/xorg.conf-vesa
-/etc/X11/xorg.conf-vmware
-/etc/X11/xorg.conf.BeforeVMwareToolsInstall
-/etc/X11/xorg.conf.orig
+/etc/x11/xorg.conf
+/etc/x11/xorg.conf-vesa
+/etc/x11/xorg.conf-vmware
+/etc/x11/xorg.conf.beforevmwaretoolsinstall
+/etc/x11/xorg.conf.orig
 /etc/bluetooth/input.conf
 /etc/bluetooth/main.conf
 /etc/bluetooth/network.conf
@@ -785,7 +785,7 @@
 /root/.bash_config
 /root/.bashrc
 /etc/bash.bashrc
-/var/adm/SYSLOG
+/var/adm/syslog
 /var/adm/sulog
 /var/adm/utmp
 /var/adm/utmpx
@@ -799,7 +799,7 @@
 /var/adm/pacct
 /var/adm/dtmp
 /var/adm/acct/sum/loginlog
-/var/adm/X0msgs
+/var/adm/x0msgs
 /var/adm/crash/vmcore
 /var/adm/crash/unix
 /etc/newsyslog.conf
@@ -816,10 +816,10 @@
 /var/adm/aculog
 /var/adm/vold.log
 /var/adm/log/asppp.log
-/var/log/POPlog
+/var/log/poplog
 /var/log/authlog
 /var/lp/logs/lpsched
-/var/lp/logs/lpNet
+/var/lp/logs/lpnet
 /var/lp/logs/requests
 /var/cron/log
 /var/saf/_log
@@ -837,7 +837,7 @@
 /var/log/user.log.1
 /var/log/auth.log
 /var/log/pm-powersave.log
-/var/log/Xorg.0.log
+/var/log/xorg.0.log
 /var/log/daemon.log
 /var/log/daemon.log.1
 /var/log/kern.log
@@ -939,7 +939,7 @@
 /etc/fedora-release
 /etc/mandrake-release
 /etc/slackware-release
-/etc/SUSE-release
+/etc/suse-release
 /etc/security/group
 /etc/security/passwd
 /etc/security/user
@@ -949,7 +949,7 @@
 /boot/grub/grub.cfg
 /boot/grub/menu.lst
 /root/.ksh_history
-/root/.Xauthority
+/root/.xauthority
 /usr/lib/security/mkuser.default
 /var/log/squirrelmail.log
 /var/log/apache2/squirrelmail.log
@@ -973,24 +973,24 @@
 /var/www/html/squirrelmail/config/config.php
 /var/www/html/squirrelmail-1.2.9/config/config.php
 /usr/share/squirrelmail/plugins/squirrel_logger/setup.php
-/usr/local/squirrelmail/www/README
-/WINDOWS/system32/drivers/etc/hosts
-/WINDOWS/system32/drivers/etc/lmhosts.sam
-/WINDOWS/system32/drivers/etc/networks
-/WINDOWS/system32/drivers/etc/protocol
-/WINDOWS/system32/drivers/etc/services
+/usr/local/squirrelmail/www/readme
+/windows/system32/drivers/etc/hosts
+/windows/system32/drivers/etc/lmhosts.sam
+/windows/system32/drivers/etc/networks
+/windows/system32/drivers/etc/protocol
+/windows/system32/drivers/etc/services
 /boot.ini
-/WINDOWS/Debug/NetSetup.LOG
-/WINDOWS/comsetup.log
-/WINDOWS/repair/setup.log
-/WINDOWS/setupact.log
-/WINDOWS/setupapi.log
-/WINDOWS/setuperr.log
-/WINDOWS/updspapi.log
-/WINDOWS/wmsetup.log
-/WINDOWS/WindowsUpdate.log
-/WINDOWS/ODBC.INI
-/usr/local/psa/admin/htdocs/domains/databases/phpMyAdmin/libraries/config.default.php
+/windows/debug/netsetup.log
+/windows/comsetup.log
+/windows/repair/setup.log
+/windows/setupact.log
+/windows/setupapi.log
+/windows/setuperr.log
+/windows/updspapi.log
+/windows/wmsetup.log
+/windows/windowsupdate.log
+/windows/odbc.ini
+/usr/local/psa/admin/htdocs/domains/databases/phpmyadmin/libraries/config.default.php
 /etc/apache2/conf.d/phpmyadmin.conf
 /etc/phpmyadmin/config.inc.php
 /etc/openldap/ldap.conf
@@ -999,13 +999,13 @@
 /etc/cups/cupsd.conf.default
 /etc/cups/pdftops.conf
 /etc/cups/printers.conf
-/WINDOWS/system32/Macromed/Flash/FlashInstall.log
-/WINDOWS/system32/Macromed/Flash/install.log
+/windows/system32/macromed/flash/flashinstall.log
+/windows/system32/macromed/flash/install.log
 /etc/cvs-cron.conf
 /etc/cvs-pserver.conf
 /etc/subversion/config
 /etc/modprobe.d/vmware-tools.conf
-/etc/updatedb.conf.BeforeVMwareToolsInstall
+/etc/updatedb.conf.beforevmwaretoolsinstall
 /etc/vmware-tools/config
 /etc/vmware-tools/tpvmlp.conf
 /etc/vmware-tools/vmware-tools-libraries.conf
