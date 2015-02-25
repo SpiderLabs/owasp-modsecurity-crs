@@ -91,7 +91,6 @@ Encoding: External reference
 Encoding: Internal Error
 Encoding: Invalid timestamp 
 Encoding: SoapVar has no 'enc_type' property
-Encoding: SoapVar has no 'enc_type' property
 Encoding: Unresolved reference 
 Encoding: Violation of encoding rules
 Encoding: Violation of id and ref information items 
@@ -114,8 +113,7 @@ Illegal offset type
 Input string is too long
 Invalid RelaxNG Validation Context
 Invalid Schema Validation Context
-Invalid opcode 
-Invalid opcode 
+Invalid opcode
 Invalid serialization data for DatePeriod object
 Invalid serialization data for DateTime object
 Invalid serialization data for DateTimeImmutable object

@@ -67,8 +67,6 @@ dl
 dotnet_load
 eio_busy
 eio_chmod
-eio_chmod
-eio_chown
 eio_chown
 eio_close
 eio_custom
@@ -87,7 +85,6 @@ eio_unlink
 eio_write
 ereg
 eregi
-error_log
 error_log
 eval
 event_buffer_new
@@ -171,18 +168,15 @@ ini_set
 iterator_apply
 ldap_add
 ldap_connect
-ldap_connect
 ldap_delete
 ldap_list
 ldap_read
 ldap_search
 loadXML
 mail
-mail
 mb_ereg_replace
 mb_eregi_replace
 mb_parse_str
-mb_send_mail
 mb_send_mail
 mcrypt_cbc
 mcrypt_cfb
@@ -199,7 +193,6 @@ mdecrypt_generic
 mkdir
 move_uploaded_file
 msession_connect
-msession_connect
 msql
 msql_connect
 msql_db_query
@@ -209,7 +202,6 @@ mssql_connect
 mssql_execute
 mssql_pconnect
 mssql_query
-mt_srand
 mt_srand
 mysql_connect
 mysql_db_query
@@ -289,7 +281,6 @@ runkit_method_add
 runkit_method_copy
 runkit_method_redefine
 runkit_method_rename
-runkit_method_rename
 scandir
 session_destroy
 session_register
@@ -297,7 +288,6 @@ session_set_save_handler
 session_start
 set_error_handler
 set_exception_handler
-set_include_path
 set_include_path
 sha1
 shell_exec
@@ -317,8 +307,6 @@ sqlite_create_aggregate
 sqlite_create_function
 sqlite_exec
 sqlite_open
-sqlite_open
-sqlite_popen
 sqlite_popen
 sqlite_query
 sqlite_single_query
@@ -345,20 +333,12 @@ virtual
 w32api_invoke_function
 w32api_register_function
 xdiff_file_bdiff
-xdiff_file_bdiff
-xdiff_file_bpatch
 xdiff_file_bpatch
 xdiff_file_diff
-xdiff_file_diff
-xdiff_file_diff_binary
 xdiff_file_diff_binary
 xdiff_file_merge3
-xdiff_file_merge3
-xdiff_file_patch
 xdiff_file_patch
 xdiff_file_patch_binary
-xdiff_file_patch_binary
-xdiff_file_rabdiff
 xdiff_file_rabdiff
 xpath_eval
 xpath_eval_expression
@@ -367,7 +347,6 @@ xptr_eval
 xptr_new_context
 yaml_emit_file
 yaml_parse
-yaml_parse_file
 yaml_parse_file
 yaml_parse_url
 zip_open
