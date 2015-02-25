@@ -62,7 +62,6 @@
 /php5/php.ini
 /php4/php.ini
 /php/php.ini
-/php/php.ini
 /windows/php.ini
 /winnt/php.ini
 /apache/php/php.ini
@@ -842,7 +841,6 @@
 /var/log/daemon.log.1
 /var/log/kern.log
 /var/log/kern.log.1
-/var/log/mail.log
 /var/log/mail.err
 /var/log/mail.info
 /var/log/mail.warn

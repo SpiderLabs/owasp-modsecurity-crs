@@ -49,7 +49,6 @@ enable_dl
 engine
 error_append_string
 error_log
-error_log
 error_prepend_string
 error_reporting
 exif.decode_jis_intel
@@ -59,7 +58,6 @@ exif.decode_unicode_motorola
 exif.encode_jis
 exif.encode_unicode
 expose_php
-extension_dir
 extension_dir
 fastcgi.impersonate
 fastcgi.logging
@@ -92,7 +90,6 @@ ignore_repeated_errors
 ignore_repeated_source
 ignore_user_abort
 implicit_flush
-include_path
 include_path
 intl.default_locale
 intl.error_level
@@ -240,8 +237,6 @@ session.name
 session.referer_check
 session.save_handler
 session.save_path
-session.save_path
-session.save_path
 session.serialize_handler
 session.use_cookies
 session.use_only_cookies
@@ -274,7 +269,6 @@ url_rewriter.tags
 user_agent
 user_dir
 user_ini.cache_ttl
-user_ini.filename
 user_ini.filename
 variables_order
 xmlrpc_error_number
