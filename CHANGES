@@ -4,7 +4,7 @@
 * https://github.com/SpiderLabs/owasp-modsecurity-crs/issues
 
 
-== Version 3.0.0 - 06/20/2014 ==
+== Version 3.0.0 - 03/30/2015 ==
 
 Security Fixes:
 
@@ -21,6 +21,7 @@ Improvements:
 * Added "Accept" request headers to regression testing Ruby scripts
 
 Bug Fixes:
+* Updated actions from "block" to "pass" for missing Host, User-Agent, Accept headers
 * Fixed false positive on "style" XSS rule by adding word boundary checks
   https://github.com/SpiderLabs/owasp-modsecurity-crs/issues/186
 * Fixed false positive on "xor" SQLi rule by adding word boundary checks
