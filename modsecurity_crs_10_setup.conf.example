@@ -182,6 +182,42 @@ SecAction \
   t:none,\
   setvar:tx.anomaly_score_blocking=on"
 
+#
+# -- [[ System Description Initalization ]] --
+#
+# These variables are used to enable and disable specific rules based on you
+# configuration.
+#
+# Set each setting to reflect your perticular environment. By default all
+# configurations are enabled.
+# Avoid changing sql_error_match it is used for shortcutting rules for
+# performance reasons.
+
+SecAction \
+  "id:'900024', \
+  phase:1, \
+  t:none, \
+  setvar:tx.sql_error_match=0, \
+  setvar:tx.msaccess=1, \
+  setvar:tx.db2=1, \
+  setvar:tx.emc=1, \
+  setvar:tx.firebird=1, \
+  setvar:tx.frontbase=1, \
+  setvar:tx.hsqldb=1, \
+  setvar:tx.informix=1, \
+  setvar:tx.ingres=1, \
+  setvar:tx.interbase=1, \
+  setvar:tx.maxdb=1, \
+  setvar:tx.mssql=1, \
+  setvar:tx.mysql=1, \
+  setvar:tx.oracle=1, \
+  setvar:tx.pgsql=1, \
+  setvar:tx.sqlite=1, \
+  setvar:tx.sybase=1, \
+  nolog, \
+  pass"
+
+
 
 #
 # -- [[ GeoIP Database ]] -----------------------------------------------------------------
