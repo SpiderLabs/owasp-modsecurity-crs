@@ -4,6 +4,12 @@
 * https://github.com/SpiderLabs/owasp-modsecurity-crs/issues
 
 
+== Changes from 04/08/2015 ==
+* Ryan Barnett pushed commit 222c64e: Merge pull request #224 from csanders-git/v3.0.0-dev
+
+== Changes from 04/07/2015 ==
+* Chaim Sanders pushed commit 3a27ce9: Added additional response error detections for postgres
+
 == Version 3.0.0 - 03/30/2015 ==
 
 Security Fixes:
