@@ -4,6 +4,10 @@
 * https://github.com/SpiderLabs/owasp-modsecurity-crs/issues
 
 
+== Changes from 05/16/2015 ==
+ * Chaim Sanders pushed commit 3a3f7eb: Merge branch 'v3.0.0-dev' of https://github.com/csanders-git/owasp-modsecurity-crs into v3.0.0-dev
+ * Chaim Sanders pushed commit 14d4d65: Updated data file names and tagging information
+
 == Changes from 04/08/2015 ==
 * Ryan Barnett pushed commit 222c64e: Merge pull request #224 from csanders-git/v3.0.0-dev
 
