@@ -528,7 +528,7 @@ SecRule REQUEST_HEADERS:Content-Type "^(text|application)/xml$" \
  "id:'900017',\
   phase:request,\
   nolog,\
-  status:403,\
+  pass,\
   t:none,t:lowercase,\
   chain"
     SecRule REQBODY_PROCESSOR "!@streq XML" \
