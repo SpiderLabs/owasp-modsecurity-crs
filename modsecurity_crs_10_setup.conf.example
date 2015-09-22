@@ -524,7 +524,7 @@ SecAction \
 #
 # Initiate XML Processor in case of xml content-type
 #
-SecRule REQUEST_HEADERS:Content-Type "text/xml" \
+SecRule REQUEST_HEADERS:Content-Type "(?:text|application)/xml" \
  "id:'900017',\
   phase:request,\
   nolog,\
