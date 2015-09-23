@@ -7,7 +7,6 @@ arch
 arp
 assoc
 associat
-at
 attrib
 bash
 bcdboot
@@ -18,7 +17,6 @@ browstat
 cacls
 call
 cat
-cd
 certreq
 certutil
 change
@@ -40,21 +38,18 @@ compress
 con2prt
 convert
 copy
-cp
 crontab
 csccmd
 cscript
 csvde
 curl
 date
-dd
 defrag
 del
 delprof
 deltree
 devcon
 devmgmt
-df
 dhclient
 diff
 dir
@@ -85,7 +80,6 @@ expand
 explorer
 export
 extract
-fc
 fetch
 fgrep
 find
@@ -111,10 +105,7 @@ help
 history
 hostname
 icacls
-id
-if
 ifmember
-ip
 ip6tables
 ipconfig
 iptables
@@ -132,7 +123,6 @@ logevent
 logman
 logoff
 logtime
-ls
 lsb_release
 lsof
 lwp
@@ -140,7 +130,6 @@ lwp-download
 lynx
 mapisend
 mbsacli
-md
 mem
 mkdir
 mklink
@@ -154,8 +143,6 @@ msg
 msiexec
 msinfo32
 mstsc
-mt
-mv
 mysql
 nano
 nbtstat
@@ -193,7 +180,6 @@ printbrm
 prncnfg
 prnmngr
 prompt
-ps
 psexec
 psfile
 psgetsid
@@ -215,7 +201,6 @@ query
 qwinsta
 rasdial
 rasphone
-rd
 recover
 reg
 regedit
@@ -291,7 +276,6 @@ ver
 verify
 vim
 vol
-w
 w3m
 waitfor
 wevtutil
