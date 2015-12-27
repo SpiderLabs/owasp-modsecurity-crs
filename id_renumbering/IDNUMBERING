@@ -1,0 +1,4 @@
+In this version of CRS 3 we have renumbered the rules to be more logical and helpful. As part of this we are providing idNumbering.csv and update.py (locating in the id_numbering folder). 
+This file lists the old rule IDs with the new rule ID in case you want to update your exceptions or check for conflicts. 
+We appreciate your understanding in this matter. 
+This README and associated idNumbering.csv will be removed when this branch is promoted to master.
