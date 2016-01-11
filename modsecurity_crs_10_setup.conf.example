@@ -19,6 +19,7 @@
 # - SecRequestBodyAccess
 # - SecAuditEngine
 # - SecDebugLog
+# - XML processing
 #
 # You should use the modsecurity.conf-recommended file that comes with the
 # ModSecurity source code archive.
@@ -515,24 +516,6 @@ SecAction \
   pass,\
   t:none,\
   setvar:tx.crs_validate_utf8_encoding=1"
-
-
-#
-# -- [[ Enable XML Body Parsing ]] -------------------------------------------------------
-#
-# The rules in this file will trigger the XML parser upon an XML request
-#
-# Initiate XML Processor in case of xml content-type
-#
-SecRule REQUEST_HEADERS:Content-Type "(?:text|application)/xml" \
- "id:'900017',\
-  phase:request,\
-  nolog,\
-  pass,\
-  t:none,t:lowercase,\
-  chain"
-    SecRule REQBODY_PROCESSOR "!@streq XML" \
-      "ctl:requestBodyProcessor=XML"
 
 
 #
