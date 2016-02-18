@@ -243,25 +243,17 @@ SecGeoLookupDb util/geo-location/GeoLiteCity.dat
 #
 # -=[ High Risk Fraud Countries ]=-
 # 
-# Rules in the IP Reputation file will check the client against a list of HIGH Risk
-# country codes. These countries were identified by ClearCommerce:
+# Rules in the IP Reputation file can check the client against a list of HIGH Risk
+# country codes. These countries have to be defined in the variable 
+# tx.high_risk_country_codes.
 #
-# - Ukraine
-# - Indonesia
-# - Yugoslavia
-# - Lithuania
-# - Egypt
-# - Romania
-# - Bulgaria
-# - Turkey
-# - Russia
-# - Pakistan
-# - Malaysia
+# If you are sure, you are not getting any legitimate requests from a given 
+# country, then you can disable all access from that country via this variable.
+# The rule performing the test has the rule id 910100.
 #
-# Additionally, based on WAF alert analysis reports, China is also included.
+# By default, the list is empty. A list used by some sites is the following:
 #
-# If you have legitimate customers originating from one of these countries, you should
-# remove it from this list.
+# setvar:'tx.high_risk_country_codes=UA ID YU LT EG RO BG TR RU PK MY CN'"
 #
 SecAction \
  "id:'900022',\
@@ -269,7 +261,7 @@ SecAction \
   nolog,\
   pass,\
   t:none,\
-  setvar:'tx.high_risk_country_codes=UA ID YU LT EG RO BG TR RU PK MY CN'"
+  setvar:'tx.high_risk_country_codes='"
 
 #
 # -- [[ Project Honeypot HTTP Blacklist API Key ]] --------------------------------------------------------
