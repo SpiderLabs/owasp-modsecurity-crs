@@ -185,7 +185,7 @@ SecAction \
 
 
 # 
-# -- [[ Paranoia Mode Initialization ]] -----------------------------------------------
+# -- [[ Paranoia Level Initialization ]] -------------------------------------------------
 #
 # This is a Core Rules mode which let's you include additional rules depending on the
 # paranoia level you set in this rule.
