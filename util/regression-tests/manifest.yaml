@@ -245,3 +245,6 @@
   - test: [{url: '/?id=1%25%27%20UNION%20ALL%20SELECT%20NULL%2CNULL%2CNULL%2CNULL%2CNULL%2CNULL%2CNULL%2CNULL%23', code: 403}]
   - test: [{url: '/?id=1%25%27%20UNION%20ALL%20SELECT%20NULL%2CNULL%2CNULL%2CNULL%2CNULL%2CNULL%2CNULL%2CNULL%2CNULL%23', code: 403}]
   - test: [{url: '/?id=1%25%27%20UNION%20ALL%20SELECT%20NULL%2CNULL%2CNULL%2CNULL%2CNULL%2CNULL%2CNULL%2CNULL%2CNULL%2CNULL%23', code: 403}]
+  # PHP pre-check removal
+  # This should trigger rule 933100, but the rule is skipped as URL does not end with .php
+  - test: [{url: '/?foo=%3C%3Fphp', code: 403}]
