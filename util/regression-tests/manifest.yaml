@@ -30,6 +30,7 @@
   - test: [{url: '/?lfi=Web.config', code: 403}]
   - test: [{url: '/?lfi=includes/configure.php', code: 403}]
   - test: [{url: '/?config.inc.php', code: 403}]
+  - test: [{url: '/?foo=./typo3conf/localconf.php', code: 403}]
   - test: [{url: '/', method: 'POST', data: 'lfi=wp-config.php', code: 403}]
   # SQL injection tests
   # Generated with: sqlmap --random-agent --batch --flush-session -u 'http://example.com/?id=1'

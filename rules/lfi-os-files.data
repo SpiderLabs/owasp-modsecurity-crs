@@ -1039,6 +1039,8 @@ config.inc.php
 LocalSettings.php
 # MyBB
 inc/config.php
+# TYPO3
+typo3conf/localconf.php
 # Laravel
 # Note: these entries might be benign in REQUEST_FILENAME
 config/app.php
