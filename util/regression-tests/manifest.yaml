@@ -245,6 +245,16 @@
   - test: [{url: '/?id=1%25%27%20UNION%20ALL%20SELECT%20NULL%2CNULL%2CNULL%2CNULL%2CNULL%2CNULL%2CNULL%2CNULL%23', code: 403}]
   - test: [{url: '/?id=1%25%27%20UNION%20ALL%20SELECT%20NULL%2CNULL%2CNULL%2CNULL%2CNULL%2CNULL%2CNULL%2CNULL%2CNULL%23', code: 403}]
   - test: [{url: '/?id=1%25%27%20UNION%20ALL%20SELECT%20NULL%2CNULL%2CNULL%2CNULL%2CNULL%2CNULL%2CNULL%2CNULL%2CNULL%2CNULL%23', code: 403}]
+  # PHP I/O Stream injection using php:// syntax (issue #301)
+  - test: [{url: '/?php%3A%2F%2Fstdin', code: 403}]
+  - test: [{url: '/?PHP%3A%2F%2Fstdout', code: 403}]
+  - test: [{url: '/?PHP%3A%2F%2Fstderr=1', code: 403}]
+  - test: [{url: '/?foo=someprefix%20php%3A%2F%2Finput', code: 403}]
+  - test: [{url: '/?foo=%20php%3A%2F%2Foutput%20bar', code: 403}]
+  - test: [{url: '/?bar=php%3A%2F%2Ffilter%2Fresource%3Dfile.php', code: 403}]
+  - test: [{url: '/?bar=php%3A%2F%2Ffilter%2Fresource%3Dhttp%3A%2F%2Fwww.example.com', code: 403}]
+  - test: [{url: '/', method: 'POST', data: 'php://memory', code: 403}]
+  - test: [{url: '/', method: 'POST', data: 'foo=PHp%3A%2F%2Ftemp', code: 403}]
   # PHP pre-check removal
   # This should trigger rule 933100, but the rule is skipped as URL does not end with .php
   - test: [{url: '/?foo=%3C%3Fphp', code: 403}]
