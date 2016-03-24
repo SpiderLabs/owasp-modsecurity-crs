@@ -23,6 +23,7 @@
   # LFI tests (issue #295)
   #
   - test: [{url: '/?page=ok', code: 200}]
+  - test: [{url: '/?page=%23%20Wordpress', code: 200}] #ensure that @pmf ignores comment line
   - test: [{url: '/?page=/etc/php.ini', code: 403}]
   - test: [{url: '/admin.php?page=miwoftp&option=com_miwoftp&action=download&item=wp-config.php', code: 403}]
   - test: [{url: '/?lfi=app/config.yml', code: 403}]
