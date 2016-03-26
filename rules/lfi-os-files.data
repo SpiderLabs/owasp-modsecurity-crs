@@ -1009,3 +1009,46 @@
 /etc/vmware-tools/vmware-tools-libraries.conf
 /var/log/vmware/hostd.log
 /var/log/vmware/hostd-1.log
+# Wordpress
+wp-config.php
+# Symfony
+/config.yml
+/config_dev.yml
+/config_prod.yml
+/config_test.yml
+/parameters.yml
+/routing.yml
+/security.yml
+/services.yml
+# Drupal
+sites/default/default.settings.php
+sites/default/settings.php
+# Magento
+app/etc/local.xml
+# Sublime Text
+sftp-config.json
+# ASP.NET
+Web.config
+# vBulletin
+includes/config.php
+# OSCommerce
+includes/configure.php
+# phpMyAdmin
+config.inc.php
+# MediaWiki
+LocalSettings.php
+# MyBB
+inc/config.php
+# TYPO3
+typo3conf/localconf.php
+# Laravel
+# Note: these entries might be benign in REQUEST_FILENAME
+config/app.php
+config/custom.php
+config/database.php
+# Joomla
+# Note: this string might be benign in REQUEST_FILENAME
+/configuration.php
+# phpBB
+# Note: this string might be benign in REQUEST_FILENAME
+/config.php
