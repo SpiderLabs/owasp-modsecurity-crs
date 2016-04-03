@@ -277,6 +277,8 @@
   - test: [{url: '/?foo=%24_GET', code: 403}]
   - test: [{url: '/?foo=%24_POST%20%5B', code: 403}]
   - test: [{url: '/?foo=%20%24_SERVER', code: 403}]
+  - test: [{url: '/?foo=%24GLoBaLS', code: 403}]
+  - test: [{url: '/?foo=%24_SESSION', code: 403}]
   - test: [{url: '/', method: 'POST', data: 'foo=%20%24_SERVER%20foo', code: 403}]
   - test: [{url: '/?foo=_SERVER', code: 200}] #should not match
   - test: [{url: '/?foo=argc%20and%20argv', code: 200}] #should not match
