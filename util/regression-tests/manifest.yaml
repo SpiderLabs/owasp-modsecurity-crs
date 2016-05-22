@@ -270,6 +270,10 @@
   # PHP pre-check removal
   # This should trigger rule 933100, but the rule is skipped as URL does not end with .php
   - test: [{url: '/?foo=%3C%3Fphp', code: 403}]
+  # PHP config directives (rule 933120)
+  # /phppath/php?-d+allow_url_include=on
+  - test: [{url: '/%70%68%70%70%61%74%68/%70%68%70?%2D%64+%61%6C%6C%6F%77%5F%75%72%6C%5F%69%6E%63%6C%75%64%65%3D%6F%6E', code: 403}]
+  - test: [{url: '/', method: 'POST', data: 'foo=allow_url_include%3Don', code: 403}]
   # PHP variables should be caught without ending bracket (issue #293)
   - test: [{url: '/?foo=%24argv', code: 403}]
   - test: [{url: '/?foo=%24HTTP_COOKIE_VARS%20%5B', code: 403}]
