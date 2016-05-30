@@ -1,0 +1,70 @@
+- server: crsv3
+  scenarios:
+  - test: [{url: '/', code: 200}]
+  # Rule 933150 (pmf)
+  - test: [{url: '/base64_decode', code: 403}]
+  - test: [{url: '/%62%61%73%65%36%34%5f%64%65%63%6f%64%65', code: 403}]            # base64_decode
+  - test: [{url: '/?base64_deCOde', code: 403}]
+  - test: [{url: '/?foo=bzdecomprEss', code: 403}]
+  - test: [{url: '/?foo=FOOcall_user_func', code: 403}]
+  - test: [{url: '/?foo=%66%73%6f%63%6b%6f%70%65%6e', code: 403}]                   # fsockopen
+  - test: [{url: '/g', method: 'POST', data: 'x=GZ%64%65%63%6f%64%65', code: 403}]  # gzdecode
+  - test: [{url: '/h?%47%7a%49%6e%46%6c%41%74%45', code: 403}]                      # GzInFlAtE
+  - test: [{url: '/?foo=FOOcall_user_func', code: 403}]
+  - test: [{url: '/?I%20don%27t%20like%20gzuncompress', code: 403}]
+  - test: [{url: '/?bar=pfsockopen%28%27foo%27%2C%2025%29', code: 403}]
+  - test: [{url: '/?%20p%6fsix_getpwui%44', code: 403}]                             # posix_getpwuiD
+  - test: [{url: '/', method: 'POST', data: 'Shell%5fexec=bla', code: 403}]
+  - test: [{url: '/?x=%5a%6c%49%62%5f%44%65%43%6f%44%65', code: 403}]               # ZlIb_DeCoDe
+  # Rule 933160 (function call regexp)
+  - test: [{url: '/?foo=chr%28123%29', code: 403}]
+  - test: [{url: '/', method: 'POST', data: 'foo=curl_iNit%28%29', code: 403}]
+  - test: [{url: '/', method: 'POST', data: 'eval($foo)', code: 403}]
+  - test: [{url: '/', method: 'POST', data: 'eval%0D%28%24foo%29', code: 403}]
+  - test: [{url: '/?foo=exec%0A%28%27bar%27%29', code: 403}]
+  - test: [{url: '/?foo=FILE%0D%0A%28%29', code: 403}]
+  - test: [{url: '/?foo=file_ExistS%20%28%0A%0A%29', code: 403}]
+  - test: [{url: '/?foo=fopen%20%20%28blah%29', code: 403}]
+  - test: [{url: '/?foo=%40opendir%28%24x%29', code: 403}]                   # @ operator
+  - test: [{url: '/?foo=passthru%09%28%29', code: 403}]                      # func\t()
+  - test: [{url: '/?foo=phpinfo%2F%2Fcomment%0D%0A%20%28%29', code: 403}]    # func//comment\r\n ()
+  - test: [{url: '/?foo=p%6fpen%20%23%23com%28ment%0A%20%28%29', code: 403}] # func #comment\n ()
+  - test: [{url: '/?foo=preg_replace%23%23%20%28%29', code: 403}]            # func#\n ()
+  - test: [{url: '/?foo=preg_replace%20%09%20%23%20%09%28%29', code: 403}]   # func \t #\n ()
+  - test: [{url: '/?foo=proc_open%2F%2Acom%29ment%2A%2F%28%29', code: 403}]  # func/*comment*/()
+  - test: [{url: '/?foo=readdir%20%2F%2Acom%2A%2F%20%28%29', code: 403}]     # func /*com*/ ()
+  - test: [{url: '/?foo=readfile%20%09%2F%2A%2A%2F%09%20%28%29', code: 403}] # func \t/**/\t ()
+  - test: [{url: '/?foo=chr%20%09%2F%2Afoo%0D%0Abar%2A%2F%09%20%28%29', code: 403}] #func\t/*foo\r\nbar*/\t (
+  - test: [{url: '/strrev()', code: 403}]
+  - test: [{url: '/strREV%28%24x%29', code: 403}]
+  - test: [{url: '?x=eval%28chr%28112%29.chr%28104%29.chr%28112%29', code: 403}]
+  - test: [{url: '/eval(gzinflate(str_rot13(base64_decode("")', code: 403}]
+  - test: [{url: '/eval%28base64_decode%28%27JGNoZWNrID...', code: 403}]
+  - test: [{url: '/', method: 'POST', data: 'yt=eval%28%22echo+10000000000%2d245205634%3b%22%29%3b', code: 403}]
+  - test: [{url: '/getegid', method: 'POST', data: 'posix_getegid%28%29', code: 403}]
+  - test: [{url: '/print_r', method: 'POST', data: 'x=Print_r%28%20%29', code: 403}]
+  - test: [{url: '/astrrev()', code: 404}]
+  - test: [{url: '/strrev', code: 404}]
+  - test: [{url: '/strrev(', code: 404}]
+  - test: [{url: '/?foo=eval', code: 200}]
+  - test: [{url: '/?foo=the%20files%20%28yep%29', code: 200}]
+  - test: [{url: '/?foo=exec%20%28', code: 200}]
+  - test: [{url: '/?foo=executor%28%29', code: 200}]
+  - test: [{url: '/?foo=cheval%28%24foo%29', code: 200}]
+  - test: [{url: '/?foo=audi%6ffile%28%24foo%29', code: 200}]
+  - test: [{url: '/?foo=the%20system%20is%20down%28%29', code: 200}]
+  - test: [{url: '/?foo=ecosystem%28%29', code: 200}]
+  - test: [{url: '/?foo=systems%28%29', code: 200}]
+  - test: [{url: '/?foo=system%20something%28%29', code: 200}]
+  # Rule 933200 (pmf + chain; must run test in PL2!)
+  - test: [{url: '/array_diff%20foo%20%28', code: 403}]
+  - test: [{url: '/?date_ADD%28%29', code: 403}]
+  - test: [{url: '/?foo=filemtime%28%24foo%29', code: 403}]
+  - test: [{url: '/gethost', method: 'POST', data: 'gethostbynamE(', code: 403}]
+  - test: [{url: '/?foo=array_diff', code: 200}]
+  # Rule 933300 (regexp; must run test in PL3!)
+  - test: [{url: '/?%20checkDate%28%29', code: 403}]
+  - test: [{url: '/?foo=chroot%09%28%29', code: 403}]
+  - test: [{url: '/sym', method: 'POST', data: 'symlink%20%09%28%29', code: 403}] # symlink \t()
+  - test: [{url: '/dl', method: 'POST', data: 'dl%2F%2Afoo%2A%2F%28%29', code: 403}] # dl/*foo*/()
+  - test: [{url: '/?foo=xucfirst%28%29', code: 200}]
