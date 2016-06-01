@@ -56,13 +56,13 @@
   - test: [{url: '/?foo=ecosystem%28%29', code: 200}]
   - test: [{url: '/?foo=systems%28%29', code: 200}]
   - test: [{url: '/?foo=system%20something%28%29', code: 200}]
-  # Rule 933200 (pmf + chain; must run test in PL2!)
+  # Rule 933151 (pmf + chain; must run test in PL2!)
   - test: [{url: '/array_diff%20foo%20%28', code: 403}]
   - test: [{url: '/?date_ADD%28%29', code: 403}]
   - test: [{url: '/?foo=filemtime%28%24foo%29', code: 403}]
   - test: [{url: '/gethost', method: 'POST', data: 'gethostbynamE(', code: 403}]
   - test: [{url: '/?foo=array_diff', code: 200}]
-  # Rule 933300 (regexp; must run test in PL3!)
+  # Rule 933161 (regexp; must run test in PL3!)
   - test: [{url: '/?%20checkDate%28%29', code: 403}]
   - test: [{url: '/?foo=chroot%09%28%29', code: 403}]
   - test: [{url: '/sym', method: 'POST', data: 'symlink%20%09%28%29', code: 403}] # symlink \t()
