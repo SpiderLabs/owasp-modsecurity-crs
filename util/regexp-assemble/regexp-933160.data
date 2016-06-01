@@ -123,4 +123,6 @@ strrev
 system
 unpack
 unserialize
+urldecode
+urlencode
 var_dump

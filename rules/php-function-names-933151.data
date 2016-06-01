@@ -1258,8 +1258,6 @@ ucwords
 uksort
 unixtojd
 unregister_tick_function
-urldecode
-urlencode
 use_soap_error_handler
 user_error
 utf8_decode
