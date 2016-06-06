@@ -505,13 +505,10 @@ SecAction \
 
 
 #
-# -- [[ DoS Protection ]] ----------------------------------------------------------------
+# -- [[ Anti-Automation / DoS Protection ]] ----------------------------------------------
 #
-# If you are using the DoS Protection rule set, then uncomment the following
-# lines and set the following variables:
-# - Burst Time Slice Interval: time interval window to monitor for bursts
-# - Request Threshold: request # threshold to trigger a burst
-# - Block Period: temporary block timeout
+# See rule file REQUEST-12-DOS-PROTECTION.conf for a detailed description.
+# Uncomment to activate optional protection rules.
 #
 #SecAction \
  "id:'900015',\
