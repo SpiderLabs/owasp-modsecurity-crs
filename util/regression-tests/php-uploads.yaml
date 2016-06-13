@@ -1,0 +1,8 @@
+- server: crsv3
+  scenarios:
+  # PHP script uploads (rule 933110)
+  # TODO: add test with multipart/form-data upload
+  - test: [{url: '/', code: 200}]
+  - test: [{url: '/upload1', headers: {'X-FileName': 'foo.php'}, code: 403}]
+  - test: [{url: '/upload2', headers: {'X_FILENAME': 'foo.php'}, code: 403}]
+  - test: [{url: '/upload3', headers: {'X-File-Name': 'foo.php'}, code: 403}]
