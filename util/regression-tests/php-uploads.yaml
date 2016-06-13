@@ -5,4 +5,12 @@
   - test: [{url: '/', code: 200}]
   - test: [{url: '/upload1', headers: {'X-FileName': 'foo.php'}, code: 403}]
   - test: [{url: '/upload2', headers: {'X_FILENAME': 'foo.php'}, code: 403}]
-  - test: [{url: '/upload3', headers: {'X-File-Name': 'foo.php'}, code: 403}]
+  - test: [{url: '/upload3', headers: {'X-File-Name': 'foo.PhP'}, code: 403}]
+  - test: [{url: '/upload4', headers: {'X-File-Name': '.PHP'}, code: 403}]
+  - test: [{url: '/', headers: {'X-File-Name': 'php'}, code: 200}]
+  # run in paranoia level 3:
+  - test: [{url: '/upload5', headers: {'X-FileName': 'foo.php.tmp'}, code: 403}]
+  - test: [{url: '/upload6', headers: {'X_FILENAME': 'foo.php.tmp'}, code: 403}]
+  - test: [{url: '/upload7', headers: {'X-File-Name': 'foo.PhP.tmp'}, code: 403}]
+  - test: [{url: '/upload8', headers: {'X-File-Name': '.PHP.tmp'}, code: 403}]
+  - test: [{url: '/', headers: {'X-File-Name': 'foo.phpno'}, code: 200}]
