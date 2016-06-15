@@ -10,6 +10,8 @@
   - test: [{url: '/upload', headers: {'X-File-Name': '.PHtml'}, code: 403}]
   - test: [{url: '/upload', headers: {'X-File-Name': 'foo.PHP5'}, code: 403}]
   - test: [{url: '/upload', headers: {'X-File-Name': 'foo.PHP10'}, code: 403}]
+  - test: [{url: '/upload', headers: {'X-File-Name': 'foo.PHP10.'}, code: 403}]
+  - test: [{url: '/upload', headers: {'X-File-Name': 'foo.PHP10..'}, code: 403}]
   - test: [{url: '/', headers: {'X-File-Name': 'php'}, code: 200}]
   # run in paranoia level 3:
   - test: [{url: '/upload5', headers: {'X-FileName': 'foo.php.tmp'}, code: 403}]
