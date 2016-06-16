@@ -418,7 +418,7 @@ SecAction \
 # If you run into false positives, you can adjust the settings here.
 #
 SecAction \
- "id:'900012',\
+ "id:900012,\
   phase:request,\
   nolog,\
   pass,\
