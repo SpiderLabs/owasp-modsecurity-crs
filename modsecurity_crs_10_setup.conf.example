@@ -429,7 +429,7 @@ SecAction \
   setvar:'tx.allowed_request_content_type=application/x-www-form-urlencoded|multipart/form-data|text/xml|application/xml|application/x-amf|application/json|text/plain', \
   setvar:'tx.allowed_http_versions=HTTP/1.0 HTTP/1.1 HTTP/2', \
   setvar:'tx.restricted_extensions=.asa/ .asax/ .ascx/ .axd/ .backup/ .bak/ .bat/ .cdx/ .cer/ .cfg/ .cmd/ .com/ .config/ .conf/ .cs/ .csproj/ .csr/ .dat/ .db/ .dbf/ .dll/ .dos/ .htr/ .htw/ .ida/ .idc/ .idq/ .inc/ .ini/ .key/ .licx/ .lnk/ .log/ .mdb/ .old/ .pass/ .pdb/ .pol/ .printer/ .pwd/ .resources/ .resx/ .sql/ .sys/ .vb/ .vbs/ .vbproj/ .vsdisco/ .webinfo/ .xsd/ .xsx/', \
-  setvar:'tx.restricted_headers=/Lock-Token/ /Content-Range/ /Translate/ /if/'"
+  setvar:'tx.restricted_headers=/content-range/ /if/ /lock-token/ /translate/'"
 
 
 #
