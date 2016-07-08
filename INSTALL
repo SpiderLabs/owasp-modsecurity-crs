@@ -239,13 +239,13 @@ OWASP CRS Configuration
     Update the TX policy settings for allowed Request Methods, File 
     Extensions, etc to better reflect your environment that is being 
     protected.
+
+    Make sure your GeoIP and Project Honeypot settings are specified if 
+    you are using them. The use Project Honeypot requires a free API key.
+    These require an account but can be obtained at 
+    https://www.projecthoneypot.org/httpbl_configure.php.
 	 
-	Make sure your GeoIP and Project Honeypot settings are specified if 
-	you are using them. The use Project Honeypot requires a free API key.
-	These require an account but can be obtained at 
-	https://www.projecthoneypot.org/httpbl_configure.php.
-	 
-	Be sure to check out the other settings present within the setup.conf
-	file, there are many other options that have to do with aspects of web
+    Be sure to check out the other settings present within the setup.conf
+    file, there are many other options that have to do with aspects of web
     application security that are beyond this document.
  
