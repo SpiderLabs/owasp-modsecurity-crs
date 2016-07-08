@@ -96,9 +96,13 @@ SecDefaultAction "phase:2,log,redirect:'http://%{request_headers.host}/',tag:'Ho
 #
 # Block Duration - is used to specify how long IP blocking rules should last.
 #
+# (Note: In this file, we use 'phase:1' to set CRS configuration variables.
+# In general, 'phase:request' is used. However, we want to make absolutely sure
+# that all configuration variables are set before the CRS rules are processed.)
+#
 SecAction \
  "id:'900001',\
-  phase:request,\
+  phase:1,\
   nolog,\
   pass,\
   t:none,\
@@ -128,7 +132,7 @@ SecAction \
 #
 SecAction \
  "id:'900002',\
-  phase:request,\
+  phase:1,\
   nolog,\
   pass,\
   t:none,\
@@ -146,7 +150,7 @@ SecAction \
 
 SecAction \
  "id:'900003',\
-  phase:request,\
+  phase:1,\
   nolog,\
   pass,\
   t:none,\
@@ -177,7 +181,7 @@ SecAction \
 #
 #SecAction \
  "id:'900004',\
-  phase:request,\
+  phase:1,\
   nolog,\
   pass,\
   t:none,\
@@ -287,7 +291,7 @@ SecGeoLookupDb util/geo-location/GeoLiteCity.dat
 #
 SecAction \
  "id:'900022',\
-  phase:request,\
+  phase:1,\
   nolog,\
   pass,\
   t:none,\
@@ -330,7 +334,7 @@ SecAction \
 #
 #SecRule REMOTE_ADDR "@ipMatch 192.168.1.100" \
  "id:'900005',\
-  phase:request,\
+  phase:1,\
   nolog,\
   pass,\
   t:none,\
@@ -352,7 +356,7 @@ SecAction \
 # -- Maximum number of arguments in request limited
 SecAction \
  "id:'900006',\
-  phase:request,\
+  phase:1,\
   nolog,\
   pass,\
   t:none,\
@@ -362,7 +366,7 @@ SecAction \
 # -- Limit argument name length
 #SecAction \
  "id:'900007',\
-  phase:request,\
+  phase:1,\
   nolog,\
   pass,\
   t:none,\
@@ -372,7 +376,7 @@ SecAction \
 # -- Limit value name length
 #SecAction \
  "id:'900008',\
-  phase:request,\
+  phase:1,\
   nolog,\
   pass,\
   t:none,\
@@ -382,7 +386,7 @@ SecAction \
 # -- Limit arguments total length
 #SecAction \
  "id:'900009',\
-  phase:request,\
+  phase:1,\
   nolog,\
   pass,\
   t:none,\
@@ -392,7 +396,7 @@ SecAction \
 # -- Individual file size is limited
 #SecAction \
  "id:'900010',\
-  phase:request,\
+  phase:1,\
   nolog,\
   pass,\
   t:none,\
@@ -402,7 +406,7 @@ SecAction \
 # -- Combined file size is limited
 #SecAction \
  "id:'900011',\
-  phase:request,\
+  phase:1,\
   nolog,\
   pass,\
   t:none,\
@@ -416,16 +420,16 @@ SecAction \
 #
 SecAction \
  "id:'900012',\
-  phase:request,\
+  phase:1,\
   nolog,\
   pass,\
   t:none,\
   setvar:'tx.allowed_methods=GET HEAD POST OPTIONS', \
   setvar:'tx.static_resources=jpg|jpeg|png|gif|js|css|ico', \
   setvar:'tx.allowed_request_content_type=application/x-www-form-urlencoded|multipart/form-data|text/xml|application/xml|application/x-amf|application/json|text/plain', \
-  setvar:'tx.allowed_http_versions=HTTP/0.9 HTTP/1.0 HTTP/1.1', \
+  setvar:'tx.allowed_http_versions=HTTP/1.0 HTTP/1.1 HTTP/2', \
   setvar:'tx.restricted_extensions=.asa/ .asax/ .ascx/ .axd/ .backup/ .bak/ .bat/ .cdx/ .cer/ .cfg/ .cmd/ .com/ .config/ .conf/ .cs/ .csproj/ .csr/ .dat/ .db/ .dbf/ .dll/ .dos/ .htr/ .htw/ .ida/ .idc/ .idq/ .inc/ .ini/ .key/ .licx/ .lnk/ .log/ .mdb/ .old/ .pass/ .pdb/ .pol/ .printer/ .pwd/ .resources/ .resx/ .sql/ .sys/ .vb/ .vbs/ .vbproj/ .vsdisco/ .webinfo/ .xsd/ .xsx/', \
-  setvar:'tx.restricted_headers=/Proxy-Connection/ /Lock-Token/ /Content-Range/ /Translate/ /via/ /if/'"
+  setvar:'tx.restricted_headers=/content-range/ /if/ /lock-token/ /translate/'"
 
 
 #
@@ -446,7 +450,7 @@ SecAction \
 #
 #SecAction \
  "id:'900023',\
-  phase:request,\
+  phase:1,\
   nolog,\
   pass,\
   t:none,\
@@ -473,7 +477,7 @@ SecAction \
 #
 #SecAction \
  "id:'900013',\
-  phase:request,\
+  phase:1,\
   nolog,\
   pass,\
   t:none,\
@@ -494,7 +498,7 @@ SecAction \
 #
 #SecAction \
  "id:'900014',\
-  phase:request,\
+  phase:1,\
   nolog,\
   pass,\
   t:none,\
@@ -515,7 +519,7 @@ SecAction \
 #
 #SecAction \
  "id:'900015',\
-  phase:request,\
+  phase:1,\
   nolog,\
   pass,\
   t:none,\
@@ -533,7 +537,7 @@ SecAction \
 # Uncomment this line if your site uses UTF8 encoding
 #SecAction \
  "id:'900016',\
-  phase:request,\
+  phase:1,\
   nolog,\
   pass,\
   t:none,\
