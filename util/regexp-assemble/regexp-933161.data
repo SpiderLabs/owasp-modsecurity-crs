@@ -68,10 +68,10 @@ fread
 fstat
 ftell
 ftok
+function
 getdate
 gettext
 gettype
-glob
 gmdate
 hash
 header
@@ -82,8 +82,10 @@ hypot
 iconv
 idate
 implode
+include
 intdiv
 intval
+invoke
 is_a
 is_array
 is_bool
@@ -151,6 +153,7 @@ readline
 readlink
 recode
 rename
+require
 reset
 rewind
 round
@@ -185,7 +188,6 @@ tanh
 tempnam
 textdomain
 time
-tmpfile
 touch
 trim
 ucfirst

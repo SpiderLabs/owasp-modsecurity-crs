@@ -1,4 +1,5 @@
 __halt_compiler
+apache_child_terminate
 base64_decode
 bzdecompress
 call_user_func
@@ -12,6 +13,8 @@ fsockopen
 gzdecode
 gzinflate
 gzuncompress
+include_once
+invokeargs
 pcntl_exec
 pcntl_fork
 pfsockopen
@@ -19,6 +22,8 @@ posix_getcwd
 posix_getpwuid
 posix_getuid
 posix_uname
+ReflectionFunction
+require_once
 shell_exec
 str_rot13
 sys_get_temp_dir
