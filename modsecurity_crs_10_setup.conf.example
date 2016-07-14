@@ -72,8 +72,9 @@ SecComponentSignature "OWASP_CRS/3.0.0"
 # The tag action will include the Host header data in the alert, which helps to identify
 # which Vhost triggered the rule.
 #
-SecDefaultAction "phase:1,log,redirect:'http://%{request_headers.host}/',tag:'Host: %{request_headers.host}'"
-SecDefaultAction "phase:2,log,redirect:'http://%{request_headers.host}/',tag:'Host: %{request_headers.host}'"
+#SecDefaultAction "phase:1,log,redirect:'http://%{request_headers.host}/',tag:'Host: %{request_headers.host}'"
+#SecDefaultAction "phase:2,log,redirect:'http://%{request_headers.host}/',tag:'Host: %{request_headers.host}'"
+
 
 #
 # -- [[ Collaborative Detection Severity Levels ]] ----------------------------------------
@@ -154,16 +155,6 @@ SecAction \
   nolog,\
   pass,\
   t:none,\
-  setvar:tx.sql_injection_score_threshold=15,\
-  setvar:tx.xss_score_threshold=15,\
-  setvar:tx.rfi_score_threshold=5,\
-  setvar:tx.lfi_score_threshold=5,\
-  setvar:tx.rce_score_threshold=5,\
-  setvar:tx.command_injection_score_threshold=5,\
-  setvar:tx.php_injection_score_threshold=5,\
-  setvar:tx.http_violation_score_threshold=5,\
-  setvar:tx.trojan_score_threshold=5,\
-  setvar:tx.session_fixation_score_threshold=5,\
   setvar:tx.inbound_anomaly_score_threshold=5,\
   setvar:tx.outbound_anomaly_score_threshold=4"
 
@@ -414,25 +405,22 @@ SecAction \
 
 
 #
-# Set the following policy settings here and they will be propagated to various
-# rules files by using macro expansion:
-# - REQUEST-11-METHOD-ENFORCEMENT.conf
-# - REQUEST-12-DOS-PROTECTION.conf
-# - REQUEST-20-PROTOCOL-ENFORCEMENT.conf
-# If you run into false positives, you can adjust the settings here.
+# Set the following policy settings here and they will be propagated to the 30 rules
+# file (modsecurity_crs_30_http_policy.conf) by using macro expansion.  
+# If you run into false positves, you can adjust the settings here.
 #
 SecAction \
- "id:900012,\
+ "id:'900012',\
   phase:1,\
   nolog,\
   pass,\
   t:none,\
   setvar:'tx.allowed_methods=GET HEAD POST OPTIONS', \
-  setvar:'tx.static_resources=jpg|jpeg|png|gif|js|css|ico|svg|webp', \
+  setvar:'tx.static_resources=jpg|jpeg|png|gif|js|css|ico', \
   setvar:'tx.allowed_request_content_type=application/x-www-form-urlencoded|multipart/form-data|text/xml|application/xml|application/x-amf|application/json|text/plain', \
-  setvar:'tx.allowed_http_versions=HTTP/1.0 HTTP/1.1 HTTP/2', \
+  setvar:'tx.allowed_http_versions=HTTP/0.9 HTTP/1.0 HTTP/1.1', \
   setvar:'tx.restricted_extensions=.asa/ .asax/ .ascx/ .axd/ .backup/ .bak/ .bat/ .cdx/ .cer/ .cfg/ .cmd/ .com/ .config/ .conf/ .cs/ .csproj/ .csr/ .dat/ .db/ .dbf/ .dll/ .dos/ .htr/ .htw/ .ida/ .idc/ .idq/ .inc/ .ini/ .key/ .licx/ .lnk/ .log/ .mdb/ .old/ .pass/ .pdb/ .pol/ .printer/ .pwd/ .resources/ .resx/ .sql/ .sys/ .vb/ .vbs/ .vbproj/ .vsdisco/ .webinfo/ .xsd/ .xsx/', \
-  setvar:'tx.restricted_headers=/content-range/ /if/ /lock-token/ /translate/'"
+  setvar:'tx.restricted_headers=/Proxy-Connection/ /Lock-Token/ /Content-Range/ /Translate/ /via/ /if/'"
 
 
 #
@@ -512,18 +500,13 @@ SecAction \
 
 
 #
-# -- [[ Anti-Automation / DoS Protection ]] ----------------------------------------------
+# -- [[ DoS Protection ]] ----------------------------------------------------------------
 #
-# Optional DoS protection against clients making requests too quickly.
-#
-# When a client is making more than 100 requests (excluding static files) within 60 seconds,
-# this is considered a 'burst'. After two bursts, the client is blocked for 600 seconds.
-# Requests to static files are unlimited; they are listed in 'tx.static_resources' setting.
-#
-# To enable the DoS protection rules, uncomment the following rule.
-# For a detailed description, see rule file REQUEST-12-DOS-PROTECTION.conf.
-#
-# You may also want to check out the definition of tx.static_resources in rule 900012.
+# If you are using the DoS Protection rule set, then uncomment the following
+# lines and set the following variables:
+# - Burst Time Slice Interval: time interval window to monitor for bursts
+# - Request Threshold: request # threshold to trigger a burst
+# - Block Period: temporary block timeout
 #
 #SecAction \
  "id:'900015',\
