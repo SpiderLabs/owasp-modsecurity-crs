@@ -13,18 +13,18 @@
 # to short-circuit inspection and allow certain transactions to pass through
 # inspection or if you want to alter rules that are applied.
 #
-# This file is named REQUEST-00-LOCAL-WHITELIST.conf.example for a very
+# This file is named REQUEST-900-LOCAL-WHITELIST.conf.example for a very
 # specific reason. Files affixed with the .example extension are designed to
 # contain user created/modified data. The '.example'. extension should be 
 # renamed to end in .conf. The advantage of this is that when OWASP CRS is 
 # updated, the updates will not overwrite a user generated configuration file.
 #
 # As a result of this design paradigm users are encouraged NOT to directly
-# modify fules. Instead they should use the RESPONSE-99-EXCEPTIONS file and
-# this REQUEST-00-LOCAL-WHITELIST file to modify OWASP rules using methods 
+# modify fules. Instead they should use the RESPONSE-999-EXCEPTIONS file and
+# this REQUEST-900-LOCAL-WHITELIST file to modify OWASP rules using methods 
 # similar to the examples specified below.
 #
-# RESPONSE-99-EXCEPTIONS and REQUEST-00-LOCAL-WHITELIST serve different
+# RESPONSE-999-EXCEPTIONS and REQUEST-900-LOCAL-WHITELIST serve different
 # purposes. ModSecurity effectively maintains two different context: startup,
 # and per transaction. As a rule, directives are processed within the startup
 # context. While they can affect the per transaction context they generally
@@ -34,7 +34,7 @@
 # have knowledge of the rules existence (since these rules are read in at
 # the same time). This means that when using directives that effect SecRules,
 # these exceptions should be placed AFTER all the existing rules. This is why
-# RESPONSE-99-EXCEPTIONS is designed such that it loads LAST.
+# RESPONSE-999-EXCEPTIONS is designed such that it loads LAST.
 # Conversely, ModSecurity supports several actions that can change the state
 # of the underlying configuration during the per transaction context, this is
 # when rules are being processed. Generally, these are accomplished by using
@@ -47,7 +47,7 @@
 # will affect. Unlike the setup context, by the time we process rules in the
 # per-transaction context, we are already aware of all the rule ID's. It by
 # this logic that we include rules such as this BEFORE all the remaining
-# rules. As a result REQUEST-00-LOCAL-WHITELIST is designed to load FIRST.
+# rules. As a result REQUEST-900-LOCAL-WHITELIST is designed to load FIRST.
 #
 # 
 # Example WHITELIST Rule - Disable inspection for an authorized client
