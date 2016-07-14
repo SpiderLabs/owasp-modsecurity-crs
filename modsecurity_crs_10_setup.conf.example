@@ -72,8 +72,8 @@ SecComponentSignature "OWASP_CRS/3.0.0"
 # The tag action will include the Host header data in the alert, which helps to identify
 # which Vhost triggered the rule.
 #
-#SecDefaultAction "phase:1,log,redirect:'http://%{request_headers.host}/',tag:'Host: %{request_headers.host}'"
-#SecDefaultAction "phase:2,log,redirect:'http://%{request_headers.host}/',tag:'Host: %{request_headers.host}'"
+SecDefaultAction "phase:1,log,redirect:'http://%{request_headers.host}/',tag:'Host: %{request_headers.host}'"
+SecDefaultAction "phase:2,log,redirect:'http://%{request_headers.host}/',tag:'Host: %{request_headers.host}'"
 
 
 #
