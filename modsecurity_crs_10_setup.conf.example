@@ -599,6 +599,17 @@ SecRule &TX:REAL_IP "@eq 0" \
   pass"
 
 #
+# Check to make sure that ModSecurity is running at least version
+# 2.8 or above. This is required for version CRS version 3.x.
+SecRule MODSEC_BUILD "^(\d{4})\d+" \
+  "id:900026,\
+  chain,\
+  capture,\
+  log,\
+  msg:'Your version of ModSecurity (%{tx.1}) is incompatible with this version of OWASP CRS'"
+  SecRule TX:1 "@lt 0208" "t:none"   
+
+#
 # Set the SecCollectionTimeout directive to a lower setting (default
 # is 1 hour).  Reducing this setting increases performance by cleaning
 # out old/stale entries.
