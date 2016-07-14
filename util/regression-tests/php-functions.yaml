@@ -36,6 +36,7 @@
   - test: [{url: '/?foo=readfile%20%09%2F%2A%2A%2F%09%20%28%29', code: 403}] # func \t/**/\t ()
   - test: [{url: '/?foo=chr%20%09%2F%2Afoo%0D%0Abar%2A%2F%09%20%28%29', code: 403}] #func\t/*foo\r\nbar*/\t (
   - test: [{url: '/strrev()', code: 403}]
+  - test: [{url: '/Var_Dump()', code: 403}]
   - test: [{url: '/strREV%28%24x%29', code: 403}]
   - test: [{url: '?x=eval%28chr%28112%29.chr%28104%29.chr%28112%29', code: 403}]
   - test: [{url: '/eval(gzinflate(str_rot13(base64_decode("")', code: 403}]
@@ -61,10 +62,12 @@
   - test: [{url: '/?date_ADD%28%29', code: 403}]
   - test: [{url: '/?foo=filemtime%28%24foo%29', code: 403}]
   - test: [{url: '/gethost', method: 'POST', data: 'gethostbynamE(', code: 403}]
+  - test: [{url: '/?foo=zlib_get_coding_type%28%20%29', code: 403}]
   - test: [{url: '/?foo=array_diff', code: 200}]
   # Rule 933161 (regexp; must run test in PL3!)
   - test: [{url: '/?%20checkDate%28%29', code: 403}]
   - test: [{url: '/?foo=chroot%09%28%29', code: 403}]
   - test: [{url: '/sym', method: 'POST', data: 'symlink%20%09%28%29', code: 403}] # symlink \t()
   - test: [{url: '/dl', method: 'POST', data: 'dl%2F%2Afoo%2A%2F%28%29', code: 403}] # dl/*foo*/()
+  - test: [{url: '/?foo=wordwrap%28x%29', code: 403}]
   - test: [{url: '/?foo=xucfirst%28%29', code: 200}]
