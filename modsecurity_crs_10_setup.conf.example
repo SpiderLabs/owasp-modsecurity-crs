@@ -416,9 +416,9 @@ SecAction \
 #
 # Set the following policy settings here and they will be propagated to various
 # rules files by using macro expansion:
-# - REQUEST-11-METHOD-ENFORCEMENT.conf
-# - REQUEST-12-DOS-PROTECTION.conf
-# - REQUEST-20-PROTOCOL-ENFORCEMENT.conf
+# - REQUEST-911-METHOD-ENFORCEMENT.conf
+# - REQUEST-912-DOS-PROTECTION.conf
+# - REQUEST-920-PROTOCOL-ENFORCEMENT.conf
 # If you run into false positives, you can adjust the settings here.
 #
 SecAction \
@@ -521,7 +521,7 @@ SecAction \
 # Requests to static files are unlimited; they are listed in 'tx.static_resources' setting.
 #
 # To enable the DoS protection rules, uncomment the following rule.
-# For a detailed description, see rule file REQUEST-12-DOS-PROTECTION.conf.
+# For a detailed description, see rule file REQUEST-912-DOS-PROTECTION.conf.
 #
 # You may also want to check out the definition of tx.static_resources in rule 900012.
 #
