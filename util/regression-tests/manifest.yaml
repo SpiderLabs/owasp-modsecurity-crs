@@ -42,6 +42,8 @@
   - test: [{url: '/?id=1%29%20AND%201421%3D3553%20AND%20%289926%3D9926', code: 403}]
   - test: [{url: '/?id=1%29%20AND%202912%3D2912%20AND%20%287303%3D7303', code: 403}]
   - test: [{url: '/?id=1%20AND%204598%3D4189', code: 403}]
+  - test: [{url: '/?1%20AND%204598%3D4189', code: 403}]
+  - test: [{url: '/', method: 'POST', data: '1%20AND%204598%3D4189', code: 403}]
   - test: [{url: '/?id=1%20AND%202912%3D2912', code: 403}]
   - test: [{url: '/?id=1%20AND%206112%3D7517--%20aUOj', code: 403}]
   - test: [{url: '/?id=1%20AND%202912%3D2912--%20IPSi', code: 403}]
