@@ -154,16 +154,6 @@ SecAction \
   nolog,\
   pass,\
   t:none,\
-  setvar:tx.sql_injection_score_threshold=15,\
-  setvar:tx.xss_score_threshold=15,\
-  setvar:tx.rfi_score_threshold=5,\
-  setvar:tx.lfi_score_threshold=5,\
-  setvar:tx.rce_score_threshold=5,\
-  setvar:tx.command_injection_score_threshold=5,\
-  setvar:tx.php_injection_score_threshold=5,\
-  setvar:tx.http_violation_score_threshold=5,\
-  setvar:tx.trojan_score_threshold=5,\
-  setvar:tx.session_fixation_score_threshold=5,\
   setvar:tx.inbound_anomaly_score_threshold=5,\
   setvar:tx.outbound_anomaly_score_threshold=4"
 
@@ -470,7 +460,7 @@ SecAction \
 #  
 # Reference Link:
 #
-#	https://developer.mozilla.org/en/Security/CSP
+#   https://developer.mozilla.org/en/Security/CSP
 #
 # Uncomment this SecAction line if you want use CSP enforcement.
 # You need to set the appropriate directives and settings for your site/domain and
