@@ -6,9 +6,12 @@
 # Entries starting with ' are used verbatim.
 # Everything after # is a comment.
 #
-# To prevent some FP for a command, you can require whitespace after it.
-# However, this complicates the regexp, so do this only if needed.
-# Example:
+# To prevent some FP for a command, you can require trailing whitespace 
+# for a match. Only do this if the command regularly causes FP and if
+# allowing the bare command is not too dangerous. (Note: due to \b
+# following the regexp, a word boundary is also required further on-
+# so some letter/number is needed for a match). Whitespace example:
+#
 #   diff *
 
 # Special regexp case for the '.' (source) command to prevent FP:
@@ -18,12 +21,12 @@
 7za
 7zr
 adduser
-alias
+alias *
 apt-get
-arch
+arch *
 arp
 bash
-batch
+batch *
 breaksw
 bsdcat
 bsdiff
@@ -37,16 +40,16 @@ bzgrep
 bzip2
 bzless
 bzmore
-cat
-cc
+cat *
+cc *
 chattr
-chdir
+chdir *
 chflags
 chmod
-command
-compress
+command *
+compress *
 coproc
-cp
+cp *
 crontab
 csh
 curl
@@ -57,8 +60,8 @@ dmesg
 doas
 done
 dpkg
-du
-echo
+du *
+echo *
 egrep
 endif
 endsw
@@ -66,39 +69,41 @@ env
 env-update
 esac
 eval
-exec
+exec *
 exit
 expand
 export
 expr
-fc
-fetch
+fc *
+fetch *
 fgrep
 fi
-file
+file *
 filetest
-find
+find *
 foreach
-ftp
+ftp *
 ftpstats
 ftpwho
 function
-gcc
+gcc *
 gdb
-GET
-git
-grep
+GET *
+git *
+grep *
 gunzip
 gzcat
 gzip
-head
+head *
 history
 hostid
 hostname
 htdigest
 htpasswd
-hup
-id
+hup *
+# 'id' causes way too much FP, so we require whitespace; this will allow
+# injecting ';id' unfortunately.
+id *
 ifconfig
 ip6tables
 ipconfig
@@ -110,26 +115,25 @@ irb19
 irb20
 irb21
 irb22
-java
+java *
 jexec
-jobs
-kill
+jobs *
+kill *
 killall
-last
+last *
 lastcomm
 lastlog
 lastlogin
-less
+less *
 lessecho
 lessfile
 lesspipe
 lftp
 lftpget
-local
-locate
-login
+local *
+locate *
 logname
-lp
+lp *
 ls
 ls-F
 lsb_release
@@ -138,9 +142,11 @@ lsmod
 lsof
 lspci
 lsusb
-lwp
 lwp-download
-lynx
+lwp-dump
+lwp-mirror
+lwp-request
+lynx *
 lzcat
 lzcmp
 lzdiff
@@ -151,27 +157,27 @@ lzless
 lzma
 lzmore
 mailq
-mkdir
+mkdir *
 mlocate
-more
-mount
-mv
+more *
+mount *
+mv *
 mysql
 mysqladmin
 mysqldump
 mysqldumpslow
 mysqlhotcopy
 mysqlshow
-nano
-nc
+nano *
+nc *
 nc.openbsd
 nc.traditional
 ncat
-net
+net *
 netcat
 netkit-ftp
 netstat
-nice
+nice *
 nmap
 nohup
 nping
@@ -197,29 +203,27 @@ pkginfo
 pkill
 popd
 printenv
-ps
+ps *
 ptar
 ptardiff
 ptargrep
 pushd
-pwd
 python
 python2
 python3
 python3m
-rar
-rcp
+rar *
+rcp *
 realpath
-rename
-repeat
-replace
-reset
-rm
-rmdir
+rename *
+repeat *
+replace *
+rm *
+rmdir *
 rmuser
 rnano
 route
-rpm
+rpm *
 rsync
 ruby
 ruby1
@@ -229,40 +233,39 @@ ruby20
 ruby21
 ruby22
 sched
-scp
+scp *
 sdiff
-sed
-select
+sed *
 sendmail
-set
+set *
 setenv
 setsid
 sftp
-sh
+sh *
 sh.distrib
-shift
 shutdown
 sleep
 socat
-sort
-source
+sort *
+source *
 ssh
 strings
-su
+su *
 sudo
 svn
 sysctl
 tail
 tailf
-tar
+tar *
 tcping
 tcptraceroute
 tcsh
+tee *
 telnet
-time
+time *
 timeout
 top
-touch
+touch *
 traceroute
 traceroute6
 uname
@@ -276,15 +279,17 @@ useradd
 userdel
 usermod
 vigr
-vim
+vim *
 vipw
 w3m
 wget
-who
+# 'who' causes many FP, so require whitespace.
+# Unfortunately, without whitespace it may still leak some info.
+who *
 whoami
 xargs
 xterm
-xz
+xz *
 xzcat
 xzcmp
 xzdec
@@ -301,7 +306,7 @@ zdiff
 zegrep
 zfgrep
 zgrep
-zip
+zip *
 zless
 zmore
 zrun
