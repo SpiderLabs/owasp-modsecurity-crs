@@ -1,4 +1,5 @@
 # Word list for rule 932150 (RCE Unix command injection)
+# To lower FP, this rule requires whitespace after a command.
 #
 # To convert to a regexp that can be pasted into the rule:
 #   cat regexp-932150.txt | ./regexp-cmdline.py unix | ./regexp-assemble.pl
@@ -6,6 +7,7 @@
 # Entries starting with ' are used verbatim.
 # Everything after # is a comment.
 #
+
 .
 bash
 bsdcat
