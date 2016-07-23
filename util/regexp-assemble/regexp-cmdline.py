@@ -28,7 +28,7 @@ def regexp_str(str, evasion):
 
     return result
 
-# Ensure that some special characters are quoted
+# Ensure that some special characters are escaped
 def regexp_char(char, evasion):
     char = string.replace(char, ' ', '\s')
     char = string.replace(char, '.', '\.')
