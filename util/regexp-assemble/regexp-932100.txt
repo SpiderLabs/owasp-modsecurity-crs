@@ -1,16 +1,17 @@
 # Word list for rule 932100 (RCE Unix command injection)
 #
-# To convert to a regexp:
+# To convert to a regexp that can be pasted into the rule:
 #   cat regexp-932100.txt | ./regexp-cmdline.py unix | ./regexp-assemble.pl
 #
 # Entries starting with ' are used verbatim.
-# Everything after # is ignored.
+# Everything after # is a comment.
 #
+# To prevent some FP for a command, you can require whitespace after it.
+# However, this complicates the regexp, so do this only if needed.
+# Example:
+#   diff *
 
-# We have a special case for the '.' (source) command.
-# To prevent false positives, we require whitespace after it.
-# As the whitespace is not a word boundary, the trailing \b
-# (in rule 932100) will not match, so we add a wildcard:
+# Special regexp case for the '.' (source) command to prevent FP:
 '\.\s.*
 
 7z
@@ -51,7 +52,7 @@ csh
 curl
 dash
 dhclient
-diff
+diff *
 dmesg
 doas
 done

@@ -1,10 +1,10 @@
 # Word list for rule 932150 (RCE Unix command injection)
 #
-# To convert to a regexp:
+# To convert to a regexp that can be pasted into the rule:
 #   cat regexp-932150.txt | ./regexp-cmdline.py unix | ./regexp-assemble.pl
 #
 # Entries starting with ' are used verbatim.
-# Everything after # is ignored.
+# Everything after # is a comment.
 #
 .
 bash
