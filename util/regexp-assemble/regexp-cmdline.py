@@ -12,9 +12,11 @@
 
 import fileinput, string, sys
 
-# Convert a single line to regexp format, and pad it with evasions.
+# Convert a single line to regexp format, and insert anti-cmdline
+# evasions between characters.
 def regexp_str(str, evasion):
-    # By convention, if the line starts with '\', keep it untouched.
+    # By convention, if the line starts with ' char, copy the rest
+    # verbatim.
     if str[0] == "'":
         return str[1:]
 
