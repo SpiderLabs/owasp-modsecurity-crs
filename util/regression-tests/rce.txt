@@ -255,6 +255,9 @@ foo ; lw\p-download foox
 ;while (1)\n ls\n end
 
 # command injection (Windows)
+|dir
+|dir/a
+|dir /a
 foo |cmd
 foo |attrib ...
 foo | attrib ...
