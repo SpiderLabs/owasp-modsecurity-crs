@@ -46,7 +46,6 @@ Proxy-Connection: keep-alive
 GET $file HTTP/1.0
 Host: $hostname
 User-Agent: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; SV1; .NET CLR 2.0.50727)
-$header
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
 Accept-Language: en-us,en;q=0.5
 Accept-Encoding: gzip,deflate
