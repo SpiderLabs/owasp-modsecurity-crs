@@ -34,6 +34,10 @@ def regexp_char(char, evasion):
     char = string.replace(char, '.', '\.')
     char = string.replace(char, '-', '\-')
     char = string.replace(char, '+', r'''(?:\s|<|>).*''')
+        # Unix: "cat foo", "cat<foo", "cat>foo"
+    char = string.replace(char, '@', r'''(?:[\s,;]|\.|/|<|>).*''')
+        # Windows: "more foo", "more,foo", "more;foo", "more.com", "more/e",
+        # "more<foo", "more>foo"
     return char
 
 # Insert these sequences between characters to prevent evasion.
