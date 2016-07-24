@@ -33,7 +33,7 @@ def regexp_char(char, evasion):
     char = string.replace(char, ' ', '\s')
     char = string.replace(char, '.', '\.')
     char = string.replace(char, '-', '\-')
-    char = string.replace(char, '*', '.*')
+    char = string.replace(char, '+', r'''(?:\s|<|>).*''')
     return char
 
 # Insert these sequences between characters to prevent evasion.
