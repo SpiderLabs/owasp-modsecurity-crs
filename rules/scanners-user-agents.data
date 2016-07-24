@@ -12,6 +12,7 @@ brutus/aet
 bsqlbf
 cgichk
 cisco-torch
+commix
 core-project/1.0
 crimscanner/
 datacha0s
@@ -91,3 +92,4 @@ PiplBot
 GrapeshotCrawler/2.0
 grapeFX
 SearchmetricsBot
+WPScan
