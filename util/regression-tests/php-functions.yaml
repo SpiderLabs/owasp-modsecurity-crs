@@ -16,6 +16,9 @@
   - test: [{url: '/?%20p%6fsix_getpwui%44', code: 403}]                             # posix_getpwuiD
   - test: [{url: '/', method: 'POST', data: 'Shell%5fexec=bla', code: 403}]
   - test: [{url: '/?x=%5a%6c%49%62%5f%44%65%43%6f%44%65', code: 403}]               # ZlIb_DeCoDe
+  - test: [{url: '/wp_remote_get', code: 403}]
+  - test: [{url: '/?x=wp_remote_fopen', code: 403}]
+  - test: [{url: '/', method: 'POST', data: 'foo=wp_safe_remote_request', code: 403}]
   # Rule 933160 (function call regexp)
   - test: [{url: '/?foo=chr%28123%29', code: 403}]
   - test: [{url: '/', method: 'POST', data: 'foo=curl_iNit%28%29', code: 403}]
