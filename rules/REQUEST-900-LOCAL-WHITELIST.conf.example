@@ -1,0 +1,84 @@
+# ---------------------------------------------------------------
+# Core ModSecurity Rule Set ver.3.0.0
+# Copyright (C) 2006-2016 Trustwave All rights reserved.
+#
+# The OWASP ModSecurity Core Rule Set is distributed under 
+# Apache Software License (ASL) version 2
+# Please see the enclosed LICENCE file for full details.
+# ---------------------------------------------------------------
+
+#
+# The purpose of this file is to hold LOCAL exceptions for your site.
+# The types of rules that would go into this file are one where you want
+# to short-circuit inspection and allow certain transactions to pass through
+# inspection or if you want to alter rules that are applied.
+#
+# This file is named REQUEST-900-LOCAL-WHITELIST.conf.example for a very
+# specific reason. Files affixed with the .example extension are designed to
+# contain user created/modified data. The '.example'. extension should be 
+# renamed to end in .conf. The advantage of this is that when OWASP CRS is 
+# updated, the updates will not overwrite a user generated configuration file.
+#
+# As a result of this design paradigm users are encouraged NOT to directly
+# modify fules. Instead they should use the RESPONSE-999-EXCEPTIONS file and
+# this REQUEST-900-LOCAL-WHITELIST file to modify OWASP rules using methods 
+# similar to the examples specified below.
+#
+# RESPONSE-999-EXCEPTIONS and REQUEST-900-LOCAL-WHITELIST serve different
+# purposes. ModSecurity effectively maintains two different context: startup,
+# and per transaction. As a rule, directives are processed within the startup
+# context. While they can affect the per transaction context they generally
+# remain fixed during the execution of ModSecurity. As a result if one wanted
+# to disable a rule at bootup the SecRuleRemoveById (or similar) directive
+# would have to be placed AFTER the rule is listed, otherwise it will not
+# have knowledge of the rules existence (since these rules are read in at
+# the same time). This means that when using directives that effect SecRules,
+# these exceptions should be placed AFTER all the existing rules. This is why
+# RESPONSE-999-EXCEPTIONS is designed such that it loads LAST.
+# Conversely, ModSecurity supports several actions that can change the state
+# of the underlying configuration during the per transaction context, this is
+# when rules are being processed. Generally, these are accomplished by using
+# 'ctl' action. As these are part of a rule, they will be evaluated in the
+# order rules are applied (by physical location, considering phases). As a
+# result of this ordering a 'ctl' action should be placed with consideration
+# to when it will be executed. This is particularly relevant for the 'ctl'
+# options that involve modifying ID's (such as ruleRemoveById). In these
+# cases it is important that such rules are placed BEFORE the rule ID they
+# will affect. Unlike the setup context, by the time we process rules in the
+# per-transaction context, we are already aware of all the rule ID's. It by
+# this logic that we include rules such as this BEFORE all the remaining
+# rules. As a result REQUEST-900-LOCAL-WHITELIST is designed to load FIRST.
+#
+# 
+# Example WHITELIST Rule - Disable inspection for an authorized client
+#
+# This ruleset allows you to control how ModSecurity will handle traffic originating
+# from Authorized Vulnerability Scanning (AVS) sources.
+# See related blog post -
+# http://blog.spiderlabs.com/2010/12/advanced-topic-of-the-week-handling-authorized-scanning-traffic.html
+#
+# White-list ASV network block (no blocking or logging of AVS traffic)
+# Update IP network block as appropriate for your AVS traffic
+#
+#SecRule REMOTE_ADDR "@ipMatch 192.168.1.100" "phase:1,id:'981033',t:none,nolog,pass,ctl:ruleEngine=Off"
+
+#
+# Example Rule Modification - Removing a specific ARGS parameter from inspection for a rule
+#
+# This rule shows how to conditionally white-list the "password"  parameter for rule #981260 
+# when the REQUEST_URI is /index.php
+#
+#SecRule REQUEST_URI "@beginsWith /index.php" "id:'123',phase:1,t:none,pass, \
+  nolog,ctl:ruleRemoveTargetById=981260;ARGS:password"
+
+#
+# Example Rule Modification - Removing a specific ARGS parameter from inspection for ALL rules
+#
+# This rule illustrates that we can use tagging very effecivly to whitelist a common false 
+# positive across an entire ModSecurity instance. This can be done because every rule in 
+# OWASP_CRS is tagged with OWASP_CRS. This will NOT effect custom rules.
+#
+#SecRule REQUEST_FILENAME "@endsWith /wp-login.php" "id: 901001,phase:request,t:none \
+  nolog,pass,ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:pwd"
+ 
+
