@@ -22,13 +22,13 @@
 /dev/tcp/
 /dev/udp/
 /dev/zero
+/etc/group
 /etc/master.passwd
 /etc/passwd
 /etc/pwd.db
+/etc/shadow
 /etc/shells
 /etc/spwd.db
-/etc/shadow
-/etc/group
 /proc/self/
 /usr/bin/cc
 /usr/bin/clang
@@ -54,6 +54,7 @@
 /usr/bin/python
 /usr/bin/python2
 /usr/bin/python3
+/usr/bin/ruby
 /usr/bin/tail
 /usr/bin/top
 /usr/bin/uname
@@ -70,4 +71,5 @@
 /usr/local/bin/python2
 /usr/local/bin/python3
 /usr/local/bin/rbash
+/usr/local/bin/ruby
 /usr/local/bin/wget
