@@ -46,7 +46,6 @@ doc_root
 docref_ext
 docref_root
 enable_dl
-engine
 error_append_string
 error_log
 error_prepend_string
@@ -64,7 +63,6 @@ fastcgi.logging
 file_uploads
 filter.default
 filter.default_flags
-from
 gd.jpeg_ignore_warning
 highlight.bg
 highlight.comment
@@ -198,7 +196,6 @@ phar.cache_list
 phar.readonly
 phar.require_hash
 post_max_size
-precision
 realpath_cache_size
 realpath_cache_ttl
 register_argc_argv
