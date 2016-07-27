@@ -616,7 +616,7 @@ SecCollectionTimeout 600
 #
 # If a request is allowed to pass without being checked by the CRS, there is no
 # entry in the audit log (for performance reasons), but an error log entry is
-# being written.  If you want to disable the error log entry, then issue the
+# written.  If you want to disable the error log entry, then issue the
 # following directive somewhere after the inclusion of the CRS
 # (E.g., RESPONSE-999-EXCEPTIONS.conf).
 #
