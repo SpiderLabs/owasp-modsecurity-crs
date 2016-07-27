@@ -198,13 +198,13 @@ SecAction \
 # Level 3: ...
 # Level 4: ...
 
-SecAction \
- "id:'900023',\
-  phase:1,\
-  nolog,\
-  pass,\
-  t:none,\
-  setvar:tx.paranoia_level=1"
+#SecAction \
+#  "id:'900023',\
+#   phase:1,\
+#   nolog,\
+#   pass,\
+#   t:none,\
+#   setvar:tx.paranoia_level=1"
 
 
 #
@@ -626,4 +626,4 @@ SecCollectionTimeout 600
 # requests will bypass the Core Rules completely and you lose the ability to
 # protect your service with ModSecurity.
 #
-SecAction "id:900025,phase:1,nolog,setvar:tx.sampling_percentage=100"
+# SecAction "id:900025,phase:1,nolog,setvar:tx.sampling_percentage=50"
