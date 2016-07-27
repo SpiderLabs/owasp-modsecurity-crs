@@ -626,4 +626,4 @@ SecCollectionTimeout 600
 # requests will bypass the Core Rules completely and you lose the ability to
 # protect your service with ModSecurity.
 #
-# SecAction "id:900025,phase:1,nolog,setvar:tx.sampling_percentage=50"
+# SecAction "id:900025,phase:1,pass,nolog,setvar:tx.sampling_percentage=50"
