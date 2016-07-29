@@ -91,20 +91,22 @@ SecComponentSignature "OWASP_CRS/3.0.0"
 # disruptive action is set to 'pass', as a result, all rules that use the 'block' action
 # will not interrupt a transaction, rather, these rules will only increase the anomaly 
 # score. Specific rules present in REQUEST-949-BLOCKING-EVALUATION.conf and
-# RESPONSE-959-BLOCKING-EVALUATION.conf specifficly overwrite the default actions 
-# specified in SecDefaultAction with a 'deny' action. We allow you to change the return
-# status provided via SecDefaultAction below. However, in order to change the disruptive
-# action from 'deny' users should add a SecRuleUpdateActionByID directive in 
-# RESPONSE-999-EXCEPTIONS.conf. Such a directive may appear similar to the following:
+# RESPONSE-959-BLOCKING-EVALUATION.conf actively overwrite the default actions 
+# specified in SecDefaultAction with a 'deny' action. This 'deny' is be default paired 
+# with a 'status:403' action. In order to change the disruptive action from 'deny' users
+# should add a SecRuleUpdateActionByID directive in RESPONSE-999-EXCEPTIONS.conf. Such 
+# directives may appear similar to the following:
 #
 #   SecRuleupdateActionById 949110 "t:none,redirect:'http://%{request_headers.host}/',chain"
+#   SecRuleupdateActionById 949110 "t:none,deny,status:404,chain"
+#   SecRuleupdateActionById 949110 "t:none,drop,chain"
 #
 #
 # Ref: http://blog.spiderlabs.com/2010/11/advanced-topic-of-the-week-traditional-vs-anomaly-scoring-detection-modes.html
 # Ref: https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#wiki-SecDefaultAction
 
-SecDefaultAction "phase:1,log,auditlog,pass,status:403"
-SecDefaultAction "phase:2,log,auditlog,pass,status:403"
+SecDefaultAction "phase:1,log,auditlog,pass"
+SecDefaultAction "phase:2,log,auditlog,pass"
 
 #
 # -- [[ Collaborative Detection Severity Levels ]] ----------------------------------------
