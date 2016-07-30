@@ -172,8 +172,8 @@ SecAction \
 # This is a collaborative detection mode where each rule will increment an overall
 # anomaly score for the transaction. The scores are then evaluated in the following files:
 #
-# Inbound anomaly score - checked in the modsecurity_crs_49_inbound_blocking.conf file
-# Outbound anomaly score - checked in the modsecurity_crs_59_outbound_blocking.conf file
+# Inbound anomaly score - checked in the REQUEST-949-BLOCKING-EVALUATION.conf file
+# Outbound anomaly score - checked in the RESPONSE-959-BLOCKING-EVALUATION.conf file
 #
 # If you want to use anomaly scoring mode, then uncomment this line.
 #
@@ -340,15 +340,16 @@ SecAction \
 #
 # -- [[ HTTP Policy Settings ]] ----------------------------------------------------------
 #
-# Set the following policy settings here and they will be propagated to the 23 rules
-# file (modsecurity_common_23_request_limits.conf) by using macro expansion.  
-# If you run into false positives, you can adjust the settings here.
+# Here, you can define optional limits on lengths and number of
+# HTTP parameters and uploaded files. This can help to prevent
+# application specific DoS attacks.
 #
-# Only the max number of args is uncommented by default as there are a high rate
-# of false positives.  Uncomment the items you wish to set.
-# 
+# Beware for blocking legitimate traffic when enabling these limits.
 #
-# -- Maximum number of arguments in request limited
+# These values are checked in REQUEST-920-PROTOCOL-ENFORCEMENT.conf.
+#
+
+# Limit number of arguments in request
 SecAction \
  "id:'900006',\
   phase:1,\
@@ -357,8 +358,7 @@ SecAction \
   t:none,\
   setvar:tx.max_num_args=255"
 
-#
-# -- Limit argument name length
+# Limit length of any argument name
 #SecAction \
  "id:'900007',\
   phase:1,\
@@ -367,8 +367,7 @@ SecAction \
   t:none,\
   setvar:tx.arg_name_length=100"
 
-#
-# -- Limit value name length
+# Limit length of any argument value
 #SecAction \
  "id:'900008',\
   phase:1,\
@@ -377,8 +376,7 @@ SecAction \
   t:none,\
   setvar:tx.arg_length=400"
 
-#
-# -- Limit arguments total length
+# Limit total length of combined arguments
 #SecAction \
  "id:'900009',\
   phase:1,\
@@ -387,8 +385,7 @@ SecAction \
   t:none,\
   setvar:tx.total_arg_length=64000"
 
-#
-# -- Individual file size is limited
+# Limit file size of individual uploaded file
 #SecAction \
  "id:'900010',\
   phase:1,\
@@ -397,8 +394,7 @@ SecAction \
   t:none,\
   setvar:tx.max_file_size=1048576"
 
-#
-# -- Combined file size is limited
+# Limit combined size of all uploaded files
 #SecAction \
  "id:'900011',\
   phase:1,\
@@ -406,7 +402,6 @@ SecAction \
   pass,\
   t:none,\
   setvar:tx.combined_file_sizes=1048576"
-
 
 #
 # Set the following policy settings here and they will be propagated to various
