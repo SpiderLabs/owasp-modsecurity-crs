@@ -26,6 +26,11 @@
 #
 # Ref: https://github.com/SpiderLabs/ModSecurity/blob/master/modsecurity.conf-recommended 
 #
+# The order of file inclusion should always be as follows:
+# 1. modsecurity.conf
+# 2. modsecurity_crs_10_setup.conf (this file)
+# 3. rules/* (the CRS rule files)
+#
 
 
 #
