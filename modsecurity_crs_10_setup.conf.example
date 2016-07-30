@@ -457,34 +457,6 @@ SecAction \
 
 
 #
-# -- [[ Content Security Policy (CSP) Settings ]] -----------------------------------------
-#
-# The purpose of these settings is to send CSP response headers to
-# Mozilla FireFox users so that you can enforce how dynamic content
-# is used. CSP usage helps to prevent XSS attacks against your users.
-#  
-# Reference Link:
-#
-#   https://developer.mozilla.org/en/Security/CSP
-#
-# Uncomment this SecAction line if you want use CSP enforcement.
-# You need to set the appropriate directives and settings for your site/domain and
-# and activate the CSP file in the experimental_rules directory.
-# 
-# Ref: http://blog.spiderlabs.com/2011/04/modsecurity-advanced-topic-of-the-week-integrating-content-security-policy-csp.html
-#
-#SecAction \
- "id:'900013',\
-  phase:1,\
-  nolog,\
-  pass,\
-  t:none,\
-  setvar:tx.csp_report_only=1, \
-  setvar:tx.csp_report_uri=/csp_violation_report, \
-  setenv:'csp_policy=allow \'self\'; img-src *.yoursite.com; media-src *.yoursite.com; style-src *.yoursite.com; frame-ancestors *.yoursite.com; script-src *.yoursite.com; report-uri %{tx.csp_report_uri}'"
-
-
-#
 # -- [[ Brute Force Protection ]] ---------------------------------------------------------
 #
 # If you are using the Brute Force Protection rule set, then uncomment the following
