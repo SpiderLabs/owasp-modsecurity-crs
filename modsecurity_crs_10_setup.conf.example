@@ -219,6 +219,94 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 
 
 #
+# -- [[ HTTP Policy Settings ]] ------------------------------------------------
+#
+#
+# Set the following policy settings here and they will be propagated to various
+# rules files by using macro expansion:
+# - REQUEST-911-METHOD-ENFORCEMENT.conf
+# - REQUEST-912-DOS-PROTECTION.conf
+# - REQUEST-920-PROTOCOL-ENFORCEMENT.conf
+# If you run into false positives, you can adjust the settings here.
+#
+SecAction \
+ "id:900012,\
+  phase:1,\
+  nolog,\
+  pass,\
+  t:none,\
+  setvar:'tx.allowed_methods=GET HEAD POST OPTIONS', \
+  setvar:'tx.static_resources=.jpg/ .jpeg/ .png/ .gif/ .js/ .css/ .ico/ .svg/ .webp/', \
+  setvar:'tx.allowed_request_content_type=application/x-www-form-urlencoded|multipart/form-data|text/xml|application/xml|application/x-amf|application/json|text/plain', \
+  setvar:'tx.allowed_http_versions=HTTP/1.0 HTTP/1.1 HTTP/2', \
+  setvar:'tx.restricted_extensions=.asa/ .asax/ .ascx/ .axd/ .backup/ .bak/ .bat/ .cdx/ .cer/ .cfg/ .cmd/ .com/ .config/ .conf/ .cs/ .csproj/ .csr/ .dat/ .db/ .dbf/ .dll/ .dos/ .htr/ .htw/ .ida/ .idc/ .idq/ .inc/ .ini/ .key/ .licx/ .lnk/ .log/ .mdb/ .old/ .pass/ .pdb/ .pol/ .printer/ .pwd/ .resources/ .resx/ .sql/ .sys/ .vb/ .vbs/ .vbproj/ .vsdisco/ .webinfo/ .xsd/ .xsx/', \
+  setvar:'tx.restricted_headers=proxy lock-token content-range translate if'"
+
+# Here, you can define optional limits on lengths and number of
+# HTTP parameters and uploaded files. This can help to prevent
+# application specific DoS attacks.
+#
+# Beware for blocking legitimate traffic when enabling these limits.
+#
+# These values are checked in REQUEST-920-PROTOCOL-ENFORCEMENT.conf.
+#
+
+# Limit number of arguments in request
+#SecAction \
+# "id:'900006',\
+#  phase:1,\
+#  nolog,\
+#  pass,\
+#  t:none,\
+#  setvar:tx.max_num_args=255"
+
+# Limit length of any argument name
+#SecAction \
+# "id:'900007',\
+#  phase:1,\
+#  nolog,\
+#  pass,\
+#  t:none,\
+#  setvar:tx.arg_name_length=100"
+
+# Limit length of any argument value
+#SecAction \
+# "id:'900008',\
+#  phase:1,\
+#  nolog,\
+#  pass,\
+#  t:none,\
+#  setvar:tx.arg_length=400"
+
+# Limit total length of combined arguments
+#SecAction \
+# "id:'900009',\
+#  phase:1,\
+#  nolog,\
+#  pass,\
+#  t:none,\
+#  setvar:tx.total_arg_length=64000"
+
+# Limit file size of individual uploaded file
+#SecAction \
+# "id:'900010',\
+#  phase:1,\
+#  nolog,\
+#  pass,\
+#  t:none,\
+#  setvar:tx.max_file_size=1048576"
+
+# Limit combined size of all uploaded files
+#SecAction \
+# "id:'900011',\
+#  phase:1,\
+#  nolog,\
+#  pass,\
+#  t:none,\
+#  setvar:tx.combined_file_sizes=1048576"
+
+
+#
 # -- [[ System Description Initalization ]] --
 #
 # These variables are used to enable and disable specific rules based on you
@@ -349,94 +437,6 @@ SecAction \
 #  t:none,\
 #  ctl:ruleEngine=DetectionOnly,\
 #  setvar:tx.regression_testing=1"
-
-
-#
-# -- [[ HTTP Policy Settings ]] ------------------------------------------------
-#
-# Here, you can define optional limits on lengths and number of
-# HTTP parameters and uploaded files. This can help to prevent
-# application specific DoS attacks.
-#
-# Beware for blocking legitimate traffic when enabling these limits.
-#
-# These values are checked in REQUEST-920-PROTOCOL-ENFORCEMENT.conf.
-#
-
-# Limit number of arguments in request
-#SecAction \
-# "id:'900006',\
-#  phase:1,\
-#  nolog,\
-#  pass,\
-#  t:none,\
-#  setvar:tx.max_num_args=255"
-
-# Limit length of any argument name
-#SecAction \
-# "id:'900007',\
-#  phase:1,\
-#  nolog,\
-#  pass,\
-#  t:none,\
-#  setvar:tx.arg_name_length=100"
-
-# Limit length of any argument value
-#SecAction \
-# "id:'900008',\
-#  phase:1,\
-#  nolog,\
-#  pass,\
-#  t:none,\
-#  setvar:tx.arg_length=400"
-
-# Limit total length of combined arguments
-#SecAction \
-# "id:'900009',\
-#  phase:1,\
-#  nolog,\
-#  pass,\
-#  t:none,\
-#  setvar:tx.total_arg_length=64000"
-
-# Limit file size of individual uploaded file
-#SecAction \
-# "id:'900010',\
-#  phase:1,\
-#  nolog,\
-#  pass,\
-#  t:none,\
-#  setvar:tx.max_file_size=1048576"
-
-# Limit combined size of all uploaded files
-#SecAction \
-# "id:'900011',\
-#  phase:1,\
-#  nolog,\
-#  pass,\
-#  t:none,\
-#  setvar:tx.combined_file_sizes=1048576"
-
-#
-# Set the following policy settings here and they will be propagated to various
-# rules files by using macro expansion:
-# - REQUEST-911-METHOD-ENFORCEMENT.conf
-# - REQUEST-912-DOS-PROTECTION.conf
-# - REQUEST-920-PROTOCOL-ENFORCEMENT.conf
-# If you run into false positives, you can adjust the settings here.
-#
-SecAction \
- "id:900012,\
-  phase:1,\
-  nolog,\
-  pass,\
-  t:none,\
-  setvar:'tx.allowed_methods=GET HEAD POST OPTIONS', \
-  setvar:'tx.static_resources=.jpg/ .jpeg/ .png/ .gif/ .js/ .css/ .ico/ .svg/ .webp/', \
-  setvar:'tx.allowed_request_content_type=application/x-www-form-urlencoded|multipart/form-data|text/xml|application/xml|application/x-amf|application/json|text/plain', \
-  setvar:'tx.allowed_http_versions=HTTP/1.0 HTTP/1.1 HTTP/2', \
-  setvar:'tx.restricted_extensions=.asa/ .asax/ .ascx/ .axd/ .backup/ .bak/ .bat/ .cdx/ .cer/ .cfg/ .cmd/ .com/ .config/ .conf/ .cs/ .csproj/ .csr/ .dat/ .db/ .dbf/ .dll/ .dos/ .htr/ .htw/ .ida/ .idc/ .idq/ .inc/ .ini/ .key/ .licx/ .lnk/ .log/ .mdb/ .old/ .pass/ .pdb/ .pol/ .printer/ .pwd/ .resources/ .resx/ .sql/ .sys/ .vb/ .vbs/ .vbproj/ .vsdisco/ .webinfo/ .xsd/ .xsx/', \
-  setvar:'tx.restricted_headers=proxy lock-token content-range translate if'"
 
 
 #
