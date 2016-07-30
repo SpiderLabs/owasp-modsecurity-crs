@@ -223,14 +223,11 @@ SecAction \
 #
 # Set each setting to reflect your perticular environment. By default all
 # configurations are enabled.
-# Avoid changing sql_error_match it is used for shortcutting rules for
-# performance reasons.
 
 SecAction \
   "id:'900024', \
   phase:1, \
   t:none, \
-  setvar:tx.sql_error_match=0, \
   setvar:tx.msaccess=1, \
   setvar:tx.db2=1, \
   setvar:tx.emc=1, \
