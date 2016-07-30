@@ -40,7 +40,8 @@
 # -- [[ Anomaly Scoring Mode (default) ]] --
 # In CRS3, anomaly mode is the default and recommended mode, since it gives the
 # most accurate log information and offers the most flexibility in setting your
-# blocking policies. Each matching rule increases an 'anomaly score', and all
+# blocking policies. It is also called "collaborative detection mode".
+# In this mode, each matching rule increases an 'anomaly score', and all
 # rule actions default to 'pass', so rule processing continues after a match.
 # At the conclusion of the inbound rules, and again at the conclusion of the
 # outbound rules, the anomaly score is checked, and the blocking evaluation
