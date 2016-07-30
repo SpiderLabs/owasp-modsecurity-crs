@@ -34,18 +34,6 @@
 
 
 #
-# -- [[ Rule Version ]] -------------------------------------------------------------------
-#
-# Rule version data is added to the "Producer" line of Section H of the Audit log:
-#
-# - Producer: ModSecurity for Apache/2.7.0-rc1 (http://www.modsecurity.org/); OWASP_CRS/2.2.4.
-#
-# Ref: https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#wiki-SecComponentSignature 
-#
-SecComponentSignature "OWASP_CRS/3.0.0"
-
-
-#
 # -- [[ Modes of Operation: Self-Contained vs. Collaborative Detection ]] -----------------
 #
 # Each detection rule uses the "block" action which will inherit the SecDefaultAction
