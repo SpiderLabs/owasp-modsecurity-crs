@@ -110,7 +110,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 
 
 #
-# -- [[ Collaborative Detection Severity Levels ]] ----------------------------------------
+# -- [[ Anomaly Mode Severity Levels ]] ----------------------------------------
 #
 # These are the default scoring points for each severity level.  You may
 # adjust these to you liking.  These settings will be used in macro expansion
@@ -148,30 +148,33 @@ SecAction \
 
 
 #
-# -- [[ Collaborative Detection Scoring Threshold Levels ]] ------------------------------
+# -- [[ Anomaly Mode Blocking Threshold Levels ]] ------------------------------
 #
-# These variables are used in macro expansion in the 49 inbound blocking and 59
-# outbound blocking files.
+# Here, you can specify at which cumulative anomaly score an inbound request,
+# or outbound response, should be blocked.
 #
-# **MUST HAVE** ModSecurity v2.5.12 or higher to use macro expansion in numeric
-# operators.  If you have an earlier version, edit the 49/59 files directly to
-# set the appropriate anomaly score levels.
+# Most detected inbound threats will give a critical score of 5.
+# Most outbound threats, like data leakages, will give a score of 4.
+# Smaller violations, like violations of protocol/standards, carry lower scores.
 #
-# You should set the score to the proper threshold you would prefer. If set to "5"
-# it will work similarly to previous Mod CRS rules and will create an event in the error_log
-# file if there are any rules that match.  If you would like to lessen the number of events
-# generated in the error_log file, you should increase the anomaly score threshold to
-# something like "20".  This would only generate an event in the error_log file if
-# there are multiple lower severity rule matches or if any 1 higher severity item matches.
+# If you keep the blocking thresholds at the defaults, the CRS will work
+# similarly to previous CRS versions: a single critical rule match will cause
+# the request to be blocked and logged.
 #
-SecAction \
- "id:'900003',\
-  phase:1,\
-  nolog,\
-  pass,\
-  t:none,\
-  setvar:tx.inbound_anomaly_score_threshold=5,\
-  setvar:tx.outbound_anomaly_score_threshold=4"
+# If you want to make the CRS less sensitive, you can increase the blocking
+# thresholds, for instance to 7 (which would require multiple rules to match)
+# or 10 (which would require at least two critical alerts - or a combination
+# of lesser alerts), or even higher. However, this might cause some attacks
+# to bypass the CRS.
+#
+#SecAction \
+# "id:'900003',\
+#  phase:1,\
+#  nolog,\
+#  pass,\
+#  t:none,\
+#  setvar:tx.inbound_anomaly_score_threshold=5,\
+#  setvar:tx.outbound_anomaly_score_threshold=4"
 
 
 # 
