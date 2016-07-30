@@ -364,13 +364,13 @@ SecAction \
 #
 
 # Limit number of arguments in request
-SecAction \
- "id:'900006',\
-  phase:1,\
-  nolog,\
-  pass,\
-  t:none,\
-  setvar:tx.max_num_args=255"
+#SecAction \
+# "id:'900006',\
+#  phase:1,\
+#  nolog,\
+#  pass,\
+#  t:none,\
+#  setvar:tx.max_num_args=255"
 
 # Limit length of any argument name
 #SecAction \
