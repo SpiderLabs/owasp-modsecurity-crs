@@ -48,22 +48,28 @@
 # you must use SecRuleUpdateActionByID directives AFTER the CRS rules
 # are configured, for instance in the RESPONSE-999-EXCEPTIONS.conf file.
 #
-# Default action: block with error 403
-# (No configuration needed in this file.)
+# These actions only apply when using Anomaly Mode.
 #
-# Example 1: redirect back to the homepage on blocking
+# Default action: block with error 403
+# (No configuration needed in this file if you want the default behavior.)
+#
+
+# Example: redirect back to the homepage on blocking
+#
 # SecRuleUpdateActionById 949110 "t:none,redirect:'http://%{request_headers.host}/',chain"
 # SecRuleUpdateActionById 959100 "t:none,redirect:'http://%{request_headers.host}/',chain"
+
+# Example: redirect to another URL on blocking
 #
-# Example 2: redirect to another URL on blocking
 # SecRuleUpdateActionById 949110 "t:none,redirect:'http://example.com/report_problem',chain"
 # SecRuleUpdateActionById 959100 "t:none,redirect:'http://example.com/report_problem',chain"
+
+# Example: send an error 404
 #
-# Example 3: send an error 404
 # SecRuleUpdateActionById 949110 "t:none,deny,status:404,chain"
 # SecRuleUpdateActionById 959100 "t:none,deny,status:404,chain"
+
+# Example: drop the connection (best for DoS attacks)
 #
-# Example 4: drop the connection (best for DoS attacks)
 # SecRuleUpdateActionById 949110 "t:none,drop,chain"
 # SecRuleUpdateActionById 959100 "t:none,drop,chain"
-#
