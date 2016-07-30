@@ -21,15 +21,14 @@
 # - SecDebugLog
 # - XML processing
 #
-# You should use the modsecurity.conf-recommended file that comes with the
-# ModSecurity source code archive.
+# You should copy and tweak the modsecurity.conf-recommended file that comes
+# with the ModSecurity source code archive:
+# https://github.com/SpiderLabs/ModSecurity/blob/master/modsecurity.conf-recommended 
 #
-# Ref: https://github.com/SpiderLabs/ModSecurity/blob/master/modsecurity.conf-recommended 
-#
-# The order of file inclusion should always be as follows:
+# The order of file inclusion in your webserver config should always be:
 # 1. modsecurity.conf
 # 2. modsecurity_crs_10_setup.conf (this file)
-# 3. rules/* (the CRS rule files)
+# 3. rules/*.conf (the CRS rule files)
 #
 
 
