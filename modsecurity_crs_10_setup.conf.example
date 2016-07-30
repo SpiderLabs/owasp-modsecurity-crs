@@ -9,7 +9,7 @@
 
 
 #
-# -- [[ Recommended Base Configuration ]] ------------------------------------------------- 
+# -- [[ Recommended Base Configuration ]] --------------------------------------
 #
 # The configuration directives/settings in this file are used to control
 # the OWASP ModSecurity CRS. These settings do **NOT** configure the main
@@ -177,7 +177,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 
 
 # 
-# -- [[ Paranoia Level Initialization ]] -------------------------------------------------
+# -- [[ Paranoia Level Initialization ]] ---------------------------------------
 #
 # The Paranoia Level (PL) setting allows you to choose the desired level
 # of rule checks.
@@ -251,7 +251,7 @@ SecAction \
 
 
 #
-# -- [[ GeoIP Database ]] -----------------------------------------------------------------
+# -- [[ GeoIP Database ]] ------------------------------------------------------
 #
 # There are some rulesets that need to inspect the GEO data of the REMOTE_ADDR data.
 # 
@@ -319,7 +319,7 @@ SecAction \
 
 
 #
-# -- [[ Regression Testing Mode ]] --------------------------------------------------------
+# -- [[ Regression Testing Mode ]] ---------------------------------------------
 #
 # If you are going to run the regression testing mode, you should uncomment the
 # following rule. It will enable DetectionOnly mode for the SecRuleEngine and
@@ -349,7 +349,7 @@ SecAction \
 
 
 #
-# -- [[ HTTP Policy Settings ]] ----------------------------------------------------------
+# -- [[ HTTP Policy Settings ]] ------------------------------------------------
 #
 # Here, you can define optional limits on lengths and number of
 # HTTP parameters and uploaded files. This can help to prevent
@@ -437,7 +437,7 @@ SecAction \
 
 
 #
-# -- [[ XSS Settings ]] -----------------------------------------
+# -- [[ XSS Settings ]] --------------------------------------------------------
 #
 # The purpose of these settings is to specify if your site allows
 # clients to submit ANY HTML at all.  If the answer is "No" then
@@ -463,7 +463,7 @@ SecAction \
 
 
 #
-# -- [[ Anti-Automation / DoS Protection ]] ----------------------------------------------
+# -- [[ Anti-Automation / DoS Protection ]] ------------------------------------
 #
 # Optional DoS protection against clients making requests too quickly.
 #
@@ -488,12 +488,12 @@ SecAction \
 
 
 #
-# -- [[ Check UTF enconding ]] -----------------------------------------------------------
+# -- [[ Check UTF encoding ]] --------------------------------------------------
 #
-# We only want to apply this check if UTF-8 encoding is actually used by the site, otherwise
-# it will result in false positives.
+# Enable this setting to check for invalid UTF-8 encoding.
+# We only want to apply this check if UTF-8 encoding is actually used by the
+# site, otherwise it will result in false positives.
 #
-# Uncomment this line if your site uses UTF8 encoding
 #SecAction \
 # "id:'900016',\
 #  phase:1,\
@@ -504,17 +504,19 @@ SecAction \
 
 
 #
+# -- [[ Collection timeout ]] --------------------------------------------------
+#
 # Set the SecCollectionTimeout directive to a lower setting (default
 # is 1 hour).  Reducing this setting increases performance by cleaning
 # out old/stale entries.
 # Ref: https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#wiki-SecCollectionTimeout
+
 # Using 600 (10 mins).
 SecCollectionTimeout 600
 
 
 #
-# -- [[ Easing In / Sampling Percentage ]]
-# -----------------------------------------------------
+# -- [[ Easing In / Sampling Percentage ]] -------------------------------------
 #
 # Adding the Core Rule Set to an existing productive site can lead to false
 # positives, unexpected performance issues and other undesired side effects.
@@ -545,7 +547,7 @@ SecCollectionTimeout 600
 
 
 #
-# -- [[ End of setup ]] -----------------------------------------------------------
+# -- [[ End of setup ]] --------------------------------------------------------
 #
 # The CRS checks the tx.setup_done variable to ensure that the setup
 # has been loaded. If you are not planning to use this setup template,
