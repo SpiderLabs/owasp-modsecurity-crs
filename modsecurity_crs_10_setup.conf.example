@@ -457,28 +457,6 @@ SecAction \
 
 
 #
-# -- [[ Brute Force Protection ]] ---------------------------------------------------------
-#
-# If you are using the Brute Force Protection rule set, then uncomment the following
-# lines and set the following variables:
-# - Protected URLs: resources to protect (e.g. login pages) - set to your login page
-# - Burst Time Slice Interval: time interval window to monitor for bursts
-# - Request Threshold: request # threshold to trigger a burst
-# - Block Period: temporary block timeout
-#
-#SecAction \
- "id:'900014',\
-  phase:1,\
-  nolog,\
-  pass,\
-  t:none,\
-  setvar:'tx.brute_force_protected_urls=#/login.jsp# #/partner_login.php#',\
-  setvar:'tx.brute_force_burst_time_slice=60',\
-  setvar:'tx.brute_force_counter_threshold=10',\
-  setvar:'tx.brute_force_block_timeout=300'"
-
-
-#
 # -- [[ Anti-Automation / DoS Protection ]] ----------------------------------------------
 #
 # Optional DoS protection against clients making requests too quickly.
