@@ -541,9 +541,10 @@ SecCollectionTimeout 600
 #
 # -- [[ End of setup ]] -----------------------------------------------------------
 #
-# The CRS checks the tx.setup_done variable to ensure that the setup is loaded.
-# If you are not planning to use this setup.conf template, you must
-# manually the tx.setup_done variable before including the CRS rules/* files.
+# The CRS checks the tx.setup_done variable to ensure that the setup
+# has been loaded. If you are not planning to use this setup template,
+# you must manually set the tx.setup_done variable before including
+# the CRS rules/* files.
 #
 SecAction \
  "id:'900099',\
