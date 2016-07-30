@@ -296,15 +296,15 @@ SecAction \
 
 
 #
-# -- [[ Project Honeypot HTTP Blacklist API Key ]] --------------------------------------------------------
+# -- [[ Project Honeypot HTTP Blacklist ]] -------------------------------------
+#
 # One of the checks in the IP Reputation file is to check the client IP address against the
 # Project Honeypot HTTPBL.  In order to do this, you need to register to get a free API key.
-# set it here with SecHttpBlKey.
+# Set it here with SecHttpBlKey.
 # Ref: https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#wiki-SecHttpBlKey
 # 
-# Project Honeypot returns multiple different malicious IP types. You may specify which you
-# want to block by enabled or disabling the types below. This rule should be enabled when
-# the Project Honeypot API key is enabled. By default all malicious types will be blocked.
+# Project Honeypot returns multiple different malicious IP types.
+# You may specify which you want to block by enabled or disabling them below.
 #
 #SecHttpBlKey XXXXXXXXXXXXXXXXX
 #SecAction "id:'900025', \
