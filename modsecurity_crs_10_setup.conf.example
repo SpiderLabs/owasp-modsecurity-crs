@@ -140,7 +140,7 @@ SecAction \
 
 
 #
-# -- [[ Collaborative Detection Scoring Initialization and Threshold Levels ]] ------------------------------
+# -- [[ Collaborative Detection Scoring Threshold Levels ]] ------------------------------
 #
 # These variables are used in macro expansion in the 49 inbound blocking and 59
 # outbound blocking files.
@@ -156,24 +156,6 @@ SecAction \
 # something like "20".  This would only generate an event in the error_log file if
 # there are multiple lower severity rule matches or if any 1 higher severity item matches.
 #
-SecAction \
- "id:'900002',\
-  phase:1,\
-  nolog,\
-  pass,\
-  t:none,\
-  setvar:tx.anomaly_score=0,\
-  setvar:tx.sql_injection_score=0,\
-  setvar:tx.xss_score=0,\
-  setvar:tx.rfi_score=0,\
-  setvar:tx.lfi_score=0,\
-  setvar:tx.rce_score=0,\
-  setvar:tx.php_injection_score=0,\
-  setvar:tx.http_violation_score=0,\
-  setvar:tx.session_fixation_score=0,\
-  setvar:tx.inbound_anomaly_score=0,\
-  setvar:tx.outbound_anomaly_score=0"
-
 SecAction \
  "id:'900003',\
   phase:1,\
