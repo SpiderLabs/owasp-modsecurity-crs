@@ -302,21 +302,20 @@ SecAction \
 # set it here with SecHttpBlKey.
 # Ref: https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#wiki-SecHttpBlKey
 # 
-# SecHttpBlKey XXXXXXXXXXXXXXXXX
-#
 # Project Honeypot returns multiple different malicious IP types. You may specify which you
 # want to block by enabled or disabling the types below. This rule should be enabled when
 # the Project Honeypot API key is enabled. By default all malicious types will be blocked.
 #
+#SecHttpBlKey XXXXXXXXXXXXXXXXX
 #SecAction "id:'900025', \
-  phase:1, \
-  nolog,\
-  pass,\
-  t:none,\
-  setvar:tx.block_search_ip=1, \
-  setvar:tx.block_suspicious_ip=1, \
-  setvar:tx.block_harvester_ip=1, \
-  setvar:tx.block_spammer_ip=1"
+#  phase:1, \
+#  nolog,\
+#  pass,\
+#  t:none,\
+#  setvar:tx.block_search_ip=1, \
+#  setvar:tx.block_suspicious_ip=1, \
+#  setvar:tx.block_harvester_ip=1, \
+#  setvar:tx.block_spammer_ip=1"
 
 
 #
@@ -331,13 +330,13 @@ SecAction \
 # from.
 #
 #SecRule REMOTE_ADDR "@ipMatch 192.168.1.100" \
- "id:'900005',\
-  phase:1,\
-  nolog,\
-  pass,\
-  t:none,\
-  ctl:ruleEngine=DetectionOnly,\
-  setvar:tx.regression_testing=1"
+# "id:'900005',\
+#  phase:1,\
+#  nolog,\
+#  pass,\
+#  t:none,\
+#  ctl:ruleEngine=DetectionOnly,\
+#  setvar:tx.regression_testing=1"
 
 
 #
@@ -363,48 +362,48 @@ SecAction \
 
 # Limit length of any argument name
 #SecAction \
- "id:'900007',\
-  phase:1,\
-  nolog,\
-  pass,\
-  t:none,\
-  setvar:tx.arg_name_length=100"
+# "id:'900007',\
+#  phase:1,\
+#  nolog,\
+#  pass,\
+#  t:none,\
+#  setvar:tx.arg_name_length=100"
 
 # Limit length of any argument value
 #SecAction \
- "id:'900008',\
-  phase:1,\
-  nolog,\
-  pass,\
-  t:none,\
-  setvar:tx.arg_length=400"
+# "id:'900008',\
+#  phase:1,\
+#  nolog,\
+#  pass,\
+#  t:none,\
+#  setvar:tx.arg_length=400"
 
 # Limit total length of combined arguments
 #SecAction \
- "id:'900009',\
-  phase:1,\
-  nolog,\
-  pass,\
-  t:none,\
-  setvar:tx.total_arg_length=64000"
+# "id:'900009',\
+#  phase:1,\
+#  nolog,\
+#  pass,\
+#  t:none,\
+#  setvar:tx.total_arg_length=64000"
 
 # Limit file size of individual uploaded file
 #SecAction \
- "id:'900010',\
-  phase:1,\
-  nolog,\
-  pass,\
-  t:none,\
-  setvar:tx.max_file_size=1048576"
+# "id:'900010',\
+#  phase:1,\
+#  nolog,\
+#  pass,\
+#  t:none,\
+#  setvar:tx.max_file_size=1048576"
 
 # Limit combined size of all uploaded files
 #SecAction \
- "id:'900011',\
-  phase:1,\
-  nolog,\
-  pass,\
-  t:none,\
-  setvar:tx.combined_file_sizes=1048576"
+# "id:'900011',\
+#  phase:1,\
+#  nolog,\
+#  pass,\
+#  t:none,\
+#  setvar:tx.combined_file_sizes=1048576"
 
 #
 # Set the following policy settings here and they will be propagated to various
@@ -445,13 +444,13 @@ SecAction \
 # will be skipped.
 #
 #SecAction \
- "id:'900023',\
-  phase:1,\
-  nolog,\
-  pass,\
-  t:none,\
-  setvar:tx.allow_html=1,\
-  setvar:'tx.allowed_html_urls=#/update.php# #/save_page.php#'"
+# "id:'900023',\
+#  phase:1,\
+#  nolog,\
+#  pass,\
+#  t:none,\
+#  setvar:tx.allow_html=1,\
+#  setvar:'tx.allowed_html_urls=#/update.php# #/save_page.php#'"
 
 
 #
@@ -469,14 +468,14 @@ SecAction \
 # You may also want to check out the definition of tx.static_resources in rule 900012.
 #
 #SecAction \
- "id:'900015',\
-  phase:1,\
-  nolog,\
-  pass,\
-  t:none,\
-  setvar:'tx.dos_burst_time_slice=60', \
-  setvar:'tx.dos_counter_threshold=100', \
-  setvar:'tx.dos_block_timeout=600'"
+# "id:'900015',\
+#  phase:1,\
+#  nolog,\
+#  pass,\
+#  t:none,\
+#  setvar:'tx.dos_burst_time_slice=60', \
+#  setvar:'tx.dos_counter_threshold=100', \
+#  setvar:'tx.dos_block_timeout=600'"
 
 
 #
@@ -487,12 +486,12 @@ SecAction \
 #
 # Uncomment this line if your site uses UTF8 encoding
 #SecAction \
- "id:'900016',\
-  phase:1,\
-  nolog,\
-  pass,\
-  t:none,\
-  setvar:tx.crs_validate_utf8_encoding=1"
+# "id:'900016',\
+#  phase:1,\
+#  nolog,\
+#  pass,\
+#  t:none,\
+#  setvar:tx.crs_validate_utf8_encoding=1"
 
 
 #
