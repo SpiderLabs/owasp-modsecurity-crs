@@ -33,72 +33,77 @@
 
 
 #
-# -- [[ Modes of Operation: Self-Contained vs. Collaborative Detection ]] -----------------
+# -- [[ Mode of Operation: Anomaly Scoring vs. Self-Contained ]] ---------------
 #
-# Each detection rule uses the "block" action which will inherit the SecDefaultAction
-# specified below. Your settings here will determine which mode of operation you use.
-# The default setting in OWASP CRS 3 is Collaborative Detection Mode (AKA Anomaly Mode).
+# The CRS can run in two modes:
+#
+# -- [[ Anomaly Scoring Mode (default) ]] --
+# In CRS3, anomaly mode is the default and recommended mode, since it gives the
+# most accurate log information and offers the most flexibility in setting your
+# blocking policies. Each matching rule increases an 'anomaly score', and all
+# rule actions default to 'pass', so rule processing continues after a match.
+# At the conclusion of the inbound rules, and again at the conclusion of the
+# outbound rules, the anomaly score is checked, and the blocking evaluation
+# rules apply a disruptive action, by default returning an error 403.
+# To change the disruptive action, see RESPONSE-999-EXCEPTIONS.conf.example
+# and review section 'Changing the Disruptive Action for Anomaly Mode'.
 #
 # -- [[ Self-Contained Mode ]] --
-# Rules inherit the specified disruptive action (i.e. deny, drop, etc).  The first rule
-# that matches will execute this action. In most cases this will cause evaluation to 
-# stop after the first rule has matched, this is similar to how many IDSs function.
-#
-# -- [[ Collaborative Detection Mode ]] --
-# This is the default "delayed blocking" mode of operation where each matching rule 
-# will inherit the "pass" action and will only contribute to anomaly scores. At the
-# conclusion of the inbound rules and again at the conclusion of the outbound rules
-# the anomaly score is checked. By default these anamoly score checking rules (949110
-# and 959100) will override the default 'pass' disruptive action with the 'deny' 
-# action. This will cause a request that exceeds the anamoly score to be blocked.
-# For more information on changing this default deny, see below.
+# In this mode, rules apply an action instantly. This was the CRS2 default.
+# It can lower resource usage, at the cost of less flexibility in blocking policy
+# and less informative audit logs (only the first detected threat is logged).
+# Rules inherit the specified disruptive action (i.e. deny, drop, etc).
+# The first rule that matches will execute this action. In most cases this will
+# cause evaluation to stop after the first rule has matched, similar to how many
+# IDSs function.
 #
 # -- [[ Alert Logging Control ]] --
+# In the mode configuration, you can also adjust the desired logging options.
 # There are three common options for dealing with logging. By default CRS enables
-# logging to the error log (or Event viewer) and logging to the audit log (if 
-# configured). You can change these settings by adjusting SecDefaultAction below.
+# logging to the webserver error log (or Event viewer) plus detailed logging to
+# the ModSecurity audit log.
 #
-# - To log to both the error log and ModSecurity audit log file use: "log,auditlog"
-# - To log *only* to the ModSecurity audit log file use: "nolog,auditlog"
-# - To log *only* to the error log file use: "log,noauditlog"
+# - To log to both error log and ModSecurity audit log file, use: "log,auditlog"
+# - To log *only* to the ModSecurity audit log file, use: "nolog,auditlog"
+# - To log *only* to the error log file, use: "log,noauditlog"
 #
-# The following are provided as an example configuration for Self-Contained Mode.
+# Examples for the various modes follow.
+# You must leave one of the following options enabled.
+# Each detection rule uses the "block" action, which will inherit the
+# SecDefaultAction specified below.
+# Note that you must specify the same line for phase:1 and phase:2.
 #
-#   -- Example 1: Basic 403 Forbidden response --
-#   In this configuration the default disruptive action here is deny, after a 
-#   rule triggers it will stop processing the request and return a 403.
-#
-#   SecDefaultAction "phase:1,log,auditlog,deny,status:403"
-#   SecDefaultAction "phase:2,log,auditlog,deny,status:403"
-#
-#   -- Example 2: Redirect to homepage --
-#   In this configuration the 'tag' action includes the Host header data in the alert, 
-#   this helps to identify which virtual host triggered the rule (if any).
-#
-#   SecDefaultAction "phase:1,log,auditlog,redirect:'http://%{request_headers.host}/',tag:'Host: %{request_headers.host}'"
-#   SecDefaultAction "phase:2,log,auditlog,redirect:'http://%{request_headers.host}/',tag:'Host: %{request_headers.host}'"
-#
-# -- [[ Collaborative Detection Mode Disruptive Actions ]] --
-# The default in CRS 3 is Collaborative Detection Mode. In this mode SecDefaultAction's 
-# disruptive action is set to 'pass', as a result, all rules that use the 'block' action
-# will not interrupt a transaction, rather, these rules will only increase the anomaly 
-# score. Specific rules present in REQUEST-949-BLOCKING-EVALUATION.conf and
-# RESPONSE-959-BLOCKING-EVALUATION.conf actively overwrite the default actions 
-# specified in SecDefaultAction with a 'deny' action. This 'deny' is be default paired 
-# with a 'status:403' action. In order to change the disruptive action from 'deny' users
-# should add a SecRuleUpdateActionByID directive in RESPONSE-999-EXCEPTIONS.conf. Such 
-# directives may appear similar to the following:
-#
-#   SecRuleupdateActionById 949110 "t:none,redirect:'http://%{request_headers.host}/',chain"
-#   SecRuleupdateActionById 949110 "t:none,deny,status:404,chain"
-#   SecRuleupdateActionById 949110 "t:none,drop,chain"
-#
-#
-# Ref: http://blog.spiderlabs.com/2010/11/advanced-topic-of-the-week-traditional-vs-anomaly-scoring-detection-modes.html
-# Ref: https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#wiki-SecDefaultAction
 
+# Default: Anomaly Scoring mode, log to error log, log to ModSecurity audit log
+# By default, blocks with error 403.
+# To change the disruptive action, see RESPONSE-999-EXCEPTIONS.conf.example
+# and review section 'Changing the Disruptive Action for Anomaly Mode'.
 SecDefaultAction "phase:1,log,auditlog,pass"
 SecDefaultAction "phase:2,log,auditlog,pass"
+
+# Example: Anomaly Scoring mode, log only to ModSecurity audit log
+# By default, blocks with error 403.
+# To change the disruptive action, see RESPONSE-999-EXCEPTIONS.conf.example
+# and review section 'Changing the Disruptive Action for Anomaly Mode'.
+# SecDefaultAction "phase:1,nolog,auditlog,pass"
+# SecDefaultAction "phase:2,nolog,auditlog,pass"
+
+# Example: Self-contained mode, return error 403 on blocking
+# In this configuration the default disruptive action here is 'deny'. After a
+# rule triggers, it will stop processing the request and return an error 403.
+# You can also use a different error status, such as 404, 406, et cetera.
+#SecDefaultAction "phase:1,log,auditlog,deny,status:403"
+#SecDefaultAction "phase:2,log,auditlog,deny,status:403"
+
+# Example: Self-contained mode, redirect back to homepage on blocking
+# In this configuration the 'tag' action includes the Host header data in the
+# alert. This helps to identify which virtual host triggered the rule (if any).
+# Note that this might cause redirect loops in some situations; for example
+# if a Cookie or User-Agent header is blocked, it will also be blocked when
+# it subsequently tries to access the homepage.
+#SecDefaultAction "phase:1,log,auditlog,redirect:'http://%{request_headers.host}/',tag:'Host: %{request_headers.host}'"
+#SecDefaultAction "phase:2,log,auditlog,redirect:'http://%{request_headers.host}/',tag:'Host: %{request_headers.host}'"
+
 
 #
 # -- [[ Collaborative Detection Severity Levels ]] ----------------------------------------
