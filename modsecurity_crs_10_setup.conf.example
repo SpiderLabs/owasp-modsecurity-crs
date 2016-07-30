@@ -112,11 +112,12 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 #
 # -- [[ Anomaly Mode Severity Levels ]] ----------------------------------------
 #
-# These are the default scoring points for each severity level.  You may
-# adjust these to you liking.  These settings will be used in macro expansion
+# These are the default scoring points for each severity level. You may
+# adjust these to your liking. These settings will be used in macro expansion
 # in the rules to increment the anomaly scores when rules match.
 #
-# These are the default Severity ratings (with anomaly scores) of the individual rules -
+# These are the default Severity ratings (with anomaly scores) of the individual
+# rules:
 #
 #    - 2: Critical - Anomaly Score of 5.
 #         Is the highest severity level possible without correlation.  It is
@@ -134,17 +135,17 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # In general, 'phase:request' is used. However, we want to make absolutely sure
 # that all configuration variables are set before the CRS rules are processed.)
 #
-SecAction \
- "id:'900001',\
-  phase:1,\
-  nolog,\
-  pass,\
-  t:none,\
-  setvar:tx.critical_anomaly_score=5,\
-  setvar:tx.error_anomaly_score=4,\
-  setvar:tx.warning_anomaly_score=3,\
-  setvar:tx.notice_anomaly_score=2,\
-  setvar:tx.block_duration=300"
+#SecAction \
+# "id:'900001',\
+#  phase:1,\
+#  nolog,\
+#  pass,\
+#  t:none,\
+#  setvar:tx.critical_anomaly_score=5,\
+#  setvar:tx.error_anomaly_score=4,\
+#  setvar:tx.warning_anomaly_score=3,\
+#  setvar:tx.notice_anomaly_score=2,\
+#  setvar:tx.block_duration=300"
 
 
 #
