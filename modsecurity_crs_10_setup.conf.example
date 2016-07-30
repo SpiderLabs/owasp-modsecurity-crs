@@ -178,26 +178,6 @@ SecAction \
 
 
 # 
-# -- [[ Collaborative Detection Blocking ]] -----------------------------------------------
-#
-# This is a collaborative detection mode where each rule will increment an overall
-# anomaly score for the transaction. The scores are then evaluated in the following files:
-#
-# Inbound anomaly score - checked in the REQUEST-949-BLOCKING-EVALUATION.conf file
-# Outbound anomaly score - checked in the RESPONSE-959-BLOCKING-EVALUATION.conf file
-#
-# If you want to use anomaly scoring mode, then uncomment this line.
-#
-SecAction \
- "id:'900004',\
-  phase:1,\
-  nolog,\
-  pass,\
-  t:none,\
-  setvar:tx.anomaly_score_blocking=on"
-
-
-# 
 # -- [[ Paranoia Level Initialization ]] -------------------------------------------------
 #
 # The Paranoia Level (PL) setting allows you to choose the desired level
