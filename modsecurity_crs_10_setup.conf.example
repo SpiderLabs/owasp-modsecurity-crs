@@ -269,7 +269,7 @@ SecAction \
 # Ref: http://blog.spiderlabs.com/2010/10/detecting-malice-with-modsecurity-geolocation-data.html
 # Ref: http://blog.spiderlabs.com/2010/11/detecting-malice-with-modsecurity-ip-forensics.html
 #
-SecGeoLookupDb util/geo-location/GeoLiteCity.dat
+#SecGeoLookupDb util/geo-location/GeoLiteCity.dat
 
 
 #
@@ -283,17 +283,19 @@ SecGeoLookupDb util/geo-location/GeoLiteCity.dat
 # country, then you can disable all access from that country via this variable.
 # The rule performing the test has the rule id 910100.
 #
-# By default, the list is empty. A list used by some sites is the following:
-#
+# By default, the list is empty. A list used by some sites was the following:
 # setvar:'tx.high_risk_country_codes=UA ID YU LT EG RO BG TR RU PK MY CN'"
 #
-SecAction \
- "id:'900022',\
-  phase:1,\
-  nolog,\
-  pass,\
-  t:none,\
-  setvar:'tx.high_risk_country_codes='"
+# This rule requires SecGeoLookupDb (see above).
+#
+#SecAction \
+# "id:'900022',\
+#  phase:1,\
+#  nolog,\
+#  pass,\
+#  t:none,\
+#  setvar:'tx.high_risk_country_codes='"
+
 
 #
 # -- [[ Project Honeypot HTTP Blacklist API Key ]] --------------------------------------------------------
