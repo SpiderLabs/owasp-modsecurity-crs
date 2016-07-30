@@ -326,9 +326,18 @@ SecAction \
 # will enable Response Header tagging so that the client testing script can see
 # which rule IDs have matched.
 #
-# You must specify the your source IP address where you will be running the tests
-# from.
+# The server will insert "X-WAF-Events" and "X-WAF-Score" in the response.
+# Example output:
+#   X-WAF-Events: TX:930110-OWASP_CRS/WEB_ATTACK/DIR_TRAVERSAL-REQUEST_URI,
+#                TX:930120-OWASP_CRS/WEB_ATTACK/FILE_INJECTION-ARGS:foo
+#   X-WAF-Score: Total=15; sqli=0; xss=0; rfi=0; lfi=15; rce=0; php=0; http=0; ses=0
 #
+# To enable this functionality, include the RESPONSE-981-REGRESSION.conf file.
+# You must specify the source IP address/range where you will be running the
+# tests from. The source IP will not be blocked in case of rule matches.
+# Only enable this on private networks.
+#
+#Include /path/to/crs/util/regression-tests/RESPONSE-981-REGRESSION.conf
 #SecRule REMOTE_ADDR "@ipMatch 192.168.1.100" \
 # "id:'900005',\
 #  phase:1,\
