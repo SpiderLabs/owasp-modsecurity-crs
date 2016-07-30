@@ -13,15 +13,11 @@
 #
 # The configuration directives/settings in this file are used to control
 # the OWASP ModSecurity CRS. These settings do **NOT** configure the main
-# ModSecurity settings such as:
-# 
-# - SecRuleEngine
-# - SecRequestBodyAccess
-# - SecAuditEngine
-# - SecDebugLog
-# - XML processing
+# ModSecurity settings (modsecurity.conf) such as SecRuleEngine,
+# SecRequestBodyAccess, SecAuditEngine, SecDebugLog, and XML processing.
 #
-# You should copy and tweak the modsecurity.conf-recommended file that comes
+# The CRS assumes that modsecurity.conf is included.
+# You can copy and tweak the modsecurity.conf-recommended file that comes
 # with the ModSecurity source code archive:
 # https://github.com/SpiderLabs/ModSecurity/blob/master/modsecurity.conf-recommended 
 #
@@ -29,6 +25,8 @@
 # 1. modsecurity.conf
 # 2. modsecurity_crs_10_setup.conf (this file)
 # 3. rules/*.conf (the CRS rule files)
+#
+# Please refer to the INSTALL file for detailed installation instructions.
 #
 
 
