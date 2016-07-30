@@ -196,7 +196,6 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # or outbound response, should be blocked.
 #
 # Most detected inbound threats will give a critical score of 5.
-# Most outbound threats, like data leakages, will give a score of 4.
 # Smaller violations, like violations of protocol/standards, carry lower scores.
 #
 # If you keep the blocking thresholds at the defaults, the CRS will work
@@ -255,12 +254,13 @@ SecAction \
 #
 # -- [[ GeoIP Database ]] ------------------------------------------------------
 #
-# There are some rulesets that need to inspect the GEO data of the REMOTE_ADDR data.
+# There are some rulesets that need to inspect the GEO data of the REMOTE_ADDR
+# data.
 # 
 # This product includes GeoLite data created by MaxMind, available from:
 # http://www.maxmind.com.
 #
-# You should periodically download the MaxMind GeoIP Lite City DB for updates -
+# You should periodically download the MaxMind GeoIP Lite City DB for updates:
 #
 #       http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz
 #
@@ -275,11 +275,11 @@ SecAction \
 #
 # -=[ High Risk Fraud Countries ]=-
 # 
-# Rules in the IP Reputation file can check the client against a list of HIGH Risk
-# country codes. These countries have to be defined in the variable 
+# Rules in the IP Reputation file can check the client against a list of high
+# risk country codes. These countries have to be defined in the variable
 # tx.high_risk_country_codes.
 #
-# If you are sure, you are not getting any legitimate requests from a given 
+# If you are sure that you are not getting any legitimate requests from a given
 # country, then you can disable all access from that country via this variable.
 # The rule performing the test has the rule id 910100.
 #
@@ -300,9 +300,10 @@ SecAction \
 #
 # -- [[ Project Honeypot HTTP Blacklist ]] -------------------------------------
 #
-# One of the checks in the IP Reputation file is to check the client IP address against the
-# Project Honeypot HTTPBL.  In order to do this, you need to register to get a free API key.
-# Set it here with SecHttpBlKey.
+# One of the checks in the IP Reputation file is to check the client IP address
+# against the Project Honeypot HTTPBL. In order to do this, you need to register
+# to get a free API key. Set it here with SecHttpBlKey.
+#
 # Ref: https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#wiki-SecHttpBlKey
 # 
 # Project Honeypot returns multiple different malicious IP types.
@@ -469,14 +470,16 @@ SecAction \
 #
 # Optional DoS protection against clients making requests too quickly.
 #
-# When a client is making more than 100 requests (excluding static files) within 60 seconds,
-# this is considered a 'burst'. After two bursts, the client is blocked for 600 seconds.
-# Requests to static files are unlimited; they are listed in 'tx.static_resources' setting.
+# When a client is making more than 100 requests (excluding static files) within
+# 60 seconds, this is considered a 'burst'. After two bursts, the client is
+# blocked for 600 seconds.
+#
+# Requests to static files are unlimited; they are listed in the
+# 'tx.static_resources' setting, which you can change in this file under
+# rule 900012.
 #
 # To enable the DoS protection rules, uncomment the following rule.
 # For a detailed description, see rule file REQUEST-912-DOS-PROTECTION.conf.
-#
-# You may also want to check out the definition of tx.static_resources in rule 900012.
 #
 #SecAction \
 # "id:'900015',\
