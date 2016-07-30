@@ -79,6 +79,7 @@
 # By default, blocks with error 403.
 # To change the disruptive action, see RESPONSE-999-EXCEPTIONS.conf.example
 # and review section 'Changing the Disruptive Action for Anomaly Mode'.
+#
 SecDefaultAction "phase:1,log,auditlog,pass"
 SecDefaultAction "phase:2,log,auditlog,pass"
 
@@ -86,6 +87,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # By default, blocks with error 403.
 # To change the disruptive action, see RESPONSE-999-EXCEPTIONS.conf.example
 # and review section 'Changing the Disruptive Action for Anomaly Mode'.
+#
 # SecDefaultAction "phase:1,nolog,auditlog,pass"
 # SecDefaultAction "phase:2,nolog,auditlog,pass"
 
@@ -93,8 +95,9 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # In this configuration the default disruptive action here is 'deny'. After a
 # rule triggers, it will stop processing the request and return an error 403.
 # You can also use a different error status, such as 404, 406, et cetera.
-#SecDefaultAction "phase:1,log,auditlog,deny,status:403"
-#SecDefaultAction "phase:2,log,auditlog,deny,status:403"
+#
+# SecDefaultAction "phase:1,log,auditlog,deny,status:403"
+# SecDefaultAction "phase:2,log,auditlog,deny,status:403"
 
 # Example: Self-contained mode, redirect back to homepage on blocking
 # In this configuration the 'tag' action includes the Host header data in the
@@ -102,8 +105,8 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # Note that this might cause redirect loops in some situations; for example
 # if a Cookie or User-Agent header is blocked, it will also be blocked when
 # it subsequently tries to access the homepage.
-#SecDefaultAction "phase:1,log,auditlog,redirect:'http://%{request_headers.host}/',tag:'Host: %{request_headers.host}'"
-#SecDefaultAction "phase:2,log,auditlog,redirect:'http://%{request_headers.host}/',tag:'Host: %{request_headers.host}'"
+# SecDefaultAction "phase:1,log,auditlog,redirect:'http://%{request_headers.host}/',tag:'Host: %{request_headers.host}'"
+# SecDefaultAction "phase:2,log,auditlog,redirect:'http://%{request_headers.host}/',tag:'Host: %{request_headers.host}'"
 
 
 #
