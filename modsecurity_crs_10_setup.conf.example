@@ -18,9 +18,8 @@
 # ModSecurity settings (modsecurity.conf) such as SecRuleEngine,
 # SecRequestBodyAccess, SecAuditEngine, SecDebugLog, and XML processing.
 #
-# The CRS assumes that modsecurity.conf is included.
-# You can copy and tweak the modsecurity.conf-recommended file that comes
-# with the ModSecurity source code archive:
+# The CRS assumes that modsecurity.conf has been loaded. If you don't have this
+# file, you can get it from:
 # https://github.com/SpiderLabs/ModSecurity/blob/master/modsecurity.conf-recommended 
 #
 # The order of file inclusion in your webserver config should always be:
@@ -41,28 +40,25 @@
 # In CRS3, anomaly mode is the default and recommended mode, since it gives the
 # most accurate log information and offers the most flexibility in setting your
 # blocking policies. It is also called "collaborative detection mode".
-# In this mode, each matching rule increases an 'anomaly score', and all
-# rule actions default to 'pass', so rule processing continues after a match.
+# In this mode, each matching rule increases an 'anomaly score'.
 # At the conclusion of the inbound rules, and again at the conclusion of the
 # outbound rules, the anomaly score is checked, and the blocking evaluation
 # rules apply a disruptive action, by default returning an error 403.
-# To change the disruptive action, see RESPONSE-999-EXCEPTIONS.conf.example
-# and review section 'Changing the Disruptive Action for Anomaly Mode'.
 #
 # -- [[ Self-Contained Mode ]] --
 # In this mode, rules apply an action instantly. This was the CRS2 default.
 # It can lower resource usage, at the cost of less flexibility in blocking policy
 # and less informative audit logs (only the first detected threat is logged).
-# Rules inherit the specified disruptive action (i.e. deny, drop, etc).
+# Rules inherit the disruptive action that you specify (i.e. deny, drop, etc).
 # The first rule that matches will execute this action. In most cases this will
 # cause evaluation to stop after the first rule has matched, similar to how many
 # IDSs function.
 #
 # -- [[ Alert Logging Control ]] --
-# In the mode configuration, you can also adjust the desired logging options.
+# In the mode configuration, you must also adjust the desired logging options.
 # There are three common options for dealing with logging. By default CRS enables
 # logging to the webserver error log (or Event viewer) plus detailed logging to
-# the ModSecurity audit log.
+# the ModSecurity audit log (configured under SecAuditLog in modsecurity.conf).
 #
 # - To log to both error log and ModSecurity audit log file, use: "log,auditlog"
 # - To log *only* to the ModSecurity audit log file, use: "nolog,auditlog"
@@ -70,41 +66,46 @@
 #
 # Examples for the various modes follow.
 # You must leave one of the following options enabled.
-# Each detection rule uses the "block" action, which will inherit the
-# SecDefaultAction specified below.
 # Note that you must specify the same line for phase:1 and phase:2.
 #
 
 # Default: Anomaly Scoring mode, log to error log, log to ModSecurity audit log
-# By default, blocks with error 403.
-# To change the disruptive action, see RESPONSE-999-EXCEPTIONS.conf.example
-# and review section 'Changing the Disruptive Action for Anomaly Mode'.
+# - By default, offending requests are blocked with an error 403 response.
+# - To change the disruptive action, see RESPONSE-999-EXCEPTIONS.conf.example
+#   and review section 'Changing the Disruptive Action for Anomaly Mode'.
+# - In Apache, you can use ErrorDocument to show a friendly error page or
+#   perform a redirect: https://httpd.apache.org/docs/2.4/custom-error.html
 #
 SecDefaultAction "phase:1,log,auditlog,pass"
 SecDefaultAction "phase:2,log,auditlog,pass"
 
 # Example: Anomaly Scoring mode, log only to ModSecurity audit log
-# By default, blocks with error 403.
-# To change the disruptive action, see RESPONSE-999-EXCEPTIONS.conf.example
-# and review section 'Changing the Disruptive Action for Anomaly Mode'.
+# - By default, offending requests are blocked with an error 403 response.
+# - To change the disruptive action, see RESPONSE-999-EXCEPTIONS.conf.example
+#   and review section 'Changing the Disruptive Action for Anomaly Mode'.
+# - In Apache, you can use ErrorDocument to show a friendly error page or
+#   perform a redirect: https://httpd.apache.org/docs/2.4/custom-error.html
 #
 # SecDefaultAction "phase:1,nolog,auditlog,pass"
 # SecDefaultAction "phase:2,nolog,auditlog,pass"
 
 # Example: Self-contained mode, return error 403 on blocking
-# In this configuration the default disruptive action here is 'deny'. After a
-# rule triggers, it will stop processing the request and return an error 403.
-# You can also use a different error status, such as 404, 406, et cetera.
+# - In this configuration the default disruptive action becomes 'deny'. After a
+#   rule triggers, it will stop processing the request and return an error 403.
+# - You can also use a different error status, such as 404, 406, et cetera.
+# - In Apache, you can use ErrorDocument to show a friendly error page or
+#   perform a redirect: https://httpd.apache.org/docs/2.4/custom-error.html
 #
 # SecDefaultAction "phase:1,log,auditlog,deny,status:403"
 # SecDefaultAction "phase:2,log,auditlog,deny,status:403"
 
 # Example: Self-contained mode, redirect back to homepage on blocking
-# In this configuration the 'tag' action includes the Host header data in the
-# alert. This helps to identify which virtual host triggered the rule (if any).
-# Note that this might cause redirect loops in some situations; for example
-# if a Cookie or User-Agent header is blocked, it will also be blocked when
-# it subsequently tries to access the homepage.
+# - In this configuration the 'tag' action includes the Host header data in the
+#   log. This helps to identify which virtual host triggered the rule (if any).
+# - Note that this might cause redirect loops in some situations; for example
+#   if a Cookie or User-Agent header is blocked, it will also be blocked when
+#   the client subsequently tries to access the homepage. You can also redirect
+#   to another custom URL.
 # SecDefaultAction "phase:1,log,auditlog,redirect:'http://%{request_headers.host}/',tag:'Host: %{request_headers.host}'"
 # SecDefaultAction "phase:2,log,auditlog,redirect:'http://%{request_headers.host}/',tag:'Host: %{request_headers.host}'"
 
