@@ -548,7 +548,7 @@ SecAction \
 #
 # You may also want to check out the definition of tx.static_resources in rule 900012.
 #
-SecAction \
+#SecAction \
  "id:'900015',\
   phase:1,\
   nolog,\
