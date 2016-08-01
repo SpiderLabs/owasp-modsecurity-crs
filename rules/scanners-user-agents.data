@@ -235,3 +235,9 @@ SearchmetricsBot
 # wordpress vuln scanner
 # https://wpscan.org/
 WPScan
+# SEO
+# https://moz.com/help/guides/moz-procedures/what-is-rogerbot
+rogerbot
+# SEO
+# http://www.majestic12.co.uk/projects/dsearch/mj12bot.php
+MJ12bot
