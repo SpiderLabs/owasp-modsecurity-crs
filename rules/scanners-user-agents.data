@@ -19,10 +19,6 @@ autogetcontent
 # http://www.crossley-nilsen.com/Linux/Bilbo_-_Nessus_WEB/bilbo_-_nessus_web.html
 # dead? 2003
 bilbo
-# site ripper
-# http://www.softbytelabs.com/en/BlackWidow/
-black widow
-blackwidow
 # password cracker
 # http://sectools.org/tool/brutus/
 brutus
@@ -45,9 +41,6 @@ core-project/1.0
 crimscanner/
 # vuln scanner
 datacha0s
-# http library
-# http://search.cpan.org/~opera/HTTP-DAV/DAV.pm
-dav.pm/v
 # hidden page scanner
 # https://www.owasp.org/index.php/Category:OWASP_DirBuster_Project
 dirbuster
@@ -84,9 +77,6 @@ internet ninja
 jaascois
 # vuln scanner
 zmeu
-# http library
-# http://search.cpan.org/dist/libwww-perl/lib/LWP.pm
-LWP
 # port scanner
 # https://github.com/robertdavidgraham/masscan
 masscan
@@ -95,11 +85,6 @@ masscan
 metis
 # vuln scanner
 morfeus fucking scanner
-# generic
-mozilla/4.0 (compatible)
-mozilla/4.0 (compatible; msie 6.0; win32)
-mozilla/5.0 sf/
-mozilla/5.0 sf//
 # sql injection
 # https://github.com/dtrip/mysqloit
 mysqloit
@@ -136,20 +121,6 @@ paros
 pmafind
 #
 prog.customcrawler
-# crawler
-# 2006
-prowebwalker
-# generic crawler
-pymills-spider/
-# http library
-# https://pypi.python.org/pypi/httplib2
-python-httplib2
-# http library
-# http://docs.python-requests.org/en/master/
-python-requests
-# http library
-# https://docs.python.org/2/library/urllib.html
-Python-urllib
 # vuln scanner
 # https://www.qualys.com/suite/web-application-scanning/
 qualys was
@@ -205,39 +176,17 @@ webtrends security analyzer
 # vuln scanner
 # https://github.com/hhucn/webvulnscan
 webvulnscan
-# web scanner
+# web technology scanner
 # https://www.morningstarsecurity.com/research/whatweb
 whatweb
 # vuln scanner
 whcc/
-# http library
-# https://msdn.microsoft.com/en-us/library/windows/desktop/aa382925%28v=vs.85%29.aspx
-winhttp.winhttprequest.5
 # exploit poc
 wordpress hash grabber
 #
 wordpress/4.01
 # exploit
 xmlrpc exploit
-# SEO
-# https://ahrefs.com/robot
-AhrefsBot
-# people database
-# https://pipl.com/bot/
-PiplBot
-# advertising targeting
-# https://www.grapeshot.com/crawler/
-GrapeshotCrawler/2.0
-grapeFX
-# SEO
-# http://www.searchmetrics.com/searchmetricsbot/
-SearchmetricsBot
 # wordpress vuln scanner
 # https://wpscan.org/
 WPScan
-# SEO
-# https://moz.com/help/guides/moz-procedures/what-is-rogerbot
-rogerbot
-# SEO
-# http://www.majestic12.co.uk/projects/dsearch/mj12bot.php
-MJ12bot
