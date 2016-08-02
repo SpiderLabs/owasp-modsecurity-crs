@@ -150,9 +150,10 @@ this is an exploit
 # vuln scanner?
 toata dragostea
 toata dragostea mea pentru diavola
-#
+# SQL bot
+# http://tools.cisco.com/security/center/viewIpsSignature.x?signatureId=22142&signatureSubId=0
 uil2pn
-# 
+# badly scripted UAs (e.g. User-Agent: User-Agent: foo)
 user-agent:
 # vuln scannr
 # https://subgraph.com/vega/
@@ -164,7 +165,8 @@ voideye
 # http://w3af.org/
 w3af.sf.net
 w3af.sourceforge.net
-# 
+# site scanner (legacy)
+# http://www.robotstxt.org/db/webbandit.html
 webbandit
 # vuln scanner
 # http://www8.hp.com/us/en/software-solutions/webinspect-dynamic-analysis-dast/
@@ -185,8 +187,6 @@ whatweb
 whcc/
 # exploit poc
 wordpress hash grabber
-#
-wordpress/4.01
 # exploit
 xmlrpc exploit
 # wordpress vuln scanner
