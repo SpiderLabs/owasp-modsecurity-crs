@@ -357,7 +357,7 @@ SecAction \
 
 
 #
-# -=[ High Risk Fraud Countries ]=-
+# -=[ Block Countries ]=-
 # 
 # Rules in the IP Reputation file can check the client against a list of high
 # risk country codes. These countries have to be defined in the variable
