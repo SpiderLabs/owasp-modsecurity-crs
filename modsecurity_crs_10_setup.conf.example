@@ -187,21 +187,6 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 
 
 #
-# -- [[ Block Duration ]] ------------------------------------------------------
-#
-# Here you can specify how long IP blocking rules last before they expire.
-# The default is 300 seconds.
-#
-#SecAction \
-# "id:'900002',\
-#  phase:1,\
-#  nolog,\
-#  pass,\
-#  t:none,\
-#  setvar:tx.block_duration=300"
-
-
-#
 # -- [[ Anomaly Mode Blocking Threshold Levels ]] ------------------------------
 #
 # Here, you can specify at which cumulative anomaly score an inbound request,
@@ -419,6 +404,21 @@ SecAction \
 #  setvar:tx.block_suspicious_ip=1,\
 #  setvar:tx.block_harvester_ip=1,\
 #  setvar:tx.block_spammer_ip=1"
+
+
+#
+# -- [[ Block Duration ]] ------------------------------------------------------
+#
+# Here you can specify how long IP blocking rules last before they expire.
+# The default is 300 seconds.
+#
+#SecAction \
+# "id:'900026',\
+#  phase:1,\
+#  nolog,\
+#  pass,\
+#  t:none,\
+#  setvar:tx.block_duration=300"
 
 
 #
