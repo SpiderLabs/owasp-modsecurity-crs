@@ -2,25 +2,19 @@
 
 """
 Install upgrades to the ModSecurity CRS and/or GeoIP country database.
-
-Usage: util/upgrade.py [--cron] [--quiet] [crs] [geoip]
-    crs:        Upgrade the CRS using Git
-    geoip:      Upgrade the MaxMind GeoLite Country database from maxmind.com
-    --cron:     Randomly sleep 0-3 minutes before downloading, use from cron
-    --quiet:    Be quiet unless an error occurred
-
-Return value:
-    Success if something was updated
-    Failure if no updates were done or an error occurred
-
-Example:
-    util/upgrade.py crs
-    util/upgrade.py geoip
-    util/upgrade.py crs geoip
-    util/upgrade.py --cron --quiet crs && apachectl configtest && apachectl restart
+Usage: util/upgrade.py [-h] (--crs | --geoip) [--cron] [--quiet]
+Run util/upgrade.py -h for explanation and examples.
 """
 
-import os, random, string, subprocess, sys, time, zlib
+from __future__ import unicode_literals
+from __future__ import print_function
+import argparse
+import os
+import random
+import subprocess
+import sys
+import time
+import zlib
 
 try:
     from urllib.request import urlopen # Python 3
@@ -46,10 +40,12 @@ def upgrade_crs(crs_directory, quiet):
     return changed
 
 def upgrade_geoip(crs_directory, quiet):
-    """Upgrade MaxMind GeoIP database by fetching from maxmind.com.
+    """
+    Upgrade MaxMind GeoIP database by fetching from maxmind.com.
     Download page: http://dev.maxmind.com/geoip/legacy/geolite/
     This product includes GeoLite data created by MaxMind, available from
-    http://www.maxmind.com."""
+    http://www.maxmind.com.
+    """
     url = 'https://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz'
     db_directory = os.path.join(crs_directory, 'util', 'geo-location')
     db_name = os.path.join(db_directory, 'GeoIP.dat')
@@ -64,16 +60,18 @@ def upgrade_geoip(crs_directory, quiet):
         raise Exception('geoip: Empty response from ' + url)
 
     # Uncompress gzip stream
-    db = zlib.decompress(db_gzipped, zlib.MAX_WBITS | 32)
+    db_contents = zlib.decompress(db_gzipped, zlib.MAX_WBITS | 32)
 
     # Check if database content is changed from existing file
     # If not changed, return the status to the caller and skip overwriting
-    old_db = ''
+    old_db_contents = ""
     if os.path.isfile(db_name):
         with open(db_name, 'rb') as db_file:
-            old_db = db_file.read()
+            old_db_contents = db_file.read()
 
-    if db == old_db:
+    # zlib returns a byte string, therefore we must cast old_db_contents to str
+    old_db_contents = str(old_db_contents)
+    if db_contents == old_db_contents:
         if not quiet:
             print('geoip:')
             print('Already up-to-date.')
@@ -82,7 +80,7 @@ def upgrade_geoip(crs_directory, quiet):
     # Write uncompressed stream to tempfile
     tmp_file_name = db_name + '.tmp'
     with open(tmp_file_name, 'wb') as tmp_file:
-        tmp_file.write(db)
+        tmp_file.write(db_contents)
 
     # Atomically replace GeoIP.dat
     os.rename(tmp_file_name, db_name)
@@ -92,33 +90,76 @@ def upgrade_geoip(crs_directory, quiet):
         print('Downloaded ' + db_name + '.')
     return True
 
-# Parse arguments
-flag_upgrade_crs   = 'crs' in sys.argv
-flag_upgrade_geoip = 'geoip' in sys.argv
-flag_quiet         = '--quiet' in sys.argv
-flag_cron          = '--cron' in sys.argv
-flag_help          = '--help' in sys.argv or '-h' in sys.argv
-if flag_help or not (flag_upgrade_crs or flag_upgrade_geoip):
-    print(__doc__)
-    sys.exit(1)
+def parse_args():
+    """
+    Parse our inputs including help and support messages to guide the user.
+    Returns an argparse object that can be used to access results
+    """
+    # Our constants for help
+    returns_val = """
+Return value:
+  Success if updates were applied
+  Failure if no updates were available or an error occurred
+    """
+    examples = """
+Example:
+  util/upgrade.py --crs
+  util/upgrade.py --geoip
+  util/upgrade.py --crs --geoip
+  util/upgrade.py --crs --quiet && apachectl configtest && apachectl restart
+    """
 
-# Initialize variables
-changed = False
-crs_directory = os.path.realpath(os.path.join(sys.path[0], '..'))
-if not os.path.isdir(crs_directory):
-    raise Exception('Cannot determine CRS directory: ' + crs_directory)
+    parser = argparse.ArgumentParser(
+        description = 'Install upgrades to the ModSecurity CRS and/or GeoIP country database.',
+        epilog = returns_val+examples,
+        formatter_class = argparse.RawTextHelpFormatter)
+    parser.add_argument('--crs',
+        action = 'store_true',
+        help = 'Upgrade the CRS using Git')
+    parser.add_argument('--geoip',
+        action = 'store_true',
+        help = 'Upgrade the MaxMind GeoLite Country database from maxmind.com')
+    parser.add_argument('--cron',
+        action = 'store_true',
+        help = 'Randomly sleep 0-3 minutes before downloading, use from cron')
+    parser.add_argument('--quiet',
+        action = 'store_true',
+        help = 'Be quiet unless an error occurred')
+    args = parser.parse_args()
+    return args
 
-# If --cron supplied, sleep 0-3 minutes to be nice to upstream servers
-if flag_cron:
-    secs = random.randint(0, 180)
-    time.sleep(secs)
+def main():
+    """
+    The main function that handles kicking off all the functionality.
+    It returns to the system 1 if failed or no updates were done, otherwise 0.
+    """
 
-if flag_upgrade_crs:
-    changed = changed or upgrade_crs(crs_directory, flag_quiet)
+    _max_sleep_mins = 3
+    args = parse_args()
 
-if flag_upgrade_geoip:
-    changed = changed or upgrade_geoip(crs_directory, flag_quiet)
+    crs_directory = os.path.realpath(os.path.join(sys.path[0], '..'))
+    if not os.path.isdir(crs_directory):
+        raise Exception('Cannot determine CRS directory: ' + crs_directory)
 
-# Set process error value: if something was upgraded, return success
-# This allows idioms like: ./upgrade.py crs geoip && apachectl restart
-sys.exit(0 if changed else 1)
+    # If --cron supplied, sleep 0-3 minutes to be nice to upstream servers
+    if args.cron:
+        secs = random.randint(0, _max_sleep_mins/60)
+        time.sleep(secs)
+
+    changed = False
+
+    if args.crs:
+        crs_changed = upgrade_crs(crs_directory, args.quiet)
+        changed = changed or crs_changed
+
+    if args.geoip:
+        geoip_changed = upgrade_geoip(crs_directory, args.quiet)
+        changed = changed or geoip_changed
+
+    # Set process error value: if something was upgraded, return success
+    # This allows idioms like: upgrade.py --crs && apachectl restart
+    sys.exit(0 if changed else 1)
+
+
+if __name__ == "__main__":
+    main()
