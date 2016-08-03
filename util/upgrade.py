@@ -26,7 +26,7 @@ def upgrade_crs(crs_directory, quiet):
 
     git_directory = os.path.join(crs_directory, '.git')
     if not os.path.isdir(git_directory):
-        raise Exception('crs: Not a git repository: ' + crs_directory)
+        raise Exception('Not a git repository: ' + crs_directory)
 
     # Do a git 'git pull'
     os.chdir(crs_directory)
@@ -51,13 +51,13 @@ def upgrade_geoip(crs_directory, quiet):
     db_name = os.path.join(db_directory, 'GeoIP.dat')
 
     if not os.path.isdir(db_directory):
-        raise Exception('geoip: Database directory not found: ' + db_directory)
+        raise Exception('Database directory not found: ' + db_directory)
 
     # Fetch GeoIP.dat.gz from HTTPS into memory
     response = urlopen(url)
     db_gzipped = response.read()
     if not db_gzipped:
-        raise Exception('geoip: Empty response from ' + url)
+        raise Exception('Empty response from ' + url)
 
     # Uncompress gzip stream
     db_contents = zlib.decompress(db_gzipped, zlib.MAX_WBITS | 32)
@@ -149,12 +149,18 @@ def main():
     changed = False
 
     if args.crs:
-        crs_changed = upgrade_crs(crs_directory, args.quiet)
-        changed = changed or crs_changed
+        try:
+            crs_changed = upgrade_crs(crs_directory, args.quiet)
+            changed = changed or crs_changed
+        except Exception as e:
+            print('crs:', e)
 
     if args.geoip:
-        geoip_changed = upgrade_geoip(crs_directory, args.quiet)
-        changed = changed or geoip_changed
+        try:
+            geoip_changed = upgrade_geoip(crs_directory, args.quiet)
+            changed = changed or geoip_changed
+        except Exception as e:
+            print('geoip:', e)
 
     # Set process error value: if something was upgraded, return success
     # This allows idioms like: upgrade.py --crs && apachectl restart
