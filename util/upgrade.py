@@ -2,7 +2,7 @@
 
 """
 Install upgrades to the ModSecurity CRS and/or GeoIP country database.
-Usage: util/upgrade.py [-h] (--crs | --geoip) [--cron] [--quiet]
+Usage: util/upgrade.py [-h] [--crs] [--geoip] [--cron] [--quiet]
 Run util/upgrade.py -h for explanation and examples.
 """
 
@@ -109,6 +109,8 @@ Example:
   util/upgrade.py --crs --quiet && apachectl configtest && apachectl restart
     """
 
+    # When changing command line parameters, please remind to update:
+    # (1) the __doc__ comment, (2) the examples above.
     parser = argparse.ArgumentParser(
         description = 'Install upgrades to the ModSecurity CRS and/or GeoIP country database.',
         epilog = returns_val+examples,
