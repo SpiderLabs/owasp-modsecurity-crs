@@ -1,8 +1,10 @@
 #!/usr/bin/env python
 
 """
+usage: upgrade.py [-h] [--crs] [--geoip] [--cron] [--quiet]
+
 Install upgrades to the ModSecurity CRS and/or GeoIP country database.
-Usage: util/upgrade.py [-h] [--crs] [--geoip] [--cron] [--quiet]
+
 Run util/upgrade.py -h for explanation and examples.
 """
 
@@ -138,6 +140,9 @@ def main():
 
     _max_sleep_mins = 3
     args = parse_args()
+    if not (args.crs or args.geoip):
+        print(__doc__)
+        sys.exit(1)
 
     crs_directory = os.path.realpath(os.path.join(sys.path[0], '..'))
     if not os.path.isdir(crs_directory):
