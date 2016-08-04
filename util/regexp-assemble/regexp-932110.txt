@@ -32,7 +32,7 @@ cacls
 call@
 certreq
 certutil
-change
+#disabled for FP: change
 chdir@
 chkdsk
 chkntfs
@@ -45,7 +45,6 @@ cmdkey
 comexp
 comp@
 compact@
-compare@
 compmgmt
 con2prt
 convert
@@ -108,7 +107,6 @@ gpedit
 gpresult
 gpupdate
 hdwwiz
-history
 hostname
 icacls
 ifmember
@@ -261,7 +259,7 @@ sigverif
 sleep
 slmgr
 sort
-start
+start@
 subinacl
 subst
 svn
@@ -296,7 +294,7 @@ vol@
 waitfor
 wevtutil
 wget
-where@
+#disabled for FP: where@
 whoami
 windiff
 winmsdp
