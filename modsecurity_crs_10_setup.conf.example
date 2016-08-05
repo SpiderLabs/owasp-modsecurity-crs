@@ -418,6 +418,31 @@ SecAction \
 
 
 #
+# -- [[ Project Honey Pot HTTP Blacklist ]] ------------------------------------
+#
+# Optionally, you can check the client IP address against the Project Honey Pot
+# HTTPBL (dnsbl.httpbl.org). In order to use this, you need to register to get a
+# free API key. Set it here with SecHttpBlKey.
+#
+# Project Honeypot returns multiple different malicious IP types.
+# You may specify which you want to block by enabling or disabling them below.
+#
+# Ref: https://www.projecthoneypot.org/httpbl.php
+# Ref: https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#wiki-SecHttpBlKey
+#
+#SecHttpBlKey XXXXXXXXXXXXXXXXX
+#SecAction "id:'900025',\
+#  phase:1,\
+#  nolog,\
+#  pass,\
+#  t:none,\
+#  setvar:tx.block_search_ip=1,\
+#  setvar:tx.block_suspicious_ip=1,\
+#  setvar:tx.block_harvester_ip=1,\
+#  setvar:tx.block_spammer_ip=1"
+
+
+#
 # -- [[ GeoIP Database ]] ------------------------------------------------------
 #
 # There are some rulesets that inspect geolocation data of the client IP address
@@ -464,31 +489,6 @@ SecAction \
 #  pass,\
 #  t:none,\
 #  setvar:'tx.high_risk_country_codes='"
-
-
-#
-# -- [[ Project Honey Pot HTTP Blacklist ]] ------------------------------------
-#
-# Optionally, you can check the client IP address against the Project Honey Pot
-# HTTPBL (dnsbl.httpbl.org). In order to use this, you need to register to get a
-# free API key. Set it here with SecHttpBlKey.
-#
-# Project Honeypot returns multiple different malicious IP types.
-# You may specify which you want to block by enabling or disabling them below.
-#
-# Ref: https://www.projecthoneypot.org/httpbl.php
-# Ref: https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#wiki-SecHttpBlKey
-#
-#SecHttpBlKey XXXXXXXXXXXXXXXXX
-#SecAction "id:'900025',\
-#  phase:1,\
-#  nolog,\
-#  pass,\
-#  t:none,\
-#  setvar:tx.block_search_ip=1,\
-#  setvar:tx.block_suspicious_ip=1,\
-#  setvar:tx.block_harvester_ip=1,\
-#  setvar:tx.block_spammer_ip=1"
 
 
 #
