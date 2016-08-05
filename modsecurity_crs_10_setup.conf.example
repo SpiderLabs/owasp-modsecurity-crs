@@ -487,7 +487,7 @@ SecAction \
 # blocked for 600 seconds.
 #
 # Requests to static files are unlimited; they are listed in the
-# 'tx.static_resources' setting, which you can change in this file under
+# 'tx.static_extensions' setting, which you can change in this file under
 # rule 900012.
 #
 # To enable the DoS protection rules, uncomment the following rule.
