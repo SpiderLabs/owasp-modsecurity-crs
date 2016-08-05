@@ -17,9 +17,9 @@
 
 
 #
-# -- [[ Recommended Base Configuration ]] --------------------------------------
+# -- [[ System Requirements ]] -------------------------------------------------
 #
-# CRS3 requires ModSecurity version 2.8.0 or above.
+# CRS requires ModSecurity version 2.8.0 or above.
 # However, we recommend to use the newest ModSecurity version.
 #
 # The configuration directives/settings in this file are used to control
@@ -31,7 +31,7 @@
 # file, you can get it from:
 # https://github.com/SpiderLabs/ModSecurity/blob/master/modsecurity.conf-recommended 
 #
-# The order of file inclusion in your webserver config should always be:
+# The order of file inclusion in your webserver configuration should always be:
 # 1. modsecurity.conf
 # 2. modsecurity_crs_10_setup.conf (this file)
 # 3. rules/*.conf (the CRS rule files)
