@@ -9,6 +9,14 @@
 
 
 #
+# -- [[ Introduction ]] --------------------------------------------------------
+#
+# The OWASP ModSecurity Core Rule Set (CRS) is a set of web application rules
+# for the open source, cross-platform ModSecurity Web Application Firewall.
+#
+
+
+#
 # -- [[ Recommended Base Configuration ]] --------------------------------------
 #
 # CRS3 requires ModSecurity version 2.8.0 or above.
