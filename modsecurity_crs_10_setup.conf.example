@@ -519,7 +519,7 @@ SecAction \
 
 
 #
-# -- [[ Regression/Debug Mode ]] -----------------------------------------------
+# -- [[ Regression/Development Mode ]] -----------------------------------------
 #
 # To enable rule development and debugging, CRS has an optional development
 # mode that does not block requests, but instead sends detection information
