@@ -11,7 +11,7 @@
 #
 # -- [[ Recommended Base Configuration ]] --------------------------------------
 #
-# The minimum required ModSecurity version for the CRS is 2.8.0.
+# CRS3 requires ModSecurity version 2.8.0 or above.
 #
 # The configuration directives/settings in this file are used to control
 # the OWASP ModSecurity CRS. These settings do **NOT** configure the main
