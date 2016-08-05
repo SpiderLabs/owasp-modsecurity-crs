@@ -210,20 +210,39 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # -- [[ Anomaly Mode Blocking Threshold Levels ]] ------------------------------
 #
 # Here, you can specify at which cumulative anomaly score an inbound request,
-# or outbound response, should be blocked.
+# or outbound response, gets blocked.
 #
 # Most detected inbound threats will give a critical score of 5.
 # Smaller violations, like violations of protocol/standards, carry lower scores.
 #
+# [ At default value ]
 # If you keep the blocking thresholds at the defaults, the CRS will work
 # similarly to previous CRS versions: a single critical rule match will cause
 # the request to be blocked and logged.
 #
+# [ Using higher values ]
 # If you want to make the CRS less sensitive, you can increase the blocking
 # thresholds, for instance to 7 (which would require multiple rule matches
 # before blocking) or 10 (which would require at least two critical alerts - or
 # a combination of many lesser alerts), or even higher. However, increasing the
 # thresholds might cause some attacks to bypass the CRS rules or your policies.
+#
+# [ New deployment strategy: Starting high and decreasing ]
+# It is a common practice to start a fresh CRS installation with elevated
+# anomaly scoring thresholds (>100) and then lower the limits as your
+# confidence in the setup grows. You may also look into the Sampling
+# Percentage section below for a different strategy to ease into a new
+# CRS installation.
+#
+# [ Anomaly Threshold / Paranoia Level Quadrant ]
+#
+#     High Anomaly Limit   |   High Anomaly Limit
+#     Low Paranoia Level   |   High Paranoia Level
+#     -> Fresh Site        |   -> Experimental Site
+# ------------------------------------------------------
+#     Low Anomaly Limit    |   Low Anomaly Limit
+#     Low Paranoia Level   |   High Paranoia Level
+#     -> Standard Site     |   -> High Security Site
 #
 #SecAction \
 # "id:'900003',\
