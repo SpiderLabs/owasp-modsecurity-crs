@@ -347,22 +347,22 @@ SecAction \
 #
 # -- [[ GeoIP Database ]] ------------------------------------------------------
 #
-# There are some rulesets that need to inspect the GEO data of the REMOTE_ADDR
-# data.
-# 
+# There are some rulesets that inspect geolocation data of the client IP address
+# (geoLookup). The CRS uses geoLookup to implement optional country blocking.
+#
+# To use geolocation, we make use of the MaxMind GeoIP database.
+# This database is not included with the CRS and must be downloaded.
+# You should also update the database regularly, for instance every month.
+# The CRS contains a tool to download it to util/geo-location/GeoIP.dat:
+#   util/upgrade.py --geoip
+#
 # This product includes GeoLite data created by MaxMind, available from:
 # http://www.maxmind.com.
-#
-# You should periodically download the MaxMind GeoIP Lite City DB for updates:
-#
-#       http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz
-#
-# You then need to define the proper path for the SecGeoLookupDb directive
 #
 # Ref: http://blog.spiderlabs.com/2010/10/detecting-malice-with-modsecurity-geolocation-data.html
 # Ref: http://blog.spiderlabs.com/2010/11/detecting-malice-with-modsecurity-ip-forensics.html
 #
-#SecGeoLookupDb util/geo-location/GeoLiteCity.dat
+#SecGeoLookupDB util/geo-location/GeoIP.dat
 
 
 #
@@ -370,16 +370,19 @@ SecAction \
 # 
 # Rules in the IP Reputation file can check the client against a list of high
 # risk country codes. These countries have to be defined in the variable
-# tx.high_risk_country_codes.
+# tx.high_risk_country_codes via their ISO 3166 two-letter country code:
+# https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements
+#
 #
 # If you are sure that you are not getting any legitimate requests from a given
 # country, then you can disable all access from that country via this variable.
 # The rule performing the test has the rule id 910100.
 #
+# This rule requires SecGeoLookupDB to be enabled and the GeoIP database to be
+# downloaded (see the section "GeoIP Database" above.)
+#
 # By default, the list is empty. A list used by some sites was the following:
 # setvar:'tx.high_risk_country_codes=UA ID YU LT EG RO BG TR RU PK MY CN'"
-#
-# This rule requires SecGeoLookupDb (see above).
 #
 #SecAction \
 # "id:'900022',\
