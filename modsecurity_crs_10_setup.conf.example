@@ -125,24 +125,35 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # The Paranoia Level (PL) setting allows you to choose the desired level
 # of rule checks.
 #
-# With each paranoia level increase, the CRS enables additional rules.
-# However, higher paranoia levels also increase the possibility of
-# blocking some legitimate traffic. If you use higher paranoia levels,
-# it is likely that you will need to add some exclusion rules for
-# certain applications receiving complex input.
+# With each paranoia level increase, the CRS enables additional rules
+# giving you a higher level of security. However, higher paranoia levels
+# also increase the possibility of blocking some legitimate traffic due to
+# false alarms (also named false positives of FPs). If you use higher 
+# paranoia levels, it is likely that you will need to add some exclusion 
+# rules for certain requests and applications receiving complex input.
 #
 # - A paranoia level of 1 is default. In this level, most core rules
-#   are enabled. This level is advised for beginners and installations
-#   covering many different sites and applications.
+#   are enabled. PL1 is advised for beginners, installations
+#   covering many different sites and applications and for setups
+#   with standard security requirements.
+#   At PL1 you should face FPs rarely. If you encounter FPs, please
+#   open an issue on the CRS GitHub site and don't forget to attach your
+#   complete Audit Log record for the request with the issue.
 # - Paranoia level 2 includes many extra rules, for instance enabling
 #   many regexp-based SQL and XSS injection protections, and adding
-#   extra keywords checked for code injections. This level is advised
-#   for moderate to experienced users desiring more complete coverage.
+#   extra keywords checked for code injections. PL2 is advised
+#   for moderate to experienced users desiring more complete coverage
+#   and for installations with elevated security requirements.
+#   PL2 comes with some FPs which you need to handle.
 # - Paranoia level 3 enables more rules and keyword lists, and tweaks
-#   limits on special characters used.
+#   limits on special characters used. PL3 is aimed at users experienced
+#   at the handling of FPs and at installations with a high security 
+#   requirement.
 # - Paranoia level 4 further restricts special characters.
-#   The highest levels are advised for experienced users protecting
-#   sensitive installations.
+#   The highest level is advised for experienced users protecting 
+#   installations with very high security requirements. Running PL4 will 
+#   likely produce a very high number of FPs which have to be 
+#   treated before the site can go productive.
 #
 # Rules in paranoia level 2 or higher will log their PL to the audit log;
 # example: [tag "paranoia-level/2"]. This allows you to deduct from the
