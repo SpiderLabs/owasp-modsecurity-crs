@@ -244,6 +244,8 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 #     Low Paranoia Level   |   High Paranoia Level
 #     -> Standard Site     |   -> High Security Site
 #
+# Uncomment this rule to change the defaults:
+#
 #SecAction \
 # "id:'900003',\
 #  phase:1,\
@@ -281,10 +283,10 @@ SecAction \
 # HTTP parameters and uploaded files. This can help to prevent
 # application specific DoS attacks.
 #
+# These values are checked in REQUEST-920-PROTOCOL-ENFORCEMENT.conf.
 # Beware of blocking legitimate traffic when enabling these limits.
 #
-# These values are checked in REQUEST-920-PROTOCOL-ENFORCEMENT.conf.
-#
+# Uncomment one or more of the following rules to change the defaults:
 
 # Limit number of arguments in request
 # Default: unlimited
@@ -381,6 +383,8 @@ SecAction \
 # requests will bypass the Core Rules completely and you lose the ability to
 # protect your service with ModSecurity.
 #
+# Uncomment this rule to enable this feature:
+#
 # SecAction "id:900025,phase:1,pass,nolog,setvar:tx.sampling_percentage=50"
 
 
@@ -430,6 +434,8 @@ SecAction \
 # Ref: https://www.projecthoneypot.org/httpbl.php
 # Ref: https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#wiki-SecHttpBlKey
 #
+# Uncomment these rules to use this feature:
+#
 #SecHttpBlKey XXXXXXXXXXXXXXXXX
 #SecAction "id:'900025',\
 #  phase:1,\
@@ -460,6 +466,8 @@ SecAction \
 # Ref: http://blog.spiderlabs.com/2010/10/detecting-malice-with-modsecurity-geolocation-data.html
 # Ref: http://blog.spiderlabs.com/2010/11/detecting-malice-with-modsecurity-ip-forensics.html
 #
+# Uncomment this rule to use this feature:
+#
 #SecGeoLookupDB util/geo-location/GeoIP.dat
 
 
@@ -482,6 +490,8 @@ SecAction \
 # By default, the list is empty. A list used by some sites was the following:
 # setvar:'tx.high_risk_country_codes=UA ID YU LT EG RO BG TR RU PK MY CN'"
 #
+# Uncomment this rule to use this feature:
+#
 #SecAction \
 # "id:'900022',\
 #  phase:1,\
@@ -496,6 +506,8 @@ SecAction \
 #
 # Here you can specify how long IP blocking rules last before they expire.
 # The default is 300 seconds.
+#
+# Uncomment this rule to change the defaults:
 #
 #SecAction \
 # "id:'900026',\
@@ -531,6 +543,8 @@ SecAction \
 # tests from. The source IP will BYPASS all CRS blocking, and will be sent the
 # response headers as specified above. Be careful to only list your private
 # IP addresses/networks here.
+#
+# Uncomment these rules to use this feature:
 #
 #Include /path/to/crs/util/regression-tests/RESPONSE-981-REGRESSION.conf
 #SecRule REMOTE_ADDR "@ipMatch 192.168.1.100" \
@@ -578,12 +592,13 @@ SecAction \
 # 60 seconds, this is considered a 'burst'. After two bursts, the client is
 # blocked for 600 seconds.
 #
-# Requests to static files are unlimited; they are listed in the
+# Requests to static files are not counted towards DoS; they are listed in the
 # 'tx.static_extensions' setting, which you can change in this file under
 # rule 900012.
 #
-# To enable the DoS protection rules, uncomment the following rule.
 # For a detailed description, see rule file REQUEST-912-DOS-PROTECTION.conf.
+#
+# Uncomment this rule to use this feature:
 #
 #SecAction \
 # "id:'900015',\
@@ -599,9 +614,11 @@ SecAction \
 #
 # -- [[ Check UTF-8 encoding ]] ------------------------------------------------
 #
-# Enable this setting to check for invalid UTF-8 encoding.
+# The CRS can optionally check request contents for invalid UTF-8 encoding.
 # We only want to apply this check if UTF-8 encoding is actually used by the
-# site, otherwise it will result in false positives.
+# site; otherwise it will result in false positives.
+#
+# Uncomment this rule to use this feature:
 #
 #SecAction \
 # "id:'900016',\
@@ -615,12 +632,13 @@ SecAction \
 #
 # -- [[ Collection timeout ]] --------------------------------------------------
 #
-# Set the SecCollectionTimeout directive to a lower setting (default
-# is 1 hour).  Reducing this setting increases performance by cleaning
-# out old/stale entries.
+# Set the SecCollectionTimeout directive from the ModSecurity default (1 hour)
+# to a lower setting which is appropriate to most sites.
+# This increases performance by cleaning out stale collection (block) entries.
+#
 # Ref: https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#wiki-SecCollectionTimeout
 
-# Using 600 (10 mins).
+# Default: 600 (10 minutes)
 SecCollectionTimeout 600
 
 
