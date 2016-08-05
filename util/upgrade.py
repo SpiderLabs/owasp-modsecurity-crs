@@ -99,6 +99,9 @@ def parse_args():
     """
     # Our constants for help
     returns_val = """
+If you schedule this script via cron or similar, please add the --cron option
+to insert a random delay and prevent hammering the upgrade servers.
+
 Return value:
   Success if updates were applied
   Failure if no updates were available or an error occurred
@@ -125,7 +128,7 @@ Example:
         help = 'Upgrade the MaxMind GeoLite Country database from maxmind.com')
     parser.add_argument('--cron',
         action = 'store_true',
-        help = 'Randomly sleep 0-3 minutes before downloading, use from cron')
+        help = 'Randomly sleep 0-3 minutes before upgrading; use from cron')
     parser.add_argument('--quiet',
         action = 'store_true',
         help = 'Be quiet unless an error occurred')
