@@ -597,7 +597,7 @@ SecAction \
 
 
 #
-# -- [[ Check UTF encoding ]] --------------------------------------------------
+# -- [[ Check UTF-8 encoding ]] ------------------------------------------------
 #
 # Enable this setting to check for invalid UTF-8 encoding.
 # We only want to apply this check if UTF-8 encoding is actually used by the
