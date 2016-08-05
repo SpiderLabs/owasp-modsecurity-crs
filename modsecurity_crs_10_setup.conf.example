@@ -20,7 +20,7 @@
 # -- [[ System Requirements ]] -------------------------------------------------
 #
 # CRS requires ModSecurity version 2.8.0 or above.
-# However, we recommend to use the newest ModSecurity version.
+# We recommend to always use the newest ModSecurity version.
 #
 # The configuration directives/settings in this file are used to control
 # the OWASP ModSecurity CRS. These settings do **NOT** configure the main
