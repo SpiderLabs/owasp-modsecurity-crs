@@ -277,16 +277,18 @@ SecAction \
   setvar:'tx.restricted_extensions=.asa/ .asax/ .ascx/ .axd/ .backup/ .bak/ .bat/ .cdx/ .cer/ .cfg/ .cmd/ .com/ .config/ .conf/ .cs/ .csproj/ .csr/ .dat/ .db/ .dbf/ .dll/ .dos/ .htr/ .htw/ .ida/ .idc/ .idq/ .inc/ .ini/ .key/ .licx/ .lnk/ .log/ .mdb/ .old/ .pass/ .pdb/ .pol/ .printer/ .pwd/ .resources/ .resx/ .sql/ .sys/ .vb/ .vbs/ .vbproj/ .vsdisco/ .webinfo/ .xsd/ .xsx/',\
   setvar:'tx.restricted_headers=proxy lock-token content-range translate if'"
 
-# Here, you can define optional limits on lengths and number of
+# Here you can define optional limits on lengths and number of
 # HTTP parameters and uploaded files. This can help to prevent
 # application specific DoS attacks.
 #
-# Beware for blocking legitimate traffic when enabling these limits.
+# Beware of blocking legitimate traffic when enabling these limits.
 #
 # These values are checked in REQUEST-920-PROTOCOL-ENFORCEMENT.conf.
 #
 
 # Limit number of arguments in request
+# Default: unlimited
+# Example: 255
 #SecAction \
 # "id:'900006',\
 #  phase:1,\
@@ -296,6 +298,8 @@ SecAction \
 #  setvar:tx.max_num_args=255"
 
 # Limit length of any argument name
+# Default: unlimited
+# Example: 100
 #SecAction \
 # "id:'900007',\
 #  phase:1,\
@@ -305,6 +309,8 @@ SecAction \
 #  setvar:tx.arg_name_length=100"
 
 # Limit length of any argument value
+# Default: unlimited
+# Example: 400
 #SecAction \
 # "id:'900008',\
 #  phase:1,\
@@ -314,6 +320,8 @@ SecAction \
 #  setvar:tx.arg_length=400"
 
 # Limit total length of combined arguments
+# Default: unlimited
+# Example: 64000
 #SecAction \
 # "id:'900009',\
 #  phase:1,\
@@ -323,6 +331,8 @@ SecAction \
 #  setvar:tx.total_arg_length=64000"
 
 # Limit file size of individual uploaded file
+# Default: unlimited
+# Example: 1048576
 #SecAction \
 # "id:'900010',\
 #  phase:1,\
@@ -332,6 +342,8 @@ SecAction \
 #  setvar:tx.max_file_size=1048576"
 
 # Limit combined size of all uploaded files
+# Default: unlimited
+# Example: 1048576
 #SecAction \
 # "id:'900011',\
 #  phase:1,\
