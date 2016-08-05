@@ -2,7 +2,7 @@
 # Core ModSecurity Rule Set ver.3.0.0
 # Copyright (C) 2006-2016 Trustwave All rights reserved.
 #
-# The OWASP ModSecurity Core Rule Set is distributed under 
+# The OWASP ModSecurity Core Rule Set is distributed under
 # Apache Software License (ASL) version 2
 # Please see the enclosed LICENSE file for full details.
 # ---------------------------------------------------------------
@@ -29,7 +29,7 @@
 #
 # The CRS assumes that modsecurity.conf has been loaded. If you don't have this
 # file, you can get it from:
-# https://github.com/SpiderLabs/ModSecurity/blob/master/modsecurity.conf-recommended 
+# https://github.com/SpiderLabs/ModSecurity/blob/master/modsecurity.conf-recommended
 #
 # The order of file inclusion in your webserver configuration should always be:
 # 1. modsecurity.conf
@@ -128,8 +128,8 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # With each paranoia level increase, the CRS enables additional rules
 # giving you a higher level of security. However, higher paranoia levels
 # also increase the possibility of blocking some legitimate traffic due to
-# false alarms (also named false positives of FPs). If you use higher 
-# paranoia levels, it is likely that you will need to add some exclusion 
+# false alarms (also named false positives of FPs). If you use higher
+# paranoia levels, it is likely that you will need to add some exclusion
 # rules for certain requests and applications receiving complex input.
 #
 # - A paranoia level of 1 is default. In this level, most core rules
@@ -147,12 +147,12 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 #   PL2 comes with some FPs which you need to handle.
 # - Paranoia level 3 enables more rules and keyword lists, and tweaks
 #   limits on special characters used. PL3 is aimed at users experienced
-#   at the handling of FPs and at installations with a high security 
+#   at the handling of FPs and at installations with a high security
 #   requirement.
 # - Paranoia level 4 further restricts special characters.
-#   The highest level is advised for experienced users protecting 
-#   installations with very high security requirements. Running PL4 will 
-#   likely produce a very high number of FPs which have to be 
+#   The highest level is advised for experienced users protecting
+#   installations with very high security requirements. Running PL4 will
+#   likely produce a very high number of FPs which have to be
 #   treated before the site can go productive.
 #
 # Rules in paranoia level 2 or higher will log their PL to the audit log;
@@ -378,7 +378,7 @@ SecAction \
 
 #
 # -=[ Block Countries ]=-
-# 
+#
 # Rules in the IP Reputation file can check the client against a list of high
 # risk country codes. These countries have to be defined in the variable
 # tx.high_risk_country_codes via their ISO 3166 two-letter country code:
@@ -491,7 +491,7 @@ SecAction \
 #
 # If your site does allow clients to submit some HTML data, then
 # set this variable to "1".  This will disable some of the more
-# aggressive checks looking for all HTML data. 
+# aggressive checks looking for all HTML data.
 #
 # If you allow HTML on certain pages, edit the tx.allowed_html_urls
 # parameter data below.  When these URLs are accessed, the XSS checks
