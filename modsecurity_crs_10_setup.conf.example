@@ -160,6 +160,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # audit log how the WAF behavior is affected by paranoia level.
 #
 # When not explicitly defined, paranoia_level=1 is the default.
+# Uncomment this rule to change the default:
 #
 #SecAction \
 #  "id:'900023',\
