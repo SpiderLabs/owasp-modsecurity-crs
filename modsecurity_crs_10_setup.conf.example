@@ -342,14 +342,19 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 #  t:none,\
 #  setvar:'tx.static_extensions=/.jpg/ /.jpeg/ /.png/ /.gif/ /.js/ /.css/ /.ico/ /.svg/ /.webp/'"
 
+
+#
+# -- [[ HTTP Argument/Upload Limits ]] -----------------------------------------
+#
 # Here you can define optional limits on lengths and number of
-# HTTP parameters and uploaded files. This can help to prevent
+# HTTP get/post parameters and uploaded files. This can help to prevent
 # application specific DoS attacks.
 #
 # These values are checked in REQUEST-920-PROTOCOL-ENFORCEMENT.conf.
 # Beware of blocking legitimate traffic when enabling these limits.
+#
 
-# Limit number of arguments in request
+# Block request if number of arguments is too high
 # Default: unlimited
 # Example: 255
 # Uncomment this rule to change the default.
@@ -361,7 +366,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 #  t:none,\
 #  setvar:tx.max_num_args=255"
 
-# Limit length of any argument name
+# Block request if the length of any argument name is too high
 # Default: unlimited
 # Example: 100
 # Uncomment this rule to change the default.
@@ -373,7 +378,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 #  t:none,\
 #  setvar:tx.arg_name_length=100"
 
-# Limit length of any argument value
+# Block request if the llength of any argument value is too high
 # Default: unlimited
 # Example: 400
 # Uncomment this rule to change the default.
@@ -385,7 +390,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 #  t:none,\
 #  setvar:tx.arg_length=400"
 
-# Limit total length of combined arguments
+# Block request if the total length of all combined arguments is too high
 # Default: unlimited
 # Example: 64000
 # Uncomment this rule to change the default.
@@ -397,7 +402,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 #  t:none,\
 #  setvar:tx.total_arg_length=64000"
 
-# Limit file size of individual uploaded file
+# Block request if the file size of any individual uploaded file is too high
 # Default: unlimited
 # Example: 1048576
 # Uncomment this rule to change the default.
@@ -409,7 +414,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 #  t:none,\
 #  setvar:tx.max_file_size=1048576"
 
-# Limit combined size of all uploaded files
+# Block request if the total size of all combined uploaded files is too high
 # Default: unlimited
 # Example: 1048576
 # Uncomment this rule to change the default.
