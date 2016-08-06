@@ -273,11 +273,46 @@ SecAction \
   nolog,\
   pass,\
   t:none,\
-  setvar:'tx.allowed_methods=GET HEAD POST OPTIONS',\
-  setvar:'tx.static_extensions=/.jpg/ /.jpeg/ /.png/ /.gif/ /.js/ /.css/ /.ico/ /.svg/ /.webp/', \
-  setvar:'tx.allowed_request_content_type=application/x-www-form-urlencoded|multipart/form-data|text/xml|application/xml|application/x-amf|application/json|text/plain',\
-  setvar:'tx.allowed_http_versions=HTTP/1.0 HTTP/1.1 HTTP/2',\
-  setvar:'tx.restricted_extensions=.asa/ .asax/ .ascx/ .axd/ .backup/ .bak/ .bat/ .cdx/ .cer/ .cfg/ .cmd/ .com/ .config/ .conf/ .cs/ .csproj/ .csr/ .dat/ .db/ .dbf/ .dll/ .dos/ .htr/ .htw/ .ida/ .idc/ .idq/ .inc/ .ini/ .key/ .licx/ .lnk/ .log/ .mdb/ .old/ .pass/ .pdb/ .pol/ .printer/ .pwd/ .resources/ .resx/ .sql/ .sys/ .vb/ .vbs/ .vbproj/ .vsdisco/ .webinfo/ .xsd/ .xsx/',\
+  setvar:'tx.allowed_methods=GET HEAD POST OPTIONS'"
+
+SecAction \
+ "id:900210,\
+  phase:1,\
+  nolog,\
+  pass,\
+  t:none,\
+  setvar:'tx.static_extensions=/.jpg/ /.jpeg/ /.png/ /.gif/ /.js/ /.css/ /.ico/ /.svg/ /.webp/'"
+
+SecAction \
+ "id:900220,\
+  phase:1,\
+  nolog,\
+  pass,\
+  t:none,\
+  setvar:'tx.allowed_request_content_type=application/x-www-form-urlencoded|multipart/form-data|text/xml|application/xml|application/x-amf|application/json|text/plain'"
+
+SecAction \
+ "id:900230,\
+  phase:1,\
+  nolog,\
+  pass,\
+  t:none,\
+  setvar:'tx.allowed_http_versions=HTTP/1.0 HTTP/1.1 HTTP/2'"
+
+SecAction \
+ "id:900240,\
+  phase:1,\
+  nolog,\
+  pass,\
+  t:none,\
+  setvar:'tx.restricted_extensions=.asa/ .asax/ .ascx/ .axd/ .backup/ .bak/ .bat/ .cdx/ .cer/ .cfg/ .cmd/ .com/ .config/ .conf/ .cs/ .csproj/ .csr/ .dat/ .db/ .dbf/ .dll/ .dos/ .htr/ .htw/ .ida/ .idc/ .idq/ .inc/ .ini/ .key/ .licx/ .lnk/ .log/ .mdb/ .old/ .pass/ .pdb/ .pol/ .printer/ .pwd/ .resources/ .resx/ .sql/ .sys/ .vb/ .vbs/ .vbproj/ .vsdisco/ .webinfo/ .xsd/ .xsx/'"
+
+SecAction \
+ "id:900250,\
+  phase:1,\
+  nolog,\
+  pass,\
+  t:none,\
   setvar:'tx.restricted_headers=proxy lock-token content-range translate if'"
 
 # Here you can define optional limits on lengths and number of
