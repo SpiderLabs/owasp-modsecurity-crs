@@ -260,13 +260,20 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 #
 # -- [[ HTTP Policy Settings ]] ------------------------------------------------
 #
-# Set the following policy settings here and they will be propagated to various
-# rules files by using macro expansion:
+# This section defines your policies for the HTTP protocol, such as:
+# - allowed HTTP versions, HTTP methods, allowed request Content-Types
+# - forbidden file extensions (e.g. .bak, .sql) and request headers (e.g. Proxy)
+#
+# These variables are used in the following rule files:
 # - REQUEST-911-METHOD-ENFORCEMENT.conf
 # - REQUEST-912-DOS-PROTECTION.conf
 # - REQUEST-920-PROTOCOL-ENFORCEMENT.conf
-# If you run into false positives, you can adjust the settings here.
-#
+
+# HTTP methods that a client is allowed to use.
+# Default: GET HEAD POST OPTIONS
+# Example: for RESTful APIs, add the following: PUT PATCH DELETE
+# Example: for WebDAV, add: PROPFIND PROPPATCH MKCOL COPY MOVE LOCK UNLOCK
+# Uncomment this rule to change the default.
 SecAction \
  "id:900200,\
   phase:1,\
@@ -275,14 +282,9 @@ SecAction \
   t:none,\
   setvar:'tx.allowed_methods=GET HEAD POST OPTIONS'"
 
-SecAction \
- "id:900210,\
-  phase:1,\
-  nolog,\
-  pass,\
-  t:none,\
-  setvar:'tx.static_extensions=/.jpg/ /.jpeg/ /.png/ /.gif/ /.js/ /.css/ /.ico/ /.svg/ /.webp/'"
-
+# Content-Types that a client is allowed to send in a request.
+# Default: application/x-www-form-urlencoded|multipart/form-data|text/xml|application/xml|application/x-amf|application/json|text/plain
+# Uncomment this rule to change the default.
 SecAction \
  "id:900220,\
   phase:1,\
@@ -291,6 +293,10 @@ SecAction \
   t:none,\
   setvar:'tx.allowed_request_content_type=application/x-www-form-urlencoded|multipart/form-data|text/xml|application/xml|application/x-amf|application/json|text/plain'"
 
+# Allowed HTTP versions.
+# Default: HTTP/1.0 HTTP/1.1 HTTP/2
+# Example for legacy clients: HTTP/0.9 HTTP/1.0 HTTP/1.1 HTTP/2
+# Uncomment this rule to change the default.
 SecAction \
  "id:900230,\
   phase:1,\
@@ -299,6 +305,11 @@ SecAction \
   t:none,\
   setvar:'tx.allowed_http_versions=HTTP/1.0 HTTP/1.1 HTTP/2'"
 
+# Forbidden file extensions.
+# Guards against unintended exposure of development/configuration files.
+# Default: .asa/ .asax/ .ascx/ .axd/ .backup/ .bak/ .bat/ .cdx/ .cer/ .cfg/ .cmd/ .com/ .config/ .conf/ .cs/ .csproj/ .csr/ .dat/ .db/ .dbf/ .dll/ .dos/ .htr/ .htw/ .ida/ .idc/ .idq/ .inc/ .ini/ .key/ .licx/ .lnk/ .log/ .mdb/ .old/ .pass/ .pdb/ .pol/ .printer/ .pwd/ .resources/ .resx/ .sql/ .sys/ .vb/ .vbs/ .vbproj/ .vsdisco/ .webinfo/ .xsd/ .xsx/
+# Example: .bak/ .config/ .conf/ .db/ .ini/ .log/ .old/ .pass/ .pdb/ .sql/
+# Uncomment this rule to change the default.
 SecAction \
  "id:900240,\
   phase:1,\
@@ -307,6 +318,10 @@ SecAction \
   t:none,\
   setvar:'tx.restricted_extensions=.asa/ .asax/ .ascx/ .axd/ .backup/ .bak/ .bat/ .cdx/ .cer/ .cfg/ .cmd/ .com/ .config/ .conf/ .cs/ .csproj/ .csr/ .dat/ .db/ .dbf/ .dll/ .dos/ .htr/ .htw/ .ida/ .idc/ .idq/ .inc/ .ini/ .key/ .licx/ .lnk/ .log/ .mdb/ .old/ .pass/ .pdb/ .pol/ .printer/ .pwd/ .resources/ .resx/ .sql/ .sys/ .vb/ .vbs/ .vbproj/ .vsdisco/ .webinfo/ .xsd/ .xsx/'"
 
+# Forbidden request headers.
+# Blocking Proxy header prevents 'httpoxy' vulnerability: https://httpoxy.org
+# Default: proxy lock-token content-range translate if
+# Uncomment this rule to change the default.
 SecAction \
  "id:900250,\
   phase:1,\
@@ -314,6 +329,18 @@ SecAction \
   pass,\
   t:none,\
   setvar:'tx.restricted_headers=proxy lock-token content-range translate if'"
+
+# File extensions considered static files.
+# Used in DoS protection rule. See section "Anti-Automation / DoS Protection".
+# Default: /.jpg/ /.jpeg/ /.png/ /.gif/ /.js/ /.css/ /.ico/ /.svg/ /.webp/
+# Uncomment this rule to change the default.
+SecAction \
+ "id:900260,\
+  phase:1,\
+  nolog,\
+  pass,\
+  t:none,\
+  setvar:'tx.static_extensions=/.jpg/ /.jpeg/ /.png/ /.gif/ /.js/ /.css/ /.ico/ /.svg/ /.webp/'"
 
 # Here you can define optional limits on lengths and number of
 # HTTP parameters and uploaded files. This can help to prevent
