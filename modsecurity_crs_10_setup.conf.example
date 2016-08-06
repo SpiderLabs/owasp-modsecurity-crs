@@ -274,73 +274,73 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # Example: for RESTful APIs, add the following: PUT PATCH DELETE
 # Example: for WebDAV, add: PROPFIND PROPPATCH MKCOL COPY MOVE LOCK UNLOCK
 # Uncomment this rule to change the default.
-SecAction \
- "id:900200,\
-  phase:1,\
-  nolog,\
-  pass,\
-  t:none,\
-  setvar:'tx.allowed_methods=GET HEAD POST OPTIONS'"
+#SecAction \
+# "id:900200,\
+#  phase:1,\
+#  nolog,\
+#  pass,\
+#  t:none,\
+#  setvar:'tx.allowed_methods=GET HEAD POST OPTIONS'"
 
 # Content-Types that a client is allowed to send in a request.
 # Default: application/x-www-form-urlencoded|multipart/form-data|text/xml|application/xml|application/x-amf|application/json|text/plain
 # Uncomment this rule to change the default.
-SecAction \
- "id:900220,\
-  phase:1,\
-  nolog,\
-  pass,\
-  t:none,\
-  setvar:'tx.allowed_request_content_type=application/x-www-form-urlencoded|multipart/form-data|text/xml|application/xml|application/x-amf|application/json|text/plain'"
+#SecAction \
+# "id:900220,\
+#  phase:1,\
+#  nolog,\
+#  pass,\
+#  t:none,\
+#  setvar:'tx.allowed_request_content_type=application/x-www-form-urlencoded|multipart/form-data|text/xml|application/xml|application/x-amf|application/json|text/plain'"
 
 # Allowed HTTP versions.
 # Default: HTTP/1.0 HTTP/1.1 HTTP/2
 # Example for legacy clients: HTTP/0.9 HTTP/1.0 HTTP/1.1 HTTP/2
 # Uncomment this rule to change the default.
-SecAction \
- "id:900230,\
-  phase:1,\
-  nolog,\
-  pass,\
-  t:none,\
-  setvar:'tx.allowed_http_versions=HTTP/1.0 HTTP/1.1 HTTP/2'"
+#SecAction \
+# "id:900230,\
+#  phase:1,\
+#  nolog,\
+#  pass,\
+#  t:none,\
+#  setvar:'tx.allowed_http_versions=HTTP/1.0 HTTP/1.1 HTTP/2'"
 
 # Forbidden file extensions.
 # Guards against unintended exposure of development/configuration files.
 # Default: .asa/ .asax/ .ascx/ .axd/ .backup/ .bak/ .bat/ .cdx/ .cer/ .cfg/ .cmd/ .com/ .config/ .conf/ .cs/ .csproj/ .csr/ .dat/ .db/ .dbf/ .dll/ .dos/ .htr/ .htw/ .ida/ .idc/ .idq/ .inc/ .ini/ .key/ .licx/ .lnk/ .log/ .mdb/ .old/ .pass/ .pdb/ .pol/ .printer/ .pwd/ .resources/ .resx/ .sql/ .sys/ .vb/ .vbs/ .vbproj/ .vsdisco/ .webinfo/ .xsd/ .xsx/
 # Example: .bak/ .config/ .conf/ .db/ .ini/ .log/ .old/ .pass/ .pdb/ .sql/
 # Uncomment this rule to change the default.
-SecAction \
- "id:900240,\
-  phase:1,\
-  nolog,\
-  pass,\
-  t:none,\
-  setvar:'tx.restricted_extensions=.asa/ .asax/ .ascx/ .axd/ .backup/ .bak/ .bat/ .cdx/ .cer/ .cfg/ .cmd/ .com/ .config/ .conf/ .cs/ .csproj/ .csr/ .dat/ .db/ .dbf/ .dll/ .dos/ .htr/ .htw/ .ida/ .idc/ .idq/ .inc/ .ini/ .key/ .licx/ .lnk/ .log/ .mdb/ .old/ .pass/ .pdb/ .pol/ .printer/ .pwd/ .resources/ .resx/ .sql/ .sys/ .vb/ .vbs/ .vbproj/ .vsdisco/ .webinfo/ .xsd/ .xsx/'"
+#SecAction \
+# "id:900240,\
+#  phase:1,\
+#  nolog,\
+#  pass,\
+#  t:none,\
+#  setvar:'tx.restricted_extensions=.asa/ .asax/ .ascx/ .axd/ .backup/ .bak/ .bat/ .cdx/ .cer/ .cfg/ .cmd/ .com/ .config/ .conf/ .cs/ .csproj/ .csr/ .dat/ .db/ .dbf/ .dll/ .dos/ .htr/ .htw/ .ida/ .idc/ .idq/ .inc/ .ini/ .key/ .licx/ .lnk/ .log/ .mdb/ .old/ .pass/ .pdb/ .pol/ .printer/ .pwd/ .resources/ .resx/ .sql/ .sys/ .vb/ .vbs/ .vbproj/ .vsdisco/ .webinfo/ .xsd/ .xsx/'"
 
 # Forbidden request headers.
 # Blocking Proxy header prevents 'httpoxy' vulnerability: https://httpoxy.org
 # Default: proxy lock-token content-range translate if
 # Uncomment this rule to change the default.
-SecAction \
- "id:900250,\
-  phase:1,\
-  nolog,\
-  pass,\
-  t:none,\
-  setvar:'tx.restricted_headers=proxy lock-token content-range translate if'"
+#SecAction \
+# "id:900250,\
+#  phase:1,\
+#  nolog,\
+#  pass,\
+#  t:none,\
+#  setvar:'tx.restricted_headers=proxy lock-token content-range translate if'"
 
 # File extensions considered static files.
 # Used in DoS protection rule. See section "Anti-Automation / DoS Protection".
 # Default: /.jpg/ /.jpeg/ /.png/ /.gif/ /.js/ /.css/ /.ico/ /.svg/ /.webp/
 # Uncomment this rule to change the default.
-SecAction \
- "id:900260,\
-  phase:1,\
-  nolog,\
-  pass,\
-  t:none,\
-  setvar:'tx.static_extensions=/.jpg/ /.jpeg/ /.png/ /.gif/ /.js/ /.css/ /.ico/ /.svg/ /.webp/'"
+#SecAction \
+# "id:900260,\
+#  phase:1,\
+#  nolog,\
+#  pass,\
+#  t:none,\
+#  setvar:'tx.static_extensions=/.jpg/ /.jpeg/ /.png/ /.gif/ /.js/ /.css/ /.ico/ /.svg/ /.webp/'"
 
 # Here you can define optional limits on lengths and number of
 # HTTP parameters and uploaded files. This can help to prevent
@@ -348,12 +348,11 @@ SecAction \
 #
 # These values are checked in REQUEST-920-PROTOCOL-ENFORCEMENT.conf.
 # Beware of blocking legitimate traffic when enabling these limits.
-#
-# Uncomment one or more of the following rules to change the defaults:
 
 # Limit number of arguments in request
 # Default: unlimited
 # Example: 255
+# Uncomment this rule to change the default.
 #SecAction \
 # "id:'900300',\
 #  phase:1,\
@@ -365,6 +364,7 @@ SecAction \
 # Limit length of any argument name
 # Default: unlimited
 # Example: 100
+# Uncomment this rule to change the default.
 #SecAction \
 # "id:'900310',\
 #  phase:1,\
@@ -376,6 +376,7 @@ SecAction \
 # Limit length of any argument value
 # Default: unlimited
 # Example: 400
+# Uncomment this rule to change the default.
 #SecAction \
 # "id:'900320',\
 #  phase:1,\
@@ -387,6 +388,7 @@ SecAction \
 # Limit total length of combined arguments
 # Default: unlimited
 # Example: 64000
+# Uncomment this rule to change the default.
 #SecAction \
 # "id:'900330',\
 #  phase:1,\
@@ -398,6 +400,7 @@ SecAction \
 # Limit file size of individual uploaded file
 # Default: unlimited
 # Example: 1048576
+# Uncomment this rule to change the default.
 #SecAction \
 # "id:'900340',\
 #  phase:1,\
@@ -409,6 +412,7 @@ SecAction \
 # Limit combined size of all uploaded files
 # Default: unlimited
 # Example: 1048576
+# Uncomment this rule to change the default.
 #SecAction \
 # "id:'900350',\
 #  phase:1,\
