@@ -539,7 +539,7 @@ SecAction \
 # to a lower setting which is appropriate to most sites.
 # This increases performance by cleaning out stale collection (block) entries.
 #
-# This value should be greater or equal to the block duration
+# This value should be greater than or equal to the block duration
 # (tx.block_duration, see section "Block Duration") and the DoS block duration
 # (tx.dos_block_timeout, see section "Anti-Automation / DoS Protection").
 #
