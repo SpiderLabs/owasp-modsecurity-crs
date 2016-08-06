@@ -386,7 +386,7 @@ SecAction \
 #
 # Uncomment this rule to enable this feature:
 #
-# SecAction "id:900400,phase:1,pass,nolog,setvar:tx.sampling_percentage=50"
+# SecAction "id:900400,phase:1,pass,nolog,setvar:tx.sampling_percentage=100"
 
 
 #
