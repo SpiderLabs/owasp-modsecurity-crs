@@ -538,6 +538,7 @@ SecAction \
 # Set the SecCollectionTimeout directive from the ModSecurity default (1 hour)
 # to a lower setting which is appropriate to most sites.
 # This increases performance by cleaning out stale collection (block) entries.
+# Set this value higher than the block duration (see section "Block Duration").
 #
 # Ref: https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#wiki-SecCollectionTimeout
 
