@@ -159,7 +159,6 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # example: [tag "paranoia-level/2"]. This allows you to deduct from the
 # audit log how the WAF behavior is affected by paranoia level.
 #
-# When not explicitly defined, paranoia_level=1 is the default.
 # Uncomment this rule to change the default:
 #
 #SecAction \
@@ -346,9 +345,8 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 #
 # -- [[ HTTP Argument/Upload Limits ]] -----------------------------------------
 #
-# Here you can define optional limits on lengths and number of
-# HTTP get/post parameters and uploaded files. This can help to prevent
-# application specific DoS attacks.
+# Here you can define optional limits on HTTP get/post parameters and uploads.
+# This can help to prevent application specific DoS attacks.
 #
 # These values are checked in REQUEST-920-PROTOCOL-ENFORCEMENT.conf.
 # Beware of blocking legitimate traffic when enabling these limits.
@@ -357,7 +355,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # Block request if number of arguments is too high
 # Default: unlimited
 # Example: 255
-# Uncomment this rule to change the default.
+# Uncomment this rule to set a limit.
 #SecAction \
 # "id:'900300',\
 #  phase:1,\
@@ -369,7 +367,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # Block request if the length of any argument name is too high
 # Default: unlimited
 # Example: 100
-# Uncomment this rule to change the default.
+# Uncomment this rule to set a limit.
 #SecAction \
 # "id:'900310',\
 #  phase:1,\
@@ -378,10 +376,10 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 #  t:none,\
 #  setvar:tx.arg_name_length=100"
 
-# Block request if the llength of any argument value is too high
+# Block request if the length of any argument value is too high
 # Default: unlimited
 # Example: 400
-# Uncomment this rule to change the default.
+# Uncomment this rule to set a limit.
 #SecAction \
 # "id:'900320',\
 #  phase:1,\
@@ -393,7 +391,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # Block request if the total length of all combined arguments is too high
 # Default: unlimited
 # Example: 64000
-# Uncomment this rule to change the default.
+# Uncomment this rule to set a limit.
 #SecAction \
 # "id:'900330',\
 #  phase:1,\
@@ -405,7 +403,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # Block request if the file size of any individual uploaded file is too high
 # Default: unlimited
 # Example: 1048576
-# Uncomment this rule to change the default.
+# Uncomment this rule to set a limit.
 #SecAction \
 # "id:'900340',\
 #  phase:1,\
@@ -417,7 +415,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # Block request if the total size of all combined uploaded files is too high
 # Default: unlimited
 # Example: 1048576
-# Uncomment this rule to change the default.
+# Uncomment this rule to set a limit.
 #SecAction \
 # "id:'900350',\
 #  phase:1,\
@@ -522,7 +520,6 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # tx.high_risk_country_codes via their ISO 3166 two-letter country code:
 # https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements
 #
-#
 # If you are sure that you are not getting any legitimate requests from a given
 # country, then you can disable all access from that country via this variable.
 # The rule performing the test has the rule id 910100.
@@ -620,6 +617,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 #
 # Ref: https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#wiki-SecCollectionTimeout
 
+# Please keep this directive uncommented.
 # Default: 600 (10 minutes)
 SecCollectionTimeout 600
 
