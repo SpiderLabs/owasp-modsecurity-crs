@@ -163,7 +163,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # Uncomment this rule to change the default:
 #
 #SecAction \
-#  "id:'900023',\
+#  "id:'900000',\
 #   phase:1,\
 #   nolog,\
 #   pass,\
@@ -196,7 +196,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # that all configuration variables are set before the CRS rules are processed.)
 #
 #SecAction \
-# "id:'900001',\
+# "id:'900100',\
 #  phase:1,\
 #  nolog,\
 #  pass,\
@@ -248,7 +248,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # Uncomment this rule to change the defaults:
 #
 #SecAction \
-# "id:'900003',\
+# "id:'900110',\
 #  phase:1,\
 #  nolog,\
 #  pass,\
@@ -268,7 +268,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # If you run into false positives, you can adjust the settings here.
 #
 SecAction \
- "id:900012,\
+ "id:900200,\
   phase:1,\
   nolog,\
   pass,\
@@ -293,7 +293,7 @@ SecAction \
 # Default: unlimited
 # Example: 255
 #SecAction \
-# "id:'900006',\
+# "id:'900300',\
 #  phase:1,\
 #  nolog,\
 #  pass,\
@@ -304,7 +304,7 @@ SecAction \
 # Default: unlimited
 # Example: 100
 #SecAction \
-# "id:'900007',\
+# "id:'900310',\
 #  phase:1,\
 #  nolog,\
 #  pass,\
@@ -315,7 +315,7 @@ SecAction \
 # Default: unlimited
 # Example: 400
 #SecAction \
-# "id:'900008',\
+# "id:'900320',\
 #  phase:1,\
 #  nolog,\
 #  pass,\
@@ -326,7 +326,7 @@ SecAction \
 # Default: unlimited
 # Example: 64000
 #SecAction \
-# "id:'900009',\
+# "id:'900330',\
 #  phase:1,\
 #  nolog,\
 #  pass,\
@@ -337,7 +337,7 @@ SecAction \
 # Default: unlimited
 # Example: 1048576
 #SecAction \
-# "id:'900010',\
+# "id:'900340',\
 #  phase:1,\
 #  nolog,\
 #  pass,\
@@ -348,7 +348,7 @@ SecAction \
 # Default: unlimited
 # Example: 1048576
 #SecAction \
-# "id:'900011',\
+# "id:'900350',\
 #  phase:1,\
 #  nolog,\
 #  pass,\
@@ -386,7 +386,7 @@ SecAction \
 #
 # Uncomment this rule to enable this feature:
 #
-# SecAction "id:900025,phase:1,pass,nolog,setvar:tx.sampling_percentage=50"
+# SecAction "id:900400,phase:1,pass,nolog,setvar:tx.sampling_percentage=50"
 
 
 #
@@ -405,7 +405,7 @@ SecAction \
 # Uncomment these rules to use this feature:
 #
 #SecHttpBlKey XXXXXXXXXXXXXXXXX
-#SecAction "id:'900025',\
+#SecAction "id:'900500',\
 #  phase:1,\
 #  nolog,\
 #  pass,\
@@ -461,7 +461,7 @@ SecAction \
 # Uncomment this rule to use this feature:
 #
 #SecAction \
-# "id:'900022',\
+# "id:'900600',\
 #  phase:1,\
 #  nolog,\
 #  pass,\
@@ -479,15 +479,15 @@ SecAction \
 # blocked for 600 seconds.
 #
 # Requests to static files are not counted towards DoS; they are listed in the
-# 'tx.static_extensions' setting, which you can change in this file under
-# rule 900012.
+# 'tx.static_extensions' setting, which you can change in this file (see
+# section "HTTP Policy Settings").
 #
 # For a detailed description, see rule file REQUEST-912-DOS-PROTECTION.conf.
 #
 # Uncomment this rule to use this feature:
 #
 #SecAction \
-# "id:'900015',\
+# "id:'900700',\
 #  phase:1,\
 #  nolog,\
 #  pass,\
@@ -507,7 +507,7 @@ SecAction \
 # Uncomment this rule to use this feature:
 #
 #SecAction \
-# "id:'900016',\
+# "id:'900960',\
 #  phase:1,\
 #  nolog,\
 #  pass,\
@@ -524,7 +524,7 @@ SecAction \
 # Uncomment this rule to change the defaults:
 #
 #SecAction \
-# "id:'900026',\
+# "id:'900970',\
 #  phase:1,\
 #  nolog,\
 #  pass,\
@@ -579,7 +579,7 @@ SecCollectionTimeout 600
 #
 #Include /path/to/crs/util/regression-tests/RESPONSE-981-REGRESSION.conf
 #SecRule REMOTE_ADDR "@ipMatch 192.168.1.100" \
-# "id:'900005',\
+# "id:'900980',\
 #  phase:1,\
 #  nolog,\
 #  pass,\
@@ -597,7 +597,7 @@ SecCollectionTimeout 600
 # the CRS rules/* files.
 #
 SecAction \
- "id:'900099',\
+ "id:'900990',\
   phase:1,\
   nolog,\
   pass,\
