@@ -21,5 +21,8 @@ python-requests
 # https://docs.python.org/2/library/urllib.html
 Python-urllib
 # http library
+# https://github.com/typhoeus/typhoeus
+typhoeus
+# http library
 # https://msdn.microsoft.com/en-us/library/windows/desktop/aa382925%28v=vs.85%29.aspx
 winhttp.winhttprequest
