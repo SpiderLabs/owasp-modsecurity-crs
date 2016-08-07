@@ -58,8 +58,8 @@ Installing on Apache
     ```ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/) configured.```
     3. Clone the repository into the current folder using:
     ```git clone https://github.com/SpiderLabs/owasp-modsecurity-crs```
-    4. Move the modsecurity_crs_10_setup.conf.example file to 
-    modsecurity_crs_10_setup.conf. Please take this time to go through this
+    4. Move the crs-setup.conf.example file to 
+    crs-setup.conf. Please take this time to go through this
     file and customize the settings for your local environment. Failure to
     do so may result in false negatives and false positives. See the 
     section entitled OWASP CRS Configuration for more detail.
@@ -73,7 +73,7 @@ Installing on Apache
     called 'modsecurity.d'
     7. Either move the cloned 'owasp-modsecurity-crs folder to the new
     folder or symlink the following files:
-         a) The main modsecurity_crs_10_setup.conf file
+         a) The main crs-setup.conf file
          b) Any rules from the rules directory you want to deploy
          c) Any remaining rules from the util directory
          *Note: you'll want to maintain the directory structure if symlinking*
@@ -81,7 +81,7 @@ Installing on Apache
     the rule files into modsecurity.d folder):
     
         ```<IfModule security2_module>
-                Include modsecurity.d/modsecurity_crs_10_setup.conf
+                Include modsecurity.d/crs-setup.conf
                 Include modsecurity.d/rules/*.conf
         </IfModule>```
     9. Restart web server and ensure it starts without errors
@@ -96,8 +96,8 @@ Installing on Nginx
     ```ModSecurity for nginx (STABLE)/2.9.1 (http://www.modsecurity.org/) configured.```
     3. Clone the repository into the current folder using:
     ```git clone https://github.com/SpiderLabs/owasp-modsecurity-crs```
-    4. Move the modsecurity_crs_10_setup.conf.example file to 
-    modsecurity_crs_10_setup.conf. Please take this time to go through this
+    4. Move the crs-setup.conf.example file to 
+    crs-setup.conf. Please take this time to go through this
     file and customize the settings for your local environment. Failure to
     do so may result in false negatives and false positives. See the 
     section entitled OWASP CRS Configuration for more detail.
@@ -120,7 +120,7 @@ Installing on Nginx
     ModSecurity installation is included in this example):
     ```
     include modsecurity.conf
-    include owasp-modsecurity-crs/modsecurity_crs_10_setup.conf
+    include owasp-modsecurity-crs/crs-setup.conf
     include owasp-modsecurity-crs/rules/REQUEST-00-LOCAL-WHITELIST.conf
     include owasp-modsecurity-crs/rules/REQUEST-01-COMMON-EXCEPTIONS.conf
     include owasp-modsecurity-crs/rules/REQUEST-10-IP-REPUTATION.conf
@@ -157,8 +157,8 @@ Installing on IIS
     1. Navigate to "[drive_letters]:\Program Files\ModSecurity IIS\"
     2. Clone the repository into the current folder using:
     ```git clone https://github.com/SpiderLabs/owasp-modsecurity-crs```
-    3. Move the modsecurity_crs_10_setup.conf.example file to 
-    modsecurity_crs_10_setup.conf. Please take this time to go through this
+    3. Move the crs-setup.conf.example file to 
+    crs-setup.conf. Please take this time to go through this
     file and customize the settings for your local environment. Failure to
     do so may result in false negatives and false positives. See the 
     section entitled OWASP CRS Configuration for more detail.
@@ -169,7 +169,7 @@ Installing on IIS
     5. Navigate back to the 'ModSecurity IIS' folder and modify the 
     'modsecurity_iis' to include the following:
     ```
-    include owasp-modsecurity-crs/modsecurity_crs_10_setup.conf
+    include owasp-modsecurity-crs/crs-setup.conf
     include owasp-modsecurity-crs/rules/REQUEST-00-LOCAL-WHITELIST.conf
     include owasp-modsecurity-crs/rules/REQUEST-01-COMMON-EXCEPTIONS.conf
     include owasp-modsecurity-crs/rules/REQUEST-10-IP-REPUTATION.conf
@@ -214,7 +214,7 @@ Testing the Installation
 OWASP CRS Configuration
 =======================
 
-    The modsecurity_crs_10_setup.conf file includes management rules 
+    The crs-setup.conf file includes management rules 
     and directives that can control important CRS functions. By 
     default we do not include settings within this file that configure
     'core ModSecurity' instead those configuration settings, including
@@ -222,7 +222,7 @@ OWASP CRS Configuration
     installation of ModSecurity proper. An example for such such a 
     configuration file is available via the ModSecurity project 
     (https://github.com/SpiderLabs/ModSecurity/blob/master/modsecurity.conf-recommended).
-    Be aware the modsecurity_crs_10_setup.conf file does specify 
+    Be aware the crs-setup.conf file does specify 
     configuration directives such as SecDefaultAction. The default 
     setting is to redirect to the sites homepage on a rule triggering. 
     To enable anomaly scoring mode SecDefaultAction should be set to 
