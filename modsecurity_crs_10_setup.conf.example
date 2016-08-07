@@ -270,8 +270,9 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 
 # HTTP methods that a client is allowed to use.
 # Default: GET HEAD POST OPTIONS
-# Example: for RESTful APIs, add the following: PUT PATCH DELETE
-# Example: for WebDAV, add: PROPFIND PROPPATCH MKCOL COPY MOVE LOCK UNLOCK
+# Example: for RESTful APIs, add the following methods: PUT PATCH DELETE
+# Example: for WebDAV, add the following methods: CHECKOUT COPY DELETE LOCK
+#          MERGE MKACTIVITY MKCOL MOVE PROPFIND PROPPATCH PUT UNLOCK
 # Uncomment this rule to change the default.
 #SecAction \
 # "id:900200,\
