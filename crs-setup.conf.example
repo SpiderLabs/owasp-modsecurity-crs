@@ -39,7 +39,7 @@
 #
 # The order of file inclusion in your webserver configuration should always be:
 # 1. modsecurity.conf
-# 2. modsecurity_crs_10_setup.conf (this file)
+# 2. crs-setup.conf (this file)
 # 3. rules/*.conf (the CRS rule files)
 #
 # Please refer to the INSTALL file for detailed installation instructions.
