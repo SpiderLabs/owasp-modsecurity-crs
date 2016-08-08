@@ -325,8 +325,9 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 #  setvar:'tx.restricted_extensions=.asa/ .asax/ .ascx/ .axd/ .backup/ .bak/ .bat/ .cdx/ .cer/ .cfg/ .cmd/ .com/ .config/ .conf/ .cs/ .csproj/ .csr/ .dat/ .db/ .dbf/ .dll/ .dos/ .htr/ .htw/ .ida/ .idc/ .idq/ .inc/ .ini/ .key/ .licx/ .lnk/ .log/ .mdb/ .old/ .pass/ .pdb/ .pol/ .printer/ .pwd/ .resources/ .resx/ .sql/ .sys/ .vb/ .vbs/ .vbproj/ .vsdisco/ .webinfo/ .xsd/ .xsx/'"
 
 # Forbidden request headers.
+# Header names should be lowercase, enclosed by /slashes/ as delimiters.
 # Blocking Proxy header prevents 'httpoxy' vulnerability: https://httpoxy.org
-# Default: proxy lock-token content-range translate if
+# Default: /proxy/ /lock-token/ /content-range/ /translate/ /if/
 # Uncomment this rule to change the default.
 #SecAction \
 # "id:900250,\
@@ -334,9 +335,10 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 #  nolog,\
 #  pass,\
 #  t:none,\
-#  setvar:'tx.restricted_headers=proxy lock-token content-range translate if'"
+#  setvar:'tx.restricted_headers=/proxy/ /lock-token/ /content-range/ /translate/ /if/'"
 
 # File extensions considered static files.
+# Extensions include the dot, lowercase, enclosed by /slashes/ as delimiters.
 # Used in DoS protection rule. See section "Anti-Automation / DoS Protection".
 # Default: /.jpg/ /.jpeg/ /.png/ /.gif/ /.js/ /.css/ /.ico/ /.svg/ /.webp/
 # Uncomment this rule to change the default.
