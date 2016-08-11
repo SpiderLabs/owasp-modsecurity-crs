@@ -153,7 +153,7 @@ def main():
 
     # If --cron supplied, sleep 0-3 minutes to be nice to upstream servers
     if args.cron:
-        secs = random.randint(0, _max_sleep_mins/60)
+        secs = random.randint(0, _max_sleep_mins*60)
         time.sleep(secs)
 
     changed = False
