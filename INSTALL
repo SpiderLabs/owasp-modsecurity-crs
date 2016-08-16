@@ -91,7 +91,7 @@ Installing on Apache
     section entitled OWASP CRS Configuration for more detail.
     6. Rename rules/REQUEST-900-EXCLUSION-RULES-BEFORE-CRS.conf.example and
     rules/RESPONSE-999-EXCLUSION-RULES-AFTER-CRS.conf.example to remove the
-    '.example' extension. This will allow you to add exceptions without updates
+    '.example' extension. This will allow you to add exclusions without updates
     overwriting them in the future.
     7. Add the following line to your httpd.conf (assuming you've placed
     the rule files into modsecurity.d folder):
@@ -239,7 +239,7 @@ OWASP CRS Configuration
 =======================
     The crs-setup.conf file includes management rules
     and directives that can control important CRS functions.
-    The crs-setup.conf file is coming with extensive comments.
+    The crs-setup.conf file comes with extensive comments.
     This section here brings only the essential parts.
 
     By default we do not include settings within the crs-setup.conf
@@ -248,7 +248,7 @@ OWASP CRS Configuration
     An example for such such a
     configuration file is available via the ModSecurity project
     (https://github.com/SpiderLabs/ModSecurity/blob/master/modsecurity.conf-recommended).
-    Be aware the crs-setup.conf file does specify
+    Be aware the crs-setup.conf file DOES specify
     configuration directives such as SecDefaultAction. The default
     is the anomaly scoring mode with the appropriate
     SecDefaultAction as defined in the crs-setup.conf.
@@ -262,7 +262,7 @@ OWASP CRS Configuration
     to pass in this default setup.
 
     However, testing the setup and tuning false positives
-    before going productive is vital. This is especially true
+    before going to production is vital. This is especially true
     if you raise the paranoia level with is set to 1 by default.
     Higher paranoia levels ranging from 2 to 4 include more
     aggressive rules which will raise additional false positives
@@ -271,9 +271,9 @@ OWASP CRS Configuration
     If you are unsure about the performance impact of the CRS
     or if you are unsure about the number of false positives, then
     you may want to use the sampling percentage. This number,
-    which is set to 100 per default, controls the percentage
+    which is set to 100 by default, controls the percentage
     of requests which is funneled into the CRS. Fresh installs
-    on high traffic sites are advised to start with a low or
+    on high traffic sites are advised to start with a low, or
     very low number of percentages and raise the number
     slowly up to 100. Be aware that any number below 100 allows
     a random number of requests to bypass the ruleset completely.
@@ -303,4 +303,5 @@ OWASP CRS Configuration
     Be sure to check out the other settings present within the
     crs-setup.conf file. There are many other options that have to
     do with aspects of web application security that are beyond
-    this document but well explained in crs-setup.conf.
+    this document but are well explained in crs-setup.conf.
+
