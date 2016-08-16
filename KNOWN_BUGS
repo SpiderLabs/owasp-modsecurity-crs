@@ -1,0 +1,20 @@
+== OWASP ModSecurity Core Rule Set (CRS) KNOWN BUGS ==
+
+== Report Bugs/Issues to GitHub Issues Tracker or the mailinglist ==
+* https://github.com/SpiderLabs/owasp-modsecurity-crs/issues
+or the CRS mailinglist at
+* https://lists.owasp.org/mailman/listinfo/owasp-modsecurity-core-rule-set
+
+* There are still false positives for standard web applications in
+  the default install (paranoia level 1). Please report these when 
+  you encounter them. 
+  False Positives from paranoia level 2 rules are less interesting,
+  as we expect users to write exclusion rules for their alerts in
+  the higher paranoia levels.
+* Permanent blocking of clients based on previous user agent match /
+  IP repudiation filter.
+  This is On by default in CRSv3.0.0-RC1, but will be off by default
+  for the full release.
+  See https://github.com/SpiderLabs/owasp-modsecurity-crs/issues/514
+
+

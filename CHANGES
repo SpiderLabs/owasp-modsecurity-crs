@@ -1,44 +1,69 @@
 == OWASP ModSecurity Core Rule Set (CRS) CHANGES ==
 
-== Report Bugs/Issues to GitHub Issues Tracker ==
+== Report Bugs/Issues to GitHub Issues Tracker or the mailinglist ==
 * https://github.com/SpiderLabs/owasp-modsecurity-crs/issues
+or the CRS mailinglist at
+* https://lists.owasp.org/mailman/listinfo/owasp-modsecurity-core-rule-set
 
+== Changes from 2.2.9 to 3.0.0-RC1 ==
 
-== Changes from 05/16/2015 ==
- * Chaim Sanders pushed commit 3a3f7eb: Merge branch 'v3.0.0-dev' of https://github.com/csanders-git/owasp-modsecurity-crs into v3.0.0-dev
- * Chaim Sanders pushed commit 14d4d65: Updated data file names and tagging information
+Huge changeset running in separate branch from September 2013 to September 2016.
 
-== Changes from 04/08/2015 ==
-* Ryan Barnett pushed commit 222c64e: Merge pull request #224 from csanders-git/v3.0.0-dev
-
-== Changes from 04/07/2015 ==
-* Chaim Sanders pushed commit 3a27ce9: Added additional response error detections for postgres
-
-== Version 3.0.0 - 03/30/2015 ==
-
-Security Fixes:
-
-Improvements:
-* Updating to new rule file naming convention (REQUEST-, RESPONSE-)
-* Added new IP Reputation Checks.
-* Updated "phase" actions to use request/response/logging aliases.
-* Updated "severity" action to use words (CRITICAL, WARNING, etc...) vs. numbers (5, 4, etc..) 
-* Updated the XSS filters, included new ones and removed old/duplicate ones.
-* Added NoScript XSS Fitlers
-* Added new PHP RCE attack detection files
-* Added new XSS whitelisting feature to allow certain URLs that contain HTML
-  https://github.com/SpiderLabs/owasp-modsecurity-crs/issues/184
-* Added "Accept" request headers to regression testing Ruby scripts
-
-Bug Fixes:
-* Updated actions from "block" to "pass" for missing Host, User-Agent, Accept headers
-* Fixed false positive on "style" XSS rule by adding word boundary checks
-  https://github.com/SpiderLabs/owasp-modsecurity-crs/issues/186
-* Fixed false positive on "xor" SQLi rule by adding word boundary checks
-  https://github.com/SpiderLabs/owasp-modsecurity-crs/issues/185
-* Fixed variable exception for "pk_ref" cookie value
-  https://github.com/SpiderLabs/owasp-modsecurity-crs/issues/181
-
+This is a cursory summary of the most important changes:
+ * Huge reduction of false positives (Ryan Barnett, Felipe Zimmerle, Chaim 
+   Sanders, Walter Hop, Christian Folini)
+ * Anomaly scoring is the new default, renamed thresholds from 
+   tx.(in|out)bound_anomaly_score_level to 
+   tx.(in|out)bound_anomaly_score_threshold
+ * Introduction of libinjection for SQLi detection
+ * Introduction of libinjection for XSS detection
+ * Big improvement on detection of Remote Command Execution (Walter Hop)
+ * Big improvement on PHP function name detection (Walter Hop)
+ * Paranoia Mode (Christian Folini, Noël Zindel, Franziska Bühler, 
+   Manuel Leos, Walter Hop)
+ * Shifted dozens of rules into higher paranoia levels
+ * Introduced a lot of stricter sibling rules in higher levels
+ * Renumbering of rules. See folder id_renumbering for a 
+   csv map (Chaim Sanders)
+ * Consolidation of rules, namely XSS and SQLi (Spider Labs/Trustwave team)
+ * Sampling mode / Easing in (Christian Folini)
+ * Tags much more systematic (Walter Hop)
+ * IP Repudiation checks (Spider Labs/Trustwave team)
+ * Phase actions use request/response/logging now instead of 
+   numerical phases (Spider Labs/Trustwave team)
+ * Added NoScript XSS Filters (Spider Labs/Trustwave team)
+ * Updated "severity" action to use words (CRITICAL, WARNING, etc...)
+   vs. numbers (5, 4, etc..) 
+ * Various regex fixes after research by Vladimir Ivanov (Chaim Sanders)
+ * Overhaul of the regression mode into debug mode (Walter Hop, Ryan Barnett)
+ * Introduction of util/upgrade.py (Walter Hop)
+ * Removal of GeoIP database. Download via util/upgrade.py now.
+ * Introduction of Initialization rules with 
+   default values (Walter Hop, Christian Folini)
+ * Sorting out terminology with
+   whitelisting and rule exclusions (Christian Folini)
+ * Overhaul of testing (Chaim Sanders)
+ * Protection from HTTP Parameter Pollution (Franziska Bühler)
+ * Simplification of setup config file, renamed file to crs-setup.conf.example
+ * Improved session fixation detection logic (Christian Peron, credits to 
+   Eric Hodel for the discovery)
+ * Splitting scanner user agents data files (github user @ygrek)
+ * Countless bugfixes in severities, anomaly scores, tags, etc. 
+   across the board
+ * Cleanup of formerly experimental DDoS rules, 
+   fix documentation (Ryan Barnett, Christian Folini)
+ * Improves http blacklist checks (Walter Hop)
+ * Extended XSS detection (as suggested by Mazin Ahmed)
+ * Added many, many bots and scanners (among others suggested by 
+   github user @toby78, @jamuse, Matt Koch)
+ * Fixed mime types suiteable for XML processor (Chaim Sanders)
+ * New detection for request smuggling attacks (Achim Hofmann, 
+   Christian Folini)
+ * Fixes with project honeypot setup (Ryan Barnett)
+ * Separated DB / SQL messages by DB software (Ryan Barnett)
+ * CPanel integration (Chaim Sanders)
+ * Introduction of var for static resources (Chaim Sanders)
+ * Many improvements to rules in 2014/5 (Ryan Barnett)
 
 == Version 2.2.9 - 09/30/2013 ==
 
