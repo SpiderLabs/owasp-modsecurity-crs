@@ -5,6 +5,9 @@
 or the CRS mailinglist at
 * https://lists.owasp.org/mailman/listinfo/owasp-modsecurity-core-rule-set
 
+== Changes from 3.0.0-RC1 to 3.0.0-RC2 ==
+None Yet
+
 == Changes from 2.2.9 to 3.0.0-RC1 ==
 
 Huge changeset running in separate branch from September 2013 to September 2016.
