@@ -31,13 +31,13 @@ This is a cursory summary of the most important changes:
  * IP Repudiation checks (Spider Labs/Trustwave team)
  * Phase actions use request/response/logging now instead of 
    numerical phases (Spider Labs/Trustwave team)
- * Added NoScript XSS Fitlers (Spider Labs/Trustwave team)
+ * Added NoScript XSS Filters (Spider Labs/Trustwave team)
  * Updated "severity" action to use words (CRITICAL, WARNING, etc...)
    vs. numbers (5, 4, etc..) 
  * Various regex fixes after research by Vladimir Ivanov (Chaim Sanders)
  * Overhaul of the regression mode into debug mode (Walter Hop, Ryan Barnett)
- * Introduction of update.py (Walter Hop)
- * Removal of GeoIP database. Download via update.py now.
+ * Introduction of util/upgrade.py (Walter Hop)
+ * Removal of GeoIP database. Download via util/upgrade.py now.
  * Introduction of Initialization rules with 
    default values (Walter Hop, Christian Folini)
  * Sorting out terminology with
