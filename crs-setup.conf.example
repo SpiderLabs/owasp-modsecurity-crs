@@ -168,7 +168,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # Uncomment this rule to change the default:
 #
 #SecAction \
-#  "id:'900000',\
+#  "id:900000,\
 #   phase:1,\
 #   nolog,\
 #   pass,\
@@ -201,7 +201,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # that all configuration variables are set before the CRS rules are processed.)
 #
 #SecAction \
-# "id:'900100',\
+# "id:900100,\
 #  phase:1,\
 #  nolog,\
 #  pass,\
@@ -253,7 +253,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # Uncomment this rule to change the defaults:
 #
 #SecAction \
-# "id:'900110',\
+# "id:900110,\
 #  phase:1,\
 #  nolog,\
 #  pass,\
@@ -366,7 +366,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # Example: 255
 # Uncomment this rule to set a limit.
 #SecAction \
-# "id:'900300',\
+# "id:900300,\
 #  phase:1,\
 #  nolog,\
 #  pass,\
@@ -378,7 +378,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # Example: 100
 # Uncomment this rule to set a limit.
 #SecAction \
-# "id:'900310',\
+# "id:900310,\
 #  phase:1,\
 #  nolog,\
 #  pass,\
@@ -390,7 +390,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # Example: 400
 # Uncomment this rule to set a limit.
 #SecAction \
-# "id:'900320',\
+# "id:900320,\
 #  phase:1,\
 #  nolog,\
 #  pass,\
@@ -402,7 +402,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # Example: 64000
 # Uncomment this rule to set a limit.
 #SecAction \
-# "id:'900330',\
+# "id:900330,\
 #  phase:1,\
 #  nolog,\
 #  pass,\
@@ -414,7 +414,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # Example: 1048576
 # Uncomment this rule to set a limit.
 #SecAction \
-# "id:'900340',\
+# "id:900340,\
 #  phase:1,\
 #  nolog,\
 #  pass,\
@@ -426,7 +426,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # Example: 1048576
 # Uncomment this rule to set a limit.
 #SecAction \
-# "id:'900350',\
+# "id:900350,\
 #  phase:1,\
 #  nolog,\
 #  pass,\
@@ -487,7 +487,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # Uncomment these rules to use this feature:
 #
 #SecHttpBlKey XXXXXXXXXXXXXXXXX
-#SecAction "id:'900500',\
+#SecAction "id:900500,\
 #  phase:1,\
 #  nolog,\
 #  pass,\
@@ -542,7 +542,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # Uncomment this rule to use this feature:
 #
 #SecAction \
-# "id:'900600',\
+# "id:900600,\
 #  phase:1,\
 #  nolog,\
 #  pass,\
@@ -568,7 +568,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # Uncomment this rule to use this feature:
 #
 #SecAction \
-# "id:'900700',\
+# "id:900700,\
 #  phase:1,\
 #  nolog,\
 #  pass,\
@@ -588,7 +588,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # Uncomment this rule to use this feature:
 #
 #SecAction \
-# "id:'900960',\
+# "id:900960,\
 #  phase:1,\
 #  nolog,\
 #  pass,\
@@ -605,7 +605,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # Uncomment this rule to change the defaults:
 #
 #SecAction \
-# "id:'900970',\
+# "id:900970,\
 #  phase:1,\
 #  nolog,\
 #  pass,\
@@ -668,7 +668,7 @@ SecCollectionTimeout 600
 #
 #Include /path/to/crs/util/debug/RESPONSE-981-DEBUG.conf
 #SecRule REMOTE_ADDR "@ipMatch 192.168.1.100" \
-# "id:'900980',\
+# "id:900980,\
 #  phase:1,\
 #  nolog,\
 #  pass,\
@@ -686,7 +686,7 @@ SecCollectionTimeout 600
 # the CRS rules/* files.
 #
 SecAction \
- "id:'900990',\
+ "id:900990,\
   phase:1,\
   nolog,\
   pass,\
