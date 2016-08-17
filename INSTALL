@@ -97,8 +97,8 @@ Installing on Apache
     the rule files into modsecurity.d folder):
         ```
 	<IfModule security2_module>
-                Include core-rules/crs-setup.conf
-                Include core-rules/rules/*.conf
+                Include owasp-modsecurity-crs/crs-setup.conf
+                Include owasp-modsecurity-crs/rules/*.conf
         </IfModule>
 	```
     8. Restart web server and ensure it starts without errors
