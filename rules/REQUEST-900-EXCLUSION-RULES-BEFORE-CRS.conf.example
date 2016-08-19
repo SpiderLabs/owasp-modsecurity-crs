@@ -60,7 +60,7 @@
 # White-list ASV network block (no blocking or logging of AVS traffic)
 # Update IP network block as appropriate for your AVS traffic
 #
-#SecRule REMOTE_ADDR "@ipMatch 192.168.1.100" "phase:1,id:'981033',t:none,nolog,pass,ctl:ruleEngine=Off"
+#SecRule REMOTE_ADDR "@ipMatch 192.168.1.100" "phase:1,id:981033,t:none,nolog,pass,ctl:ruleEngine=Off"
 
 #
 # Example Rule Modification - Removing a specific ARGS parameter from inspection for a rule
