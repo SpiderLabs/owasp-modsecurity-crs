@@ -21,6 +21,9 @@ autogetcontent
 # http://www.crossley-nilsen.com/Linux/Bilbo_-_Nessus_WEB/bilbo_-_nessus_web.html
 # dead? 2003
 bilbo
+# Backup File Artifacts Checker
+# https://github.com/mazen160/bfac
+BFAC
 # password cracker
 # http://sectools.org/tool/brutus/
 brutus
@@ -165,6 +168,7 @@ voideye
 # http://w3af.org/
 w3af.sf.net
 w3af.sourceforge.net
+w3af.org
 # site scanner (legacy)
 # http://www.robotstxt.org/db/webbandit.html
 webbandit
