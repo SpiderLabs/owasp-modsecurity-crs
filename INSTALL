@@ -81,25 +81,27 @@ Installing on Apache
     3. The most common method of deploying ModSecurity we have seen is
     to create a new folder underneath the Apache directory (typically
     /usr/local/apache/, /etc/httpd/, or /etc/apache2). Often this folder
-    is called 'owasp-modsecurity-crs'. Create this folder and cd into it.
-    4. Clone the repository into the current folder using:
+    is called 'modsecurity.d'. Create this folder and cd into it.
+    4. Clone the repository into the modsecurity.d folder using:
     ```git clone https://github.com/SpiderLabs/owasp-modsecurity-crs .```
+    This will create a new owasp-modsecurity-crs folder.
     5. Move the crs-setup.conf.example file to crs-setup.conf.
     Please take the time to go through this file and customize the settings
-    for your local environment. Failure to
-    do so may result in false negatives and false positives. See the
-    section entitled OWASP CRS Configuration for more detail.
+    for your local environment. Failure to do so may result in false 
+    negatives and false positives. See the section entitled OWASP CRS 
+    Configuration for more detail.
     6. Rename rules/REQUEST-900-EXCLUSION-RULES-BEFORE-CRS.conf.example and
     rules/RESPONSE-999-EXCLUSION-RULES-AFTER-CRS.conf.example to remove the
     '.example' extension. This will allow you to add exclusions without updates
     overwriting them in the future.
-    7. Add the following line to your httpd.conf (assuming you've placed
-    the rule files into modsecurity.d folder):
-        ```
+    7. Add the following line to your httpd.conf/apache2.conf (the following 
+    assumes you've cloned CRS into modsecurity.d/owasp-modsecurity-crs). You 
+    can alternatively place these in any config file included by Apache:
+    ```
 	<IfModule security2_module>
-                Include owasp-modsecurity-crs/crs-setup.conf
-                Include owasp-modsecurity-crs/rules/*.conf
-        </IfModule>
+                Include modsecurity.d/owasp-modsecurity-crs/crs-setup.conf
+                Include modsecurity./owasp-modsecurity-crs/rules/*.conf
+    </IfModule>
 	```
     8. Restart web server and ensure it starts without errors
     9. Make sure your web sites are still running fine.
