@@ -4,7 +4,7 @@ require("io");
 function main()
 local anomaly_score = m.getvar("TX.ANOMALY_SCORE", "none");
 	m.log(4, "Anomaly Score is: " .. anomaly_score .. ".");
-local remote_addr = m.getvar("ARGS.REMOTE_ADDR", "none");
+local remote_addr = m.getvar("REMOTE_ADDR", "none");
 	m.log(4, "Remote IP is: " .. remote_addr .. ".");
 local ip_hostname = m.getvar("IP.HOSTNAME", "none");
 
