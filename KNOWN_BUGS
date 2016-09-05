@@ -20,7 +20,7 @@ or the CRS mailinglist at
   the server to fail during startup with an error pointing to various
   lines in the CRS ruleset.
   https://bz.apache.org/bugzilla/show_bug.cgi?id=55910
-  This bug is known to plague RHEL 6 and Ubuntu 14.04 LTS users.
+  This bug is known to plague RHEL 7 and Ubuntu 14.04 LTS users.
   We advise to update your apache version.
   A workaround exists: You can try and enter empty lines into your
   rule files until the error disappears. Please be aware that this
