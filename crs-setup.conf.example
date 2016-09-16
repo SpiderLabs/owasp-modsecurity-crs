@@ -261,6 +261,42 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 #  setvar:tx.inbound_anomaly_score_threshold=5,\
 #  setvar:tx.outbound_anomaly_score_threshold=4"
 
+#
+# -- [[ Application False Positive Tuning ]] ----------------------------------------
+#
+# Some applications may undertake actions that appear to be malicious. This
+# includes things like allowing HTML or Javascript within parameters. In such
+# cases the CRS aims to prevent false positives by allowing administrators to 
+# enable application specific tuning on an application by application
+# specific basis. 
+# As tuning inherently adds small exceptions to the Core Rule Set, it should
+# be used very carefully. If you are sure this is what you want to do first
+# enable tuning in rule 900120. 
+# After enabling tuning you may use 900130 to specify which application you'd
+# like to enable tuning for. Not all applications have tuning support, please
+# use the filenames prefixed with 'REQUEST-902' to guide you in your selection.
+# Such filenames use the following convention:
+# REQUEST-902.9XXX-{application name}-TUNING-RULES.conf
+#
+# Uncomment this rule to change the defaults and enable tuning:
+#
+#SecAction \
+# "id:900120,\
+#  phase:1,\
+#  nolog,\
+#  pass,\
+#  t:none,\
+#  setvar:tx.enable_tuning=1"
+#
+# Modify and uncomment this rule to select which application to tune:
+#
+#SecAction \
+# "id:900130,\
+#  phase:1,\
+#  nolog,\
+#  pass,\
+#  t:none,\
+#  setvar:tx.crs_tuning_APPNAME1=1"
 
 #
 # -- [[ HTTP Policy Settings ]] ------------------------------------------------
