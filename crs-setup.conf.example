@@ -588,12 +588,48 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # Uncomment this rule to use this feature:
 #
 #SecAction \
-# "id:900960,\
+# "id:900950,\
 #  phase:1,\
 #  nolog,\
 #  pass,\
 #  t:none,\
 #  setvar:tx.crs_validate_utf8_encoding=1"
+
+#
+# -- [[ Blocking Based on IP Repudiation ]] ------------------------------------
+#
+# Blocking based on repudiation is permanent in the CRS. Unlike other rules,
+# which look at the indvidual request, the blocking of IPs is based on the
+# a persistent record in the IP collection, which remains active for a 
+# certain amount of time.
+#
+# There are two ways an individual client can become flagged for blocking:
+# - External information (RBL, GeoIP, etc.)
+# - Internal information (Core Rules)
+#
+# The record in the IP collection carries a flag, which tags requests from
+# an individual clients with a flag named IPrepud_block_flag.
+# But the flag alone is not enough to have a client blocked. There is also
+# a global switch named tx.do_repud_block. This is off by default. If you set
+# it to 1 (=On), requests from clients with the IP.repud_block_flag will
+# be blocked. 
+#
+# Variables
+# ip.repud_block_flag      Blocking flag for the IP collection record
+# ip.repud_block_reason    Reason (= rule message) that caused to blocking flag
+# ip.repud_block_duration  The initial duration of the block in seconds
+# tx.do_repud_block        Switch deciding if we really block based on flag
+#
+# It maybe important to know, that all the other core rules are skipped for
+# requests, when it is clear, that they carry the blocking flag in question.
+#
+#SecAction \
+# "id:900960,\
+#  phase:1,\
+#  nolog,\
+#  pass,\
+#  t:none,\
+#  setvar:tx.do_repud_block=1"
 
 
 #
