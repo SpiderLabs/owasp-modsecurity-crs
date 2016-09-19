@@ -1,4 +1,17 @@
-In this version of CRS 3 we have renumbered the rules to be more logical and helpful. As part of this we are providing idNumbering.csv and update.py (locating in the id_numbering folder). 
-This file lists the old rule IDs with the new rule ID in case you want to update your exceptions or check for conflicts. 
-We appreciate your understanding in this matter. 
-This README and associated idNumbering.csv will be removed when this branch is promoted to master.
+In this version of CRS 3 we have renumbered the rules to be more logical and helpful.
+
+The filenames of the rule files correspond with the IDs of rules in the file.
+First rule of a given file is usually 9XX100, then the rules continue in steps
+of ten. Related rules / siblings follow with a single digit id (9XX101, etc.).
+
+As part of this we are providing idNumbering.csv and update.py (locating in the
+id_numbering folder).  This file lists the old rule IDs of the 2.2.X release
+with the new rule ID of the 3.0.X release in case you want to update your
+exceptions or check for conflicts. It is a comma separated list. Rule which
+have been removed are listed with the new ID 000000 in the CSV file.  This
+means that the former rule is no longer part of CRS 3.
+
+A rule renumbering is painful for all existing installations. But we really
+think that the rule IDs lacked sense and reason and we are confident future
+maintenance will be much easier once this is done. We appreciate your
+understanding in this matter. 
