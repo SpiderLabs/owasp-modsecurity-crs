@@ -262,23 +262,30 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 #  setvar:tx.outbound_anomaly_score_threshold=4"
 
 #
-# -- [[ Application False Positive Tuning ]] ----------------------------------------
+# -- [[ Application Specific Exclusions ]] ----------------------------------------
 #
-# Some applications may undertake actions that appear to be malicious. This
-# includes things like allowing HTML or Javascript within parameters. In such
-# cases the CRS aims to prevent false positives by allowing administrators to 
-# enable application specific tuning on an application by application
-# specific basis. 
-# As tuning inherently adds small exceptions to the Core Rule Set, it should
-# be used very carefully. If you are sure this is what you want to do first
-# enable tuning in rule 900120. 
-# After enabling tuning you may use 900130 to specify which application you'd
-# like to enable tuning for. Not all applications have tuning support, please
-# use the filenames prefixed with 'REQUEST-902' to guide you in your selection.
+# Some well-known applications may undertake actions that appear to be
+# malicious. This includes actions such as allowing HTML or Javascript within
+# parameters. In such cases CRS aims to prevent false positives by allowing
+# administrators to enable prebuilt, application specific exclusions on an
+# application by application basis.
+# These application specific exclusions are distinct from the rules that would
+# be placed in the REQUEST-900-EXCLUSION-RULES-BEFORE-CRS configuration file as
+# they are prebuilt for specific applications. The 'REQUEST-900' file is
+# designed for users to add their own custom exclusions. Note, using these
+# application specific exclusions may loosen restrictions of the Core Rule Set,
+# especially if used with an application they weren't designed for. As a result
+# they should be applied with care.
+# Not all users will need this functionality, as a result, in order to use
+# application specific exclusions one must first uncomment rule 900120. After
+# enabling application specific exclusions you may use rule 900130 to specify
+# which application(s) you'd like to enable exclusions for. Not all
+# applications are currently supported, please use the filenames prefixed with
+# 'REQUEST-902' to guide you in your selection.
 # Such filenames use the following convention:
-# REQUEST-902.9XXX-{application name}-TUNING-RULES.conf
+# REQUEST-902.9XXX-{APPNAME}-EXCLUSIONS-RULES.conf
 #
-# Uncomment this rule to change the defaults and enable tuning:
+# Uncomment this rule to enable application specific exclusions:
 #
 #SecAction \
 # "id:900120,\
@@ -286,9 +293,9 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 #  nolog,\
 #  pass,\
 #  t:none,\
-#  setvar:tx.enable_tuning=1"
+#  setvar:tx.enable_app_exclusions=1"
 #
-# Modify and uncomment this rule to select which application to tune:
+# Modify and uncomment this rule to select which application :
 #
 #SecAction \
 # "id:900130,\
@@ -296,7 +303,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 #  nolog,\
 #  pass,\
 #  t:none,\
-#  setvar:tx.crs_tuning_APPNAME1=1"
+#  setvar:tx.crs_exclusions_APPNAME1=1"
 
 #
 # -- [[ HTTP Policy Settings ]] ------------------------------------------------
