@@ -284,6 +284,12 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # Such filenames use the following convention:
 # REQUEST-902.9XXX-{APPNAME}-EXCLUSIONS-RULES.conf
 #
+# It is recommended if you run multiple web applications on your site to limit
+# the effects of the exclusion to only the path where the excluded webapp 
+# resides using a rule similar to the following example:
+# SecRule REQUEST_URI "@beginsWith /wordpress/" setvar:crs_exclusions_wordpress=1
+
+#
 # Modify and uncomment this rule to select which application:
 #
 #SecAction \
