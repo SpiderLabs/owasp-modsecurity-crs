@@ -276,26 +276,15 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # application specific exclusions may loosen restrictions of the Core Rule Set,
 # especially if used with an application they weren't designed for. As a result
 # they should be applied with care.
-# Not all users will need this functionality, as a result, in order to use
-# application specific exclusions one must first uncomment rule 900120. After
-# enabling application specific exclusions you may use rule 900130 to specify
-# which application(s) you'd like to enable exclusions for. Not all
+# To use this functionality you must specify a supported application. To do so
+# uncomment rule 900130. In addition to uncommenting the rule you will need to
+# specify which application(s) you'd like to enable exclusions for. Not all
 # applications are currently supported, please use the filenames prefixed with
 # 'REQUEST-902' to guide you in your selection.
 # Such filenames use the following convention:
 # REQUEST-902.9XXX-{APPNAME}-EXCLUSIONS-RULES.conf
 #
-# Uncomment this rule to enable application specific exclusions:
-#
-#SecAction \
-# "id:900120,\
-#  phase:1,\
-#  nolog,\
-#  pass,\
-#  t:none,\
-#  setvar:tx.enable_app_exclusions=1"
-#
-# Modify and uncomment this rule to select which application :
+# Modify and uncomment this rule to select which application:
 #
 #SecAction \
 # "id:900130,\
