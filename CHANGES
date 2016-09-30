@@ -6,7 +6,9 @@ or the CRS mailinglist at
 * https://lists.owasp.org/mailman/listinfo/owasp-modsecurity-core-rule-set
 
 == Changes from 3.0.0-RC1 to 3.0.0-RC2 ==
-None Yet
+
+ * Fixed Apache 2.2 compatibility issue with long configuration lines.
+ * Panic with error 500 if the crs-setup.conf file is not loaded.
 
 == Changes from 2.2.9 to 3.0.0-RC1 ==
 
