@@ -8,7 +8,6 @@
 # Everything after # is a comment.
 #
 
-.
 bash
 bsdcat
 bsdiff
@@ -21,7 +20,6 @@ bzfgrep
 bzgrep
 bzless
 bzmore
-cat
 cc
 command
 coproc
