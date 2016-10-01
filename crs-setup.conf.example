@@ -298,7 +298,8 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 #  nolog,\
 #  pass,\
 #  t:none,\
-#  setvar:tx.crs_exclusions_APPNAME1=1"
+#  setvar:tx.crs_exclusions_drupal=1,\
+#  setvar:tx.crs_exclusions_wordpress=1"
 
 #
 # -- [[ HTTP Policy Settings ]] ------------------------------------------------
