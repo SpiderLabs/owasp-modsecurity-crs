@@ -280,9 +280,9 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # uncomment rule 900130. In addition to uncommenting the rule you will need to
 # specify which application(s) you'd like to enable exclusions for. Only a
 # (very) limited set of applications are currently supported, please use the
-# filenames prefixed with 'REQUEST-902' to guide you in your selection.
+# filenames prefixed with 'REQUEST-903' to guide you in your selection.
 # Such filenames use the following convention:
-# REQUEST-902.9XXX-{APPNAME}-EXCLUSIONS-RULES.conf
+# REQUEST-903.9XXX-{APPNAME}-EXCLUSIONS-RULES.conf
 #
 # It is recommended if you run multiple web applications on your site to limit
 # the effects of the exclusion to only the path where the excluded webapp
