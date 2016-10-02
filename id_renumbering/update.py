@@ -6,7 +6,7 @@ import argparse
 import os
 import sys
 
-idTranslationFile="IdNumbering.csv"
+idTranslationFile = os.path.join(sys.path[0], "IdNumbering.csv")
 
 if(not os.path.isfile(idTranslationFile)):
 	sys.stderr.write("We were unable to locate the ID translation CSV (idNumbering.csv) please place this is the same directory as this script\n")
