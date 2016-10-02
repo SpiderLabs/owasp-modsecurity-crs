@@ -33,7 +33,7 @@ if(fcontent != ""):
 	try:
 	    	reader = csv.reader(f)
 	    	for row in reader:
-	        	fcontent.replace(row[0],row[1])
+	        	fcontent = fcontent.replace(row[0], row[1])
 	finally:
 		f.close()
 
