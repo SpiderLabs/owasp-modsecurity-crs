@@ -11,7 +11,7 @@ idTranslationFile = os.path.join(sys.path[0], "IdNumbering.csv")
 if(not os.path.isfile(idTranslationFile)):
 	sys.stderr.write("We were unable to locate the ID translation CSV (idNumbering.csv) please place this is the same directory as this script\n")
 	sys.exit(1)
-parser = argparse.ArgumentParser(description="A program that takes in an exceptions file and renumbers all the ID to match OWASP CRS 3.0-rc1 numbers. Output will be directed to STDOUT and can be used to overwrite the file using '>'")
+parser = argparse.ArgumentParser(description="A program that takes in an exceptions file and renumbers all the ID to match OWASP CRS 3 numbers. Output will be directed to STDOUT.")
 parser.add_argument("-f","--file",required=True,action="store",dest="fname",help="the file to be renumbered")
 args = parser.parse_args()
 if(not os.path.isfile((args.fname).encode('utf8'))):
