@@ -122,7 +122,7 @@
 # This rule illustrates that we can use tagging very effectively to whitelist a
 # common false positive across an entire ModSecurity instance. This can be done
 # because every rule in OWASP_CRS is tagged with OWASP_CRS. This will NOT
-# effect custom rules.
+# affect custom rules.
 #
 # ModSecurity Rule Exclusion: Disable inspection of ARGS:pwd
 #                             for all CRS rules
