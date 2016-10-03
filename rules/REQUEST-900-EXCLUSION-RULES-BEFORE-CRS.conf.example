@@ -104,21 +104,34 @@
 #
 #
 # Example Exclusion Rule: Removing a specific ARGS parameter from inspection
-#                         for group of rules
+#                         for only certain attacks
+#
+# Attack rules within the CRS are tagged, with tags such as 'attack-lfi',
+# 'attack-sqli', 'attack-xss', 'attack-injection-php', et cetera.
+#
+# ModSecurity Rule Exclusion: Disable inspection of ARGS:pwd
+#                             for all rules tagged attack-sqli
+# SecRule REQUEST_FILENAME "@endsWith /wp-login.php" \
+#     "id:1002,phase:request,pass,nolog,\
+#     ctl:ruleRemoveTargetByTag=attack-sqli;ARGS:pwd"
+#
+
+# Example Exclusion Rule: Removing a specific ARGS parameter from inspection
+#                         for all CRS rules
 #
 # This rule illustrates that we can use tagging very effectively to whitelist a
 # common false positive across an entire ModSecurity instance. This can be done
 # because every rule in OWASP_CRS is tagged with OWASP_CRS. This will NOT
 # effect custom rules.
 #
-# ModSecurity Rule Exclusion: Disable inspection of ARGS
-#                             for all rules tagged attacks-sqli
+# ModSecurity Rule Exclusion: Disable inspection of ARGS:pwd
+#                             for all CRS rules
 # SecRule REQUEST_FILENAME "@endsWith /wp-login.php" \
-#     "id:1002,phase:request,pass,nolog,\
-#     ctl:ruleRemoveTargetByTag=attacks-sqli;ARGS:pwd"
+#     "id:1003,phase:request,pass,nolog,\
+#     ctl:ruleRemoveTargetByTag=CRS;ARGS:pwd"
+
 #
-#
-# Example Exclusion Rule: Removing a group of rules
+# Example Exclusion Rule: Removing a range of rules
 #
 # This rule illustrates that we can remove a rule range via a ctl action.
 # This uses the fact, that rules are grouped by topic in rule files covering
@@ -126,7 +139,7 @@
 #
 # ModSecurity Rule Exclusion: Disable all SQLi and XSS rules
 # SecRule REQUEST_FILENAME "@beginsWith /admin" \
-#     "id:1003,phase:request,pass,nolog,\
+#     "id:1004,phase:request,pass,nolog,\
 #     ctl:ruleRemoveById=941000-942999"
 #
 #
