@@ -33,7 +33,7 @@
 #                         inspection for SQLi rules
 #
 # ModSecurity Rule Exclusion: disable sqli rules for parameter foo.
-# SecRuleUpdateTargetByTag "sqli-attack" "!ARGS:foo"
+# SecRuleUpdateTargetByTag "attack-sqli" "!ARGS:foo"
 
 
 # -- [[ Changing the Disruptive Action for Anomaly Mode ]] --
