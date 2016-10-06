@@ -10,30 +10,30 @@
 #
 # The purpose of this file is to hold LOCAL exceptions for your site.
 # The types of rules that would go into this file are one where you want
-# to unconditionally disable rules or modify their actions.
+# to unconditionally disable rules or modify their actions during startup.
 #
-# Save a copy of this template to RESPONSE-999-EXCEPTIONS.conf to activate it.
+# Please see the file REQUEST-900-EXCLUSIONS-RULES-BEFORE-CRS.conf.example
+# for a description of the rule exclusions mechanism and the correct
+# use of this file.
 #
 
 #
-# Example - To unconditionally disable a rule ID
+# Example Exclusion Rule: To unconditionally disable a rule ID
 # 
-# These directives MUST be specified AFTER the rules they are disabling
-# at startup time
+# ModSecurity Rule Exclusion: 942100 SQL Injection Detected via libinjection
+# SecRuleRemoveById 942100
+
+# Example Exclusion Rule: Remove a group of rules
 #
-# SecRuleRemoveById 950010
+# ModSecurity Rule Exclusion: Disable PHP injection rules
+# SecRuleRemoveByTag "attack-injection-php"
 
 #
-# Example - To unconditionally modify a rule Action
+# Example Exclusion Rule: To unconditionally remove parameter "foo" from 
+#                         inspection for SQLi rules
 #
-# SecRuleUpdateActionById 915900 "pass"
-
-#
-# Example - To unconditionally remove parameter "foo" from inspection
-# for XSS and SQLi rules
-#
-# SecRuleUpdateTargetByTag "WEB_ATTACK/XSS" "!ARGS:foo"
-# SecRuleUpdateTargetByTag "WEB_ATTACK/SQL_INJECTION" "!ARGS:foo"
+# ModSecurity Rule Exclusion: disable sqli rules for parameter foo.
+# SecRuleUpdateTargetByTag "attack-sqli" "!ARGS:foo"
 
 
 # -- [[ Changing the Disruptive Action for Anomaly Mode ]] --
