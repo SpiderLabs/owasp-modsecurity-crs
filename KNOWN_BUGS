@@ -12,7 +12,7 @@ or the CRS mailinglist at
   as we expect users to write exclusion rules for their alerts in
   the higher paranoia levels.
 * Permanent blocking of clients based on previous user agent match /
-  IP repudiation filter.
+  IP reputation filter.
   This is On by default in CRSv3.0.0-RC1, but will be off by default
   for the full release.
   See https://github.com/SpiderLabs/owasp-modsecurity-crs/issues/514

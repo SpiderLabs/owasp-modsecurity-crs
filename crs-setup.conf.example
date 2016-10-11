@@ -596,9 +596,9 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 #  setvar:tx.crs_validate_utf8_encoding=1"
 
 #
-# -- [[ Blocking Based on IP Repudiation ]] ------------------------------------
+# -- [[ Blocking Based on IP Reputation ]] ------------------------------------
 #
-# Blocking based on repudiation is permanent in the CRS. Unlike other rules,
+# Blocking based on reputation is permanent in the CRS. Unlike other rules,
 # which look at the indvidual request, the blocking of IPs is based on the
 # a persistent record in the IP collection, which remains active for a 
 # certain amount of time.
