@@ -595,11 +595,12 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 #  t:none,\
 #  setvar:tx.crs_validate_utf8_encoding=1"
 
+
 #
 # -- [[ Blocking Based on IP Reputation ]] ------------------------------------
 #
 # Blocking based on reputation is permanent in the CRS. Unlike other rules,
-# which look at the indvidual request, the blocking of IPs is based on the
+# which look at the indvidual request, the blocking of IPs is based on
 # a persistent record in the IP collection, which remains active for a 
 # certain amount of time.
 #
@@ -608,11 +609,11 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # - Internal information (Core Rules)
 #
 # The record in the IP collection carries a flag, which tags requests from
-# an individual clients with a flag named IP.reput_block_flag.
+# individual clients with a flag named IP.reput_block_flag.
 # But the flag alone is not enough to have a client blocked. There is also
 # a global switch named tx.do_reput_block. This is off by default. If you set
 # it to 1 (=On), requests from clients with the IP.reput_block_flag will
-# be blocked. 
+# be blocked for a certain duration.
 #
 # Variables
 # ip.reput_block_flag      Blocking flag for the IP collection record
@@ -620,8 +621,8 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # ip.reput_block_duration  The initial duration of the block in seconds
 # tx.do_reput_block        Switch deciding if we really block based on flag
 #
-# It maybe important to know, that all the other core rules are skipped for
-# requests, when it is clear, that they carry the blocking flag in question.
+# It may be important to know, that all the other core rules are skipped for
+# requests, when it is clear that they carry the blocking flag in question.
 #
 #SecAction \
 # "id:900960,\
