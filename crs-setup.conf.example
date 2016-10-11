@@ -608,17 +608,17 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # - Internal information (Core Rules)
 #
 # The record in the IP collection carries a flag, which tags requests from
-# an individual clients with a flag named IPrepud_block_flag.
+# an individual clients with a flag named IPreput_block_flag.
 # But the flag alone is not enough to have a client blocked. There is also
-# a global switch named tx.do_repud_block. This is off by default. If you set
-# it to 1 (=On), requests from clients with the IP.repud_block_flag will
+# a global switch named tx.do_reput_block. This is off by default. If you set
+# it to 1 (=On), requests from clients with the IP.reput_block_flag will
 # be blocked. 
 #
 # Variables
-# ip.repud_block_flag      Blocking flag for the IP collection record
-# ip.repud_block_reason    Reason (= rule message) that caused to blocking flag
-# ip.repud_block_duration  The initial duration of the block in seconds
-# tx.do_repud_block        Switch deciding if we really block based on flag
+# ip.reput_block_flag      Blocking flag for the IP collection record
+# ip.reput_block_reason    Reason (= rule message) that caused to blocking flag
+# ip.reput_block_duration  The initial duration of the block in seconds
+# tx.do_reput_block        Switch deciding if we really block based on flag
 #
 # It maybe important to know, that all the other core rules are skipped for
 # requests, when it is clear, that they carry the blocking flag in question.
@@ -629,7 +629,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 #  nolog,\
 #  pass,\
 #  t:none,\
-#  setvar:tx.do_repud_block=1"
+#  setvar:tx.do_reput_block=1"
 
 
 #
