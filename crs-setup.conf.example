@@ -624,6 +624,8 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # It may be important to know, that all the other core rules are skipped for
 # requests, when it is clear that they carry the blocking flag in question.
 #
+# Uncomment this rule to use this feature:
+#
 #SecAction \
 # "id:900960,\
 #  phase:1,\
@@ -631,15 +633,9 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 #  pass,\
 #  t:none,\
 #  setvar:tx.do_reput_block=1"
-
-
 #
-# -- [[ Block Duration ]] ------------------------------------------------------
-#
-# Here you can specify how long IP blocking rules last before they expire.
-# The default is 300 seconds.
-#
-# Uncomment this rule to change the defaults:
+# Uncomment this rule to change the blocking time:
+# Default: 300 (5 minutes)
 #
 #SecAction \
 # "id:900970,\
@@ -647,7 +643,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 #  nolog,\
 #  pass,\
 #  t:none,\
-#  setvar:tx.block_duration=300"
+#  setvar:tx.reput_block_duration=300"
 
 
 #
@@ -657,9 +653,9 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # to a lower setting which is appropriate to most sites.
 # This increases performance by cleaning out stale collection (block) entries.
 #
-# This value should be greater than or equal to the block duration
-# (tx.block_duration, see section "Block Duration") and the DoS block duration
-# (tx.dos_block_timeout, see section "Anti-Automation / DoS Protection").
+# This value should be greater than or equal to:
+# tx.reput_block_duration (see section "Blocking Based on IP Reputation") and
+# tx.dos_block_timeout (see section "Anti-Automation / DoS Protection").
 #
 # Ref: https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#wiki-SecCollectionTimeout
 
