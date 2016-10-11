@@ -100,7 +100,7 @@ Installing on Apache
     ```
 	<IfModule security2_module>
                 Include modsecurity.d/owasp-modsecurity-crs/crs-setup.conf
-                Include modsecurity./owasp-modsecurity-crs/rules/*.conf
+                Include modsecurity.d/owasp-modsecurity-crs/rules/*.conf
     </IfModule>
 	```
     8. Restart web server and ensure it starts without errors
