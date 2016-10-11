@@ -618,8 +618,8 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # Variables
 # ip.reput_block_flag      Blocking flag for the IP collection record
 # ip.reput_block_reason    Reason (= rule message) that caused to blocking flag
-# ip.reput_block_duration  The initial duration of the block in seconds
 # tx.do_reput_block        Switch deciding if we really block based on flag
+# tx.reput_block_duration  Setting to define the duration of a block
 #
 # It may be important to know, that all the other core rules are skipped for
 # requests, when it is clear that they carry the blocking flag in question.
