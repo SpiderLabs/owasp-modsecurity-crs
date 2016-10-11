@@ -608,7 +608,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # - Internal information (Core Rules)
 #
 # The record in the IP collection carries a flag, which tags requests from
-# an individual clients with a flag named IPreput_block_flag.
+# an individual clients with a flag named IP.reput_block_flag.
 # But the flag alone is not enough to have a client blocked. There is also
 # a global switch named tx.do_reput_block. This is off by default. If you set
 # it to 1 (=On), requests from clients with the IP.reput_block_flag will
