@@ -13,7 +13,7 @@
  * Initial Wordpress rule exclusions (Walter Hop)
  * Initial Drupal rule exclusions (Christian Folini, @emphazer)
  * Cleanup of reputation checks / persistent blocking 
-   (Christina Folini / Walter Hop)
+   (Christian Folini / Walter Hop)
  * Shortened overly long RegExes to work on Apache 2.2
  * Support for HTTP/2 protocol in request line
  * Updated list of webscanners
