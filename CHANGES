@@ -6,7 +6,10 @@ or the CRS mailinglist at
 * https://lists.owasp.org/mailman/listinfo/owasp-modsecurity-core-rule-set
 
 == Changes from 3.0.0-RC1 to 3.0.0-RC2 ==
-None Yet
+
+ * Fixed Apache 2.2 compatibility issue with long configuration lines.
+ * Added more unix commands to RCE rule (github user @emphazer).
+ * Panic with error 500 if the crs-setup.conf file is not loaded.
 
 == Changes from 2.2.9 to 3.0.0-RC1 ==
 
@@ -31,7 +34,7 @@ This is a cursory summary of the most important changes:
  * Consolidation of rules, namely XSS and SQLi (Spider Labs/Trustwave team)
  * Sampling mode / Easing in (Christian Folini)
  * Tags much more systematic (Walter Hop)
- * IP Repudiation checks (Spider Labs/Trustwave team)
+ * IP Reputation checks (Spider Labs/Trustwave team)
  * Phase actions use request/response/logging now instead of 
    numerical phases (Spider Labs/Trustwave team)
  * Added NoScript XSS Filters (Spider Labs/Trustwave team)

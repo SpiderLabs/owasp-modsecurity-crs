@@ -11,10 +11,11 @@ or the CRS mailinglist at
   False Positives from paranoia level 2 rules are less interesting,
   as we expect users to write exclusion rules for their alerts in
   the higher paranoia levels.
-* Permanent blocking of clients is based on a user agent / IP
-  combination. Changing the user agent will thus allow to bypass
-  this new filter. The plan is to allow for a purely IP based
-  filter in the future.
+* Permanent blocking of clients based on previous user agent match /
+  IP reputation filter.
+  This is On by default in CRSv3.0.0-RC1, but will be off by default
+  for the full release.
+  See https://github.com/SpiderLabs/owasp-modsecurity-crs/issues/514
 * Apache 2.4 prior to 2.4.11 is affected by a bug, which causes
   the server to fail during startup with an error pointing to various
   lines in the CRS ruleset.
