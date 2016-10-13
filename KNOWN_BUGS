@@ -11,7 +11,7 @@ or the CRS mailinglist at
   False Positives from paranoia level 2 rules are less interesting,
   as we expect users to write exclusion rules for their alerts in
   the higher paranoia levels.
-* Permanent blocking of clients is based on a user agent / IP
+* Permanent blocking of clients is based on a previous user agent / IP
   combination. Changing the user agent will thus allow to bypass
   this new filter. The plan is to allow for a purely IP based
   filter in the future.
