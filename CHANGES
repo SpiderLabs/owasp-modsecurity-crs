@@ -16,7 +16,7 @@
    (Christian Folini / Walter Hop)
  * Shortened overly long RegExes to work on Apache 2.2
  * Support for HTTP/2 protocol in request line
- * Updated list of webscanners
+ * Updated list of malicious webscanners
 
 
 == Changes from 2.2.9 to 3.0.0-RC1 ==
