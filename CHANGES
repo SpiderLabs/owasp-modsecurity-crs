@@ -34,7 +34,7 @@ This is a cursory summary of the most important changes:
  * Consolidation of rules, namely XSS and SQLi (Spider Labs/Trustwave team)
  * Sampling mode / Easing in (Christian Folini)
  * Tags much more systematic (Walter Hop)
- * IP Repudiation checks (Spider Labs/Trustwave team)
+ * IP Reputation checks (Spider Labs/Trustwave team)
  * Phase actions use request/response/logging now instead of 
    numerical phases (Spider Labs/Trustwave team)
  * Added NoScript XSS Filters (Spider Labs/Trustwave team)

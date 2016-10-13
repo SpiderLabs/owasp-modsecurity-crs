@@ -629,7 +629,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # Uncomment this rule to use this feature:
 #
 #SecAction \
-# "id:900960,\
+# "id:900950,\
 #  phase:1,\
 #  nolog,\
 #  pass,\
@@ -638,12 +638,45 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 
 
 #
-# -- [[ Block Duration ]] ------------------------------------------------------
+# -- [[ Blocking Based on IP Reputation ]] ------------------------------------
 #
-# Here you can specify how long IP blocking rules last before they expire.
-# The default is 300 seconds.
+# Blocking based on reputation is permanent in the CRS. Unlike other rules,
+# which look at the indvidual request, the blocking of IPs is based on
+# a persistent record in the IP collection, which remains active for a 
+# certain amount of time.
 #
-# Uncomment this rule to change the defaults:
+# There are two ways an individual client can become flagged for blocking:
+# - External information (RBL, GeoIP, etc.)
+# - Internal information (Core Rules)
+#
+# The record in the IP collection carries a flag, which tags requests from
+# individual clients with a flag named IP.reput_block_flag.
+# But the flag alone is not enough to have a client blocked. There is also
+# a global switch named tx.do_reput_block. This is off by default. If you set
+# it to 1 (=On), requests from clients with the IP.reput_block_flag will
+# be blocked for a certain duration.
+#
+# Variables
+# ip.reput_block_flag      Blocking flag for the IP collection record
+# ip.reput_block_reason    Reason (= rule message) that caused to blocking flag
+# tx.do_reput_block        Switch deciding if we really block based on flag
+# tx.reput_block_duration  Setting to define the duration of a block
+#
+# It may be important to know, that all the other core rules are skipped for
+# requests, when it is clear that they carry the blocking flag in question.
+#
+# Uncomment this rule to use this feature:
+#
+#SecAction \
+# "id:900960,\
+#  phase:1,\
+#  nolog,\
+#  pass,\
+#  t:none,\
+#  setvar:tx.do_reput_block=1"
+#
+# Uncomment this rule to change the blocking time:
+# Default: 300 (5 minutes)
 #
 #SecAction \
 # "id:900970,\
@@ -651,7 +684,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 #  nolog,\
 #  pass,\
 #  t:none,\
-#  setvar:tx.block_duration=300"
+#  setvar:tx.reput_block_duration=300"
 
 
 #
@@ -661,9 +694,9 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # to a lower setting which is appropriate to most sites.
 # This increases performance by cleaning out stale collection (block) entries.
 #
-# This value should be greater than or equal to the block duration
-# (tx.block_duration, see section "Block Duration") and the DoS block duration
-# (tx.dos_block_timeout, see section "Anti-Automation / DoS Protection").
+# This value should be greater than or equal to:
+# tx.reput_block_duration (see section "Blocking Based on IP Reputation") and
+# tx.dos_block_timeout (see section "Anti-Automation / DoS Protection").
 #
 # Ref: https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#wiki-SecCollectionTimeout
 
