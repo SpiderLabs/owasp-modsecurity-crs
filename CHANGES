@@ -2,14 +2,22 @@
 
 == Report Bugs/Issues to GitHub Issues Tracker or the mailinglist ==
 * https://github.com/SpiderLabs/owasp-modsecurity-crs/issues
-or the CRS mailinglist at
+  or the CRS mailinglist at
 * https://lists.owasp.org/mailman/listinfo/owasp-modsecurity-core-rule-set
+
 
 == Changes from 3.0.0-RC1 to 3.0.0-RC2 ==
 
- * Fixed Apache 2.2 compatibility issue with long configuration lines.
- * Added more unix commands to RCE rule (github user @emphazer).
- * Panic with error 500 if the crs-setup.conf file is not loaded.
+ * Generic mechanism to support application specific rule exclusions
+   (Chaim Sanders)
+ * Initial Wordpress rule exclusions (Walter Hop)
+ * Initial Drupal rule exclusions (Christian Folini, @emphazer)
+ * Cleanup of reputation checks / persistent blocking 
+   (Christina Folini / Walter Hop)
+ * Shortened overly long RegExes to work on Apache 2.2
+ * Support for HTTP/2 protocol in request line
+ * Updated list of webscanners
+
 
 == Changes from 2.2.9 to 3.0.0-RC1 ==
 
@@ -34,7 +42,8 @@ This is a cursory summary of the most important changes:
  * Consolidation of rules, namely XSS and SQLi (Spider Labs/Trustwave team)
  * Sampling mode / Easing in (Christian Folini)
  * Tags much more systematic (Walter Hop)
- * IP Reputation checks (Spider Labs/Trustwave team)
+ * IP reputation checks / persistent blocking of certain clients
+   (Spider Labs/Trustwave team)
  * Phase actions use request/response/logging now instead of 
    numerical phases (Spider Labs/Trustwave team)
  * Added NoScript XSS Filters (Spider Labs/Trustwave team)
@@ -70,6 +79,7 @@ This is a cursory summary of the most important changes:
  * CPanel integration (Chaim Sanders)
  * Introduction of var for static resources (Chaim Sanders)
  * Many improvements to rules in 2014/5 (Ryan Barnett)
+
 
 == Version 2.2.9 - 09/30/2013 ==
 
