@@ -14,9 +14,11 @@
  * Initial Drupal rule exclusions (Christian Folini, @emphazer)
  * Cleanup of reputation checks / persistent blocking 
    (Christian Folini / Walter Hop)
- * Shortened overly long RegExes to work on Apache 2.2
- * Support for HTTP/2 protocol in request line
+ * Shortened overly long RegExes to work on Apache 2.2 (Walter Hop)
+ * Add support for HTTP/2 in recent Apache 2.4 (Walter Hop)
  * Updated list of malicious webscanners
+ * Include script in util/join-multiline-rules to work around
+   Apache 2.4 < 2.4.11 bug with long lines (Walter Hop)
 
 
 == Changes from 2.2.9 to 3.0.0-RC1 ==
