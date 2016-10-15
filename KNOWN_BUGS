@@ -15,13 +15,14 @@ or the CRS mailinglist at
   combination. Changing the user agent will thus allow to bypass
   this new filter. The plan is to allow for a purely IP based
   filter in the future.
-* Apache 2.4 prior to 2.4.11 is affected by a bug, which causes
-  the server to fail during startup with an error pointing to various
-  lines in the CRS ruleset.
-  https://bz.apache.org/bugzilla/show_bug.cgi?id=55910
+* Apache 2.4 prior to 2.4.11 is affected by a bug in parsing multi-line
+  configuration directives, which causes Apache to fail during startup
+  with an error such as:
+    Error parsing actions: Unknown action: \\
+    Action 'configtest' failed.
   This bug is known to plague RHEL 7 and Ubuntu 14.04 LTS users.
-  We advise to update your apache version.
-  A workaround exists: You can try and enter empty lines into your
-  rule files until the error disappears. Please be aware that this
-  will mean that updates to the rulesets will have to be done by
-  hand in the future as you are changing the rule files.
+  https://bz.apache.org/bugzilla/show_bug.cgi?id=55910
+  We advise to upgrade your Apache version. If upgrading is not possible,
+  we have provided a script in the util/join-multiline-rules directory
+  which converts the rules into a format that works around the bug.
+  You must re-run this script whenever you change or update a CRS rule.
