@@ -6,24 +6,24 @@ or the CRS mailinglist at
 * https://lists.owasp.org/mailman/listinfo/owasp-modsecurity-core-rule-set
 
 * There are still false positives for standard web applications in
-  the default install (paranoia level 1). Please report these when 
-  you encounter them. 
+  the default install (paranoia level 1). Please report these when
+  you encounter them.
   False Positives from paranoia level 2 rules are less interesting,
   as we expect users to write exclusion rules for their alerts in
   the higher paranoia levels.
-* Permanent blocking of clients based on previous user agent match /
-  IP reputation filter.
-  This is On by default in CRSv3.0.0-RC1, but will be off by default
-  for the full release.
-  See https://github.com/SpiderLabs/owasp-modsecurity-crs/issues/514
-* Apache 2.4 prior to 2.4.11 is affected by a bug, which causes
-  the server to fail during startup with an error pointing to various
-  lines in the CRS ruleset.
-  https://bz.apache.org/bugzilla/show_bug.cgi?id=55910
+* Permanent blocking of clients is based on a previous user agent / IP
+  combination. Changing the user agent will thus allow to bypass
+  this new filter. The plan is to allow for a purely IP based
+  filter in the future.
+* Apache 2.4 prior to 2.4.11 is affected by a bug in parsing multi-line
+  configuration directives, which causes Apache to fail during startup
+  with an error such as:
+    Error parsing actions: Unknown action: \\
+    Action 'configtest' failed.
   This bug is known to plague RHEL 7 and Ubuntu 14.04 LTS users.
-  We advise to update your apache version.
-  A workaround exists: You can try and enter empty lines into your
-  rule files until the error disappears. Please be aware that this
-  will mean that updates to the rulesets will have to be done by
-  hand in the future as you are changing the rule files.
-
+  https://bz.apache.org/bugzilla/show_bug.cgi?id=55910
+  We advise to upgrade your Apache version. If upgrading is not possible,
+  we have provided a script in the util/join-multiline-rules directory
+  which converts the rules into a format that works around the bug.
+  You have to re-run this script whenever you modify or update 
+  the CRS rules.
