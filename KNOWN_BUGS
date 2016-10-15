@@ -25,4 +25,4 @@ or the CRS mailinglist at
   We advise to upgrade your Apache version. If upgrading is not possible,
   we have provided a script in the util/join-multiline-rules directory
   which converts the rules into a format that works around the bug.
-  You must re-run this script whenever you change or update a CRS rule.
+  You must re-run this script whenever you modify or update the CRS rules.
