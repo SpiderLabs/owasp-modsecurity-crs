@@ -721,10 +721,13 @@ SecCollectionTimeout 600
 #
 # -- [[ End of setup ]] --------------------------------------------------------
 #
-# The CRS checks the tx.setup_done variable to ensure that the setup
+# The CRS checks the tx.crs_setup_version variable to ensure that the setup
 # has been loaded. If you are not planning to use this setup template,
-# you must manually set the tx.setup_done variable before including
+# you must manually set the tx.crs_setup_version variable before including
 # the CRS rules/* files.
+#
+# The variable is a numerical representation of the CRS version number.
+# E.g., v3.0.0 is represented as 300.
 #
 SecAction \
  "id:900990,\
@@ -732,4 +735,4 @@ SecAction \
   nolog,\
   pass,\
   t:none,\
-  setvar:tx.setup_done=1"
+  setvar:tx.crs_setup_version=300"
