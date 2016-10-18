@@ -8,3 +8,4 @@ script:
 branches:
   only:
   - v3.0.0-rc2
+  - v3.0.0-rc3

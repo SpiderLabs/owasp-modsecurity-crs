@@ -6,6 +6,8 @@
 * https://lists.owasp.org/mailman/listinfo/owasp-modsecurity-core-rule-set
 
 
+== Changes from 3.0.0-RC2 to 3.0.0-RC3 ==
+
 == Changes from 3.0.0-RC1 to 3.0.0-RC2 ==
 
  * Generic mechanism to support application specific rule exclusions
@@ -19,7 +21,7 @@
  * Updated list of malicious webscanners
  * Include script in util/join-multiline-rules to work around
    Apache 2.4 < 2.4.11 bug with long lines (Walter Hop)
- * Add support for Travis CI
+ * Added support for Travis CI
 
 
 == Changes from 2.2.9 to 3.0.0-RC1 ==
