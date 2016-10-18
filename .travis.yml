@@ -1,0 +1,10 @@
+language: python
+python:
+  - "2.7"
+install: "pip install -r ./util/integration/requirements.txt"
+script:
+    - py.test -vs ./util/integration/format_tests.py
+# safelist
+branches:
+  only:
+  - v3.0.0-rc2
