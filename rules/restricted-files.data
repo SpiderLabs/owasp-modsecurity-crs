@@ -1,0 +1,45 @@
+# Apache
+# (no slash; also guards against old.htaccess, old.htpasswd, etc.)
+.htaccess
+.htdigest
+.htpasswd
+# Version control
+/.git/
+/.gitignore
+/.hg/
+/.hgignore
+/.svn/
+# Wordpress
+wp-config.php
+wp-config.bak
+wp-config.old
+wp-config.temp
+wp-config.tmp
+wp-config.txt
+# Symfony
+/config/config.yml
+/config/config_dev.yml
+/config/config_prod.yml
+/config/config_test.yml
+/config/parameters.yml
+/config/routing.yml
+/config/security.yml
+/config/services.yml
+# Drupal
+/sites/default/default.settings.php
+/sites/default/settings.php
+# Magento
+/app/etc/local.xml
+# Sublime Text
+/sftp-config.json
+# ASP.NET
+/Web.config
+# Node
+/gruntfile.js
+/npm-debug.log
+# Composer
+/composer.json
+/composer.lock
+/packages.json
+# dotenv
+/.env
