@@ -7,6 +7,8 @@
 
 
 == Changes from 3.0.0-RC2 to 3.0.0-RC3 ==
+ * Rules to detect Shellshock attack (Walter Hop / RedHat)
+ * Fix various false positives (Walter Hop, @shimshon70)
 
 == Changes from 3.0.0-RC1 to 3.0.0-RC2 ==
 
@@ -14,10 +16,10 @@
    (Chaim Sanders)
  * Initial Wordpress rule exclusions (Walter Hop)
  * Initial Drupal rule exclusions (Christian Folini, @emphazer)
- * Cleanup of reputation checks / persistent blocking 
+ * Cleanup of reputation checks / persistent blocking
    (Christian Folini / Walter Hop)
  * Shortened overly long RegExes to work on Apache 2.2 (Walter Hop)
- * Add support for HTTP/2 in recent Apache 2.4 (Walter Hop)
+ * Added support for HTTP/2 in recent Apache 2.4 (Walter Hop)
  * Updated list of malicious webscanners
  * Include script in util/join-multiline-rules to work around
    Apache 2.4 < 2.4.11 bug with long lines (Walter Hop)
@@ -29,55 +31,55 @@
 Huge changeset running in separate branch from September 2013 to September 2016.
 
 This is a cursory summary of the most important changes:
- * Huge reduction of false positives (Ryan Barnett, Felipe Zimmerle, Chaim 
+ * Huge reduction of false positives (Ryan Barnett, Felipe Zimmerle, Chaim
    Sanders, Walter Hop, Christian Folini)
- * Anomaly scoring is the new default, renamed thresholds from 
-   tx.(in|out)bound_anomaly_score_level to 
+ * Anomaly scoring is the new default, renamed thresholds from
+   tx.(in|out)bound_anomaly_score_level to
    tx.(in|out)bound_anomaly_score_threshold
  * Introduction of libinjection for SQLi detection
  * Introduction of libinjection for XSS detection
  * Big improvement on detection of Remote Command Execution (Walter Hop)
  * Big improvement on PHP function name detection (Walter Hop)
- * Paranoia Mode (Christian Folini, Noël Zindel, Franziska Bühler, 
+ * Paranoia Mode (Christian Folini, Noël Zindel, Franziska Bühler,
    Manuel Leos, Walter Hop)
  * Shifted dozens of rules into higher paranoia levels
  * Introduced a lot of stricter sibling rules in higher levels
- * Renumbering of rules. See folder id_renumbering for a 
+ * Renumbering of rules. See folder id_renumbering for a
    csv map (Chaim Sanders)
  * Consolidation of rules, namely XSS and SQLi (Spider Labs/Trustwave team)
  * Sampling mode / Easing in (Christian Folini)
  * Tags much more systematic (Walter Hop)
  * IP reputation checks / persistent blocking of certain clients
    (Spider Labs/Trustwave team)
- * Phase actions use request/response/logging now instead of 
+ * Phase actions use request/response/logging now instead of
    numerical phases (Spider Labs/Trustwave team)
  * Added NoScript XSS Filters (Spider Labs/Trustwave team)
  * Updated "severity" action to use words (CRITICAL, WARNING, etc...)
-   vs. numbers (5, 4, etc..) 
+   vs. numbers (5, 4, etc..)
  * Various regex fixes after research by Vladimir Ivanov (Chaim Sanders)
  * Overhaul of the regression mode into debug mode (Walter Hop, Ryan Barnett)
  * Introduction of util/upgrade.py (Walter Hop)
  * Removal of GeoIP database. Download via util/upgrade.py now.
- * Introduction of Initialization rules with 
+ * Introduction of Initialization rules with
    default values (Walter Hop, Christian Folini)
  * Sorting out terminology with
    whitelisting and rule exclusions (Christian Folini)
  * Overhaul of testing (Chaim Sanders)
  * Protection from HTTP Parameter Pollution (Franziska Bühler)
  * Simplification of setup config file, renamed file to crs-setup.conf.example
- * Improved session fixation detection logic (Christian Peron, credits to 
+ * Improved session fixation detection logic (Christian Peron, credits to
    Eric Hodel for the discovery)
  * Splitting scanner user agents data files (github user @ygrek)
- * Countless bugfixes in severities, anomaly scores, tags, etc. 
+ * Countless bugfixes in severities, anomaly scores, tags, etc.
    across the board
- * Cleanup of formerly experimental DDoS rules, 
+ * Cleanup of formerly experimental DDoS rules,
    fix documentation (Ryan Barnett, Christian Folini)
  * Improves http blacklist checks (Walter Hop)
  * Extended XSS detection (as suggested by Mazin Ahmed)
- * Added many, many bots and scanners (among others suggested by 
+ * Added many, many bots and scanners (among others suggested by
    github user @toby78, @jamuse, Matt Koch)
  * Fixed mime types suiteable for XML processor (Chaim Sanders)
- * New detection for request smuggling attacks (Achim Hofmann, 
+ * New detection for request smuggling attacks (Achim Hofmann,
    Christian Folini)
  * Fixes with project honeypot setup (Ryan Barnett)
  * Separated DB / SQL messages by DB software (Ryan Barnett)
@@ -136,7 +138,7 @@ Bug Fixes:
 Security Fixes:
 
 Improvements:
-* Added JS Overrides file to identify successfull XSS probes 
+* Added JS Overrides file to identify successfull XSS probes
 * Added new XSS Detection Rules from Ashar Javed (http://twitter.com/soaj1664ashar)
   - http://jsfiddle.net/U9RmU/4/
 * Updated the SQLi Filters to add in Oracle specific functions
@@ -207,7 +209,7 @@ Improvements:
 * Removed PARANOID mode rules
 
 Bug Fixes:
-* Fixed missing comma before severity action in rules 958291, 958230 and 958231 
+* Fixed missing comma before severity action in rules 958291, 958230 and 958231
 * Fixed duplidate rule IDs
 
 
@@ -215,7 +217,7 @@ Bug Fixes:
 
 Improvements:
 * Added Watcher Cookie Checks to optional_rules/modsecurity_crs_55_appication_defects.conf file
-  http://websecuritytool.codeplex.com/wikipage?title=Checks#cookies 
+  http://websecuritytool.codeplex.com/wikipage?title=Checks#cookies
 * Added Watcher Charset Checks to optional_rules/modsecurity_crs_55_application_defects.conf file
   http://websecuritytool.codeplex.com/wikipage?title=Checks#charset
 * Added Watcher Header Checks to optional_rules/modsecurity_crs_55_application_defects.conf file
@@ -223,7 +225,7 @@ Improvements:
 
 Bug Fixes:
 * Fixed Content-Type evasion issue by adding ctl:forceRequestBodyVariable action to
-  rule ID 960010. (Identified by Andrew Wilson of Trustwave SpiderLabs). 
+  rule ID 960010. (Identified by Andrew Wilson of Trustwave SpiderLabs).
 * Updated the regex and added tags for RFI rules.
 
 
@@ -231,7 +233,7 @@ Bug Fixes:
 
 
 Improvements:
-* Updated the AppSensor Profiling (to use Lua scripts) for Request Exceptions Detection Points 
+* Updated the AppSensor Profiling (to use Lua scripts) for Request Exceptions Detection Points
 * Added new Range header detection checks to prevent Apache DoS
 * Added new Security Scanner User-Agent strings
 * Added example script to the /util directory to convert Arachni DAST scanner
@@ -242,7 +244,7 @@ Improvements:
 Bug Fixes:
 * Fixed action list for XSS rules (replaced pass,nolog,auditlog with block)
 * Fixed Request Limit rules by removing & from variables
-* Fixed Session Hijacking IP/UA hash captures 
+* Fixed Session Hijacking IP/UA hash captures
 * Updated the SQLi regex for rule ID 981242
 
 
@@ -265,7 +267,7 @@ Bug Fixes:
 * Fixed a false negative logic flaw within the advanced_filter_converter.lua script
 * Fixed missing : in id action in DoS ruleset.
 * Updated rule ID 971150 signature to remove ;
- 
+
 
 == Version 2.2.0 - 05/26/2011 ==
 
@@ -279,7 +281,7 @@ Improvements:
   to files they want to run.  This allows for easier Apache Include wild-carding
 * Adding in new RULE_MATURITY and RULE_ACCURACY tags
 * Adding in a check for X-Forwarded-For source IP when creating IP collection
-* Added new Application Defect checks (55 app defect file) from Watcher tool (Check Charset) 
+* Added new Application Defect checks (55 app defect file) from Watcher tool (Check Charset)
   http://websecuritytool.codeplex.com/wikipage?title=Checks#charset
 * Added new AppSensor rules to experimental_dir
   https://www.owasp.org/index.php/AppSensor_DetectionPoints
@@ -287,7 +289,7 @@ Improvements:
 * Added experimental IP Forensic rules to gather Client hostname/whois info
   http://blog.spiderlabs.com/2010/11/detecting-malice-with-modsecurity-ip-forensics.html
 * Added support for Mozilla's Content Security Policy (CSP) to the experimental_rules
-  http://blog.spiderlabs.com/2011/04/modsecurity-advanced-topic-of-the-week-integrating-content-security-policy-csp.html  
+  http://blog.spiderlabs.com/2011/04/modsecurity-advanced-topic-of-the-week-integrating-content-security-policy-csp.html
 * Global collection in the 10 file now uses the Host Request Header as the collection key.
   This allows for per-site global collections.
 * Added new SpiderLabs Research (SLR) rules directory (slr_rules) for known vulnerabilties.
@@ -296,7 +298,7 @@ Improvements:
 * Added experimental rules for detecting Open Proxy Abuse
   http://blog.spiderlabs.com/2011/03/detecting-malice-with-modsecurity-open-proxy-abuse.html
 * Added experimental Passive Vulnerability Scanning ruleset using OSVDB and Lua API
-  http://blog.spiderlabs.com/2011/02/modsecurity-advanced-topic-of-the-week-passive-vulnerability-scanning-part-1-osvdb-checks.html 
+  http://blog.spiderlabs.com/2011/02/modsecurity-advanced-topic-of-the-week-passive-vulnerability-scanning-part-1-osvdb-checks.html
 * Added additional URI Request Validation rule to the 20 protocol violations file (Rule ID - 981227)
 * Added new SQLi detection rules (959070, 959071 and 959072)
 * Added "Toata dragostea mea pentru diavola" to the malicious User-Agent data
@@ -328,7 +330,7 @@ Improvements:
   quickly (need to use the Ignore Static Content rules).
 
 Bug Fixes:
-* Added missing " in the skipAfter SecAction in the CC Detection rule set 
+* Added missing " in the skipAfter SecAction in the CC Detection rule set
 
 
 == Version 2.1.1 - 12/30/2010 ==
@@ -349,11 +351,11 @@ Bug Fixes:
 
 Improvements:
 * Added Experimental Lua Converter script to normalize payloads. Based on
-  PHPIDS Converter code and it used with the advanced filters conf file. 
+  PHPIDS Converter code and it used with the advanced filters conf file.
 * Changed the name of PHPIDS converted rules to Advanced Filters
 * Added Ignore Static Content (Performance enhancement) rule set
 * Added XML Enabler (Web Services) rule set which will parse XML data
-* Added Authorized Vulnerability Scanning (AVS) Whitelist rule set 
+* Added Authorized Vulnerability Scanning (AVS) Whitelist rule set
 * Added Denial of Service (DoS) Protection rule set
 * Added Slow HTTP DoS (Connection Consumption) Protection rule set
 * Added Brute Force Attack Protection rule set
@@ -408,20 +410,20 @@ Improvements:
   the numbers themselves are smaller.
 * Updated the 49 and 59 blocking rules to include the matched logdata
 * Updated the TAG data to further classify attack/vuln categories.
-* Updated the SQL Injection filters to detect more boolean logic attacks 
+* Updated the SQL Injection filters to detect more boolean logic attacks
 * Moved some files to optional_rules directory (phpids, Emerging Threats rules)
- 
+
 Bug Fixes:
-* Fixed Rule ID 960023 in optional_rules/modsecurity_crs_40_experimental.conf is missing 1 single quote 
+* Fixed Rule ID 960023 in optional_rules/modsecurity_crs_40_experimental.conf is missing 1 single quote
   https://www.modsecurity.org/tracker/browse/CORERULES-63
-* Moved all skipAfter actions in chained rules to the rule starter line (must have ModSec v2.5.13 or higher) 
+* Moved all skipAfter actions in chained rules to the rule starter line (must have ModSec v2.5.13 or higher)
   https://www.modsecurity.org/tracker/browse/MODSEC-159
 * Fixed restricted file extension bug with macro expansion
   https://www.modsecurity.org/tracker/browse/CORERULES-60
 * Updated the SQLI TX variable macro expansion data in the 49 and 60 files so that
   it matches what is being set in the sql injection conf file
 * Fixed typo in SQL Injection regexs - missing backslash for word boundary (b)
-  https://www.modsecurity.org/tracker/browse/CORERULES-62  
+  https://www.modsecurity.org/tracker/browse/CORERULES-62
 
 
 == Version 2.0.8 - 08/27/2010 ==
@@ -444,7 +446,7 @@ Bug Fixes:
 * Fixed the anomaly scoring in the modsecurity_crs_41_phpids_filters.conf file
   https://www.modsecurity.org/tracker/browse/CORERULES-54
 * Updated XSS rule id 958001 to improve the .cookie regex to reduce false postives
-  https://www.modsecurity.org/tracker/browse/CORERULES-29  
+  https://www.modsecurity.org/tracker/browse/CORERULES-29
 
 
 == Version 2.0.7 - 06/4/2010 ==
@@ -458,20 +460,20 @@ Improvements:
 * Added Experimental XSS/Missing Output Escaping Ruleset which looks for user supplied
   data being echoed back to user unchanged.
 * Added rules-updater.pl script and configuration file to allow users to automatically
-  download CRS rules from the CRS rules repository. 
+  download CRS rules from the CRS rules repository.
 * Added new SQLi keyword for ciel() and reverse() functions.
 * Updated the PHPIDS filters
 
 
 Bug Fixes:
-* Fixed false positives for Request Header Name matching in the 30 file by 
-  adding boundary characters.  
+* Fixed false positives for Request Header Name matching in the 30 file by
+  adding boundary characters.
 * Added missing pass actions to @pmFromFile prequalifier rules
 * Added backslash to SQLi regex
   https://www.modsecurity.org/tracker/browse/CORERULES-41
 * Fixed hard coded anomaly score in PHPIDS filter file
-  https://www.modsecurity.org/tracker/browse/CORERULES-45 
-* Fixed restricted_extension false positive by adding boundary characters 
+  https://www.modsecurity.org/tracker/browse/CORERULES-45
+* Fixed restricted_extension false positive by adding boundary characters
 
 
 == Version 2.0.6 - 02/26/2010 ==
@@ -519,12 +521,12 @@ Improvements:
   request headers.
 * Updated Inbound blocking conf file to use macro expansion from the 10 config file settings
 * Added separate anomaly scores for inbound, outbound and total to be evaluated for blocking.
-* Updated the regex logic in the (1=1) rule to factor in quotes and other logical operators. 
+* Updated the regex logic in the (1=1) rule to factor in quotes and other logical operators.
 * Updated the SPAMMER RBL check rules logic to only check once per IP/Day.
 * Added new outbound malware link detection rules.
 * Added PHP "call_user_func" to blacklist
   Identified by SOGETI ESEC R&D
- 
+
 Bug Fixes:
 * Removed Non-numeric Rule IDs
   https://www.modsecurity.org/tracker/browse/CORERULES-28
@@ -543,7 +545,7 @@ Improvements:
 * Updated PHPIDS rules logic to only set TX variables and to not log.  This allows for more clean
   exceptions in the 48 file which can then expire/delete false positive TX matches and adjust the
   anomaly scores.  These rules will then inspect for any TX variables in phase:5 and create appropriate
-  alerts for any variable matches that exist.  
+  alerts for any variable matches that exist.
 
 Bug Fixes:
 * Added Anomaly Score check to the 60 correlation file to recheck the anomaly score at the end of
@@ -560,7 +562,7 @@ Improvements:
 * Increased anomaly scoring (+100) for REQBODY_PROCESSOR_ERROR alerts
 
 Bug Fixes:
-* Added t:urlDecodeUni transformation function to phpids rules to fix both false positives/negatives 
+* Added t:urlDecodeUni transformation function to phpids rules to fix both false positives/negatives
   https://www.modsecurity.org/tracker/browse/CORERULES-17
 * Added new variable locations to the phpids filters
   https://www.modsecurity.org/tracker/browse/CORERULES-19
@@ -571,7 +573,7 @@ Bug Fixes:
 * Fixed typo in xss rules (missing |)
   https://www.modsecurity.org/tracker/browse/CORERULES-22
 * Fixed regex text in IE8 XSS filters (changed to lowercase)
-  https://www.modsecurity.org/tracker/browse/CORERULES-23  
+  https://www.modsecurity.org/tracker/browse/CORERULES-23
 
 
 == Version 2.0.2 - 09/11/2009 ==
@@ -579,7 +581,7 @@ Bug Fixes:
 
 Improvements:
 * Added converted PHPIDS signatures (https://svn.php-ids.org/svn/trunk/lib/IDS/default_filter.xml)
-  https://www.modsecurity.org/tracker/browse/CORERULES-13 
+  https://www.modsecurity.org/tracker/browse/CORERULES-13
 
 Bug Fixes:
 * Rule 958297 - Fixed Comment SPAM UA false positive that triggered only on mozilla.
@@ -593,12 +595,12 @@ Improvements:
 * Updated the transformation functions used in the XSS/SQLi rules to improve performance
   https://www.modsecurity.org/tracker/browse/CORERULES-10
 
-* Updated the variable/target list in the XSS rules 
-  https://www.modsecurity.org/tracker/browse/CORERULES-11  
+* Updated the variable/target list in the XSS rules
+  https://www.modsecurity.org/tracker/browse/CORERULES-11
 
 * Added XSS Filters from IE8
   https://www.modsecurity.org/tracker/browse/CORERULES-12
- 
+
 Bug Fixes:
 * Rule 958297 - Fixed unescaped double-quote issue in Comment SPAM UA rule.
   https://www.modsecurity.org/tracker/browse/CORERULES-9
@@ -618,7 +620,7 @@ New Rules & Features:
     http://www.emergingthreats.net/
 * Anomaly Scoring Mode Option
     The rules have been updated to include anomaly scoring variables which allow
-    you to evaluate the score at the end of phase:2 and phase:5 and decide on what 
+    you to evaluate the score at the end of phase:2 and phase:5 and decide on what
     logging and disruptive actions to take based on the score.
 * Correlated Events
     There are rules in phase:5 that will provide some correlation between inbound
@@ -635,7 +637,7 @@ New Rules & Features:
     - 3: Error - is generated mostly from outbound leakabe rules (50 level files).
     - 4: Warning - is generated by malicious client rules (35 level files).
     - 5: Notice - is generated by the Protocol policy and anomaly files.
-    - 6: Info - is generated by the search engine clients (55 marketing file). 
+    - 6: Info - is generated by the search engine clients (55 marketing file).
 * Updated Comment SPAM Protections
     Updated rules to include RBL lookups and client fingerprinting concepts from
     Bad Behavior (www.bad-behavior.ioerror.us)
@@ -644,11 +646,11 @@ New Rules & Features:
     can then access it.
 * Use of Block Action
     Updated the rules to use the "block" action.  This allows the Admin to globally
-    set the desired block action once with SecDefaultAction in the *10* config file 
-    rather than having to edit the disruptive actions in all of the rules or for 
+    set the desired block action once with SecDefaultAction in the *10* config file
+    rather than having to edit the disruptive actions in all of the rules or for
     the need to have multiple versions of the rules (blocking vs. non-blocking).
 * "Possible HTTP Parameter Pollution Attack: Multiple Parameters with the same Name."
-   http://tacticalwebappsec.blogspot.com/2009/05/http-parameter-pollution.html 
+   http://tacticalwebappsec.blogspot.com/2009/05/http-parameter-pollution.html
 * Added new generic RFI detection rules.
    http://tacticalwebappsec.blogspot.com/2009/06/generic-remote-file-inclusion-attack.html
 * "Possibly malicious iframe tag in output" (Rules 981001,981002)
@@ -656,7 +658,7 @@ New Rules & Features:
     from the victim site to their malicious site. This is actually as if the
     user was visiting the attacker's site himself, causing the user's browser to
     process the content in the attacker's site.
-		 
+		
 New Events:
 * Rule 960019 - Expect Header Not Allowed.
 * Rule 960020 - Pragma Header Requires Cache-Control Header
@@ -681,7 +683,7 @@ Bug Fixes:
 * Rules 999210,999211 - Bug fix to move ctl actions to last rule, add OPTIONS and
                         allow the IPv6 loopback address
 * Rule 950117 - Updated the RFI logic to factor in both a trailing "?" in the ARG
-                and to identify offsite hosts by comparing the ARG URI to the Host 
+                and to identify offsite hosts by comparing the ARG URI to the Host
                 header.  Due to this rule now being stronger, moved it from optional
                 tight security rule to *40* generic attacks file.
 
@@ -693,8 +695,8 @@ Other Fixes:
   was added so that when running the SecRuleEngine in DetectionOnly mode, it will
   not deny response bodies that go over the size restrictions.
 * Changed SecServerSignature to "Apache/1.3.28"
-* Fixed the use of SkipAfter and SecMarkers to make it consistent.  Now have 
-  BEGIN and END SecMarkers for rule groups to more accurately allow moving to 
+* Fixed the use of SkipAfter and SecMarkers to make it consistent.  Now have
+  BEGIN and END SecMarkers for rule groups to more accurately allow moving to
   proper locations.
 * Fixed the @pm/@pmFromFile pre-qualifier logic to allow for operator inversion.
   This removes the need for some SecAction/SkipAfter rules.
@@ -743,7 +745,7 @@ Additional rules logic:
 * Using the new operator @pm as a qualifier before large rules to enhance
     performance (Requires ModSecurity 2.5)
 * SQL injection - A smarter regexp is used to detect 1=1,2=2,etc.. and not
-    only 1=1. (Thanks to Marc Stern for the idea) 
+    only 1=1. (Thanks to Marc Stern for the idea)
 * New XSS signatures - iframe & flash XSS
 
 
@@ -758,11 +760,11 @@ New Events:
 * 960019 - Detect HTTP/0.9 Requests
   HTTP/0.9 request are not common these days. This rule will log by default,
   and block in the blocking version of file 21
-  
+
 Other Fixes:
 * File 40, Rules 950004,950005 - Repaired the correction for the double
   url decoding problem
-* File 55 contained empty regular expressions. Fixed.             
+* File 55 contained empty regular expressions. Fixed.
 
 
 == Version 1.5 - 2007/11/23 ==
