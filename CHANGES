@@ -7,7 +7,7 @@
 
 
 == Changes from 3.0.0-RC2 to 3.0.0-RC3 ==
- * Rules to detect Shellshock attack (Walter Hop / RedHat)
+ * Added rules to detect Shellshock attack (Walter Hop / RedHat)
  * Fix various false positives (Walter Hop, @shimshon70)
 
 == Changes from 3.0.0-RC1 to 3.0.0-RC2 ==
