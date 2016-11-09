@@ -6,29 +6,11 @@
 * https://lists.owasp.org/mailman/listinfo/owasp-modsecurity-core-rule-set
 
 
-== Changes from 3.0.0-RC2 to 3.0.0-RC3 ==
-
-== Changes from 3.0.0-RC1 to 3.0.0-RC2 ==
-
- * Generic mechanism to support application specific rule exclusions
-   (Chaim Sanders)
- * Initial Wordpress rule exclusions (Walter Hop)
- * Initial Drupal rule exclusions (Christian Folini, @emphazer)
- * Cleanup of reputation checks / persistent blocking 
-   (Christian Folini / Walter Hop)
- * Shortened overly long RegExes to work on Apache 2.2 (Walter Hop)
- * Add support for HTTP/2 in recent Apache 2.4 (Walter Hop)
- * Updated list of malicious webscanners
- * Include script in util/join-multiline-rules to work around
-   Apache 2.4 < 2.4.11 bug with long lines (Walter Hop)
- * Added support for Travis CI
-
-
-== Changes from 2.2.9 to 3.0.0-RC1 ==
+== Version 3.0.0 - 11/30/2016 ==
 
 Huge changeset running in separate branch from September 2013 to September 2016.
-
 This is a cursory summary of the most important changes:
+
  * Huge reduction of false positives (Ryan Barnett, Felipe Zimmerle, Chaim 
    Sanders, Walter Hop, Christian Folini)
  * Anomaly scoring is the new default, renamed thresholds from 
@@ -42,10 +24,16 @@ This is a cursory summary of the most important changes:
    Manuel Leos, Walter Hop)
  * Shifted dozens of rules into higher paranoia levels
  * Introduced a lot of stricter sibling rules in higher levels
+ * Generic mechanism to support application specific rule exclusions
+   (Chaim Sanders)
+ * Initial Wordpress rule exclusions (Walter Hop)
+ * Initial Drupal rule exclusions (Christian Folini, @emphazer)
  * Renumbering of rules. See folder id_renumbering for a 
    csv map (Chaim Sanders)
  * Consolidation of rules, namely XSS and SQLi (Spider Labs/Trustwave team)
  * Sampling mode / Easing in (Christian Folini)
+ * Cleanup of reputation checks / persistent blocking 
+   (Christian Folini / Walter Hop)
  * Tags much more systematic (Walter Hop)
  * IP reputation checks / persistent blocking of certain clients
    (Spider Labs/Trustwave team)
@@ -67,6 +55,7 @@ This is a cursory summary of the most important changes:
  * Simplification of setup config file, renamed file to crs-setup.conf.example
  * Improved session fixation detection logic (Christian Peron, credits to 
    Eric Hodel for the discovery)
+ * Updated list of malicious webscanners
  * Splitting scanner user agents data files (github user @ygrek)
  * Countless bugfixes in severities, anomaly scores, tags, etc. 
    across the board
@@ -74,9 +63,13 @@ This is a cursory summary of the most important changes:
    fix documentation (Ryan Barnett, Christian Folini)
  * Improves http blacklist checks (Walter Hop)
  * Extended XSS detection (as suggested by Mazin Ahmed)
+ * Added support for Travis CI
+ * Added support for HTTP/2 in recent Apache 2.4 (Walter Hop)
  * Added many, many bots and scanners (among others suggested by 
    github user @toby78, @jamuse, Matt Koch)
- * Fixed mime types suiteable for XML processor (Chaim Sanders)
+ * Fixed mime types suitable for XML processor (Chaim Sanders)
+ * Include script in util/join-multiline-rules to work around
+   Apache 2.4 < 2.4.11 bug with long lines (Walter Hop)
  * New detection for request smuggling attacks (Achim Hofmann, 
    Christian Folini)
  * Fixes with project honeypot setup (Ryan Barnett)
