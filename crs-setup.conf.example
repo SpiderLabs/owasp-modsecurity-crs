@@ -17,8 +17,9 @@
 # ModSecurity Web Application Firewall.
 #
 # See also:
-# https://www.owasp.org/index.php/Category:OWASP_ModSecurity_Core_Rule_Set_Project
+# https://coreruleset.org/
 # https://github.com/SpiderLabs/owasp-modsecurity-crs
+# https://www.owasp.org/index.php/Category:OWASP_ModSecurity_Core_Rule_Set_Project
 #
 
 
