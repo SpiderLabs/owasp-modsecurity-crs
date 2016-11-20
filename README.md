@@ -1,25 +1,24 @@
 # OWASP ModSecurity Core Rule Set (CRS)
 
-ModSecurity™ is a web application firewall engine that provides very little protection on its own. In order to become useful, ModSecurity™ must be configured with rules. In order to enable users to take full advantage of ModSecurity™ out of the box, Trustwave's SpiderLabs is sponsoring and maintaining a free certified rule set for the community. Unlike intrusion detection and prevention systems, which rely on signatures specific to known vulnerabilities, the OWASP ModSecurity Core Rule Set provides generic protection from unknown vulnerabilities often found in web applications, which are in most cases custom coded. The Core Rules are heavily commented to allow it to be used as a step-by-step deployment guide for ModSecurity™.
+The OWASP ModSecurity Core Rule Set (CRS) is a set of generic attack detection rules for use with ModSecurity or compatible web application firewalls. The CRS aims to protect web applications from a wide range of attacks, including the OWASP Top Ten, with a minimum of false alerts.
 
-## Licensing
-(c) 2006-2013 Trustwave 
+## CRS Resources
 
-The ModSecurity Core Rule Set is provided to you under the terms and 
-conditions of Apache Software License Version 2 (ASLv2)
+Please see the [OWASP ModSecurity Core Rule Set page](https://modsecurity.org/crs/) to get introduced to the CRS and view resources on installation, configuration, and working with the CRS.
 
-http://www.apache.org/licenses/LICENSE-2.0.txt 
+## Contributing to the CRS
 
-## Mail-List
-For more information refer to the OWASP Core Rule Set Project page at
-http://www.owasp.org/index.php/Category:OWASP_ModSecurity_Core_Rule_Set_Project
+We strive to make the OWASP ModSecurity CRS accessible to a wide audience of beginner and experienced users. We are interested in hearing any bug reports, false positive alert reports, evasions, usability issues, and suggestions for new detections.
 
-Core Rules Mail-list -
-Suscribe here: https://lists.owasp.org/mailman/listinfo/owasp-modsecurity-core-rule-set
-Archive: https://lists.owasp.org/pipermail/owasp-modsecurity-core-rule-set/
+[Create an issue on GitHub](https://github.com/SpiderLabs/owasp-modsecurity-crs/issues) to report a false positive or false negative (evasion). Please include your installed version and the relevant portions of your ModSecurity audit log.
 
-## Downloading
+[Sign up for the mailing list](https://lists.owasp.org/mailman/listinfo/owasp-modsecurity-core-rule-set) to ask general usage questions and participate in discussions on the CRS.
 
-You can manually download the latest CRS from the GitHub Repo:
-https://github.com/SpiderLabs/owasp-modsecurity-crs
+[Join the #modsecurity channel on Freenode IRC](https://webchat.freenode.net/?channels=%23modsecurity) to chat about the CRS.
+
+## License
+
+Copyright 2006-2016 Trustwave and contributors.
+
+The OWASP ModSecurity Core Rule Set is distributed under Apache Software License (ASL) version 2. Please see the enclosed LICENSE file for full details.
 
