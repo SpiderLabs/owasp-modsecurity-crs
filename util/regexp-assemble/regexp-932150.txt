@@ -124,7 +124,6 @@ realpath
 rename
 repeat
 replace
-reset
 rmdir
 rmuser
 rnano
