@@ -477,6 +477,28 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 
 
 #
+# -- [[ Allow HTML attributes payloads ]] -----------------------------------------
+#
+# Rule 941150 checks for html attributes src, style and href.
+# By default, this is allowed, but you enable the setting of the
+# variable tx.allow_html to 0 in order to forbid the use of said
+# attributes in the payload.
+#
+
+# Forbid html attributes
+# Default: 1 (html attributes are allowed)
+# Example: 0
+# Uncomment this rule to forbit html attributes in payloads
+#SecAction \
+# "id:900380,\
+#  phase:1,\
+#  nolog,\
+#  pass,\
+#  t:none,\
+#  setvar:tx.allow_html=0"
+
+
+#
 # -- [[ Easing In / Sampling Percentage ]] -------------------------------------
 #
 # Adding the Core Rule Set to an existing productive site can lead to false
