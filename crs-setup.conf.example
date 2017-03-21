@@ -480,7 +480,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # -- [[ Allow HTML attributes payloads ]] -----------------------------------------
 #
 # Rule 941150 checks for html attributes src, style and href.
-# By default, this is allowed, but you enable the setting of the
+# By default, this is allowed, but you can enable the setting of the
 # variable tx.allow_html to 0 in order to forbid the use of said
 # attributes in the payload.
 #
