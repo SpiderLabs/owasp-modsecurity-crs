@@ -330,8 +330,8 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 
 # Content-Types that a client is allowed to send in a request.
 # Default: application/x-www-form-urlencoded|multipart/form-data|text/xml|\
-# application/xml|application/x-amf|application/json|application/octet-stream|\
-# text/plain
+# application/xml|application/soap+xml|application/x-amf|application/json|\
+# application/octet-stream|text/plain
 # Uncomment this rule to change the default.
 #SecAction \
 # "id:900220,\
