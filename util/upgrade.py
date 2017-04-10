@@ -14,6 +14,7 @@ import argparse
 import os
 import random
 import subprocess
+from subprocess import check_output, STDOUT, CalledProcessError
 import sys
 import time
 import zlib
@@ -32,7 +33,15 @@ def upgrade_crs(crs_directory, quiet):
 
     # Do a git 'git pull'
     os.chdir(crs_directory)
-    git_output = subprocess.check_output(['git', 'pull', '--ff-only'])
+    gitcmd = "git pull origin v3.0/master --ff-only"
+    try:
+        git_output = check_output(gitcmd, stderr=STDOUT, shell=True)        
+        returncode = 0
+    except CalledProcessError as ex:
+        git_output = ex.output
+        returncode = ex.returncode
+    if returncode != 0:
+        raise Exception ("Git pull failed! Error: " + git_output)
     if not quiet:
         print('crs:')
         print(git_output.decode('utf-8'))
