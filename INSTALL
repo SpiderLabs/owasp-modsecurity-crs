@@ -55,8 +55,9 @@ Prerequisites
     ModSecurity 2.8 or above. CRS version 3.x makes use of libinjection
     and libXML2. Failure to provide these prerequisites may result in
     serious false negatives and CRS version 3.x should NOT be run without
-    these. Additionally, if you are downloading from the GitHub repo
-    you will need to install 'git' on your system.
+    these. Note, however, that libinjection is bundled with ModSecurity
+    since version 2.8. Additionally, if you are downloading from the
+    GitHub repo you will need to install 'git' on your system.
 
 Upgrading from CRS 2.x
 ----------------------
