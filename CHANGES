@@ -4,13 +4,16 @@
 * https://github.com/SpiderLabs/owasp-modsecurity-crs/issues
   or the CRS mailinglist at
 * https://lists.owasp.org/mailman/listinfo/owasp-modsecurity-core-rule-set
+
 == Version 3.0.1 - 4/16/2017 ==
+
 * As of CRS version 3.0.1, support has been added for the application/soap+xml MIME type by default, as specified in RFC 3902. OF IMPORTANCE, application/soap+xml is indicative that XML will be provided. In accordance with this, ModSecurity's XML Request Body Processor should also be configured to support this MIME type. Within the ModSecurity project, commit 5e4e2af (https://github.com/SpiderLabs/ModSecurity/commit/5e4e2af7a6f07854fee6ed36ef4a381d4e03960e) has been merged to support this endevour. However, if you are running a modified or preexisting version of the modsecurity.conf provided by this repository, you may wish to upgrade rule '200000' accordingly. The rule now appears as follows:
 
 ```
 SecRule REQUEST_HEADERS:Content-Type "(?:application(?:/soap\+|/)|text/)xml" \
      "id:'200000',phase:1,t:none,t:lowercase,pass,nolog,ctl:requestBodyProcessor=XML"
 ```
+
 
 == Version 3.0.0 - 11/10/2016 ==
 
