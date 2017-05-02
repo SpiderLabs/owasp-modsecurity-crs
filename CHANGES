@@ -5,22 +5,53 @@
   or the CRS mailinglist at
 * https://lists.owasp.org/mailman/listinfo/owasp-modsecurity-core-rule-set
 
-== Version 3.0.1 - 4/16/2017 ==
+== Version 3.0.1 - 5/FIXME/2017 ==
 
-* As of CRS version 3.0.1, support has been added for the application/soap+xml MIME
-  type by default, as specified in RFC 3902. OF IMPORTANCE, application/soap+xml is
-  indicative that XML will be provided. In accordance with this, ModSecurity's XML
-  Request Body Processor should also be configured to support this MIME type. Within
-  the ModSecurity project, commit 5e4e2af 
-  (https://github.com/SpiderLabs/ModSecurity/commit/5e4e2af7a6f07854fee6ed36ef4a381d4e03960e) 
-  has been merged to support this endevour. However, if you are running a modified or
-  preexisting version of the modsecurity.conf provided by this repository, you may
-  wish to upgrade rule '200000' accordingly. The rule now appears as follows:
+ * As of CRS version 3.0.1, support has been added for the application/soap+xml MIME
+   type by default, as specified in RFC 3902. OF IMPORTANCE, application/soap+xml is
+   indicative that XML will be provided. In accordance with this, ModSecurity's XML
+   Request Body Processor should also be configured to support this MIME type. Within
+   the ModSecurity project, commit 5e4e2af 
+   (https://github.com/SpiderLabs/ModSecurity/commit/5e4e2af7a6f07854fee6ed36ef4a381d4e03960e) 
+   has been merged to support this endevour. However, if you are running a modified or
+   preexisting version of the modsecurity.conf provided by this repository, you may
+   wish to upgrade rule '200000' accordingly. The rule now appears as follows:
 
 ```
 SecRule REQUEST_HEADERS:Content-Type "(?:application(?:/soap\+|/)|text/)xml" \
      "id:'200000',phase:1,t:none,t:lowercase,pass,nolog,ctl:requestBodyProcessor=XML"
 ```
+
+ * Fixed documentation errors in RESPONSE-999-... (Chaim Sanders)
+ * Reduced FPs on 942190 by adding a word boundary to regex (Franziska Bühler)
+ * Reduced FPs on 932150 by removing keyword reset (Franziska Bühler)
+ * Tidied exceptions in 930100 (Roberto Paprocki)
+ * Reduced FPs for 920120 by splitting into stricter sibling (Franziska Bühler)
+ * Simplified some Drupal rule exclusions (Damien McKenna, Christian Folini)
+ * Extended KNOWN_BUGS with remarks on JSON support on Debian (Franziska Bühler)
+ * Updated README to add gitter support (Chaim Sanders)
+ * Clarified DoS documentation for static extensions (Roberto Paprocki)
+ * Added application/octet-stream to allowed content types (Christian Folini)
+ * Typo in 942220 alert message (Chaim Sanders, @bossloper)
+ * Moved referrer check of 941100 into new PL2 rule (Franziska Bühler)
+ * Closed multiple @pmf evasions via lowercase transformation (Roberto Paprocki)
+ * Clarified libinjection bundling in INSTALL file (@cjdp)
+ * Reduced FPs via Wordpress Rule Exclusions (Walter Hop)
+ * Support for RFC 3902 (Content Type application/soap+xml; Christoph Hansen)
+ * Bugfix in 942410 regex (Christian Folini)
+ * Reduced FPs for 942360 (Walter Hop)
+ * Reduced FPs for 941120 by restricting event handler names (Franziska Bühler)
+ * Extended 931000 with scheme "file" to fix false negative (Federico Schwindt)
+ * Extended 905100 and 905110 for HTTP/2.0 (includes bugfix, Christoph Hansen)
+ * Moved 941150 from PL1 to PL2; includes Bugfix for rule (Christian Folini)
+ * Updated documentation for 920260 (Chaim Sanders)
+ * Bugfix in upgrade.py (Victor Hora)
+ * Fixed FP in RCE rule 932140 (Walter Hop)
+ * Fixed comment for arg limit check rule 920370 (Christian Folini)
+ * Created CONTRIBUTORS file
+ * Added Christoph Hansen (emphazer) to CONTRIBUTORS file
+ * Added Franziska Bühler (franbuehler) to CONTRIBUTORS file
+
 
 
 == Version 3.0.0 - 11/10/2016 ==
