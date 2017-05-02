@@ -623,6 +623,20 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 
 
 #
+# -- [[ Reverse Proxy Whitelist ]] ------------------------------------------------
+#
+# By default, CRS does not trust the X-Forwarded-For header.
+# If you use reverse proxies, supply the IP ranges of the proxies here:
+#SecRule REMOTE_ADDR "@ipMatch 10.0.0.0/8,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,192.168.0.0/16,fc00::/7,fe80::/10" \
+# "id:900930,\
+#  phase:1,\
+#  nolog,\
+#  pass,\
+#  t:none,\
+#  setvar:tx.crs_authorized_proxy=1"
+
+
+#
 # -- [[ Check UTF-8 encoding ]] ------------------------------------------------
 #
 # The CRS can optionally check request contents for invalid UTF-8 encoding.
