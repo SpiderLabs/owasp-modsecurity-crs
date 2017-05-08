@@ -51,6 +51,7 @@ SecRule REQUEST_HEADERS:Content-Type "(?:application(?:/soap\+|/)|text/)xml" \
  * Created CONTRIBUTORS file
  * Added Christoph Hansen (emphazer) to CONTRIBUTORS file
  * Added Franziska Bühler (franbuehler) to CONTRIBUTORS file
+ * Fixed bug with DoS rule 912160 (@loudly-soft, Christian Folini)
 
 
 
