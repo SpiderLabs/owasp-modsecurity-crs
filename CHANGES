@@ -10,6 +10,7 @@
  * SECURITY: Removed insecure handling of X-Forwarded-For header;
    reported by Christoph Hansen (Walter Hop)
  * Added support for mime type application/soap+xml (RFC 3902, Chaim Sanders)
+   Make sure you update ModSecurity recommended rule 200000 as well.
  * Fixed documentation errors in RESPONSE-999-... (Chaim Sanders)
  * Reduced FPs on 942190 by adding a word boundary to regex (Franziska Bühler)
  * Reduced FPs on 932150 by removing keyword reset (Franziska Bühler)
