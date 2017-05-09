@@ -9,8 +9,6 @@
 
  * SECURITY: Removed insecure handling of X-Forwarded-For header;
    reported by Christoph Hansen (Walter Hop)
- * Added support for mime type application/soap+xml (RFC 3902, Chaim Sanders)
-   Make sure you update ModSecurity recommended rule 200000 as well.
  * Fixed documentation errors in RESPONSE-999-... (Chaim Sanders)
  * Reduced FPs on 942190 by adding a word boundary to regex (Franziska Bühler)
  * Reduced FPs on 932150 by removing keyword reset (Franziska Bühler)
@@ -27,6 +25,7 @@
  * Clarified libinjection bundling in INSTALL file (@cjdp)
  * Reduced FPs via Wordpress Rule Exclusions (Walter Hop)
  * Support for RFC 3902 (Content Type application/soap+xml; Christoph Hansen)
+   Make sure you update ModSecurity recommended rule 200000 as well.
  * Bugfix in 942410 regex (Christian Folini)
  * Reduced FPs for 942360 (Walter Hop)
  * Reduced FPs for 941120 by restricting event handler names (Franziska Bühler)
