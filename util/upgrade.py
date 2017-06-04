@@ -33,9 +33,9 @@ def upgrade_crs(crs_directory, quiet):
 
     # Do a git 'git pull'
     os.chdir(crs_directory)
-    gitcmd = "git pull origin HEAD --ff-only"
+    gitcmd = "git pull --ff-only origin HEAD"
     try:
-        git_output = check_output(gitcmd, stderr=STDOUT, shell=True)        
+        git_output = check_output(gitcmd, stderr=STDOUT, shell=True)
         returncode = 0
     except CalledProcessError as ex:
         git_output = ex.output
