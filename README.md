@@ -1,4 +1,5 @@
 [![Join the chat at https://gitter.im/owasp-crs/Lobby](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/owasp-crs/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![OWASP Flagship](https://img.shields.io/badge/owasp-flagship%20project-38a047.svg)](https://www.owasp.org/index.php/OWASP_Project_Inventory#tab=Flagship_Projects)
 
 # OWASP ModSecurity Core Rule Set (CRS)
 
