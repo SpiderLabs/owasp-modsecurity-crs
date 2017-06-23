@@ -111,6 +111,7 @@ php7
 ping
 pkexec
 pkill
+popd
 printenv
 ptar
 ptardiff
