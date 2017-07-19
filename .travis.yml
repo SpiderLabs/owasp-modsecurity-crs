@@ -6,7 +6,7 @@ python:
   - 2.7
 before_install:
   - docker pull owasp/modsecurity-crs
-  - docker run -ti -d --rm -p 80:80 owasp/modsecurity-crs
+  - docker run -ti -d --rm -p 80:80 -v /var/log/httpd/error_log:/var/log/httpd/error_log owasp/modsecurity-crs
 install: 
   - pip install -r ./util/integration/requirements.txt
   - pip install -r ./util/regression-tests/requirements.txt
