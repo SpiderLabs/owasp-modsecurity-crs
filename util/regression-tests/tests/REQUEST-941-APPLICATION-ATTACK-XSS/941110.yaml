@@ -1,0 +1,73 @@
+---
+  meta: 
+    author: "csanders-git"
+    enabled: true
+    name: "941110.yaml"
+    description: "Tests to trigger, or not trigger 941110"
+  tests: 
+    - 
+      test_title: 941110-1
+      desc: Test as described in http://www.client9.com/article/five-interesting-injection-attacks/
+      stages:
+      - 
+        stage:
+          input:
+            dest_addr: 127.0.0.1
+            method: GET
+            port: 80
+            uri: '/'
+            headers:
+              User-Agent: ModSecurity CRS 3 Tests
+              Host: localhost
+              Cookie: xyz=<script >alert(1);</script>
+          output:
+            log_contains: id "941110" 
+    - 
+      test_title: 941110-2
+      desc: Test as described in http://www.client9.com/article/five-interesting-injection-attacks/
+      stages:
+      - 
+        stage:
+          input:
+            dest_addr: 127.0.0.1
+            method: GET
+            port: 80
+            uri: '/?x=<script >alert(1);</script>'
+            headers:
+              User-Agent: ModSecurity CRS 3 Tests
+              Host: localhost
+          output:
+            no_log_contains: id "941110"    
+    - 
+      test_title: 941110-3
+      desc: Test as described in http://www.client9.com/article/five-interesting-injection-attacks/
+      stages:
+      - 
+        stage:
+          input:
+            dest_addr: 127.0.0.1
+            method: GET
+            port: 80
+            uri: '/'
+            headers:
+              User-Agent: "<script >alert(1);</script>"
+              Host: localhost
+          output:
+            log_contains: id "941110"        
+    - 
+      test_title: 941110-4
+      desc: Test as described in http://www.client9.com/article/five-interesting-injection-attacks/
+      stages:
+      - 
+        stage:
+          input:
+            dest_addr: 127.0.0.1
+            method: GET
+            port: 80
+            uri: '/'
+            headers:
+              User-Agent: ModSecurity CRS 3 Tests
+              Host: localhost
+              Referer: "<script >alert(1);</script>"
+          output:
+            log_contains: id "941110"                      
