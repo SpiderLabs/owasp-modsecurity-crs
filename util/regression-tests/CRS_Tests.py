@@ -33,6 +33,7 @@ class FooLogChecker(logchecker.LogChecker):
         import datetime
         config = ConfigParser.ConfigParser()
         settings_file = os.path.abspath(os.path.dirname(os.path.dirname(__file__))) + '/settings.ini'
+        print('%s settings file location' % settings-file)
         config.read(settings_file)
         log_location = config.get('settings', 'log_location')
         our_logs = []
