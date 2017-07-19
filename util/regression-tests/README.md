@@ -55,3 +55,7 @@ Single Rule File:
 The Whole Suite:
 ```py.test -v CRS_Tests.py --ruledir_recurse=tests/```
 
+Contributions
+=============
+
+We'd like to thank Fastly for their help and support in developing these tests.
