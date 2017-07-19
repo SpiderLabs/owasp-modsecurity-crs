@@ -12,7 +12,7 @@ install:
   - pip install -r ./util/regression-tests/requirements.txt
 script:
   - py.test -vs ./util/integration/format_tests.py
-  - py.test -vs util/regression-tests/CRS_Tests.py --rule=tests/test.yaml
+  - py.test -vs util/regression-tests/CRS_Tests.py --rule=util/regression-tests/tests/test.yaml
 # safelist
 branches:
   only:
