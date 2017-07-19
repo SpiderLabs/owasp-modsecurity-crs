@@ -9,9 +9,10 @@ before_install:
   - docker run -ti -d --rm -p 80:80 owasp/modsecurity-crs
 install: 
   - pip install -r ./util/integration/requirements.txt
-  - pip install ftw==1.1.0
+  - pip install -r ./util/regression-tests/requirements.txt
 script:
   - py.test -vs ./util/integration/format_tests.py
+  - py.test -vs util/regression-tests/CRS_Tests.py --rule=tests/test.yaml
 # safelist
 branches:
   only:

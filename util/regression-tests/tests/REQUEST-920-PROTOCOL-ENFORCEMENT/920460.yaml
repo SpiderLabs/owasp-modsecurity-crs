@@ -1,0 +1,17 @@
+---
+  meta: 
+    author: "csanders-git"
+    enabled: true
+    name: "920460.yaml"
+    description: "Description"
+  tests: 
+    - 
+      test_title: 920460-1
+      stages: 
+        - 
+          stage: 
+            input:
+              encoded_request: "UE9TVCAvIEhUVFAvMS4xCkhvc3Q6IGxvY2FsaG9zdApVc2VyLUFnZW50OiBNb2RTZWN1cml0eSBDUlMgMyBUZXN0cwpDb250ZW50LVR5cGU6IGFwcGxpY2F0aW9uL3gtd3d3LWZvcm0tdXJsZW5jb2RlZApDb250ZW50LUxlbmd0aDogMjIKCmZpbGU9Y2F0Ky9ldGMvcGFcc3N3XGQ="
+
+            output: 
+              log_contains: "id \"920460\""

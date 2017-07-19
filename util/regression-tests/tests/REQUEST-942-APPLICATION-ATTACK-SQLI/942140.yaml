@@ -1,0 +1,23 @@
+---
+  meta:
+    author: "Christian S.J. Peron"
+    description: None
+    enabled: true
+    name: 942140.yaml
+  tests:
+  - 
+    test_title: 942140-1
+    desc: "SQL Injection Attack: Common DB Names Detected"
+    stages:
+    - 
+      stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: localhost
+          method: GET
+          port: 80
+          uri: "/?sql_table=pg_catalog"
+          version: HTTP/1.0
+        output:
+          log_contains: id "942140"

@@ -1,0 +1,23 @@
+---
+  meta:
+    author: "Christian S.J. Peron"
+    description: None
+    enabled: true
+    name: 941330.yaml
+  tests:
+  - 
+    test_title: 941330-1
+    desc: "IE XSS Filters - Attack"
+    stages:
+    - 
+      stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: localhost
+          method: GET
+          port: 80
+          uri: "/?var=%22in%20\\u0076\\u0061l\\u0075e\\u004F\\u0066%3d"
+          version: HTTP/1.0
+        output:
+          log_contains: id "941330"

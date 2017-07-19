@@ -1,0 +1,23 @@
+---
+  meta:
+    author: "Christian S.J. Peron"
+    enabled: true
+    name: "921170.yaml"
+    description: "Tests for protocol based attacks"
+  tests:
+    -
+      test_title: 921170-1
+      desc: "HTTP Header Injection Attack via POST payload"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              method: "POST"
+              port: 80
+              headers:
+                  Host: "localhost"
+              uri: "/someform.jsp"
+              data: "variableX=bar&variable2=Y&var=sdfdsf&sdfds=%0d%0d%0d%0d%0a%0a%0Response_splitt_payload=restofdata"
+            output:
+              log_contains: id "921170"
