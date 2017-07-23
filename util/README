@@ -13,3 +13,7 @@ as follows:
 
 Regression Tests
 ================
+The regression tests
+are in the
+util/regression-tests
+folder.
