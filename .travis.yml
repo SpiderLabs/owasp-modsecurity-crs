@@ -1,9 +1,18 @@
+sudo: required
+services:
+- docker
 language: python
 python:
-  - "2.7"
-install: "pip install -r ./util/integration/requirements.txt"
+  - 2.7
+before_install:
+  - docker pull owasp/modsecurity-crs
+  - docker run -ti -e PARANOIA=5 -d --rm -p 80:80 -v /var/log/httpd:/var/log/httpd/ owasp/modsecurity-crs
+install: 
+  - pip install -r ./util/integration/requirements.txt
+  - pip install -r ./util/regression-tests/requirements.txt
 script:
-    - py.test -vs ./util/integration/format_tests.py
+  - py.test -vs ./util/integration/format_tests.py
+  - py.test -vs util/regression-tests/CRS_Tests.py --rule=util/regression-tests/tests/test.yaml
 # safelist
 branches:
   only:

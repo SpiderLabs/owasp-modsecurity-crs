@@ -1,10 +1,11 @@
 from ftw import ruleset, logchecker, testrunner
+import datetime
 import pytest
 import pdb
 import sys
 import re
 import os
-import ConfigParser
+import config
 
 def test_crs(ruleset, test, logchecker_obj):
     runner = testrunner.TestRunner()
@@ -30,10 +31,7 @@ class FooLogChecker(logchecker.LogChecker):
             yield line[::-1]    
 
     def get_logs(self):
-        import datetime
-        config = ConfigParser.ConfigParser()
-        config.read("settings.ini")
-        log_location = config.get('settings', 'log_location')
+        log_location = config.log_location_linux
         our_logs = []
         pattern = re.compile(r"\[([A-Z][a-z]{2} [A-z][a-z]{2} \d{1,2} \d{1,2}\:\d{1,2}\:\d{1,2}\.\d+? \d{4})\]")
         for lline in self.reverse_readline(log_location):
