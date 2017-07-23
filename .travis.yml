@@ -13,6 +13,10 @@ install:
 script:
   - py.test -vs ./util/integration/format_tests.py
   - py.test -vs util/regression-tests/CRS_Tests.py --rule=util/regression-tests/tests/test.yaml
+  - py.test -vs util/regression-tests/CRS_Tests.py --ruledir=util/regression-tests/tests/REQUEST-911-METHOD-ENFORCEMENT
+  - py.test -vs util/regression-tests/CRS_Tests.py --ruledir=util/regression-tests/tests/REQUEST-913-SCANNER-DETECTION
+  - py.test -vs util/regression-tests/CRS_Tests.py --ruledir=util/regression-tests/tests/REQUEST-942-APPLICATION-ATTACK-SQLI
+
 # safelist
 branches:
   only:

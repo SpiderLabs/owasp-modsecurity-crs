@@ -10,3 +10,6 @@ using the PARANOIA build arg,
 as follows:
 ```docker build -t owasp/modsecurity-crs .```
 ```docker run -p 80:80 -ti -e PARANOIA=5 --rm owasp/modsecurity-crs```
+
+Regression Tests
+================
