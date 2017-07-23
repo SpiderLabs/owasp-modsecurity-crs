@@ -1,8 +1,0 @@
-Welcome to the OWASP Core Rule Set (CRS) Regression Tests
-Regression tests for OWASP CRS are written to work with the Framework for Testing WAFs (FTW). They are stored in a separate Github repository. While these tests are available as part of the CRS project they are provided in the form of a git-submodule. Using a git-submodule allow us to update the tests without making changes to the main rule repository.
-
-You can download the documentation using git:
-    $ git submodule init
-    $ git submodule update
-	
-Alternatively, you can manually clone the testing repository at https://github.com/SpiderLabs/OWASP-CRS-regressions
