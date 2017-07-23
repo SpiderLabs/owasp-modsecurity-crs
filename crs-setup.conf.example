@@ -645,7 +645,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 #
 # Blocking based on reputation is permanent in the CRS. Unlike other rules,
 # which look at the indvidual request, the blocking of IPs is based on
-# a persistent record in the IP collection, which remains active for a 
+# a persistent record in the IP collection, which remains active for a
 # certain amount of time.
 #
 # There are two ways an individual client can become flagged for blocking:
