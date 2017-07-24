@@ -23,7 +23,7 @@
             Host: localhost
             Keep-Alive: '300'
             Proxy-Connection: keep-alive
-            Referer: http
+            Referer: http://www.attackersite.com/test
             User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)
           method: GET
           port: 80
@@ -65,3 +65,27 @@
           version: HTTP/1.0
         output:
           log_contains: id "943110"
+  -
+    test_title: 943110-4
+    desc: Session Fixation Attack (943110) from old modsec regressions
+    stages:
+    -
+      stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/vnd.ms-excel
+            Accept-Encoding: gzip, deflate
+            Accept-Language: zh-sg
+            Content-Type: application/x-www-form-urlencoded
+            Host: localhost
+            Referer: http://localhost/test
+            Keep-Alive: '300'
+            Proxy-Connection: keep-alive
+            User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)
+          method: GET
+          port: 80
+          uri: /login.php?jsessionid=74B0CB414BD77D17B5680A6386EF1666
+          version: HTTP/1.1
+        output:
+          no_log_contains: id "943110"
