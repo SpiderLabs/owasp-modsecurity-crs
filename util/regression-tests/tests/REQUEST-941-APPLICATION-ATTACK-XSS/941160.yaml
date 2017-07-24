@@ -6,7 +6,7 @@
     description: "Tests to trigger, or not trigger 941160"
   tests: 
     - 
-      test_title: 941160-1
+      test_title: 941160-1FN
       desc: XSS in XML Test as described in http://www.client9.com/article/five-interesting-injection-attacks/
       stages:
       - 
