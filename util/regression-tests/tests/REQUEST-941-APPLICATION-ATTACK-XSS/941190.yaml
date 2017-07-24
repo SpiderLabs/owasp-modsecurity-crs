@@ -19,7 +19,7 @@
             headers:
               User-Agent: ModSecurity CRS 3 Tests
               Host: localhost
-            data: '941190-1=<STYLE>@import'http://xss.rocks/xss.css';</STYLE>'
+            data: "941190-1=<STYLE>@import'http://xss.rocks/xss.css';</STYLE>"
           output:
             log_contains: id "941190"
     - 
@@ -36,7 +36,7 @@
             headers:
               User-Agent: ModSecurity CRS 3 Tests
               Host: localhost
-            data: 'x=<STYLE>@im\\port'\\ja\vasc\\ript:alert('XSS')';</STYLE>'
+            data: "x=<STYLE>@im\\port'\\ja\vasc\\ript:alert('XSS')';</STYLE>"
           output:
             log_contains: id "941190"
     - 
