@@ -25,3 +25,5 @@ branches:
   only:
   - v3.0/dev
   - v3.0/master
+notifications:
+  irc: "chat.freenode.net#modsecurity"
