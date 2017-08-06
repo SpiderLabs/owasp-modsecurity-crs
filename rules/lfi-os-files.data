@@ -1052,3 +1052,7 @@ config/database.php
 # phpBB
 # Note: this string might be benign in REQUEST_FILENAME
 /config.php
+#Missing Debian based sensitive directories  
+var/mail/www-data
+etc/network/
+etc/init/
