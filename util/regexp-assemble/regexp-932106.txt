@@ -1,7 +1,7 @@
-# Word list for rule 932107 (RCE Unix command injection part 3/3)
+# Word list for rule 932106 (RCE Unix command injection part 3/3)
 #
 # To convert to a regexp that can be pasted into the rule:
-#   cat regexp-932107.txt | ./regexp-cmdline.py unix | ./regexp-assemble.pl
+#   cat regexp-932106.txt | ./regexp-cmdline.py unix | ./regexp-assemble.pl
 #
 #
 # Entries starting with ' are used verbatim.
