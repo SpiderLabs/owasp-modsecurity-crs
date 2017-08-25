@@ -129,7 +129,7 @@ prog.customcrawler
 # vuln scanner
 # https://www.qualys.com/suite/web-application-scanning/
 qualys was
-# 
+#
 s.t.a.l.k.e.r.
 #
 security scan
@@ -148,7 +148,7 @@ sqlninja
 # password cracker
 # http://foofus.net/goons/jmk/medusa/medusa.html
 teh forest lobster
-# 
+#
 this is an exploit
 # vuln scanner?
 toata dragostea
