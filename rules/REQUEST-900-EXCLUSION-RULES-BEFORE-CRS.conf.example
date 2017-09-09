@@ -112,7 +112,7 @@
 # ModSecurity Rule Exclusion: Disable inspection of ARGS:pwd
 #                             for all rules tagged attack-sqli
 # SecRule REQUEST_FILENAME "@endsWith /wp-login.php" \
-#     "id:1002,phase:request,pass,nolog,\
+#     "id:1002,phase:2,pass,nolog,\
 #     ctl:ruleRemoveTargetByTag=attack-sqli;ARGS:pwd"
 #
 
@@ -127,7 +127,7 @@
 # ModSecurity Rule Exclusion: Disable inspection of ARGS:pwd
 #                             for all CRS rules
 # SecRule REQUEST_FILENAME "@endsWith /wp-login.php" \
-#     "id:1003,phase:request,pass,nolog,\
+#     "id:1003,phase:2,pass,nolog,\
 #     ctl:ruleRemoveTargetByTag=CRS;ARGS:pwd"
 
 #
@@ -139,7 +139,7 @@
 #
 # ModSecurity Rule Exclusion: Disable all SQLi and XSS rules
 # SecRule REQUEST_FILENAME "@beginsWith /admin" \
-#     "id:1004,phase:request,pass,nolog,\
+#     "id:1004,phase:2,pass,nolog,\
 #     ctl:ruleRemoveById=941000-942999"
 #
 #
