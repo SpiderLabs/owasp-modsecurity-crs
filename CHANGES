@@ -5,6 +5,8 @@
   or the CRS mailinglist at
 * https://lists.owasp.org/mailman/listinfo/owasp-modsecurity-core-rule-set
 
+== Version 3.1.0 - 6/5/2017 ==
+
 == Version 3.0.2 - 5/FIXME/2017 ==
 
  * Remove debug rule that popped up in 3.0.1 (Christian Folini)
