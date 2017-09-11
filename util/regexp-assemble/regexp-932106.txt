@@ -16,7 +16,7 @@
 #   diff+
 
 vi+
-ps 
+ps
 pwd
 who
 w+
