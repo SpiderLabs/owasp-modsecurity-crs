@@ -57,7 +57,7 @@ del sys.argv[1]
 
 # Process lines from input file, or if not specified, standard input
 for line in fileinput.input():
-    line = line.rstrip('\n')
+    line = line.rstrip('\n ')
     line = line.split('#')[0]
     if line != '':
         print(regexp_str(line, evasion))
