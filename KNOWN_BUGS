@@ -20,7 +20,7 @@ or the CRS mailinglist at
   with an error such as:
     Error parsing actions: Unknown action: \\
     Action 'configtest' failed.
-  This bug is known to plague RHEL 7 and Ubuntu 14.04 LTS users.
+  This bug is known to plague Rhel/Centos 7 below v7.4 or httpd v2.4.6 release 67 and Ubuntu 14.04 LTS users.
   https://bz.apache.org/bugzilla/show_bug.cgi?id=55910
   We advise to upgrade your Apache version. If upgrading is not possible,
   we have provided a script in the util/join-multiline-rules directory
