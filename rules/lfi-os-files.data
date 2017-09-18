@@ -1056,3 +1056,14 @@ config/database.php
 var/mail/www-data
 etc/network/
 etc/init/
+#IIS
+inetpub/wwwroot/global.asa
+system32/inetsrv/config/applicationhost.config
+system32/inetsrv/config/administration.config
+system32/inetsrv/config/redirection.config
+#Windows files
+system32/config/default
+system32/config/sam
+system32/config/system
+system32/config/software
+winnt/repair/sam._
