@@ -69,6 +69,70 @@ please adhere to the following contributing guidelines.
     skipAfter
 ```
 
+## Rules compliance with each Paranoia Level (PL)
+
+Rules are organized in Paranoia Levels, which are:
+
+**PL0:**
+
+* Modsec installed, but almost no rules
+* Compliance check box ok but no flowers
+
+**PL1:**
+
+* Compliance check box ok with flowers
+* Atomic checks in single rule
+* Confirmed matches only, all scores are allowed
+* No false positives / Low FP
+* False negatives are ok
+* Your AWS free tier VM will run this for 100's sites
+* Easy log management, grep is your friend
+
+**PL2:**
+
+* Compliance check box ok you are getting in security side
+* Chains usage is OK
+* Confirmed matches use score critical
+* Matches that cause false positives are limited to use score notice or warning
+* Low False positive rates
+* False negatives are not desirable
+* Your AWS free tier VM will run this for 100 sites
+* Easy log management, grep is your friend, turn yourself into regex/greping pro
+
+**PL3:**
+
+* Compliance check box ok you are well into security, check before shooting
+* Chains usage with complex regex look arounds and macro expansions
+* Confirmed matches use score warning or critical
+* Matches that cause false positives are limited to use score notice
+* False positive rates increased but limited to multiple matches (not single string)
+* False negatives are evil
+* Your AWS free tier VM will run this for 10's sites
+* Using LB is recommended
+* Not easy to hard log management, turn yourself into regex/greping ninja and get a SIEM
+
+**PL4:**
+
+* Compliance check box ok you bread security and you shoot whatever thing moves, shoot fist ask later
+* Every item is inspected
+* Variable creations allowed to avoid engine limitations
+* Confirmed matches use score notice, warning or critical
+* Matches that cause false positives are limited to use score notice and warning
+* False positive rates increased (even on single string)
+* False negatives are a kick in the ...
+* Check everything against RFC and white listed values for most popular elements
+* Your AWS free tier VM will run this for a site
+* You better use a LB
+* Beg you are using ELK to manage your logs and have your ninja sword always sharp and have spare swords available at all times
+* Red pill or blue pill?
+
+**PL5:**
+
+* Damn, why you took the red one?!
+* go beyond modsec capabilities
+* go Where No Man Has Gone Before
+* Your WAF accepts only a single string with 1 letter in it hahahaha
+
 FIXME:
 
 - Add rule id numbering
