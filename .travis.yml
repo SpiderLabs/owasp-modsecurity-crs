@@ -9,3 +9,4 @@ branches:
   only:
   - v3.0/dev
   - v3.0/master
+  - v3.1/dev
