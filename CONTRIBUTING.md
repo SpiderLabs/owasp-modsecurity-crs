@@ -80,6 +80,8 @@ please adhere to the following contributing guidelines.
 
 Rules in the CRS are organized in Paranoia Levels, which allows you to choose the desired level of rule checks.
 
+Please read file ```crs-setup.conf.example``` for introduction and a more detailed explanation of Paranoia Levels in the section `# -- [[ Paranoia Level Initialization ]]`.
+
 **PL0:**
 
 * Modsec installed, but almost no rules
