@@ -73,8 +73,8 @@ please adhere to the following contributing guidelines.
 
 * Variable names are lowercase using chars from `[a-z0-9_]`
 * To somewhat reflect the fact that the syntax for variable usage is different when you define it (using setvar) and when you use it, we propose the following visual distinction:
-  * Capital letters for collection, colon as separator, variable name. E.g: `SecRule TX:foo_bar_variable`
   * Lowercase letters for collection, dot as separator, variable name. E.g: `setvar:tx.foo_bar_variable`
+  * Capital letters for collection, colon as separator, variable name. E.g: `SecRule TX:foo_bar_variable`
 
 ## Rules compliance with each Paranoia Level (PL)
 
