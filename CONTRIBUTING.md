@@ -69,69 +69,56 @@ please adhere to the following contributing guidelines.
     skipAfter
 ```
 
+## Variables naming conventions
+
+* Variable names are lowercase using chars from `[a-z0-9_]`
+* To somewhat reflect the fact that the syntax for variable usage is different when you define it (using setvar) and when you use it, we propose the following visual distinction:
+  * Capital letters for collection, colon as separator, variable name. E.g: `SecRule TX:foo_bar_variable`
+  * Lowercase letters for collection, dot as separator, variable name. E.g: `setvar:tx.foo_bar_variable`
+
 ## Rules compliance with each Paranoia Level (PL)
 
-Rules in the CRS are organized in Paranoia Levels, which are described below.
+Rules in the CRS are organized in Paranoia Levels, which allows you to choose the desired level of rule checks.
 
 **PL0:**
 
 * Modsec installed, but almost no rules
-* Compliance check box ok but no flowers
 
 **PL1:**
 
-* Compliance check box ok with flowers
-* Atomic checks in single rule
+* Default level, keep in mind that most installations will normally use this one. 
+* If there is a complex memory consuming/evaluation rule it surely will be on upper levels, not this one
+* Normally we will use atomic checks in single rules
 * Confirmed matches only, all scores are allowed
-* No false positives / Low FP
-* False negatives are ok
-* Your AWS free tier VM will run this for 100's sites
-* Easy log management, grep is your friend
+* No false positives / Low FP (Try to avoid adding rules with potential false positives!)
+* False negatives could happen
 
 **PL2:**
 
-* Compliance check box ok you are getting in security side
-* Chains usage is OK
+* Chains usage are OK
 * Confirmed matches use score critical
 * Matches that cause false positives are limited to use score notice or warning
 * Low False positive rates
 * False negatives are not desirable
-* Your AWS free tier VM will run this for 100 sites
-* Easy log management, grep is your friend, turn yourself into regex/greping pro
 
 **PL3:**
 
-* Compliance check box ok you are well into security, check before shooting
 * Chains usage with complex regex look arounds and macro expansions
 * Confirmed matches use score warning or critical
 * Matches that cause false positives are limited to use score notice
 * False positive rates increased but limited to multiple matches (not single string)
-* False negatives are evil
-* Your AWS free tier VM will run this for 10's sites
-* Using LB is recommended
-* Not easy to hard log management, turn yourself into regex/greping ninja and get a SIEM
+* False negatives should be a very unlikely accident
 
 **PL4:**
 
-* Compliance check box ok you bread security and you shoot whatever thing moves, shoot fist ask later
 * Every item is inspected
 * Variable creations allowed to avoid engine limitations
 * Confirmed matches use score notice, warning or critical
 * Matches that cause false positives are limited to use score notice and warning
 * False positive rates increased (even on single string)
-* False negatives are a kick in the ...
+* False negatives should not happen here
 * Check everything against RFC and white listed values for most popular elements
-* Your AWS free tier VM will run this for a site
-* You better use a LB
-* Beg you are using ELK to manage your logs and have your ninja sword always sharp and have spare swords available at all times
-* Red pill or blue pill?
 
-**PL5:**
-
-* Damn, why you took the red one?!
-* go beyond modsec capabilities
-* go Where No Man Has Gone Before
-* Your WAF accepts only a single string with 1 letter in it hahahaha
 
 ## ID Numbering Scheme
 
@@ -156,6 +143,3 @@ Within a rule file / block, there are sometimes smaller groups of rules that bel
 Stricter siblings often have a different paranoia level. This means that the base rule and the stricter sibling do not reside next to one another in the rule file. Instead they are ordered in their appropriate paranoia level and can be linked via the first digits of the rule id. It is a good practice to introduce stricter siblings together with the base rule in the comments of the base rule and to reference the base rule with the keyword stricter sibling in the comments of the stricter sibling. E.g. "... This is
 performed in two separate stricter siblings of this rule: 9XXXX1 and 9XXXX2", "This is a stricter sibling of rule 9XXXX0."
 
-FIXME:
-
-- Add naming conventions for vars
