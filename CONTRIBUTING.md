@@ -64,6 +64,7 @@ please adhere to the following contributing guidelines.
     ctl
     setenv
     setvar
+    expirevar
     chain
     skip
     skipAfter
