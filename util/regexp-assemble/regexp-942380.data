@@ -16,4 +16,4 @@ exists\sselect\Stop
 exists\sselect\Sconcat
 exists\ssystem\s\(
 exists\s\b(?i:having)\b\s+\d{1,10}
-'[^=]{1,10}'
+exists\s'[^=]{1,10}'
