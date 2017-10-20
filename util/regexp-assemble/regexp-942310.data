@@ -10,5 +10,6 @@ coalesce\s*?\(
 [\"'`];\s*?if
 [\"'`];\s*?while
 [\"'`];\s*?begin
+[\"'`][\s\d]+=\s*?\d
 order\s+by\s+if\w*?\s*?\(
 [\s(]+case\d*?\W.+[tw]hen[\s(]
