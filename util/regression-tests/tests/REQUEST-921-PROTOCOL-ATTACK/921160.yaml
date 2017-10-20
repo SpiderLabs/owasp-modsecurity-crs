@@ -1,0 +1,25 @@
+---
+  meta:
+    author: "Christian S.J. Peron"
+    enabled: true
+    name: "921160.yaml"
+    description: "Tests for protocol based attacks"
+  tests:
+    -
+      test_title: 921160-1
+      desc: "HTTP Header Injection Attack via payload: w/header"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-agent: "user agent"
+              # This trips 921160
+              #uri: "/script_rule921160.jsp?variableX=bar&variable2=Y&%0d%0X-Forwarded-Host:%20foo.bar.com
+              uri: "/script_rule921160.jsp?variableX=bar&variable2=Y&%0d%0Remote-addr%0d%0d%0d:%20foo.bar.com"
+            output:
+              log_contains: id "921160"

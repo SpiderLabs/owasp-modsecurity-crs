@@ -1,0 +1,24 @@
+---
+  meta:
+    author: "Christian S.J. Peron"
+    description: None
+    enabled: true
+    name: 942360.yaml
+  tests:
+  - 
+    test_title: 942360-1
+    desc: "concatenated basic SQL injection and SQLLFI"
+    stages:
+    - 
+      stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: localhost
+          method: POST
+          port: 80
+          # 23423 as "sdfsdfs" FROM table
+          data: "var=1234%20AS%20%22foobar%22%20FROM%20tablevar2=whatever"  
+          version: HTTP/1.0
+        output:
+          log_contains: id "942360"

@@ -1,0 +1,23 @@
+---
+  meta:
+    author: "Christian S.J. Peron"
+    description: None
+    enabled: true
+    name: 942130.yaml
+  tests:
+  - 
+    test_title: 942130-1
+    desc: "SQL Injection Attack: SQL Tautology"
+    stages:
+    - 
+      stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: localhost
+          method: POST
+          port: 80
+          data: "var=%221%22%20sSOUNDS%20LIKE%20%22SOUNDS%20LIKE%201&other_var=test"
+          version: HTTP/1.0
+        output:
+          log_contains: id "942130"

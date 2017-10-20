@@ -1,12 +1,30 @@
+sudo: required
+services:
+- docker
 language: python
 python:
-  - "2.7"
-install: "pip install -r ./util/integration/requirements.txt"
+  - 2.7
+before_install:
+  - docker pull owasp/modsecurity-crs
+  - docker run -ti -e PARANOIA=5 -d --rm -p 80:80 -v /var/log/httpd:/var/log/httpd/ owasp/modsecurity-crs
+install: 
+  - pip install -r ./util/integration/requirements.txt
+  - pip install -r ./util/regression-tests/requirements.txt
 script:
-    - py.test -vs ./util/integration/format_tests.py
+  - py.test -vs ./util/integration/format_tests.py
+  - py.test -vs util/regression-tests/CRS_Tests.py --rule=util/regression-tests/tests/test.yaml
+  - py.test -vs util/regression-tests/CRS_Tests.py --ruledir=util/regression-tests/tests/REQUEST-911-METHOD-ENFORCEMENT
+  - py.test -vs util/regression-tests/CRS_Tests.py --ruledir=util/regression-tests/tests/REQUEST-913-SCANNER-DETECTION
+  - py.test -vs util/regression-tests/CRS_Tests.py --ruledir=util/regression-tests/tests/REQUEST-921-PROTOCOL-ATTACK
+  - py.test -vs util/regression-tests/CRS_Tests.py --ruledir=util/regression-tests/tests/REQUEST-930-APPLICATION-ATTACK-LFI
+  - py.test -vs util/regression-tests/CRS_Tests.py --ruledir=util/regression-tests/tests/REQUEST-941-APPLICATION-ATTACK-XSS
+  - py.test -vs util/regression-tests/CRS_Tests.py --ruledir=util/regression-tests/tests/REQUEST-942-APPLICATION-ATTACK-SQLI
+  - py.test -vs util/regression-tests/CRS_Tests.py --ruledir=util/regression-tests/tests/REQUEST-943-APPLICATION-ATTACK-SESSION-FIXATION
 # safelist
 branches:
   only:
   - v3.0/dev
   - v3.0/master
   - v3.1/dev
+notifications:
+  irc: "chat.freenode.net#modsecurity"
