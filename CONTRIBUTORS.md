@@ -12,6 +12,7 @@
 - [Franziska Bühler](https://github.com/franbuehler)
 - [Christoph Hansen](https://github.com/emphazer)
 - [Victor Hora](https://github.com/victorhora)
+- [Felipe Zipitría](https://github.com/fzipi)
 
 ## Contributors:
 
@@ -43,4 +44,3 @@
 - Josh Zlatin
 - [Zou Guangxian](https://github.com/zouguangxian)
 - [4ft35t](https://github.com/4ft35t)
-- [Felipe Zipitría](https://github.com/fzipi)
