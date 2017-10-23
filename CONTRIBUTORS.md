@@ -43,3 +43,4 @@
 - Josh Zlatin
 - [Zou Guangxian](https://github.com/zouguangxian)
 - [4ft35t](https://github.com/4ft35t)
+- [Felipe Zipitría](https://github.com/fzipi)
