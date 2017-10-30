@@ -1,5 +1,5 @@
 [\"'`]\s*?!\s*?[\"'`\w]
-[\"'`];?\s*?having\b\s*?[^\s)
+[\"'`];?\s*?having\b\s*?[^\s]
 [\"'`];?\s*?select\b\s*?[^\s]
 [\"'`];?\s*?union\b\s*?[^\s]
 \s*?exec.*?\Wxp_cmdshell
