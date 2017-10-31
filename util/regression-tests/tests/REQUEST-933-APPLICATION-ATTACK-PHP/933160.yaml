@@ -484,7 +484,7 @@
           port: 80
           uri: /?foo=eval
         output:
-          no_log_contains: id "933160"
+          log_contains: id "933160"
   - 
     test_title: 933160-31
     desc: func\t/*foo\r\nbar*/\t (
@@ -500,7 +500,7 @@
           port: 80
           uri: /?foo=the%20files%20%28yep%29
         output:
-          no_log_contains: id "933160"
+          log_contains: id "933160"
   - 
     test_title: 933160-32
     desc: func\t/*foo\r\nbar*/\t (
@@ -516,7 +516,7 @@
           port: 80
           uri: /?foo=exec%20%28
         output:
-          no_log_contains: id "933160"
+          log_contains: id "933160"
   - 
     test_title: 933160-33
     desc: func\t/*foo\r\nbar*/\t (
@@ -532,7 +532,7 @@
           port: 80
           uri: /?foo=executor%28%29
         output:
-          no_log_contains: id "933160"
+          log_contains: id "933160"
   - 
     test_title: 933160-34
     desc: func\t/*foo\r\nbar*/\t (
@@ -548,7 +548,7 @@
           port: 80
           uri: /?foo=cheval%28%24foo%29
         output:
-          no_log_contains: id "933160"
+          log_contains: id "933160"
   - 
     test_title: 933160-35
     desc: func\t/*foo\r\nbar*/\t (
@@ -564,7 +564,7 @@
           port: 80
           uri: /?foo=audi%6ffile%28%24foo%29
         output:
-          no_log_contains: id "933160"
+          log_contains: id "933160"
   - 
     test_title: 933160-36
     desc: func\t/*foo\r\nbar*/\t (
@@ -580,7 +580,7 @@
           port: 80
           uri: /?foo=the%20system%20is%20down%28%29
         output:
-          no_log_contains: id "933160"
+          log_contains: id "933160"
   - 
     test_title: 933160-37
     desc: func\t/*foo\r\nbar*/\t (
@@ -596,7 +596,7 @@
           port: 80
           uri: /?foo=ecosystem%28%29
         output:
-          no_log_contains: id "933160"
+          log_contains: id "933160"
   - 
     test_title: 933160-38
     desc: func\t/*foo\r\nbar*/\t (
@@ -612,7 +612,7 @@
           port: 80
           uri: /?foo=systems%28%29
         output:
-          no_log_contains: id "933160"
+          log_contains: id "933160"
   - 
     test_title: 933160-39
     desc: func\t/*foo\r\nbar*/\t (
@@ -628,5 +628,5 @@
           port: 80
           uri: /?foo=system%20something%28%29
         output:
-          no_log_contains: id "933160"
+          log_contains: id "933160"
   
