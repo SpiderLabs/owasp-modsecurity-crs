@@ -29,6 +29,7 @@
           headers:
             Host: localhost
             User-Agent: ModSecurity CRS 3 Tests
+            X-Filename: a.php
           port: 80
           uri: /upload1
         output:
@@ -43,6 +44,7 @@
           headers:
             Host: localhost
             User-Agent: ModSecurity CRS 3 Tests
+            X_Filename: a.php
           port: 80
           uri: /upload2
         output:
@@ -57,6 +59,7 @@
           headers:
             Host: localhost
             User-Agent: ModSecurity CRS 3 Tests
+            X-File-Name: a.php
           port: 80
           uri: /upload3
         output:
@@ -71,6 +74,7 @@
           headers:
             Host: localhost
             User-Agent: ModSecurity CRS 3 Tests
+            X-Filename: a.php..
           port: 80
           uri: /upload4
         output:
@@ -85,6 +89,7 @@
           headers:
             Host: localhost
             User-Agent: ModSecurity CRS 3 Tests
+            X-Filename: a.phtml
           port: 80
           uri: /upload
         output:
@@ -99,6 +104,7 @@
           headers:
             Host: localhost
             User-Agent: ModSecurity CRS 3 Tests
+            X-File-Name: fda.phtml......
           port: 80
           uri: /upload
         output:
@@ -113,6 +119,7 @@
           headers:
             Host: localhost
             User-Agent: ModSecurity CRS 3 Tests
+            X-File-Name: fda.php5
           port: 80
           uri: /upload
         output:
@@ -127,6 +134,7 @@
           headers:
             Host: localhost
             User-Agent: ModSecurity CRS 3 Tests
+            X-File-Name: fda.php5
           port: 80
           uri: /upload
         output:
@@ -141,6 +149,7 @@
           headers:
             Host: localhost
             User-Agent: ModSecurity CRS 3 Tests
+            X-File-Name: fda.php7
           port: 80
           uri: /upload
         output:
@@ -169,6 +178,7 @@
           headers:
             Host: localhost
             User-Agent: ModSecurity CRS 3 Tests
+            X-Filename: fda.php5...
           port: 80
           uri: /upload5
         output:
@@ -183,6 +193,7 @@
           headers:
             Host: localhost
             User-Agent: ModSecurity CRS 3 Tests
+            X_Filename: fda.php5...
           port: 80
           uri: /upload6
         output:
@@ -197,6 +208,7 @@
           headers:
             Host: localhost
             User-Agent: ModSecurity CRS 3 Tests
+            X_Filename: fthisfewfda.php.
           port: 80
           uri: /upload7
         output:
@@ -211,6 +223,7 @@
           headers:
             Host: localhost
             User-Agent: ModSecurity CRS 3 Tests
+            X-File-Name: fthi/sfewfda.php.............
           port: 80
           uri: /upload8
         output:
@@ -225,6 +238,7 @@
           headers:
             Host: localhost
             User-Agent: ModSecurity CRS 3 Tests
+            X-File-Name: fthi/sfewfda.php.............
           port: 80
           uri: /upload
         output:
@@ -239,6 +253,7 @@
           headers:
             Host: localhost
             User-Agent: ModSecurity CRS 3 Tests
+            X-File-Name: fthi/sfewfda.php907.............
           port: 80
           uri: /upload
         output:
@@ -253,6 +268,7 @@
           headers:
             Host: localhost
             User-Agent: ModSecurity CRS 3 Tests
+            X-Filename: fthi/sfewfda.phtml
           port: 80
           uri: /upload
         output:
@@ -267,6 +283,7 @@
           headers:
             Host: localhost
             User-Agent: ModSecurity CRS 3 Tests
+            X_Filename: fthi/sfewfda.phtml987...
           port: 80
           uri: /
         output:
