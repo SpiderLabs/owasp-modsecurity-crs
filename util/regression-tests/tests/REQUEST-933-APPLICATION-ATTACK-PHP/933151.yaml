@@ -52,7 +52,7 @@
           port: 80
           uri: /?foo=filemtime%28%24foo%29
         output:
-          log_contains: id "933151"
+          no_log_contains: id "933151"
   - 
     test_title: 933151-4
     desc: pmf + chain; must run test in PL2!
@@ -84,5 +84,4 @@
           port: 80
           uri: /?foo=array_diff
         output:
-          no_log_contains: id "933151"
-  
+          log_contains: id "933151"
