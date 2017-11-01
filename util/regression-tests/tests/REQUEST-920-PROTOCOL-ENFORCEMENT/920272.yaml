@@ -76,4 +76,4 @@
                   User-Agent: "ModSecurity CRS 3 Tests"              
                   Host: "localhost"
             output: 
-              status: 403                 
+              status: 404                 
