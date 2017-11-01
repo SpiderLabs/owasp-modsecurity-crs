@@ -24,7 +24,7 @@
               uri: "/"
             output:
               # No Content length is sent this will cause issues
-              expect_error: True
+              status: 200 
     - 
       test_title: 920180-2
       stages: 
