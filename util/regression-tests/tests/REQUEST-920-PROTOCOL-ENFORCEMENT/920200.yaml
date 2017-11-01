@@ -184,7 +184,7 @@
             port: 80
             uri: /index.pdf       
           output:
-            log_contains: id "920200"
+            log_contains: id "920201"
     - 
       test_title: 920200-12
       desc: This should FAIL with rule 920202 (PL4)
@@ -201,4 +201,4 @@
             port: 80
             uri: /index.pdf       
           output:
-            log_contains: id "920200"            
+            log_contains: id "920202"            
