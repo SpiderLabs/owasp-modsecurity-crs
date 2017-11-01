@@ -38,7 +38,7 @@
             input:
               dest_addr: "127.0.0.1"
               port: 80
-              version: "HTTP/0.9"
+              version: "HTTP/1.0"
               headers:
                   User-Agent: "ModSecurity CRS 3 Tests"
             output: 
