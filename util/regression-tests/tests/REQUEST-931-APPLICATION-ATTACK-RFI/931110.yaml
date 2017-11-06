@@ -26,7 +26,7 @@
             User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)
           method: GET
           port: 80
-          uri: /plugins/spamx/BaseAdmin.class.php?_CONF[path]
+          uri: /plugins/spamx/BaseAdmin.class.php?_CONF[path]=ftps://
           version: HTTP/1.1
         output:
           log_contains: id "931110"
@@ -51,7 +51,7 @@
             User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)
           method: GET
           port: 80
-          uri: /components/com_virtuemart/show_image_in_imgtag.php?mosConfig_absolute_path
+          uri: /components/com_virtuemart/show_image_in_imgtag.php?mosConfig_absolute_path=ftp://
           version: HTTP/1.1
         output:
           log_contains: id "931110"
@@ -76,7 +76,7 @@
             User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)
           method: GET
           port: 80
-          uri: /plugins/spamx/BaseAdmin.class.php?_CONF[path]
+          uri: /plugins/spamx/BaseAdmin.class.php?_CONF[path]=https://
           version: HTTP/1.1
         output:
           log_contains: id "931110"
