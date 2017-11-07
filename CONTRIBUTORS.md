@@ -12,6 +12,8 @@
 - [Franziska Bühler](https://github.com/franbuehler)
 - [Christoph Hansen](https://github.com/emphazer)
 - [Victor Hora](https://github.com/victorhora)
+- [Federico G. Schwindt](https://github.com/fgsch)
+- [Manuel Spartan](https://github.com/spartantri)
 - [Felipe Zipitría](https://github.com/fzipi)
 
 ## Contributors:
@@ -32,7 +34,6 @@
 - [Christian Peron](https://github.com/csjperon)
 - [Elia Pinto](https://github.com/yersinia)
 - [Brian Rectanus](https://github.com/b1v1r)
-- [Federico G. Schwindt](https://github.com/fgsch)
 - Ofer Shezaf
 - Breno Silva
 - Marc Stern
