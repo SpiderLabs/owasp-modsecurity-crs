@@ -12,6 +12,9 @@
 - [Franziska Bühler](https://github.com/franbuehler)
 - [Christoph Hansen](https://github.com/emphazer)
 - [Victor Hora](https://github.com/victorhora)
+- [Federico G. Schwindt](https://github.com/fgsch)
+- [Manuel Spartan](https://github.com/spartantri)
+- [Felipe Zimmerle](https://github.com/zimmerle)
 - [Felipe Zipitría](https://github.com/fzipi)
 
 ## Contributors:
@@ -32,15 +35,13 @@
 - [Christian Peron](https://github.com/csjperon)
 - [Elia Pinto](https://github.com/yersinia)
 - [Brian Rectanus](https://github.com/b1v1r)
-- [Federico G. Schwindt](https://github.com/fgsch)
 - Ofer Shezaf
 - Breno Silva
-- Marc Stern
+- [Marc Stern](https://github.com/marcstern)
 - [Ben Williams](https://github.com/benwilliams)
 - [Greg Wroblewski](https://github.com/gwroblew)
 - [ygrek](https://github.com/ygrek)
 - [Zino](https://github.com/zinoe)
-- [Felipe Zimmerle](https://github.com/zimmerle)
 - Josh Zlatin
 - [Zou Guangxian](https://github.com/zouguangxian)
 - [4ft35t](https://github.com/4ft35t)
