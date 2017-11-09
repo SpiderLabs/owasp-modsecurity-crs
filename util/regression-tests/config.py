@@ -1,5 +1,5 @@
 # Location of Apache Error Log
-log_location_linux = '/apache/logs/error.log'
+log_location_linux = '/var/log/httpd/error_log'
 log_location_windows = 'C:\Apache24\logs\error.log'
 
 # Regular expression to filter for timestamp in Apache Error Log
