@@ -288,7 +288,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # It is recommended if you run multiple web applications on your site to limit
 # the effects of the exclusion to only the path where the excluded webapp
 # resides using a rule similar to the following example:
-# SecRule REQUEST_URI "@beginsWith /wordpress/" setvar:crs_exclusions_wordpress=1
+# SecRule REQUEST_URI "@beginsWith /wordpress/" setvar:tx.crs_exclusions_wordpress=1
 
 #
 # Modify and uncomment this rule to select which application:
