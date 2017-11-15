@@ -6,7 +6,7 @@ The OWASP ModSecurity Core Rule Set (CRS) is a set of generic attack detection r
 
 ## CRS Resources
 
-Please see the [OWASP ModSecurity Core Rule Set page](https://modsecurity.org/crs/) to get introduced to the CRS and view resources on installation, configuration, and working with the CRS.
+Please see the [OWASP ModSecurity Core Rule Set page](https://coreruleset.org/) to get introduced to the CRS and view resources on installation, configuration, and working with the CRS.
 
 ## Contributing to the CRS
 
