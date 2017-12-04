@@ -1,4 +1,4 @@
-[![Join the chat at https://gitter.im/owasp-crs/Lobby](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/owasp-crs/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat at https://gitter.im/owasp-crs/Lobby](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/owasp-crs/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)[![Travis build v3.1/dev](https://badges.herokuapp.com/travis/SpiderLabs/owasp-modsecurity-crs?branch=v3.1/dev&label=CRS%20v3.1/dev)[![Travis build v3.0/dev](https://badges.herokuapp.com/travis/SpiderLabs/owasp-modsecurity-crs?branch=v3.0/dev&label=CRS%20v3.0/dev)[![Travis build v3.0/master](https://badges.herokuapp.com/travis/SpiderLabs/owasp-modsecurity-crs?branch=v3.0/master&label=CRS%20v3.0/master)
 
 # OWASP ModSecurity Core Rule Set (CRS)
 
@@ -20,7 +20,7 @@ We strive to make the OWASP ModSecurity CRS accessible to a wide audience of beg
 
 ## License
 
-Copyright 2006-2016 Trustwave and contributors.
+Copyright 2006-2017 Trustwave and contributors.
 
 The OWASP ModSecurity Core Rule Set is distributed under Apache Software License (ASL) version 2. Please see the enclosed LICENSE file for full details.
 
