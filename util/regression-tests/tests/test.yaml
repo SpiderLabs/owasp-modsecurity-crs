@@ -1,0 +1,21 @@
+---
+  meta: 
+    author: "csanders-git"
+    enabled: true
+    name: "Example_Tests"
+    description: "This file contains example tests."
+  tests: 
+    - 
+      test_title: 920272-3
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              uri: "/?test=test%FF1"
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"              
+                  Host: "localhost"
+            output: 
+              log_contains: "id \"920272\""   

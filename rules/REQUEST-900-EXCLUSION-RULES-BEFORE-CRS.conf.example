@@ -88,7 +88,11 @@
 #
 # ModSec Rule Exclusion: Disable Rule Engine for known ASV IP
 # SecRule REMOTE_ADDR "@ipMatch 192.168.1.100" \
-#     "phase:1,id:1000,pass,nolog,ctl:ruleEngine=Off"
+#     "id:1000,\
+#     phase:1,\
+#     pass,\
+#     nolog,\
+#     ctl:ruleEngine=Off"
 #
 #
 # Example Exclusion Rule: Removing a specific ARGS parameter from inspection
@@ -99,7 +103,10 @@
 # ModSecurity Rule Exclusion: 942100 SQL Injection Detected via libinjection
 #
 # SecRule REQUEST_URI "@beginsWith /index.php" \
-#    "id:1001,phase:1,pass,nolog, \
+#     "id:1001,\
+#     phase:1,\
+#     pass,\
+#     nolog,\
 #     ctl:ruleRemoveTargetById=942100;ARGS:password"
 #
 #
@@ -112,7 +119,10 @@
 # ModSecurity Rule Exclusion: Disable inspection of ARGS:pwd
 #                             for all rules tagged attack-sqli
 # SecRule REQUEST_FILENAME "@endsWith /wp-login.php" \
-#     "id:1002,phase:request,pass,nolog,\
+#     "id:1002,\
+#     phase:2,\
+#     pass,\
+#     nolog,\
 #     ctl:ruleRemoveTargetByTag=attack-sqli;ARGS:pwd"
 #
 
@@ -127,7 +137,10 @@
 # ModSecurity Rule Exclusion: Disable inspection of ARGS:pwd
 #                             for all CRS rules
 # SecRule REQUEST_FILENAME "@endsWith /wp-login.php" \
-#     "id:1003,phase:request,pass,nolog,\
+#     "id:1003,\
+#     phase:2,\
+#     pass,\
+#     nolog,\
 #     ctl:ruleRemoveTargetByTag=CRS;ARGS:pwd"
 
 #
@@ -139,7 +152,10 @@
 #
 # ModSecurity Rule Exclusion: Disable all SQLi and XSS rules
 # SecRule REQUEST_FILENAME "@beginsWith /admin" \
-#     "id:1004,phase:request,pass,nolog,\
+#     "id:1004,\
+#     phase:2,\
+#     pass,\
+#     nolog,\
 #     ctl:ruleRemoveById=941000-942999"
 #
 #

@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------
 # OWASP ModSecurity Core Rule Set ver.3.0.2
-# Copyright (c) 2006-2016 Trustwave and contributors. All rights reserved.
+# Copyright (c) 2006-2017 Trustwave and contributors. All rights reserved.
 #
 # The OWASP ModSecurity Core Rule Set is distributed under
 # Apache Software License (ASL) version 2
@@ -288,7 +288,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # It is recommended if you run multiple web applications on your site to limit
 # the effects of the exclusion to only the path where the excluded webapp
 # resides using a rule similar to the following example:
-# SecRule REQUEST_URI "@beginsWith /wordpress/" setvar:crs_exclusions_wordpress=1
+# SecRule REQUEST_URI "@beginsWith /wordpress/" setvar:tx.crs_exclusions_wordpress=1
 
 #
 # Modify and uncomment this rule to select which application:
@@ -645,7 +645,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 #
 # Blocking based on reputation is permanent in the CRS. Unlike other rules,
 # which look at the indvidual request, the blocking of IPs is based on
-# a persistent record in the IP collection, which remains active for a 
+# a persistent record in the IP collection, which remains active for a
 # certain amount of time.
 #
 # There are two ways an individual client can become flagged for blocking:

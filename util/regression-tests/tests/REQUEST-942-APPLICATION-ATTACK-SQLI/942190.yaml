@@ -1,0 +1,26 @@
+---
+  meta:
+    author: "Christian S.J. Peron"
+    description: None
+    enabled: true
+    name: 942190.yaml
+  tests:
+  - 
+    test_title: 942190-1
+    desc: "MSSQL code execution and information gathering attempts"
+    stages:
+    - 
+      stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: localhost
+          method: GET
+          port: 80
+          #uri: "/?var=%22%20sleep%281234%22" #triggers 942150 942410 too 
+          #uri: "/?var=\" sleep(120\""  # triggers 942330
+          # NB: match with %20 but no bare byte match?
+          uri: "/?var=%20exec%20xp_cmdshell" 
+          version: HTTP/1.0
+        output:
+          log_contains: id "942190"
