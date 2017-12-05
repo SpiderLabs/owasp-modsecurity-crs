@@ -289,7 +289,10 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # the effects of the exclusion to only the path where the excluded webapp
 # resides using a rule similar to the following example:
 # SecRule REQUEST_URI "@beginsWith /wordpress/" setvar:crs_exclusions_wordpress=1
-
+# 
+# You may instead want to copy the relevant portion of this rule to a 
+# VirtualHost or specific site's configuration file, in order to only allow 
+# that site to have an exception for the particular application.
 #
 # Modify and uncomment this rule to select which application:
 #
@@ -300,7 +303,9 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 #  pass,\
 #  t:none,\
 #  setvar:tx.crs_exclusions_drupal=1,\
-#  setvar:tx.crs_exclusions_wordpress=1"
+#  setvar:tx.crs_exclusions_wordpress=1\
+#  setvar:tx.crs_exclusions_dokuwiki=1\
+#  setvar:tx.crs_exclusions_nextcloud=1"
 
 #
 # -- [[ HTTP Policy Settings ]] ------------------------------------------------
