@@ -1,13 +1,13 @@
 ---
   meta:
-    author: "Christian S.J. Peron"
+    author: "Christoph Hansen"
     description: None
     enabled: true
-    name: 942370.yaml
+    name: 942490.yaml
   tests:
   - 
-    test_title: 942370-1
-    desc: "classic SQL injection probings 2/3"
+    test_title: 942490-1
+    desc: "classic SQL injection probings 3/3"
     stages:
     - 
       stage:
@@ -17,7 +17,7 @@
             Host: localhost
           method: POST
           port: 80
-          data: "var=\"` * 12344"  
+          data: "var=%22%2322"  
           version: HTTP/1.0
         output:
-          log_contains: id "942370"
+          log_contains: id "942490"
