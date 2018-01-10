@@ -2,11 +2,12 @@
   meta: 
     author: "spartantri"
     enabled: true
-    name: "944100.yaml"
+    name: "944200.yaml"
     description: "Description"
   tests: 
     - 
       test_title: 944200-1
+      desc: Argument test includes keyword Runtime
       stages: 
         - 
           stage: 
@@ -14,136 +15,412 @@
               dest_addr: "127.0.0.1"
               port: 80
               headers:
-                  User-Agent: "ModSecurity CRS 3 Tests"
-                  Host: "localhost"
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+                Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+                Accept-Encoding: gzip,deflate
+                Accept-Language: en-us,en;q=0.5
+                Content-Type: "application/x-www-form-urlencoded"
+              method: POST
+              version: HTTP/1.0
+              data: "test=Runtime"
             output: 
-              no_log_contains: "id \"944200\""
+              log_contains: "id \"944200\""
+
     - 
       test_title: 944200-2
+      desc: Argument test includes keyword ProcessBuilder
       stages: 
         - 
           stage: 
             input:
               dest_addr: "127.0.0.1"
               port: 80
-              method: "OPTIONS"
               headers:
-                  User-Agent: "ModSecurity CRS 3 Tests"
-                  Host: "localhost"
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+                Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+                Accept-Encoding: gzip,deflate
+                Accept-Language: en-us,en;q=0.5
+                Content-Type: "text/plain"
+              method: POST
+              version: HTTP/1.0
+              data: "test=ProcessBuilder"
             output: 
-              no_log_contains: "id \"944200\""
+              log_contains: "id \"944200\""
+
     - 
       test_title: 944200-3
+      desc: Argument name includes keyword Runtime
       stages: 
         - 
           stage: 
             input:
               dest_addr: "127.0.0.1"
-              method: "HEAD"
               port: 80
               headers:
-                  User-Agent: "ModSecurity CRS 3 Tests"
-                  Host: "localhost"
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+                Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+                Accept-Encoding: gzip,deflate
+                Accept-Language: en-us,en;q=0.5
+                Content-Type: "text/plain"
+              method: POST
+              version: HTTP/1.0
+              data: "Runtime=test"
             output: 
-              no_log_contains: "id \"944200\""                                          
+              log_contains: "id \"944200\""
+
     - 
       test_title: 944200-4
+      desc: Argument name includes keyword ProcessBuilder
       stages: 
         - 
           stage: 
             input:
               dest_addr: "127.0.0.1"
-              method: "POST"
               port: 80
               headers:
-                  User-Agent: "ModSecurity CRS 3 Tests"
-                  Host: "localhost"
-                  Content-Type: "application/x-www-form-urlencoded"
-              data: "test=value"
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+                Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+                Accept-Encoding: gzip,deflate
+                Accept-Language: en-us,en;q=0.5
+                Content-Type: "text/plain"
+              method: POST
+              version: HTTP/1.0
+              data: "ProcessBuilder=test"
             output: 
-              no_log_contains: "id \"944200\""  
+              log_contains: "id \"944200\""
+
     - 
       test_title: 944200-5
+      desc: Cookie test includes keyword Runtime
       stages: 
         - 
           stage: 
             input:
               dest_addr: "127.0.0.1"
-              method: "TEST"
               port: 80
               headers:
-                  User-Agent: "ModSecurity CRS 3 Tests"
-                  Host: "localhost"
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+                Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+                Accept-Encoding: gzip,deflate
+                Accept-Language: en-us,en;q=0.5
+                Content-Type: "text/plain"
+                Cookie: test=Runtime
+              method: POST
+              version: HTTP/1.0
+              data: "test=value"
             output: 
-              log_contains: "id \"944200\""                
+              log_contains: "id \"944200\""
+
     - 
       test_title: 944200-6
-      desc: Method is not allowed by policy (944200) from old modsec regressions
-      stages:
-      - 
-        stage:
-          input:
-            dest_addr: 127.0.0.1
-            headers:
-              Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
-              Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
-              Accept-Encoding: gzip,deflate
-              Accept-Language: en-us,en;q=0.5
-              Host: localhost
-              Keep-Alive: '300'
-              Proxy-Connection: keep-alive
-              User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv
-            method: DELETE
-            port: 80
-            uri: /
-            version: HTTP/1.0
-          output:
-            log_contains: id "944200"
+      desc: Cookie test includes keyword ProcessBuilder
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+                Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+                Accept-Encoding: gzip,deflate
+                Accept-Language: en-us,en;q=0.5
+                Content-Type: "text/plain"
+                Cookie: test=ProcessBuilder
+              method: POST
+              version: HTTP/1.0
+              data: "test=value"
+            output: 
+              log_contains: "id \"944200\""
 
     - 
       test_title: 944200-7
-      desc: Method is not allowed by policy (944200) from old modsec regressions
-      stages:
-      - 
-        stage:
-          input:
-            dest_addr: 127.0.0.1
-            headers:
-              Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
-              Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
-              Accept-Encoding: gzip,deflate
-              Accept-Language: en-us,en;q=0.5
-              Host: localhost
-              Keep-Alive: '300'
-              Proxy-Connection: keep-alive
-              User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv
-            method: FOO
-            port: 80
-            uri: /
-            version: HTTP/1.0
-          output:
-            log_contains: id "944200"
+      desc: Cookie name includes keyword Runtime
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+                Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+                Accept-Encoding: gzip,deflate
+                Accept-Language: en-us,en;q=0.5
+                Content-Type: "text/plain"
+                Cookie: Runtime=test
+              method: POST
+              version: HTTP/1.0
+              data: "test=value"
+            output: 
+              log_contains: "id \"944200\""
 
     - 
       test_title: 944200-8
-      desc: Method is not allowed by policy (944200) from old modsec regressions
-      stages:
-      - 
-        stage:
-          input:
-            dest_addr: 127.0.0.1
-            headers:
-              Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
-              Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
-              Accept-Encoding: gzip,deflate
-              Accept-Language: en-us,en;q=0.5
-              Host: localhost
-              Keep-Alive: '300'
-              Proxy-Connection: keep-alive
-              User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv
-            method: SUBSCRIBE
-            port: 80
-            uri: /
-            version: HTTP/1.0
-          output:
-            log_contains: id "944200"              
+      desc: Cookie test includes keyword ProcessBuilder
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+                Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+                Accept-Encoding: gzip,deflate
+                Accept-Language: en-us,en;q=0.5
+                Content-Type: "text/plain"
+                Cookie: ProcessBuilder=test
+              method: POST
+              version: HTTP/1.0
+              data: "test=value"
+            output: 
+              log_contains: "id \"944200\""
+
+    - 
+      test_title: 944200-9
+      desc: Request header test includes keyword Runtime
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+                Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+                Accept-Encoding: gzip,deflate
+                Accept-Language: en-us,en;q=0.5
+                Content-Type: "text/plain"
+                test: Runtime
+              method: POST
+              version: HTTP/1.0
+              data: "test=value"
+            output: 
+              log_contains: "id \"944200\""
+
+    - 
+      test_title: 944200-10
+      desc: Request header test includes keyword ProcessBuilder
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+                Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+                Accept-Encoding: gzip,deflate
+                Accept-Language: en-us,en;q=0.5
+                Content-Type: "text/plain"
+                test: ProcessBuilder
+              method: POST
+              version: HTTP/1.0
+              data: "test=value"
+            output: 
+              log_contains: "id \"944200\""
+
+    - 
+      test_title: 944200-11
+      desc: XML element includes keyword Runtime
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+                Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+                Accept-Encoding: gzip,deflate
+                Accept-Language: en-us,en;q=0.5
+                Content-Type: "application/xml"
+              method: POST
+              version: HTTP/1.0
+              data: "<?xml version=\"1.0\"?><xml><Runtime attribute_name=\"attribute_value\">value</Runtime></xml>"
+            output: 
+              log_contains: "id \"944200\""
+
+    - 
+      test_title: 944200-12
+      desc: XML attribute name includes keyword Runtime
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+                Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+                Accept-Encoding: gzip,deflate
+                Accept-Language: en-us,en;q=0.5
+                Content-Type: "application/xml"
+              method: POST
+              version: HTTP/1.0
+              data: "<?xml version=\"1.0\"?><xml><element Runtime=\"attribute_value\">element_value</element></xml>"
+            output: 
+              log_contains: "id \"944200\""
+
+    - 
+      test_title: 944200-13
+      desc: XML attribute value includes keyword Runtime
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+                Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+                Accept-Encoding: gzip,deflate
+                Accept-Language: en-us,en;q=0.5
+                Content-Type: "application/xml"
+              method: POST
+              version: HTTP/1.0
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"Runtime\">element_value</element></xml>"
+            output: 
+              log_contains: "id \"944200\""
+
+    - 
+      test_title: 944200-14
+      desc: XML element value includes keyword Runtime
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+                Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+                Accept-Encoding: gzip,deflate
+                Accept-Language: en-us,en;q=0.5
+                Content-Type: "application/xml"
+              method: POST
+              version: HTTP/1.0
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">Runtime</element></xml>"
+            output: 
+              log_contains: "id \"944200\""
+
+    - 
+      test_title: 944200-15
+      desc: XML element includes keyword ProcessBuilder
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+                Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+                Accept-Encoding: gzip,deflate
+                Accept-Language: en-us,en;q=0.5
+                Content-Type: "application/xml"
+              method: POST
+              version: HTTP/1.0
+              data: "<?xml version=\"1.0\"?><xml><ProcessBuilder attribute_name=\"attribute_value\">value</ProcessBuilder></xml>"
+            output: 
+              log_contains: "id \"944200\""
+
+    - 
+      test_title: 944200-16
+      desc: XML attribute name includes keyword ProcessBuilder
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+                Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+                Accept-Encoding: gzip,deflate
+                Accept-Language: en-us,en;q=0.5
+                Content-Type: "application/xml"
+              method: POST
+              version: HTTP/1.0
+              data: "<?xml version=\"1.0\"?><xml><element ProcessBuilder=\"attribute_value\">element_value</element></xml>"
+            output: 
+              log_contains: "id \"944200\""
+
+    - 
+      test_title: 944200-17
+      desc: XML attribute value includes keyword ProcessBuilder
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+                Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+                Accept-Encoding: gzip,deflate
+                Accept-Language: en-us,en;q=0.5
+                Content-Type: "application/xml"
+              method: POST
+              version: HTTP/1.0
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"ProcessBuilder\">element_value</element></xml>"
+            output: 
+              log_contains: "id \"944200\""
+
+    - 
+      test_title: 944200-18
+      desc: XML element value includes keyword ProcessBuilder
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+                Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+                Accept-Encoding: gzip,deflate
+                Accept-Language: en-us,en;q=0.5
+                Content-Type: "application/xml"
+              method: POST
+              version: HTTP/1.0
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder</element></xml>"
+            output: 
+              log_contains: "id \"944200\""
