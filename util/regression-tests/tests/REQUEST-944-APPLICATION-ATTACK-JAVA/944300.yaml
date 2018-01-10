@@ -1,0 +1,216 @@
+---
+  meta: 
+    author: "spartantri"
+    enabled: true
+    name: "944300.yaml"
+    description: "Description"
+  tests: 
+    - 
+      test_title: 944300-1
+      desc: Argument test includes java serialization magic bytes
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+                Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+                Accept-Encoding: gzip,deflate
+                Accept-Language: en-us,en;q=0.5
+                Content-Type: "application/x-www-form-urlencoded"
+              method: POST
+              version: HTTP/1.0
+              data: "test=\xac\xed\x00\x05"
+            output: 
+              log_contains: "id \"944300\""
+
+    - 
+      test_title: 944300-2
+      desc: Argument name includes java serialization magic bytes
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+                Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+                Accept-Encoding: gzip,deflate
+                Accept-Language: en-us,en;q=0.5
+                Content-Type: "text/plain"
+              method: POST
+              version: HTTP/1.0
+              data: "\xac\xed\x00\x05=test"
+            output: 
+              log_contains: "id \"944300\""
+
+    - 
+      test_title: 944300-3
+      desc: Cookie test includes java serialization magic bytes
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+                Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+                Accept-Encoding: gzip,deflate
+                Accept-Language: en-us,en;q=0.5
+                Content-Type: "text/plain"
+                Cookie: test=\xac\xed\x00\x05
+              method: POST
+              version: HTTP/1.0
+              data: "test=\xac\xed\x00\x05"
+            output: 
+              log_contains: "id \"944300\""
+
+    - 
+      test_title: 944300-4
+      desc: Cookie name includes java serialization magic bytes
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+                Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+                Accept-Encoding: gzip,deflate
+                Accept-Language: en-us,en;q=0.5
+                Content-Type: "text/plain"
+                Cookie: \xac\xed\x00\x05=test
+              method: POST
+              version: HTTP/1.0
+              data: "test=value"
+            output: 
+              log_contains: "id \"944300\""
+
+    - 
+      test_title: 944300-5
+      desc: Request header test includes java serialization magic bytes
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+                Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+                Accept-Encoding: gzip,deflate
+                Accept-Language: en-us,en;q=0.5
+                Content-Type: "text/plain"
+                test: \xac\xed\x00\x05
+              method: POST
+              version: HTTP/1.0
+              data: "test=value"
+            output: 
+              log_contains: "id \"944300\""
+
+    - 
+      test_title: 944300-6
+      desc: XML element includes java serialization magic bytes
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+                Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+                Accept-Encoding: gzip,deflate
+                Accept-Language: en-us,en;q=0.5
+                Content-Type: "application/xml"
+              method: POST
+              version: HTTP/1.0
+              data: "<?xml version=\"1.0\"?><xml><\xac\xed\x00\x05 attribute_name=\"attribute_value\">value</\xac\xed\x00\x05></xml>"
+            output: 
+              log_contains: "id \"944300\""
+
+    - 
+      test_title: 944300-7
+      desc: XML attribute name includes java serialization magic bytes
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+                Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+                Accept-Encoding: gzip,deflate
+                Accept-Language: en-us,en;q=0.5
+                Content-Type: "application/xml"
+              method: POST
+              version: HTTP/1.0
+              data: "<?xml version=\"1.0\"?><xml><element \xac\xed\x00\x05=\"attribute_value\">element_value</element></xml>"
+            output: 
+              log_contains: "id \"944300\""
+
+    - 
+      test_title: 944300-8
+      desc: XML attribute value includes java serialization magic bytes
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+                Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+                Accept-Encoding: gzip,deflate
+                Accept-Language: en-us,en;q=0.5
+                Content-Type: "application/xml"
+              method: POST
+              version: HTTP/1.0
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"\xac\xed\x00\x05\">element_value</element></xml>"
+            output: 
+              log_contains: "id \"944300\""
+
+    - 
+      test_title: 944300-9
+      desc: XML element value includes java serialization magic bytes
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+                Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+                Accept-Encoding: gzip,deflate
+                Accept-Language: en-us,en;q=0.5
+                Content-Type: "application/xml"
+              method: POST
+              version: HTTP/1.0
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">\xac\xed\x00\x05</element></xml>"
+            output: 
+              log_contains: "id \"944300\""
