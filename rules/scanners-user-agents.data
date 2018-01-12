@@ -196,3 +196,6 @@ xmlrpc exploit
 # wordpress vuln scanner
 # https://wpscan.org/
 WPScan
+# vuln scanner
+# https://github.com/mazen160/struts-pwn
+struts-pwn
