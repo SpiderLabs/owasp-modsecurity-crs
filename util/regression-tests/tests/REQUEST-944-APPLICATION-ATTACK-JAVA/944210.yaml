@@ -306,7 +306,7 @@
                 Content-Type: "application/xml"
               method: POST
               version: HTTP/1.0
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"java.Runtime\">element_value</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"java.lang.string\" attribute2_name=\"Runtime\">element_value</element></xml>"
             output: 
               log_contains: "id \"944210\""
 
@@ -398,7 +398,7 @@
                 Content-Type: "application/xml"
               method: POST
               version: HTTP/1.0
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"java.ProcessBuilder\">element_value</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"java.lang.string\" attribute_name2=\"ProcessBuilder\">element_value</element></xml>"
             output: 
               log_contains: "id \"944210\""
 

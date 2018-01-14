@@ -71,7 +71,7 @@
                 Cookie: test=\xac\xed\x00\x05
               method: POST
               version: HTTP/1.0
-              data: "test=\xac\xed\x00\x05"
+              data: "test=value"
             output: 
               log_contains: "id \"944300\""
 
