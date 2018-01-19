@@ -234,7 +234,7 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ==</element></l1></l2></l3></xml>"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ==</element></l3></l2></l1></xml>"
             output:
               log_contains: "id \"944320\""
 
@@ -627,7 +627,7 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI=</element></l1></l2></l3></xml>"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI=</element></l3></l2></l1></xml>"
             output:
               log_contains: "id \"944320\""
 
@@ -1020,7 +1020,7 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg==</element></l1></l2></l3></xml>"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg==</element></l3></l2></l1></xml>"
             output:
               log_contains: "id \"944320\""
 
@@ -1413,7 +1413,7 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ==</element></l1></l2></l3></xml>"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ==</element></l3></l2></l1></xml>"
             output:
               log_contains: "id \"944320\""
 
@@ -1806,7 +1806,7 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5</element></l1></l2></l3></xml>"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5</element></l3></l2></l1></xml>"
             output:
               log_contains: "id \"944320\""
 
@@ -2199,7 +2199,7 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg==</element></l1></l2></l3></xml>"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg==</element></l3></l2></l1></xml>"
             output:
               log_contains: "id \"944320\""
 
@@ -2592,7 +2592,7 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy</element></l1></l2></l3></xml>"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy</element></l3></l2></l1></xml>"
             output:
               log_contains: "id \"944320\""
 
@@ -2985,7 +2985,7 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5</element></l1></l2></l3></xml>"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5</element></l3></l2></l1></xml>"
             output:
               log_contains: "id \"944320\""
 
@@ -3378,7 +3378,7 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk=</element></l1></l2></l3></xml>"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk=</element></l3></l2></l1></xml>"
             output:
               log_contains: "id \"944320\""
 
@@ -3771,7 +3771,7 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl</element></l1></l2></l3></xml>"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl</element></l3></l2></l1></xml>"
             output:
               log_contains: "id \"944320\""
 

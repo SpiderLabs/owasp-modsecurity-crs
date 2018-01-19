@@ -234,7 +234,7 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">ProcessBuilder.evil.clonetransformer</element></l1></l2></l3></xml>"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">ProcessBuilder.evil.clonetransformer</element></l3></l2></l1></xml>"
             output:
               log_contains: "id \"944340\""
 
@@ -627,7 +627,7 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">ProcessBuilder.evil.forclosure</element></l1></l2></l3></xml>"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">ProcessBuilder.evil.forclosure</element></l3></l2></l1></xml>"
             output:
               log_contains: "id \"944340\""
 
@@ -1020,7 +1020,7 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">ProcessBuilder.evil.instantiatefactory</element></l1></l2></l3></xml>"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">ProcessBuilder.evil.instantiatefactory</element></l3></l2></l1></xml>"
             output:
               log_contains: "id \"944340\""
 
@@ -1413,7 +1413,7 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">ProcessBuilder.evil.instantiatetransformer</element></l1></l2></l3></xml>"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">ProcessBuilder.evil.instantiatetransformer</element></l3></l2></l1></xml>"
             output:
               log_contains: "id \"944340\""
 
@@ -1806,7 +1806,7 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">ProcessBuilder.evil.invokertransformer</element></l1></l2></l3></xml>"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">ProcessBuilder.evil.invokertransformer</element></l3></l2></l1></xml>"
             output:
               log_contains: "id \"944340\""
 
@@ -2199,7 +2199,7 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">ProcessBuilder.evil.prototypeclonefactory</element></l1></l2></l3></xml>"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">ProcessBuilder.evil.prototypeclonefactory</element></l3></l2></l1></xml>"
             output:
               log_contains: "id \"944340\""
 
@@ -2592,7 +2592,7 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">ProcessBuilder.evil.prototypeserializationfactory</element></l1></l2></l3></xml>"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">ProcessBuilder.evil.prototypeserializationfactory</element></l3></l2></l1></xml>"
             output:
               log_contains: "id \"944340\""
 
@@ -2985,7 +2985,7 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">ProcessBuilder.evil.whileclosure</element></l1></l2></l3></xml>"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">ProcessBuilder.evil.whileclosure</element></l3></l2></l1></xml>"
             output:
               log_contains: "id \"944340\""
 

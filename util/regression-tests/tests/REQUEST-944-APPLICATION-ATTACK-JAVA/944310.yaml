@@ -234,7 +234,7 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">rO0ABQ</element></l1></l2></l3></xml>"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">rO0ABQ</element></l3></l2></l1></xml>"
             output:
               log_contains: "id \"944310\""
 
@@ -627,7 +627,7 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">KztAAU</element></l1></l2></l3></xml>"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">KztAAU</element></l3></l2></l1></xml>"
             output:
               log_contains: "id \"944310\""
 
@@ -1020,7 +1020,7 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">Cs7QAF</element></l1></l2></l3></xml>"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">Cs7QAF</element></l3></l2></l1></xml>"
             output:
               log_contains: "id \"944310\""
 
