@@ -32,15 +32,17 @@ class FooLogChecker(logchecker.LogChecker):
 
     def get_logs(self):
         log_location = config.log_location_linux
+        log_date_regex = config.log_date_regex
+        log_date_format = config.log_date_format
+        pattern = re.compile(r'%s' % log_date_regex)
         our_logs = []
-        pattern = re.compile(r"\[([A-Z][a-z]{2} [A-z][a-z]{2} \d{1,2} \d{1,2}\:\d{1,2}\:\d{1,2}\.\d+? \d{4})\]")
         for lline in self.reverse_readline(log_location):
             # Extract dates from each line
             match = re.match(pattern,lline)
             if match:
                 log_date = match.group(1)
                 # Convert our date
-                log_date = datetime.datetime.strptime(log_date, "%a %b %d %H:%M:%S.%f %Y")
+                log_date = datetime.datetime.strptime(log_date, log_date_format)
                 ftw_start = self.start
                 ftw_end = self.end
                 # If we have a log date in range
