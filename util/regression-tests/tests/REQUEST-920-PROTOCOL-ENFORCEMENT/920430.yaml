@@ -74,7 +74,7 @@
                   User-Agent: "ModSecurity CRS 3 Tests #FN"
                   Host: "localhost"
             output: 
-              log_contains: "id \"920430\""     
+              expect_error: True
     - 
       test_title: 920430-6
       stages: 
