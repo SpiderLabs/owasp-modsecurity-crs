@@ -60,7 +60,8 @@
                   User-Agent: "ModSecurity CRS 3 Tests"              
                   Host: "localhost%00"
             output: 
-              log_contains: "id \"920270\""  
+              no_log_contains: "id \"920270\""  
+              status: 400
     - 
       test_title: 920270-5
       stages: 
