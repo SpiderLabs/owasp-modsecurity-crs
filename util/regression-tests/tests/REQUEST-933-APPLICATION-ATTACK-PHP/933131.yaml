@@ -44,6 +44,6 @@
             Host: localhost
             User-Agent: ModSecurity CRS 3 Tests
           port: 80
-          uri: /?x=$_%53%20ERVER['request_uri'];
+          uri: /?x=$_%53%20ERVER['REQUEST_URI'];
         output:
           log_contains: id "933131"
