@@ -22,7 +22,7 @@
           uri: "/?'msdasql'"
           version: HTTP/1.0
         output:
-          log_contains: "id \"942410"
+          log_contains: id "942410"
   -
     test_title: 942410-2
     desc: "SQL Injection Attack"
@@ -40,5 +40,5 @@
           port: 80
           version: HTTP/1.0
         output:
-          log_contains: "id \"942410"
+          log_contains: id "942410"
 
