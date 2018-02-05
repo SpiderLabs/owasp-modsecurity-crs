@@ -12,7 +12,7 @@
     -
       stage:
         input:
-          dest_addr: "localhost"
+          dest_addr: "127.0.0.1"
           headers:
             Host: "localhost"
             Cache-Control: "no-cache, no-store, must-revalidate"
@@ -30,7 +30,7 @@
     -
       stage:
         input:
-          dest_addr: "localhost"
+          dest_addr: "127.0.0.1"
           headers:
             Host: "localhost"
             Cache-Control: "no-cache, no-store, must-revalidate"
