@@ -61,7 +61,10 @@
                   Host: "localhost"
             output: 
               no_log_contains: "id \"920430\""   
-    - 
+    -  
+      # Currently FTW won't process HTTP 1.0 simple response items
+      # This request generates such a response, so even though it will
+      # generate the alert, it will error.
       test_title: 920430-5
       stages: 
         - 
@@ -74,7 +77,7 @@
                   User-Agent: "ModSecurity CRS 3 Tests #FN"
                   Host: "localhost"
             output: 
-              log_contains: "id \"920430\""     
+                  expect_error: True 
     - 
       test_title: 920430-6
       stages: 
