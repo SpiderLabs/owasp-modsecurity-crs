@@ -85,7 +85,8 @@
             version: HTTP/1.0
             data: abc
           output:
-            log_contains: id "920160"
+            no_log_contains: id "920160"
+            status: 200
     - 
       test_title: 920160-5
       desc: Content-Length HTTP header is not numeric (920160)  from old modsec regressions
