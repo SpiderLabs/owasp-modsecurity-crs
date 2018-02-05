@@ -47,7 +47,9 @@
                   Host: "localhost"
             output: 
               log_contains: "id \"920270\""      
-    - 
+    -
+      # This causes apache to error before it gets to CRS. Therefore
+      # we'll mark this as a status 400 now until the FTW OR output is added 
       test_title: 920270-4
       stages: 
         - 
@@ -60,7 +62,8 @@
                   User-Agent: "ModSecurity CRS 3 Tests"              
                   Host: "localhost%00"
             output: 
-              log_contains: "id \"920270\""  
+              status: [403,400]
+            #log_contains: "id \"920270\""  
     - 
       test_title: 920270-5
       stages: 
