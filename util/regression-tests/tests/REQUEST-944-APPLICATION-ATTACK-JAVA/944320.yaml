@@ -1,0 +1,3937 @@
+---
+  meta:
+    author: "spartantri"
+    enabled: true
+    name: "944320.yaml"
+    description: "Positive tests for rule 944320"
+  tests:
+    -
+      test_title: 944320-0
+      desc: "Argument test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ=="
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-1
+      desc: "Argument name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ===test"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-2
+      desc: "Cookie test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+                Cookie: test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ==
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=value"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-3
+      desc: "Cookie name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+                Cookie: VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ===test
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=value"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-4
+      desc: "Request header test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+                test: VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ==
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=value"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-5
+      desc: "XML element includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ== attribute_name=\"attribute_value\">value</VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ==></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-6
+      desc: "XML attribute name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><element VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ===\"attribute_value\">element_value</element></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-7
+      desc: "XML attribute value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ==\">element_value</element></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-8
+      desc: "XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ==</element></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-9
+      desc: "Nested XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ==</element></l3></l2></l1></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-10
+      desc: "Content-Type text/plain includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "text/plain"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test:VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ=="
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-11
+      desc: "Content-Type application/json arg value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/json"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "{\"test\": \"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ==\"}"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-12
+      desc: "Content-Type application/json arg name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/json"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ==\": \"test\"}"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-13
+      desc: "Content-Type multipart/form-data json arg name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ==\": \"test\"}\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-14
+      desc: "Content-Type multipart/form-data json arg value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ==\": \"test\"}\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-15
+      desc: "Content-Type multipart/form-data XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ==</element></xml>\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-16
+      desc: "Content-Type multipart/form-data XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ==</element></xml>\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944320\""
+    -
+      test_title: 944320-17
+      desc: "Argument test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI="
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-18
+      desc: "Argument name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI==test"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-19
+      desc: "Cookie test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+                Cookie: test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI=
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=value"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-20
+      desc: "Cookie name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+                Cookie: VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI==test
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=value"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-21
+      desc: "Request header test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+                test: VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI=
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=value"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-22
+      desc: "XML element includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI= attribute_name=\"attribute_value\">value</VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI=></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-23
+      desc: "XML attribute name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><element VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI==\"attribute_value\">element_value</element></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-24
+      desc: "XML attribute value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI=\">element_value</element></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-25
+      desc: "XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI=</element></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-26
+      desc: "Nested XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI=</element></l3></l2></l1></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-27
+      desc: "Content-Type text/plain includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "text/plain"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test:VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI="
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-28
+      desc: "Content-Type application/json arg value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/json"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "{\"test\": \"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI=\"}"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-29
+      desc: "Content-Type application/json arg name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/json"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI=\": \"test\"}"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-30
+      desc: "Content-Type multipart/form-data json arg name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI=\": \"test\"}\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-31
+      desc: "Content-Type multipart/form-data json arg value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI=\": \"test\"}\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-32
+      desc: "Content-Type multipart/form-data XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI=</element></xml>\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-33
+      desc: "Content-Type multipart/form-data XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI=</element></xml>\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944320\""
+    -
+      test_title: 944320-34
+      desc: "Argument test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg=="
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-35
+      desc: "Argument name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg===test"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-36
+      desc: "Cookie test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+                Cookie: test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg==
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=value"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-37
+      desc: "Cookie name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+                Cookie: VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg===test
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=value"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-38
+      desc: "Request header test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+                test: VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg==
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=value"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-39
+      desc: "XML element includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg== attribute_name=\"attribute_value\">value</VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg==></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-40
+      desc: "XML attribute name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><element VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg===\"attribute_value\">element_value</element></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-41
+      desc: "XML attribute value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg==\">element_value</element></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-42
+      desc: "XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg==</element></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-43
+      desc: "Nested XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg==</element></l3></l2></l1></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-44
+      desc: "Content-Type text/plain includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "text/plain"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test:VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg=="
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-45
+      desc: "Content-Type application/json arg value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/json"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "{\"test\": \"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg==\"}"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-46
+      desc: "Content-Type application/json arg name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/json"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg==\": \"test\"}"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-47
+      desc: "Content-Type multipart/form-data json arg name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg==\": \"test\"}\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-48
+      desc: "Content-Type multipart/form-data json arg value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg==\": \"test\"}\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-49
+      desc: "Content-Type multipart/form-data XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg==</element></xml>\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-50
+      desc: "Content-Type multipart/form-data XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg==</element></xml>\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944320\""
+    -
+      test_title: 944320-51
+      desc: "Argument test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ=="
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-52
+      desc: "Argument name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ===test"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-53
+      desc: "Cookie test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+                Cookie: test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ==
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=value"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-54
+      desc: "Cookie name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+                Cookie: VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ===test
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=value"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-55
+      desc: "Request header test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+                test: VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ==
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=value"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-56
+      desc: "XML element includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ== attribute_name=\"attribute_value\">value</VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ==></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-57
+      desc: "XML attribute name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><element VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ===\"attribute_value\">element_value</element></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-58
+      desc: "XML attribute value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ==\">element_value</element></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-59
+      desc: "XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ==</element></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-60
+      desc: "Nested XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ==</element></l3></l2></l1></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-61
+      desc: "Content-Type text/plain includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "text/plain"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test:VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ=="
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-62
+      desc: "Content-Type application/json arg value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/json"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "{\"test\": \"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ==\"}"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-63
+      desc: "Content-Type application/json arg name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/json"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ==\": \"test\"}"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-64
+      desc: "Content-Type multipart/form-data json arg name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ==\": \"test\"}\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-65
+      desc: "Content-Type multipart/form-data json arg value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ==\": \"test\"}\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-66
+      desc: "Content-Type multipart/form-data XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ==</element></xml>\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-67
+      desc: "Content-Type multipart/form-data XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ==</element></xml>\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944320\""
+    -
+      test_title: 944320-68
+      desc: "Argument test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-69
+      desc: "Argument name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5=test"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-70
+      desc: "Cookie test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+                Cookie: test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=value"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-71
+      desc: "Cookie name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+                Cookie: VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5=test
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=value"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-72
+      desc: "Request header test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+                test: VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=value"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-73
+      desc: "XML element includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5 attribute_name=\"attribute_value\">value</VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-74
+      desc: "XML attribute name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><element VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5=\"attribute_value\">element_value</element></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-75
+      desc: "XML attribute value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5\">element_value</element></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-76
+      desc: "XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5</element></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-77
+      desc: "Nested XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5</element></l3></l2></l1></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-78
+      desc: "Content-Type text/plain includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "text/plain"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test:VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-79
+      desc: "Content-Type application/json arg value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/json"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "{\"test\": \"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5\"}"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-80
+      desc: "Content-Type application/json arg name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/json"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5\": \"test\"}"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-81
+      desc: "Content-Type multipart/form-data json arg name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5\": \"test\"}\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-82
+      desc: "Content-Type multipart/form-data json arg value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5\": \"test\"}\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-83
+      desc: "Content-Type multipart/form-data XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5</element></xml>\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-84
+      desc: "Content-Type multipart/form-data XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5</element></xml>\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944320\""
+    -
+      test_title: 944320-85
+      desc: "Argument test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg=="
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-86
+      desc: "Argument name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg===test"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-87
+      desc: "Cookie test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+                Cookie: test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg==
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=value"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-88
+      desc: "Cookie name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+                Cookie: VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg===test
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=value"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-89
+      desc: "Request header test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+                test: VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg==
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=value"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-90
+      desc: "XML element includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg== attribute_name=\"attribute_value\">value</VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg==></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-91
+      desc: "XML attribute name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><element VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg===\"attribute_value\">element_value</element></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-92
+      desc: "XML attribute value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg==\">element_value</element></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-93
+      desc: "XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg==</element></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-94
+      desc: "Nested XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg==</element></l3></l2></l1></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-95
+      desc: "Content-Type text/plain includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "text/plain"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test:VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg=="
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-96
+      desc: "Content-Type application/json arg value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/json"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "{\"test\": \"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg==\"}"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-97
+      desc: "Content-Type application/json arg name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/json"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg==\": \"test\"}"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-98
+      desc: "Content-Type multipart/form-data json arg name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg==\": \"test\"}\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-99
+      desc: "Content-Type multipart/form-data json arg value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg==\": \"test\"}\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-100
+      desc: "Content-Type multipart/form-data XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg==</element></xml>\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-101
+      desc: "Content-Type multipart/form-data XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg=="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg==</element></xml>\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944320\""
+    -
+      test_title: 944320-102
+      desc: "Argument test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-103
+      desc: "Argument name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy=test"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-104
+      desc: "Cookie test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+                Cookie: test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=value"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-105
+      desc: "Cookie name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+                Cookie: VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy=test
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=value"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-106
+      desc: "Request header test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+                test: VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=value"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-107
+      desc: "XML element includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy attribute_name=\"attribute_value\">value</VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-108
+      desc: "XML attribute name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><element VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy=\"attribute_value\">element_value</element></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-109
+      desc: "XML attribute value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy\">element_value</element></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-110
+      desc: "XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy</element></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-111
+      desc: "Nested XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy</element></l3></l2></l1></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-112
+      desc: "Content-Type text/plain includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "text/plain"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test:VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-113
+      desc: "Content-Type application/json arg value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/json"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "{\"test\": \"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy\"}"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-114
+      desc: "Content-Type application/json arg name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/json"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy\": \"test\"}"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-115
+      desc: "Content-Type multipart/form-data json arg name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy\": \"test\"}\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-116
+      desc: "Content-Type multipart/form-data json arg value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy\": \"test\"}\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-117
+      desc: "Content-Type multipart/form-data XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy</element></xml>\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-118
+      desc: "Content-Type multipart/form-data XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy</element></xml>\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944320\""
+    -
+      test_title: 944320-119
+      desc: "Argument test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-120
+      desc: "Argument name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5=test"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-121
+      desc: "Cookie test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+                Cookie: test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=value"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-122
+      desc: "Cookie name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+                Cookie: VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5=test
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=value"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-123
+      desc: "Request header test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+                test: VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=value"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-124
+      desc: "XML element includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5 attribute_name=\"attribute_value\">value</VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-125
+      desc: "XML attribute name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><element VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5=\"attribute_value\">element_value</element></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-126
+      desc: "XML attribute value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5\">element_value</element></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-127
+      desc: "XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5</element></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-128
+      desc: "Nested XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5</element></l3></l2></l1></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-129
+      desc: "Content-Type text/plain includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "text/plain"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test:VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-130
+      desc: "Content-Type application/json arg value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/json"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "{\"test\": \"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5\"}"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-131
+      desc: "Content-Type application/json arg name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/json"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5\": \"test\"}"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-132
+      desc: "Content-Type multipart/form-data json arg name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5\": \"test\"}\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-133
+      desc: "Content-Type multipart/form-data json arg value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5\": \"test\"}\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-134
+      desc: "Content-Type multipart/form-data XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5</element></xml>\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-135
+      desc: "Content-Type multipart/form-data XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5</element></xml>\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944320\""
+    -
+      test_title: 944320-136
+      desc: "Argument test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk="
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-137
+      desc: "Argument name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk==test"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-138
+      desc: "Cookie test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+                Cookie: test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk=
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=value"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-139
+      desc: "Cookie name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+                Cookie: VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk==test
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=value"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-140
+      desc: "Request header test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+                test: VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk=
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=value"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-141
+      desc: "XML element includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk= attribute_name=\"attribute_value\">value</VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk=></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-142
+      desc: "XML attribute name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><element VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk==\"attribute_value\">element_value</element></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-143
+      desc: "XML attribute value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk=\">element_value</element></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-144
+      desc: "XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk=</element></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-145
+      desc: "Nested XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk=</element></l3></l2></l1></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-146
+      desc: "Content-Type text/plain includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "text/plain"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test:VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk="
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-147
+      desc: "Content-Type application/json arg value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/json"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "{\"test\": \"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk=\"}"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-148
+      desc: "Content-Type application/json arg name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/json"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk=\": \"test\"}"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-149
+      desc: "Content-Type multipart/form-data json arg name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk=\": \"test\"}\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-150
+      desc: "Content-Type multipart/form-data json arg value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk=\": \"test\"}\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-151
+      desc: "Content-Type multipart/form-data XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk=</element></xml>\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-152
+      desc: "Content-Type multipart/form-data XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk=</element></xml>\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944320\""
+    -
+      test_title: 944320-153
+      desc: "Argument test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-154
+      desc: "Argument name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl=test"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-155
+      desc: "Cookie test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+                Cookie: test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=value"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-156
+      desc: "Cookie name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+                Cookie: VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl=test
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=value"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-157
+      desc: "Request header test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+                test: VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=value"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-158
+      desc: "XML element includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl attribute_name=\"attribute_value\">value</VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-159
+      desc: "XML attribute name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><element VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl=\"attribute_value\">element_value</element></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-160
+      desc: "XML attribute value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl\">element_value</element></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-161
+      desc: "XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl</element></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-162
+      desc: "Nested XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl</element></l3></l2></l1></xml>"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-163
+      desc: "Content-Type text/plain includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "text/plain"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test:VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-164
+      desc: "Content-Type application/json arg value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/json"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "{\"test\": \"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl\"}"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-165
+      desc: "Content-Type application/json arg name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/json"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl\": \"test\"}"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-166
+      desc: "Content-Type multipart/form-data json arg name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl\": \"test\"}\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-167
+      desc: "Content-Type multipart/form-data json arg value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl\": \"test\"}\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-168
+      desc: "Content-Type multipart/form-data XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl</element></xml>\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944320\""
+
+    -
+      test_title: 944320-169
+      desc: "Content-Type multipart/form-data XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl</element></xml>\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944320\""
