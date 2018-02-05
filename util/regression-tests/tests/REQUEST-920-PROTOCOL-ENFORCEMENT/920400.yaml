@@ -46,4 +46,7 @@
           - Submit
           - '-----------------------------265001916915724--'
         output:
-          log_contains: id "920400"
+                # Most web servers simply won't respond to invalid requests like
+                # like this they'll just time out when we get OR type checks 
+                # we'll be able to check for both an error or the rule firing
+                expect_error: True
