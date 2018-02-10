@@ -1,0 +1,2 @@
+^[\W\d]+\s*?alter\b
+^[\W\d]+\s*?union\b
