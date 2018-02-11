@@ -2,12 +2,12 @@
   meta:
     author: "spartantri"
     enabled: true
-    name: "944230.yaml"
-    description: "Positive tests for rule 944230"
+    name: "944240.yaml"
+    description: "Positive tests for rule 944240"
   tests:
     -
-      test_title: 944230-0
-      desc: "Argument test includes keyword clonetransformer"
+      test_title: 944240-0
+      desc: "Argument test includes keyword runtime.clonetransformer"
       stages:
         -
           stage:
@@ -24,13 +24,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test=clonetransformer"
+              data: "test=runtime.clonetransformer"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-1
-      desc: "Argument name includes keyword clonetransformer"
+      test_title: 944240-1
+      desc: "Argument name includes keyword runtime.clonetransformer"
       stages:
         -
           stage:
@@ -47,13 +47,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "clonetransformer=test"
+              data: "runtime.clonetransformer=test"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-2
-      desc: "Cookie test includes keyword clonetransformer"
+      test_title: 944240-2
+      desc: "Cookie test includes keyword runtime.clonetransformer"
       stages:
         -
           stage:
@@ -68,40 +68,16 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                Cookie: test=clonetransformer
-              method: "POST"
-              version: "HTTP/1.0"
-              data: "test=value"
-            output:
-              log_contains: "id \"944230\""
-
-    -
-      test_title: 944230-3
-      desc: "Cookie name includes keyword clonetransformer"
-      stages:
-        -
-          stage:
-            input:
-              dest_addr: "127.0.0.1"
-              port: 80
-              headers:
-                Host: "localhost"
-                User-Agent: "ModSecurity CRS 3 Tests"
-                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
-                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
-                Accept-Encoding: "gzip,deflate"
-                Accept-Language: "en-us,en;q=0.5"
-                Content-Type: "application/x-www-form-urlencoded"
-                Cookie: clonetransformer=test
+                Cookie: test=runtime.clonetransformer
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-4
-      desc: "Request header test includes keyword clonetransformer"
+      test_title: 944240-3
+      desc: "Cookie name includes keyword runtime.clonetransformer"
       stages:
         -
           stage:
@@ -116,16 +92,40 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                test: clonetransformer
+                Cookie: runtime.clonetransformer=test
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-5
-      desc: "XML attribute value includes keyword clonetransformer"
+      test_title: 944240-4
+      desc: "Request header test includes keyword runtime.clonetransformer"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+                test: runtime.clonetransformer
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=value"
+            output:
+              log_contains: "id \"944240\""
+
+    -
+      test_title: 944240-5
+      desc: "XML attribute value includes keyword runtime.clonetransformer"
       stages:
         -
           stage:
@@ -142,13 +142,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"clonetransformer\">element_value</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"runtime.clonetransformer\">element_value</element></xml>"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-6
-      desc: "XML element value includes keyword clonetransformer"
+      test_title: 944240-6
+      desc: "XML element value includes keyword runtime.clonetransformer"
       stages:
         -
           stage:
@@ -165,13 +165,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">clonetransformer</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">runtime.clonetransformer</element></xml>"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-7
-      desc: "Nested XML element value includes keyword clonetransformer"
+      test_title: 944240-7
+      desc: "Nested XML element value includes keyword runtime.clonetransformer"
       stages:
         -
           stage:
@@ -188,13 +188,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">clonetransformer</element></l3></l2></l1></xml>"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">runtime.clonetransformer</element></l3></l2></l1></xml>"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-8
-      desc: "Content-Type text/plain includes keyword clonetransformer"
+      test_title: 944240-8
+      desc: "Content-Type text/plain includes keyword runtime.clonetransformer"
       stages:
         -
           stage:
@@ -211,13 +211,13 @@
                 Content-Type: "text/plain"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test=clonetransformer"
+              data: "test=runtime.clonetransformer"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-9
-      desc: "Content-Type application/json arg value includes keyword clonetransformer"
+      test_title: 944240-9
+      desc: "Content-Type application/json arg value includes keyword runtime.clonetransformer"
       stages:
         -
           stage:
@@ -234,13 +234,13 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"test\": \"clonetransformer\"}"
+              data: "{\"test\": \"runtime.clonetransformer\"}"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-10
-      desc: "Content-Type application/json arg name includes keyword clonetransformer"
+      test_title: 944240-10
+      desc: "Content-Type application/json arg name includes keyword runtime.clonetransformer"
       stages:
         -
           stage:
@@ -257,12 +257,12 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"clonetransformer\": \"test\"}"
+              data: "{\"runtime.clonetransformer\": \"test\"}"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
     -
-      test_title: 944230-11
-      desc: "Argument test includes keyword forclosure"
+      test_title: 944240-11
+      desc: "Argument test includes keyword runtime.forclosure"
       stages:
         -
           stage:
@@ -279,13 +279,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test=forclosure"
+              data: "test=runtime.forclosure"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-12
-      desc: "Argument name includes keyword forclosure"
+      test_title: 944240-12
+      desc: "Argument name includes keyword runtime.forclosure"
       stages:
         -
           stage:
@@ -302,13 +302,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "forclosure=test"
+              data: "runtime.forclosure=test"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-13
-      desc: "Cookie test includes keyword forclosure"
+      test_title: 944240-13
+      desc: "Cookie test includes keyword runtime.forclosure"
       stages:
         -
           stage:
@@ -323,40 +323,16 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                Cookie: test=forclosure
-              method: "POST"
-              version: "HTTP/1.0"
-              data: "test=value"
-            output:
-              log_contains: "id \"944230\""
-
-    -
-      test_title: 944230-14
-      desc: "Cookie name includes keyword forclosure"
-      stages:
-        -
-          stage:
-            input:
-              dest_addr: "127.0.0.1"
-              port: 80
-              headers:
-                Host: "localhost"
-                User-Agent: "ModSecurity CRS 3 Tests"
-                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
-                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
-                Accept-Encoding: "gzip,deflate"
-                Accept-Language: "en-us,en;q=0.5"
-                Content-Type: "application/x-www-form-urlencoded"
-                Cookie: forclosure=test
+                Cookie: test=runtime.forclosure
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-15
-      desc: "Request header test includes keyword forclosure"
+      test_title: 944240-14
+      desc: "Cookie name includes keyword runtime.forclosure"
       stages:
         -
           stage:
@@ -371,16 +347,40 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                test: forclosure
+                Cookie: runtime.forclosure=test
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-16
-      desc: "XML attribute value includes keyword forclosure"
+      test_title: 944240-15
+      desc: "Request header test includes keyword runtime.forclosure"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+                test: runtime.forclosure
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=value"
+            output:
+              log_contains: "id \"944240\""
+
+    -
+      test_title: 944240-16
+      desc: "XML attribute value includes keyword runtime.forclosure"
       stages:
         -
           stage:
@@ -397,13 +397,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"forclosure\">element_value</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"runtime.forclosure\">element_value</element></xml>"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-17
-      desc: "XML element value includes keyword forclosure"
+      test_title: 944240-17
+      desc: "XML element value includes keyword runtime.forclosure"
       stages:
         -
           stage:
@@ -420,13 +420,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">forclosure</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">runtime.forclosure</element></xml>"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-18
-      desc: "Nested XML element value includes keyword forclosure"
+      test_title: 944240-18
+      desc: "Nested XML element value includes keyword runtime.forclosure"
       stages:
         -
           stage:
@@ -443,13 +443,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">forclosure</element></l3></l2></l1></xml>"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">runtime.forclosure</element></l3></l2></l1></xml>"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-19
-      desc: "Content-Type text/plain includes keyword forclosure"
+      test_title: 944240-19
+      desc: "Content-Type text/plain includes keyword runtime.forclosure"
       stages:
         -
           stage:
@@ -466,13 +466,13 @@
                 Content-Type: "text/plain"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test=forclosure"
+              data: "test=runtime.forclosure"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-20
-      desc: "Content-Type application/json arg value includes keyword forclosure"
+      test_title: 944240-20
+      desc: "Content-Type application/json arg value includes keyword runtime.forclosure"
       stages:
         -
           stage:
@@ -489,13 +489,13 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"test\": \"forclosure\"}"
+              data: "{\"test\": \"runtime.forclosure\"}"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-21
-      desc: "Content-Type application/json arg name includes keyword forclosure"
+      test_title: 944240-21
+      desc: "Content-Type application/json arg name includes keyword runtime.forclosure"
       stages:
         -
           stage:
@@ -512,12 +512,12 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"forclosure\": \"test\"}"
+              data: "{\"runtime.forclosure\": \"test\"}"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
     -
-      test_title: 944230-22
-      desc: "Argument test includes keyword instantiatefactory"
+      test_title: 944240-22
+      desc: "Argument test includes keyword runtime.instantiatefactory"
       stages:
         -
           stage:
@@ -534,13 +534,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test=instantiatefactory"
+              data: "test=runtime.instantiatefactory"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-23
-      desc: "Argument name includes keyword instantiatefactory"
+      test_title: 944240-23
+      desc: "Argument name includes keyword runtime.instantiatefactory"
       stages:
         -
           stage:
@@ -557,13 +557,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "instantiatefactory=test"
+              data: "runtime.instantiatefactory=test"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-24
-      desc: "Cookie test includes keyword instantiatefactory"
+      test_title: 944240-24
+      desc: "Cookie test includes keyword runtime.instantiatefactory"
       stages:
         -
           stage:
@@ -578,40 +578,16 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                Cookie: test=instantiatefactory
-              method: "POST"
-              version: "HTTP/1.0"
-              data: "test=value"
-            output:
-              log_contains: "id \"944230\""
-
-    -
-      test_title: 944230-25
-      desc: "Cookie name includes keyword instantiatefactory"
-      stages:
-        -
-          stage:
-            input:
-              dest_addr: "127.0.0.1"
-              port: 80
-              headers:
-                Host: "localhost"
-                User-Agent: "ModSecurity CRS 3 Tests"
-                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
-                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
-                Accept-Encoding: "gzip,deflate"
-                Accept-Language: "en-us,en;q=0.5"
-                Content-Type: "application/x-www-form-urlencoded"
-                Cookie: instantiatefactory=test
+                Cookie: test=runtime.instantiatefactory
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-26
-      desc: "Request header test includes keyword instantiatefactory"
+      test_title: 944240-25
+      desc: "Cookie name includes keyword runtime.instantiatefactory"
       stages:
         -
           stage:
@@ -626,16 +602,40 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                test: instantiatefactory
+                Cookie: runtime.instantiatefactory=test
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-27
-      desc: "XML attribute value includes keyword instantiatefactory"
+      test_title: 944240-26
+      desc: "Request header test includes keyword runtime.instantiatefactory"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+                test: runtime.instantiatefactory
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=value"
+            output:
+              log_contains: "id \"944240\""
+
+    -
+      test_title: 944240-27
+      desc: "XML attribute value includes keyword runtime.instantiatefactory"
       stages:
         -
           stage:
@@ -652,13 +652,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"instantiatefactory\">element_value</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"runtime.instantiatefactory\">element_value</element></xml>"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-28
-      desc: "XML element value includes keyword instantiatefactory"
+      test_title: 944240-28
+      desc: "XML element value includes keyword runtime.instantiatefactory"
       stages:
         -
           stage:
@@ -675,13 +675,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">instantiatefactory</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">runtime.instantiatefactory</element></xml>"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-29
-      desc: "Nested XML element value includes keyword instantiatefactory"
+      test_title: 944240-29
+      desc: "Nested XML element value includes keyword runtime.instantiatefactory"
       stages:
         -
           stage:
@@ -698,13 +698,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">instantiatefactory</element></l3></l2></l1></xml>"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">runtime.instantiatefactory</element></l3></l2></l1></xml>"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-30
-      desc: "Content-Type text/plain includes keyword instantiatefactory"
+      test_title: 944240-30
+      desc: "Content-Type text/plain includes keyword runtime.instantiatefactory"
       stages:
         -
           stage:
@@ -721,13 +721,13 @@
                 Content-Type: "text/plain"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test=instantiatefactory"
+              data: "test=runtime.instantiatefactory"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-31
-      desc: "Content-Type application/json arg value includes keyword instantiatefactory"
+      test_title: 944240-31
+      desc: "Content-Type application/json arg value includes keyword runtime.instantiatefactory"
       stages:
         -
           stage:
@@ -744,13 +744,13 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"test\": \"instantiatefactory\"}"
+              data: "{\"test\": \"runtime.instantiatefactory\"}"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-32
-      desc: "Content-Type application/json arg name includes keyword instantiatefactory"
+      test_title: 944240-32
+      desc: "Content-Type application/json arg name includes keyword runtime.instantiatefactory"
       stages:
         -
           stage:
@@ -767,12 +767,12 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"instantiatefactory\": \"test\"}"
+              data: "{\"runtime.instantiatefactory\": \"test\"}"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
     -
-      test_title: 944230-33
-      desc: "Argument test includes keyword instantiatetransformer"
+      test_title: 944240-33
+      desc: "Argument test includes keyword runtime.instantiatetransformer"
       stages:
         -
           stage:
@@ -789,13 +789,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test=instantiatetransformer"
+              data: "test=runtime.instantiatetransformer"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-34
-      desc: "Argument name includes keyword instantiatetransformer"
+      test_title: 944240-34
+      desc: "Argument name includes keyword runtime.instantiatetransformer"
       stages:
         -
           stage:
@@ -812,13 +812,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "instantiatetransformer=test"
+              data: "runtime.instantiatetransformer=test"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-35
-      desc: "Cookie test includes keyword instantiatetransformer"
+      test_title: 944240-35
+      desc: "Cookie test includes keyword runtime.instantiatetransformer"
       stages:
         -
           stage:
@@ -833,40 +833,16 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                Cookie: test=instantiatetransformer
-              method: "POST"
-              version: "HTTP/1.0"
-              data: "test=value"
-            output:
-              log_contains: "id \"944230\""
-
-    -
-      test_title: 944230-36
-      desc: "Cookie name includes keyword instantiatetransformer"
-      stages:
-        -
-          stage:
-            input:
-              dest_addr: "127.0.0.1"
-              port: 80
-              headers:
-                Host: "localhost"
-                User-Agent: "ModSecurity CRS 3 Tests"
-                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
-                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
-                Accept-Encoding: "gzip,deflate"
-                Accept-Language: "en-us,en;q=0.5"
-                Content-Type: "application/x-www-form-urlencoded"
-                Cookie: instantiatetransformer=test
+                Cookie: test=runtime.instantiatetransformer
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-37
-      desc: "Request header test includes keyword instantiatetransformer"
+      test_title: 944240-36
+      desc: "Cookie name includes keyword runtime.instantiatetransformer"
       stages:
         -
           stage:
@@ -881,16 +857,40 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                test: instantiatetransformer
+                Cookie: runtime.instantiatetransformer=test
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-38
-      desc: "XML attribute value includes keyword instantiatetransformer"
+      test_title: 944240-37
+      desc: "Request header test includes keyword runtime.instantiatetransformer"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+                test: runtime.instantiatetransformer
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=value"
+            output:
+              log_contains: "id \"944240\""
+
+    -
+      test_title: 944240-38
+      desc: "XML attribute value includes keyword runtime.instantiatetransformer"
       stages:
         -
           stage:
@@ -907,13 +907,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"instantiatetransformer\">element_value</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"runtime.instantiatetransformer\">element_value</element></xml>"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-39
-      desc: "XML element value includes keyword instantiatetransformer"
+      test_title: 944240-39
+      desc: "XML element value includes keyword runtime.instantiatetransformer"
       stages:
         -
           stage:
@@ -930,13 +930,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">instantiatetransformer</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">runtime.instantiatetransformer</element></xml>"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-40
-      desc: "Nested XML element value includes keyword instantiatetransformer"
+      test_title: 944240-40
+      desc: "Nested XML element value includes keyword runtime.instantiatetransformer"
       stages:
         -
           stage:
@@ -953,13 +953,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">instantiatetransformer</element></l3></l2></l1></xml>"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">runtime.instantiatetransformer</element></l3></l2></l1></xml>"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-41
-      desc: "Content-Type text/plain includes keyword instantiatetransformer"
+      test_title: 944240-41
+      desc: "Content-Type text/plain includes keyword runtime.instantiatetransformer"
       stages:
         -
           stage:
@@ -976,13 +976,13 @@
                 Content-Type: "text/plain"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test=instantiatetransformer"
+              data: "test=runtime.instantiatetransformer"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-42
-      desc: "Content-Type application/json arg value includes keyword instantiatetransformer"
+      test_title: 944240-42
+      desc: "Content-Type application/json arg value includes keyword runtime.instantiatetransformer"
       stages:
         -
           stage:
@@ -999,13 +999,13 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"test\": \"instantiatetransformer\"}"
+              data: "{\"test\": \"runtime.instantiatetransformer\"}"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-43
-      desc: "Content-Type application/json arg name includes keyword instantiatetransformer"
+      test_title: 944240-43
+      desc: "Content-Type application/json arg name includes keyword runtime.instantiatetransformer"
       stages:
         -
           stage:
@@ -1022,12 +1022,12 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"instantiatetransformer\": \"test\"}"
+              data: "{\"runtime.instantiatetransformer\": \"test\"}"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
     -
-      test_title: 944230-44
-      desc: "Argument test includes keyword invokertransformer"
+      test_title: 944240-44
+      desc: "Argument test includes keyword runtime.invokertransformer"
       stages:
         -
           stage:
@@ -1044,13 +1044,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test=invokertransformer"
+              data: "test=runtime.invokertransformer"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-45
-      desc: "Argument name includes keyword invokertransformer"
+      test_title: 944240-45
+      desc: "Argument name includes keyword runtime.invokertransformer"
       stages:
         -
           stage:
@@ -1067,13 +1067,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "invokertransformer=test"
+              data: "runtime.invokertransformer=test"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-46
-      desc: "Cookie test includes keyword invokertransformer"
+      test_title: 944240-46
+      desc: "Cookie test includes keyword runtime.invokertransformer"
       stages:
         -
           stage:
@@ -1088,40 +1088,16 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                Cookie: test=invokertransformer
-              method: "POST"
-              version: "HTTP/1.0"
-              data: "test=value"
-            output:
-              log_contains: "id \"944230\""
-
-    -
-      test_title: 944230-47
-      desc: "Cookie name includes keyword invokertransformer"
-      stages:
-        -
-          stage:
-            input:
-              dest_addr: "127.0.0.1"
-              port: 80
-              headers:
-                Host: "localhost"
-                User-Agent: "ModSecurity CRS 3 Tests"
-                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
-                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
-                Accept-Encoding: "gzip,deflate"
-                Accept-Language: "en-us,en;q=0.5"
-                Content-Type: "application/x-www-form-urlencoded"
-                Cookie: invokertransformer=test
+                Cookie: test=runtime.invokertransformer
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-48
-      desc: "Request header test includes keyword invokertransformer"
+      test_title: 944240-47
+      desc: "Cookie name includes keyword runtime.invokertransformer"
       stages:
         -
           stage:
@@ -1136,16 +1112,40 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                test: invokertransformer
+                Cookie: runtime.invokertransformer=test
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-49
-      desc: "XML attribute value includes keyword invokertransformer"
+      test_title: 944240-48
+      desc: "Request header test includes keyword runtime.invokertransformer"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+                test: runtime.invokertransformer
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=value"
+            output:
+              log_contains: "id \"944240\""
+
+    -
+      test_title: 944240-49
+      desc: "XML attribute value includes keyword runtime.invokertransformer"
       stages:
         -
           stage:
@@ -1162,13 +1162,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"invokertransformer\">element_value</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"runtime.invokertransformer\">element_value</element></xml>"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-50
-      desc: "XML element value includes keyword invokertransformer"
+      test_title: 944240-50
+      desc: "XML element value includes keyword runtime.invokertransformer"
       stages:
         -
           stage:
@@ -1185,13 +1185,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">invokertransformer</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">runtime.invokertransformer</element></xml>"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-51
-      desc: "Nested XML element value includes keyword invokertransformer"
+      test_title: 944240-51
+      desc: "Nested XML element value includes keyword runtime.invokertransformer"
       stages:
         -
           stage:
@@ -1208,13 +1208,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">invokertransformer</element></l3></l2></l1></xml>"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">runtime.invokertransformer</element></l3></l2></l1></xml>"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-52
-      desc: "Content-Type text/plain includes keyword invokertransformer"
+      test_title: 944240-52
+      desc: "Content-Type text/plain includes keyword runtime.invokertransformer"
       stages:
         -
           stage:
@@ -1231,13 +1231,13 @@
                 Content-Type: "text/plain"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test=invokertransformer"
+              data: "test=runtime.invokertransformer"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-53
-      desc: "Content-Type application/json arg value includes keyword invokertransformer"
+      test_title: 944240-53
+      desc: "Content-Type application/json arg value includes keyword runtime.invokertransformer"
       stages:
         -
           stage:
@@ -1254,13 +1254,13 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"test\": \"invokertransformer\"}"
+              data: "{\"test\": \"runtime.invokertransformer\"}"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-54
-      desc: "Content-Type application/json arg name includes keyword invokertransformer"
+      test_title: 944240-54
+      desc: "Content-Type application/json arg name includes keyword runtime.invokertransformer"
       stages:
         -
           stage:
@@ -1277,12 +1277,12 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"invokertransformer\": \"test\"}"
+              data: "{\"runtime.invokertransformer\": \"test\"}"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
     -
-      test_title: 944230-55
-      desc: "Argument test includes keyword prototypeclonefactory"
+      test_title: 944240-55
+      desc: "Argument test includes keyword runtime.prototypeclonefactory"
       stages:
         -
           stage:
@@ -1299,13 +1299,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test=prototypeclonefactory"
+              data: "test=runtime.prototypeclonefactory"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-56
-      desc: "Argument name includes keyword prototypeclonefactory"
+      test_title: 944240-56
+      desc: "Argument name includes keyword runtime.prototypeclonefactory"
       stages:
         -
           stage:
@@ -1322,13 +1322,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "prototypeclonefactory=test"
+              data: "runtime.prototypeclonefactory=test"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-57
-      desc: "Cookie test includes keyword prototypeclonefactory"
+      test_title: 944240-57
+      desc: "Cookie test includes keyword runtime.prototypeclonefactory"
       stages:
         -
           stage:
@@ -1343,40 +1343,16 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                Cookie: test=prototypeclonefactory
-              method: "POST"
-              version: "HTTP/1.0"
-              data: "test=value"
-            output:
-              log_contains: "id \"944230\""
-
-    -
-      test_title: 944230-58
-      desc: "Cookie name includes keyword prototypeclonefactory"
-      stages:
-        -
-          stage:
-            input:
-              dest_addr: "127.0.0.1"
-              port: 80
-              headers:
-                Host: "localhost"
-                User-Agent: "ModSecurity CRS 3 Tests"
-                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
-                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
-                Accept-Encoding: "gzip,deflate"
-                Accept-Language: "en-us,en;q=0.5"
-                Content-Type: "application/x-www-form-urlencoded"
-                Cookie: prototypeclonefactory=test
+                Cookie: test=runtime.prototypeclonefactory
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-59
-      desc: "Request header test includes keyword prototypeclonefactory"
+      test_title: 944240-58
+      desc: "Cookie name includes keyword runtime.prototypeclonefactory"
       stages:
         -
           stage:
@@ -1391,16 +1367,40 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                test: prototypeclonefactory
+                Cookie: runtime.prototypeclonefactory=test
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-60
-      desc: "XML attribute value includes keyword prototypeclonefactory"
+      test_title: 944240-59
+      desc: "Request header test includes keyword runtime.prototypeclonefactory"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+                test: runtime.prototypeclonefactory
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=value"
+            output:
+              log_contains: "id \"944240\""
+
+    -
+      test_title: 944240-60
+      desc: "XML attribute value includes keyword runtime.prototypeclonefactory"
       stages:
         -
           stage:
@@ -1417,13 +1417,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"prototypeclonefactory\">element_value</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"runtime.prototypeclonefactory\">element_value</element></xml>"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-61
-      desc: "XML element value includes keyword prototypeclonefactory"
+      test_title: 944240-61
+      desc: "XML element value includes keyword runtime.prototypeclonefactory"
       stages:
         -
           stage:
@@ -1440,13 +1440,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">prototypeclonefactory</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">runtime.prototypeclonefactory</element></xml>"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-62
-      desc: "Nested XML element value includes keyword prototypeclonefactory"
+      test_title: 944240-62
+      desc: "Nested XML element value includes keyword runtime.prototypeclonefactory"
       stages:
         -
           stage:
@@ -1463,13 +1463,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">prototypeclonefactory</element></l3></l2></l1></xml>"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">runtime.prototypeclonefactory</element></l3></l2></l1></xml>"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-63
-      desc: "Content-Type text/plain includes keyword prototypeclonefactory"
+      test_title: 944240-63
+      desc: "Content-Type text/plain includes keyword runtime.prototypeclonefactory"
       stages:
         -
           stage:
@@ -1486,13 +1486,13 @@
                 Content-Type: "text/plain"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test=prototypeclonefactory"
+              data: "test=runtime.prototypeclonefactory"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-64
-      desc: "Content-Type application/json arg value includes keyword prototypeclonefactory"
+      test_title: 944240-64
+      desc: "Content-Type application/json arg value includes keyword runtime.prototypeclonefactory"
       stages:
         -
           stage:
@@ -1509,13 +1509,13 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"test\": \"prototypeclonefactory\"}"
+              data: "{\"test\": \"runtime.prototypeclonefactory\"}"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-65
-      desc: "Content-Type application/json arg name includes keyword prototypeclonefactory"
+      test_title: 944240-65
+      desc: "Content-Type application/json arg name includes keyword runtime.prototypeclonefactory"
       stages:
         -
           stage:
@@ -1532,12 +1532,12 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"prototypeclonefactory\": \"test\"}"
+              data: "{\"runtime.prototypeclonefactory\": \"test\"}"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
     -
-      test_title: 944230-66
-      desc: "Argument test includes keyword prototypeserializationfactory"
+      test_title: 944240-66
+      desc: "Argument test includes keyword runtime.prototypeserializationfactory"
       stages:
         -
           stage:
@@ -1554,13 +1554,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test=prototypeserializationfactory"
+              data: "test=runtime.prototypeserializationfactory"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-67
-      desc: "Argument name includes keyword prototypeserializationfactory"
+      test_title: 944240-67
+      desc: "Argument name includes keyword runtime.prototypeserializationfactory"
       stages:
         -
           stage:
@@ -1577,13 +1577,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "prototypeserializationfactory=test"
+              data: "runtime.prototypeserializationfactory=test"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-68
-      desc: "Cookie test includes keyword prototypeserializationfactory"
+      test_title: 944240-68
+      desc: "Cookie test includes keyword runtime.prototypeserializationfactory"
       stages:
         -
           stage:
@@ -1598,40 +1598,16 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                Cookie: test=prototypeserializationfactory
-              method: "POST"
-              version: "HTTP/1.0"
-              data: "test=value"
-            output:
-              log_contains: "id \"944230\""
-
-    -
-      test_title: 944230-69
-      desc: "Cookie name includes keyword prototypeserializationfactory"
-      stages:
-        -
-          stage:
-            input:
-              dest_addr: "127.0.0.1"
-              port: 80
-              headers:
-                Host: "localhost"
-                User-Agent: "ModSecurity CRS 3 Tests"
-                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
-                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
-                Accept-Encoding: "gzip,deflate"
-                Accept-Language: "en-us,en;q=0.5"
-                Content-Type: "application/x-www-form-urlencoded"
-                Cookie: prototypeserializationfactory=test
+                Cookie: test=runtime.prototypeserializationfactory
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-70
-      desc: "Request header test includes keyword prototypeserializationfactory"
+      test_title: 944240-69
+      desc: "Cookie name includes keyword runtime.prototypeserializationfactory"
       stages:
         -
           stage:
@@ -1646,16 +1622,40 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                test: prototypeserializationfactory
+                Cookie: runtime.prototypeserializationfactory=test
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-71
-      desc: "XML attribute value includes keyword prototypeserializationfactory"
+      test_title: 944240-70
+      desc: "Request header test includes keyword runtime.prototypeserializationfactory"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+                test: runtime.prototypeserializationfactory
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=value"
+            output:
+              log_contains: "id \"944240\""
+
+    -
+      test_title: 944240-71
+      desc: "XML attribute value includes keyword runtime.prototypeserializationfactory"
       stages:
         -
           stage:
@@ -1672,13 +1672,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"prototypeserializationfactory\">element_value</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"runtime.prototypeserializationfactory\">element_value</element></xml>"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-72
-      desc: "XML element value includes keyword prototypeserializationfactory"
+      test_title: 944240-72
+      desc: "XML element value includes keyword runtime.prototypeserializationfactory"
       stages:
         -
           stage:
@@ -1695,13 +1695,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">prototypeserializationfactory</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">runtime.prototypeserializationfactory</element></xml>"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-73
-      desc: "Nested XML element value includes keyword prototypeserializationfactory"
+      test_title: 944240-73
+      desc: "Nested XML element value includes keyword runtime.prototypeserializationfactory"
       stages:
         -
           stage:
@@ -1718,13 +1718,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">prototypeserializationfactory</element></l3></l2></l1></xml>"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">runtime.prototypeserializationfactory</element></l3></l2></l1></xml>"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-74
-      desc: "Content-Type text/plain includes keyword prototypeserializationfactory"
+      test_title: 944240-74
+      desc: "Content-Type text/plain includes keyword runtime.prototypeserializationfactory"
       stages:
         -
           stage:
@@ -1741,13 +1741,13 @@
                 Content-Type: "text/plain"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test=prototypeserializationfactory"
+              data: "test=runtime.prototypeserializationfactory"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-75
-      desc: "Content-Type application/json arg value includes keyword prototypeserializationfactory"
+      test_title: 944240-75
+      desc: "Content-Type application/json arg value includes keyword runtime.prototypeserializationfactory"
       stages:
         -
           stage:
@@ -1764,13 +1764,13 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"test\": \"prototypeserializationfactory\"}"
+              data: "{\"test\": \"runtime.prototypeserializationfactory\"}"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-76
-      desc: "Content-Type application/json arg name includes keyword prototypeserializationfactory"
+      test_title: 944240-76
+      desc: "Content-Type application/json arg name includes keyword runtime.prototypeserializationfactory"
       stages:
         -
           stage:
@@ -1787,12 +1787,12 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"prototypeserializationfactory\": \"test\"}"
+              data: "{\"runtime.prototypeserializationfactory\": \"test\"}"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
     -
-      test_title: 944230-77
-      desc: "Argument test includes keyword whileclosure"
+      test_title: 944240-77
+      desc: "Argument test includes keyword runtime.whileclosure"
       stages:
         -
           stage:
@@ -1809,13 +1809,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test=whileclosure"
+              data: "test=runtime.whileclosure"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-78
-      desc: "Argument name includes keyword whileclosure"
+      test_title: 944240-78
+      desc: "Argument name includes keyword runtime.whileclosure"
       stages:
         -
           stage:
@@ -1832,13 +1832,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "whileclosure=test"
+              data: "runtime.whileclosure=test"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-79
-      desc: "Cookie test includes keyword whileclosure"
+      test_title: 944240-79
+      desc: "Cookie test includes keyword runtime.whileclosure"
       stages:
         -
           stage:
@@ -1853,40 +1853,16 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                Cookie: test=whileclosure
-              method: "POST"
-              version: "HTTP/1.0"
-              data: "test=value"
-            output:
-              log_contains: "id \"944230\""
-
-    -
-      test_title: 944230-80
-      desc: "Cookie name includes keyword whileclosure"
-      stages:
-        -
-          stage:
-            input:
-              dest_addr: "127.0.0.1"
-              port: 80
-              headers:
-                Host: "localhost"
-                User-Agent: "ModSecurity CRS 3 Tests"
-                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
-                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
-                Accept-Encoding: "gzip,deflate"
-                Accept-Language: "en-us,en;q=0.5"
-                Content-Type: "application/x-www-form-urlencoded"
-                Cookie: whileclosure=test
+                Cookie: test=runtime.whileclosure
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-81
-      desc: "Request header test includes keyword whileclosure"
+      test_title: 944240-80
+      desc: "Cookie name includes keyword runtime.whileclosure"
       stages:
         -
           stage:
@@ -1901,16 +1877,40 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                test: whileclosure
+                Cookie: runtime.whileclosure=test
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-82
-      desc: "XML attribute value includes keyword whileclosure"
+      test_title: 944240-81
+      desc: "Request header test includes keyword runtime.whileclosure"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+                test: runtime.whileclosure
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=value"
+            output:
+              log_contains: "id \"944240\""
+
+    -
+      test_title: 944240-82
+      desc: "XML attribute value includes keyword runtime.whileclosure"
       stages:
         -
           stage:
@@ -1927,13 +1927,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"whileclosure\">element_value</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"runtime.whileclosure\">element_value</element></xml>"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-83
-      desc: "XML element value includes keyword whileclosure"
+      test_title: 944240-83
+      desc: "XML element value includes keyword runtime.whileclosure"
       stages:
         -
           stage:
@@ -1950,13 +1950,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">whileclosure</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">runtime.whileclosure</element></xml>"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-84
-      desc: "Nested XML element value includes keyword whileclosure"
+      test_title: 944240-84
+      desc: "Nested XML element value includes keyword runtime.whileclosure"
       stages:
         -
           stage:
@@ -1973,13 +1973,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">whileclosure</element></l3></l2></l1></xml>"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">runtime.whileclosure</element></l3></l2></l1></xml>"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-85
-      desc: "Content-Type text/plain includes keyword whileclosure"
+      test_title: 944240-85
+      desc: "Content-Type text/plain includes keyword runtime.whileclosure"
       stages:
         -
           stage:
@@ -1996,13 +1996,13 @@
                 Content-Type: "text/plain"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test=whileclosure"
+              data: "test=runtime.whileclosure"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-86
-      desc: "Content-Type application/json arg value includes keyword whileclosure"
+      test_title: 944240-86
+      desc: "Content-Type application/json arg value includes keyword runtime.whileclosure"
       stages:
         -
           stage:
@@ -2019,13 +2019,13 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"test\": \"whileclosure\"}"
+              data: "{\"test\": \"runtime.whileclosure\"}"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""
 
     -
-      test_title: 944230-87
-      desc: "Content-Type application/json arg name includes keyword whileclosure"
+      test_title: 944240-87
+      desc: "Content-Type application/json arg name includes keyword runtime.whileclosure"
       stages:
         -
           stage:
@@ -2042,6 +2042,6 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"whileclosure\": \"test\"}"
+              data: "{\"runtime.whileclosure\": \"test\"}"
             output:
-              log_contains: "id \"944230\""
+              log_contains: "id \"944240\""

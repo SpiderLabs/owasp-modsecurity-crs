@@ -262,7 +262,7 @@
               version: HTTP/1.0
               data: "<?xml version=\"1.0\"?><xml><java.Runtime attribute_name=\"attribute_value\">value</java.Runtime></xml>"
             output: 
-              log_contains: "id \"944110\""
+              no_log_contains: "id \"944110\""
 
     - 
       test_title: 944110-12
@@ -285,7 +285,7 @@
               version: HTTP/1.0
               data: "<?xml version=\"1.0\"?><xml><element java.Runtime=\"attribute_value\">element_value</element></xml>"
             output: 
-              log_contains: "id \"944110\""
+              no_log_contains: "id \"944110\""
 
     - 
       test_title: 944110-13
@@ -354,7 +354,7 @@
               version: HTTP/1.0
               data: "<?xml version=\"1.0\"?><xml><java.ProcessBuilder attribute_name=\"attribute_value\">value</java.ProcessBuilder></xml>"
             output: 
-              log_contains: "id \"944110\""
+              no_log_contains: "id \"944110\""
 
     - 
       test_title: 944110-16
@@ -377,7 +377,7 @@
               version: HTTP/1.0
               data: "<?xml version=\"1.0\"?><xml><element java.ProcessBuilder=\"attribute_value\">element_value</element></xml>"
             output: 
-              log_contains: "id \"944110\""
+              no_log_contains: "id \"944110\""
 
     - 
       test_title: 944110-17

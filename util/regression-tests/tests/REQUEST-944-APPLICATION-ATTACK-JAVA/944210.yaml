@@ -144,7 +144,7 @@
               version: "HTTP/1.0"
               data: "<?xml version=\"1.0\"?><xml><rO0ABQ attribute_name=\"attribute_value\">value</rO0ABQ></xml>"
             output:
-              log_contains: "id \"944210\""
+              no_log_contains: "id \"944210\""
 
     -
       test_title: 944210-6
@@ -167,7 +167,7 @@
               version: "HTTP/1.0"
               data: "<?xml version=\"1.0\"?><xml><element rO0ABQ=\"attribute_value\">element_value</element></xml>"
             output:
-              log_contains: "id \"944210\""
+              no_log_contains: "id \"944210\""
 
     -
       test_title: 944210-7
@@ -257,7 +257,7 @@
                 Content-Type: "text/plain"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test:rO0ABQ"
+              data: "test=rO0ABQ"
             output:
               log_contains: "id \"944210\""
 
@@ -537,7 +537,7 @@
               version: "HTTP/1.0"
               data: "<?xml version=\"1.0\"?><xml><KztAAU attribute_name=\"attribute_value\">value</KztAAU></xml>"
             output:
-              log_contains: "id \"944210\""
+              no_log_contains: "id \"944210\""
 
     -
       test_title: 944210-23
@@ -560,7 +560,7 @@
               version: "HTTP/1.0"
               data: "<?xml version=\"1.0\"?><xml><element KztAAU=\"attribute_value\">element_value</element></xml>"
             output:
-              log_contains: "id \"944210\""
+              no_log_contains: "id \"944210\""
 
     -
       test_title: 944210-24
@@ -650,7 +650,7 @@
                 Content-Type: "text/plain"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test:KztAAU"
+              data: "test=KztAAU"
             output:
               log_contains: "id \"944210\""
 
@@ -930,7 +930,7 @@
               version: "HTTP/1.0"
               data: "<?xml version=\"1.0\"?><xml><Cs7QAF attribute_name=\"attribute_value\">value</Cs7QAF></xml>"
             output:
-              log_contains: "id \"944210\""
+              no_log_contains: "id \"944210\""
 
     -
       test_title: 944210-40
@@ -953,7 +953,7 @@
               version: "HTTP/1.0"
               data: "<?xml version=\"1.0\"?><xml><element Cs7QAF=\"attribute_value\">element_value</element></xml>"
             output:
-              log_contains: "id \"944210\""
+              no_log_contains: "id \"944210\""
 
     -
       test_title: 944210-41
@@ -1043,7 +1043,7 @@
                 Content-Type: "text/plain"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test:Cs7QAF"
+              data: "test=Cs7QAF"
             output:
               log_contains: "id \"944210\""
 

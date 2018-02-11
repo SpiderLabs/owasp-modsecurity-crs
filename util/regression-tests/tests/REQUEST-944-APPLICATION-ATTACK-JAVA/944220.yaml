@@ -49,7 +49,7 @@
               version: "HTTP/1.0"
               data: "VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ===test"
             output:
-              log_contains: "id \"944220\""
+              no_log_contains: "id \"944220\""
 
     -
       test_title: 944220-2
@@ -144,7 +144,7 @@
               version: "HTTP/1.0"
               data: "<?xml version=\"1.0\"?><xml><VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ== attribute_name=\"attribute_value\">value</VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ==></xml>"
             output:
-              log_contains: "id \"944220\""
+              no_log_contains: "id \"944220\""
 
     -
       test_title: 944220-6
@@ -167,7 +167,7 @@
               version: "HTTP/1.0"
               data: "<?xml version=\"1.0\"?><xml><element VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ===\"attribute_value\">element_value</element></xml>"
             output:
-              log_contains: "id \"944220\""
+              no_log_contains: "id \"944220\""
 
     -
       test_title: 944220-7
@@ -257,7 +257,7 @@
                 Content-Type: "text/plain"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test:VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ=="
+              data: "test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ=="
             output:
               log_contains: "id \"944220\""
 
@@ -328,7 +328,7 @@
               version: "HTTP/1.0"
               data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ==\": \"test\"}\n-----------------------------thisissparta--"
             output:
-              log_contains: "id \"944220\""
+              no_log_contains: "id \"944220\""
 
     -
       test_title: 944220-14
@@ -351,7 +351,7 @@
               version: "HTTP/1.0"
               data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ==\": \"test\"}\n-----------------------------thisissparta--"
             output:
-              log_contains: "id \"944220\""
+              no_log_contains: "id \"944220\""
 
     -
       test_title: 944220-15
@@ -374,7 +374,7 @@
               version: "HTTP/1.0"
               data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ==</element></xml>\n-----------------------------thisissparta--"
             output:
-              log_contains: "id \"944220\""
+              no_log_contains: "id \"944220\""
 
     -
       test_title: 944220-16
@@ -397,7 +397,7 @@
               version: "HTTP/1.0"
               data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ==</element></xml>\n-----------------------------thisissparta--"
             output:
-              log_contains: "id \"944220\""
+              no_log_contains: "id \"944220\""
     -
       test_title: 944220-17
       desc: "Argument test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI="
@@ -537,7 +537,7 @@
               version: "HTTP/1.0"
               data: "<?xml version=\"1.0\"?><xml><VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI= attribute_name=\"attribute_value\">value</VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI=></xml>"
             output:
-              log_contains: "id \"944220\""
+              no_log_contains: "id \"944220\""
 
     -
       test_title: 944220-23
@@ -560,7 +560,7 @@
               version: "HTTP/1.0"
               data: "<?xml version=\"1.0\"?><xml><element VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI==\"attribute_value\">element_value</element></xml>"
             output:
-              log_contains: "id \"944220\""
+              no_log_contains: "id \"944220\""
 
     -
       test_title: 944220-24
@@ -650,9 +650,9 @@
                 Content-Type: "text/plain"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test:VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI="
+              data: "test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI="
             output:
-              log_contains: "id \"944220\""
+              no_log_contains: "id \"944220\""
 
     -
       test_title: 944220-28
@@ -721,7 +721,7 @@
               version: "HTTP/1.0"
               data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI=\": \"test\"}\n-----------------------------thisissparta--"
             output:
-              log_contains: "id \"944220\""
+              no_log_contains: "id \"944220\""
 
     -
       test_title: 944220-31
@@ -744,7 +744,7 @@
               version: "HTTP/1.0"
               data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI=\": \"test\"}\n-----------------------------thisissparta--"
             output:
-              log_contains: "id \"944220\""
+              no_log_contains: "id \"944220\""
 
     -
       test_title: 944220-32
@@ -767,7 +767,7 @@
               version: "HTTP/1.0"
               data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI=</element></xml>\n-----------------------------thisissparta--"
             output:
-              log_contains: "id \"944220\""
+              no_log_contains: "id \"944220\""
 
     -
       test_title: 944220-33
@@ -790,7 +790,7 @@
               version: "HTTP/1.0"
               data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI=</element></xml>\n-----------------------------thisissparta--"
             output:
-              log_contains: "id \"944220\""
+              no_log_contains: "id \"944220\""
     -
       test_title: 944220-34
       desc: "Argument test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg=="
@@ -930,7 +930,7 @@
               version: "HTTP/1.0"
               data: "<?xml version=\"1.0\"?><xml><VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg== attribute_name=\"attribute_value\">value</VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg==></xml>"
             output:
-              log_contains: "id \"944220\""
+              no_log_contains: "id \"944220\""
 
     -
       test_title: 944220-40
@@ -953,7 +953,7 @@
               version: "HTTP/1.0"
               data: "<?xml version=\"1.0\"?><xml><element VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg===\"attribute_value\">element_value</element></xml>"
             output:
-              log_contains: "id \"944220\""
+              no_log_contains: "id \"944220\""
 
     -
       test_title: 944220-41
@@ -1043,7 +1043,7 @@
                 Content-Type: "text/plain"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test:VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg=="
+              data: "test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg=="
             output:
               log_contains: "id \"944220\""
 
@@ -1114,7 +1114,7 @@
               version: "HTTP/1.0"
               data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg==\": \"test\"}\n-----------------------------thisissparta--"
             output:
-              log_contains: "id \"944220\""
+              no_log_contains: "id \"944220\""
 
     -
       test_title: 944220-48
@@ -1137,7 +1137,7 @@
               version: "HTTP/1.0"
               data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg==\": \"test\"}\n-----------------------------thisissparta--"
             output:
-              log_contains: "id \"944220\""
+              no_log_contains: "id \"944220\""
 
     -
       test_title: 944220-49
@@ -1228,7 +1228,7 @@
               version: "HTTP/1.0"
               data: "VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ===test"
             output:
-              log_contains: "id \"944220\""
+              no_log_contains: "id \"944220\""
 
     -
       test_title: 944220-53
@@ -1323,7 +1323,7 @@
               version: "HTTP/1.0"
               data: "<?xml version=\"1.0\"?><xml><VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ== attribute_name=\"attribute_value\">value</VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ==></xml>"
             output:
-              log_contains: "id \"944220\""
+              no_log_contains: "id \"944220\""
 
     -
       test_title: 944220-57
@@ -1346,7 +1346,7 @@
               version: "HTTP/1.0"
               data: "<?xml version=\"1.0\"?><xml><element VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ===\"attribute_value\">element_value</element></xml>"
             output:
-              log_contains: "id \"944220\""
+              no_log_contains: "id \"944220\""
 
     -
       test_title: 944220-58
@@ -1436,7 +1436,7 @@
                 Content-Type: "text/plain"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test:VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ=="
+              data: "test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ=="
             output:
               log_contains: "id \"944220\""
 
@@ -1716,7 +1716,7 @@
               version: "HTTP/1.0"
               data: "<?xml version=\"1.0\"?><xml><VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5 attribute_name=\"attribute_value\">value</VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5></xml>"
             output:
-              log_contains: "id \"944220\""
+              no_log_contains: "id \"944220\""
 
     -
       test_title: 944220-74
@@ -1739,7 +1739,7 @@
               version: "HTTP/1.0"
               data: "<?xml version=\"1.0\"?><xml><element VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5=\"attribute_value\">element_value</element></xml>"
             output:
-              log_contains: "id \"944220\""
+              no_log_contains: "id \"944220\""
 
     -
       test_title: 944220-75
@@ -1829,7 +1829,7 @@
                 Content-Type: "text/plain"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test:VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5"
+              data: "test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5"
             output:
               log_contains: "id \"944220\""
 
@@ -2109,7 +2109,7 @@
               version: "HTTP/1.0"
               data: "<?xml version=\"1.0\"?><xml><VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg== attribute_name=\"attribute_value\">value</VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg==></xml>"
             output:
-              log_contains: "id \"944220\""
+              no_log_contains: "id \"944220\""
 
     -
       test_title: 944220-91
@@ -2132,7 +2132,7 @@
               version: "HTTP/1.0"
               data: "<?xml version=\"1.0\"?><xml><element VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg===\"attribute_value\">element_value</element></xml>"
             output:
-              log_contains: "id \"944220\""
+              no_log_contains: "id \"944220\""
 
     -
       test_title: 944220-92
@@ -2222,7 +2222,7 @@
                 Content-Type: "text/plain"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test:VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg=="
+              data: "test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg=="
             output:
               log_contains: "id \"944220\""
 
@@ -2502,7 +2502,7 @@
               version: "HTTP/1.0"
               data: "<?xml version=\"1.0\"?><xml><VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy attribute_name=\"attribute_value\">value</VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy></xml>"
             output:
-              log_contains: "id \"944220\""
+              no_log_contains: "id \"944220\""
 
     -
       test_title: 944220-108
@@ -2525,7 +2525,7 @@
               version: "HTTP/1.0"
               data: "<?xml version=\"1.0\"?><xml><element VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy=\"attribute_value\">element_value</element></xml>"
             output:
-              log_contains: "id \"944220\""
+              no_log_contains: "id \"944220\""
 
     -
       test_title: 944220-109
@@ -2615,7 +2615,7 @@
                 Content-Type: "text/plain"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test:VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy"
+              data: "test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy"
             output:
               log_contains: "id \"944220\""
 
@@ -2895,7 +2895,7 @@
               version: "HTTP/1.0"
               data: "<?xml version=\"1.0\"?><xml><VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5 attribute_name=\"attribute_value\">value</VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5></xml>"
             output:
-              log_contains: "id \"944220\""
+              no_log_contains: "id \"944220\""
 
     -
       test_title: 944220-125
@@ -2918,7 +2918,7 @@
               version: "HTTP/1.0"
               data: "<?xml version=\"1.0\"?><xml><element VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5=\"attribute_value\">element_value</element></xml>"
             output:
-              log_contains: "id \"944220\""
+              no_log_contains: "id \"944220\""
 
     -
       test_title: 944220-126
@@ -3008,7 +3008,7 @@
                 Content-Type: "text/plain"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test:VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5"
+              data: "test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5"
             output:
               log_contains: "id \"944220\""
 
@@ -3288,7 +3288,7 @@
               version: "HTTP/1.0"
               data: "<?xml version=\"1.0\"?><xml><VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk= attribute_name=\"attribute_value\">value</VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk=></xml>"
             output:
-              log_contains: "id \"944220\""
+              no_log_contains: "id \"944220\""
 
     -
       test_title: 944220-142
@@ -3311,7 +3311,7 @@
               version: "HTTP/1.0"
               data: "<?xml version=\"1.0\"?><xml><element VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk==\"attribute_value\">element_value</element></xml>"
             output:
-              log_contains: "id \"944220\""
+              no_log_contains: "id \"944220\""
 
     -
       test_title: 944220-143
@@ -3401,7 +3401,7 @@
                 Content-Type: "text/plain"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test:VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk="
+              data: "test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk="
             output:
               log_contains: "id \"944220\""
 
@@ -3681,7 +3681,7 @@
               version: "HTTP/1.0"
               data: "<?xml version=\"1.0\"?><xml><VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl attribute_name=\"attribute_value\">value</VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl></xml>"
             output:
-              log_contains: "id \"944220\""
+              no_log_contains: "id \"944220\""
 
     -
       test_title: 944220-159
@@ -3704,7 +3704,7 @@
               version: "HTTP/1.0"
               data: "<?xml version=\"1.0\"?><xml><element VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl=\"attribute_value\">element_value</element></xml>"
             output:
-              log_contains: "id \"944220\""
+              no_log_contains: "id \"944220\""
 
     -
       test_title: 944220-160
@@ -3794,7 +3794,7 @@
                 Content-Type: "text/plain"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test:VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl"
+              data: "test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl"
             output:
               log_contains: "id \"944220\""
 

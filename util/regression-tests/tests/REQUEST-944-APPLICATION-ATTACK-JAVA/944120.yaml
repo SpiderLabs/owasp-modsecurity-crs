@@ -144,7 +144,7 @@
               version: "HTTP/1.0"
               data: "<?xml version=\"1.0\"?><xml><ProcessBuilder.evil.clonetransformer attribute_name=\"attribute_value\">value</ProcessBuilder.evil.clonetransformer></xml>"
             output:
-              log_contains: "id \"944120\""
+              no_log_contains: "id \"944120\""
 
     -
       test_title: 944120-6
@@ -167,7 +167,7 @@
               version: "HTTP/1.0"
               data: "<?xml version=\"1.0\"?><xml><element ProcessBuilder.evil.clonetransformer=\"attribute_value\">element_value</element></xml>"
             output:
-              log_contains: "id \"944120\""
+              no_log_contains: "id \"944120\""
 
     -
       test_title: 944120-7
@@ -257,7 +257,7 @@
                 Content-Type: "text/plain"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test:ProcessBuilder.evil.clonetransformer"
+              data: "test=ProcessBuilder.evil.clonetransformer"
             output:
               log_contains: "id \"944120\""
 
@@ -537,7 +537,7 @@
               version: "HTTP/1.0"
               data: "<?xml version=\"1.0\"?><xml><ProcessBuilder.evil.forclosure attribute_name=\"attribute_value\">value</ProcessBuilder.evil.forclosure></xml>"
             output:
-              log_contains: "id \"944120\""
+              no_log_contains: "id \"944120\""
 
     -
       test_title: 944120-23
@@ -560,7 +560,7 @@
               version: "HTTP/1.0"
               data: "<?xml version=\"1.0\"?><xml><element ProcessBuilder.evil.forclosure=\"attribute_value\">element_value</element></xml>"
             output:
-              log_contains: "id \"944120\""
+              no_log_contains: "id \"944120\""
 
     -
       test_title: 944120-24
@@ -650,7 +650,7 @@
                 Content-Type: "text/plain"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test:ProcessBuilder.evil.forclosure"
+              data: "test=ProcessBuilder.evil.forclosure"
             output:
               log_contains: "id \"944120\""
 
@@ -930,7 +930,7 @@
               version: "HTTP/1.0"
               data: "<?xml version=\"1.0\"?><xml><ProcessBuilder.evil.instantiatefactory attribute_name=\"attribute_value\">value</ProcessBuilder.evil.instantiatefactory></xml>"
             output:
-              log_contains: "id \"944120\""
+              no_log_contains: "id \"944120\""
 
     -
       test_title: 944120-40
@@ -953,7 +953,7 @@
               version: "HTTP/1.0"
               data: "<?xml version=\"1.0\"?><xml><element ProcessBuilder.evil.instantiatefactory=\"attribute_value\">element_value</element></xml>"
             output:
-              log_contains: "id \"944120\""
+              no_log_contains: "id \"944120\""
 
     -
       test_title: 944120-41
@@ -1043,7 +1043,7 @@
                 Content-Type: "text/plain"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test:ProcessBuilder.evil.instantiatefactory"
+              data: "test=ProcessBuilder.evil.instantiatefactory"
             output:
               log_contains: "id \"944120\""
 
@@ -1323,7 +1323,7 @@
               version: "HTTP/1.0"
               data: "<?xml version=\"1.0\"?><xml><ProcessBuilder.evil.instantiatetransformer attribute_name=\"attribute_value\">value</ProcessBuilder.evil.instantiatetransformer></xml>"
             output:
-              log_contains: "id \"944120\""
+              no_log_contains: "id \"944120\""
 
     -
       test_title: 944120-57
@@ -1346,7 +1346,7 @@
               version: "HTTP/1.0"
               data: "<?xml version=\"1.0\"?><xml><element ProcessBuilder.evil.instantiatetransformer=\"attribute_value\">element_value</element></xml>"
             output:
-              log_contains: "id \"944120\""
+              no_log_contains: "id \"944120\""
 
     -
       test_title: 944120-58
@@ -1436,7 +1436,7 @@
                 Content-Type: "text/plain"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test:ProcessBuilder.evil.instantiatetransformer"
+              data: "test=ProcessBuilder.evil.instantiatetransformer"
             output:
               log_contains: "id \"944120\""
 
@@ -1716,7 +1716,7 @@
               version: "HTTP/1.0"
               data: "<?xml version=\"1.0\"?><xml><ProcessBuilder.evil.invokertransformer attribute_name=\"attribute_value\">value</ProcessBuilder.evil.invokertransformer></xml>"
             output:
-              log_contains: "id \"944120\""
+              no_log_contains: "id \"944120\""
 
     -
       test_title: 944120-74
@@ -1739,7 +1739,7 @@
               version: "HTTP/1.0"
               data: "<?xml version=\"1.0\"?><xml><element ProcessBuilder.evil.invokertransformer=\"attribute_value\">element_value</element></xml>"
             output:
-              log_contains: "id \"944120\""
+              no_log_contains: "id \"944120\""
 
     -
       test_title: 944120-75
@@ -1829,7 +1829,7 @@
                 Content-Type: "text/plain"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test:ProcessBuilder.evil.invokertransformer"
+              data: "test=ProcessBuilder.evil.invokertransformer"
             output:
               log_contains: "id \"944120\""
 
@@ -2109,7 +2109,7 @@
               version: "HTTP/1.0"
               data: "<?xml version=\"1.0\"?><xml><ProcessBuilder.evil.prototypeclonefactory attribute_name=\"attribute_value\">value</ProcessBuilder.evil.prototypeclonefactory></xml>"
             output:
-              log_contains: "id \"944120\""
+              no_log_contains: "id \"944120\""
 
     -
       test_title: 944120-91
@@ -2132,7 +2132,7 @@
               version: "HTTP/1.0"
               data: "<?xml version=\"1.0\"?><xml><element ProcessBuilder.evil.prototypeclonefactory=\"attribute_value\">element_value</element></xml>"
             output:
-              log_contains: "id \"944120\""
+              no_log_contains: "id \"944120\""
 
     -
       test_title: 944120-92
@@ -2222,7 +2222,7 @@
                 Content-Type: "text/plain"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test:ProcessBuilder.evil.prototypeclonefactory"
+              data: "test=ProcessBuilder.evil.prototypeclonefactory"
             output:
               log_contains: "id \"944120\""
 
@@ -2384,7 +2384,7 @@
               version: "HTTP/1.0"
               data: "test=ProcessBuilder.evil.prototypeserializationfactory"
             output:
-              log_contains: "id \"944120\""
+              no_log_contains: "id \"944120\""
 
     -
       test_title: 944120-103
@@ -2407,7 +2407,7 @@
               version: "HTTP/1.0"
               data: "ProcessBuilder.evil.prototypeserializationfactory=test"
             output:
-              log_contains: "id \"944120\""
+              no_log_contains: "id \"944120\""
 
     -
       test_title: 944120-104
@@ -2502,7 +2502,7 @@
               version: "HTTP/1.0"
               data: "<?xml version=\"1.0\"?><xml><ProcessBuilder.evil.prototypeserializationfactory attribute_name=\"attribute_value\">value</ProcessBuilder.evil.prototypeserializationfactory></xml>"
             output:
-              log_contains: "id \"944120\""
+              no_log_contains: "id \"944120\""
 
     -
       test_title: 944120-108
@@ -2525,7 +2525,7 @@
               version: "HTTP/1.0"
               data: "<?xml version=\"1.0\"?><xml><element ProcessBuilder.evil.prototypeserializationfactory=\"attribute_value\">element_value</element></xml>"
             output:
-              log_contains: "id \"944120\""
+              no_log_contains: "id \"944120\""
 
     -
       test_title: 944120-109
@@ -2615,7 +2615,7 @@
                 Content-Type: "text/plain"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test:ProcessBuilder.evil.prototypeserializationfactory"
+              data: "test=ProcessBuilder.evil.prototypeserializationfactory"
             output:
               log_contains: "id \"944120\""
 
@@ -2895,7 +2895,7 @@
               version: "HTTP/1.0"
               data: "<?xml version=\"1.0\"?><xml><ProcessBuilder.evil.whileclosure attribute_name=\"attribute_value\">value</ProcessBuilder.evil.whileclosure></xml>"
             output:
-              log_contains: "id \"944120\""
+              no_log_contains: "id \"944120\""
 
     -
       test_title: 944120-125
@@ -2918,7 +2918,7 @@
               version: "HTTP/1.0"
               data: "<?xml version=\"1.0\"?><xml><element ProcessBuilder.evil.whileclosure=\"attribute_value\">element_value</element></xml>"
             output:
-              log_contains: "id \"944120\""
+              no_log_contains: "id \"944120\""
 
     -
       test_title: 944120-126
@@ -3008,7 +3008,7 @@
                 Content-Type: "text/plain"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test:ProcessBuilder.evil.whileclosure"
+              data: "test=ProcessBuilder.evil.whileclosure"
             output:
               log_contains: "id \"944120\""
 
