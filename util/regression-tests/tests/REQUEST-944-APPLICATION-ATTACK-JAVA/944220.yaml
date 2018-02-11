@@ -7,7 +7,7 @@
   tests:
     -
       test_title: 944220-0
-      desc: "Argument test includes keyword ProcessBuilder.evil.clonetransformer"
+      desc: "Argument test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ=="
       stages:
         -
           stage:
@@ -24,13 +24,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test=ProcessBuilder.evil.clonetransformer"
+              data: "test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ=="
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-1
-      desc: "Argument name includes keyword ProcessBuilder.evil.clonetransformer"
+      desc: "Argument name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ=="
       stages:
         -
           stage:
@@ -47,13 +47,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "ProcessBuilder.evil.clonetransformer=test"
+              data: "VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ===test"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-2
-      desc: "Cookie test includes keyword ProcessBuilder.evil.clonetransformer"
+      desc: "Cookie test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ=="
       stages:
         -
           stage:
@@ -68,7 +68,7 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                Cookie: test=ProcessBuilder.evil.clonetransformer
+                Cookie: test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ==
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
@@ -77,7 +77,7 @@
 
     -
       test_title: 944220-3
-      desc: "Cookie name includes keyword ProcessBuilder.evil.clonetransformer"
+      desc: "Cookie name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ=="
       stages:
         -
           stage:
@@ -92,7 +92,7 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                Cookie: ProcessBuilder.evil.clonetransformer=test
+                Cookie: VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ===test
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
@@ -101,7 +101,7 @@
 
     -
       test_title: 944220-4
-      desc: "Request header test includes keyword ProcessBuilder.evil.clonetransformer"
+      desc: "Request header test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ=="
       stages:
         -
           stage:
@@ -116,7 +116,7 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                test: ProcessBuilder.evil.clonetransformer
+                test: VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ==
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
@@ -125,7 +125,7 @@
 
     -
       test_title: 944220-5
-      desc: "XML element includes keyword ProcessBuilder.evil.clonetransformer"
+      desc: "XML element includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ=="
       stages:
         -
           stage:
@@ -142,13 +142,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><ProcessBuilder.evil.clonetransformer attribute_name=\"attribute_value\">value</ProcessBuilder.evil.clonetransformer></xml>"
+              data: "<?xml version=\"1.0\"?><xml><VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ== attribute_name=\"attribute_value\">value</VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ==></xml>"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-6
-      desc: "XML attribute name includes keyword ProcessBuilder.evil.clonetransformer"
+      desc: "XML attribute name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ=="
       stages:
         -
           stage:
@@ -165,13 +165,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element ProcessBuilder.evil.clonetransformer=\"attribute_value\">element_value</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ===\"attribute_value\">element_value</element></xml>"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-7
-      desc: "XML attribute value includes keyword ProcessBuilder.evil.clonetransformer"
+      desc: "XML attribute value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ=="
       stages:
         -
           stage:
@@ -188,13 +188,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"ProcessBuilder.evil.clonetransformer\">element_value</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ==\">element_value</element></xml>"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-8
-      desc: "XML element value includes keyword ProcessBuilder.evil.clonetransformer"
+      desc: "XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ=="
       stages:
         -
           stage:
@@ -211,13 +211,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.clonetransformer</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ==</element></xml>"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-9
-      desc: "Nested XML element value includes keyword ProcessBuilder.evil.clonetransformer"
+      desc: "Nested XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ=="
       stages:
         -
           stage:
@@ -234,13 +234,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">ProcessBuilder.evil.clonetransformer</element></l3></l2></l1></xml>"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ==</element></l3></l2></l1></xml>"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-10
-      desc: "Content-Type text/plain includes keyword ProcessBuilder.evil.clonetransformer"
+      desc: "Content-Type text/plain includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ=="
       stages:
         -
           stage:
@@ -257,13 +257,13 @@
                 Content-Type: "text/plain"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test:ProcessBuilder.evil.clonetransformer"
+              data: "test:VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ=="
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-11
-      desc: "Content-Type application/json arg value includes keyword ProcessBuilder.evil.clonetransformer"
+      desc: "Content-Type application/json arg value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ=="
       stages:
         -
           stage:
@@ -280,13 +280,13 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"test\": \"ProcessBuilder.evil.clonetransformer\"}"
+              data: "{\"test\": \"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ==\"}"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-12
-      desc: "Content-Type application/json arg name includes keyword ProcessBuilder.evil.clonetransformer"
+      desc: "Content-Type application/json arg name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ=="
       stages:
         -
           stage:
@@ -303,13 +303,13 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"ProcessBuilder.evil.clonetransformer\": \"test\"}"
+              data: "{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ==\": \"test\"}"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-13
-      desc: "Content-Type multipart/form-data json arg name includes keyword ProcessBuilder.evil.clonetransformer"
+      desc: "Content-Type multipart/form-data json arg name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ=="
       stages:
         -
           stage:
@@ -326,13 +326,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.clonetransformer\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ==\": \"test\"}\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-14
-      desc: "Content-Type multipart/form-data json arg value includes keyword ProcessBuilder.evil.clonetransformer"
+      desc: "Content-Type multipart/form-data json arg value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ=="
       stages:
         -
           stage:
@@ -349,13 +349,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.clonetransformer\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ==\": \"test\"}\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-15
-      desc: "Content-Type multipart/form-data XML element value includes keyword ProcessBuilder.evil.clonetransformer"
+      desc: "Content-Type multipart/form-data XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ=="
       stages:
         -
           stage:
@@ -372,13 +372,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.clonetransformer</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ==</element></xml>\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-16
-      desc: "Content-Type multipart/form-data XML element value includes keyword ProcessBuilder.evil.clonetransformer"
+      desc: "Content-Type multipart/form-data XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ=="
       stages:
         -
           stage:
@@ -395,12 +395,12 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.clonetransformer</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcnVudGltZQ==</element></xml>\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944220\""
     -
       test_title: 944220-17
-      desc: "Argument test includes keyword ProcessBuilder.evil.forclosure"
+      desc: "Argument test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI="
       stages:
         -
           stage:
@@ -417,13 +417,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test=ProcessBuilder.evil.forclosure"
+              data: "test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI="
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-18
-      desc: "Argument name includes keyword ProcessBuilder.evil.forclosure"
+      desc: "Argument name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI="
       stages:
         -
           stage:
@@ -440,13 +440,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "ProcessBuilder.evil.forclosure=test"
+              data: "VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI==test"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-19
-      desc: "Cookie test includes keyword ProcessBuilder.evil.forclosure"
+      desc: "Cookie test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI="
       stages:
         -
           stage:
@@ -461,7 +461,7 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                Cookie: test=ProcessBuilder.evil.forclosure
+                Cookie: test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI=
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
@@ -470,7 +470,7 @@
 
     -
       test_title: 944220-20
-      desc: "Cookie name includes keyword ProcessBuilder.evil.forclosure"
+      desc: "Cookie name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI="
       stages:
         -
           stage:
@@ -485,7 +485,7 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                Cookie: ProcessBuilder.evil.forclosure=test
+                Cookie: VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI==test
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
@@ -494,7 +494,7 @@
 
     -
       test_title: 944220-21
-      desc: "Request header test includes keyword ProcessBuilder.evil.forclosure"
+      desc: "Request header test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI="
       stages:
         -
           stage:
@@ -509,7 +509,7 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                test: ProcessBuilder.evil.forclosure
+                test: VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI=
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
@@ -518,7 +518,7 @@
 
     -
       test_title: 944220-22
-      desc: "XML element includes keyword ProcessBuilder.evil.forclosure"
+      desc: "XML element includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI="
       stages:
         -
           stage:
@@ -535,13 +535,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><ProcessBuilder.evil.forclosure attribute_name=\"attribute_value\">value</ProcessBuilder.evil.forclosure></xml>"
+              data: "<?xml version=\"1.0\"?><xml><VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI= attribute_name=\"attribute_value\">value</VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI=></xml>"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-23
-      desc: "XML attribute name includes keyword ProcessBuilder.evil.forclosure"
+      desc: "XML attribute name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI="
       stages:
         -
           stage:
@@ -558,13 +558,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element ProcessBuilder.evil.forclosure=\"attribute_value\">element_value</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI==\"attribute_value\">element_value</element></xml>"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-24
-      desc: "XML attribute value includes keyword ProcessBuilder.evil.forclosure"
+      desc: "XML attribute value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI="
       stages:
         -
           stage:
@@ -581,13 +581,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"ProcessBuilder.evil.forclosure\">element_value</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI=\">element_value</element></xml>"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-25
-      desc: "XML element value includes keyword ProcessBuilder.evil.forclosure"
+      desc: "XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI="
       stages:
         -
           stage:
@@ -604,13 +604,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.forclosure</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI=</element></xml>"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-26
-      desc: "Nested XML element value includes keyword ProcessBuilder.evil.forclosure"
+      desc: "Nested XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI="
       stages:
         -
           stage:
@@ -627,13 +627,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">ProcessBuilder.evil.forclosure</element></l3></l2></l1></xml>"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI=</element></l3></l2></l1></xml>"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-27
-      desc: "Content-Type text/plain includes keyword ProcessBuilder.evil.forclosure"
+      desc: "Content-Type text/plain includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI="
       stages:
         -
           stage:
@@ -650,13 +650,13 @@
                 Content-Type: "text/plain"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test:ProcessBuilder.evil.forclosure"
+              data: "test:VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI="
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-28
-      desc: "Content-Type application/json arg value includes keyword ProcessBuilder.evil.forclosure"
+      desc: "Content-Type application/json arg value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI="
       stages:
         -
           stage:
@@ -673,13 +673,13 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"test\": \"ProcessBuilder.evil.forclosure\"}"
+              data: "{\"test\": \"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI=\"}"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-29
-      desc: "Content-Type application/json arg name includes keyword ProcessBuilder.evil.forclosure"
+      desc: "Content-Type application/json arg name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI="
       stages:
         -
           stage:
@@ -696,13 +696,13 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"ProcessBuilder.evil.forclosure\": \"test\"}"
+              data: "{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI=\": \"test\"}"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-30
-      desc: "Content-Type multipart/form-data json arg name includes keyword ProcessBuilder.evil.forclosure"
+      desc: "Content-Type multipart/form-data json arg name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI="
       stages:
         -
           stage:
@@ -719,13 +719,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.forclosure\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI=\": \"test\"}\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-31
-      desc: "Content-Type multipart/form-data json arg value includes keyword ProcessBuilder.evil.forclosure"
+      desc: "Content-Type multipart/form-data json arg value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI="
       stages:
         -
           stage:
@@ -742,13 +742,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.forclosure\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI=\": \"test\"}\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-32
-      desc: "Content-Type multipart/form-data XML element value includes keyword ProcessBuilder.evil.forclosure"
+      desc: "Content-Type multipart/form-data XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI="
       stages:
         -
           stage:
@@ -765,13 +765,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.forclosure</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI=</element></xml>\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-33
-      desc: "Content-Type multipart/form-data XML element value includes keyword ProcessBuilder.evil.forclosure"
+      desc: "Content-Type multipart/form-data XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI="
       stages:
         -
           stage:
@@ -788,12 +788,12 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.forclosure</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvY2Vzc2J1aWxkZXI=</element></xml>\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944220\""
     -
       test_title: 944220-34
-      desc: "Argument test includes keyword ProcessBuilder.evil.instantiatefactory"
+      desc: "Argument test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg=="
       stages:
         -
           stage:
@@ -810,13 +810,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test=ProcessBuilder.evil.instantiatefactory"
+              data: "test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg=="
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-35
-      desc: "Argument name includes keyword ProcessBuilder.evil.instantiatefactory"
+      desc: "Argument name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg=="
       stages:
         -
           stage:
@@ -833,13 +833,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "ProcessBuilder.evil.instantiatefactory=test"
+              data: "VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg===test"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-36
-      desc: "Cookie test includes keyword ProcessBuilder.evil.instantiatefactory"
+      desc: "Cookie test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg=="
       stages:
         -
           stage:
@@ -854,7 +854,7 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                Cookie: test=ProcessBuilder.evil.instantiatefactory
+                Cookie: test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg==
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
@@ -863,7 +863,7 @@
 
     -
       test_title: 944220-37
-      desc: "Cookie name includes keyword ProcessBuilder.evil.instantiatefactory"
+      desc: "Cookie name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg=="
       stages:
         -
           stage:
@@ -878,7 +878,7 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                Cookie: ProcessBuilder.evil.instantiatefactory=test
+                Cookie: VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg===test
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
@@ -887,7 +887,7 @@
 
     -
       test_title: 944220-38
-      desc: "Request header test includes keyword ProcessBuilder.evil.instantiatefactory"
+      desc: "Request header test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg=="
       stages:
         -
           stage:
@@ -902,7 +902,7 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                test: ProcessBuilder.evil.instantiatefactory
+                test: VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg==
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
@@ -911,7 +911,7 @@
 
     -
       test_title: 944220-39
-      desc: "XML element includes keyword ProcessBuilder.evil.instantiatefactory"
+      desc: "XML element includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg=="
       stages:
         -
           stage:
@@ -928,13 +928,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><ProcessBuilder.evil.instantiatefactory attribute_name=\"attribute_value\">value</ProcessBuilder.evil.instantiatefactory></xml>"
+              data: "<?xml version=\"1.0\"?><xml><VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg== attribute_name=\"attribute_value\">value</VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg==></xml>"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-40
-      desc: "XML attribute name includes keyword ProcessBuilder.evil.instantiatefactory"
+      desc: "XML attribute name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg=="
       stages:
         -
           stage:
@@ -951,13 +951,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element ProcessBuilder.evil.instantiatefactory=\"attribute_value\">element_value</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg===\"attribute_value\">element_value</element></xml>"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-41
-      desc: "XML attribute value includes keyword ProcessBuilder.evil.instantiatefactory"
+      desc: "XML attribute value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg=="
       stages:
         -
           stage:
@@ -974,13 +974,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"ProcessBuilder.evil.instantiatefactory\">element_value</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg==\">element_value</element></xml>"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-42
-      desc: "XML element value includes keyword ProcessBuilder.evil.instantiatefactory"
+      desc: "XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg=="
       stages:
         -
           stage:
@@ -997,13 +997,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.instantiatefactory</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg==</element></xml>"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-43
-      desc: "Nested XML element value includes keyword ProcessBuilder.evil.instantiatefactory"
+      desc: "Nested XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg=="
       stages:
         -
           stage:
@@ -1020,13 +1020,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">ProcessBuilder.evil.instantiatefactory</element></l3></l2></l1></xml>"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg==</element></l3></l2></l1></xml>"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-44
-      desc: "Content-Type text/plain includes keyword ProcessBuilder.evil.instantiatefactory"
+      desc: "Content-Type text/plain includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg=="
       stages:
         -
           stage:
@@ -1043,13 +1043,13 @@
                 Content-Type: "text/plain"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test:ProcessBuilder.evil.instantiatefactory"
+              data: "test:VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg=="
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-45
-      desc: "Content-Type application/json arg value includes keyword ProcessBuilder.evil.instantiatefactory"
+      desc: "Content-Type application/json arg value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg=="
       stages:
         -
           stage:
@@ -1066,13 +1066,13 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"test\": \"ProcessBuilder.evil.instantiatefactory\"}"
+              data: "{\"test\": \"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg==\"}"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-46
-      desc: "Content-Type application/json arg name includes keyword ProcessBuilder.evil.instantiatefactory"
+      desc: "Content-Type application/json arg name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg=="
       stages:
         -
           stage:
@@ -1089,13 +1089,13 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"ProcessBuilder.evil.instantiatefactory\": \"test\"}"
+              data: "{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg==\": \"test\"}"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-47
-      desc: "Content-Type multipart/form-data json arg name includes keyword ProcessBuilder.evil.instantiatefactory"
+      desc: "Content-Type multipart/form-data json arg name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg=="
       stages:
         -
           stage:
@@ -1112,13 +1112,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.instantiatefactory\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg==\": \"test\"}\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-48
-      desc: "Content-Type multipart/form-data json arg value includes keyword ProcessBuilder.evil.instantiatefactory"
+      desc: "Content-Type multipart/form-data json arg value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg=="
       stages:
         -
           stage:
@@ -1135,13 +1135,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.instantiatefactory\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg==\": \"test\"}\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-49
-      desc: "Content-Type multipart/form-data XML element value includes keyword ProcessBuilder.evil.instantiatefactory"
+      desc: "Content-Type multipart/form-data XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg=="
       stages:
         -
           stage:
@@ -1158,13 +1158,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.instantiatefactory</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg==</element></xml>\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-50
-      desc: "Content-Type multipart/form-data XML element value includes keyword ProcessBuilder.evil.instantiatefactory"
+      desc: "Content-Type multipart/form-data XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg=="
       stages:
         -
           stage:
@@ -1181,12 +1181,12 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.instantiatefactory</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlY2xvbmV0cmFuc2Zvcm1lcg==</element></xml>\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944220\""
     -
       test_title: 944220-51
-      desc: "Argument test includes keyword ProcessBuilder.evil.instantiatetransformer"
+      desc: "Argument test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ=="
       stages:
         -
           stage:
@@ -1203,13 +1203,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test=ProcessBuilder.evil.instantiatetransformer"
+              data: "test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ=="
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-52
-      desc: "Argument name includes keyword ProcessBuilder.evil.instantiatetransformer"
+      desc: "Argument name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ=="
       stages:
         -
           stage:
@@ -1226,13 +1226,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "ProcessBuilder.evil.instantiatetransformer=test"
+              data: "VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ===test"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-53
-      desc: "Cookie test includes keyword ProcessBuilder.evil.instantiatetransformer"
+      desc: "Cookie test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ=="
       stages:
         -
           stage:
@@ -1247,7 +1247,7 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                Cookie: test=ProcessBuilder.evil.instantiatetransformer
+                Cookie: test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ==
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
@@ -1256,7 +1256,7 @@
 
     -
       test_title: 944220-54
-      desc: "Cookie name includes keyword ProcessBuilder.evil.instantiatetransformer"
+      desc: "Cookie name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ=="
       stages:
         -
           stage:
@@ -1271,7 +1271,7 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                Cookie: ProcessBuilder.evil.instantiatetransformer=test
+                Cookie: VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ===test
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
@@ -1280,7 +1280,7 @@
 
     -
       test_title: 944220-55
-      desc: "Request header test includes keyword ProcessBuilder.evil.instantiatetransformer"
+      desc: "Request header test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ=="
       stages:
         -
           stage:
@@ -1295,7 +1295,7 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                test: ProcessBuilder.evil.instantiatetransformer
+                test: VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ==
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
@@ -1304,7 +1304,7 @@
 
     -
       test_title: 944220-56
-      desc: "XML element includes keyword ProcessBuilder.evil.instantiatetransformer"
+      desc: "XML element includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ=="
       stages:
         -
           stage:
@@ -1321,13 +1321,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><ProcessBuilder.evil.instantiatetransformer attribute_name=\"attribute_value\">value</ProcessBuilder.evil.instantiatetransformer></xml>"
+              data: "<?xml version=\"1.0\"?><xml><VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ== attribute_name=\"attribute_value\">value</VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ==></xml>"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-57
-      desc: "XML attribute name includes keyword ProcessBuilder.evil.instantiatetransformer"
+      desc: "XML attribute name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ=="
       stages:
         -
           stage:
@@ -1344,13 +1344,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element ProcessBuilder.evil.instantiatetransformer=\"attribute_value\">element_value</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ===\"attribute_value\">element_value</element></xml>"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-58
-      desc: "XML attribute value includes keyword ProcessBuilder.evil.instantiatetransformer"
+      desc: "XML attribute value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ=="
       stages:
         -
           stage:
@@ -1367,13 +1367,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"ProcessBuilder.evil.instantiatetransformer\">element_value</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ==\">element_value</element></xml>"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-59
-      desc: "XML element value includes keyword ProcessBuilder.evil.instantiatetransformer"
+      desc: "XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ=="
       stages:
         -
           stage:
@@ -1390,13 +1390,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.instantiatetransformer</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ==</element></xml>"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-60
-      desc: "Nested XML element value includes keyword ProcessBuilder.evil.instantiatetransformer"
+      desc: "Nested XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ=="
       stages:
         -
           stage:
@@ -1413,13 +1413,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">ProcessBuilder.evil.instantiatetransformer</element></l3></l2></l1></xml>"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ==</element></l3></l2></l1></xml>"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-61
-      desc: "Content-Type text/plain includes keyword ProcessBuilder.evil.instantiatetransformer"
+      desc: "Content-Type text/plain includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ=="
       stages:
         -
           stage:
@@ -1436,13 +1436,13 @@
                 Content-Type: "text/plain"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test:ProcessBuilder.evil.instantiatetransformer"
+              data: "test:VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ=="
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-62
-      desc: "Content-Type application/json arg value includes keyword ProcessBuilder.evil.instantiatetransformer"
+      desc: "Content-Type application/json arg value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ=="
       stages:
         -
           stage:
@@ -1459,13 +1459,13 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"test\": \"ProcessBuilder.evil.instantiatetransformer\"}"
+              data: "{\"test\": \"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ==\"}"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-63
-      desc: "Content-Type application/json arg name includes keyword ProcessBuilder.evil.instantiatetransformer"
+      desc: "Content-Type application/json arg name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ=="
       stages:
         -
           stage:
@@ -1482,13 +1482,13 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"ProcessBuilder.evil.instantiatetransformer\": \"test\"}"
+              data: "{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ==\": \"test\"}"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-64
-      desc: "Content-Type multipart/form-data json arg name includes keyword ProcessBuilder.evil.instantiatetransformer"
+      desc: "Content-Type multipart/form-data json arg name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ=="
       stages:
         -
           stage:
@@ -1505,13 +1505,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.instantiatetransformer\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ==\": \"test\"}\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-65
-      desc: "Content-Type multipart/form-data json arg value includes keyword ProcessBuilder.evil.instantiatetransformer"
+      desc: "Content-Type multipart/form-data json arg value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ=="
       stages:
         -
           stage:
@@ -1528,13 +1528,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.instantiatetransformer\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ==\": \"test\"}\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-66
-      desc: "Content-Type multipart/form-data XML element value includes keyword ProcessBuilder.evil.instantiatetransformer"
+      desc: "Content-Type multipart/form-data XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ=="
       stages:
         -
           stage:
@@ -1551,13 +1551,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.instantiatetransformer</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ==</element></xml>\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-67
-      desc: "Content-Type multipart/form-data XML element value includes keyword ProcessBuilder.evil.instantiatetransformer"
+      desc: "Content-Type multipart/form-data XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ=="
       stages:
         -
           stage:
@@ -1574,12 +1574,12 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.instantiatetransformer</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlZm9yY2xvc3VyZQ==</element></xml>\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944220\""
     -
       test_title: 944220-68
-      desc: "Argument test includes keyword ProcessBuilder.evil.invokertransformer"
+      desc: "Argument test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5"
       stages:
         -
           stage:
@@ -1596,13 +1596,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test=ProcessBuilder.evil.invokertransformer"
+              data: "test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-69
-      desc: "Argument name includes keyword ProcessBuilder.evil.invokertransformer"
+      desc: "Argument name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5"
       stages:
         -
           stage:
@@ -1619,13 +1619,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "ProcessBuilder.evil.invokertransformer=test"
+              data: "VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5=test"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-70
-      desc: "Cookie test includes keyword ProcessBuilder.evil.invokertransformer"
+      desc: "Cookie test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5"
       stages:
         -
           stage:
@@ -1640,7 +1640,7 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                Cookie: test=ProcessBuilder.evil.invokertransformer
+                Cookie: test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
@@ -1649,7 +1649,7 @@
 
     -
       test_title: 944220-71
-      desc: "Cookie name includes keyword ProcessBuilder.evil.invokertransformer"
+      desc: "Cookie name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5"
       stages:
         -
           stage:
@@ -1664,7 +1664,7 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                Cookie: ProcessBuilder.evil.invokertransformer=test
+                Cookie: VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5=test
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
@@ -1673,7 +1673,7 @@
 
     -
       test_title: 944220-72
-      desc: "Request header test includes keyword ProcessBuilder.evil.invokertransformer"
+      desc: "Request header test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5"
       stages:
         -
           stage:
@@ -1688,7 +1688,7 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                test: ProcessBuilder.evil.invokertransformer
+                test: VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
@@ -1697,7 +1697,7 @@
 
     -
       test_title: 944220-73
-      desc: "XML element includes keyword ProcessBuilder.evil.invokertransformer"
+      desc: "XML element includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5"
       stages:
         -
           stage:
@@ -1714,13 +1714,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><ProcessBuilder.evil.invokertransformer attribute_name=\"attribute_value\">value</ProcessBuilder.evil.invokertransformer></xml>"
+              data: "<?xml version=\"1.0\"?><xml><VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5 attribute_name=\"attribute_value\">value</VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5></xml>"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-74
-      desc: "XML attribute name includes keyword ProcessBuilder.evil.invokertransformer"
+      desc: "XML attribute name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5"
       stages:
         -
           stage:
@@ -1737,13 +1737,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element ProcessBuilder.evil.invokertransformer=\"attribute_value\">element_value</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5=\"attribute_value\">element_value</element></xml>"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-75
-      desc: "XML attribute value includes keyword ProcessBuilder.evil.invokertransformer"
+      desc: "XML attribute value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5"
       stages:
         -
           stage:
@@ -1760,13 +1760,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"ProcessBuilder.evil.invokertransformer\">element_value</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5\">element_value</element></xml>"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-76
-      desc: "XML element value includes keyword ProcessBuilder.evil.invokertransformer"
+      desc: "XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5"
       stages:
         -
           stage:
@@ -1783,13 +1783,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.invokertransformer</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5</element></xml>"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-77
-      desc: "Nested XML element value includes keyword ProcessBuilder.evil.invokertransformer"
+      desc: "Nested XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5"
       stages:
         -
           stage:
@@ -1806,13 +1806,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">ProcessBuilder.evil.invokertransformer</element></l3></l2></l1></xml>"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5</element></l3></l2></l1></xml>"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-78
-      desc: "Content-Type text/plain includes keyword ProcessBuilder.evil.invokertransformer"
+      desc: "Content-Type text/plain includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5"
       stages:
         -
           stage:
@@ -1829,13 +1829,13 @@
                 Content-Type: "text/plain"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test:ProcessBuilder.evil.invokertransformer"
+              data: "test:VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-79
-      desc: "Content-Type application/json arg value includes keyword ProcessBuilder.evil.invokertransformer"
+      desc: "Content-Type application/json arg value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5"
       stages:
         -
           stage:
@@ -1852,13 +1852,13 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"test\": \"ProcessBuilder.evil.invokertransformer\"}"
+              data: "{\"test\": \"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5\"}"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-80
-      desc: "Content-Type application/json arg name includes keyword ProcessBuilder.evil.invokertransformer"
+      desc: "Content-Type application/json arg name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5"
       stages:
         -
           stage:
@@ -1875,13 +1875,13 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"ProcessBuilder.evil.invokertransformer\": \"test\"}"
+              data: "{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5\": \"test\"}"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-81
-      desc: "Content-Type multipart/form-data json arg name includes keyword ProcessBuilder.evil.invokertransformer"
+      desc: "Content-Type multipart/form-data json arg name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5"
       stages:
         -
           stage:
@@ -1898,13 +1898,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.invokertransformer\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5\": \"test\"}\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-82
-      desc: "Content-Type multipart/form-data json arg value includes keyword ProcessBuilder.evil.invokertransformer"
+      desc: "Content-Type multipart/form-data json arg value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5"
       stages:
         -
           stage:
@@ -1921,13 +1921,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.invokertransformer\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5\": \"test\"}\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-83
-      desc: "Content-Type multipart/form-data XML element value includes keyword ProcessBuilder.evil.invokertransformer"
+      desc: "Content-Type multipart/form-data XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5"
       stages:
         -
           stage:
@@ -1944,13 +1944,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.invokertransformer</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5</element></xml>\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-84
-      desc: "Content-Type multipart/form-data XML element value includes keyword ProcessBuilder.evil.invokertransformer"
+      desc: "Content-Type multipart/form-data XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5"
       stages:
         -
           stage:
@@ -1967,12 +1967,12 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.invokertransformer</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGVmYWN0b3J5</element></xml>\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944220\""
     -
       test_title: 944220-85
-      desc: "Argument test includes keyword ProcessBuilder.evil.prototypeclonefactory"
+      desc: "Argument test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg=="
       stages:
         -
           stage:
@@ -1989,13 +1989,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test=ProcessBuilder.evil.prototypeclonefactory"
+              data: "test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg=="
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-86
-      desc: "Argument name includes keyword ProcessBuilder.evil.prototypeclonefactory"
+      desc: "Argument name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg=="
       stages:
         -
           stage:
@@ -2012,13 +2012,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "ProcessBuilder.evil.prototypeclonefactory=test"
+              data: "VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg===test"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-87
-      desc: "Cookie test includes keyword ProcessBuilder.evil.prototypeclonefactory"
+      desc: "Cookie test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg=="
       stages:
         -
           stage:
@@ -2033,7 +2033,7 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                Cookie: test=ProcessBuilder.evil.prototypeclonefactory
+                Cookie: test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg==
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
@@ -2042,7 +2042,7 @@
 
     -
       test_title: 944220-88
-      desc: "Cookie name includes keyword ProcessBuilder.evil.prototypeclonefactory"
+      desc: "Cookie name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg=="
       stages:
         -
           stage:
@@ -2057,7 +2057,7 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                Cookie: ProcessBuilder.evil.prototypeclonefactory=test
+                Cookie: VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg===test
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
@@ -2066,7 +2066,7 @@
 
     -
       test_title: 944220-89
-      desc: "Request header test includes keyword ProcessBuilder.evil.prototypeclonefactory"
+      desc: "Request header test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg=="
       stages:
         -
           stage:
@@ -2081,7 +2081,7 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                test: ProcessBuilder.evil.prototypeclonefactory
+                test: VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg==
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
@@ -2090,7 +2090,7 @@
 
     -
       test_title: 944220-90
-      desc: "XML element includes keyword ProcessBuilder.evil.prototypeclonefactory"
+      desc: "XML element includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg=="
       stages:
         -
           stage:
@@ -2107,13 +2107,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><ProcessBuilder.evil.prototypeclonefactory attribute_name=\"attribute_value\">value</ProcessBuilder.evil.prototypeclonefactory></xml>"
+              data: "<?xml version=\"1.0\"?><xml><VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg== attribute_name=\"attribute_value\">value</VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg==></xml>"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-91
-      desc: "XML attribute name includes keyword ProcessBuilder.evil.prototypeclonefactory"
+      desc: "XML attribute name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg=="
       stages:
         -
           stage:
@@ -2130,13 +2130,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element ProcessBuilder.evil.prototypeclonefactory=\"attribute_value\">element_value</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg===\"attribute_value\">element_value</element></xml>"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-92
-      desc: "XML attribute value includes keyword ProcessBuilder.evil.prototypeclonefactory"
+      desc: "XML attribute value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg=="
       stages:
         -
           stage:
@@ -2153,13 +2153,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"ProcessBuilder.evil.prototypeclonefactory\">element_value</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg==\">element_value</element></xml>"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-93
-      desc: "XML element value includes keyword ProcessBuilder.evil.prototypeclonefactory"
+      desc: "XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg=="
       stages:
         -
           stage:
@@ -2176,13 +2176,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.prototypeclonefactory</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg==</element></xml>"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-94
-      desc: "Nested XML element value includes keyword ProcessBuilder.evil.prototypeclonefactory"
+      desc: "Nested XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg=="
       stages:
         -
           stage:
@@ -2199,13 +2199,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">ProcessBuilder.evil.prototypeclonefactory</element></l3></l2></l1></xml>"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg==</element></l3></l2></l1></xml>"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-95
-      desc: "Content-Type text/plain includes keyword ProcessBuilder.evil.prototypeclonefactory"
+      desc: "Content-Type text/plain includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg=="
       stages:
         -
           stage:
@@ -2222,13 +2222,13 @@
                 Content-Type: "text/plain"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test:ProcessBuilder.evil.prototypeclonefactory"
+              data: "test:VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg=="
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-96
-      desc: "Content-Type application/json arg value includes keyword ProcessBuilder.evil.prototypeclonefactory"
+      desc: "Content-Type application/json arg value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg=="
       stages:
         -
           stage:
@@ -2245,13 +2245,13 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"test\": \"ProcessBuilder.evil.prototypeclonefactory\"}"
+              data: "{\"test\": \"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg==\"}"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-97
-      desc: "Content-Type application/json arg name includes keyword ProcessBuilder.evil.prototypeclonefactory"
+      desc: "Content-Type application/json arg name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg=="
       stages:
         -
           stage:
@@ -2268,13 +2268,13 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"ProcessBuilder.evil.prototypeclonefactory\": \"test\"}"
+              data: "{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg==\": \"test\"}"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-98
-      desc: "Content-Type multipart/form-data json arg name includes keyword ProcessBuilder.evil.prototypeclonefactory"
+      desc: "Content-Type multipart/form-data json arg name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg=="
       stages:
         -
           stage:
@@ -2291,13 +2291,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.prototypeclonefactory\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg==\": \"test\"}\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-99
-      desc: "Content-Type multipart/form-data json arg value includes keyword ProcessBuilder.evil.prototypeclonefactory"
+      desc: "Content-Type multipart/form-data json arg value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg=="
       stages:
         -
           stage:
@@ -2314,13 +2314,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.prototypeclonefactory\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg==\": \"test\"}\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-100
-      desc: "Content-Type multipart/form-data XML element value includes keyword ProcessBuilder.evil.prototypeclonefactory"
+      desc: "Content-Type multipart/form-data XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg=="
       stages:
         -
           stage:
@@ -2337,13 +2337,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.prototypeclonefactory</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg==</element></xml>\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-101
-      desc: "Content-Type multipart/form-data XML element value includes keyword ProcessBuilder.evil.prototypeclonefactory"
+      desc: "Content-Type multipart/form-data XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg=="
       stages:
         -
           stage:
@@ -2360,12 +2360,12 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.prototypeclonefactory</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW5zdGFudGlhdGV0cmFuc2Zvcm1lcg==</element></xml>\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944220\""
     -
       test_title: 944220-102
-      desc: "Argument test includes keyword ProcessBuilder.evil.prototypeserializationfactory"
+      desc: "Argument test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy"
       stages:
         -
           stage:
@@ -2382,13 +2382,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test=ProcessBuilder.evil.prototypeserializationfactory"
+              data: "test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-103
-      desc: "Argument name includes keyword ProcessBuilder.evil.prototypeserializationfactory"
+      desc: "Argument name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy"
       stages:
         -
           stage:
@@ -2405,13 +2405,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "ProcessBuilder.evil.prototypeserializationfactory=test"
+              data: "VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy=test"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-104
-      desc: "Cookie test includes keyword ProcessBuilder.evil.prototypeserializationfactory"
+      desc: "Cookie test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy"
       stages:
         -
           stage:
@@ -2426,7 +2426,7 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                Cookie: test=ProcessBuilder.evil.prototypeserializationfactory
+                Cookie: test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
@@ -2435,7 +2435,7 @@
 
     -
       test_title: 944220-105
-      desc: "Cookie name includes keyword ProcessBuilder.evil.prototypeserializationfactory"
+      desc: "Cookie name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy"
       stages:
         -
           stage:
@@ -2450,7 +2450,7 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                Cookie: ProcessBuilder.evil.prototypeserializationfactory=test
+                Cookie: VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy=test
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
@@ -2459,7 +2459,7 @@
 
     -
       test_title: 944220-106
-      desc: "Request header test includes keyword ProcessBuilder.evil.prototypeserializationfactory"
+      desc: "Request header test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy"
       stages:
         -
           stage:
@@ -2474,7 +2474,7 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                test: ProcessBuilder.evil.prototypeserializationfactory
+                test: VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
@@ -2483,7 +2483,7 @@
 
     -
       test_title: 944220-107
-      desc: "XML element includes keyword ProcessBuilder.evil.prototypeserializationfactory"
+      desc: "XML element includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy"
       stages:
         -
           stage:
@@ -2500,13 +2500,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><ProcessBuilder.evil.prototypeserializationfactory attribute_name=\"attribute_value\">value</ProcessBuilder.evil.prototypeserializationfactory></xml>"
+              data: "<?xml version=\"1.0\"?><xml><VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy attribute_name=\"attribute_value\">value</VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy></xml>"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-108
-      desc: "XML attribute name includes keyword ProcessBuilder.evil.prototypeserializationfactory"
+      desc: "XML attribute name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy"
       stages:
         -
           stage:
@@ -2523,13 +2523,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element ProcessBuilder.evil.prototypeserializationfactory=\"attribute_value\">element_value</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy=\"attribute_value\">element_value</element></xml>"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-109
-      desc: "XML attribute value includes keyword ProcessBuilder.evil.prototypeserializationfactory"
+      desc: "XML attribute value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy"
       stages:
         -
           stage:
@@ -2546,13 +2546,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"ProcessBuilder.evil.prototypeserializationfactory\">element_value</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy\">element_value</element></xml>"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-110
-      desc: "XML element value includes keyword ProcessBuilder.evil.prototypeserializationfactory"
+      desc: "XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy"
       stages:
         -
           stage:
@@ -2569,13 +2569,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.prototypeserializationfactory</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy</element></xml>"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-111
-      desc: "Nested XML element value includes keyword ProcessBuilder.evil.prototypeserializationfactory"
+      desc: "Nested XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy"
       stages:
         -
           stage:
@@ -2592,13 +2592,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">ProcessBuilder.evil.prototypeserializationfactory</element></l3></l2></l1></xml>"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy</element></l3></l2></l1></xml>"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-112
-      desc: "Content-Type text/plain includes keyword ProcessBuilder.evil.prototypeserializationfactory"
+      desc: "Content-Type text/plain includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy"
       stages:
         -
           stage:
@@ -2615,13 +2615,13 @@
                 Content-Type: "text/plain"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test:ProcessBuilder.evil.prototypeserializationfactory"
+              data: "test:VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-113
-      desc: "Content-Type application/json arg value includes keyword ProcessBuilder.evil.prototypeserializationfactory"
+      desc: "Content-Type application/json arg value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy"
       stages:
         -
           stage:
@@ -2638,13 +2638,13 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"test\": \"ProcessBuilder.evil.prototypeserializationfactory\"}"
+              data: "{\"test\": \"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy\"}"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-114
-      desc: "Content-Type application/json arg name includes keyword ProcessBuilder.evil.prototypeserializationfactory"
+      desc: "Content-Type application/json arg name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy"
       stages:
         -
           stage:
@@ -2661,13 +2661,13 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"ProcessBuilder.evil.prototypeserializationfactory\": \"test\"}"
+              data: "{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy\": \"test\"}"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-115
-      desc: "Content-Type multipart/form-data json arg name includes keyword ProcessBuilder.evil.prototypeserializationfactory"
+      desc: "Content-Type multipart/form-data json arg name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy"
       stages:
         -
           stage:
@@ -2684,13 +2684,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.prototypeserializationfactory\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy\": \"test\"}\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-116
-      desc: "Content-Type multipart/form-data json arg value includes keyword ProcessBuilder.evil.prototypeserializationfactory"
+      desc: "Content-Type multipart/form-data json arg value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy"
       stages:
         -
           stage:
@@ -2707,13 +2707,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.prototypeserializationfactory\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy\": \"test\"}\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-117
-      desc: "Content-Type multipart/form-data XML element value includes keyword ProcessBuilder.evil.prototypeserializationfactory"
+      desc: "Content-Type multipart/form-data XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy"
       stages:
         -
           stage:
@@ -2730,13 +2730,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.prototypeserializationfactory</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy</element></xml>\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-118
-      desc: "Content-Type multipart/form-data XML element value includes keyword ProcessBuilder.evil.prototypeserializationfactory"
+      desc: "Content-Type multipart/form-data XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy"
       stages:
         -
           stage:
@@ -2753,12 +2753,12 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.prototypeserializationfactory</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlaW52b2tlcnRyYW5zZm9ybWVy</element></xml>\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944220\""
     -
       test_title: 944220-119
-      desc: "Argument test includes keyword ProcessBuilder.evil.whileclosure"
+      desc: "Argument test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5"
       stages:
         -
           stage:
@@ -2775,13 +2775,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test=ProcessBuilder.evil.whileclosure"
+              data: "test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-120
-      desc: "Argument name includes keyword ProcessBuilder.evil.whileclosure"
+      desc: "Argument name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5"
       stages:
         -
           stage:
@@ -2798,13 +2798,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "ProcessBuilder.evil.whileclosure=test"
+              data: "VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5=test"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-121
-      desc: "Cookie test includes keyword ProcessBuilder.evil.whileclosure"
+      desc: "Cookie test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5"
       stages:
         -
           stage:
@@ -2819,7 +2819,7 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                Cookie: test=ProcessBuilder.evil.whileclosure
+                Cookie: test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
@@ -2828,7 +2828,7 @@
 
     -
       test_title: 944220-122
-      desc: "Cookie name includes keyword ProcessBuilder.evil.whileclosure"
+      desc: "Cookie name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5"
       stages:
         -
           stage:
@@ -2843,7 +2843,7 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                Cookie: ProcessBuilder.evil.whileclosure=test
+                Cookie: VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5=test
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
@@ -2852,7 +2852,7 @@
 
     -
       test_title: 944220-123
-      desc: "Request header test includes keyword ProcessBuilder.evil.whileclosure"
+      desc: "Request header test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5"
       stages:
         -
           stage:
@@ -2867,7 +2867,7 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                test: ProcessBuilder.evil.whileclosure
+                test: VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
@@ -2876,7 +2876,7 @@
 
     -
       test_title: 944220-124
-      desc: "XML element includes keyword ProcessBuilder.evil.whileclosure"
+      desc: "XML element includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5"
       stages:
         -
           stage:
@@ -2893,13 +2893,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><ProcessBuilder.evil.whileclosure attribute_name=\"attribute_value\">value</ProcessBuilder.evil.whileclosure></xml>"
+              data: "<?xml version=\"1.0\"?><xml><VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5 attribute_name=\"attribute_value\">value</VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5></xml>"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-125
-      desc: "XML attribute name includes keyword ProcessBuilder.evil.whileclosure"
+      desc: "XML attribute name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5"
       stages:
         -
           stage:
@@ -2916,13 +2916,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element ProcessBuilder.evil.whileclosure=\"attribute_value\">element_value</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5=\"attribute_value\">element_value</element></xml>"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-126
-      desc: "XML attribute value includes keyword ProcessBuilder.evil.whileclosure"
+      desc: "XML attribute value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5"
       stages:
         -
           stage:
@@ -2939,13 +2939,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"ProcessBuilder.evil.whileclosure\">element_value</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5\">element_value</element></xml>"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-127
-      desc: "XML element value includes keyword ProcessBuilder.evil.whileclosure"
+      desc: "XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5"
       stages:
         -
           stage:
@@ -2962,13 +2962,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.whileclosure</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5</element></xml>"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-128
-      desc: "Nested XML element value includes keyword ProcessBuilder.evil.whileclosure"
+      desc: "Nested XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5"
       stages:
         -
           stage:
@@ -2985,13 +2985,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">ProcessBuilder.evil.whileclosure</element></l3></l2></l1></xml>"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5</element></l3></l2></l1></xml>"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-129
-      desc: "Content-Type text/plain includes keyword ProcessBuilder.evil.whileclosure"
+      desc: "Content-Type text/plain includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5"
       stages:
         -
           stage:
@@ -3008,13 +3008,13 @@
                 Content-Type: "text/plain"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test:ProcessBuilder.evil.whileclosure"
+              data: "test:VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-130
-      desc: "Content-Type application/json arg value includes keyword ProcessBuilder.evil.whileclosure"
+      desc: "Content-Type application/json arg value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5"
       stages:
         -
           stage:
@@ -3031,13 +3031,13 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"test\": \"ProcessBuilder.evil.whileclosure\"}"
+              data: "{\"test\": \"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5\"}"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-131
-      desc: "Content-Type application/json arg name includes keyword ProcessBuilder.evil.whileclosure"
+      desc: "Content-Type application/json arg name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5"
       stages:
         -
           stage:
@@ -3054,13 +3054,13 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"ProcessBuilder.evil.whileclosure\": \"test\"}"
+              data: "{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5\": \"test\"}"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-132
-      desc: "Content-Type multipart/form-data json arg name includes keyword ProcessBuilder.evil.whileclosure"
+      desc: "Content-Type multipart/form-data json arg name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5"
       stages:
         -
           stage:
@@ -3077,13 +3077,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.whileclosure\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5\": \"test\"}\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-133
-      desc: "Content-Type multipart/form-data json arg value includes keyword ProcessBuilder.evil.whileclosure"
+      desc: "Content-Type multipart/form-data json arg value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5"
       stages:
         -
           stage:
@@ -3100,13 +3100,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.whileclosure\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5\": \"test\"}\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-134
-      desc: "Content-Type multipart/form-data XML element value includes keyword ProcessBuilder.evil.whileclosure"
+      desc: "Content-Type multipart/form-data XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5"
       stages:
         -
           stage:
@@ -3123,13 +3123,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.whileclosure</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5</element></xml>\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944220\""
 
     -
       test_title: 944220-135
-      desc: "Content-Type multipart/form-data XML element value includes keyword ProcessBuilder.evil.whileclosure"
+      desc: "Content-Type multipart/form-data XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5"
       stages:
         -
           stage:
@@ -3146,6 +3146,792 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.whileclosure</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlY2xvbmVmYWN0b3J5</element></xml>\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944220\""
+    -
+      test_title: 944220-136
+      desc: "Argument test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk="
+            output:
+              log_contains: "id \"944220\""
+
+    -
+      test_title: 944220-137
+      desc: "Argument name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk==test"
+            output:
+              log_contains: "id \"944220\""
+
+    -
+      test_title: 944220-138
+      desc: "Cookie test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+                Cookie: test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk=
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=value"
+            output:
+              log_contains: "id \"944220\""
+
+    -
+      test_title: 944220-139
+      desc: "Cookie name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+                Cookie: VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk==test
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=value"
+            output:
+              log_contains: "id \"944220\""
+
+    -
+      test_title: 944220-140
+      desc: "Request header test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+                test: VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk=
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=value"
+            output:
+              log_contains: "id \"944220\""
+
+    -
+      test_title: 944220-141
+      desc: "XML element includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk= attribute_name=\"attribute_value\">value</VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk=></xml>"
+            output:
+              log_contains: "id \"944220\""
+
+    -
+      test_title: 944220-142
+      desc: "XML attribute name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><element VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk==\"attribute_value\">element_value</element></xml>"
+            output:
+              log_contains: "id \"944220\""
+
+    -
+      test_title: 944220-143
+      desc: "XML attribute value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk=\">element_value</element></xml>"
+            output:
+              log_contains: "id \"944220\""
+
+    -
+      test_title: 944220-144
+      desc: "XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk=</element></xml>"
+            output:
+              log_contains: "id \"944220\""
+
+    -
+      test_title: 944220-145
+      desc: "Nested XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk=</element></l3></l2></l1></xml>"
+            output:
+              log_contains: "id \"944220\""
+
+    -
+      test_title: 944220-146
+      desc: "Content-Type text/plain includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "text/plain"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test:VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk="
+            output:
+              log_contains: "id \"944220\""
+
+    -
+      test_title: 944220-147
+      desc: "Content-Type application/json arg value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/json"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "{\"test\": \"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk=\"}"
+            output:
+              log_contains: "id \"944220\""
+
+    -
+      test_title: 944220-148
+      desc: "Content-Type application/json arg name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/json"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk=\": \"test\"}"
+            output:
+              log_contains: "id \"944220\""
+
+    -
+      test_title: 944220-149
+      desc: "Content-Type multipart/form-data json arg name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk=\": \"test\"}\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944220\""
+
+    -
+      test_title: 944220-150
+      desc: "Content-Type multipart/form-data json arg value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk=\": \"test\"}\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944220\""
+
+    -
+      test_title: 944220-151
+      desc: "Content-Type multipart/form-data XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk=</element></xml>\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944220\""
+
+    -
+      test_title: 944220-152
+      desc: "Content-Type multipart/form-data XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk="
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxlcHJvdG90eXBlc2VyaWFsaXphdGlvbmZhY3Rvcnk=</element></xml>\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944220\""
+    -
+      test_title: 944220-153
+      desc: "Argument test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl"
+            output:
+              log_contains: "id \"944220\""
+
+    -
+      test_title: 944220-154
+      desc: "Argument name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl=test"
+            output:
+              log_contains: "id \"944220\""
+
+    -
+      test_title: 944220-155
+      desc: "Cookie test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+                Cookie: test=VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=value"
+            output:
+              log_contains: "id \"944220\""
+
+    -
+      test_title: 944220-156
+      desc: "Cookie name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+                Cookie: VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl=test
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=value"
+            output:
+              log_contains: "id \"944220\""
+
+    -
+      test_title: 944220-157
+      desc: "Request header test includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+                test: VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=value"
+            output:
+              log_contains: "id \"944220\""
+
+    -
+      test_title: 944220-158
+      desc: "XML element includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl attribute_name=\"attribute_value\">value</VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl></xml>"
+            output:
+              log_contains: "id \"944220\""
+
+    -
+      test_title: 944220-159
+      desc: "XML attribute name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><element VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl=\"attribute_value\">element_value</element></xml>"
+            output:
+              log_contains: "id \"944220\""
+
+    -
+      test_title: 944220-160
+      desc: "XML attribute value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl\">element_value</element></xml>"
+            output:
+              log_contains: "id \"944220\""
+
+    -
+      test_title: 944220-161
+      desc: "XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl</element></xml>"
+            output:
+              log_contains: "id \"944220\""
+
+    -
+      test_title: 944220-162
+      desc: "Nested XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/xml"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl</element></l3></l2></l1></xml>"
+            output:
+              log_contains: "id \"944220\""
+
+    -
+      test_title: 944220-163
+      desc: "Content-Type text/plain includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "text/plain"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test:VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl"
+            output:
+              log_contains: "id \"944220\""
+
+    -
+      test_title: 944220-164
+      desc: "Content-Type application/json arg value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/json"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "{\"test\": \"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl\"}"
+            output:
+              log_contains: "id \"944220\""
+
+    -
+      test_title: 944220-165
+      desc: "Content-Type application/json arg name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/json"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl\": \"test\"}"
+            output:
+              log_contains: "id \"944220\""
+
+    -
+      test_title: 944220-166
+      desc: "Content-Type multipart/form-data json arg name includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl\": \"test\"}\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944220\""
+
+    -
+      test_title: 944220-167
+      desc: "Content-Type multipart/form-data json arg value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl\": \"test\"}\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944220\""
+
+    -
+      test_title: 944220-168
+      desc: "Content-Type multipart/form-data XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl</element></xml>\n-----------------------------thisissparta--"
+            output:
+              log_contains: "id \"944220\""
+
+    -
+      test_title: 944220-169
+      desc: "Content-Type multipart/form-data XML element value includes keyword VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">VGhpcyBpcyBhIGxvbmcgcGFkZGluZyBzZW50ZW5jZSB0byB0cmlnZ2VyIHRoZSBydWxld2hpbGVjbG9zdXJl</element></xml>\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944220\""

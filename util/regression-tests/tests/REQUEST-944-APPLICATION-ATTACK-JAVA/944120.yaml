@@ -2,12 +2,12 @@
   meta:
     author: "spartantri"
     enabled: true
-    name: "944330.yaml"
-    description: "Positive tests for rule 944330"
+    name: "944120.yaml"
+    description: "Positive tests for rule 944120"
   tests:
     -
-      test_title: 944330-0
-      desc: "Argument test includes keyword clonetransformer"
+      test_title: 944120-0
+      desc: "Argument test includes keyword ProcessBuilder.evil.clonetransformer"
       stages:
         -
           stage:
@@ -24,13 +24,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test=clonetransformer"
+              data: "test=ProcessBuilder.evil.clonetransformer"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-1
-      desc: "Argument name includes keyword clonetransformer"
+      test_title: 944120-1
+      desc: "Argument name includes keyword ProcessBuilder.evil.clonetransformer"
       stages:
         -
           stage:
@@ -47,13 +47,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "clonetransformer=test"
+              data: "ProcessBuilder.evil.clonetransformer=test"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-2
-      desc: "Cookie test includes keyword clonetransformer"
+      test_title: 944120-2
+      desc: "Cookie test includes keyword ProcessBuilder.evil.clonetransformer"
       stages:
         -
           stage:
@@ -68,16 +68,16 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                Cookie: test=clonetransformer
+                Cookie: test=ProcessBuilder.evil.clonetransformer
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-3
-      desc: "Cookie name includes keyword clonetransformer"
+      test_title: 944120-3
+      desc: "Cookie name includes keyword ProcessBuilder.evil.clonetransformer"
       stages:
         -
           stage:
@@ -92,16 +92,16 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                Cookie: clonetransformer=test
+                Cookie: ProcessBuilder.evil.clonetransformer=test
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-4
-      desc: "Request header test includes keyword clonetransformer"
+      test_title: 944120-4
+      desc: "Request header test includes keyword ProcessBuilder.evil.clonetransformer"
       stages:
         -
           stage:
@@ -116,16 +116,16 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                test: clonetransformer
+                test: ProcessBuilder.evil.clonetransformer
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-5
-      desc: "XML element includes keyword clonetransformer"
+      test_title: 944120-5
+      desc: "XML element includes keyword ProcessBuilder.evil.clonetransformer"
       stages:
         -
           stage:
@@ -142,13 +142,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><clonetransformer attribute_name=\"attribute_value\">value</clonetransformer></xml>"
+              data: "<?xml version=\"1.0\"?><xml><ProcessBuilder.evil.clonetransformer attribute_name=\"attribute_value\">value</ProcessBuilder.evil.clonetransformer></xml>"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-6
-      desc: "XML attribute name includes keyword clonetransformer"
+      test_title: 944120-6
+      desc: "XML attribute name includes keyword ProcessBuilder.evil.clonetransformer"
       stages:
         -
           stage:
@@ -165,13 +165,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element clonetransformer=\"attribute_value\">element_value</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element ProcessBuilder.evil.clonetransformer=\"attribute_value\">element_value</element></xml>"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-7
-      desc: "XML attribute value includes keyword clonetransformer"
+      test_title: 944120-7
+      desc: "XML attribute value includes keyword ProcessBuilder.evil.clonetransformer"
       stages:
         -
           stage:
@@ -188,13 +188,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"clonetransformer\">element_value</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"ProcessBuilder.evil.clonetransformer\">element_value</element></xml>"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-8
-      desc: "XML element value includes keyword clonetransformer"
+      test_title: 944120-8
+      desc: "XML element value includes keyword ProcessBuilder.evil.clonetransformer"
       stages:
         -
           stage:
@@ -211,13 +211,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">clonetransformer</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.clonetransformer</element></xml>"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-9
-      desc: "Nested XML element value includes keyword clonetransformer"
+      test_title: 944120-9
+      desc: "Nested XML element value includes keyword ProcessBuilder.evil.clonetransformer"
       stages:
         -
           stage:
@@ -234,13 +234,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">clonetransformer</element></l3></l2></l1></xml>"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">ProcessBuilder.evil.clonetransformer</element></l3></l2></l1></xml>"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-10
-      desc: "Content-Type text/plain includes keyword clonetransformer"
+      test_title: 944120-10
+      desc: "Content-Type text/plain includes keyword ProcessBuilder.evil.clonetransformer"
       stages:
         -
           stage:
@@ -257,13 +257,13 @@
                 Content-Type: "text/plain"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test:clonetransformer"
+              data: "test:ProcessBuilder.evil.clonetransformer"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-11
-      desc: "Content-Type application/json arg value includes keyword clonetransformer"
+      test_title: 944120-11
+      desc: "Content-Type application/json arg value includes keyword ProcessBuilder.evil.clonetransformer"
       stages:
         -
           stage:
@@ -280,13 +280,13 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"test\": \"clonetransformer\"}"
+              data: "{\"test\": \"ProcessBuilder.evil.clonetransformer\"}"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-12
-      desc: "Content-Type application/json arg name includes keyword clonetransformer"
+      test_title: 944120-12
+      desc: "Content-Type application/json arg name includes keyword ProcessBuilder.evil.clonetransformer"
       stages:
         -
           stage:
@@ -303,13 +303,13 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"clonetransformer\": \"test\"}"
+              data: "{\"ProcessBuilder.evil.clonetransformer\": \"test\"}"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-13
-      desc: "Content-Type multipart/form-data json arg name includes keyword clonetransformer"
+      test_title: 944120-13
+      desc: "Content-Type multipart/form-data json arg name includes keyword ProcessBuilder.evil.clonetransformer"
       stages:
         -
           stage:
@@ -326,13 +326,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"clonetransformer\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.clonetransformer\": \"test\"}\n-----------------------------thisissparta--"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-14
-      desc: "Content-Type multipart/form-data json arg value includes keyword clonetransformer"
+      test_title: 944120-14
+      desc: "Content-Type multipart/form-data json arg value includes keyword ProcessBuilder.evil.clonetransformer"
       stages:
         -
           stage:
@@ -349,13 +349,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"clonetransformer\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.clonetransformer\": \"test\"}\n-----------------------------thisissparta--"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-15
-      desc: "Content-Type multipart/form-data XML element value includes keyword clonetransformer"
+      test_title: 944120-15
+      desc: "Content-Type multipart/form-data XML element value includes keyword ProcessBuilder.evil.clonetransformer"
       stages:
         -
           stage:
@@ -372,13 +372,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">clonetransformer</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.clonetransformer</element></xml>\n-----------------------------thisissparta--"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-16
-      desc: "Content-Type multipart/form-data XML element value includes keyword clonetransformer"
+      test_title: 944120-16
+      desc: "Content-Type multipart/form-data XML element value includes keyword ProcessBuilder.evil.clonetransformer"
       stages:
         -
           stage:
@@ -395,12 +395,12 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">clonetransformer</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.clonetransformer</element></xml>\n-----------------------------thisissparta--"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
     -
-      test_title: 944330-17
-      desc: "Argument test includes keyword forclosure"
+      test_title: 944120-17
+      desc: "Argument test includes keyword ProcessBuilder.evil.forclosure"
       stages:
         -
           stage:
@@ -417,13 +417,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test=forclosure"
+              data: "test=ProcessBuilder.evil.forclosure"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-18
-      desc: "Argument name includes keyword forclosure"
+      test_title: 944120-18
+      desc: "Argument name includes keyword ProcessBuilder.evil.forclosure"
       stages:
         -
           stage:
@@ -440,13 +440,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "forclosure=test"
+              data: "ProcessBuilder.evil.forclosure=test"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-19
-      desc: "Cookie test includes keyword forclosure"
+      test_title: 944120-19
+      desc: "Cookie test includes keyword ProcessBuilder.evil.forclosure"
       stages:
         -
           stage:
@@ -461,16 +461,16 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                Cookie: test=forclosure
+                Cookie: test=ProcessBuilder.evil.forclosure
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-20
-      desc: "Cookie name includes keyword forclosure"
+      test_title: 944120-20
+      desc: "Cookie name includes keyword ProcessBuilder.evil.forclosure"
       stages:
         -
           stage:
@@ -485,16 +485,16 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                Cookie: forclosure=test
+                Cookie: ProcessBuilder.evil.forclosure=test
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-21
-      desc: "Request header test includes keyword forclosure"
+      test_title: 944120-21
+      desc: "Request header test includes keyword ProcessBuilder.evil.forclosure"
       stages:
         -
           stage:
@@ -509,16 +509,16 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                test: forclosure
+                test: ProcessBuilder.evil.forclosure
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-22
-      desc: "XML element includes keyword forclosure"
+      test_title: 944120-22
+      desc: "XML element includes keyword ProcessBuilder.evil.forclosure"
       stages:
         -
           stage:
@@ -535,13 +535,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><forclosure attribute_name=\"attribute_value\">value</forclosure></xml>"
+              data: "<?xml version=\"1.0\"?><xml><ProcessBuilder.evil.forclosure attribute_name=\"attribute_value\">value</ProcessBuilder.evil.forclosure></xml>"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-23
-      desc: "XML attribute name includes keyword forclosure"
+      test_title: 944120-23
+      desc: "XML attribute name includes keyword ProcessBuilder.evil.forclosure"
       stages:
         -
           stage:
@@ -558,13 +558,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element forclosure=\"attribute_value\">element_value</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element ProcessBuilder.evil.forclosure=\"attribute_value\">element_value</element></xml>"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-24
-      desc: "XML attribute value includes keyword forclosure"
+      test_title: 944120-24
+      desc: "XML attribute value includes keyword ProcessBuilder.evil.forclosure"
       stages:
         -
           stage:
@@ -581,13 +581,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"forclosure\">element_value</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"ProcessBuilder.evil.forclosure\">element_value</element></xml>"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-25
-      desc: "XML element value includes keyword forclosure"
+      test_title: 944120-25
+      desc: "XML element value includes keyword ProcessBuilder.evil.forclosure"
       stages:
         -
           stage:
@@ -604,13 +604,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">forclosure</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.forclosure</element></xml>"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-26
-      desc: "Nested XML element value includes keyword forclosure"
+      test_title: 944120-26
+      desc: "Nested XML element value includes keyword ProcessBuilder.evil.forclosure"
       stages:
         -
           stage:
@@ -627,13 +627,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">forclosure</element></l3></l2></l1></xml>"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">ProcessBuilder.evil.forclosure</element></l3></l2></l1></xml>"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-27
-      desc: "Content-Type text/plain includes keyword forclosure"
+      test_title: 944120-27
+      desc: "Content-Type text/plain includes keyword ProcessBuilder.evil.forclosure"
       stages:
         -
           stage:
@@ -650,13 +650,13 @@
                 Content-Type: "text/plain"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test:forclosure"
+              data: "test:ProcessBuilder.evil.forclosure"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-28
-      desc: "Content-Type application/json arg value includes keyword forclosure"
+      test_title: 944120-28
+      desc: "Content-Type application/json arg value includes keyword ProcessBuilder.evil.forclosure"
       stages:
         -
           stage:
@@ -673,13 +673,13 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"test\": \"forclosure\"}"
+              data: "{\"test\": \"ProcessBuilder.evil.forclosure\"}"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-29
-      desc: "Content-Type application/json arg name includes keyword forclosure"
+      test_title: 944120-29
+      desc: "Content-Type application/json arg name includes keyword ProcessBuilder.evil.forclosure"
       stages:
         -
           stage:
@@ -696,13 +696,13 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"forclosure\": \"test\"}"
+              data: "{\"ProcessBuilder.evil.forclosure\": \"test\"}"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-30
-      desc: "Content-Type multipart/form-data json arg name includes keyword forclosure"
+      test_title: 944120-30
+      desc: "Content-Type multipart/form-data json arg name includes keyword ProcessBuilder.evil.forclosure"
       stages:
         -
           stage:
@@ -719,13 +719,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"forclosure\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.forclosure\": \"test\"}\n-----------------------------thisissparta--"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-31
-      desc: "Content-Type multipart/form-data json arg value includes keyword forclosure"
+      test_title: 944120-31
+      desc: "Content-Type multipart/form-data json arg value includes keyword ProcessBuilder.evil.forclosure"
       stages:
         -
           stage:
@@ -742,13 +742,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"forclosure\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.forclosure\": \"test\"}\n-----------------------------thisissparta--"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-32
-      desc: "Content-Type multipart/form-data XML element value includes keyword forclosure"
+      test_title: 944120-32
+      desc: "Content-Type multipart/form-data XML element value includes keyword ProcessBuilder.evil.forclosure"
       stages:
         -
           stage:
@@ -765,13 +765,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">forclosure</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.forclosure</element></xml>\n-----------------------------thisissparta--"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-33
-      desc: "Content-Type multipart/form-data XML element value includes keyword forclosure"
+      test_title: 944120-33
+      desc: "Content-Type multipart/form-data XML element value includes keyword ProcessBuilder.evil.forclosure"
       stages:
         -
           stage:
@@ -788,12 +788,12 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">forclosure</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.forclosure</element></xml>\n-----------------------------thisissparta--"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
     -
-      test_title: 944330-34
-      desc: "Argument test includes keyword instantiatefactory"
+      test_title: 944120-34
+      desc: "Argument test includes keyword ProcessBuilder.evil.instantiatefactory"
       stages:
         -
           stage:
@@ -810,13 +810,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test=instantiatefactory"
+              data: "test=ProcessBuilder.evil.instantiatefactory"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-35
-      desc: "Argument name includes keyword instantiatefactory"
+      test_title: 944120-35
+      desc: "Argument name includes keyword ProcessBuilder.evil.instantiatefactory"
       stages:
         -
           stage:
@@ -833,13 +833,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "instantiatefactory=test"
+              data: "ProcessBuilder.evil.instantiatefactory=test"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-36
-      desc: "Cookie test includes keyword instantiatefactory"
+      test_title: 944120-36
+      desc: "Cookie test includes keyword ProcessBuilder.evil.instantiatefactory"
       stages:
         -
           stage:
@@ -854,16 +854,16 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                Cookie: test=instantiatefactory
+                Cookie: test=ProcessBuilder.evil.instantiatefactory
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-37
-      desc: "Cookie name includes keyword instantiatefactory"
+      test_title: 944120-37
+      desc: "Cookie name includes keyword ProcessBuilder.evil.instantiatefactory"
       stages:
         -
           stage:
@@ -878,16 +878,16 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                Cookie: instantiatefactory=test
+                Cookie: ProcessBuilder.evil.instantiatefactory=test
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-38
-      desc: "Request header test includes keyword instantiatefactory"
+      test_title: 944120-38
+      desc: "Request header test includes keyword ProcessBuilder.evil.instantiatefactory"
       stages:
         -
           stage:
@@ -902,16 +902,16 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                test: instantiatefactory
+                test: ProcessBuilder.evil.instantiatefactory
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-39
-      desc: "XML element includes keyword instantiatefactory"
+      test_title: 944120-39
+      desc: "XML element includes keyword ProcessBuilder.evil.instantiatefactory"
       stages:
         -
           stage:
@@ -928,13 +928,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><instantiatefactory attribute_name=\"attribute_value\">value</instantiatefactory></xml>"
+              data: "<?xml version=\"1.0\"?><xml><ProcessBuilder.evil.instantiatefactory attribute_name=\"attribute_value\">value</ProcessBuilder.evil.instantiatefactory></xml>"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-40
-      desc: "XML attribute name includes keyword instantiatefactory"
+      test_title: 944120-40
+      desc: "XML attribute name includes keyword ProcessBuilder.evil.instantiatefactory"
       stages:
         -
           stage:
@@ -951,13 +951,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element instantiatefactory=\"attribute_value\">element_value</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element ProcessBuilder.evil.instantiatefactory=\"attribute_value\">element_value</element></xml>"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-41
-      desc: "XML attribute value includes keyword instantiatefactory"
+      test_title: 944120-41
+      desc: "XML attribute value includes keyword ProcessBuilder.evil.instantiatefactory"
       stages:
         -
           stage:
@@ -974,13 +974,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"instantiatefactory\">element_value</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"ProcessBuilder.evil.instantiatefactory\">element_value</element></xml>"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-42
-      desc: "XML element value includes keyword instantiatefactory"
+      test_title: 944120-42
+      desc: "XML element value includes keyword ProcessBuilder.evil.instantiatefactory"
       stages:
         -
           stage:
@@ -997,13 +997,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">instantiatefactory</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.instantiatefactory</element></xml>"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-43
-      desc: "Nested XML element value includes keyword instantiatefactory"
+      test_title: 944120-43
+      desc: "Nested XML element value includes keyword ProcessBuilder.evil.instantiatefactory"
       stages:
         -
           stage:
@@ -1020,13 +1020,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">instantiatefactory</element></l3></l2></l1></xml>"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">ProcessBuilder.evil.instantiatefactory</element></l3></l2></l1></xml>"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-44
-      desc: "Content-Type text/plain includes keyword instantiatefactory"
+      test_title: 944120-44
+      desc: "Content-Type text/plain includes keyword ProcessBuilder.evil.instantiatefactory"
       stages:
         -
           stage:
@@ -1043,13 +1043,13 @@
                 Content-Type: "text/plain"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test:instantiatefactory"
+              data: "test:ProcessBuilder.evil.instantiatefactory"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-45
-      desc: "Content-Type application/json arg value includes keyword instantiatefactory"
+      test_title: 944120-45
+      desc: "Content-Type application/json arg value includes keyword ProcessBuilder.evil.instantiatefactory"
       stages:
         -
           stage:
@@ -1066,13 +1066,13 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"test\": \"instantiatefactory\"}"
+              data: "{\"test\": \"ProcessBuilder.evil.instantiatefactory\"}"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-46
-      desc: "Content-Type application/json arg name includes keyword instantiatefactory"
+      test_title: 944120-46
+      desc: "Content-Type application/json arg name includes keyword ProcessBuilder.evil.instantiatefactory"
       stages:
         -
           stage:
@@ -1089,13 +1089,13 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"instantiatefactory\": \"test\"}"
+              data: "{\"ProcessBuilder.evil.instantiatefactory\": \"test\"}"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-47
-      desc: "Content-Type multipart/form-data json arg name includes keyword instantiatefactory"
+      test_title: 944120-47
+      desc: "Content-Type multipart/form-data json arg name includes keyword ProcessBuilder.evil.instantiatefactory"
       stages:
         -
           stage:
@@ -1112,13 +1112,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"instantiatefactory\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.instantiatefactory\": \"test\"}\n-----------------------------thisissparta--"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-48
-      desc: "Content-Type multipart/form-data json arg value includes keyword instantiatefactory"
+      test_title: 944120-48
+      desc: "Content-Type multipart/form-data json arg value includes keyword ProcessBuilder.evil.instantiatefactory"
       stages:
         -
           stage:
@@ -1135,13 +1135,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"instantiatefactory\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.instantiatefactory\": \"test\"}\n-----------------------------thisissparta--"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-49
-      desc: "Content-Type multipart/form-data XML element value includes keyword instantiatefactory"
+      test_title: 944120-49
+      desc: "Content-Type multipart/form-data XML element value includes keyword ProcessBuilder.evil.instantiatefactory"
       stages:
         -
           stage:
@@ -1158,13 +1158,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">instantiatefactory</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.instantiatefactory</element></xml>\n-----------------------------thisissparta--"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-50
-      desc: "Content-Type multipart/form-data XML element value includes keyword instantiatefactory"
+      test_title: 944120-50
+      desc: "Content-Type multipart/form-data XML element value includes keyword ProcessBuilder.evil.instantiatefactory"
       stages:
         -
           stage:
@@ -1181,12 +1181,12 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">instantiatefactory</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.instantiatefactory</element></xml>\n-----------------------------thisissparta--"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
     -
-      test_title: 944330-51
-      desc: "Argument test includes keyword instantiatetransformer"
+      test_title: 944120-51
+      desc: "Argument test includes keyword ProcessBuilder.evil.instantiatetransformer"
       stages:
         -
           stage:
@@ -1203,13 +1203,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test=instantiatetransformer"
+              data: "test=ProcessBuilder.evil.instantiatetransformer"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-52
-      desc: "Argument name includes keyword instantiatetransformer"
+      test_title: 944120-52
+      desc: "Argument name includes keyword ProcessBuilder.evil.instantiatetransformer"
       stages:
         -
           stage:
@@ -1226,13 +1226,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "instantiatetransformer=test"
+              data: "ProcessBuilder.evil.instantiatetransformer=test"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-53
-      desc: "Cookie test includes keyword instantiatetransformer"
+      test_title: 944120-53
+      desc: "Cookie test includes keyword ProcessBuilder.evil.instantiatetransformer"
       stages:
         -
           stage:
@@ -1247,16 +1247,16 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                Cookie: test=instantiatetransformer
+                Cookie: test=ProcessBuilder.evil.instantiatetransformer
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-54
-      desc: "Cookie name includes keyword instantiatetransformer"
+      test_title: 944120-54
+      desc: "Cookie name includes keyword ProcessBuilder.evil.instantiatetransformer"
       stages:
         -
           stage:
@@ -1271,16 +1271,16 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                Cookie: instantiatetransformer=test
+                Cookie: ProcessBuilder.evil.instantiatetransformer=test
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-55
-      desc: "Request header test includes keyword instantiatetransformer"
+      test_title: 944120-55
+      desc: "Request header test includes keyword ProcessBuilder.evil.instantiatetransformer"
       stages:
         -
           stage:
@@ -1295,16 +1295,16 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                test: instantiatetransformer
+                test: ProcessBuilder.evil.instantiatetransformer
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-56
-      desc: "XML element includes keyword instantiatetransformer"
+      test_title: 944120-56
+      desc: "XML element includes keyword ProcessBuilder.evil.instantiatetransformer"
       stages:
         -
           stage:
@@ -1321,13 +1321,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><instantiatetransformer attribute_name=\"attribute_value\">value</instantiatetransformer></xml>"
+              data: "<?xml version=\"1.0\"?><xml><ProcessBuilder.evil.instantiatetransformer attribute_name=\"attribute_value\">value</ProcessBuilder.evil.instantiatetransformer></xml>"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-57
-      desc: "XML attribute name includes keyword instantiatetransformer"
+      test_title: 944120-57
+      desc: "XML attribute name includes keyword ProcessBuilder.evil.instantiatetransformer"
       stages:
         -
           stage:
@@ -1344,13 +1344,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element instantiatetransformer=\"attribute_value\">element_value</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element ProcessBuilder.evil.instantiatetransformer=\"attribute_value\">element_value</element></xml>"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-58
-      desc: "XML attribute value includes keyword instantiatetransformer"
+      test_title: 944120-58
+      desc: "XML attribute value includes keyword ProcessBuilder.evil.instantiatetransformer"
       stages:
         -
           stage:
@@ -1367,13 +1367,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"instantiatetransformer\">element_value</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"ProcessBuilder.evil.instantiatetransformer\">element_value</element></xml>"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-59
-      desc: "XML element value includes keyword instantiatetransformer"
+      test_title: 944120-59
+      desc: "XML element value includes keyword ProcessBuilder.evil.instantiatetransformer"
       stages:
         -
           stage:
@@ -1390,13 +1390,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">instantiatetransformer</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.instantiatetransformer</element></xml>"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-60
-      desc: "Nested XML element value includes keyword instantiatetransformer"
+      test_title: 944120-60
+      desc: "Nested XML element value includes keyword ProcessBuilder.evil.instantiatetransformer"
       stages:
         -
           stage:
@@ -1413,13 +1413,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">instantiatetransformer</element></l3></l2></l1></xml>"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">ProcessBuilder.evil.instantiatetransformer</element></l3></l2></l1></xml>"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-61
-      desc: "Content-Type text/plain includes keyword instantiatetransformer"
+      test_title: 944120-61
+      desc: "Content-Type text/plain includes keyword ProcessBuilder.evil.instantiatetransformer"
       stages:
         -
           stage:
@@ -1436,13 +1436,13 @@
                 Content-Type: "text/plain"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test:instantiatetransformer"
+              data: "test:ProcessBuilder.evil.instantiatetransformer"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-62
-      desc: "Content-Type application/json arg value includes keyword instantiatetransformer"
+      test_title: 944120-62
+      desc: "Content-Type application/json arg value includes keyword ProcessBuilder.evil.instantiatetransformer"
       stages:
         -
           stage:
@@ -1459,13 +1459,13 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"test\": \"instantiatetransformer\"}"
+              data: "{\"test\": \"ProcessBuilder.evil.instantiatetransformer\"}"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-63
-      desc: "Content-Type application/json arg name includes keyword instantiatetransformer"
+      test_title: 944120-63
+      desc: "Content-Type application/json arg name includes keyword ProcessBuilder.evil.instantiatetransformer"
       stages:
         -
           stage:
@@ -1482,13 +1482,13 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"instantiatetransformer\": \"test\"}"
+              data: "{\"ProcessBuilder.evil.instantiatetransformer\": \"test\"}"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-64
-      desc: "Content-Type multipart/form-data json arg name includes keyword instantiatetransformer"
+      test_title: 944120-64
+      desc: "Content-Type multipart/form-data json arg name includes keyword ProcessBuilder.evil.instantiatetransformer"
       stages:
         -
           stage:
@@ -1505,13 +1505,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"instantiatetransformer\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.instantiatetransformer\": \"test\"}\n-----------------------------thisissparta--"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-65
-      desc: "Content-Type multipart/form-data json arg value includes keyword instantiatetransformer"
+      test_title: 944120-65
+      desc: "Content-Type multipart/form-data json arg value includes keyword ProcessBuilder.evil.instantiatetransformer"
       stages:
         -
           stage:
@@ -1528,13 +1528,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"instantiatetransformer\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.instantiatetransformer\": \"test\"}\n-----------------------------thisissparta--"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-66
-      desc: "Content-Type multipart/form-data XML element value includes keyword instantiatetransformer"
+      test_title: 944120-66
+      desc: "Content-Type multipart/form-data XML element value includes keyword ProcessBuilder.evil.instantiatetransformer"
       stages:
         -
           stage:
@@ -1551,13 +1551,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">instantiatetransformer</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.instantiatetransformer</element></xml>\n-----------------------------thisissparta--"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-67
-      desc: "Content-Type multipart/form-data XML element value includes keyword instantiatetransformer"
+      test_title: 944120-67
+      desc: "Content-Type multipart/form-data XML element value includes keyword ProcessBuilder.evil.instantiatetransformer"
       stages:
         -
           stage:
@@ -1574,12 +1574,12 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">instantiatetransformer</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.instantiatetransformer</element></xml>\n-----------------------------thisissparta--"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
     -
-      test_title: 944330-68
-      desc: "Argument test includes keyword invokertransformer"
+      test_title: 944120-68
+      desc: "Argument test includes keyword ProcessBuilder.evil.invokertransformer"
       stages:
         -
           stage:
@@ -1596,13 +1596,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test=invokertransformer"
+              data: "test=ProcessBuilder.evil.invokertransformer"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-69
-      desc: "Argument name includes keyword invokertransformer"
+      test_title: 944120-69
+      desc: "Argument name includes keyword ProcessBuilder.evil.invokertransformer"
       stages:
         -
           stage:
@@ -1619,13 +1619,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "invokertransformer=test"
+              data: "ProcessBuilder.evil.invokertransformer=test"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-70
-      desc: "Cookie test includes keyword invokertransformer"
+      test_title: 944120-70
+      desc: "Cookie test includes keyword ProcessBuilder.evil.invokertransformer"
       stages:
         -
           stage:
@@ -1640,16 +1640,16 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                Cookie: test=invokertransformer
+                Cookie: test=ProcessBuilder.evil.invokertransformer
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-71
-      desc: "Cookie name includes keyword invokertransformer"
+      test_title: 944120-71
+      desc: "Cookie name includes keyword ProcessBuilder.evil.invokertransformer"
       stages:
         -
           stage:
@@ -1664,16 +1664,16 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                Cookie: invokertransformer=test
+                Cookie: ProcessBuilder.evil.invokertransformer=test
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-72
-      desc: "Request header test includes keyword invokertransformer"
+      test_title: 944120-72
+      desc: "Request header test includes keyword ProcessBuilder.evil.invokertransformer"
       stages:
         -
           stage:
@@ -1688,16 +1688,16 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                test: invokertransformer
+                test: ProcessBuilder.evil.invokertransformer
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-73
-      desc: "XML element includes keyword invokertransformer"
+      test_title: 944120-73
+      desc: "XML element includes keyword ProcessBuilder.evil.invokertransformer"
       stages:
         -
           stage:
@@ -1714,13 +1714,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><invokertransformer attribute_name=\"attribute_value\">value</invokertransformer></xml>"
+              data: "<?xml version=\"1.0\"?><xml><ProcessBuilder.evil.invokertransformer attribute_name=\"attribute_value\">value</ProcessBuilder.evil.invokertransformer></xml>"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-74
-      desc: "XML attribute name includes keyword invokertransformer"
+      test_title: 944120-74
+      desc: "XML attribute name includes keyword ProcessBuilder.evil.invokertransformer"
       stages:
         -
           stage:
@@ -1737,13 +1737,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element invokertransformer=\"attribute_value\">element_value</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element ProcessBuilder.evil.invokertransformer=\"attribute_value\">element_value</element></xml>"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-75
-      desc: "XML attribute value includes keyword invokertransformer"
+      test_title: 944120-75
+      desc: "XML attribute value includes keyword ProcessBuilder.evil.invokertransformer"
       stages:
         -
           stage:
@@ -1760,13 +1760,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"invokertransformer\">element_value</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"ProcessBuilder.evil.invokertransformer\">element_value</element></xml>"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-76
-      desc: "XML element value includes keyword invokertransformer"
+      test_title: 944120-76
+      desc: "XML element value includes keyword ProcessBuilder.evil.invokertransformer"
       stages:
         -
           stage:
@@ -1783,13 +1783,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">invokertransformer</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.invokertransformer</element></xml>"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-77
-      desc: "Nested XML element value includes keyword invokertransformer"
+      test_title: 944120-77
+      desc: "Nested XML element value includes keyword ProcessBuilder.evil.invokertransformer"
       stages:
         -
           stage:
@@ -1806,13 +1806,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">invokertransformer</element></l3></l2></l1></xml>"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">ProcessBuilder.evil.invokertransformer</element></l3></l2></l1></xml>"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-78
-      desc: "Content-Type text/plain includes keyword invokertransformer"
+      test_title: 944120-78
+      desc: "Content-Type text/plain includes keyword ProcessBuilder.evil.invokertransformer"
       stages:
         -
           stage:
@@ -1829,13 +1829,13 @@
                 Content-Type: "text/plain"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test:invokertransformer"
+              data: "test:ProcessBuilder.evil.invokertransformer"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-79
-      desc: "Content-Type application/json arg value includes keyword invokertransformer"
+      test_title: 944120-79
+      desc: "Content-Type application/json arg value includes keyword ProcessBuilder.evil.invokertransformer"
       stages:
         -
           stage:
@@ -1852,13 +1852,13 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"test\": \"invokertransformer\"}"
+              data: "{\"test\": \"ProcessBuilder.evil.invokertransformer\"}"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-80
-      desc: "Content-Type application/json arg name includes keyword invokertransformer"
+      test_title: 944120-80
+      desc: "Content-Type application/json arg name includes keyword ProcessBuilder.evil.invokertransformer"
       stages:
         -
           stage:
@@ -1875,13 +1875,13 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"invokertransformer\": \"test\"}"
+              data: "{\"ProcessBuilder.evil.invokertransformer\": \"test\"}"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-81
-      desc: "Content-Type multipart/form-data json arg name includes keyword invokertransformer"
+      test_title: 944120-81
+      desc: "Content-Type multipart/form-data json arg name includes keyword ProcessBuilder.evil.invokertransformer"
       stages:
         -
           stage:
@@ -1898,13 +1898,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"invokertransformer\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.invokertransformer\": \"test\"}\n-----------------------------thisissparta--"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-82
-      desc: "Content-Type multipart/form-data json arg value includes keyword invokertransformer"
+      test_title: 944120-82
+      desc: "Content-Type multipart/form-data json arg value includes keyword ProcessBuilder.evil.invokertransformer"
       stages:
         -
           stage:
@@ -1921,13 +1921,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"invokertransformer\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.invokertransformer\": \"test\"}\n-----------------------------thisissparta--"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-83
-      desc: "Content-Type multipart/form-data XML element value includes keyword invokertransformer"
+      test_title: 944120-83
+      desc: "Content-Type multipart/form-data XML element value includes keyword ProcessBuilder.evil.invokertransformer"
       stages:
         -
           stage:
@@ -1944,13 +1944,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">invokertransformer</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.invokertransformer</element></xml>\n-----------------------------thisissparta--"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-84
-      desc: "Content-Type multipart/form-data XML element value includes keyword invokertransformer"
+      test_title: 944120-84
+      desc: "Content-Type multipart/form-data XML element value includes keyword ProcessBuilder.evil.invokertransformer"
       stages:
         -
           stage:
@@ -1967,12 +1967,12 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">invokertransformer</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.invokertransformer</element></xml>\n-----------------------------thisissparta--"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
     -
-      test_title: 944330-85
-      desc: "Argument test includes keyword prototypeclonefactory"
+      test_title: 944120-85
+      desc: "Argument test includes keyword ProcessBuilder.evil.prototypeclonefactory"
       stages:
         -
           stage:
@@ -1989,13 +1989,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test=prototypeclonefactory"
+              data: "test=ProcessBuilder.evil.prototypeclonefactory"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-86
-      desc: "Argument name includes keyword prototypeclonefactory"
+      test_title: 944120-86
+      desc: "Argument name includes keyword ProcessBuilder.evil.prototypeclonefactory"
       stages:
         -
           stage:
@@ -2012,13 +2012,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "prototypeclonefactory=test"
+              data: "ProcessBuilder.evil.prototypeclonefactory=test"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-87
-      desc: "Cookie test includes keyword prototypeclonefactory"
+      test_title: 944120-87
+      desc: "Cookie test includes keyword ProcessBuilder.evil.prototypeclonefactory"
       stages:
         -
           stage:
@@ -2033,16 +2033,16 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                Cookie: test=prototypeclonefactory
+                Cookie: test=ProcessBuilder.evil.prototypeclonefactory
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-88
-      desc: "Cookie name includes keyword prototypeclonefactory"
+      test_title: 944120-88
+      desc: "Cookie name includes keyword ProcessBuilder.evil.prototypeclonefactory"
       stages:
         -
           stage:
@@ -2057,16 +2057,16 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                Cookie: prototypeclonefactory=test
+                Cookie: ProcessBuilder.evil.prototypeclonefactory=test
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-89
-      desc: "Request header test includes keyword prototypeclonefactory"
+      test_title: 944120-89
+      desc: "Request header test includes keyword ProcessBuilder.evil.prototypeclonefactory"
       stages:
         -
           stage:
@@ -2081,16 +2081,16 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                test: prototypeclonefactory
+                test: ProcessBuilder.evil.prototypeclonefactory
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-90
-      desc: "XML element includes keyword prototypeclonefactory"
+      test_title: 944120-90
+      desc: "XML element includes keyword ProcessBuilder.evil.prototypeclonefactory"
       stages:
         -
           stage:
@@ -2107,13 +2107,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><prototypeclonefactory attribute_name=\"attribute_value\">value</prototypeclonefactory></xml>"
+              data: "<?xml version=\"1.0\"?><xml><ProcessBuilder.evil.prototypeclonefactory attribute_name=\"attribute_value\">value</ProcessBuilder.evil.prototypeclonefactory></xml>"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-91
-      desc: "XML attribute name includes keyword prototypeclonefactory"
+      test_title: 944120-91
+      desc: "XML attribute name includes keyword ProcessBuilder.evil.prototypeclonefactory"
       stages:
         -
           stage:
@@ -2130,13 +2130,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element prototypeclonefactory=\"attribute_value\">element_value</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element ProcessBuilder.evil.prototypeclonefactory=\"attribute_value\">element_value</element></xml>"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-92
-      desc: "XML attribute value includes keyword prototypeclonefactory"
+      test_title: 944120-92
+      desc: "XML attribute value includes keyword ProcessBuilder.evil.prototypeclonefactory"
       stages:
         -
           stage:
@@ -2153,13 +2153,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"prototypeclonefactory\">element_value</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"ProcessBuilder.evil.prototypeclonefactory\">element_value</element></xml>"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-93
-      desc: "XML element value includes keyword prototypeclonefactory"
+      test_title: 944120-93
+      desc: "XML element value includes keyword ProcessBuilder.evil.prototypeclonefactory"
       stages:
         -
           stage:
@@ -2176,13 +2176,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">prototypeclonefactory</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.prototypeclonefactory</element></xml>"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-94
-      desc: "Nested XML element value includes keyword prototypeclonefactory"
+      test_title: 944120-94
+      desc: "Nested XML element value includes keyword ProcessBuilder.evil.prototypeclonefactory"
       stages:
         -
           stage:
@@ -2199,13 +2199,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">prototypeclonefactory</element></l3></l2></l1></xml>"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">ProcessBuilder.evil.prototypeclonefactory</element></l3></l2></l1></xml>"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-95
-      desc: "Content-Type text/plain includes keyword prototypeclonefactory"
+      test_title: 944120-95
+      desc: "Content-Type text/plain includes keyword ProcessBuilder.evil.prototypeclonefactory"
       stages:
         -
           stage:
@@ -2222,13 +2222,13 @@
                 Content-Type: "text/plain"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test:prototypeclonefactory"
+              data: "test:ProcessBuilder.evil.prototypeclonefactory"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-96
-      desc: "Content-Type application/json arg value includes keyword prototypeclonefactory"
+      test_title: 944120-96
+      desc: "Content-Type application/json arg value includes keyword ProcessBuilder.evil.prototypeclonefactory"
       stages:
         -
           stage:
@@ -2245,13 +2245,13 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"test\": \"prototypeclonefactory\"}"
+              data: "{\"test\": \"ProcessBuilder.evil.prototypeclonefactory\"}"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-97
-      desc: "Content-Type application/json arg name includes keyword prototypeclonefactory"
+      test_title: 944120-97
+      desc: "Content-Type application/json arg name includes keyword ProcessBuilder.evil.prototypeclonefactory"
       stages:
         -
           stage:
@@ -2268,13 +2268,13 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"prototypeclonefactory\": \"test\"}"
+              data: "{\"ProcessBuilder.evil.prototypeclonefactory\": \"test\"}"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-98
-      desc: "Content-Type multipart/form-data json arg name includes keyword prototypeclonefactory"
+      test_title: 944120-98
+      desc: "Content-Type multipart/form-data json arg name includes keyword ProcessBuilder.evil.prototypeclonefactory"
       stages:
         -
           stage:
@@ -2291,13 +2291,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"prototypeclonefactory\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.prototypeclonefactory\": \"test\"}\n-----------------------------thisissparta--"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-99
-      desc: "Content-Type multipart/form-data json arg value includes keyword prototypeclonefactory"
+      test_title: 944120-99
+      desc: "Content-Type multipart/form-data json arg value includes keyword ProcessBuilder.evil.prototypeclonefactory"
       stages:
         -
           stage:
@@ -2314,13 +2314,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"prototypeclonefactory\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.prototypeclonefactory\": \"test\"}\n-----------------------------thisissparta--"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-100
-      desc: "Content-Type multipart/form-data XML element value includes keyword prototypeclonefactory"
+      test_title: 944120-100
+      desc: "Content-Type multipart/form-data XML element value includes keyword ProcessBuilder.evil.prototypeclonefactory"
       stages:
         -
           stage:
@@ -2337,13 +2337,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">prototypeclonefactory</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.prototypeclonefactory</element></xml>\n-----------------------------thisissparta--"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-101
-      desc: "Content-Type multipart/form-data XML element value includes keyword prototypeclonefactory"
+      test_title: 944120-101
+      desc: "Content-Type multipart/form-data XML element value includes keyword ProcessBuilder.evil.prototypeclonefactory"
       stages:
         -
           stage:
@@ -2360,12 +2360,12 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">prototypeclonefactory</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.prototypeclonefactory</element></xml>\n-----------------------------thisissparta--"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
     -
-      test_title: 944330-102
-      desc: "Argument test includes keyword prototypeserializationfactory"
+      test_title: 944120-102
+      desc: "Argument test includes keyword ProcessBuilder.evil.prototypeserializationfactory"
       stages:
         -
           stage:
@@ -2382,13 +2382,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test=prototypeserializationfactory"
+              data: "test=ProcessBuilder.evil.prototypeserializationfactory"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-103
-      desc: "Argument name includes keyword prototypeserializationfactory"
+      test_title: 944120-103
+      desc: "Argument name includes keyword ProcessBuilder.evil.prototypeserializationfactory"
       stages:
         -
           stage:
@@ -2405,13 +2405,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "prototypeserializationfactory=test"
+              data: "ProcessBuilder.evil.prototypeserializationfactory=test"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-104
-      desc: "Cookie test includes keyword prototypeserializationfactory"
+      test_title: 944120-104
+      desc: "Cookie test includes keyword ProcessBuilder.evil.prototypeserializationfactory"
       stages:
         -
           stage:
@@ -2426,16 +2426,16 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                Cookie: test=prototypeserializationfactory
+                Cookie: test=ProcessBuilder.evil.prototypeserializationfactory
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-105
-      desc: "Cookie name includes keyword prototypeserializationfactory"
+      test_title: 944120-105
+      desc: "Cookie name includes keyword ProcessBuilder.evil.prototypeserializationfactory"
       stages:
         -
           stage:
@@ -2450,16 +2450,16 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                Cookie: prototypeserializationfactory=test
+                Cookie: ProcessBuilder.evil.prototypeserializationfactory=test
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-106
-      desc: "Request header test includes keyword prototypeserializationfactory"
+      test_title: 944120-106
+      desc: "Request header test includes keyword ProcessBuilder.evil.prototypeserializationfactory"
       stages:
         -
           stage:
@@ -2474,16 +2474,16 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                test: prototypeserializationfactory
+                test: ProcessBuilder.evil.prototypeserializationfactory
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-107
-      desc: "XML element includes keyword prototypeserializationfactory"
+      test_title: 944120-107
+      desc: "XML element includes keyword ProcessBuilder.evil.prototypeserializationfactory"
       stages:
         -
           stage:
@@ -2500,13 +2500,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><prototypeserializationfactory attribute_name=\"attribute_value\">value</prototypeserializationfactory></xml>"
+              data: "<?xml version=\"1.0\"?><xml><ProcessBuilder.evil.prototypeserializationfactory attribute_name=\"attribute_value\">value</ProcessBuilder.evil.prototypeserializationfactory></xml>"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-108
-      desc: "XML attribute name includes keyword prototypeserializationfactory"
+      test_title: 944120-108
+      desc: "XML attribute name includes keyword ProcessBuilder.evil.prototypeserializationfactory"
       stages:
         -
           stage:
@@ -2523,13 +2523,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element prototypeserializationfactory=\"attribute_value\">element_value</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element ProcessBuilder.evil.prototypeserializationfactory=\"attribute_value\">element_value</element></xml>"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-109
-      desc: "XML attribute value includes keyword prototypeserializationfactory"
+      test_title: 944120-109
+      desc: "XML attribute value includes keyword ProcessBuilder.evil.prototypeserializationfactory"
       stages:
         -
           stage:
@@ -2546,13 +2546,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"prototypeserializationfactory\">element_value</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"ProcessBuilder.evil.prototypeserializationfactory\">element_value</element></xml>"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-110
-      desc: "XML element value includes keyword prototypeserializationfactory"
+      test_title: 944120-110
+      desc: "XML element value includes keyword ProcessBuilder.evil.prototypeserializationfactory"
       stages:
         -
           stage:
@@ -2569,13 +2569,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">prototypeserializationfactory</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.prototypeserializationfactory</element></xml>"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-111
-      desc: "Nested XML element value includes keyword prototypeserializationfactory"
+      test_title: 944120-111
+      desc: "Nested XML element value includes keyword ProcessBuilder.evil.prototypeserializationfactory"
       stages:
         -
           stage:
@@ -2592,13 +2592,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">prototypeserializationfactory</element></l3></l2></l1></xml>"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">ProcessBuilder.evil.prototypeserializationfactory</element></l3></l2></l1></xml>"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-112
-      desc: "Content-Type text/plain includes keyword prototypeserializationfactory"
+      test_title: 944120-112
+      desc: "Content-Type text/plain includes keyword ProcessBuilder.evil.prototypeserializationfactory"
       stages:
         -
           stage:
@@ -2615,13 +2615,13 @@
                 Content-Type: "text/plain"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test:prototypeserializationfactory"
+              data: "test:ProcessBuilder.evil.prototypeserializationfactory"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-113
-      desc: "Content-Type application/json arg value includes keyword prototypeserializationfactory"
+      test_title: 944120-113
+      desc: "Content-Type application/json arg value includes keyword ProcessBuilder.evil.prototypeserializationfactory"
       stages:
         -
           stage:
@@ -2638,13 +2638,13 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"test\": \"prototypeserializationfactory\"}"
+              data: "{\"test\": \"ProcessBuilder.evil.prototypeserializationfactory\"}"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-114
-      desc: "Content-Type application/json arg name includes keyword prototypeserializationfactory"
+      test_title: 944120-114
+      desc: "Content-Type application/json arg name includes keyword ProcessBuilder.evil.prototypeserializationfactory"
       stages:
         -
           stage:
@@ -2661,13 +2661,13 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"prototypeserializationfactory\": \"test\"}"
+              data: "{\"ProcessBuilder.evil.prototypeserializationfactory\": \"test\"}"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-115
-      desc: "Content-Type multipart/form-data json arg name includes keyword prototypeserializationfactory"
+      test_title: 944120-115
+      desc: "Content-Type multipart/form-data json arg name includes keyword ProcessBuilder.evil.prototypeserializationfactory"
       stages:
         -
           stage:
@@ -2684,13 +2684,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"prototypeserializationfactory\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.prototypeserializationfactory\": \"test\"}\n-----------------------------thisissparta--"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-116
-      desc: "Content-Type multipart/form-data json arg value includes keyword prototypeserializationfactory"
+      test_title: 944120-116
+      desc: "Content-Type multipart/form-data json arg value includes keyword ProcessBuilder.evil.prototypeserializationfactory"
       stages:
         -
           stage:
@@ -2707,13 +2707,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"prototypeserializationfactory\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.prototypeserializationfactory\": \"test\"}\n-----------------------------thisissparta--"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-117
-      desc: "Content-Type multipart/form-data XML element value includes keyword prototypeserializationfactory"
+      test_title: 944120-117
+      desc: "Content-Type multipart/form-data XML element value includes keyword ProcessBuilder.evil.prototypeserializationfactory"
       stages:
         -
           stage:
@@ -2730,13 +2730,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">prototypeserializationfactory</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.prototypeserializationfactory</element></xml>\n-----------------------------thisissparta--"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-118
-      desc: "Content-Type multipart/form-data XML element value includes keyword prototypeserializationfactory"
+      test_title: 944120-118
+      desc: "Content-Type multipart/form-data XML element value includes keyword ProcessBuilder.evil.prototypeserializationfactory"
       stages:
         -
           stage:
@@ -2753,12 +2753,12 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">prototypeserializationfactory</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.prototypeserializationfactory</element></xml>\n-----------------------------thisissparta--"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
     -
-      test_title: 944330-119
-      desc: "Argument test includes keyword whileclosure"
+      test_title: 944120-119
+      desc: "Argument test includes keyword ProcessBuilder.evil.whileclosure"
       stages:
         -
           stage:
@@ -2775,13 +2775,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test=whileclosure"
+              data: "test=ProcessBuilder.evil.whileclosure"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-120
-      desc: "Argument name includes keyword whileclosure"
+      test_title: 944120-120
+      desc: "Argument name includes keyword ProcessBuilder.evil.whileclosure"
       stages:
         -
           stage:
@@ -2798,13 +2798,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: "POST"
               version: "HTTP/1.0"
-              data: "whileclosure=test"
+              data: "ProcessBuilder.evil.whileclosure=test"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-121
-      desc: "Cookie test includes keyword whileclosure"
+      test_title: 944120-121
+      desc: "Cookie test includes keyword ProcessBuilder.evil.whileclosure"
       stages:
         -
           stage:
@@ -2819,16 +2819,16 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                Cookie: test=whileclosure
+                Cookie: test=ProcessBuilder.evil.whileclosure
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-122
-      desc: "Cookie name includes keyword whileclosure"
+      test_title: 944120-122
+      desc: "Cookie name includes keyword ProcessBuilder.evil.whileclosure"
       stages:
         -
           stage:
@@ -2843,16 +2843,16 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                Cookie: whileclosure=test
+                Cookie: ProcessBuilder.evil.whileclosure=test
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-123
-      desc: "Request header test includes keyword whileclosure"
+      test_title: 944120-123
+      desc: "Request header test includes keyword ProcessBuilder.evil.whileclosure"
       stages:
         -
           stage:
@@ -2867,16 +2867,16 @@
                 Accept-Encoding: "gzip,deflate"
                 Accept-Language: "en-us,en;q=0.5"
                 Content-Type: "application/x-www-form-urlencoded"
-                test: whileclosure
+                test: ProcessBuilder.evil.whileclosure
               method: "POST"
               version: "HTTP/1.0"
               data: "test=value"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-124
-      desc: "XML element includes keyword whileclosure"
+      test_title: 944120-124
+      desc: "XML element includes keyword ProcessBuilder.evil.whileclosure"
       stages:
         -
           stage:
@@ -2893,13 +2893,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><whileclosure attribute_name=\"attribute_value\">value</whileclosure></xml>"
+              data: "<?xml version=\"1.0\"?><xml><ProcessBuilder.evil.whileclosure attribute_name=\"attribute_value\">value</ProcessBuilder.evil.whileclosure></xml>"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-125
-      desc: "XML attribute name includes keyword whileclosure"
+      test_title: 944120-125
+      desc: "XML attribute name includes keyword ProcessBuilder.evil.whileclosure"
       stages:
         -
           stage:
@@ -2916,13 +2916,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element whileclosure=\"attribute_value\">element_value</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element ProcessBuilder.evil.whileclosure=\"attribute_value\">element_value</element></xml>"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-126
-      desc: "XML attribute value includes keyword whileclosure"
+      test_title: 944120-126
+      desc: "XML attribute value includes keyword ProcessBuilder.evil.whileclosure"
       stages:
         -
           stage:
@@ -2939,13 +2939,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"whileclosure\">element_value</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"ProcessBuilder.evil.whileclosure\">element_value</element></xml>"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-127
-      desc: "XML element value includes keyword whileclosure"
+      test_title: 944120-127
+      desc: "XML element value includes keyword ProcessBuilder.evil.whileclosure"
       stages:
         -
           stage:
@@ -2962,13 +2962,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">whileclosure</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.whileclosure</element></xml>"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-128
-      desc: "Nested XML element value includes keyword whileclosure"
+      test_title: 944120-128
+      desc: "Nested XML element value includes keyword ProcessBuilder.evil.whileclosure"
       stages:
         -
           stage:
@@ -2985,13 +2985,13 @@
                 Content-Type: "application/xml"
               method: "POST"
               version: "HTTP/1.0"
-              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">whileclosure</element></l3></l2></l1></xml>"
+              data: "<?xml version=\"1.0\"?><xml><l1><l2><l3><element attribute_name=\"attribute_value\">ProcessBuilder.evil.whileclosure</element></l3></l2></l1></xml>"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-129
-      desc: "Content-Type text/plain includes keyword whileclosure"
+      test_title: 944120-129
+      desc: "Content-Type text/plain includes keyword ProcessBuilder.evil.whileclosure"
       stages:
         -
           stage:
@@ -3008,13 +3008,13 @@
                 Content-Type: "text/plain"
               method: "POST"
               version: "HTTP/1.0"
-              data: "test:whileclosure"
+              data: "test:ProcessBuilder.evil.whileclosure"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-130
-      desc: "Content-Type application/json arg value includes keyword whileclosure"
+      test_title: 944120-130
+      desc: "Content-Type application/json arg value includes keyword ProcessBuilder.evil.whileclosure"
       stages:
         -
           stage:
@@ -3031,13 +3031,13 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"test\": \"whileclosure\"}"
+              data: "{\"test\": \"ProcessBuilder.evil.whileclosure\"}"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-131
-      desc: "Content-Type application/json arg name includes keyword whileclosure"
+      test_title: 944120-131
+      desc: "Content-Type application/json arg name includes keyword ProcessBuilder.evil.whileclosure"
       stages:
         -
           stage:
@@ -3054,13 +3054,13 @@
                 Content-Type: "application/json"
               method: "POST"
               version: "HTTP/1.0"
-              data: "{\"whileclosure\": \"test\"}"
+              data: "{\"ProcessBuilder.evil.whileclosure\": \"test\"}"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-132
-      desc: "Content-Type multipart/form-data json arg name includes keyword whileclosure"
+      test_title: 944120-132
+      desc: "Content-Type multipart/form-data json arg name includes keyword ProcessBuilder.evil.whileclosure"
       stages:
         -
           stage:
@@ -3077,13 +3077,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"whileclosure\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.whileclosure\": \"test\"}\n-----------------------------thisissparta--"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-133
-      desc: "Content-Type multipart/form-data json arg value includes keyword whileclosure"
+      test_title: 944120-133
+      desc: "Content-Type multipart/form-data json arg value includes keyword ProcessBuilder.evil.whileclosure"
       stages:
         -
           stage:
@@ -3100,13 +3100,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"whileclosure\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.whileclosure\": \"test\"}\n-----------------------------thisissparta--"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-134
-      desc: "Content-Type multipart/form-data XML element value includes keyword whileclosure"
+      test_title: 944120-134
+      desc: "Content-Type multipart/form-data XML element value includes keyword ProcessBuilder.evil.whileclosure"
       stages:
         -
           stage:
@@ -3123,13 +3123,13 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">whileclosure</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.whileclosure</element></xml>\n-----------------------------thisissparta--"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""
 
     -
-      test_title: 944330-135
-      desc: "Content-Type multipart/form-data XML element value includes keyword whileclosure"
+      test_title: 944120-135
+      desc: "Content-Type multipart/form-data XML element value includes keyword ProcessBuilder.evil.whileclosure"
       stages:
         -
           stage:
@@ -3146,6 +3146,6 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">whileclosure</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.whileclosure</element></xml>\n-----------------------------thisissparta--"
             output:
-              log_contains: "id \"944330\""
+              log_contains: "id \"944120\""

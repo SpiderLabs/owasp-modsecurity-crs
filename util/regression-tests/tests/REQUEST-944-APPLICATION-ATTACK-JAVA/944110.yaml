@@ -2,12 +2,12 @@
   meta: 
     author: "spartantri"
     enabled: true
-    name: "944350.yaml"
+    name: "944110.yaml"
     description: "Description"
   tests: 
     - 
-      test_title: 944350-1
-      desc: Argument test includes keywords java and Runtime
+      test_title: 944110-1
+      desc: Argument test includes keywords java. and Runtime
       stages: 
         - 
           stage: 
@@ -24,13 +24,13 @@
                 Content-Type: "application/x-www-form-urlencoded"
               method: POST
               version: HTTP/1.0
-              data: "test=java.blablabla.Runtime"
+              data: "test=java.Runtime"
             output: 
-              log_contains: "id \"944350\""
+              log_contains: "id \"944110\""
 
     - 
-      test_title: 944350-2
-      desc: Argument test includes keywords java and ProcessBuilder
+      test_title: 944110-2
+      desc: Argument test includes keywords java. and ProcessBuilder
       stages: 
         - 
           stage: 
@@ -47,13 +47,13 @@
                 Content-Type: "text/plain"
               method: POST
               version: HTTP/1.0
-              data: "test=java.blablabla.ProcessBuilder"
+              data: "test=java.ProcessBuilder"
             output: 
-              log_contains: "id \"944350\""
+              log_contains: "id \"944110\""
 
     - 
-      test_title: 944350-3
-      desc: Argument name includes keywords java and Runtime
+      test_title: 944110-3
+      desc: Argument name includes keywords java. and Runtime
       stages: 
         - 
           stage: 
@@ -70,13 +70,13 @@
                 Content-Type: "text/plain"
               method: POST
               version: HTTP/1.0
-              data: "java.blablabla.Runtime=test"
+              data: "java.Runtime=test"
             output: 
-              log_contains: "id \"944350\""
+              log_contains: "id \"944110\""
 
     - 
-      test_title: 944350-4
-      desc: Argument name includes keywords java and ProcessBuilder
+      test_title: 944110-4
+      desc: Argument name includes keywords java. and ProcessBuilder
       stages: 
         - 
           stage: 
@@ -93,13 +93,13 @@
                 Content-Type: "text/plain"
               method: POST
               version: HTTP/1.0
-              data: "java.blablabla.ProcessBuilder=test"
+              data: "java.ProcessBuilder=test"
             output: 
-              log_contains: "id \"944350\""
+              log_contains: "id \"944110\""
 
     - 
-      test_title: 944350-5
-      desc: Cookie test includes keywords java and Runtime
+      test_title: 944110-5
+      desc: Cookie test includes keywords java. and Runtime
       stages: 
         - 
           stage: 
@@ -114,16 +114,16 @@
                 Accept-Encoding: gzip,deflate
                 Accept-Language: en-us,en;q=0.5
                 Content-Type: "text/plain"
-                Cookie: test=java.blablabla.Runtime
+                Cookie: test=java.Runtime
               method: POST
               version: HTTP/1.0
               data: "test=value"
             output: 
-              log_contains: "id \"944350\""
+              log_contains: "id \"944110\""
 
     - 
-      test_title: 944350-6
-      desc: Cookie test includes keywords java and ProcessBuilder
+      test_title: 944110-6
+      desc: Cookie test includes keywords java. and ProcessBuilder
       stages: 
         - 
           stage: 
@@ -138,16 +138,16 @@
                 Accept-Encoding: gzip,deflate
                 Accept-Language: en-us,en;q=0.5
                 Content-Type: "text/plain"
-                Cookie: test=java.blablabla.ProcessBuilder
+                Cookie: test=java.ProcessBuilder
               method: POST
               version: HTTP/1.0
               data: "test=value"
             output: 
-              log_contains: "id \"944350\""
+              log_contains: "id \"944110\""
 
     - 
-      test_title: 944350-7
-      desc: Cookie name includes keywords java and Runtime
+      test_title: 944110-7
+      desc: Cookie name includes keywords java. and Runtime
       stages: 
         - 
           stage: 
@@ -162,16 +162,16 @@
                 Accept-Encoding: gzip,deflate
                 Accept-Language: en-us,en;q=0.5
                 Content-Type: "text/plain"
-                Cookie: java.blablabla.Runtime=test
+                Cookie: java.Runtime=test
               method: POST
               version: HTTP/1.0
               data: "test=value"
             output: 
-              log_contains: "id \"944350\""
+              log_contains: "id \"944110\""
 
     - 
-      test_title: 944350-8
-      desc: Cookie name includes keywords java and ProcessBuilder
+      test_title: 944110-8
+      desc: Cookie name includes keywords java. and ProcessBuilder
       stages: 
         - 
           stage: 
@@ -186,16 +186,16 @@
                 Accept-Encoding: gzip,deflate
                 Accept-Language: en-us,en;q=0.5
                 Content-Type: "text/plain"
-                Cookie: java.blablabla.ProcessBuilder=test
+                Cookie: java.ProcessBuilder=test
               method: POST
               version: HTTP/1.0
               data: "test=value"
             output: 
-              log_contains: "id \"944350\""
+              log_contains: "id \"944110\""
 
     - 
-      test_title: 944350-9
-      desc: Request header test includes keywords java and Runtime
+      test_title: 944110-9
+      desc: Request header test includes keywords java. and Runtime
       stages: 
         - 
           stage: 
@@ -210,16 +210,16 @@
                 Accept-Encoding: gzip,deflate
                 Accept-Language: en-us,en;q=0.5
                 Content-Type: "text/plain"
-                test: java.blablabla.Runtime
+                test: java.Runtime
               method: POST
               version: HTTP/1.0
               data: "test=value"
             output: 
-              log_contains: "id \"944350\""
+              log_contains: "id \"944110\""
 
     - 
-      test_title: 944350-10
-      desc: Request header test includes keywords java and ProcessBuilder
+      test_title: 944110-10
+      desc: Request header test includes keywords java. and ProcessBuilder
       stages: 
         - 
           stage: 
@@ -234,16 +234,16 @@
                 Accept-Encoding: gzip,deflate
                 Accept-Language: en-us,en;q=0.5
                 Content-Type: "text/plain"
-                test: java.blablabla.ProcessBuilder
+                test: java.ProcessBuilder
               method: POST
               version: HTTP/1.0
               data: "test=value"
             output: 
-              log_contains: "id \"944350\""
+              log_contains: "id \"944110\""
 
     - 
-      test_title: 944350-11
-      desc: XML element includes keywords java and Runtime
+      test_title: 944110-11
+      desc: XML element includes keywords java. and Runtime
       stages: 
         - 
           stage: 
@@ -260,13 +260,13 @@
                 Content-Type: "application/xml"
               method: POST
               version: HTTP/1.0
-              data: "<?xml version=\"1.0\"?><xml><java.blablabla.Runtime attribute_name=\"attribute_value\">value</java.blablabla.Runtime></xml>"
+              data: "<?xml version=\"1.0\"?><xml><java.Runtime attribute_name=\"attribute_value\">value</java.Runtime></xml>"
             output: 
-              log_contains: "id \"944350\""
+              log_contains: "id \"944110\""
 
     - 
-      test_title: 944350-12
-      desc: XML attribute name includes keywords java and Runtime
+      test_title: 944110-12
+      desc: XML attribute name includes keywords java. and Runtime
       stages: 
         - 
           stage: 
@@ -283,13 +283,13 @@
                 Content-Type: "application/xml"
               method: POST
               version: HTTP/1.0
-              data: "<?xml version=\"1.0\"?><xml><element java.blablabla.Runtime=\"attribute_value\">element_value</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element java.Runtime=\"attribute_value\">element_value</element></xml>"
             output: 
-              log_contains: "id \"944350\""
+              log_contains: "id \"944110\""
 
     - 
-      test_title: 944350-13
-      desc: XML attribute value includes keywords java and Runtime
+      test_title: 944110-13
+      desc: XML attribute value includes keywords java. and Runtime
       stages: 
         - 
           stage: 
@@ -306,13 +306,13 @@
                 Content-Type: "application/xml"
               method: POST
               version: HTTP/1.0
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"java.blablabla.Runtime\">element_value</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"java.lang.string\" attribute2_name=\"Runtime\">element_value</element></xml>"
             output: 
-              log_contains: "id \"944350\""
+              log_contains: "id \"944110\""
 
     - 
-      test_title: 944350-14
-      desc: XML element value includes keywords java and Runtime
+      test_title: 944110-14
+      desc: XML element value includes keywords java. and Runtime
       stages: 
         - 
           stage: 
@@ -329,13 +329,13 @@
                 Content-Type: "application/xml"
               method: POST
               version: HTTP/1.0
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">java.blablabla.Runtime</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">java.Runtime</element></xml>"
             output: 
-              log_contains: "id \"944350\""
+              log_contains: "id \"944110\""
 
     - 
-      test_title: 944350-15
-      desc: XML element includes keywords java and ProcessBuilder
+      test_title: 944110-15
+      desc: XML element includes keywords java. and ProcessBuilder
       stages: 
         - 
           stage: 
@@ -352,13 +352,13 @@
                 Content-Type: "application/xml"
               method: POST
               version: HTTP/1.0
-              data: "<?xml version=\"1.0\"?><xml><java.blablabla.ProcessBuilder attribute_name=\"attribute_value\">value</java.blablabla.ProcessBuilder></xml>"
+              data: "<?xml version=\"1.0\"?><xml><java.ProcessBuilder attribute_name=\"attribute_value\">value</java.ProcessBuilder></xml>"
             output: 
-              log_contains: "id \"944350\""
+              log_contains: "id \"944110\""
 
     - 
-      test_title: 944350-16
-      desc: XML attribute name includes keyword java and ProcessBuilder
+      test_title: 944110-16
+      desc: XML attribute name includes keyworda java. and ProcessBuilder
       stages: 
         - 
           stage: 
@@ -375,13 +375,13 @@
                 Content-Type: "application/xml"
               method: POST
               version: HTTP/1.0
-              data: "<?xml version=\"1.0\"?><xml><element java.blablabla.ProcessBuilder=\"attribute_value\">element_value</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element java.ProcessBuilder=\"attribute_value\">element_value</element></xml>"
             output: 
-              log_contains: "id \"944350\""
+              log_contains: "id \"944110\""
 
     - 
-      test_title: 944350-17
-      desc: XML attribute value includes keywords java and ProcessBuilder
+      test_title: 944110-17
+      desc: XML attribute value includes keywords java. and ProcessBuilder
       stages: 
         - 
           stage: 
@@ -398,13 +398,13 @@
                 Content-Type: "application/xml"
               method: POST
               version: HTTP/1.0
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"java.blablabla.ProcessBuilder\">element_value</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"java.lang.string\" attribute_name2=\"ProcessBuilder\">element_value</element></xml>"
             output: 
-              log_contains: "id \"944350\""
+              log_contains: "id \"944110\""
 
     - 
-      test_title: 944350-18
-      desc: XML element value includes keywords java and ProcessBuilder
+      test_title: 944110-18
+      desc: XML element value includes keywords java. and ProcessBuilder
       stages: 
         - 
           stage: 
@@ -421,6 +421,6 @@
                 Content-Type: "application/xml"
               method: POST
               version: HTTP/1.0
-              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">java.blablabla.ProcessBuilder</element></xml>"
+              data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">java.ProcessBuilder</element></xml>"
             output: 
-              log_contains: "id \"944350\""
+              log_contains: "id \"944110\""
