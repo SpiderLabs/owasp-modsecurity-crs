@@ -18,4 +18,3 @@ log_date_format = "%a %b %d %H:%M:%S.%f %Y"
 #
 # Reverse format: (example: see above)
 #log_date_format = "%Y-%m-%d %H:%M:%S.%f"
-
