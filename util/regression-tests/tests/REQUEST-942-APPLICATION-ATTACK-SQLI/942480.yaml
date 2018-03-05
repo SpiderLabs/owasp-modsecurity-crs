@@ -3,10 +3,10 @@
     author: "Jose Nazario"
     description: None
     enabled: true
-    name: 942410.yaml
+    name: 942480.yaml
   tests:
   -
-    test_title: 942410-1
+    test_title: 942480-1
     desc: "SQL Injection Attack"
     stages:
     -
@@ -22,9 +22,9 @@
           uri: "/?'msdasql'"
           version: HTTP/1.0
         output:
-          log_contains: "id \"942410"
+          log_contains: "id \"942480"
   -
-    test_title: 942410-2
+    test_title: 942480-2
     desc: "SQL Injection Attack"
     stages:
     -
@@ -40,5 +40,5 @@
           port: 80
           version: HTTP/1.0
         output:
-          log_contains: "id \"942410"
+          log_contains: "id \"942480"
 
