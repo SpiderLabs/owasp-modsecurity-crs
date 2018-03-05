@@ -8,7 +8,7 @@ RUN dnf -y update
 RUN dnf -y install python
 
 RUN cd /opt && \
-  git clone -b v3.1/dev https://github.com/csanders-git/owasp-modsecurity-crs owasp-modsecurity-crs-3.1 && \
+  git clone -b v3.1/dev https://github.com/SpiderLabs/owasp-modsecurity-crs owasp-modsecurity-crs-3.1 && \
   cp -R /opt/owasp-modsecurity-crs-3.1/ /etc/httpd/modsecurity.d/owasp-crs/ && \
   mv /etc/httpd/modsecurity.d/owasp-crs/crs-setup.conf.example /etc/httpd/modsecurity.d/owasp-crs/crs-setup.conf && \
   cd /etc/httpd/modsecurity.d && \
