@@ -5,7 +5,7 @@ language: python
 python:
   - 2.7
 before_install:
-  - docker pull owasp/modsecurity-crs:v3.1-dev
+  - docker pull owasp/modsecurity-crs:v3.1
   - docker run -ti -e PARANOIA=5 -d --rm -p 80:80 -v $(pwd)/rules:/etc/httpd/modsecurity.d/owasp-crs/rules/ -v /var/log/httpd:/var/log/httpd/ owasp/modsecurity-crs
 install: 
   - pip install -r ./util/integration/requirements.txt
