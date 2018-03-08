@@ -11,7 +11,9 @@ RUN apt-get update && \
 RUN cd /opt && \
   git clone https://github.com/${REPO}.git owasp-modsecurity-crs-3.1 && \
   cd owasp-modsecurity-crs-3.1 && \
-  git checkout ${COMMIT} && \
+  git checkout -qf ${COMMIT} 
+
+RUN cd /opt && \
   cp -R /opt/owasp-modsecurity-crs-3.1/ /etc/apache2/modsecurity.d/owasp-crs/ && \
   mv /etc/apache2/modsecurity.d/owasp-crs/crs-setup.conf.example /etc/apache2/modsecurity.d/owasp-crs/crs-setup.conf && \
   cd /etc/apache2/modsecurity.d && \
