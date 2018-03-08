@@ -5,7 +5,7 @@ language: python
 python:
   - 2.7
 before_install:
-  - docker build --build-arg REPO=$TRAVIS_REPO_SLUG --build-arg COMMIT=$TRAVIS_COMMIT -it modsecurity-crs ./util/
+  - docker build --build-arg REPO=$TRAVIS_REPO_SLUG --build-arg COMMIT=$TRAVIS_COMMIT -t modsecurity-crs ./util/
   - docker run -ti -e PARANOIA=5 -d --rm -p 80:80 -v /var/log/httpd:/var/log/httpd/ modsecurity-crs
 install: 
   - pip install -r ./util/integration/requirements.txt
