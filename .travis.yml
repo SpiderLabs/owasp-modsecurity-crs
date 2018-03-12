@@ -5,13 +5,16 @@ language: python
 python:
   - 2.7
 before_install:
-  - docker build --build-arg REPO=$TRAVIS_PULL_REQUEST_SLUG --build-arg COMMIT=$TRAVIS_PULL_REQUEST_SHA -t modsecurity-crs ./util/
-  - docker run -ti -e PARANOIA=5 -d --rm -p 80:80 -v /var/log/apache2:/var/log/apache2/ modsecurity-crs
+  - docker build --build-arg REPO=$TRAVIS_PULL_REQUEST_SLUG --build-arg COMMIT=$TRAVIS_PULL_REQUEST_SHA -t modsecurity-crs-apache ./util/
+  - docker run -ti -e PARANOIA=5 -d --rm -p 80:80 -v /var/log/apache2:/var/log/apache2/ modsecurity-crs-apache
+  - docker build --build-arg REPO=$TRAVIS_PULL_REQUEST_SLUG --build-arg COMMIT=$TRAVIS_PULL_REQUEST_SHA -f Dockerfile-nginx -t modsecurity-crs-nginx ./util/
+  - docker run -ti -e PARANOIA=5 -d --rm -p 80:80 -v /var/log/apache2:/use/local/nginx/log/ modsecurity-crs-nginx
 install: 
   - pip install -r ./util/integration/requirements.txt
   - pip install -r ./util/regression-tests/requirements.txt
 script:
   - docker ps | grep -q modsecurity-crs || exit 1
+  - docker ps | grep -q modsecurity-crs-nginx || exit 1
   - py.test -vs ./util/integration/format_tests.py
   - py.test -vs util/regression-tests/CRS_Tests.py --rule=util/regression-tests/tests/test.yaml
   - py.test -vs util/regression-tests/CRS_Tests.py --ruledir=util/regression-tests/tests/REQUEST-911-METHOD-ENFORCEMENT
