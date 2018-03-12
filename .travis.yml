@@ -26,7 +26,7 @@ script:
   - py.test -vs util/regression-tests/CRS_Tests.py --ruledir=util/regression-tests/tests/REQUEST-942-APPLICATION-ATTACK-SQLI
   - py.test -vs util/regression-tests/CRS_Tests.py --ruledir=util/regression-tests/tests/REQUEST-943-APPLICATION-ATTACK-SESSION-FIXATION
   # Nginx tests
-  - sed -i -e "s/log_location_linux = .*/log_location_linux \= '\/usr\/local\/nginx\/error\.log'/g" util/regression-tests/config.py
+  - sed -i -e "s/log_location_linux = .*/log_location_linux \= '\/usr\/local\/nginx\/logs\/error\.log'/g" util/regression-tests/config.py
   - docker ps | grep -q modsecurity-crs-nginx || exit 1
   - py.test -vs util/regression-tests/CRS_Tests.py -port=81 --rule=util/regression-tests/tests/test.yaml
   - py.test -vs util/regression-tests/CRS_Tests.py -port=81 --ruledir=util/regression-tests/tests/REQUEST-911-METHOD-ENFORCEMENT
