@@ -45,3 +45,5 @@
 - Josh Zlatin
 - [Zou Guangxian](https://github.com/zouguangxian)
 - [4ft35t](https://github.com/4ft35t)
+
+*Note: Some contributors may have been working on behalf of organizations when they submitted code, As a result, in many cases these corperations control the copyright of the submitted work and it does not soley belong to the contributor listed.*

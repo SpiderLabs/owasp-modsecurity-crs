@@ -7,7 +7,7 @@ The OWASP ModSecurity Core Rule Set (CRS) is a set of generic attack detection r
 
 ## CRS Resources
 
-Please see the [OWASP ModSecurity Core Rule Set page](https://modsecurity.org/crs/) to get introduced to the CRS and view resources on installation, configuration, and working with the CRS.
+Please see the [OWASP ModSecurity Core Rule Set page](https://coreruleset.org/) to get introduced to the CRS and view resources on installation, configuration, and working with the CRS.
 
 ## Contributing to the CRS
 
@@ -25,3 +25,4 @@ Copyright (c) 2006-2018 Trustwave and contributors. All rights reserved.
 
 The OWASP ModSecurity Core Rule Set is distributed under Apache Software License (ASL) version 2. Please see the enclosed LICENSE file for full details.
 
+Copyright (c) 2006-2018 OWASP Core Rule Set [Contributors](CONTRIBUTORS.md). All rights reserved.
