@@ -8,7 +8,7 @@ before_install:
   - docker build --build-arg REPO=$TRAVIS_PULL_REQUEST_SLUG --build-arg COMMIT=$TRAVIS_PULL_REQUEST_SHA -t modsecurity-crs-apache ./util/
   - docker run -ti -e PARANOIA=5 -d --rm -p 80:80 -v /var/log/apache2:/var/log/apache2/ modsecurity-crs-apache
   - docker build --build-arg REPO=$TRAVIS_PULL_REQUEST_SLUG --build-arg COMMIT=$TRAVIS_PULL_REQUEST_SHA -f util/Dockerfile-nginx -t modsecurity-crs-nginx ./util/
-  - docker run -ti -e PARANOIA=5 -d --rm -p 80:80 -v /var/log/apache2:/usr/local/nginx/log/ modsecurity-crs-nginx
+  - docker run -ti -e PARANOIA=5 -d --rm -p 80:80 -v /var/log/apache2:/usr/local/nginx/logs/ modsecurity-crs-nginx
 install: 
   - pip install -r ./util/integration/requirements.txt
   - pip install -r ./util/regression-tests/requirements.txt
