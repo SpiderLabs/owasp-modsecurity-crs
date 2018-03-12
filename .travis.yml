@@ -27,14 +27,14 @@ script:
   - py.test -vs util/regression-tests/CRS_Tests.py --ruledir=util/regression-tests/tests/REQUEST-943-APPLICATION-ATTACK-SESSION-FIXATION
   # Nginx tests
   - docker ps | grep -q modsecurity-crs-nginx || exit 1
-  - py.test -vs util/regression-tests/CRS_Tests.py --port=81 --rule=util/regression-tests/tests/test.yaml
-  - py.test -vs util/regression-tests/CRS_Tests.py --port=81 --ruledir=util/regression-tests/tests/REQUEST-911-METHOD-ENFORCEMENT
-  - py.test -vs util/regression-tests/CRS_Tests.py --port=81 --ruledir=util/regression-tests/tests/REQUEST-913-SCANNER-DETECTION
-  - py.test -vs util/regression-tests/CRS_Tests.py --port=81 --ruledir=util/regression-tests/tests/REQUEST-921-PROTOCOL-ATTACK
-  - py.test -vs util/regression-tests/CRS_Tests.py --port=81 --ruledir=util/regression-tests/tests/REQUEST-930-APPLICATION-ATTACK-LFI
-  - py.test -vs util/regression-tests/CRS_Tests.py --port=81 --ruledir=util/regression-tests/tests/REQUEST-941-APPLICATION-ATTACK-XSS
-  - py.test -vs util/regression-tests/CRS_Tests.py --port=81 --ruledir=util/regression-tests/tests/REQUEST-942-APPLICATION-ATTACK-SQLI
-  - py.test -vs util/regression-tests/CRS_Tests.py --port=81 --ruledir=util/regression-tests/tests/REQUEST-943-APPLICATION-ATTACK-SESSION-FIXATION
+  - py.test -vs util/regression-tests/CRS_Tests.py -port=81 --rule=util/regression-tests/tests/test.yaml
+  - py.test -vs util/regression-tests/CRS_Tests.py -port=81 --ruledir=util/regression-tests/tests/REQUEST-911-METHOD-ENFORCEMENT
+  - py.test -vs util/regression-tests/CRS_Tests.py -port=81 --ruledir=util/regression-tests/tests/REQUEST-913-SCANNER-DETECTION
+  - py.test -vs util/regression-tests/CRS_Tests.py -port=81 --ruledir=util/regression-tests/tests/REQUEST-921-PROTOCOL-ATTACK
+  - py.test -vs util/regression-tests/CRS_Tests.py -port=81 --ruledir=util/regression-tests/tests/REQUEST-930-APPLICATION-ATTACK-LFI
+  - py.test -vs util/regression-tests/CRS_Tests.py -port=81 --ruledir=util/regression-tests/tests/REQUEST-941-APPLICATION-ATTACK-XSS
+  - py.test -vs util/regression-tests/CRS_Tests.py -port=81 --ruledir=util/regression-tests/tests/REQUEST-942-APPLICATION-ATTACK-SQLI
+  - py.test -vs util/regression-tests/CRS_Tests.py -port=81 --ruledir=util/regression-tests/tests/REQUEST-943-APPLICATION-ATTACK-SESSION-FIXATION
 
 # safelist
 branches:
