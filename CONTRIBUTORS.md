@@ -1,3 +1,8 @@
+Project Stewardship by Trustwave
+--------------------------------
+Over many years, Trustwave Holdings Inc. has contributed countless hours 
+to this project through their SpiderLabs security team.
+
 ## Project Lead:
 
 - [Chaim Sanders](https://github.com/csanders-git)
