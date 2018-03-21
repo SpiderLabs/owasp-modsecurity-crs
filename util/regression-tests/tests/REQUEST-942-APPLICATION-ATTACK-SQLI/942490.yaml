@@ -17,7 +17,7 @@
             Host: localhost
           method: POST
           port: 80
-          data: "var=%22%2322"  
+          data: data: "var=%22%60%20%2A%20123"
           version: HTTP/1.0
         output:
           log_contains: id "942490"
