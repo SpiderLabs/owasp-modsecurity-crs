@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------
-# OWASP ModSecurity Core Rule Set ver.3.0.2
+# OWASP ModSecurity Core Rule Set ver.3.1.0
 # Copyright (c) 2006-2017 Trustwave and contributors. All rights reserved.
 #
 # The OWASP ModSecurity Core Rule Set is distributed under
@@ -260,7 +260,15 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 #  pass,\
 #  t:none,\
 #  setvar:tx.inbound_anomaly_score_threshold=5,\
-#  setvar:tx.outbound_anomaly_score_threshold=4"
+#  setvar:tx.outbound_anomaly_score_threshold=4,\
+#  setvar:tx.inbound_anomaly_score_threshold_pl1=5,\
+#  setvar:tx.outbound_anomaly_score_threshold_pl1=4,\
+#  setvar:tx.inbound_anomaly_score_threshold_pl2=5,\
+#  setvar:tx.outbound_anomaly_score_threshold_pl2=4,\
+#  setvar:tx.inbound_anomaly_score_threshold_pl3=5,\
+#  setvar:tx.outbound_anomaly_score_threshold_pl3=4,\
+#  setvar:tx.inbound_anomaly_score_threshold_pl4=5,\
+#  setvar:tx.outbound_anomaly_score_threshold_pl4=4"
 
 #
 # -- [[ Application Specific Rule Exclusions ]] ----------------------------------------
@@ -773,4 +781,4 @@ SecAction \
   nolog,\
   pass,\
   t:none,\
-  setvar:tx.crs_setup_version=302"
+  setvar:tx.crs_setup_version=310"
