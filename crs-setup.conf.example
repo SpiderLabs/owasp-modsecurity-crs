@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------
-# OWASP ModSecurity Core Rule Set ver.3.0.2
+# OWASP ModSecurity Core Rule Set ver.3.1.0
 # Copyright (c) 2006-2017 Trustwave and contributors. All rights reserved.
 #
 # The OWASP ModSecurity Core Rule Set is distributed under
@@ -396,6 +396,16 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 #  t:none,\
 #  setvar:'tx.static_extensions=/.jpg/ /.jpeg/ /.png/ /.gif/ /.js/ /.css/ /.ico/ /.svg/ /.webp/'"
 
+# Locations that will be inspected to enforce only images and documents uploads.
+# Default: /wp-admin/upload.php /wp-admin/media-new.php
+# Uncomment this rule to change the default.
+#SecAction \
+# "id:900270,\
+#  phase:1,\
+#  nolog,\
+#  pass,\
+#  t:none,\
+#  setvar:'tx.protected_uploads=/wp-admin/upload.php /wp-admin/media-new.php'"
 
 #
 # -- [[ HTTP Argument/Upload Limits ]] -----------------------------------------
@@ -773,4 +783,4 @@ SecAction \
   nolog,\
   pass,\
   t:none,\
-  setvar:tx.crs_setup_version=302"
+  setvar:tx.crs_setup_version=310"
