@@ -398,14 +398,14 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 
 # Locations that will be inspected to enforce only images and documents uploads.
 # Default: /wp-admin/upload.php /wp-admin/media-new.php
-# Uncomment this rule to change the default.
+# Uncomment this rule to change the default set in 901180
 #SecAction \
 # "id:900270,\
 #  phase:1,\
 #  nolog,\
 #  pass,\
 #  t:none,\
-#  setvar:'tx.protected_uploads=/wp-admin/upload.php /wp-admin/media-new.php'"
+#  setvar:'tx.protected_uploads=#/wp-admin/upload.php# #/wp-admin/media-new.php#'"
 
 #
 # -- [[ HTTP Argument/Upload Limits ]] -----------------------------------------
