@@ -39,7 +39,7 @@
           log_contains: id "933151"
   - 
     test_title: 933151-3
-    desc: pmf + chain; must run test in PL2!
+    desc: non-dangorous PHP functions, removed to reduce FP
     stages:
     - stage:
         input:
@@ -71,11 +71,10 @@
           log_contains: id "933151"
   - 
     test_title: 933151-5
-    desc: pmf + chain; must run test in PL2!
+    desc: No peren after keyword
     stages:
     - stage:
         input:
-          data: gethostbynamE(
           dest_addr: 127.0.0.1
           headers:
             Host: localhost
