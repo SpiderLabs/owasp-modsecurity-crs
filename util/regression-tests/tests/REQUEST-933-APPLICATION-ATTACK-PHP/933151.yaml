@@ -71,7 +71,7 @@
           log_contains: id "933151"
   - 
     test_title: 933151-5
-    desc: pmf + chain; must run test in PL2!
+    desc: No peren after keyword
     stages:
     - stage:
         input:
@@ -84,4 +84,4 @@
           port: 80
           uri: /?foo=array_diff
         output:
-          log_contains: id "933151"
+          no_log_contains: id "933151"
