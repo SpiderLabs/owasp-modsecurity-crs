@@ -6,7 +6,7 @@ ARG REPO=SpiderLabs/owasp-modsecurity-crs
 ENV PARANOIA=1
 
 RUN apt-get update && \
-    apt-get -y install python git
+    apt-get -y install python git ca-certificates
 
 RUN cd /opt && \
   git clone https://github.com/${REPO}.git owasp-modsecurity-crs-3.1 && \
