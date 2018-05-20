@@ -2,6 +2,8 @@
 .htaccess
 .htdigest
 .htpasswd
+# WordPress configuration file
+wp-config.php
 # Symfony configuration files
 config.yml
 config_dev.yml
