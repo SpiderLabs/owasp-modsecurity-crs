@@ -28,6 +28,7 @@ wp-config.txt
 # Drupal
 /sites/default/default.settings.php
 /sites/default/settings.php
+/sites/default/settings.local.php
 # Magento
 /app/etc/local.xml
 # Sublime Text

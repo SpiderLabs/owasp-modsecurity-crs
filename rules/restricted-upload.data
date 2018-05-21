@@ -16,6 +16,7 @@ services.yml
 # Drupal configuration files
 default.settings.php
 settings.php
+settings.local.php
 # Magento configuration files
 local.xml
 # dotenv configuration file

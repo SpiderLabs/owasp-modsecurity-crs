@@ -1023,6 +1023,7 @@ services.yml
 # Drupal
 sites/default/default.settings.php
 sites/default/settings.php
+sites/default/settings.local.php
 # Magento
 app/etc/local.xml
 # Sublime Text
@@ -1052,7 +1053,7 @@ config/database.php
 # phpBB
 # Note: this string might be benign in REQUEST_FILENAME
 /config.php
-#Missing Debian based sensitive directories  
+#Missing Debian based sensitive directories
 var/mail/www-data
 etc/network/
 etc/init/
