@@ -1035,6 +1035,11 @@ var/log/vmware/hostd.log
 var/log/vmware/hostd-1.log
 # Wordpress
 wp-config.php
+wp-config.bak
+wp-config.old
+wp-config.temp
+wp-config.tmp
+wp-config.txt
 # Symfony
 config.yml
 config_dev.yml
