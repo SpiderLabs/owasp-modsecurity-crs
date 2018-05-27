@@ -1,3 +1,9 @@
+# Apache
+# (no slash; also guards against old.htaccess, old.htpasswd, etc.)
+.htaccess
+.htdigest
+.htpasswd
+# dotfiles (keep in sync with restricted-files.data)
 .aptitude/config
 .bash_config
 .bash_history
@@ -343,7 +349,6 @@ windows/system32/logfiles/smtpsvc4
 windows/system32/logfiles/smtpsvc5
 etc/osxhttpd/osxhttpd.conf
 system/library/webobjects/adaptors/apache2.2/apache.conf
-library/webserver/documents/.htaccess
 etc/apache2/sites-available/default
 etc/apache2/sites-available/default-ssl
 etc/apache2/sites-enabled/000-default
