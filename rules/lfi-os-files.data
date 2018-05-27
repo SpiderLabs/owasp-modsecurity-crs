@@ -56,7 +56,9 @@
 .viminfo
 .vimrc
 .xauthority
+.zhistory
 .zshrc
+.zsh_history
 etc/redis.conf
 etc/redis-sentinel.conf
 etc/php.ini

@@ -56,7 +56,9 @@
 .viminfo
 .vimrc
 .xauthority
+.zhistory
 .zshrc
+.zsh_history
 # Version control
 /.git/
 /.gitignore
