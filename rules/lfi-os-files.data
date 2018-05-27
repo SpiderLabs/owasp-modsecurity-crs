@@ -1097,3 +1097,10 @@ system32/config/sam
 system32/config/system
 system32/config/software
 winnt/repair/sam._
+# Node
+package.json
+package-lock.json
+gruntfile.js
+npm-debug.log
+tsconfig.json
+yarn.lock

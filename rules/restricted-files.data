@@ -36,8 +36,12 @@ wp-config.txt
 # ASP.NET
 /Web.config
 # Node
+/package.json
+/package-lock.json
 /gruntfile.js
 /npm-debug.log
+/tsconfig.json
+/yarn.lock
 # Composer
 /composer.json
 /composer.lock
