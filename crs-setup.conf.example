@@ -166,6 +166,10 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # example: [tag "paranoia-level/2"]. This allows you to deduct from the
 # audit log how the WAF behavior is affected by paranoia level.
 #
+# For high security settings, it is important to also look into the variable
+# tx.enforce_bodyproc_urlencoded (Enforce Body Processor URLENCODED) defined
+# below.
+#
 # Uncomment this rule to change the default:
 #
 #SecAction \
@@ -175,6 +179,30 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 #   pass,\
 #   t:none,\
 #   setvar:tx.paranoia_level=1"
+
+
+#
+# -- [[ Enforce Body Processor URLENCODED ]] -----------------------------------
+#
+# ModSecurity selects the body processor based on the Content-Type request
+# header. But clients are not always setting the Content-Type header for their
+# request body payloads. This will leave ModSecurity with limited vision into
+# the payload.  The variable tx.enforce_bodyproc_urlencoded lets you force the
+# URLENCODED body processor in these situations. This is off by default, as it
+# implies a change of the behaviour of ModSecurity beyond CRS (the body
+# processor applies to all rules, not only CRS) and because it may lead to
+# false positives already on paranoia level 1. However, in a high security
+# setting, we suggest to enable this variable.
+#
+# Uncomment this rule to change the default:
+#
+#SecAction \
+#  "id:900010,\
+#   phase:1,\
+#   nolog,\
+#   pass,\
+#   t:none,\
+#   setvar:tx.enforce_bodyproc_urlencoded=1"
 
 
 #
