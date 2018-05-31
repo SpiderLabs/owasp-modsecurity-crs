@@ -20,6 +20,7 @@
 ## Contributors:
 
 - [Zack Allen](https://github.com/zmallen)
+- [azhao155](https://github.com/azhao155)
 - [Matt Bagley](https://github.com/bagley)
 - [Ryan Barnett](https://github.com/rcbarnett)
 - [Allan Boll](https://github.com/allanbomsft)
