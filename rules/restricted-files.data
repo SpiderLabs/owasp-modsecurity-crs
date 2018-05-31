@@ -3,6 +3,7 @@
 .htaccess
 .htdigest
 .htpasswd
+.nsconfig
 # Version control
 /.git/
 /.gitignore
@@ -43,3 +44,7 @@ wp-config.txt
 /packages.json
 # dotenv
 /.env
+# OSX 
+/.DS_Store
+# WS FTP 
+/.ws_ftp.ini
