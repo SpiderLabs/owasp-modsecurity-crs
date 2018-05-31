@@ -7,9 +7,67 @@
 
 == Version 3.1.0 - 6/5/2017 ==
 
+ * Add additional file restrictios for ws_ftp, DS_Store... (Jose Nazario)
+ * Fix missing strings in 942410 (Franziska Bühler)
+ * Add 2 missing PDO errors (Christoph Hansen)
+ * Fix issues with FPs in regression tests (Chaim Sanders)
+ * Add Nextcloud client exclusion support (Christoph Hansen)
+ * Fix spelling mistakes in REQUEST-942- (Padraig Doran, Chaim Sanders)
+ * Explicitly ignore the user defined rules (Aaron Haaf, Chaim Sanders)
+ * Add regression tests for 942490 (Christoph Hansen, Chaim Sanders)
+ * Add Owncloud client exclusion support (Christoph Hansen, Christian Folini)
+ * Adding 'F-Secure Radar' vulnerability scanner UA (Christian Folini, Chaim Sanders)
+ * Update DockerFile to use Ubuntu as base (Chaim Sanders)
+ * False positives 942360: move alter and union (Franziska Bühler, Chaim Sanders)
+ * Add support for Java style attacks (Manuel Spartan, Waltor Hop)
+ * Fix various regression tests issues caused by webserver handling (azhao155, Chaim Sanders)
+ * Update TravisCI to build on a per PR basis (Chaim Sanders)
+ * Optimized rule 921160 and regex (Allan Boll, Chaim Sanders)
+ * Update the consistency across various files (Federico G. Schwindt)
+ * Add missing transform, 944120 sibbling 944240 (Manuel Spartan)
+ * Fix false positive for 'like' in 942120 (Walter Hop)
+ * Add regression tests for Java Rules (Manuel Spartan)
+ * Fixup and small reorg of dokuwiki rule exlcusion package (Christian Folini)
+ * Make TravisCI tests fail if Apache can't load rules (Felipe Zipitría)
+ * Add exclusion rules for Dokuwiki. (Matt Bagley, Christian Folini)
+ * Inital exclusions for NextCloud installs (Matt Bagley, Christian Folini)
+ * Added struts-pwn UA to list (Manuel Spartan)
+ * Uses MULTIPART_MISSING_SEMICOLON instead of MULTIPART_SEMICOLON_MISSING (Felipe Zimmerle)
+ * Update copyright year in README.md (Felipe Zipitría)
+ * Add file upload checks (Manuel Spartan)
+ * Check if Transfer-Encoding is missing (Federico G. Schwindt, Christian Folini)
+ * Remove duplicated variables (Federico G. Schwindt)
+ * Reduce FP by splitting classic SQL injection rule 942370 (Christoph Hansen)
+ * Fix typo in REQUEST-920-PROTOCOL-ENFORCEMENT (ihacku, Franziska Bühler)
+ * Add configurable timestamp format to FTW integration (Christian Folini)
+ * Add badges to readme (Felipe Zipitría)
+ * Add clarifying comments to 910110 (Christian Folini)
+ * Making rule 933131 case-insensitive (Manuel Spartan)
+ * Merge and reorder rules as part of cleanup (Federico G. Schwindt)
+ * Update copyright date and syntax (Jose Nazario)
+ * Updated SecMarker and SkipAfter names to use meet guidelines (Felipe Zipitría)
+ * Tidy up single quotes and other guidelines updates (Felipe Zipitría)
+ * Syntax fix for setvar crs_exclusions_wordpress (Manuel Spartan)
+ * Updated various contributors to developers (Christian Folini)
+ * Revise SQL rules by disassembling them into their core protections (Franziska Bühler)
+ * Add an exmaple payload to 920220 (coolt)
+ * Add a missing regex to rule 942310 (Franziska Bühler)
+ * Detect GET or HEAD with Transfer-Encoding header (Federico G. Schwindt)
+ * Fix broken links in references (Pásztor Gábor)
+ * Add contributing guidelines (Felipe Zipitría)
+ * Fix processing bypasses in rule 931130 (Felipe Zipitría)
+ * Correct small omissions in unix-shell.data (Walter Hop)
+ * Add IIS specific detection to LFI-os-files.data (Manuel Spartan)
+ * Update examples to match the current cleanup (Federico G. Schwindt)
+ * Corrected the ordering of actions to meet guidelines (Felipe Zipitría)
+ * Remove unused capture groups (Federico G. Schwindt)
+ * Use explicit rx operator (Federico G. Schwindt)
+
+
 == Version 3.0.2 - 5/12/2017 ==
 
  * Remove debug rule that popped up in 3.0.1 (Christian Folini)
+
 
 == Version 3.0.1 - 5/9/2017 ==
 
@@ -46,7 +104,6 @@
  * Added Christoph Hansen (emphazer) to CONTRIBUTORS file
  * Added Franziska Bühler (franbuehler) to CONTRIBUTORS file
  * Fixed bug with DoS rule 912160 (@loudly-soft, Christian Folini)
-
 
 
 == Version 3.0.0 - 11/10/2016 ==
