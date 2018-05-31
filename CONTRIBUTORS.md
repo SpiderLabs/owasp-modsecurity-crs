@@ -29,6 +29,7 @@
 - [coolt](https://github.com/coolt)
 - [Ashish Dixit](https://github.com/tundal45)
 - [Padraig Doran](https://github.com/padraigdoran)
+- [Umar Farook](https://github.com/umarfarook882)
 - [FrozenSolid](https://github.com/frozenSolid)
 - [Pásztor Gábor](https://github.com/gpasztor87)
 - [Aaron Haaf](https://github.com/Everspace)
