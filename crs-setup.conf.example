@@ -166,9 +166,9 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # example: [tag "paranoia-level/2"]. This allows you to deduct from the
 # audit log how the WAF behavior is affected by paranoia level.
 #
-# For high security settings, it is important to also look into the variable
-# tx.enforce_bodyproc_urlencoded (Enforce Body Processor URLENCODED) defined
-# below.
+# It is important to also look into the variable 
+# tx.enforce_bodyproc_urlencoded (Enforce Body Processor URLENCODED) 
+# defined below. Enabling it closes a possible bypass of CRS.
 #
 # Uncomment this rule to change the default:
 #
@@ -191,8 +191,8 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # URLENCODED body processor in these situations. This is off by default, as it
 # implies a change of the behaviour of ModSecurity beyond CRS (the body
 # processor applies to all rules, not only CRS) and because it may lead to
-# false positives already on paranoia level 1. However, in a high security
-# setting, we suggest to enable this variable.
+# false positives already on paranoia level 1. However, enabling this variable
+# closes a possible bypass of CRS so it should be considered.
 #
 # Uncomment this rule to change the default:
 #
