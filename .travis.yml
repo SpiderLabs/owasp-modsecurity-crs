@@ -24,7 +24,7 @@ script:
   - py.test -vs util/regression-tests/CRS_Tests.py --ruledir=util/regression-tests/tests/REQUEST-942-APPLICATION-ATTACK-SQLI
   - py.test -vs util/regression-tests/CRS_Tests.py --ruledir=util/regression-tests/tests/REQUEST-943-APPLICATION-ATTACK-SESSION-FIXATION
   # Nginx tests
-  - docker rm -f modsecurity-crs
+  - docker ps -a | awk '{ print $1,$2 }' | grep modsecurity | awk '{print $1 }' | xargs -I {} docker rm -f {}
   - docker build --build-arg REPO=$TRAVIS_PULL_REQUEST_SLUG --build-arg COMMIT=$TRAVIS_PULL_REQUEST_SHA -f util/Dockerfile-nginx -t modsecurity-crs-nginx ./util/
   - docker run -ti -e PARANOIA=5 -d --rm -p80:80 -v /usr/local/nginx/logs/:/usr/local/nginx/logs/ modsecurity-crs-nginx
   - echo "log_location_linux = '/usr/local/nginx/logs/error.log'" > util/regression-tests/config.py
