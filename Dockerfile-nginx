@@ -1,0 +1,29 @@
+FROM owasp/modsecurity:v2-ubuntu-nginx
+MAINTAINER Chaim Sanders chaim.sanders@gmail.com
+
+ARG COMMIT=v3.1/dev
+ARG REPO=SpiderLabs/owasp-modsecurity-crs
+ENV PARANOIA=1
+ENV CRS_PATH=/usr/local/nginx/conf/modsecurity.d/owasp-crs
+
+RUN apt-get update && \
+    apt-get -y install python git ca-certificates
+
+RUN cd /opt && \
+  git clone https://github.com/${REPO}.git owasp-modsecurity-crs-3.1 && \
+  cd owasp-modsecurity-crs-3.1 && \
+  git checkout -qf ${COMMIT} 
+
+RUN cd /opt && \
+  cp -R /opt/owasp-modsecurity-crs-3.1/ /usr/local/nginx/conf/modsecurity.d/owasp-crs/ && \
+  mv /usr/local/nginx/conf/modsecurity.d/owasp-crs/crs-setup.conf.example /usr/local/nginx/conf/modsecurity.d/owasp-crs/crs-setup.conf && \
+  cd /usr/local/nginx/conf/modsecurity.d && \
+  printf "\ninclude owasp-crs/crs-setup.conf\ninclude owasp-crs/rules/REQUEST-901-INITIALIZATION.conf\ninclude owasp-crs/rules/REQUEST-905-COMMON-EXCEPTIONS.conf\ninclude owasp-crs/rules/REQUEST-910-IP-REPUTATION.conf\ninclude owasp-crs/rules/REQUEST-911-METHOD-ENFORCEMENT.conf\ninclude owasp-crs/rules/REQUEST-912-DOS-PROTECTION.conf\ninclude owasp-crs/rules/REQUEST-913-SCANNER-DETECTION.conf\ninclude owasp-crs/rules/REQUEST-920-PROTOCOL-ENFORCEMENT.conf\ninclude owasp-crs/rules/REQUEST-921-PROTOCOL-ATTACK.conf\ninclude owasp-crs/rules/REQUEST-930-APPLICATION-ATTACK-LFI.conf\ninclude owasp-crs/rules/REQUEST-931-APPLICATION-ATTACK-RFI.conf\ninclude owasp-crs/rules/REQUEST-932-APPLICATION-ATTACK-RCE.conf\ninclude owasp-crs/rules/REQUEST-933-APPLICATION-ATTACK-PHP.conf\ninclude owasp-crs/rules/REQUEST-941-APPLICATION-ATTACK-XSS.conf\ninclude owasp-crs/rules/REQUEST-942-APPLICATION-ATTACK-SQLI.conf\ninclude owasp-crs/rules/REQUEST-943-APPLICATION-ATTACK-SESSION-FIXATION.conf\ninclude owasp-crs/rules/REQUEST-949-BLOCKING-EVALUATION.conf\ninclude owasp-crs/rules/RESPONSE-950-DATA-LEAKAGES.conf\ninclude owasp-crs/rules/RESPONSE-951-DATA-LEAKAGES-SQL.conf\ninclude owasp-crs/rules/RESPONSE-952-DATA-LEAKAGES-JAVA.conf\ninclude owasp-crs/rules/RESPONSE-953-DATA-LEAKAGES-PHP.conf\ninclude owasp-crs/rules/RESPONSE-954-DATA-LEAKAGES-IIS.conf\ninclude owasp-crs/rules/RESPONSE-959-BLOCKING-EVALUATION.conf\ninclude owasp-crs/rules/RESPONSE-980-CORRELATION.conf" >> includes.conf && \
+  sed -i -e 's/SecRuleEngine DetectionOnly/SecRuleEngine On/g' /usr/local/nginx/conf/modsecurity.d/modsecurity.conf
+
+COPY docker-entrypoint.sh /
+
+EXPOSE 80
+
+ENTRYPOINT ["/docker-entrypoint.sh"]
+CMD /usr/local/nginx/sbin/nginx -g "daemon off;"
