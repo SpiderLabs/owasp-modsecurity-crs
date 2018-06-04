@@ -7,8 +7,6 @@ python:
 before_install:
   - docker build --build-arg REPO=$TRAVIS_PULL_REQUEST_SLUG --build-arg COMMIT=$TRAVIS_PULL_REQUEST_SHA -t modsecurity-crs ./util/
   - docker run -ti -e PARANOIA=5 -d --rm -p 80:80 -v /var/log/apache2:/var/log/apache2/ modsecurity-crs
-  - docker build --build-arg REPO=$TRAVIS_PULL_REQUEST_SLUG --build-arg COMMIT=$TRAVIS_PULL_REQUEST_SHA -f util/Dockerfile-nginx -t modsecurity-crs-nginx ./util/
-  - docker run -ti -e PARANOIA=5 -d --rm -p 81:80 -v /usr/local/nginx/logs/:/usr/local/nginx/logs/ modsecurity-crs-nginx
 install: 
   - pip install -r ./util/integration/requirements.txt
   - pip install -r ./util/regression-tests/requirements.txt
@@ -26,18 +24,21 @@ script:
   - py.test -vs util/regression-tests/CRS_Tests.py --ruledir=util/regression-tests/tests/REQUEST-942-APPLICATION-ATTACK-SQLI
   - py.test -vs util/regression-tests/CRS_Tests.py --ruledir=util/regression-tests/tests/REQUEST-943-APPLICATION-ATTACK-SESSION-FIXATION
   # Nginx tests
+  - docker rm -f modsecurity-crs
+  - docker build --build-arg REPO=$TRAVIS_PULL_REQUEST_SLUG --build-arg COMMIT=$TRAVIS_PULL_REQUEST_SHA -f util/Dockerfile-nginx -t modsecurity-crs-nginx ./util/
+  - docker run -ti -e PARANOIA=5 -d --rm -p80:80 -v /usr/local/nginx/logs/:/usr/local/nginx/logs/ modsecurity-crs-nginx
   - echo "log_location_linux = '/usr/local/nginx/logs/error.log'" > util/regression-tests/config.py
   - echo "log_date_regex = '(\d{4}\/\d{2}\/\d{2}\s\d{2}\:\d{2}\:\d{2})'" >> util/regression-tests/config.py
   - echo "log_date_format = '%Y/%m/%d %H:%M:%S'" >> util/regression-tests/config.py
   - docker ps | grep -q modsecurity-crs-nginx || exit 1
-  - py.test -vs util/regression-tests/CRS_Tests.py -port=81 --rule=util/regression-tests/tests/test.yaml
-  - py.test -vs util/regression-tests/CRS_Tests.py -port=81 --ruledir=util/regression-tests/tests/REQUEST-911-METHOD-ENFORCEMENT
-  - py.test -vs util/regression-tests/CRS_Tests.py -port=81 --ruledir=util/regression-tests/tests/REQUEST-913-SCANNER-DETECTION
-  - py.test -vs util/regression-tests/CRS_Tests.py -port=81 --ruledir=util/regression-tests/tests/REQUEST-921-PROTOCOL-ATTACK
-  - py.test -vs util/regression-tests/CRS_Tests.py -port=81 --ruledir=util/regression-tests/tests/REQUEST-930-APPLICATION-ATTACK-LFI
-  - py.test -vs util/regression-tests/CRS_Tests.py -port=81 --ruledir=util/regression-tests/tests/REQUEST-941-APPLICATION-ATTACK-XSS
-  - py.test -vs util/regression-tests/CRS_Tests.py -port=81 --ruledir=util/regression-tests/tests/REQUEST-942-APPLICATION-ATTACK-SQLI
-  - py.test -vs util/regression-tests/CRS_Tests.py -port=81 --ruledir=util/regression-tests/tests/REQUEST-943-APPLICATION-ATTACK-SESSION-FIXATION
+  - py.test -vs util/regression-tests/CRS_Tests.py --rule=util/regression-tests/tests/test.yaml
+  - py.test -vs util/regression-tests/CRS_Tests.py --ruledir=util/regression-tests/tests/REQUEST-911-METHOD-ENFORCEMENT
+  - py.test -vs util/regression-tests/CRS_Tests.py --ruledir=util/regression-tests/tests/REQUEST-913-SCANNER-DETECTION
+  - py.test -vs util/regression-tests/CRS_Tests.py --ruledir=util/regression-tests/tests/REQUEST-921-PROTOCOL-ATTACK
+  - py.test -vs util/regression-tests/CRS_Tests.py --ruledir=util/regression-tests/tests/REQUEST-930-APPLICATION-ATTACK-LFI
+  - py.test -vs util/regression-tests/CRS_Tests.py --ruledir=util/regression-tests/tests/REQUEST-941-APPLICATION-ATTACK-XSS
+  - py.test -vs util/regression-tests/CRS_Tests.py --ruledir=util/regression-tests/tests/REQUEST-942-APPLICATION-ATTACK-SQLI
+  - py.test -vs util/regression-tests/CRS_Tests.py --ruledir=util/regression-tests/tests/REQUEST-943-APPLICATION-ATTACK-SESSION-FIXATION
 
 # safelist
 branches:
