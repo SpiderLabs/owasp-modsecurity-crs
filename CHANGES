@@ -19,7 +19,7 @@
  * Adding 'F-Secure Radar' vulnerability scanner UA (Christian Folini, Chaim Sanders)
  * Update DockerFile to use Ubuntu as base (Chaim Sanders)
  * False positives 942360: move alter and union (Franziska Bühler, Chaim Sanders)
- * Add support for Java style attacks (Manuel Spartan, Waltor Hop)
+ * Add support for Java style attacks (Manuel Spartan, Walter Hop)
  * Fix various regression tests issues caused by webserver handling (azhao155, Chaim Sanders)
  * Update TravisCI to build on a per PR basis (Chaim Sanders)
  * Optimized rule 921160 and regex (Allan Boll, Chaim Sanders)
