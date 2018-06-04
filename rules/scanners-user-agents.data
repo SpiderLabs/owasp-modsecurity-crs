@@ -63,6 +63,9 @@ fhscan core 1.
 #
 floodgate
 #
+# "F-Secure Radar is a turnkey vulnerability scanning and management platform."
+F-Secure Radar
+#
 get-minimal
 # vuln scanner
 gootkit auto-rooter scanner
