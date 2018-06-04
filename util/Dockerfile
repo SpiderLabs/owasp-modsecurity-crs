@@ -4,6 +4,7 @@ MAINTAINER Chaim Sanders chaim.sanders@gmail.com
 ARG COMMIT=v3.1/dev
 ARG REPO=SpiderLabs/owasp-modsecurity-crs
 ENV PARANOIA=1
+ENV CRS_PATH=/etc/apache2/modsecurity.d/owasp-crs
 
 RUN apt-get update && \
     apt-get -y install python git ca-certificates
