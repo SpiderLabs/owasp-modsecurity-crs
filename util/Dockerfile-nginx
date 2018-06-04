@@ -7,7 +7,7 @@ ENV PARANOIA=1
 ENV CRS_PATH=/usr/local/nginx/conf/modsecurity.d/owasp-crs
 
 RUN apt-get update && \
-    apt-get -y install python git
+    apt-get -y install python git ca-certificates
 
 RUN cd /opt && \
   git clone https://github.com/${REPO}.git owasp-modsecurity-crs-3.1 && \
