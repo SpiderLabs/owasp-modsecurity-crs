@@ -179,7 +179,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 
 # It is possible to run rules from a higher paranoia level but not include them
 # in the anomaly scoring. This allows you to take a well-tuned system on
-# paranoia level 1 and add rules from paranoia level 2 without having o fear
+# paranoia level 1 and add rules from paranoia level 2 without having to fear
 # the new rules would lead to false positives that raise your score above the
 # threshold.
 # This optional feature is enabled by uncommenting the following rule and
