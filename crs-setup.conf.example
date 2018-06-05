@@ -166,6 +166,10 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # example: [tag "paranoia-level/2"]. This allows you to deduct from the
 # audit log how the WAF behavior is affected by paranoia level.
 #
+# It is important to also look into the variable 
+# tx.enforce_bodyproc_urlencoded (Enforce Body Processor URLENCODED) 
+# defined below. Enabling it closes a possible bypass of CRS.
+#
 # Uncomment this rule to change the default:
 #
 #SecAction \
@@ -201,6 +205,30 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 #   pass,\
 #   t:none,\
 #   setvar:tx.executing_paranoia_level=1"
+
+
+#
+# -- [[ Enforce Body Processor URLENCODED ]] -----------------------------------
+#
+# ModSecurity selects the body processor based on the Content-Type request
+# header. But clients are not always setting the Content-Type header for their
+# request body payloads. This will leave ModSecurity with limited vision into
+# the payload.  The variable tx.enforce_bodyproc_urlencoded lets you force the
+# URLENCODED body processor in these situations. This is off by default, as it
+# implies a change of the behaviour of ModSecurity beyond CRS (the body
+# processor applies to all rules, not only CRS) and because it may lead to
+# false positives already on paranoia level 1. However, enabling this variable
+# closes a possible bypass of CRS so it should be considered.
+#
+# Uncomment this rule to change the default:
+#
+#SecAction \
+#  "id:900010,\
+#   phase:1,\
+#   nolog,\
+#   pass,\
+#   t:none,\
+#   setvar:tx.enforce_bodyproc_urlencoded=1"
 
 
 #
@@ -328,7 +356,8 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 #  setvar:tx.crs_exclusions_drupal=1,\
 #  setvar:tx.crs_exclusions_wordpress=1,\
 #  setvar:tx.crs_exclusions_nextcloud=1,\
-#  setvar:tx.crs_exclusions_dokuwik=1"
+#  setvar:tx.crs_exclusions_dokuwik=1,\
+#  setvar:tx.crs_exclusions_cpanel=1"
 
 #
 # -- [[ HTTP Policy Settings ]] ------------------------------------------------
