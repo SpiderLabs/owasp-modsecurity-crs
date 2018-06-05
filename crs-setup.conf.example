@@ -189,7 +189,11 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # anomaly scores.
 # By default, tx.monitoring_paranoia_level is set to tx.paranoia_level.
 # tx.monitoring_paranoia_level must not be lower than tx.paranoia_level.
-
+#
+# Please notice that setting tx.monitoring_paranoia_level to a higher paranoia
+# level results in a performance impact that is equally high as setting
+# tx.paranoia_level to said level.
+#
 #SecAction \
 #  "id:900001,\
 #   phase:1,\
