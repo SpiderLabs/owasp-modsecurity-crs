@@ -59,6 +59,7 @@
 .zhistory
 .zshrc
 .zsh_history
+.nsconfig
 # Version control
 /.git/
 /.gitignore
@@ -105,3 +106,10 @@ wp-config.txt
 /packages.json
 # dotenv
 /.env
+/.env
+# OSX
+/.DS_Store
+# WS FTP
+/.ws_ftp.ini
+# common, old network config file
+.netrc
