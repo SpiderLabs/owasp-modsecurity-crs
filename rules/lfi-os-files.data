@@ -1109,6 +1109,7 @@ package.json
 package-lock.json
 gruntfile.js
 npm-debug.log
+ormconfig.json
 tsconfig.json
 webpack.config.js
 yarn.lock
