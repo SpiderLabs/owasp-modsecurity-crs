@@ -25,6 +25,7 @@
 - [Jonathan Claudius](https://github.com/claudijd)
 - [Ashish Dixit](https://github.com/tundal45)
 - [FrozenSolid](https://github.com/frozenSolid)
+- [Aaron Haaf](https://github.com/Everspace)
 - [Michael Haas](https://github.com/MichaelHaas)
 - [jamuse](https://github.com/jamuse)
 - [Krzysztof Kotowicz](https://github.com/koto)
