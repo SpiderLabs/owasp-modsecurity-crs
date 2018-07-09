@@ -5,7 +5,12 @@ language: python
 python:
   - 2.7
 before_install:
-  - docker build --build-arg REPO=$TRAVIS_PULL_REQUEST_SLUG --build-arg COMMIT=$TRAVIS_PULL_REQUEST_SHA -t modsecurity-crs ./util/
+  - |
+    if [[ "$TRAVIS_PULL_REQUEST" != "false" ]]; then
+      docker build --build-arg REPO=$TRAVIS_PULL_REQUEST_SLUG --build-arg COMMIT=$TRAVIS_PULL_REQUEST_SHA -t modsecurity-crs ./util/
+    else
+      docker build -t modsecurity-crs ./util/
+    fi
   - docker run -ti -e PARANOIA=5 -d --rm -p 80:80 -v /var/log/apache2:/var/log/apache2/ modsecurity-crs
 install: 
   - pip install -r ./util/integration/requirements.txt
