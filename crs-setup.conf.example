@@ -166,8 +166,8 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # example: [tag "paranoia-level/2"]. This allows you to deduct from the
 # audit log how the WAF behavior is affected by paranoia level.
 #
-# It is important to also look into the variable 
-# tx.enforce_bodyproc_urlencoded (Enforce Body Processor URLENCODED) 
+# It is important to also look into the variable
+# tx.enforce_bodyproc_urlencoded (Enforce Body Processor URLENCODED)
 # defined below. Enabling it closes a possible bypass of CRS.
 #
 # Uncomment this rule to change the default:
@@ -181,7 +181,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 #   setvar:tx.paranoia_level=1"
 
 
-# It is possible to execute rules from a higher paranoia level but not include 
+# It is possible to execute rules from a higher paranoia level but not include
 # them in the anomaly scoring. This allows you to take a well-tuned system on
 # paranoia level 1 and add rules from paranoia level 2 without having to fear
 # the new rules would lead to false positives that raise your score above the
@@ -397,6 +397,19 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 #  pass,\
 #  t:none,\
 #  setvar:'tx.allowed_request_content_type=application/x-www-form-urlencoded|multipart/form-data|text/xml|application/xml|application/soap+xml|application/x-amf|application/json|application/octet-stream|text/plain'"
+
+# Content-Types charsets that a client is allowed to send in a request.
+# Default: utf-8
+# Uncomment this rule to change the default.
+# Use "|" to separate multiple charsets like in the rule defining
+# tx.allowed_request_content_type.
+#SecAction \
+# "id:900270,\
+#  phase:1,\
+#  nolog,\
+#  pass,\
+#  t:none,\
+#  setvar:'tx.allowed_request_content_type_charset=utf-8'"
 
 # Allowed HTTP versions.
 # Default: HTTP/1.0 HTTP/1.1 HTTP/2 HTTP/2.0
