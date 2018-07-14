@@ -1,34 +1,29 @@
-<!-- For help and support please go to Stack Exchange: -->
-<!-- https://security.stackexchange.com/questions/tagged/owasp-crs -->
+<!--- For help and support please go to Stack Exchange: -->
+<!--- https://security.stackexchange.com/questions/tagged/owasp-crs -->
 
 <!--- Provide a general summary of the issue in the Title above -->
 
-## Expected Behavior
-<!--- If you're describing a bug, tell us what should happen -->
-<!--- If you're suggesting a change/improvement, tell us how it should work -->
+## Type of Issue
+<!-- Incorrect blocking (false positive), incorrect bypass (false negative), -->
+<!-- bug fix, feature suggestion -->
 
-## Current Behavior
-<!--- If describing a bug, tell us what happens instead of the expected behavior -->
-<!--- If suggesting a change/improvement, explain the difference from current behavior -->
-
-## Possible Solution
-<!--- Not obligatory, but suggest a fix/reason for the bug, -->
-<!--- or ideas how to implement the addition or change -->
-
-## Steps to Reproduce (for bugs)
-<!--- Provide a link to a live example, or an unambiguous set of steps to -->
-<!--- reproduce this bug. Include code to reproduce, if relevant -->
-1.
-2.
-3.
-4.
-
-## Context
-<!--- How has this issue affected you? What are you trying to accomplish? -->
-<!--- Providing context helps us come up with a solution that is most useful in the real world -->
+## Description
+<!-- In case of a false positive, please provide a copy of the audit -->
+<!-- log entry. You can usually find this at /var/log/modsec_audit.log. -->
+<!-- In case of a false negative, please provide the payload you -->
+<!-- are sending. For complex payloads with headers, please include -->
+<!-- a curl command. -->
+<!-- Include any relevant CVEs or research links. -->
 
 ## Your Environment
-<!--- Include as many relevant details about the environment you experienced the bug in -->
-* CRS version used (e.g. v3.0.2):
-* Environment and version (e.g. ModSecurity 2.9.2 on apache 2.4.27):
+<!--- Include as many relevant details about the environment you -->
+<!--- experienced the bug in: -->
+* CRS version (e.g. v3.0.2):
+* ModSecurity version (e.g. 2.9.2):
+* Web Server and version (e.g. apache 2.4.27):
 * Operating System and version:
+
+## Confirmation
+
+[ ] I have removed any personal data (email addresses, IP addresses,
+    passwords, domain names) from any logs posted.
