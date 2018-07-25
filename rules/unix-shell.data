@@ -1,8 +1,10 @@
 bin/bash
+bin/cat
 bin/csh
 bin/dash
 bin/du
 bin/echo
+bin/grep
 bin/less
 bin/ls
 bin/more
@@ -34,6 +36,7 @@ usr/bin/cc
 usr/bin/clang
 usr/bin/clang++
 usr/bin/curl
+usr/bin/diff
 usr/bin/env
 usr/bin/fetch
 usr/bin/file

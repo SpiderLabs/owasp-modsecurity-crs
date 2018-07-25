@@ -1,6 +1,10 @@
-crs-setup.conf
 *.swp
 *.swo
+
+# User configuration
+crs-setup.conf
+rules/REQUEST-900-EXCLUSION-RULES-BEFORE-CRS.conf
+rules/RESPONSE-999-EXCLUSION-RULES-AFTER-CRS.conf
 
 # The MaxMind GeoIP database can be downloaded or upgraded by running:
 # util/upgrade.py geoip
