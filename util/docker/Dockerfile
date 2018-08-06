@@ -6,7 +6,7 @@ ARG REPO=SpiderLabs/owasp-modsecurity-crs
 ENV PARANOIA=1
 
 RUN apt-get update && \
-    apt-get -y install python git ca-certificates
+    apt-get -y install python git ca-certificates iproute2
 
 RUN cd /opt && \
   git clone https://github.com/${REPO}.git owasp-modsecurity-crs-3.1 && \
@@ -18,8 +18,10 @@ RUN cd /opt && \
   mv /etc/apache2/modsecurity.d/owasp-crs/crs-setup.conf.example /etc/apache2/modsecurity.d/owasp-crs/crs-setup.conf && \
   cd /etc/apache2/modsecurity.d && \
   printf "include modsecurity.d/owasp-crs/crs-setup.conf\ninclude modsecurity.d/owasp-crs/rules/*.conf" > include.conf && \
-  sed -i -e 's/SecRuleEngine DetectionOnly/SecRuleEngine On/g' /etc/apache2/modsecurity.d/modsecurity.conf
+  sed -i -e 's/SecRuleEngine DetectionOnly/SecRuleEngine On/g' /etc/apache2/modsecurity.d/modsecurity.conf && \
+  a2enmod proxy proxy_http
 
+COPY proxy.conf           /etc/apache2/modsecurity.d/proxy.conf
 COPY docker-entrypoint.sh /
 
 EXPOSE 80
