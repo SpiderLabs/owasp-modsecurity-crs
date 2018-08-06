@@ -1,7 +1,7 @@
 ---
   meta:
     author: "spartantri"
-    enabled: true
+    enabled: false
     name: "944230.yaml"
     description: "Positive tests for rule 944230"
   tests:
