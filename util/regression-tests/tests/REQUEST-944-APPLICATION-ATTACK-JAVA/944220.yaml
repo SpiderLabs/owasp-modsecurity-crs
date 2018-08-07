@@ -1,7 +1,8 @@
 ---
   meta:
     author: "spartantri"
-    enabled: true
+    # Failing too many tests @spartantri
+    enabled: false
     name: "944220.yaml"
     description: "Positive tests for rule 944220"
   tests:

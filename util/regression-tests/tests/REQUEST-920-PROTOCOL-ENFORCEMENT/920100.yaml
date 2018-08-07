@@ -77,7 +77,7 @@
               uri: "1.2.3.4:80"
               version: "HTTP/1.1"
             output: 
-              status: 405
+              status: [405, 403]
     - 
       # invalid Connect request, domains require ports
       test_title: 920100-5
