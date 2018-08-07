@@ -63,7 +63,6 @@ please adhere to the following contributing guidelines.
     sanitiseMatchedBytes
     ctl
     setenv
-    rev
     ver
     severity
     setvar
