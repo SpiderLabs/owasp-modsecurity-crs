@@ -40,6 +40,7 @@
 - [Christian Mehlmauer](https://github.com/FireFart)
 - [Glyn Mooney](https://github.com/skidoosh)
 - [Jose Nazario](https://github.com/paralax)
+- [Scott O'Neil](https://github.com/cPanelScott)
 - [Robert Paprocki](https://github.com/p0pr0ck5)
 - [Christian Peron](https://github.com/csjperon)
 - [Elia Pinto](https://github.com/yersinia)
@@ -47,6 +48,7 @@
 - Ofer Shezaf
 - Breno Silva
 - [Marc Stern](https://github.com/marcstern)
+- [theMiddle](https://github.com/theMiddleBlue)
 - [Ben Williams](https://github.com/benwilliams)
 - [Greg Wroblewski](https://github.com/gwroblew)
 - [ygrek](https://github.com/ygrek)

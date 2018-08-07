@@ -5,8 +5,21 @@
   or the CRS mailinglist at
 * https://lists.owasp.org/mailman/listinfo/owasp-modsecurity-core-rule-set
 
-== Version 3.1.0 - 6/5/2017 ==
-
+== Version 3.1.0 - 8/7/2017 ==
+ 
+ * Add self[ and document[ to rule 941180 (theMiddle)
+ * Provide proxy support within CRS docker image (Scott O'Neil)
+ * Prevent bypass in rule 930120 PL3 (theMiddle)
+ * Remove revision status from rules (Federico G. Schwindt) 
+ * Add template for issues (Federico G. Schwindt)
+ * Correct failing travis tests in merge situations (Federico G. Schwindt)
+ * Remove unused global variable in IIS rules (Chaim Sanders)
+ * Refactor to use phase number instead of name (Federico G. Schwindt)
+ * Add uploaded file name check; refresh LFI / filename checks (Walter Hop)
+ * Introduce critical sibling of 920340 in PL2 (Walter Hop)
+ * Fix bypass caused by multiple spaces in RCE rules (Walter Hop)
+ * Remove unneded regex capture groups (Federico G. Schwindt)
+ * Add built-in exceptions for CPanel (Christoph Hansen)
  * Add additional file restrictios for ws_ftp, DS_Store... (Jose Nazario)
  * Fix missing strings in 942410 (Franziska Bühler)
  * Add 2 missing PDO errors (Christoph Hansen)
