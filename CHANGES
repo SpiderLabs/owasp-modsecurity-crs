@@ -5,7 +5,7 @@
   or the CRS mailinglist at
 * https://lists.owasp.org/mailman/listinfo/owasp-modsecurity-core-rule-set
 
-== Version 3.1.0 - 8/7/2017 ==
+== Version 3.1.0 - 8/7/2018 ==
  
  * Add self[ and document[ to rule 941180 (theMiddle)
  * Provide proxy support within CRS docker image (Scott O'Neil)
