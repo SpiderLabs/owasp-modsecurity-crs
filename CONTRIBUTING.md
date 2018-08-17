@@ -14,7 +14,7 @@ please adhere to the following contributing guidelines.
 
 ## Making Changes
 
-* Please base your changes on branch ```v3.1/dev```
+* Please base your changes on branch ```v3.2/dev```
 * Create a topic branch for your feature or bug fix.
 * Make commits of logical units.
 * Make sure your commits adhere to the rules guidelines below.
