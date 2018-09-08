@@ -107,7 +107,6 @@ wp-config.txt
 /packages.json
 # dotenv
 /.env
-/.env
 # OSX
 /.DS_Store
 # WS FTP
