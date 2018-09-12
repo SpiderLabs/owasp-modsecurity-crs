@@ -197,7 +197,7 @@ sub generate_patch
 						# Check to see if each vulnerable parameter is valid
 						# then generate a rule using both uricontent and the
 						# parameter
-						$rule = "SecRule REQUEST_FILENAME \"$uricontent\" \"chain,phase:2,t:none,block,msg:'Virtual Patch for $type',id:'$id',tag:'WEB_ATTACK/XSS',tag:'WASCTC/WASC-8',tag:'WASCTC/WASC-22',tag:'OWASP_TOP_10/A2',tag:'OWASP_AppSensor/IE1',tag:'PCI/6.5.1',logdata:'%{matched_var_name}',severity:'2'\"\n\tSecRule \&TX:\'\/XSS.*ARGS:$_\/\' \"\@gt 0\" \"setvar:'tx.msg=%{rule.msg}',setvar:tx.xss_score=+%{tx.critical_anomaly_score},setvar:tx.anomaly_score=+%{tx.critical_anomaly_score}\"";
+						$rule = "SecRule REQUEST_FILENAME \"$uricontent\" \"chain,phase:2,t:none,block,msg:'Virtual Patch for $type',id:'$id',tag:'WEB_ATTACK/XSS',tag:'WASCTC/WASC-8',tag:'WASCTC/WASC-22',tag:'OWASP_TOP_10/A2',tag:'OWASP_AppSensor/IE1',tag:'PCI/6.5.1',logdata:'%{MATCHED_VAR_name}',severity:'2'\"\n\tSecRule \&TX:\'\/XSS.*ARGS:$_\/\' \"\@gt 0\" \"setvar:'tx.msg=%{rule.msg}',setvar:tx.xss_score=+%{tx.critical_anomaly_score},setvar:tx.anomaly_score=+%{tx.critical_anomaly_score}\"";
 						
 							print $MODSEC_RULES "#\n# OWASP ZAP Virtual Patch Details:\n# ID: $id\n# Type: $type\n# Vulnerable URL: $uricontent\n# Vulnerable Parameter: $_\n#\n".$rule."\n\n";
 							print "$VULN_CLASS_XSS (uricontent and param) rule successfully generated and saved in $modsec_rules_file.\n";
@@ -213,7 +213,7 @@ sub generate_patch
 			if($uricontent ne "" && @params){
 				foreach(@params){
 					if($_ ne ""){
-						$rule = "SecRule REQUEST_FILENAME \"$uricontent\" \"chain,phase:2,t:none,block,msg:'Virtual Patch for $type',id:'$id',tag:'WEB_ATTACK/SQL_INJECTION',tag:'WASCTC/WASC-19',tag:'OWASP_TOP_10/A1',tag:'OWASP_AppSensor/CIE1',tag:'PCI/6.5.2',logdata:'%{matched_var_name}',severity:'2'\"\n\tSecRule \&TX:\'\/SQL_INJECTION.*ARGS:$_\/\' \"\@gt 0\" \"setvar:'tx.msg=%{rule.msg}',setvar:tx.sql_injection_score=+%{tx.critical_anomaly_score},setvar:tx.anomaly_score=+%{tx.critical_anomaly_score}\"";
+						$rule = "SecRule REQUEST_FILENAME \"$uricontent\" \"chain,phase:2,t:none,block,msg:'Virtual Patch for $type',id:'$id',tag:'WEB_ATTACK/SQL_INJECTION',tag:'WASCTC/WASC-19',tag:'OWASP_TOP_10/A1',tag:'OWASP_AppSensor/CIE1',tag:'PCI/6.5.2',logdata:'%{MATCHED_VAR_name}',severity:'2'\"\n\tSecRule \&TX:\'\/SQL_INJECTION.*ARGS:$_\/\' \"\@gt 0\" \"setvar:'tx.msg=%{rule.msg}',setvar:tx.sql_injection_score=+%{tx.critical_anomaly_score},setvar:tx.anomaly_score=+%{tx.critical_anomaly_score}\"";
 				
 					print $MODSEC_RULES "#\n# OWASP ZAP Virtual Patch Details:\n# ID: $id\n# Type: $type\n# Vulnerable URL: $uricontent\n# Vulnerable Parameter: $_\n#\n".$rule."\n\n";
                                         print "$VULN_CLASS_SQLI (uricontent and param) rule successfully generated and saved in $modsec_rules_file.\n";
@@ -231,7 +231,7 @@ sub generate_patch
                         if($uricontent ne "" && @params){
                                 foreach(@params){
                                         if($_ ne ""){
-                                                $rule = "SecRule REQUEST_FILENAME \"$uricontent\" \"chain,phase:2,t:none,block,msg:'Virtual Patch for $type',id:'$id',tag:'WEB_ATTACK/SQL_INJECTION',tag:'WASCTC/WASC-19',tag:'OWASP_TOP_10/A1',tag:'OWASP_AppSensor/CIE1',tag:'PCI/6.5.2',logdata:'%{matched_var_name}',severity:'2'\"\n\tSecRule \&TX:\'\/SQL_INJECTION.*ARGS:$_\/\' \"\@gt 0\" \"setvar:'tx.msg=%{rule.msg}',setvar:tx.sql_injection_score=+%{tx.critical_anomaly_score},setvar:tx.anomaly_score=+%{tx.critical_anomaly_score}\"";
+                                                $rule = "SecRule REQUEST_FILENAME \"$uricontent\" \"chain,phase:2,t:none,block,msg:'Virtual Patch for $type',id:'$id',tag:'WEB_ATTACK/SQL_INJECTION',tag:'WASCTC/WASC-19',tag:'OWASP_TOP_10/A1',tag:'OWASP_AppSensor/CIE1',tag:'PCI/6.5.2',logdata:'%{MATCHED_VAR_name}',severity:'2'\"\n\tSecRule \&TX:\'\/SQL_INJECTION.*ARGS:$_\/\' \"\@gt 0\" \"setvar:'tx.msg=%{rule.msg}',setvar:tx.sql_injection_score=+%{tx.critical_anomaly_score},setvar:tx.anomaly_score=+%{tx.critical_anomaly_score}\"";
 
                                         print $MODSEC_RULES "#\n# OWASP ZAP Virtual Patch Details:\n# ID: $id\n# Type: $type\n# Vulnerable URL: $uricontent\n# Vulnerable Parameter: $_\n#\n".$rule."\n\n";
                                         print "$VULN_CLASS_SQLI (uricontent and param) rule successfully generated and saved in $modsec_rules_file.\n";
@@ -248,7 +248,7 @@ sub generate_patch
 			if($uricontent ne "" && @params){
 				foreach(@params){
 					if($_ ne ""){
-                                                $rule = "SecRule REQUEST_FILENAME \"$uricontent\" \"chain,phase:2,t:none,block,msg:'Virtual Patch for $type',id:'$id',tag:'WEB_ATTACK/LFI',tag:'WASCTC/WASC-33',logdata:'%{matched_var_name}',severity:'2'\"\n\tSecRule \&TX:\'\/LFI.*ARGS:$_\/\' \"\@gt 0\" \"setvar:'tx.msg=%{rule.msg}',setvar:tx.anomaly_score=+%{tx.critical_anomaly_score}\"";
+                                                $rule = "SecRule REQUEST_FILENAME \"$uricontent\" \"chain,phase:2,t:none,block,msg:'Virtual Patch for $type',id:'$id',tag:'WEB_ATTACK/LFI',tag:'WASCTC/WASC-33',logdata:'%{MATCHED_VAR_name}',severity:'2'\"\n\tSecRule \&TX:\'\/LFI.*ARGS:$_\/\' \"\@gt 0\" \"setvar:'tx.msg=%{rule.msg}',setvar:tx.anomaly_score=+%{tx.critical_anomaly_score}\"";
 
                                         print $MODSEC_RULES "#\n# OWASP ZAP Virtual Patch Details:\n# ID: $id\n# Type: $type\n# Vulnerable URL: $uricontent\n# Vulnerable Parameter: $_\n#\n".$rule."\n\n";
                                         print "$VULN_CLASS_LFI (uricontent and param) rule successfully generated and saved in $modsec_rules_file.\n";
@@ -265,7 +265,7 @@ sub generate_patch
                         if($uricontent ne "" && @params){
                                 foreach(@params){
                                         if($_ ne ""){
-                                                $rule = "SecRule REQUEST_FILENAME \"$uricontent\" \"chain,phase:2,t:none,block,msg:'Virtual Patch for $type',id:'$id',tag:'WEB_ATTACK/RFI',tag:'WASCTC/WASC-05',logdata:'%{matched_var_name}',severity:'2'\"\n\tSecRule \&TX:\'\/RFI.*ARGS:$_\/\' \"\@gt 0\" \"setvar:'tx.msg=%{rule.msg}',setvar:tx.anomaly_score=+%{tx.critical_anomaly_score}\"";
+                                                $rule = "SecRule REQUEST_FILENAME \"$uricontent\" \"chain,phase:2,t:none,block,msg:'Virtual Patch for $type',id:'$id',tag:'WEB_ATTACK/RFI',tag:'WASCTC/WASC-05',logdata:'%{MATCHED_VAR_name}',severity:'2'\"\n\tSecRule \&TX:\'\/RFI.*ARGS:$_\/\' \"\@gt 0\" \"setvar:'tx.msg=%{rule.msg}',setvar:tx.anomaly_score=+%{tx.critical_anomaly_score}\"";
 
                                         print $MODSEC_RULES "#\n# OWASP ZAP Virtual Patch Details:\n# ID: $id\n# Type: $type\n# Vulnerable URL: $uricontent\n# Vulnerable Parameter: $_\n#\n".$rule."\n\n";
                                         print "$VULN_CLASS_LFI (uricontent and param) rule successfully generated and saved in $modsec_rules_file.\n";
@@ -282,7 +282,7 @@ sub generate_patch
                         if($uricontent ne "" && @params){
                                 foreach(@params){
                                         if($_ ne ""){
-                                                $rule = "SecRule REQUEST_FILENAME \"$uricontent\" \"chain,phase:2,t:none,block,msg:'Virtual Patch for $type',id:'$id',tag:'WEB_ATTACK/RESPONSE_SPLITTING',tag:'WASCTC/WASC-25',logdata:'%{matched_var_name}',severity:'2'\"\n\tSecRule \&TX:\'\/RESPONSE_SPLITTING.*ARGS:$_\/\' \"\@gt 0\" \"setvar:'tx.msg=%{rule.msg}',setvar:tx.anomaly_score=+%{tx.critical_anomaly_score}\"";
+                                                $rule = "SecRule REQUEST_FILENAME \"$uricontent\" \"chain,phase:2,t:none,block,msg:'Virtual Patch for $type',id:'$id',tag:'WEB_ATTACK/RESPONSE_SPLITTING',tag:'WASCTC/WASC-25',logdata:'%{MATCHED_VAR_name}',severity:'2'\"\n\tSecRule \&TX:\'\/RESPONSE_SPLITTING.*ARGS:$_\/\' \"\@gt 0\" \"setvar:'tx.msg=%{rule.msg}',setvar:tx.anomaly_score=+%{tx.critical_anomaly_score}\"";
 
                                         print $MODSEC_RULES "#\n# OWASP ZAP Virtual Patch Details:\n# ID: $id\n# Type: $type\n# Vulnerable URL: $uricontent\n# Vulnerable Parameter: $_\n#\n".$rule."\n\n";
                                         print "$VULN_CLASS_RFI (uricontent and param) rule successfully generated and saved in $modsec_rules_file.\n";
