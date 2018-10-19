@@ -71,7 +71,6 @@ env-update
 esac
 eval
 exec+
-exit
 expand
 export
 expr
