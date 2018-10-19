@@ -85,7 +85,6 @@ endlocal
 erase
 eventcreate
 eventvwr
-exit
 expand@
 explorer
 fc@
