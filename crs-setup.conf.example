@@ -17,7 +17,7 @@
 # ModSecurity Web Application Firewall.
 #
 # See also:
-# https://modsecurity.org/crs/
+# https://coreruleset.org/
 # https://github.com/SpiderLabs/owasp-modsecurity-crs
 # https://www.owasp.org/index.php/Category:OWASP_ModSecurity_Core_Rule_Set_Project
 #
@@ -34,9 +34,10 @@
 # ModSecurity settings (modsecurity.conf) such as SecRuleEngine,
 # SecRequestBodyAccess, SecAuditEngine, SecDebugLog, and XML processing.
 #
-# The CRS assumes that modsecurity.conf has been loaded. If you don't have this
-# file, you can get it from:
-# https://github.com/SpiderLabs/ModSecurity/blob/master/modsecurity.conf-recommended
+# The CRS assumes that modsecurity.conf has been loaded. It is bundled with
+# ModSecurity. If you don't have it, you can get it from:
+# 2.x: https://raw.githubusercontent.com/SpiderLabs/ModSecurity/v2/master/modsecurity.conf-recommended
+# 3.x: https://raw.githubusercontent.com/SpiderLabs/ModSecurity/v3/master/modsecurity.conf-recommended
 #
 # The order of file inclusion in your webserver configuration should always be:
 # 1. modsecurity.conf
