@@ -6,10 +6,20 @@
 * https://lists.owasp.org/mailman/listinfo/owasp-modsecurity-core-rule-set
 
 == Version 3.1.0 - 8/7/2018 ==
- 
+ * Add Detectify scanner (theMiddle)
+ * Renaming matched_var/s (Victor Hora)
+ * Remove lines with bare '#' comment char (Walter Hop)
+ * Drop the XML variable from rule 932190 (Federico G. Schwindt)
+ * Update outdated URLs (Walter Hop)
+ * remove unused rule 901180 (Walter Hop)
+ * Drop exit from unix and windows RCE (Federico G. Schwindt)
+ * Fix anomaly_score counters (Federico G. Schwindt)
+ * Remove mostly redundant 944220 in favor of 944240 (Christian Folini)
  * Add self[ and document[ to rule 941180 (theMiddle)
  * Provide proxy support within CRS docker image (Scott O'Neil)
  * Prevent bypass in rule 930120 PL3 (theMiddle)
+ * Fix small typo in variable (Felipe Zipitría)
+ * Fix bug #1166 in Docker image (Franziska Bühler)
  * Remove revision status from rules (Federico G. Schwindt) 
  * Add template for issues (Federico G. Schwindt)
  * Correct failing travis tests in merge situations (Federico G. Schwindt)
