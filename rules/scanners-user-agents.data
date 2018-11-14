@@ -190,3 +190,6 @@ WPScan
 # vuln scanner
 # https://github.com/mazen160/struts-pwn
 struts-pwn
+# Detectify website vulnerability scanner
+# https://detectify.com/
+Detectify
