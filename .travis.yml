@@ -5,27 +5,33 @@ language: python
 python:
   - 2.7
 before_install:
-  - docker build --build-arg REPO=$TRAVIS_PULL_REQUEST_SLUG --build-arg COMMIT=$TRAVIS_PULL_REQUEST_SHA -t modsecurity-crs ./util/
-  - docker run -ti -e PARANOIA=5 -d --rm -p 80:80 -v /var/log/apache2:/var/log/apache2/ modsecurity-crs
+  - |
+    if [[ "$TRAVIS_PULL_REQUEST" != "false" ]]; then
+      docker build --build-arg REPO=$TRAVIS_PULL_REQUEST_SLUG --build-arg COMMIT=$TRAVIS_PULL_REQUEST_SHA -t modsecurity-crs ./util/docker/
+    else
+      docker build -t modsecurity-crs ./util/docker/
+    fi
+  - docker run -ti -e PARANOIA=5 -d -p 80:80 -v /var/log/apache2:/var/log/apache2/ --name "$TRAVIS_BUILD_ID" modsecurity-crs
 install: 
   - pip install -r ./util/integration/requirements.txt
   - pip install -r ./util/regression-tests/requirements.txt
 script:
-  - docker ps | grep -q modsecurity-crs || exit 1
+  - |
+    docker ps | grep -q modsecurity-crs
+    if [[ $? -ne 0 ]]; then
+      docker logs "$TRAVIS_BUILD_ID"
+      docker rm -f "$TRAVIS_BUILD_ID"
+      exit 1
+    fi
   - py.test -vs ./util/integration/format_tests.py
-  - py.test -vs util/regression-tests/CRS_Tests.py --rule=util/regression-tests/tests/test.yaml
-  - py.test -vs util/regression-tests/CRS_Tests.py --ruledir=util/regression-tests/tests/REQUEST-911-METHOD-ENFORCEMENT
-  - py.test -vs util/regression-tests/CRS_Tests.py --ruledir=util/regression-tests/tests/REQUEST-913-SCANNER-DETECTION
-  - py.test -vs util/regression-tests/CRS_Tests.py --ruledir=util/regression-tests/tests/REQUEST-921-PROTOCOL-ATTACK
-  - py.test -vs util/regression-tests/CRS_Tests.py --ruledir=util/regression-tests/tests/REQUEST-930-APPLICATION-ATTACK-LFI
-  - py.test -vs util/regression-tests/CRS_Tests.py --ruledir=util/regression-tests/tests/REQUEST-941-APPLICATION-ATTACK-XSS
-  - py.test -vs util/regression-tests/CRS_Tests.py --ruledir=util/regression-tests/tests/REQUEST-942-APPLICATION-ATTACK-SQLI
-  - py.test -vs util/regression-tests/CRS_Tests.py --ruledir=util/regression-tests/tests/REQUEST-943-APPLICATION-ATTACK-SESSION-FIXATION
+  - py.test -vs util/regression-tests/CRS_Tests.py --ruledir_recurse=util/regression-tests/tests/
+  - docker rm -f "$TRAVIS_BUILD_ID"
 # safelist
 branches:
   only:
   - v3.0/dev
   - v3.0/master
   - v3.1/dev
+  - v3.2/dev
 notifications:
   irc: "chat.freenode.net#modsecurity"
