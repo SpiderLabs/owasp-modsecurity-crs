@@ -24,15 +24,15 @@ There are Three requirements for running the OWASP CRS regressions.
 To accomplish 2. and 3. you may use the following rule in your setup.conf:
 
 ```
-SecAction "id:900005, \ 
+SecAction "id:900005,\
   phase:1,\
-  nolog, \
-  pass, \
-  ctl:ruleEngine=DetectionOnly,\ 
+  nolog,\
+  pass,\
+  ctl:ruleEngine=DetectionOnly,\
   ctl:ruleRemoveById=910000,\
   setvar:tx.paranoia_level=4,\
   setvar:tx.crs_validate_utf8_encoding=1,\
-  setvar:tx.arg_name_length=100, \
+  setvar:tx.arg_name_length=100,\
   setvar:tx.arg_length=400"
 ```
 
