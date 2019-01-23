@@ -113,3 +113,17 @@ wp-config.txt
 /.ws_ftp.ini
 # common, old network config file
 .netrc
+# New Files Staging Area
+bower.json
+.git/
+.gitignore
+.idea
+.DS_STORE
+nbproject/
+.bowerrc
+.eslintrc
+.jshintrc
+.gitlab-ci.yml
+.travis-ci.yml
+database.yml
+.svn/
