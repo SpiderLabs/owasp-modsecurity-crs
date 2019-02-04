@@ -12,7 +12,7 @@ before_install:
       docker build -t modsecurity-crs ./util/docker/
     fi
   - docker run -ti -e PARANOIA=5 -d -p 80:80 -v /var/log/apache2:/var/log/apache2/ --name "$TRAVIS_BUILD_ID" modsecurity-crs
-install: 
+install:
   - pip install -r ./util/integration/requirements.txt
   - pip install -r ./util/regression-tests/requirements.txt
 script:
@@ -25,6 +25,9 @@ script:
     fi
   - py.test -vs ./util/integration/format_tests.py
   - py.test -vs util/regression-tests/CRS_Tests.py --ruledir_recurse=util/regression-tests/tests/
+  - git clone https://github.com/CRS-support/secrules_parsing
+  - pip install -R  secrules_parsing/requirements.txt
+  - python secrules_parsing/secrules_parser.py -c -f rules/*.conf
   - docker rm -f "$TRAVIS_BUILD_ID"
 # safelist
 branches:
