@@ -143,5 +143,3 @@ bower.json
 .travis.yml
 database.yml
 Dockerfile
-
-
