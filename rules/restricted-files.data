@@ -124,6 +124,8 @@ wp-config.txt
 .nvm/
 .minikube/
 .atom/
+.aws/config
+.aws/credentials
 .cups/
 .dbus/
 .boto
