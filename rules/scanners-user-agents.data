@@ -193,3 +193,6 @@ struts-pwn
 # Detectify website vulnerability scanner
 # https://detectify.com/
 Detectify
+# ZGrab scanner (Mozilla/5.0 zgrab/0.x)
+# https://zmap.io
+zgrab
