@@ -32,12 +32,12 @@
             dest_addr: 127.0.0.1
             method: GET
             port: 80
-            uri: '/?x=<script >alert(1);</script>'
+            uri: "/?x=<script+>alert(1);</script>"
             headers:
               User-Agent: ModSecurity CRS 3 Tests
               Host: localhost
           output:
-            no_log_contains: id "941110"    
+            log_contains: id "941110"    
     - 
       test_title: 941110-3
       desc: Test as described in http://www.client9.com/article/five-interesting-injection-attacks/
