@@ -233,6 +233,42 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 
 
 #
+# -- [[ Remote IP Address ]] ---------------------------------------------------
+#
+# If your web server is behind a reverse proxy (like a load balancer),
+# all connections will come from the same IP address. CRS need to know
+# the real IP address of clients for working with RBL and for DoS rules.
+# Usually, a reverse proxy set the user's real IP address in a request header
+# like X-Forwarded-For or True-Client-IP. CRS uses the tx.real_ip variable
+# to store the user's IP address, that can be set with a rule like the following: 
+#
+#SecRule REMOTE_ADDR "@ipMatch 127.0.0.1" \
+#	"id:900020,\
+#	phase:1,\
+#	nolog,\
+#	pass,\
+#	t:none,\
+#	setvar:tx.real_ip=%{REQUEST_HEADERS:X-Forwarded-For}"
+#
+# Before setting the tx.real_ip variable it's absolutely necessary to check first
+# if the request comes from the reverse proxy IP address. This because a user could
+# send the X-Forwarded-For header in order to act as the reverse proxy and hide its
+# real IP address.
+#
+# For example, if your web server is behind CloudFlare load balancer, you should
+# uncomment the following rule that check if the request come from one of CloudFlare
+# IP addresses (https://www.cloudflare.com/ips/) and then set the tx.real_ip variable:
+#
+#SecRule REMOTE_ADDR "@ipMatch 103.21.244.0/22,103.22.200.0/22,103.31.4.0/22,104.16.0.0/12,108.162.192.0/18,131.0.72.0/22,141.101.64.0/18,162.158.0.0/15,172.64.0.0/13,173.245.48.0/20,188.114.96.0/20,190.93.240.0/20,197.234.240.0/22,198.41.128.0/17,2400:cb00::/32,2405:b500::/32,2606:4700::/32,2803:f800::/32,2c0f:f248::/32,2a06:98c0::/29" \
+#	"id:900020,\
+#	phase:1,\
+#	nolog,\
+#	pass,\
+#	t:none,\
+#	setvar:tx.real_ip=%{REQUEST_HEADERS:CF-Connecting-IP}"
+
+
+#
 # -- [[ Anomaly Mode Severity Levels ]] ----------------------------------------
 #
 # Each rule in the CRS has an associated severity level.
