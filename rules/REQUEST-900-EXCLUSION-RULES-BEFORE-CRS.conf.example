@@ -87,7 +87,7 @@
 # IP network block as appropriate for your AVS traffic
 #
 # ModSec Rule Exclusion: Disable Rule Engine for known ASV IP
-# SecRule REMOTE_ADDR "@ipMatch 192.168.1.100" \
+# SecRule TX:REAL_IP "@ipMatch 192.168.1.100" \
 #     "id:1000,\
 #     phase:1,\
 #     pass,\
