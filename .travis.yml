@@ -23,11 +23,11 @@ script:
       docker rm -f "$TRAVIS_BUILD_ID"
       exit 1
     fi
-  - py.test -vs ./util/integration/format_tests.py
-  - py.test -vs util/regression-tests/CRS_Tests.py --ruledir_recurse=util/regression-tests/tests/
   - git clone https://github.com/CRS-support/secrules_parsing
   - pip install -r  secrules_parsing/requirements.txt
-  - python secrules_parsing/secrules_parser.py -c -f rules/*.conf
+  - python secrules_parsing/secrules_parser.py -c -f rules/*.conf    
+  - py.test -vs ./util/integration/format_tests.py
+  - py.test -vs util/regression-tests/CRS_Tests.py --ruledir_recurse=util/regression-tests/tests/
   - docker rm -f "$TRAVIS_BUILD_ID"
 # safelist
 branches:
