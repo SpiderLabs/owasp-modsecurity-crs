@@ -1,0 +1,48 @@
+---
+  meta: 
+    author: "theMiddle"
+    enabled: true
+    name: "945000.yaml"
+    description: "XXE PL1"
+  tests: 
+    - 
+      test_title: 945100-1
+      desc: XXE LFI/RFI using wrapper
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                Accept: "*/*"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Content-Type: "text/html"
+              method: POST
+              version: HTTP/1.0
+              uri: /
+              data: "<?xml version=\"1.0\" encoding=\"utf-8\"?><!DOCTYPE xxe [<!ELEMENT name ANY ><!ENTITY xxe SYSTEM \"file:///etc/passwd\" >]><root><name>&xxe;</name></root>"
+            output: 
+              log_contains: "id \"945100\""
+
+    - 
+      test_title: 945000-2
+      desc: XXE Local File Inclusion
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                Accept: "*/*"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Content-Type: "text/html"
+              method: POST
+              version: HTTP/1.0
+              uri: /
+              data: "<?xml version=\"1.0\" ?><!DOCTYPE replace [<!ENTITY example SYSTEM \"/foo/bar/xyz.txt\"> ]><root><name>&example;</name></root>"
+            output: 
+              log_contains: "id \"945110\""

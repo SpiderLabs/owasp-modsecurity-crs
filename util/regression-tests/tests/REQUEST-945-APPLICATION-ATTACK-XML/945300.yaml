@@ -1,0 +1,28 @@
+---
+  meta: 
+    author: "theMiddle"
+    enabled: true
+    name: "945300.yaml"
+    description: "XXE Regression Test PL3"
+  tests: 
+    - 
+      test_title: 945200-1
+      desc: XXE ENTITY tag
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                Accept: "*/*"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Content-Type: "text/html"
+              method: POST
+              version: HTTP/1.1
+              uri: /
+              data: "<?xml version=\"1.0\" ?><!DOCTYPE replace [<!ENTITY example \"foo\"> ]>"
+            output: 
+              log_contains: "id \"945300\""
+

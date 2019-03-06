@@ -1,0 +1,28 @@
+---
+  meta: 
+    author: "theMiddle"
+    enabled: true
+    name: "945200.yaml"
+    description: "XXE Regression Test PL2"
+  tests: 
+    - 
+      test_title: 945200-1
+      desc: XXE test replace response values
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                Accept: "*/*"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Content-Type: "text/html"
+              method: POST
+              version: HTTP/1.1
+              uri: /
+              data: "<!--?xml version=\"1.0\" ?--><!DOCTYPE replace [<!ENTITY example \"foobar\"> ]><root><name>&example;</name></root>"
+            output: 
+              log_contains: "id \"945200\""
+
