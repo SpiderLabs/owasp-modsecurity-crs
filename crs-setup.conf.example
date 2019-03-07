@@ -399,19 +399,6 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 #  t:none,\
 #  setvar:'tx.allowed_request_content_type=application/x-www-form-urlencoded|multipart/form-data|text/xml|application/xml|application/soap+xml|application/x-amf|application/json|application/octet-stream|application/csp-report|application/xss-auditor-report|text/plain'"
 
-# Content-Types charsets that a client is allowed to send in a request.
-# Default: utf-8|iso-8859-1|iso-8859-15|windows-1252
-# Uncomment this rule to change the default.
-# Use "|" to separate multiple charsets like in the rule defining
-# tx.allowed_request_content_type.
-#SecAction \
-# "id:900270,\
-#  phase:1,\
-#  nolog,\
-#  pass,\
-#  t:none,\
-#  setvar:'tx.allowed_request_content_type_charset=utf-8|iso-8859-1|iso-8859-15|windows-1252'"
-
 # Allowed HTTP versions.
 # Default: HTTP/1.0 HTTP/1.1 HTTP/2 HTTP/2.0
 # Example for legacy clients: HTTP/0.9 HTTP/1.0 HTTP/1.1 HTTP/2 HTTP/2.0
@@ -475,6 +462,19 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 #  pass,\
 #  t:none,\
 #  setvar:'tx.protected_uploads=#/wp-admin/upload.php# #/wp-admin/media-new.php#'"
+
+# Content-Types charsets that a client is allowed to send in a request.
+# Default: utf-8|iso-8859-1|iso-8859-15|windows-1252
+# Uncomment this rule to change the default.
+# Use "|" to separate multiple charsets like in the rule defining
+# tx.allowed_request_content_type.
+#SecAction \
+# "id:900280,\
+#  phase:1,\
+#  nolog,\
+#  pass,\
+#  t:none,\
+#  setvar:'tx.allowed_request_content_type_charset=utf-8|iso-8859-1|iso-8859-15|windows-1252'"
 
 #
 # -- [[ HTTP Argument/Upload Limits ]] -----------------------------------------
