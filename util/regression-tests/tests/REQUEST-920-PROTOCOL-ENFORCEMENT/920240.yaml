@@ -133,4 +133,4 @@
                   Content-Type: "application/x-www-form-urlencoded"
               data: "param=%7%6F%6D%65%74%65%78%74%5F%31%32%33%"
             output: 
-              log_contains: "id \"920240\""                
+              log_contains: "id \"920240\""
