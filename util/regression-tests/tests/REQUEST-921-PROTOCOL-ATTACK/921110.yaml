@@ -22,3 +22,37 @@
           version: HTTP/1.0
         output:
           log_contains: id "921110"
+  -
+    test_title: 921110-2
+    desc: "HTTP Response Splitting"
+    stages:
+    -
+      stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: "localhost"
+            Cache-Control: "no-cache, no-store, must-revalidate"
+          method: POST
+          port: 80
+          data: "var=aaa%0aGET+/+HTTP/1.1"
+          version: HTTP/1.0
+        output:
+          log_contains: id "921110"
+  -
+    test_title: 921110-3
+    desc: "HTTP Response Splitting"
+    stages:
+    -
+      stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: "localhost"
+            Cache-Control: "no-cache, no-store, must-revalidate"
+          method: POST
+          port: 80
+          data: "var=aaa%0dHEAD+http://example.com/+HTTP/1.1"
+          version: HTTP/1.0
+        output:
+          log_contains: id "921110"
