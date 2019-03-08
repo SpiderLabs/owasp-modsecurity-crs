@@ -69,6 +69,23 @@
             Cache-Control: "no-cache, no-store, must-revalidate"
           method: POST
           port: 80
+          data: "var=aaa%0d%0aGet+/foo%0d"
+          version: HTTP/1.0
+        output:
+          log_contains: id "921110"
+  -
+    test_title: 921110-5
+    desc: "HTTP Response Splitting"
+    stages:
+    -
+      stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: "localhost"
+            Cache-Control: "no-cache, no-store, must-revalidate"
+          method: POST
+          port: 80
           data: "var=aaa%0d%0aGet+foo+bar"
           version: HTTP/1.0
         output:
