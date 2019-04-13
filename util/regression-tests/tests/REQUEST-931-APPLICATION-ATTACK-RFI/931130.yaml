@@ -51,9 +51,7 @@
                 Host: localhost
               method: GET
               port: 80
-              uri:
-
-
+              uri: /?x=ftps://foo.bar
               version: HTTP/1.1
             output:
               log_contains: id "931130"
@@ -70,8 +68,7 @@
                 Host: localhost
               method: GET
               port: 80
-              uri:
-
+              uri: /?x=http://foo.bar
               version: HTTP/1.1
             output:
               log_contains: id "931130"
