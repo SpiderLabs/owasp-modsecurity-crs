@@ -2,7 +2,7 @@
   meta:
     author: csanders-git
     description: None
-    enabled: false
+    enabled: true
     name: 931110.yaml
   tests:
   - 
@@ -26,7 +26,7 @@
             User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)
           method: GET
           port: 80
-          uri: /plugins/spamx/BaseAdmin.class.php?_CONF[path]
+          uri: /plugins/spamx/BaseAdmin.class.php?_CONF[path]=https://foo.bar
           version: HTTP/1.1
         output:
           log_contains: id "931110"
