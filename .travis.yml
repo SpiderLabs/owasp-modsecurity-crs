@@ -24,7 +24,7 @@ script:
       exit 1
     fi
   - git clone https://github.com/CRS-support/secrules_parsing
-  - pip install -r  secrules_parsing/requirements.txt
+  - pip install -r secrules_parsing/requirements.txt
   - python secrules_parsing/secrules_parser.py -c -f rules/*.conf
   - py.test -vs ./util/integration/format_tests.py
   - py.test -vs util/regression-tests/CRS_Tests.py --ruledir_recurse=util/regression-tests/tests/
