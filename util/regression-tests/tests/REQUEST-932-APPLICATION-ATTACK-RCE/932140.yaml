@@ -1,0 +1,169 @@
+---
+  meta:
+    author: fgsch
+    description: Tests for Windows for command
+    enabled: true
+    name: 932140.yaml
+  tests:
+  -
+    test_title: 932140-1
+    desc: for %
+    stages:
+    -
+      stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Accept: "*/*"
+            Host: localhost
+            User-Agent: ModSecurity CRS 3 Tests
+          method: GET
+          port: 80
+          uri: /?foo=for%20%25variable%20in%20%28set%29%20do%20command
+          version: HTTP/1.0
+        output:
+          log_contains: id "932140"
+  -
+    test_title: 932140-2
+    desc: for %%
+    stages:
+    -
+      stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Accept: "*/*"
+            Host: localhost
+            User-Agent: ModSecurity CRS 3 Tests
+          method: GET
+          port: 80
+          uri: /?foo=for%20%25%25variable%20in%20%28set%29%20do%20command
+          version: HTTP/1.0
+        output:
+          log_contains: id "932140"
+  -
+    test_title: 932140-3
+    desc: for /d
+    stages:
+    -
+      stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Accept: "*/*"
+            Host: localhost
+            User-Agent: ModSecurity CRS 3 Tests
+          method: GET
+          port: 80
+          uri: /?foo=for%20%2fd%20%variable%20in%20%28set%29%20do%20command
+          version: HTTP/1.0
+        output:
+          log_contains: id "932140"
+  -
+    test_title: 932140-4
+    desc: for /r
+    stages:
+    -
+      stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Accept: "*/*"
+            Host: localhost
+            User-Agent: ModSecurity CRS 3 Tests
+          method: GET
+          port: 80
+          uri: /?foo=for%20%2fr%20c%3a%5c%20%25variable%20in%20%28set%29%20do%20command
+          version: HTTP/1.0
+        output:
+          log_contains: id "932140"
+  -
+    test_title: 932140-5
+    desc: for /l
+    stages:
+    -
+      stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Accept: "*/*"
+            Host: localhost
+            User-Agent: ModSecurity CRS 3 Tests
+          method: GET
+          port: 80
+          uri: /?foo=for%20%2fl%20%25variable%20in%20%281%2c1%2c2%29%20do%20command
+          version: HTTP/1.0
+        output:
+          log_contains: id "932140"
+  -
+    test_title: 932140-6
+    desc: for /f .. fileset
+    stages:
+    -
+      stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Accept: "*/*"
+            Host: localhost
+            User-Agent: ModSecurity CRS 3 Tests
+          method: GET
+          port: 80
+          uri: /?foo=for%20%2ff%20%25variable%20in%20%28fileset%29%20do%20command
+          version: HTTP/1.0
+        output:
+          log_contains: id "932140"
+  -
+    test_title: 932140-7
+    desc: for /f .. "string"
+    stages:
+    -
+      stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Accept: "*/*"
+            Host: localhost
+            User-Agent: ModSecurity CRS 3 Tests
+          method: GET
+          port: 80
+          uri: /?foo=for%20%2ff%20%25variable%20in%20%28%22string%22%29%20do%20command
+          version: HTTP/1.0
+        output:
+          log_contains: id "932140"
+  -
+    test_title: 932140-8
+    desc: for /f .. 'command'
+    stages:
+    -
+      stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Accept: "*/*"
+            Host: localhost
+            User-Agent: ModSecurity CRS 3 Tests
+          method: GET
+          port: 80
+          uri: /?foo=for%20%2ff%20%25variable%20in%20%28%27command%27%29%20do%20command
+          version: HTTP/1.0
+        output:
+          log_contains: id "932140"
+  -
+    test_title: 932140-9
+    desc: for /f .. `command`
+    stages:
+    -
+      stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Accept: "*/*"
+            Host: localhost
+            User-Agent: ModSecurity CRS 3 Tests
+          method: GET
+          port: 80
+          uri: /?foo=for%20%2ff%20%22usebackq%22%20%25variable%20in%20%28%60command%60%29%20do%20command
+          version: HTTP/1.0
+        output:
+          log_contains: id "932140"
