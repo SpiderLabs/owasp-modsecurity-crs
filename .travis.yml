@@ -5,6 +5,14 @@ language: python
 python:
   - 2.7
 before_install:
+  - ls -l $PWD
+  - |
+    grep -Pnr "([*+]|{\d+,\d*})\)([*+]|{\d+,\d*})"
+    if [[ $? -ne 0 ]]; then
+      docker logs "$TRAVIS_BUILD_ID"
+      docker rm -f "$TRAVIS_BUILD_ID"
+      exit 1
+    fi
   - |
     if [[ "$TRAVIS_PULL_REQUEST" != "false" ]]; then
       docker build --build-arg REPO=$TRAVIS_PULL_REQUEST_SLUG --build-arg COMMIT=$TRAVIS_PULL_REQUEST_SHA -t modsecurity-crs ./util/docker/
