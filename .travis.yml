@@ -6,12 +6,6 @@ python:
   - 2.7
 before_install:
   - |
-    grep -Pnr "([*+]|{\d+,\d*})\)([*+]|{\d+,\d*})" rules
-    if [[ $? -eq 0 ]]; then
-      echo "ERROR! Catastrophic backtracking has been detected and build has been aborted. See above." 
-      exit 1
-    fi
-  - |
     if [[ "$TRAVIS_PULL_REQUEST" != "false" ]]; then
       docker build --build-arg REPO=$TRAVIS_PULL_REQUEST_SLUG --build-arg COMMIT=$TRAVIS_PULL_REQUEST_SHA -t modsecurity-crs ./util/docker/
     else
@@ -22,6 +16,12 @@ install:
   - pip install -r ./util/integration/requirements.txt
   - pip install -r ./util/regression-tests/requirements.txt
 script:
+  - |
+    grep -Pnr "([*+]|{\d+,\d*})\)([*+]|{\d+,\d*})" rules
+    if [[ $? -eq 0 ]]; then
+      echo "ERROR! Catastrophic backtracking has been detected and build has been aborted. See above." 
+      exit 1
+    fi
   - |
     docker ps | grep -q modsecurity-crs
     if [[ $? -ne 0 ]]; then
