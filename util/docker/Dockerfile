@@ -1,4 +1,4 @@
-FROM owasp/modsecurity:latest
+FROM owasp/modsecurity:2.9-apache-ubuntu
 MAINTAINER Chaim Sanders chaim.sanders@gmail.com
 
 ARG COMMIT=v3.2/dev
