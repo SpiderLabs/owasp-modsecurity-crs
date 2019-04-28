@@ -17,7 +17,7 @@ install:
   - pip install -r ./util/regression-tests/requirements.txt
 script:
   - |
-    grep -Pnr "([*+]|{\d+,\d*})\)([*+]|{\d+,\d*})" rules
+    grep -Pnr "((?<!\\)[*+]|{\d+,\d*})\)((?<!\\)[*+]|{\d+,\d*})" rules
     if [[ $? -eq 0 ]]; then
       echo "ERROR! Catastrophic backtracking has been detected and build has been aborted. See above." 
       exit 1
