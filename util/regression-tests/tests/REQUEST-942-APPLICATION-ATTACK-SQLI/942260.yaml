@@ -7,7 +7,7 @@
   tests:
   - 
     test_title: 942260-1
-    desc: "basic SQL authentication bypass"
+    desc: "Basic SQL authentication bypass"
     stages:
     - 
       stage:
@@ -24,7 +24,7 @@
           log_contains: id "942260"
   - 
     test_title: 942260-2
-    desc: "Detects basic SQL authentication bypass attempts 2/3"
+    desc: "Basic SQL authentication bypass"
     stages:
     - 
       stage:
@@ -41,7 +41,7 @@
           log_contains: id "942260"
   - 
     test_title: 942260-3
-    desc: "Detects basic SQL authentication bypass attempts 2/3"
+    desc: "Basic SQL authentication bypass"
     stages:
     - 
       stage:
@@ -58,7 +58,7 @@
           log_contains: id "942260"
   - 
     test_title: 942260-4
-    desc: "Detects basic SQL authentication bypass attempts 2/3"
+    desc: "Basic SQL authentication bypass"
     stages:
     - 
       stage:
@@ -75,7 +75,7 @@
           log_contains: id "942260"
   - 
     test_title: 942260-5
-    desc: "Detects basic SQL authentication bypass attempts 2/3"
+    desc: "Basic SQL authentication bypass"
     stages:
     - 
       stage:
@@ -92,7 +92,7 @@
           log_contains: id "942260"
   - 
     test_title: 942260-6
-    desc: "Detects basic SQL authentication bypass attempts 2/3"
+    desc: "Advanced SQL authentication bypass"
     stages:
     - 
       stage:
@@ -109,7 +109,7 @@
           log_contains: id "942260"
   - 
     test_title: 942260-7
-    desc: "Detects basic SQL authentication bypass attempts 2/3"
+    desc: "Embedded shell execution"
     stages:
     - 
       stage:
@@ -126,7 +126,7 @@
           log_contains: id "942260"
   - 
     test_title: 942260-8
-    desc: "Detects basic SQL authentication bypass attempts 2/3"
+    desc: "Embedded shell execution"
     stages:
     - 
       stage:
@@ -143,7 +143,7 @@
           log_contains: id "942260"
   - 
     test_title: 942260-9
-    desc: "Detects basic SQL authentication bypass attempts 2/3"
+    desc: "Embedded shell execution"
     stages:
     - 
       stage:
@@ -160,7 +160,7 @@
           log_contains: id "942260"
   - 
     test_title: 942260-10
-    desc: "Detects basic SQL authentication bypass attempts 2/3"
+    desc: "Embedded shell execution"
     stages:
     - 
       stage:
@@ -177,7 +177,7 @@
           log_contains: id "942260"
   - 
     test_title: 942260-11
-    desc: "Detects basic SQL authentication bypass attempts 2/3"
+    desc: "Advanced embedded shell execution"
     stages:
     - 
       stage:
@@ -194,7 +194,7 @@
           log_contains: id "942260"
   - 
     test_title: 942260-12
-    desc: "Detects basic SQL authentication bypass attempts 2/3"
+    desc: "Advanced embedded shell execution"
     stages:
     - 
       stage:
@@ -211,7 +211,7 @@
           log_contains: id "942260"
   - 
     test_title: 942260-13
-    desc: "Detects basic SQL authentication bypass attempts 2/3"
+    desc: "Advanced embedded shell execution"
     stages:
     - 
       stage:
@@ -228,7 +228,7 @@
           log_contains: id "942260"
   - 
     test_title: 942260-14
-    desc: "Detects basic SQL authentication bypass attempts 2/3"
+    desc: "Advanced embedded shell execution"
     stages:
     - 
       stage:
@@ -245,7 +245,7 @@
           log_contains: id "942260"
   - 
     test_title: 942260-15
-    desc: "Detects basic SQL authentication bypass attempts 2/3"
+    desc: "Advanced embedded shell execution"
     stages:
     - 
       stage:
@@ -262,7 +262,7 @@
           log_contains: id "942260"
   - 
     test_title: 942260-16
-    desc: "Detects basic SQL authentication bypass attempts 2/3"
+    desc: "Advanced embedded shell execution"
     stages:
     - 
       stage:
@@ -279,7 +279,7 @@
           log_contains: id "942260"
   - 
     test_title: 942260-17
-    desc: "Detects basic SQL authentication bypass attempts 2/3"
+    desc: "Advanced embedded shell execution"
     stages:
     - 
       stage:
@@ -296,7 +296,7 @@
           log_contains: id "942260"
   - 
     test_title: 942260-18
-    desc: "Detects basic SQL authentication bypass attempts 2/3"
+    desc: "Traces of XSS"
     stages:
     - 
       stage:
@@ -313,7 +313,7 @@
           log_contains: id "942260"
   - 
     test_title: 942260-19
-    desc: "Detects basic SQL authentication bypass attempts 2/3"
+    desc: "Advanced SQL authentication bypass"
     stages:
     - 
       stage:
@@ -330,7 +330,7 @@
           log_contains: id "942260"
   - 
     test_title: 942260-20
-    desc: "Detects basic SQL authentication bypass attempts 2/3"
+    desc: "Advanced embedded shell execution"
     stages:
     - 
       stage:
@@ -347,7 +347,7 @@
           log_contains: id "942260"
   - 
     test_title: 942260-21
-    desc: "Detects basic SQL authentication bypass attempts 2/3"
+    desc: "Advanced embedded shell execution"
     stages:
     - 
       stage:
@@ -364,7 +364,7 @@
           log_contains: id "942260"
   - 
     test_title: 942260-22
-    desc: "Detects basic SQL authentication bypass attempts 2/3"
+    desc: "Traces of XSS"
     stages:
     - 
       stage:
