@@ -288,3 +288,63 @@
           uri: /
         output:
           no_log_contains: id "933110"
+  -
+    test_title: 933110-20
+    desc: PHP script uploads
+    stages:
+    - stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: localhost
+            User-Agent: ModSecurity CRS 3 Tests
+            X.Filename: a.php
+          port: 80
+          uri: /upload2
+        output:
+          log_contains: id "933110"
+  -
+    test_title: 933110-21
+    desc: PHP script uploads
+    stages:
+    - stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: localhost
+            User-Agent: ModSecurity CRS 3 Tests
+            X.Filename: fda.php5...
+          port: 80
+          uri: /upload6
+        output:
+          log_contains: id "933110"
+  -
+    test_title: 933110-22
+    desc: PHP script uploads
+    stages:
+    - stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: localhost
+            User-Agent: ModSecurity CRS 3 Tests
+            X.Filename: fthisfewfda.php.
+          port: 80
+          uri: /upload7
+        output:
+          log_contains: id "933110"
+  -
+    test_title: 933110-23
+    desc: PHP script uploads
+    stages:
+    - stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: localhost
+            User-Agent: ModSecurity CRS 3 Tests
+            X.Filename: fthi/sfewfda.phtml987...
+          port: 80
+          uri: /
+        output:
+          no_log_contains: id "933110"
