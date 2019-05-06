@@ -1,8 +1,7 @@
-"""This is designed to convert 2.x CRS ID numbering to 3.x CRS numbering"""
-
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+"""This is designed to convert 2.x CRS ID numbering to 3.x CRS numbering"""
 from __future__ import print_function
 import csv
 import argparse
