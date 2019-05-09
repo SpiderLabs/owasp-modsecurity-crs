@@ -791,52 +791,6 @@ SecCollectionTimeout 600
 
 
 #
-# -- [[ Debug Mode ]] ----------------------------------------------------------
-#
-# To enable rule development and debugging, CRS has an optional debug mode
-# that does not block a request, but instead sends detection information
-# back to the HTTP client.
-#
-# This functionality is currently only supported with the Apache web server.
-# The Apache mod_headers module is required.
-#
-# In debug mode, the webserver inserts "X-WAF-Events" / "X-WAF-Score"
-# response headers whenever a debug client makes a request. Example:
-#
-#   # curl -v 'http://192.168.1.100/?foo=../etc/passwd'
-#   X-WAF-Events: TX:930110-OWASP_CRS/WEB_ATTACK/DIR_TRAVERSAL-REQUEST_URI,
-#                TX:930120-OWASP_CRS/WEB_ATTACK/FILE_INJECTION-ARGS:foo,
-#                TX:932160-OWASP_CRS/WEB_ATTACK/RCE-ARGS:foo
-#   X-WAF-Score: Total=15; sqli=0; xss=0; rfi=0; lfi=10; rce=5; php=0; http=0; ses=0
-#
-# To enable debug mode, include the RESPONSE-981-DEBUG.conf file.
-# This file resides in a separate folder, as it is not compatible with
-# nginx and IIS.
-#
-# You must specify the source IP address/network where you will be running the
-# tests from. The source IP will BYPASS all CRS blocking, and will be sent the
-# response headers as specified above. Be careful to only list your private
-# IP addresses/networks here.
-#
-# Tip: for regression testing of CRS or your own ModSecurity rules, you may
-# be interested in using the OWASP CRS regression testing suite instead.
-# View the file util/regression-tests/README for more information.
-#
-# Uncomment these rules, filling in your CRS path and the source IP address,
-# to enable debug mode:
-#
-#Include /path/to/crs/util/debug/RESPONSE-981-DEBUG.conf
-#SecRule REMOTE_ADDR "@ipMatch 192.168.1.100" \
-# "id:900980,\
-#  phase:1,\
-#  nolog,\
-#  pass,\
-#  t:none,\
-#  ctl:ruleEngine=DetectionOnly,\
-#  setvar:tx.crs_debug_mode=1"
-
-
-#
 # -- [[ End of setup ]] --------------------------------------------------------
 #
 # The CRS checks the tx.crs_setup_version variable to ensure that the setup
