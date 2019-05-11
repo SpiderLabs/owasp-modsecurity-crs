@@ -142,6 +142,9 @@ sqlmap
 # sql injection
 # http://sqlninja.sourceforge.net/
 sqlninja
+#sysscan
+# https://www.cyber.nj.gov/threat-profiles/trojan-variants/sysscan
+sysscan
 # password cracker
 # http://foofus.net/goons/jmk/medusa/medusa.html
 teh forest lobster
