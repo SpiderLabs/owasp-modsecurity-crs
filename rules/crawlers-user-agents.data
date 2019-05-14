@@ -213,7 +213,6 @@ Heritrix
 Hloader
 HMView
 HTMLparser
-HTTP::Lite
 HTTrack
 Humanlinks
 HybridBot
@@ -275,9 +274,6 @@ Litemage_walker
 Lmspider
 LNSpiderguy
 Ltx71
-lwp-request
-LWP::Simple
-lwp-trivial
 Magnet
 Mag-Net
 magpie-crawler
@@ -357,7 +353,6 @@ Panscient
 Papa Foto
 Pavuk
 pcBrowser
-PECL::HTTP
 PeoplePal
 PHPCrawl
 Picscout
@@ -376,7 +371,6 @@ ProWebWalker
 Psbot
 Pump
 PxBroker
-PyCurl
 QueryN Metasearch
 Quick-Crawler
 RankActive
@@ -552,8 +546,6 @@ Woobot
 Wotbox
 Wprecon
 WWW-Collector-E
-WWW-Mechanize
-WWW::Mechanize
 WWWOFFLE
 x09Mozilla
 x22Mozilla
