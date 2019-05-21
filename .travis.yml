@@ -32,16 +32,16 @@ install:
   - pip install -r ./util/regression-tests/requirements.txt
 
 script:
-  #- |
-  #  docker ps | grep -q modsecurity-crs
-  #  if [[ $? -ne 0 ]]; then
-  #    docker logs "$TRAVIS_BUILD_ID"
-  #    docker rm -f "$TRAVIS_BUILD_ID"
-  #    exit 1
-  #  fi
-  #- git clone https://github.com/CRS-support/secrules_parsing
-  #- pip install -r secrules_parsing/requirements.txt
-  #- python secrules_parsing/secrules_parser.py -c -f rules/*.conf
+  - |
+    docker ps | grep -q modsecurity-crs
+    if [[ $? -ne 0 ]]; then
+      docker logs "$TRAVIS_BUILD_ID"
+      docker rm -f "$TRAVIS_BUILD_ID"
+      exit 1
+    fi
+  - git clone https://github.com/CRS-support/secrules_parsing
+  - pip install -r secrules_parsing/requirements.txt
+  - python secrules_parsing/secrules_parser.py -c -f rules/*.conf
   #- py.test -vs ./util/integration/format_tests.py
   #- py.test -vs util/regression-tests/CRS_Tests.py --ruledir_recurse=util/regression-tests/tests/
   - docker rm -f "$TRAVIS_BUILD_ID"
