@@ -1,0 +1,29 @@
+FROM owasp/modsecurity:3.0-apache
+MAINTAINER Chaim Sanders chaim.sanders@gmail.com
+
+ARG COMMIT=v3.2/dev
+ARG REPO=SpiderLabs/owasp-modsecurity-crs
+ENV WEBSERVER=Apache
+ENV PARANOIA=1
+
+RUN apt-get update && \
+    apt-get -y install python git ca-certificates iproute2
+
+RUN cd /opt && \
+  git clone https://github.com/${REPO}.git owasp-modsecurity-crs-3.2 && \
+  cd owasp-modsecurity-crs-3.2 && \
+  git checkout -qf ${COMMIT}
+
+RUN cd /opt && \
+  cp -R /opt/owasp-modsecurity-crs-3.2/ /etc/modsecurity.d/owasp-crs/ && \
+  mv /etc/modsecurity.d/owasp-crs/crs-setup.conf.example /etc/modsecurity.d/owasp-crs/crs-setup.conf && \
+  cd /etc/modsecurity.d && \
+  printf "include /etc/modsecurity.d/owasp-crs/crs-setup.conf\ninclude /etc/modsecurity.d/owasp-crs/rules/*.conf" >> include.conf && \
+  sed -i -e 's/SecRuleEngine DetectionOnly/SecRuleEngine On/g' /etc/modsecurity.d/modsecurity.conf
+COPY proxy.conf           /etc/modsecurity.d/proxy.conf
+COPY docker-entrypoint.sh /
+
+EXPOSE 80
+
+ENTRYPOINT ["/docker-entrypoint.sh"]
+CMD ["apachectl", "-D", "FOREGROUND"]
