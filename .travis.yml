@@ -2,10 +2,13 @@ env:
   matrix:
     - DOCKER_TAG=modsecurity-crs-2.9-apache
       DOCKERFILE=Dockerfile-2.9-apache
+      MOUNT_LOCATION=/var/log/apache2:/var/log/apache2/
     - DOCKER_TAG=modsecurity-crs-3.0-apache
       DOCKERFILE=Dockerfile-3.0-apache
+      MOUNT_LOCATION=/var/log/apache2:/var/log/apache2/
     - DOCKER_TAG=modsecurity-crs-3.0-nginx
       DOCKERFILE=Dockerfile-3.0-nginx
+      MOUNT_LOCATION=/var/log/nginx:/var/log/nginx/
 
 sudo: required
 
@@ -25,7 +28,7 @@ before_install:
       docker build -f ./util/docker/$DOCKERFILE -t $DOCKER_TAG ./util/docker/
     fi
   
-  - docker run -ti -e PARANOIA=5 -d -p 80:80 -v /var/log/apache2:/var/log/apache2/ --name "$TRAVIS_BUILD_ID" $DOCKER_TAG
+  - docker run -ti -e PARANOIA=5 -d -p 80:80 -v $MOUNT_LOCATION --name "$TRAVIS_BUILD_ID" $DOCKER_TAG
 
 install: 
   - pip install -r ./util/integration/requirements.txt
