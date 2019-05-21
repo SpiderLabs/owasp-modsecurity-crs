@@ -17,7 +17,8 @@ RUN apt-get update && \
     mv crs-setup.conf.example crs-setup.conf && \
     ln -sv /opt/owasp-modsecurity-crs-3.2 /etc/modsecurity.d/owasp-crs && \   
     printf "include /etc/modsecurity.d/owasp-crs/crs-setup.conf\ninclude /etc/modsecurity.d/owasp-crs/rules/*.conf" >> include.conf && \
-    sed -i -e 's/SecRuleEngine DetectionOnly/SecRuleEngine On/g' /etc/modsecurity.d/modsecurity.conf
+    sed -i -e 's/SecRuleEngine DetectionOnly/SecRuleEngine On/g' /etc/modsecurity.d/modsecurity.conf && \
+    exit 0
 
 COPY docker-entrypoint.sh /
 
