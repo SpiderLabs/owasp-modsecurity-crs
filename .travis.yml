@@ -2,13 +2,16 @@ env:
   matrix:
     - DOCKER_TAG=modsecurity-crs-2.9-apache
       DOCKERFILE=Dockerfile-2.9-apache
-      MOUNT_LOCATION=/var/log/apache2:/var/log/apache2/
+      LOG_LOCATION=/var/log/apache2/
+      LOG_FILE=error.log
     - DOCKER_TAG=modsecurity-crs-3.0-apache
       DOCKERFILE=Dockerfile-3.0-apache
-      MOUNT_LOCATION=/var/log/apache2:/var/log/apache2/
+      LOG_LOCATION=/var/log/apache2/
+      LOG_FILE=error.log
     - DOCKER_TAG=modsecurity-crs-3.0-nginx
       DOCKERFILE=Dockerfile-3.0-nginx
-      MOUNT_LOCATION=/var/log/nginx:/var/log/nginx/
+      LOG_LOCATION=/var/log/nginx/
+      LOG_FILE=error.log
 
 sudo: required
 
@@ -23,17 +26,17 @@ python:
 before_install:
   - |
     if [[ "$TRAVIS_PULL_REQUEST" != "false" ]]; then
-      docker build --build-arg REPO=$TRAVIS_PULL_REQUEST_SLUG --build-arg COMMIT=$TRAVIS_PULL_REQUEST_SHA -f ./util/docker/$DOCKERFILE -t $DOCKER_TAG ./util/docker/
+      docker build --build-arg REPO=$TRAVIS_PULL_REQUEST_SLUG --build-arg BRANCH=$TRAVIS_PULL_REQUEST_BRANCH --build-arg COMMIT=$TRAVIS_PULL_REQUEST_SHA -f ./util/docker/$DOCKERFILE -t $DOCKER_TAG ./util/docker/
     else
       docker build -f ./util/docker/$DOCKERFILE -t $DOCKER_TAG ./util/docker/
     fi
   
-  - docker run -ti -e PARANOIA=5 -d -p 80:80 -v $MOUNT_LOCATION --name "$TRAVIS_BUILD_ID" $DOCKER_TAG
+  - docker run -ti -e PARANOIA=5 -d -p 80:80 -v $LOG_LOCATION:$LOG_LOCATION --name "$TRAVIS_BUILD_ID" $DOCKER_TAG
 
 install: 
   - pip install -r ./util/integration/requirements.txt
   - pip install -r ./util/regression-tests/requirements.txt
-
+  - sudo apt-get install -y wget
 script:
   - |
     docker ps | grep -q modsecurity-crs
@@ -45,7 +48,16 @@ script:
   - git clone https://github.com/CRS-support/secrules_parsing
   - pip install -r secrules_parsing/requirements.txt
   - python secrules_parsing/secrules_parser.py -c -f rules/*.conf
-  #- py.test -vs ./util/integration/format_tests.py
+  - py.test -vs ./util/integration/format_tests.py
+  # FTW custon settings
+  - echo "log_location_linux = '$LOG_LOCATION$LOG_FILE'" >> util/regression-tests/config.py
+  - cat $LOG_LOCATION/error.log
+  - wget localhost
+  - cat index.html
+  - py.test -vs util/regression-tests/CRS_Tests.py --rule=util/regression-tests/tests/test.yaml
+  - cat $LOG_LOCATION/error.log
+  - cat /etc/modsecurity.d/owasp-crs/crs-setup.conf
+  - cat /etc/modsecurity.d/modsecurity.conf
   #- py.test -vs util/regression-tests/CRS_Tests.py --ruledir_recurse=util/regression-tests/tests/
   - docker rm -f "$TRAVIS_BUILD_ID"
 
