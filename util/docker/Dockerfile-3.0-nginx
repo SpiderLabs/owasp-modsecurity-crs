@@ -17,7 +17,9 @@ RUN cd /opt/owasp-modsecurity-crs-3.2 && \
     git remote add origin https://github.com/${REPO}.git
 
 RUN cd /opt/owasp-modsecurity-crs-3.2 && \
-    git fetch --depth 1 origin ${COMMIT} && \
+    git fetch --depth 1 origin ${COMMIT}
+
+RUN cd /opt/owasp-modsecurity-crs-3.2 && \
     git checkout FETCH_HEAD 
 
 RUN cd /opt/owasp-modsecurity-crs-3.2 && \
