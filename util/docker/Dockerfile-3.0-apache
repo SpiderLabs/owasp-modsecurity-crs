@@ -12,7 +12,6 @@ RUN apt-get update && \
   cd /opt/owasp-modsecurity-crs-3.2 && \
   git init && \
   git remote add origin https://github.com/${REPO} && \
-  ls && \
   git fetch --depth 1 origin ${COMMIT} && \
   git checkout FETCH_HEAD && \
   mv crs-setup.conf.example crs-setup.conf && \
