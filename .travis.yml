@@ -24,7 +24,7 @@ before_install:
     else
       docker build -f ./util/docker/$DOCKERFILE -t $DOCKER_TAG ./util/docker/
     fi
-  - docker run -ti -e PARANOIA=5 -d -p 80:80 -v /var/log/apache2:/var/log/apache2/ --name "$TRAVIS_BUILD_ID" modsecurity-crs
+  - docker run -ti -e PARANOIA=5 -d -p 80:80 -v $LOG_LOCATION:$LOG_LOCATION --name "$TRAVIS_BUILD_ID" $DOCKER_TAG
 install:
   - pip install -r ./util/integration/requirements.txt
   - pip install -r ./util/regression-tests/requirements.txt
