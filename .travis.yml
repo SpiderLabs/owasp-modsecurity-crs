@@ -36,6 +36,7 @@ before_install:
 install:
   - pip install -r ./util/integration/requirements.txt
   - pip install -r ./util/regression-tests/requirements.txt
+  - sudo apt-get install -y wget
 script:
   - |
     docker ps | grep -q modsecurity-crs
@@ -49,8 +50,20 @@ script:
   - python secrules_parsing/secrules_parser.py -c -f rules/*.conf
   - py.test -vs ./util/integration/format_tests.py
   # FTW custon settings
+<<<<<<< HEAD
   - echo "log_location_linux = '$LOG_LOCATION$LOG_FILE'" > util/regression-tests/config.py
   - py.test -vs util/regression-tests/CRS_Tests.py --ruledir_recurse=util/regression-tests/tests/
+=======
+  - echo "log_location_linux = '$LOG_LOCATION$LOG_FILE'" >> util/regression-tests/config.py
+  - cat $LOG_LOCATION/error.log
+  - wget localhost
+  - cat index.html
+  - py.test -vs util/regression-tests/CRS_Tests.py --rule=util/regression-tests/tests/test.yaml
+  - cat $LOG_LOCATION/error.log
+  - cat /etc/modsecurity.d/owasp-crs/crs-setup.conf
+  - cat /etc/modsecurity.d/modsecurity.conf
+  #- py.test -vs util/regression-tests/CRS_Tests.py --ruledir_recurse=util/regression-tests/tests/
+>>>>>>> parent of 891462b... Now with more fixed Dockerfiles
   - docker rm -f "$TRAVIS_BUILD_ID"
 
 # safelist
