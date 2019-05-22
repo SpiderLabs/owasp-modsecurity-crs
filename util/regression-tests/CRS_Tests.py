@@ -11,9 +11,9 @@ def test_crs(ruleset, test, logchecker_obj):
     runner = testrunner.TestRunner()
     for stage in test.stages:
         runner.run_stage(stage, logchecker_obj)
-        
+ 
 class FooLogChecker(logchecker.LogChecker):
-    
+
     def reverse_readline(self, filename):
         with open(filename) as f:
             f.seek(0, os.SEEK_END)
@@ -40,11 +40,11 @@ class FooLogChecker(logchecker.LogChecker):
             # Extract dates from each line
             match = re.match(pattern, lline)
             if match:
-                log_date = match.group(1)
+                matched_log_date = match.group(1)
                 # Convert our date
-                log_date = datetime.datetime.strptime(log_date, log_date_format)
+                log_date = datetime.datetime.strptime(matched_log_date, log_date_format)
                 # NGINX doesn't give us microsecond level detail, truncate.
-                if log_location == "/usr/local/nginx/logs/error.log":
+                if log_date_format[-2:] == "%f" and not (re.search("\d{2}\.\d{6}$", matched_log_date)):
                     ftw_start = self.start.replace(microsecond=0)
                 else:
                     ftw_start = self.start                
