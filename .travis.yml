@@ -1,21 +1,23 @@
+language:         python
+python:
+  - 2.7
 env:
   matrix:
-    - DOCKER_TAG=modsecurity-crs-2.9-apache
-      DOCKERFILE=Dockerfile-2.9-apache
-      LOG_LOCATION=/var/log/apache2/
-      LOG_FILE=error.log
-      FTW_DATE_REGEX="\\[([A-Z][a-z]{2} [A-z][a-z]{2} \\d{1,2} \\d{1,2}\\:\\d{1,2}\\:\\d{1,2}\\.\\d+? \\d{4})\\]"
-      FTW_DATE_FORMAT="%a %b %d %H:%M:%S.%f %Y"
+    # Travis REALLY hates newline formatted env vars when it comes to using allow_failures, trust us -- we know this is harder to read.
+    - DOCKER_TAG=modsecurity-crs-2.9-apache DOCKERFILE=Dockerfile-2.9-apache LOG_LOCATION=/var/log/apache2/ LOG_FILE=error.log FTW_DATE_REGEX="\\[([A-Z][a-z]{2} [A-z][a-z]{2} \\d{1,2} \\d{1,2}\\:\\d{1,2}\\:\\d{1,2}\\.\\d+? \\d{4})\\]" FTW_DATE_FORMAT="%a %b %d %H:%M:%S.%f %Y"
+    - DOCKER_TAG=modsecurity-crs-3.0-nginx DOCKERFILE=Dockerfile-3.0-nginx LOG_LOCATION=/var/log/nginx/ LOG_FILE=error.log FTW_DATE_REGEX="(\\d{4}\\/\\d{2}\\/\\d{2} \\d{2}:\\d{2}:\\d{2})" FTW_DATE_FORMAT="%Y\/%m\/%d %H:%M:%S.%f"
+    - DOCKER_TAG=modsecurity-crs-3.0-apache DOCKERFILE=Dockerfile-3.0-apache LOG_LOCATION=/var/log/apache2/ LOG_FILE=error.log FTW_DATE_REGEX="\\[([A-Z][a-z]{2} [A-z][a-z]{2} \\d{1,2} \\d{1,2}\\:\\d{1,2}\\:\\d{1,2}\\.\\d+? \\d{4})\\]" FTW_DATE_FORMAT="%a %b %d %H:%M:%S.%f %Y"
 
-sudo:           required
+matrix:
+  fast_finish:    true
+  allow_failures:
+  - python:       2.7
+    env:          DOCKER_TAG=modsecurity-crs-3.0-apache DOCKERFILE=Dockerfile-3.0-apache LOG_LOCATION=/var/log/apache2/ LOG_FILE=error.log FTW_DATE_REGEX="\\[([A-Z][a-z]{2} [A-z][a-z]{2} \\d{1,2} \\d{1,2}\\:\\d{1,2}\\:\\d{1,2}\\.\\d+? \\d{4})\\]" FTW_DATE_FORMAT="%a %b %d %H:%M:%S.%f %Y"
+
+sudo:             required
 
 services:
   - docker
-
-language: python
-
-python:
-  - 2.7
 
 before_install:
   - |
@@ -45,7 +47,6 @@ script:
   - echo "log_date_regex = '$FTW_DATE_REGEX'" >> util/regression-tests/config.py
   - echo "log_date_format = '$FTW_DATE_FORMAT'" >> util/regression-tests/config.py
   - py.test -vs util/regression-tests/CRS_Tests.py --rule=util/regression-tests/tests/test.yaml
-  - cat util/regression-tests/config.py
   - py.test -vs util/regression-tests/CRS_Tests.py --ruledir_recurse=util/regression-tests/tests/
   - docker rm -f "$TRAVIS_BUILD_ID"
 # safelist
@@ -56,4 +57,4 @@ branches:
   - v3.1/dev
   - v3.2/dev
 notifications:
-  irc:          "chat.freenode.net#modsecurity"
+  irc:            "chat.freenode.net#modsecurity"
