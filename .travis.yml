@@ -49,7 +49,7 @@ script:
   - echo "log_date_regex = '$FTW_DATE_REGEX'" >> util/regression-tests/config.py
   - echo "log_date_format = '$FTW_DATE_FORMAT'" >> util/regression-tests/config.py
   - py.test -vs util/regression-tests/CRS_Tests.py --rule=util/regression-tests/tests/test.yaml
-  #- py.test -vs util/regression-tests/CRS_Tests.py --ruledir_recurse=util/regression-tests/tests/
+  - py.test -vs util/regression-tests/CRS_Tests.py --ruledir_recurse=util/regression-tests/tests/
   - docker rm -f "$TRAVIS_BUILD_ID"
 # safelist
 branches:
