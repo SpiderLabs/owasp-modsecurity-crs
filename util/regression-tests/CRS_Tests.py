@@ -43,17 +43,18 @@ class FooLogChecker(logchecker.LogChecker):
             match = re.match(pattern, lline)
             if match:
                 log_date = match.group(1)
-                # Convert our date
-                log_date = datetime.datetime.strptime(
-                    log_date, log_date_format)
-                # NGINX doesn't give us microsecond level detail, truncate.
-                if log_date_format[-2:] == "%f" and not re.search(r'\d{2}\.\d{6}$', log_date):
+                # NGINX doesn't give us microsecond level by detail, truncate.
+                if log_date_format[-2:] != "%f" and not re.search(r'\d{2}\.\d{6}$', log_date):
                     ftw_start = self.start.replace(microsecond=0)
                 else:
                     ftw_start = self.start
                 ftw_end = self.end
-                # If we have a log date in range
+                log_date = datetime.datetime.strptime(
+                    log_date, log_date_format)
                 if log_date <= ftw_end and log_date >= ftw_start:
+                    print "WE GOT HERE"
+                    print lline
+                    print
                     our_logs.append(lline)
                 # If our log is from before FTW started stop
                 if log_date < ftw_start:
