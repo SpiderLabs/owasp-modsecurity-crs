@@ -6,13 +6,25 @@ env:
       LOG_FILE=error.log
       FTW_DATE_REGEX="\\[([A-Z][a-z]{2} [A-z][a-z]{2} \\d{1,2} \\d{1,2}\\:\\d{1,2}\\:\\d{1,2}\\.\\d+? \\d{4})\\]"
       FTW_DATE_FORMAT="%a %b %d %H:%M:%S.%f %Y"
+    - DOCKER_TAG=modsecurity-crs-3.0-apache
+      DOCKERFILE=Dockerfile-3.0-apache
+      LOG_LOCATION=/var/log/apache2/
+      LOG_FILE=error.log
+      FTW_DATE_REGEX="\\[([A-Z][a-z]{2} [A-z][a-z]{2} \\d{1,2} \\d{1,2}\\:\\d{1,2}\\:\\d{1,2}\\.\\d+? \\d{4})\\]"
+      FTW_DATE_FORMAT="%a %b %d %H:%M:%S.%f %Y"
+    - DOCKER_TAG=modsecurity-crs-3.0-nginx
+      DOCKERFILE=Dockerfile-3.0-nginx
+      LOG_LOCATION=/var/log/nginx/
+      LOG_FILE=error.log
+      FTW_DATE_REGEX="(\\d{4}\\/\\d{2}\\/\\d{2} \\d{2}:\\d{2}:\\d{2})""
+      FTW_DATE_FORMAT="%Y\/%m\/%d %H:%M:%S.%f"
 
-sudo:           required
+sudo:            required
 
 services:
   - docker
 
-language: python
+language:        python
 
 python:
   - 2.7
@@ -56,4 +68,4 @@ branches:
   - v3.1/dev
   - v3.2/dev
 notifications:
-  irc:          "chat.freenode.net#modsecurity"
+  irc:           "chat.freenode.net#modsecurity"
