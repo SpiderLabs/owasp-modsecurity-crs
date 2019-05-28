@@ -52,9 +52,6 @@ class FooLogChecker(logchecker.LogChecker):
                 log_date = datetime.datetime.strptime(
                     log_date, log_date_format)
                 if log_date <= ftw_end and log_date >= ftw_start:
-                    print "WE GOT HERE"
-                    print lline
-                    print
                     our_logs.append(lline)
                 # If our log is from before FTW started stop
                 if log_date < ftw_start:
