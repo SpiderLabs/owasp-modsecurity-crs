@@ -1,21 +1,21 @@
 ---
-  meta: 
+  meta:
     author: "csanders-git"
     enabled: true
     name: "920120.yaml"
     description: "Tests to trigger rule 920120"
-  tests: 
-    - 
+  tests:
+    -
       test_title: 920120-1
-      stages: 
-        - 
-          stage: 
+      stages:
+        -
+          stage:
             input:
               dest_addr: "127.0.0.1"
               method: "POST"
               port: 80
               headers:
-                  User-Agent: "ModSecurity CRS 3 Tests"              
+                  User-Agent: "ModSecurity CRS 3 Tests"
                   Host: "localhost"
                   Accept: "*/*"
                   Accept-Language: "en"
@@ -30,13 +30,13 @@
                 - "555-555-0199@example.com"
                 - "----------397236876--"
               protocol: "http"
-            output: 
+            output:
               log_contains: "id \"920120\""
-    - 
+    -
       test_title: 920120-2
       desc: Attempted multipart/form-data bypass (920120) from old modsec regressions
       stages:
-      - 
+      -
         stage:
           input:
             dest_addr: 127.0.0.1
@@ -57,7 +57,7 @@
             version: HTTP/1.1
             data:
             - '-----------------------------627652292512397580456702590'
-            - 'Content-Disposition: form-data; name=x'';filename="'';name=contact.txt;"'
+            - 'Content-Disposition: form-data; name="fi=le"; filename="test"'
             - 'Content-Type: text/plain'
             - ''
             - 'email: security@modsecurity.org'
@@ -69,11 +69,11 @@
             - '-----------------------------627652292512397580456702590--'
           output:
             log_contains: id "920120"
-    - 
+    -
       test_title: 920120-3
       desc: Invalid Request Body (920120)  from old modsec regressions
       stages:
-      - 
+      -
         stage:
           input:
             dest_addr: 127.0.0.1
@@ -109,4 +109,3 @@
             - '-----------------------------265001916915724--'
           output:
             log_contains: id "920120"
-            

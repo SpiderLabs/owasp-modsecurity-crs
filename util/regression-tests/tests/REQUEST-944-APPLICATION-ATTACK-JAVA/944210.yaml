@@ -326,7 +326,7 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"rO0ABQ\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\r\nContent-Disposition: form-data; name=\"payload\"\r\nContent-Type: application/json\r\n\r\n{\"rO0ABQ\": \"test\"}\r\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944210\""
 
@@ -349,7 +349,7 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"rO0ABQ\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\r\nContent-Disposition: form-data; name=\"payload\"\r\nContent-Type: application/json\r\n\r\n{\"rO0ABQ\": \"test\"}\r\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944210\""
 
@@ -372,7 +372,7 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">rO0ABQ</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\r\nContent-Disposition: form-data; name=\"payload\"\r\nContent-Type: application/xml\r\n\r\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">rO0ABQ</element></xml>\r\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944210\""
 
@@ -395,7 +395,7 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">rO0ABQ</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\r\nContent-Disposition: form-data; name=\"payload\"\r\nContent-Type: application/xml\r\n\r\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">rO0ABQ</element></xml>\r\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944210\""
     -
@@ -719,7 +719,7 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"KztAAU\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\r\nContent-Disposition: form-data; name=\"payload\"\r\nContent-Type: application/json\r\n\r\n{\"KztAAU\": \"test\"}\r\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944210\""
 
@@ -742,7 +742,7 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"KztAAU\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\r\nContent-Disposition: form-data; name=\"payload\"\r\nContent-Type: application/json\r\n\r\n{\"KztAAU\": \"test\"}\r\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944210\""
 
@@ -765,7 +765,7 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">KztAAU</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\r\nContent-Disposition: form-data; name=\"payload\"\r\nContent-Type: application/xml\r\n\r\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">KztAAU</element></xml>\r\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944210\""
 
@@ -788,7 +788,7 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">KztAAU</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\r\nContent-Disposition: form-data; name=\"payload\"\r\nContent-Type: application/xml\r\n\r\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">KztAAU</element></xml>\r\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944210\""
     -
@@ -1112,7 +1112,7 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"Cs7QAF\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\r\nContent-Disposition: form-data; name=\"payload\"\r\nContent-Type: application/json\r\n\r\n{\"Cs7QAF\": \"test\"}\r\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944210\""
 
@@ -1135,7 +1135,7 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"Cs7QAF\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\r\nContent-Disposition: form-data; name=\"payload\"\r\nContent-Type: application/json\r\n\r\n{\"Cs7QAF\": \"test\"}\r\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944210\""
 
@@ -1158,7 +1158,7 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">Cs7QAF</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\r\nContent-Disposition: form-data; name=\"payload\"\r\nContent-Type: application/xml\r\n\r\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">Cs7QAF</element></xml>\r\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944210\""
 
@@ -1181,6 +1181,6 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">Cs7QAF</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\r\nContent-Disposition: form-data; name=\"payload\"\r\nContent-Type: application/xml\r\n\r\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">Cs7QAF</element></xml>\r\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944210\""
