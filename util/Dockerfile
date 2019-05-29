@@ -20,7 +20,6 @@ RUN apt-get update && \
   printf "include /etc/modsecurity.d/owasp-crs/crs-setup.conf\ninclude /etc/modsecurity.d/owasp-crs/rules/*.conf" >> /etc/modsecurity.d/include.conf && \
   sed -i -e 's/SecRuleEngine DetectionOnly/SecRuleEngine On/g' /etc/modsecurity.d/modsecurity.conf
 
-COPY proxy.conf           /etc/modsecurity.d/proxy.conf
 COPY docker-entrypoint.sh /
 
 EXPOSE 80
