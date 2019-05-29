@@ -326,7 +326,7 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.clonetransformer\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\r\nContent-Disposition: form-data; name=\"payload\"\r\nContent-Type: application/json\r\n\r\n{\"ProcessBuilder.evil.clonetransformer\": \"test\"}\r\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944120\""
 
@@ -349,7 +349,7 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.clonetransformer\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\r\nContent-Disposition: form-data; name=\"payload\"\r\nContent-Type: application/json\r\n\r\n{\"ProcessBuilder.evil.clonetransformer\": \"test\"}\r\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944120\""
 
@@ -372,7 +372,7 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.clonetransformer</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\r\nContent-Disposition: form-data; name=\"payload\"\r\nContent-Type: application/xml\r\n\r\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.clonetransformer</element></xml>\r\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944120\""
 
@@ -395,7 +395,7 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.clonetransformer</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\r\nContent-Disposition: form-data; name=\"payload\"\r\nContent-Type: application/xml\r\n\r\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.clonetransformer</element></xml>\r\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944120\""
     -
@@ -719,7 +719,7 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.forclosure\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\r\nContent-Disposition: form-data; name=\"payload\"\r\nContent-Type: application/json\r\n\r\n{\"ProcessBuilder.evil.forclosure\": \"test\"}\r\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944120\""
 
@@ -742,7 +742,7 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.forclosure\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\r\nContent-Disposition: form-data; name=\"payload\"\r\nContent-Type: application/json\r\n\r\n{\"ProcessBuilder.evil.forclosure\": \"test\"}\r\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944120\""
 
@@ -765,7 +765,7 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.forclosure</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\r\nContent-Disposition: form-data; name=\"payload\"\r\nContent-Type: application/xml\r\n\r\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.forclosure</element></xml>\r\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944120\""
 
@@ -788,7 +788,7 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.forclosure</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\r\nContent-Disposition: form-data; name=\"payload\"\r\nContent-Type: application/xml\r\n\r\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.forclosure</element></xml>\r\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944120\""
     -
@@ -1112,7 +1112,7 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.instantiatefactory\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\r\nContent-Disposition: form-data; name=\"payload\"\r\nContent-Type: application/json\r\n\r\n{\"ProcessBuilder.evil.instantiatefactory\": \"test\"}\r\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944120\""
 
@@ -1135,7 +1135,7 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.instantiatefactory\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\r\nContent-Disposition: form-data; name=\"payload\"\r\nContent-Type: application/json\r\n\r\n{\"ProcessBuilder.evil.instantiatefactory\": \"test\"}\r\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944120\""
 
@@ -1158,7 +1158,7 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.instantiatefactory</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\r\nContent-Disposition: form-data; name=\"payload\"\r\nContent-Type: application/xml\r\n\r\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.instantiatefactory</element></xml>\r\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944120\""
 
@@ -1181,7 +1181,7 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.instantiatefactory</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\r\nContent-Disposition: form-data; name=\"payload\"\r\nContent-Type: application/xml\r\n\r\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.instantiatefactory</element></xml>\r\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944120\""
     -
@@ -1505,7 +1505,7 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.instantiatetransformer\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\r\nContent-Disposition: form-data; name=\"payload\"\r\nContent-Type: application/json\r\n\r\n{\"ProcessBuilder.evil.instantiatetransformer\": \"test\"}\r\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944120\""
 
@@ -1528,7 +1528,7 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.instantiatetransformer\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\r\nContent-Disposition: form-data; name=\"payload\"\r\nContent-Type: application/json\r\n\r\n{\"ProcessBuilder.evil.instantiatetransformer\": \"test\"}\r\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944120\""
 
@@ -1551,7 +1551,7 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.instantiatetransformer</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\r\nContent-Disposition: form-data; name=\"payload\"\r\nContent-Type: application/xml\r\n\r\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.instantiatetransformer</element></xml>\r\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944120\""
 
@@ -1574,7 +1574,7 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.instantiatetransformer</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\r\nContent-Disposition: form-data; name=\"payload\"\r\nContent-Type: application/xml\r\n\r\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.instantiatetransformer</element></xml>\r\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944120\""
     -
@@ -1898,7 +1898,7 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.invokertransformer\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\r\nContent-Disposition: form-data; name=\"payload\"\r\nContent-Type: application/json\r\n\r\n{\"ProcessBuilder.evil.invokertransformer\": \"test\"}\r\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944120\""
 
@@ -1921,7 +1921,7 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.invokertransformer\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\r\nContent-Disposition: form-data; name=\"payload\"\r\nContent-Type: application/json\r\n\r\n{\"ProcessBuilder.evil.invokertransformer\": \"test\"}\r\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944120\""
 
@@ -1944,7 +1944,7 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.invokertransformer</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\r\nContent-Disposition: form-data; name=\"payload\"\r\nContent-Type: application/xml\r\n\r\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.invokertransformer</element></xml>\r\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944120\""
 
@@ -1967,7 +1967,7 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.invokertransformer</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\r\nContent-Disposition: form-data; name=\"payload\"\r\nContent-Type: application/xml\r\n\r\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.invokertransformer</element></xml>\r\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944120\""
     -
@@ -2291,7 +2291,7 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.prototypeclonefactory\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\r\nContent-Disposition: form-data; name=\"payload\"\r\nContent-Type: application/json\r\n\r\n{\"ProcessBuilder.evil.prototypeclonefactory\": \"test\"}\r\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944120\""
 
@@ -2314,7 +2314,7 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.prototypeclonefactory\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\r\nContent-Disposition: form-data; name=\"payload\"\r\nContent-Type: application/json\r\n\r\n{\"ProcessBuilder.evil.prototypeclonefactory\": \"test\"}\r\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944120\""
 
@@ -2337,7 +2337,7 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.prototypeclonefactory</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\r\nContent-Disposition: form-data; name=\"payload\"\r\nContent-Type: application/xml\r\n\r\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.prototypeclonefactory</element></xml>\r\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944120\""
 
@@ -2360,7 +2360,7 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.prototypeclonefactory</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\r\nContent-Disposition: form-data; name=\"payload\"\r\nContent-Type: application/xml\r\n\r\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.prototypeclonefactory</element></xml>\r\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944120\""
     -
@@ -2684,7 +2684,7 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.prototypeserializationfactory\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\r\nContent-Disposition: form-data; name=\"payload\"\r\nContent-Type: application/json\r\n\r\n{\"ProcessBuilder.evil.prototypeserializationfactory\": \"test\"}\r\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944120\""
 
@@ -2707,7 +2707,7 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.prototypeserializationfactory\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\r\nContent-Disposition: form-data; name=\"payload\"\r\nContent-Type: application/json\r\n\r\n{\"ProcessBuilder.evil.prototypeserializationfactory\": \"test\"}\r\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944120\""
 
@@ -2730,7 +2730,7 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.prototypeserializationfactory</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\r\nContent-Disposition: form-data; name=\"payload\"\r\nContent-Type: application/xml\r\n\r\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.prototypeserializationfactory</element></xml>\r\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944120\""
 
@@ -2753,7 +2753,7 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.prototypeserializationfactory</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\r\nContent-Disposition: form-data; name=\"payload\"\r\nContent-Type: application/xml\r\n\r\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.prototypeserializationfactory</element></xml>\r\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944120\""
     -
@@ -3077,7 +3077,7 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.whileclosure\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\r\nContent-Disposition: form-data; name=\"payload\"\r\nContent-Type: application/json\r\n\r\n{\"ProcessBuilder.evil.whileclosure\": \"test\"}\r\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944120\""
 
@@ -3100,7 +3100,7 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/json\n\n{\"ProcessBuilder.evil.whileclosure\": \"test\"}\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\r\nContent-Disposition: form-data; name=\"payload\"\r\nContent-Type: application/json\r\n\r\n{\"ProcessBuilder.evil.whileclosure\": \"test\"}\r\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944120\""
 
@@ -3123,7 +3123,7 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.whileclosure</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\r\nContent-Disposition: form-data; name=\"payload\"\r\nContent-Type: application/xml\r\n\r\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.whileclosure</element></xml>\r\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944120\""
 
@@ -3146,6 +3146,6 @@
                 Content-Type: "multipart/form-data; boundary=---------------------------thisissparta"
               method: "POST"
               version: "HTTP/1.0"
-              data: "-----------------------------thisissparta\nContent-Disposition: form-data; name=\"payload\"\nContent-Type: application/xml\n\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.whileclosure</element></xml>\n-----------------------------thisissparta--"
+              data: "-----------------------------thisissparta\r\nContent-Disposition: form-data; name=\"payload\"\r\nContent-Type: application/xml\r\n\r\n<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">ProcessBuilder.evil.whileclosure</element></xml>\r\n-----------------------------thisissparta--"
             output:
               log_contains: "id \"944120\""
