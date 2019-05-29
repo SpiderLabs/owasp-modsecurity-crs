@@ -1,27 +1,28 @@
-FROM owasp/modsecurity:v2_master
-MAINTAINER Chaim Sanders chaim.sanders@gmail.com
+FROM owasp/modsecurity:2.9-apache
+LABEL maintainer="Chaim Sanders <chaim.sanders@gmail.com>"
 
+ARG COMMIT=v3.0/dev
+ARG BRANCH=v3.0/dev
+ARG REPO=SpiderLabs/owasp-modsecurity-crs
+ENV WEBSERVER=Apache
 ENV PARANOIA=1
 
-RUN dnf -y update
-
-RUN dnf -y install python
-
-RUN cd /opt && \
-  #wget https://github.com/SpiderLabs/owasp-modsecurity-crs/archive/v3.0.2.tar.gz && \
-  #tar -xvzf v3.0.2.tar.gz && \
-  git clone https://github.com/csanders-git/owasp-modsecurity-crs owasp-modsecurity-crs-3.0.2 && \
-  cp -R /opt/owasp-modsecurity-crs-3.0.2/ /etc/httpd/modsecurity.d/owasp-crs/ && \
-  mv /etc/httpd/modsecurity.d/owasp-crs/crs-setup.conf.example /etc/httpd/modsecurity.d/owasp-crs/crs-setup.conf && \
-  cd /etc/httpd/modsecurity.d/owasp-crs/ && \
-  git checkout v3.0/dev-za && \
-  cd /etc/httpd/modsecurity.d && \
-  printf "include modsecurity.d/owasp-crs/crs-setup.conf\ninclude modsecurity.d/owasp-crs/rules/*.conf" > include.conf && \
-  sed -i -e 's/SecRuleEngine DetectionOnly/SecRuleEngine On/g' /etc/httpd/modsecurity.d/modsecurity.conf
+RUN apt-get update && \
+  apt-get -y install python git ca-certificates iproute2 && \
+  mkdir /opt/owasp-modsecurity-crs-3.0 && \
+  cd /opt/owasp-modsecurity-crs-3.0 && \
+  git init && \
+  git remote add origin https://github.com/${REPO} && \
+  git fetch --depth 1 origin ${BRANCH} && \
+  git checkout ${COMMIT} && \
+  mv crs-setup.conf.example crs-setup.conf && \
+  ln -sv /opt/owasp-modsecurity-crs-3.0 /etc/modsecurity.d/owasp-crs && \
+  printf "include /etc/modsecurity.d/owasp-crs/crs-setup.conf\ninclude /etc/modsecurity.d/owasp-crs/rules/*.conf" >> /etc/modsecurity.d/include.conf && \
+  sed -i -e 's/SecRuleEngine DetectionOnly/SecRuleEngine On/g' /etc/modsecurity.d/modsecurity.conf
 
 COPY docker-entrypoint.sh /
 
 EXPOSE 80
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
-CMD ["httpd", "-k", "start", "-D", "FOREGROUND"]
+CMD ["apachectl", "-D", "FOREGROUND"]

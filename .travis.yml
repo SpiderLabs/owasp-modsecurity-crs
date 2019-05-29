@@ -5,9 +5,14 @@ language: python
 python:
   - 2.7
 before_install:
-  - docker pull owasp/modsecurity-crs
-  - docker run -ti -e PARANOIA=5 -d --rm -p 80:80 -v /var/log/httpd:/var/log/httpd/ owasp/modsecurity-crs
-install: 
+  - |
+    if [[ "$TRAVIS_PULL_REQUEST" != "false" ]]; then
+      docker build --build-arg REPO=$TRAVIS_PULL_REQUEST_SLUG --build-arg BRANCH=$TRAVIS_PULL_REQUEST_BRANCH --build-arg COMMIT=$TRAVIS_PULL_REQUEST_SHA -t modsecurity-crs ./util/
+    else
+      docker build -t modsecurity-crs ./util/
+    fi
+  - docker run -ti -e PARANOIA=5 -d -p 80:80 -v /var/log/apache2:/var/log/apache2/ --name "$TRAVIS_BUILD_ID" modsecurity-crs
+install:
   - pip install -r ./util/integration/requirements.txt
   - pip install -r ./util/regression-tests/requirements.txt
 script:
