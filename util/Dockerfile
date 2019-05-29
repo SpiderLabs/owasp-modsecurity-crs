@@ -9,8 +9,8 @@ ENV PARANOIA=1
 
 RUN apt-get update && \
   apt-get -y install python git ca-certificates iproute2 && \
-  mkdir /opt/owasp-modsecurity-crs-3.1 && \
-  cd /opt/owasp-modsecurity-crs-3.1 && \
+  mkdir /opt/owasp-modsecurity-crs-3.0 && \
+  cd /opt/owasp-modsecurity-crs-3.0 && \
   git init && \
   git remote add origin https://github.com/${REPO} && \
   git fetch --depth 1 origin ${BRANCH} && \
