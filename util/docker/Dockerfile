@@ -9,14 +9,14 @@ ENV PARANOIA=1
 
 RUN apt-get update && \
   apt-get -y install python git ca-certificates iproute2 && \
-  mkdir /opt/owasp-modsecurity-crs-3.2 && \
-  cd /opt/owasp-modsecurity-crs-3.2 && \
+  mkdir /opt/owasp-modsecurity-crs-3.1 && \
+  cd /opt/owasp-modsecurity-crs-3.1 && \
   git init && \
   git remote add origin https://github.com/${REPO} && \
   git fetch --depth 1 origin ${BRANCH} && \
   git checkout ${COMMIT} && \
   mv crs-setup.conf.example crs-setup.conf && \
-  ln -sv /opt/owasp-modsecurity-crs-3.2 /etc/modsecurity.d/owasp-crs && \
+  ln -sv /opt/owasp-modsecurity-crs-3.1 /etc/modsecurity.d/owasp-crs && \
   printf "include /etc/modsecurity.d/owasp-crs/crs-setup.conf\ninclude /etc/modsecurity.d/owasp-crs/rules/*.conf" >> /etc/modsecurity.d/include.conf && \
   sed -i -e 's/SecRuleEngine DetectionOnly/SecRuleEngine On/g' /etc/modsecurity.d/modsecurity.conf
 
