@@ -10,6 +10,10 @@ env:
 
 matrix:
   fast_finish:    true
+  include:
+  - python: 2.7
+    name: "\"><script>alert(1);</script>"
+    env: test
   allow_failures:
   - python:       2.7
     env:          DOCKER_TAG=modsecurity-crs-3.0-apache DOCKERFILE=Dockerfile-3.0-apache LOG_LOCATION=/var/log/apache2/ LOG_FILE=error.log FTW_DATE_REGEX="\\[([A-Z][a-z]{2} [A-z][a-z]{2} \\d{1,2} \\d{1,2}\\:\\d{1,2}\\:\\d{1,2}\\.\\d+? \\d{4})\\]" FTW_DATE_FORMAT="%a %b %d %H:%M:%S.%f %Y"
