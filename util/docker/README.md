@@ -54,7 +54,7 @@ There are two possible ways to pass ModSecurity CRS tuning rules to the containe
 * To copy the ModSecurity tuning file(s) into the created container and then start the container
   
   
-##### Map ModSecurity tuning file via volume
+## Map ModSecurity tuning file via volume
   
 ```
 docker run -dti --rm \
@@ -64,7 +64,7 @@ docker run -dti --rm \
    owasp/modsecurity-crs
 ```
   
-##### Copy ModSecurity tuning file into created container
+## Copy ModSecurity tuning file into created container
   
 This example can be helpful when no volume mounts are possible (some CI pipelines).
   
