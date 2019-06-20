@@ -5,6 +5,9 @@
   or the CRS mailinglist at
 * https://lists.owasp.org/mailman/listinfo/owasp-modsecurity-core-rule-set
 
+== Version 3.1.1 - 2018-06-XX ==
+ * Fix CVE-2019-11387 ReDoS against CRS on ModSecurity 3 at PL 2 (Christoph Hansen, Federico G. Schwindt)
+
 == Version 3.1.0 - 8/7/2018 ==
  * Add Detectify scanner (theMiddle)
  * Renaming matched_var/s (Victor Hora)
