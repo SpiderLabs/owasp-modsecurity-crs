@@ -25,3 +25,59 @@
               stop_magic: true
             output:
               log_contains: "id \"920460\""
+    -
+      test_title: 920460-2
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              uri: "/?file=cat+/etc/pa\\ssw\\d"
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"
+                  Host: "localhost"
+            output:
+              log_contains: "id \"920460\""
+    -
+      test_title: 920460-3
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              uri: "/?file=\\c"
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"
+                  Host: "localhost"
+            output:
+              log_contains: "id \"920460\""
+    -
+      test_title: 920460-4
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              uri: "/?file=\\\\c"
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"
+                  Host: "localhost"
+            output:
+              no_log_contains: "id \"920460\""
+    -
+      test_title: 920460-5
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              uri: "/?file=\\\\\\c"
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"
+                  Host: "localhost"
+            output:
+              no_log_contains: "id \"920460\""
