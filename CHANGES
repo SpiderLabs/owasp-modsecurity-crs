@@ -10,6 +10,7 @@
  * Fix bug in 943120 (XeroChen)
  * Content-Type made case insensitive in 920240, 920400 (Federico G. Schwindt)
  * Fix bug in 920470 (Walter Hop)
+ * Allow % encoding in 920240 (Christoph Hansen)
 
 == Version 3.1.0 - 8/7/2018 ==
  * Add Detectify scanner (theMiddle)

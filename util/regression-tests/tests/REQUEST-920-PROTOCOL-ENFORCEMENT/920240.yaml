@@ -59,7 +59,7 @@
               no_log_contains: "id \"920240\""                   
                              
     - 
-      # Test URL Encoding Abuse Attack Attempt/XML from orig modsec regression
+      # We have a valid percentencoding here
       test_title: 920240-4
       stages: 
         - 
@@ -87,7 +87,7 @@
                 - "  </SOAP-ENV:Body>"
                 - "</SOAP-ENV:Envelope>"
             output: 
-              log_contains: "id \"920240\""
+              no_log_contains: "id \"920240\""
     - 
       # test URL Encoding Abuse Attack Attempt from old regression tests
       test_title: 920240-5
@@ -133,4 +133,4 @@
                   Content-Type: "application/x-www-form-urlencoded"
               data: "param=%7%6F%6D%65%74%65%78%74%5F%31%32%33%"
             output: 
-              log_contains: "id \"920240\""                
+              log_contains: "id \"920240\""
