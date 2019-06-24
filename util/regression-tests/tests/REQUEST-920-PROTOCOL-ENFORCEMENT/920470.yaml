@@ -125,5 +125,5 @@
                   Host: "localhost"
                   Content-Type: 'multipart/form-data; boundary=----formdata-polyfill-0.40616634299_704013'
                   Content-Length: 0
-             output:
-               no_log_contains: "id \"920470\""
+            output:
+              no_log_contains: "id \"920470\""
