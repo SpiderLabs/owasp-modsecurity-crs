@@ -113,8 +113,6 @@
                   Content-Length: 0
             output:
               no_log_contains: "id \"920470\""
-            output:
-              no_log_contains: "id \"920470\""
     - test_title: 920470-9
       stages:
         - stage:
