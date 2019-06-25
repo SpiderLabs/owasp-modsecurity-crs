@@ -33,6 +33,18 @@ services:
       # - EXECUTING_PARANOIA=2
 
       #######################################################
+      # Reverse Proxy mode
+      # (only available if SETPROXY was enabled during the
+      # parent ModSecurity image)
+      #######################################################
+      # PROXYLOCATION: Application Backend of Reverse Proxy
+      # - PROXYLOCATION=http://app:8000/
+      #
+      # If needed: add own httpd-proxy.conf (only available if SETPROXY
+      # was enabled during build of parent ModSecurity image)
+      #  - ./httpd-proxy.conf:/usr/local/apache2/conf/extra/httpd-proxy.conf
+
+      #######################################################
       # Various CRS Variables with Default Values
       #######################################################
       #- ENFORCE_BODYPROC_URLENCODED=1
@@ -60,18 +72,6 @@ services:
     volumes:
       - ./REQUEST-900-EXCLUSION-RULES-BEFORE-CRS.conf:/etc/modsecurity.d/owasp-crs/rules/REQUEST-900-EXCLUSION-RULES-BEFORE-CRS.conf
       - ./RESPONSE-999-EXCLUSION-RULES-AFTER-CRS.conf:/etc/modsecurity.d/owasp-crs/rules/RESPONSE-999-EXCLUSION-RULES-AFTER-CRS.conf
-
-    #######################################################
-    # Reverse Proxy mode
-    # (only available if SETPROXY was enabled during the
-    # parent ModSecurity image)
-    #######################################################
-    # PROXYLOCATION: Application Backend of Reverse Proxy
-    # - PROXYLOCATION=http://app:8000/
-    #
-    # If needed: add own httpd-proxy.conf (only available if SETPROXY 
-    # was enabled during build of parent ModSecurity image)
-    #  - ./httpd-proxy.conf:/usr/local/apache2/conf/extra/httpd-proxy.conf
 
     #######################################################
     # Add TLS server certificate and key 
