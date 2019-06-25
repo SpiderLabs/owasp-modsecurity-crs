@@ -5,14 +5,14 @@
   or the CRS mailinglist at
 * https://lists.owasp.org/mailman/listinfo/owasp-modsecurity-core-rule-set
 
-== Version 3.1.1 - 2018-06-XX ==
+== Version 3.1.1 - 2018-06-26 ==
  * Fix CVE-2019-11387 ReDoS against CRS on ModSecurity 3 at PL 2 (Christoph Hansen, Federico G. Schwindt)
- * Fix bug in 943120 (XeroChen)
  * Content-Type made case insensitive in 920240, 920400 (Federico G. Schwindt)
- * Fix bug in 920470 (Walter Hop)
  * Allow % encoding in 920240 (Christoph Hansen)
  * Fix bug in 920440 (Andrea Menin)
+ * Fix bug in 920470 (Walter Hop)
  * Reduce false positives in 921110 (Yu Yagihashi, Federico G. Schwindt)
+ * Fix bug in 943120 (XeroChen)
 
 == Version 3.1.0 - 8/7/2018 ==
  * Add Detectify scanner (theMiddle)
