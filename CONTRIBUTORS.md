@@ -12,6 +12,7 @@
 - [Franziska Bühler](https://github.com/franbuehler)
 - [Christoph Hansen](https://github.com/emphazer)
 - [Victor Hora](https://github.com/victorhora)
+- [Andrea Menin](https://github.com/theMiddleBlue)
 - [Federico G. Schwindt](https://github.com/fgsch)
 - [Manuel Spartan](https://github.com/spartantri)
 - [Felipe Zimmerle](https://github.com/zimmerle)
@@ -51,6 +52,8 @@
 - [theMiddle](https://github.com/theMiddleBlue)
 - [Ben Williams](https://github.com/benwilliams)
 - [Greg Wroblewski](https://github.com/gwroblew)
+- [XeroChen](https://github.com/XeroChen)
+- [Yu Yagihashi](https://github.com/yagihash)
 - [ygrek](https://github.com/ygrek)
 - [Zino](https://github.com/zinoe)
 - Josh Zlatin
