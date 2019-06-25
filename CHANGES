@@ -12,6 +12,7 @@
  * Fix bug in 920470 (Walter Hop)
  * Allow % encoding in 920240 (Christoph Hansen)
  * Fix bug in 920440 (Andrea Menin)
+ * Reduce false positives in 921110 (Yu Yagihashi, Federico G. Schwindt)
 
 == Version 3.1.0 - 8/7/2018 ==
  * Add Detectify scanner (theMiddle)
