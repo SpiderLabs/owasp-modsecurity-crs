@@ -5,6 +5,28 @@ Introduction
 ============
 Welcome to the OWASP Core Rule Set regression testing suite. This suite is meant to test specific rules in OWASP CRS version 3. The suite is designed to uses preconfigured IDs that are specific to this version of CRS. The tests themselves can be run without CRS and one would expect the same elements to be blocked, however one must override the default Output parameter in the tests. 
 
+Run tests using Docker
+======================
+
+This is a simple self-contained way to run the tests against the currently checked out repo, without having to separately have to set up a test web server with ModSecurity or any of the test framework tools on your real dev machine. If you use this approach, you will not need to do any of the other below installation and run steps.
+
+First build the container image. You only needed to do once. You do not need to rebuild the image between changes to CRS files in this repo, as you will be mounting the repo directly when you run the container.
+```
+docker build --tag crsregressiontests .
+```
+
+Running tests:
+```
+# Run all tests
+docker run -it --rm -v `realpath ../../`:/etc/modsecurity/owasp-crs crsregressiontests
+
+# Run a single test file
+docker run -it --rm -v `realpath ../../`:/etc/modsecurity/owasp-crs crsregressiontests py.test -vs util/regression-tests/CRS_Tests.py --rule=util/regression-tests/tests/REQUEST-942-APPLICATION-ATTACK-SQLI/942320.yaml
+
+# Run a shell from which you can also run the test and troubleshoot log files, etc.:
+docker run -it --rm -v `realpath ../../`:/etc/modsecurity/owasp-crs crsregressiontests bash
+```
+
 Installation
 ============
 The OWASP Core Rule Set project was part of the effort to develop FTW, the Framework for Testing WAFs. As a result, we use this project in order to run our regression testing. FTW is designed to use existing Python testing frameworks to allow for easy to read web based testing, provided in YAML. You can install FTW by from the repository (at https://github.com/CRS-support/ftw) or by running pip.
