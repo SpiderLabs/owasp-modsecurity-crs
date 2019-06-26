@@ -18,13 +18,13 @@ docker build --tag crsregressiontests .
 Running tests:
 ```
 # Run all tests
-docker run -it --rm -v `realpath ../../`:/etc/modsecurity/owasp-crs crsregressiontests
+docker run -it --rm -v `realpath ../../`:/etc/modsecurity/crs crsregressiontests
 
 # Run a single test file
-docker run -it --rm -v `realpath ../../`:/etc/modsecurity/owasp-crs crsregressiontests py.test -vs util/regression-tests/CRS_Tests.py --rule=util/regression-tests/tests/REQUEST-942-APPLICATION-ATTACK-SQLI/942320.yaml
+docker run -it --rm -v `realpath ../../`:/etc/modsecurity/crs crsregressiontests py.test -vs util/regression-tests/CRS_Tests.py --rule=util/regression-tests/tests/REQUEST-942-APPLICATION-ATTACK-SQLI/942320.yaml
 
 # Run a shell from which you can also run the test and troubleshoot log files, etc.:
-docker run -it --rm -v `realpath ../../`:/etc/modsecurity/owasp-crs crsregressiontests bash
+docker run -it --rm -v `realpath ../../`:/etc/modsecurity/crs crsregressiontests bash
 ```
 
 Installation
