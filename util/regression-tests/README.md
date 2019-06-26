@@ -7,7 +7,6 @@ Welcome to the OWASP Core Rule Set regression testing suite. This suite is meant
 
 Run tests using Docker
 ======================
-
 This is a simple self-contained way to run the tests against the currently checked out repo, without having to separately have to set up a test web server with ModSecurity or any of the test framework tools on your real dev machine. If you use this approach, you will not need to do any of the other below installation and run steps.
 
 First build the container image. You only needed to do once. You do not need to rebuild the image between changes to CRS files in this repo, as you will be mounting the repo directly when you run the container.
