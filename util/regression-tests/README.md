@@ -21,6 +21,8 @@ There are Three requirements for running the OWASP CRS regressions.
 2. ModSecurity must be in DetectionOnly (or anomaly scoring) mode
 3. You must disable IP blocking based on previous events
 
+Note: The test suite compares timezones -- if your test machine and your host machine are in different timezones this can cause bad results
+
 To accomplish 2. and 3. you may use the following rule in your setup.conf:
 
 ```
