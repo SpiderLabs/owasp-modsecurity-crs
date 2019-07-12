@@ -1,0 +1,88 @@
+---
+  meta:
+    author: "Andrea Menin"
+    description: None
+    enabled: true
+    name: 941370.yaml
+  tests:
+  -
+    test_title: 941370-1
+    desc: "Filter bypass using JS global variable"
+    stages:
+    -
+      stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: localhost
+          method: GET
+          port: 80
+          data: "a=\";document+%2f%2A+foo+%2A%2f+%5B+%22cookie%22+%5D;%2f%2f"
+          version: HTTP/1.1
+        output:
+          log_contains: id "941370"
+  -
+    test_title: 941370-2
+    desc: "Filter bypass using JS global variable"
+    stages:
+    -
+      stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: localhost
+          method: POST
+          port: 80
+          data: "a=\";window+%2f%2A+foo+%2A%2f+.+document+.+%2f%2A+bar+%2A%2f+cookie%2f%2f"
+          version: HTTP/1.1
+        output:
+          log_contains: id "941370"
+  -
+    test_title: 941370-3
+    desc: "Filter bypass using JS global variable"
+    stages:
+    -
+      stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: localhost
+          method: GET
+          port: 80
+          data: "a=document.cookie"
+          version: HTTP/1.1
+        output:
+          log_contains: id "941370"
+  -
+    test_title: 941370-4
+    desc: "Filter bypass using JS global variable"
+    stages:
+    -
+      stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: localhost
+          method: GET
+          port: 80
+          data: "a=document .cookie"
+          version: HTTP/1.1
+        output:
+          log_contains: id "941370"
+  -
+    test_title: 941370-5
+    desc: "Filter bypass using JS global variable"
+    stages:
+    -
+      stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: localhost
+          method: GET
+          port: 80
+          data: "a=document%5B%27cookie%27%5D"
+          version: HTTP/1.1
+        output:
+          log_contains: id "941370"
+
