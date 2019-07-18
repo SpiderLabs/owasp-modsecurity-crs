@@ -1,7 +1,6 @@
 ---
   meta: 
-    author: "csanders-git"
-    author: "Franziska Bühler"
+    author: "csanders-git, Franziska Bühler"
     enabled: true
     name: "941160.yaml"
     description: "Tests to trigger, or not trigger 941160"
