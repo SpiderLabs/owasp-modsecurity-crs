@@ -44,4 +44,4 @@
                   Keep-Alive: "300"
                   Proxy-Connection: "keep-alive"
             output: 
-              log_contains: "id \"920230\""
+              no_log_contains: "id \"920230\""
