@@ -1,6 +1,6 @@
 ---
   meta:
-    author: "Christian Folini"
+    author: "csanders-git, Christian Folini"
     description: "Tests to trigger, or not trigger 941130"
     enabled: true
     name: 941130.yaml
