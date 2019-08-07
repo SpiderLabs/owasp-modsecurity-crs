@@ -17,6 +17,7 @@ jobs:
     - &test-common
       env: CONFIG=2.9-apache LOGDIR=/var/log/apache2
       before_install:
+        - env
         - |
           if [[ "$TRAVIS_PULL_REQUEST" != "false" ]]; then
             docker build --build-arg REPO=$TRAVIS_PULL_REQUEST_SLUG \
