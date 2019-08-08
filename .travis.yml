@@ -1,56 +1,62 @@
-language:         python
+language: python
+
 python:
   - 2.7
-env:
-  matrix:
-    # Travis REALLY hates newline formatted env vars when it comes to using allow_failures, trust us -- we know this is harder to read.
-    - DOCKER_TAG=modsecurity-crs-2.9-apache DOCKERFILE=Dockerfile-2.9-apache LOG_LOCATION=/var/log/apache2/ LOG_FILE=error.log FTW_DATE_REGEX="\\[([A-Z][a-z]{2} [A-z][a-z]{2} \\d{1,2} \\d{1,2}\\:\\d{1,2}\\:\\d{1,2}\\.\\d+? \\d{4})\\]" FTW_DATE_FORMAT="%a %b %d %H:%M:%S.%f %Y"
-    - DOCKER_TAG=modsecurity-crs-3.0-nginx DOCKERFILE=Dockerfile-3.0-nginx LOG_LOCATION=/var/log/nginx/ LOG_FILE=error.log FTW_DATE_REGEX="(\\d{4}\\/\\d{2}\\/\\d{2} \\d{2}:\\d{2}:\\d{2})" FTW_DATE_FORMAT="%Y/%m/%d %H:%M:%S"
-    - DOCKER_TAG=modsecurity-crs-3.0-apache DOCKERFILE=Dockerfile-3.0-apache LOG_LOCATION=/var/log/apache2/ LOG_FILE=error.log FTW_DATE_REGEX="\\[([A-Z][a-z]{2} [A-z][a-z]{2} \\d{1,2} \\d{1,2}\\:\\d{1,2}\\:\\d{1,2}\\.\\d+? \\d{4})\\]" FTW_DATE_FORMAT="%a %b %d %H:%M:%S.%f %Y"
 
-matrix:
-  fast_finish:    true
-  allow_failures:
-  - python:       2.7
-    env:          DOCKER_TAG=modsecurity-crs-3.0-apache DOCKERFILE=Dockerfile-3.0-apache LOG_LOCATION=/var/log/apache2/ LOG_FILE=error.log FTW_DATE_REGEX="\\[([A-Z][a-z]{2} [A-z][a-z]{2} \\d{1,2} \\d{1,2}\\:\\d{1,2}\\:\\d{1,2}\\.\\d+? \\d{4})\\]" FTW_DATE_FORMAT="%a %b %d %H:%M:%S.%f %Y"
-  - python:       2.7
-    env:          DOCKER_TAG=modsecurity-crs-3.0-nginx DOCKERFILE=Dockerfile-3.0-nginx LOG_LOCATION=/var/log/nginx/ LOG_FILE=error.log FTW_DATE_REGEX="(\\d{4}\\/\\d{2}\\/\\d{2} \\d{2}:\\d{2}:\\d{2})" FTW_DATE_FORMAT="%Y/%m/%d %H:%M:%S"
-
-sudo:             required
+sudo: required
 
 services:
   - docker
 
-before_install:
-  - |
-    if [[ "$TRAVIS_PULL_REQUEST" != "false" ]]; then
-      docker build --build-arg REPO=$TRAVIS_PULL_REQUEST_SLUG --build-arg BRANCH=$TRAVIS_PULL_REQUEST_BRANCH --build-arg COMMIT=$TRAVIS_PULL_REQUEST_SHA -f ./util/docker/$DOCKERFILE -t $DOCKER_TAG ./util/docker/
-    else
-      docker build -f ./util/docker/$DOCKERFILE -t $DOCKER_TAG ./util/docker/
-    fi
-  - docker run -ti -e PARANOIA=5 -d -p 80:80 -v $LOG_LOCATION:$LOG_LOCATION --name "$TRAVIS_BUILD_ID" $DOCKER_TAG
-install:
-  - pip install -r ./util/integration/requirements.txt
-  - pip install -r ./util/regression-tests/requirements.txt
-script:
-  - |
-    docker ps | grep -q modsecurity-crs
-    if [[ $? -ne 0 ]]; then
-      docker logs "$TRAVIS_BUILD_ID"
-      docker rm -f "$TRAVIS_BUILD_ID"
-      exit 1
-    fi
-  - git clone https://github.com/CRS-support/secrules_parsing
-  - pip install -r secrules_parsing/requirements.txt
-  - python secrules_parsing/secrules_parser.py -c -f rules/*.conf
-  - py.test -vs ./util/integration/format_tests.py
-  # FTW custon settings
-  - echo "log_location_linux = '$LOG_LOCATION$LOG_FILE'" > util/regression-tests/config.py
-  - echo "log_date_regex = '$FTW_DATE_REGEX'" >> util/regression-tests/config.py
-  - echo "log_date_format = '$FTW_DATE_FORMAT'" >> util/regression-tests/config.py
-  - py.test -vs util/regression-tests/CRS_Tests.py --rule=util/regression-tests/tests/test.yaml
-  - py.test -vs util/regression-tests/CRS_Tests.py --ruledir_recurse=util/regression-tests/tests/
-  - docker rm -f "$TRAVIS_BUILD_ID"
+jobs:
+  allow_failures:
+    - env: CONFIG=3.0-apache LOGDIR=/var/log/apache2
+    - env: CONFIG=3.0-nginx LOGDIR=/var/log/nginx
+  fast_finish: true
+  include:
+    - &test-common
+      env: CONFIG=2.9-apache LOGDIR=/var/log/apache2
+      before_install:
+        - |
+          if [[ "$TRAVIS_PULL_REQUEST" != "false" ]]; then
+            docker build --build-arg REPO=$TRAVIS_PULL_REQUEST_SLUG \
+              --build-arg BRANCH=$TRAVIS_PULL_REQUEST_BRANCH \
+              --build-arg COMMIT=$TRAVIS_PULL_REQUEST_SHA \
+              -f ./util/docker/Dockerfile-$CONFIG \
+              -t modsecurity-crs-$CONFIG ./util/docker/
+          else
+            docker build -f ./util/docker/Dockerfile-$CONFIG \
+              -t modsecurity-crs-$CONFIG ./util/docker/
+          fi
+        - |
+          docker run -ti -e PARANOIA=5 -d -p 80:80 \
+            --volume $LOGDIR:$LOGDIR \
+            --name "$TRAVIS_BUILD_ID" modsecurity-crs-$CONFIG
+        - |
+          docker ps | grep -q modsecurity-crs
+          if [[ $? -ne 0 ]]; then
+            docker logs "$TRAVIS_BUILD_ID"
+            docker rm -f "$TRAVIS_BUILD_ID"
+            exit 1
+          fi
+      install:
+        - pip install -r util/integration/requirements.txt
+        - pip install -r util/regression-tests/requirements.txt
+      before_script:
+        - git clone https://github.com/CRS-support/secrules_parsing
+        - pip install -r secrules_parsing/requirements.txt
+        - python secrules_parsing/secrules_parser.py -c -f rules/*.conf
+      script:
+        - py.test -vs util/integration/format_tests.py
+        - |
+          py.test -vs util/regression-tests/CRS_Tests.py \
+            --config=$CONFIG --ruledir_recurse=util/regression-tests/tests
+        - docker rm -f "$TRAVIS_BUILD_ID"
+    - <<: *test-common
+      env: CONFIG=3.0-apache LOGDIR=/var/log/apache2
+    - <<: *test-common
+      env: CONFIG=3.0-nginx LOGDIR=/var/log/nginx
+
 # safelist
 branches:
   only:
@@ -58,5 +64,6 @@ branches:
   - v3.0/master
   - v3.1/dev
   - v3.2/dev
+
 notifications:
-  irc:            "chat.freenode.net#modsecurity"
+  irc: "chat.freenode.net#modsecurity"
