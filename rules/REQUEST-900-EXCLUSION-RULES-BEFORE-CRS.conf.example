@@ -141,7 +141,7 @@
 #     phase:2,\
 #     pass,\
 #     nolog,\
-#     ctl:ruleRemoveTargetByTag=CRS;ARGS:pwd"
+#     ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:pwd"
 
 #
 # Example Exclusion Rule: Removing a range of rules
