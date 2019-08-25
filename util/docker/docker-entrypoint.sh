@@ -33,8 +33,9 @@ EOF
 $(python <<EOF
 import re
 import os
-out=re.sub('(#SecAction[\S\s]{6}id:900110[\s\S]*tx\.outbound_anomaly_score_threshold=4\")','SecAction \\\\\n  \"id:900110, \\\\\n   phase:1, \\\\\n   nolog, \\\\\n   pass, \\\\\n   t:none, \\\\\n   setvar:tx.inbound_anomaly_score_threshold='+os.environ['ANOMALYIN']+','+'  \\\\\n   setvar:tx.outbound_anomaly_score_threshold='+os.environ['ANOMALYOUT']+'\"',open('/etc/modsecurity.d/owasp-crs/crs-setup.conf','r').read())
-open('/etc/modsecurity.d/owasp-crs/crs-setup.conf','w').write(out)
+if "ANOMALYIN" in os.environ and "ANOMALYOUT" in os.environ:
+    out=re.sub('(#SecAction[\S\s]{6}id:900110[\s\S]*tx\.outbound_anomaly_score_threshold=4\")','SecAction \\\\\n  \"id:900110, \\\\\n   phase:1, \\\\\n   nolog, \\\\\n   pass, \\\\\n   t:none, \\\\\n   setvar:tx.inbound_anomaly_score_threshold='+os.environ['ANOMALYIN']+','+'  \\\\\n   setvar:tx.outbound_anomaly_score_threshold='+os.environ['ANOMALYOUT']+'\"',open('/etc/modsecurity.d/owasp-crs/crs-setup.conf','r').read())
+    open('/etc/modsecurity.d/owasp-crs/crs-setup.conf','w').write(out)
 EOF
 ) && \
 
