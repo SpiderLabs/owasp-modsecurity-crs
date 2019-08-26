@@ -6,15 +6,15 @@
 # Requires Regexp::Assemble Perl module.
 # To install: cpan install Regexp::Assemble
 #
-# See: http://blog.modsecurity.org/2007/06/optimizing-regu.html
+# See: https://coreruleset.org/20190826/optimizing-regular-expressions/
 #
 
 use strict;
 use Regexp::Assemble;
- 
+
 my $ra = Regexp::Assemble->new;
 while (<>)
 {
   $ra->add($_);
 }
-print $ra->as_string() . "\n"; 
+print $ra->as_string() . "\n";
