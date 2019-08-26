@@ -454,17 +454,6 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 #  t:none,\
 #  setvar:'tx.static_extensions=/.jpg/ /.jpeg/ /.png/ /.gif/ /.js/ /.css/ /.ico/ /.svg/ /.webp/'"
 
-# Locations that will be inspected to enforce only images and documents uploads.
-# Default: /wp-admin/upload.php /wp-admin/media-new.php
-# Uncomment this rule to change the default set in 901180
-#SecAction \
-# "id:900270,\
-#  phase:1,\
-#  nolog,\
-#  pass,\
-#  t:none,\
-#  setvar:'tx.protected_uploads=#/wp-admin/upload.php# #/wp-admin/media-new.php#'"
-
 # Content-Types charsets that a client is allowed to send in a request.
 # Default: utf-8|iso-8859-1|iso-8859-15|windows-1252
 # Uncomment this rule to change the default.
