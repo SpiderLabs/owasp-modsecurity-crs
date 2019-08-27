@@ -1,9 +1,6 @@
-## Project Lead:
+## Project Co-Leads:
 
 - [Chaim Sanders](https://github.com/csanders-git)
-
-## Core Developers:
-
 - [Christian Folini](https://github.com/dune73)
 - [Walter Hop](https://github.com/lifeforms)
 
@@ -24,35 +21,50 @@
 - [azhao155](https://github.com/azhao155)
 - [Matt Bagley](https://github.com/bagley)
 - [Ryan Barnett](https://github.com/rcbarnett)
+- [Peter Bittner](https://github.com/bittner)
 - [Allan Boll](https://github.com/allanbomsft)
 - [Jeremy Brown](https://github.com/jwbrown77)
+- [Brent Clark](https://github.com/brentclark)
 - [Jonathan Claudius](https://github.com/claudijd)
 - [coolt](https://github.com/coolt)
 - [Ashish Dixit](https://github.com/tundal45)
 - [Padraig Doran](https://github.com/padraigdoran)
+- [Dan Ehrlich](https://github.com/danehrlich1)
 - [Umar Farook](https://github.com/umarfarook882)
 - [FrozenSolid](https://github.com/frozenSolid)
 - [Pásztor Gábor](https://github.com/gpasztor87)
 - [Aaron Haaf](https://github.com/Everspace)
 - [Michael Haas](https://github.com/MichaelHaas)
+- [Ervin Hegedus](https://github.com/airween)
 - [jamuse](https://github.com/jamuse)
+- [jschleus](https://github.com/jschleus)
 - [Krzysztof Kotowicz](https://github.com/koto)
+- [Max Leske](https://github.com/theseion)
+- Manuel Leos
 - [Evgeny Marmalstein](https://github.com/shimshon70)
 - [Christian Mehlmauer](https://github.com/FireFart)
 - [Glyn Mooney](https://github.com/skidoosh)
+- [na1ex](https://github.com/na1ex)
 - [Jose Nazario](https://github.com/paralax)
 - [Scott O'Neil](https://github.com/cPanelScott)
 - [Robert Paprocki](https://github.com/p0pr0ck5)
 - [Christian Peron](https://github.com/csjperon)
 - [Elia Pinto](https://github.com/yersinia)
 - [Brian Rectanus](https://github.com/b1v1r)
+- [Rufus125](https://github.com/Rufus125)
 - Ofer Shezaf
 - Breno Silva
+- siric\_
 - [Marc Stern](https://github.com/marcstern)
+- [Simon Studer](https://github.com/studersi)
+- [supplient](https://github.com/supplient)
 - [theMiddle](https://github.com/theMiddleBlue)
 - [Ben Williams](https://github.com/benwilliams)
+- [Avery Wong](https://github.com/4v3r9)
 - [Greg Wroblewski](https://github.com/gwroblew)
+- [XeroChen](https://github.com/XeroChen)
 - [ygrek](https://github.com/ygrek)
+- [Yu Yagihashi](https://github.com/yagihash)
 - [Zino](https://github.com/zinoe)
 - Josh Zlatin
 - [Zou Guangxian](https://github.com/zouguangxian)
