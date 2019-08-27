@@ -37,5 +37,7 @@ java.lang.StringBuilder
 java.lang.System
 javax.script.ScriptEngineManager
 org.apache.commons
+org.apache.struts
+org.apache.struts2
 org.omg.CORBA
-java.beans.XMLDecoder
+java.beans.XMLDecode
