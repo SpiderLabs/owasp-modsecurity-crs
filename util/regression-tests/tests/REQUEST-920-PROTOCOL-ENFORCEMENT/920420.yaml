@@ -1,15 +1,15 @@
 ---
-  meta: 
+  meta:
     author: "csanders-git"
     enabled: true
     name: "920420.yaml"
     description: "Description"
-  tests: 
-    - 
+  tests:
+    -
       test_title: 920420-1
-      stages: 
-        - 
-          stage: 
+      stages:
+        -
+          stage:
             input:
               dest_addr: "127.0.0.1"
               port: 80
@@ -19,13 +19,13 @@
                   Host: "localhost"
                   Content-Type: "application/x-www-form-urlencoded"
               data: "test=value"
-            output: 
+            output:
               no_log_contains: "id \"920420\""
-    - 
+    -
       test_title: 920420-2
-      stages: 
-        - 
-          stage: 
+      stages:
+        -
+          stage:
             input:
               dest_addr: "127.0.0.1"
               port: 80
@@ -35,13 +35,13 @@
                   Host: "localhost"
                   Content-Type: "my-new-content-type"
               data: "test"
-            output: 
+            output:
               log_contains: "id \"920420\""
-    - 
+    -
       test_title: 920420-3
-      stages: 
-        - 
-          stage: 
+      stages:
+        -
+          stage:
             input:
               dest_addr: "127.0.0.1"
               port: 80
@@ -51,13 +51,13 @@
                   Host: "localhost"
                   Content-Type: "my-new-content-type"
               data: "test"
-            output: 
-              no_log_contains: "id \"920420\""             
-    - 
+            output:
+              log_contains: "id \"920420\""
+    -
       test_title: 920420-4
-      stages: 
-        - 
-          stage: 
+      stages:
+        -
+          stage:
             input:
               dest_addr: "127.0.0.1"
               port: 80
@@ -67,13 +67,13 @@
                   Host: "localhost"
                   Content-Type: "my-new-content-type"
               data: "test"
-            output: 
-              no_log_contains: "id \"920420\""        
-    - 
+            output:
+              log_contains: "id \"920420\""
+    -
       test_title: 920420-5
       desc: Request content type is not allowed by policy (920420) from old modsec regressions
       stages:
-      - 
+      -
         stage:
           input:
             dest_addr: 127.0.0.1
@@ -108,11 +108,11 @@
             - --0000--
           output:
             log_contains: id "920420"
-    - 
+    -
       test_title: 920420-6
       desc: Request content type is not allowed by policy (920420) from old modsec regressions
       stages:
-      - 
+      -
         stage:
           input:
             dest_addr: 127.0.0.1
@@ -147,11 +147,11 @@
             - --0000--
           output:
             log_contains: id "920420"
-    - 
+    -
       test_title: 920420-7
       desc: Request content type is not allowed by policy (920420) from old modsec regressions
       stages:
-      - 
+      -
         stage:
           input:
             dest_addr: 127.0.0.1
@@ -186,5 +186,36 @@
             - --0000--
           output:
             log_contains: id "920420"
-                
+    -
+      test_title: 920420-8
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              method: "HEAD"
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"
+                  Host: "localhost"
+                  Content-Type: "my-new-content-type"
+              data: "test"
+            output:
+              log_contains: "id \"920420\""
+    -
+      test_title: 920420-9
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              method: "OPTIONS"
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"
+                  Host: "localhost"
+                  Content-Type: "application/json"
+              data: "test"
+            output:
+              no_log_contains: "id \"920420\""
 

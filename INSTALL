@@ -25,11 +25,13 @@ Installing From a Package Manager
     maintained by independent packagers who package CRS in their own time.
     Historically, many of these packages have been out of date. As such,
     it is recommended that you install, where possible, from our GitHub
-    repository. The following packages are known to exist:
+    repository. The following CRS 3.x packages are known to exist:
 
-    *There are currently no known packages of CRS 3.x.*
+    modsecurity-crs  - Debian
+    mod_security_crs - Fedora
+    modsecurity-crs  - Gentoo 
 
-    Packages of CRS 2.0 are incompatible with CRS 3.x.
+    Packages of CRS 2.x are incompatible with CRS 3.x.
 
 Installing From Git
 ===================

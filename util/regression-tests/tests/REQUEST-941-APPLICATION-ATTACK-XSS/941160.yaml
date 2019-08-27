@@ -1,6 +1,6 @@
 ---
   meta: 
-    author: "csanders-git"
+    author: "csanders-git, Franziska Bühler"
     enabled: true
     name: "941160.yaml"
     description: "Tests to trigger, or not trigger 941160"
@@ -37,5 +37,83 @@
               Host: localhost
           output:
             log_contains: id "941160"              
-            
-            
+    - 
+      test_title: 941160-3
+      desc: "just another XSS teststring: <x onend="
+      stages:
+      - 
+        stage:
+          input:
+            dest_addr: 127.0.0.1
+            method: GET
+            port: 80
+            uri: '/char_test?mime=text/xml&body=%3Cx%20onend%3D'
+            headers:
+              User-Agent: ModSecurity CRS 3 Tests
+              Host: localhost
+          output:
+            log_contains: id "941160"              
+    - 
+      test_title: 941160-4
+      desc: 'just another XSS teststring: "onzoom='
+      stages:
+      - 
+        stage:
+          input:
+            dest_addr: 127.0.0.1
+            method: GET
+            port: 80
+            uri: '/char_test?mime=text/xml&body=%22onzoom%3D'
+            headers:
+              User-Agent: ModSecurity CRS 3 Tests
+              Host: localhost
+          output:
+            log_contains: id "941160"              
+    - 
+      test_title: 941160-5
+      desc: "just another XSS teststring: 'formaction="
+      stages:
+      - 
+        stage:
+          input:
+            dest_addr: 127.0.0.1
+            method: GET
+            port: 80
+            uri: '/char_test?mime=text/xml&body=%27formaction%3D'
+            headers:
+              User-Agent: ModSecurity CRS 3 Tests
+              Host: localhost
+          output:
+            log_contains: id "941160"              
+    - 
+      test_title: 941160-6
+      desc: "just another XSS teststring:< x: script"
+      stages:
+      - 
+        stage:
+          input:
+            dest_addr: 127.0.0.1
+            method: GET
+            port: 80
+            uri: '/char_test?mime=text/xml&body=%3C%20x%3A%20script'
+            headers:
+              User-Agent: ModSecurity CRS 3 Tests
+              Host: localhost
+          output:
+            log_contains: id "941160"              
+    - 
+      test_title: 941160-7
+      desc: "just another XSS teststring:<f o r m"
+      stages:
+      - 
+        stage:
+          input:
+            dest_addr: 127.0.0.1
+            method: GET
+            port: 80
+            uri: '/char_test?mime=text/xml&body=$%3Cf%20o%20r%20m'
+            headers:
+              User-Agent: ModSecurity CRS 3 Tests
+              Host: localhost
+          output:
+            log_contains: id "941160"              

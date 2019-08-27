@@ -14,8 +14,9 @@ please adhere to the following contributing guidelines.
 
 ## Making Changes
 
-* Please base your changes on branch ```v3.1/dev```
+* Please base your changes on branch ```v3.2/dev```
 * Create a topic branch for your feature or bug fix.
+* Please fix only one problem at a time; this will help to quickly test and merge your change. If you intend to fix multiple unrelated problems, please use a separate branch for each problem.
 * Make commits of logical units.
 * Make sure your commits adhere to the rules guidelines below.
 * Make sure your commit messages are in the [proper format](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html): The first line of the message should have 50 characters or less, separated by a blank line from the (optional) body. The body should be wrapped at 70 characters and paragraphs separated by blank lines. Bulleted lists are also fine.
@@ -63,7 +64,6 @@ please adhere to the following contributing guidelines.
     sanitiseMatchedBytes
     ctl
     setenv
-    rev
     ver
     severity
     setvar

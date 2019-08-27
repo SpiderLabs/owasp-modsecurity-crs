@@ -1,0 +1,129 @@
+---
+  meta:
+    author: "lifeforms"
+    enabled: true
+    name: "920470.yaml"
+    description: "Content-Type header format checks"
+  tests:
+    - test_title: 920470-1
+      stages:
+        - stage:
+            input:
+              dest_addr: 127.0.0.1
+              port: 80
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"
+                  Host: "localhost"
+                  Content-Type: "%{(#nike='multipart/form-data').(#dm=@ognl"
+                  Content-Length: 0
+            output:
+              log_contains: "id \"920470\""
+    - test_title: 920470-2
+      stages:
+        - stage:
+            input:
+              dest_addr: 127.0.0.1
+              port: 80
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"
+                  Host: "localhost"
+                  Content-Type: 'text/plain; charset="UTF-8"; garbage'
+                  Content-Length: 0
+            output:
+              log_contains: "id \"920470\""
+    - test_title: 920470-3
+      stages:
+        - stage:
+            input:
+              dest_addr: 127.0.0.1
+              port: 80
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"
+                  Host: "localhost"
+                  Content-Type: 'text/plain; charset=/gar/bage'
+                  Content-Length: 0
+            output:
+              log_contains: "id \"920470\""
+    - test_title: 920470-4
+      stages:
+        - stage:
+            input:
+              dest_addr: 127.0.0.1
+              port: 80
+              method: POST
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"
+                  Host: "localhost"
+                  Content-Type: "text/plain"
+                  Content-Length: 0
+            output:
+              no_log_contains: "id \"920470\""
+    - test_title: 920470-5
+      stages:
+        - stage:
+            input:
+              dest_addr: 127.0.0.1
+              port: 80
+              method: POST
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"
+                  Host: "localhost"
+                  Content-Type: 'text/plain; charset=UTF-8'
+            output:
+              no_log_contains: "id \"920470\""
+    - test_title: 920470-6
+      stages:
+        - stage:
+            input:
+              dest_addr: 127.0.0.1
+              port: 80
+              method: POST
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"
+                  Host: "localhost"
+                  Content-Type: 'text/plain; charset="UTF-8"'
+                  Content-Length: 0
+            output:
+              no_log_contains: "id \"920470\""
+    - test_title: 920470-7
+      stages:
+        - stage:
+            input:
+              dest_addr: 127.0.0.1
+              port: 80
+              method: POST
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"
+                  Host: "localhost"
+                  Content-Type: 'multipart/form-data; boundary=----WebKitFormBoundary12345'
+                  Content-Length: 0
+            output:
+              no_log_contains: "id \"920470\""
+    - test_title: 920470-8
+      stages:
+        - stage:
+            input:
+              dest_addr: 127.0.0.1
+              port: 80
+              method: POST
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"
+                  Host: "localhost"
+                  Content-Type: 'application/json'
+                  Content-Length: 0
+            output:
+              no_log_contains: "id \"920470\""
+    - test_title: 920470-9
+      stages:
+        - stage:
+            input:
+              dest_addr: 127.0.0.1
+              port: 80
+              method: POST
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"
+                  Host: "localhost"
+                  Content-Type: 'multipart/form-data; boundary=----formdata-polyfill-0.40616634299_704013'
+                  Content-Length: 0
+            output:
+              no_log_contains: "id \"920470\""

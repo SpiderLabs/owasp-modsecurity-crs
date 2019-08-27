@@ -17,22 +17,24 @@ Requirements
 ============
 There are Three requirements for running the OWASP CRS regressions.
 
-1. You must have ModSecurity specify the location of your error.log, this is done in the settings.ini file
+1. You must have ModSecurity specify the location of your error.log, this is done in the config.py file
 2. ModSecurity must be in DetectionOnly (or anomaly scoring) mode
 3. You must disable IP blocking based on previous events
+
+Note: The test suite compares timezones -- if your test machine and your host machine are in different timezones this can cause bad results
 
 To accomplish 2. and 3. you may use the following rule in your setup.conf:
 
 ```
-SecAction "id:900005, \ 
+SecAction "id:900005,\
   phase:1,\
-  nolog, \
-  pass, \
-  ctl:ruleEngine=DetectionOnly,\ 
+  nolog,\
+  pass,\
+  ctl:ruleEngine=DetectionOnly,\
   ctl:ruleRemoveById=910000,\
   setvar:tx.paranoia_level=4,\
   setvar:tx.crs_validate_utf8_encoding=1,\
-  setvar:tx.arg_name_length=100, \
+  setvar:tx.arg_name_length=100,\
   setvar:tx.arg_length=400"
 ```
 

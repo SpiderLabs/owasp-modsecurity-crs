@@ -1,4 +1,3 @@
-<b>Warning</b>:
 No row with the given identifier
 open_basedir restriction in effect
 eval()'d code</b> on line <b>
@@ -217,4 +216,4 @@ and must therefore be declared abstract or implement the remaining methods
 namespace must not match the enclosing schema 'targetNamespace'
 requires PDO API version 
 PDO Connection Error: SQLSTATE[HY000] 
-(HY000/2002): Connection refused  
+(HY000/2002): Connection refused 

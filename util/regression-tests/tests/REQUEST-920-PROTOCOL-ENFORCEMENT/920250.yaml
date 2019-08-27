@@ -1,11 +1,12 @@
 ---
   meta: 
     author: "csanders-git"
-    enabled: true
+    enabled: false
     name: "920250.yaml"
     description: "Description"
   tests: 
     - 
+      # crs-setup.conf needs to have CRS_VALIDATE_UTF8_ENCODING set
       # Taken from existing modsec regression
       test_title: 920250-1
       stages: 

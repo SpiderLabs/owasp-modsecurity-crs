@@ -15,7 +15,6 @@ advanced email extractor
 # vuln scanner
 # http://www.arachni-scanner.com/
 arachni/
-#
 autogetcontent
 # nessus frontend
 # http://www.crossley-nilsen.com/Linux/Bilbo_-_Nessus_WEB/bilbo_-_nessus_web.html
@@ -55,21 +54,18 @@ domino hunter
 # vuln scanner - directory traversal fuzzer
 # https://github.com/wireghoul/dotdotpwn
 dotdotpwn
-#
-#
 email extractor
 # vuln scanner
 fhscan core 1.
-#
 floodgate
-#
 # "F-Secure Radar is a turnkey vulnerability scanning and management platform."
 F-Secure Radar
-#
 get-minimal
+# Scanner that looks for existing or hidden web objects
+# https://github.com/OJ/gobuster
+gobuster
 # vuln scanner
 gootkit auto-rooter scanner
-#
 grabber
 # vuln scanner
 # https://sourceforge.net/projects/grendel/
@@ -79,12 +75,13 @@ havij
 # vuln scanner - path disclosure finder
 # http://seclists.org/fulldisclosure/2010/Sep/375
 inspath
-#
 internet ninja
 # vuln scanner
 jaascois
 # vuln scanner
 zmeu
+# "Mozilla/5.0 Jorgee", vuln scanner
+Jorgee
 # port scanner
 # https://github.com/robertdavidgraham/masscan
 masscan
@@ -127,14 +124,11 @@ paros
 # phpmyadmin vuln scanner
 # dead 2005?
 pmafind
-#
 prog.customcrawler
 # vuln scanner
 # https://www.qualys.com/suite/web-application-scanning/
 qualys was
-# 
 s.t.a.l.k.e.r.
-#
 security scan
 # vuln scanner
 # https://sourceforge.net/projects/springenwerk/
@@ -148,10 +142,11 @@ sqlmap
 # sql injection
 # http://sqlninja.sourceforge.net/
 sqlninja
+# https://www.cyber.nj.gov/threat-profiles/trojan-variants/sysscan
+sysscan
 # password cracker
 # http://foofus.net/goons/jmk/medusa/medusa.html
 teh forest lobster
-# 
 this is an exploit
 # vuln scanner?
 toata dragostea
@@ -202,3 +197,9 @@ WPScan
 # vuln scanner
 # https://github.com/mazen160/struts-pwn
 struts-pwn
+# Detectify website vulnerability scanner
+# https://detectify.com/
+Detectify
+# ZGrab scanner (Mozilla/5.0 zgrab/0.x)
+# https://zmap.io
+zgrab

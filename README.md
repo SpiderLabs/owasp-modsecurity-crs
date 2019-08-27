@@ -1,5 +1,6 @@
-[![Join the chat at https://gitter.im/owasp-crs/Lobby](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/owasp-crs/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)![Travis build v3.1/dev](https://badges.herokuapp.com/travis/SpiderLabs/owasp-modsecurity-crs?branch=v3.1/dev&label=CRS%20v3.1/dev)![Travis build v3.0/dev](https://badges.herokuapp.com/travis/SpiderLabs/owasp-modsecurity-crs?branch=v3.0/dev&label=CRS%20v3.0/dev)![Travis build v3.0/master](https://badges.herokuapp.com/travis/SpiderLabs/owasp-modsecurity-crs?branch=v3.0/master&label=CRS%20v3.0/master)
+![Travis build v3.2/dev](https://badges.herokuapp.com/travis/SpiderLabs/owasp-modsecurity-crs?branch=v3.2/dev&label=CRS%20v3.2/dev)![Travis build v3.1/dev](https://badges.herokuapp.com/travis/SpiderLabs/owasp-modsecurity-crs?branch=v3.1/dev&label=CRS%20v3.1/dev)![Travis build v3.0/dev](https://badges.herokuapp.com/travis/SpiderLabs/owasp-modsecurity-crs?branch=v3.0/dev&label=CRS%20v3.0/dev)
 [![OWASP Flagship](https://img.shields.io/badge/owasp-flagship%20project-38a047.svg)](https://www.owasp.org/index.php/OWASP_Project_Inventory#tab=Flagship_Projects)
+[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/1390/badge)](https://bestpractices.coreinfrastructure.org/projects/1390)
 
 # OWASP ModSecurity Core Rule Set (CRS)
 
