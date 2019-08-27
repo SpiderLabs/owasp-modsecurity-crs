@@ -47,7 +47,7 @@ for PL in 1 2 3 4; do
         else
                 curl $URL -d "$PAYLOAD" -H "PL: $PL" -o /dev/null -s
         fi 
-        grep $(tail -1 $accesslog | cut -d\" -f11 | cut -b2-26) $errorlog | sed -e "s/.*\[id \"//" -e "s/\(......\).*\[msg \"/\1 /" -e "s/\"\].*//" -e "s/(Total .*/(Total ...) .../" -e "s/Incoming and Outgoing Score: [0-9]* [0-9]*/Incoming and Outgoing Score: .../" | sed -e "s/$PL1/& PL1/" -e "s/$PL2/& PL2/" -e "s/$PL4/& PL4/" | sort -k2
+        grep $(tail -1 $accesslog | cut -d\" -f11 | cut -b2-26) $errorlog | sed -e "s/.*\[id \"//" -e "s/\(......\).*\[msg \"/\1 /" -e "s/\"\].*//" -e "s/(Total .*/(Total ...) .../" -e "s/Incoming and Outgoing Score: [0-9]* [0-9]*/Incoming and Outgoing Score: .../" | sed -e "s/$PL1/& PL1/" -e "s/$PL2/& PL2/" -e "s/$PL3/& PL3/ "-e "s/$PL4/& PL4/" | sort -k2
         echo
         echo -n "Total Incoming Score: "
         tail -1 $accesslog | cut -d\" -f11 | cut -d\  -f14 | tr "-" "0" 
