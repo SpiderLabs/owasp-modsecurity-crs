@@ -1,12 +1,12 @@
 ---
 meta:
-  author: "Franziska Buehler"
+  author: "Walter Hop"
   description: None
   enabled: true
-  name: 942510.yaml
+  name: 942511.yaml
 tests:
-  - test_title: 942510-1
-    desc: "SQLi bypass detected: backticks"
+  - test_title: 942511-1
+    desc: "SQLi bypass detected: quotes"
     stages:
       - stage:
           input:
@@ -19,9 +19,9 @@ tests:
             uri: "/?`bla`"
             version: HTTP/1.0
           output:
-            log_contains: id "942510"
-  - test_title: 942510-2
-    desc: "SQLi bypass detected: backticks"
+            no_log_contains: id "942511"
+  - test_title: 942511-2
+    desc: "SQLi bypass detected: quotes"
     stages:
       - stage:
           input:
@@ -34,4 +34,4 @@ tests:
             uri: "/?'bla'"
             version: HTTP/1.0
           output:
-            no_log_contains: id "942510"
+            log_contains: id "942511"
