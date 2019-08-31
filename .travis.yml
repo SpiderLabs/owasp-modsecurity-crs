@@ -60,10 +60,11 @@ jobs:
 # safelist
 branches:
   only:
-  - v3.0/dev
-  - v3.0/master
-  - v3.1/dev
-  - v3.2/dev
+    - v3.0/dev
+    - v3.0/master
+    - v3.1/dev
+    - v3.2/dev
+    - v3.3/dev
 
 notifications:
   irc: "chat.freenode.net#modsecurity"

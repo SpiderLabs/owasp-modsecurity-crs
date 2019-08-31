@@ -1,8 +1,8 @@
 FROM owasp/modsecurity:2.9-apache
 LABEL maintainer="Chaim Sanders <chaim.sanders@gmail.com>"
 
-ARG COMMIT=v3.2/dev
-ARG BRANCH=v3.2/dev
+ARG COMMIT=v3.3/dev
+ARG BRANCH=v3.3/dev
 ARG REPO=SpiderLabs/owasp-modsecurity-crs
 ENV WEBSERVER=Apache
 ENV PARANOIA=1

@@ -1,7 +1,7 @@
 FROM owasp/modsecurity:2.9-apache-ubuntu
 MAINTAINER Chaim Sanders chaim.sanders@gmail.com
 
-ARG COMMIT=v3.2/dev
+ARG COMMIT=v3.3/dev
 ARG REPO=SpiderLabs/owasp-modsecurity-crs
 ENV PARANOIA=1
 
@@ -11,7 +11,7 @@ RUN apt-get update && \
 RUN cd /opt && \
   git clone https://github.com/${REPO}.git owasp-modsecurity-crs-3.2 && \
   cd owasp-modsecurity-crs-3.2 && \
-  git checkout -qf ${COMMIT} 
+  git checkout -qf ${COMMIT}
 
 RUN cd /opt && \
   cp -R /opt/owasp-modsecurity-crs-3.2/ /etc/apache2/modsecurity.d/owasp-crs/ && \
