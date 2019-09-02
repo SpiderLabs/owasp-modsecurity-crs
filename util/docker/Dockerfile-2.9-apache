@@ -22,10 +22,10 @@ RUN apt-get update && \
 
 COPY httpd-logging-before-modsec.conf  /usr/local/apache2/conf/extra/httpd-logging-before-modsec.conf
 COPY httpd-logging-after-modsec.conf   /usr/local/apache2/conf/extra/httpd-logging-after-modsec.conf
-COPY proxy.conf           /etc/modsecurity.d/proxy.conf
 COPY docker-entrypoint.sh /
 
 EXPOSE 80
+EXPOSE 443
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["apachectl", "-D", "FOREGROUND"]
