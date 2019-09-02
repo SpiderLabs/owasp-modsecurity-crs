@@ -4,6 +4,8 @@ MAINTAINER Chaim Sanders chaim.sanders@gmail.com
 ARG COMMIT=v3.2/dev
 ARG REPO=SpiderLabs/owasp-modsecurity-crs
 ENV PARANOIA=1
+ENV ANOMALYIN=5
+ENV ANOMALYOUT=4
 
 RUN apt-get update && \
     apt-get -y install python git ca-certificates iproute2
