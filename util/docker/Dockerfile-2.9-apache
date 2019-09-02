@@ -6,6 +6,8 @@ ARG BRANCH=v3.3/dev
 ARG REPO=SpiderLabs/owasp-modsecurity-crs
 ENV WEBSERVER=Apache
 ENV PARANOIA=1
+ENV ANOMALYIN=5
+ENV ANOMALYOUT=4
 
 RUN apt-get update && \
   apt-get -y install python git ca-certificates iproute2 && \
@@ -22,10 +24,10 @@ RUN apt-get update && \
 
 COPY httpd-logging-before-modsec.conf  /usr/local/apache2/conf/extra/httpd-logging-before-modsec.conf
 COPY httpd-logging-after-modsec.conf   /usr/local/apache2/conf/extra/httpd-logging-after-modsec.conf
-COPY proxy.conf           /etc/modsecurity.d/proxy.conf
 COPY docker-entrypoint.sh /
 
 EXPOSE 80
+EXPOSE 443
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["apachectl", "-D", "FOREGROUND"]
