@@ -8,6 +8,7 @@
 
 - [Franziska Bühler](https://github.com/franbuehler)
 - [Christoph Hansen](https://github.com/emphazer)
+- [Ervin Hegedus](https://github.com/airween)
 - [Victor Hora](https://github.com/victorhora)
 - [Andrea Menin](https://github.com/theMiddleBlue)
 - [Federico G. Schwindt](https://github.com/fgsch)
@@ -35,7 +36,6 @@
 - [Pásztor Gábor](https://github.com/gpasztor87)
 - [Aaron Haaf](https://github.com/Everspace)
 - [Michael Haas](https://github.com/MichaelHaas)
-- [Ervin Hegedus](https://github.com/airween)
 - [jamuse](https://github.com/jamuse)
 - [jschleus](https://github.com/jschleus)
 - [Krzysztof Kotowicz](https://github.com/koto)
