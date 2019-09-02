@@ -47,7 +47,7 @@ please adhere to the following contributing guidelines.
 ```
     id
     phase
-    disruptive-action
+    allow | block | deny | drop | pass | proxy | redirect
     status
     capture
     t:xxx
@@ -63,9 +63,11 @@ please adhere to the following contributing guidelines.
     sanitiseMatched
     sanitiseMatchedBytes
     ctl
-    setenv
     ver
     severity
+    multiMatch
+    initcol
+    setenv
     setvar
     expirevar
     chain
