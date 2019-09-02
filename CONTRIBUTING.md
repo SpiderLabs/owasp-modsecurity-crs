@@ -47,7 +47,7 @@ please adhere to the following contributing guidelines.
 ```
     id
     phase
-    pass | block | deny | drop | allow | proxy | redirect
+    allow | block | deny | drop | pass | proxy | redirect
     status
     capture
     t:xxx
