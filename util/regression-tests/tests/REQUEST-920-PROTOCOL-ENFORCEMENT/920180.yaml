@@ -23,9 +23,7 @@
               stop_magic: True
               uri: "/"
             output:
-              status: 200
-              # No Content length is sent this will cause issues
-              #expect_error: True
+              status: [200, 411]
     -
       test_title: 920180-2
       stages:
