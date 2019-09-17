@@ -117,17 +117,22 @@ for PL in 1 2 3 4; do
         fi
         # Here are three ways to get the transaction unique id, the first one is follini format, second is spartan format,
         # and the third one tries to guess which is the unique id using a regular expression, the first two require specific format
-        # the third one may cause false positives
-        #uniq_id=$(tail -1 $accesslog | cut -d\" -f11 | cut -b2-26)
+        # the third one may cause false positives, uncomment only the required format.
+	# To use Christian's accesslog format uncomment the following line
+        uniq_id=$(tail -1 $accesslog | cut -d\" -f11 | cut -b2-26)
+	# To use the 21st column (space delimited) uncomment the following line
         #uniq_id=$(tail -1 $accesslog | awk '{print $21}')
-        uniq_id=$(tail -1 $accesslog | egrep -o '[a-zA-Z0-9]{26,28}')
+	# To use the automatic unique_id recognition uncomment the following line (may cause errors)
+        #uniq_id=$(tail -1 $accesslog | egrep -o '[a-zA-Z0-9]{26,28}')
         echo "Tracking unique id: $uniq_id"
 
         grep $uniq_id $errorlog | sed -e "s/.*\[id \"//" -e "s/\(......\).*\[msg \"/\1 /" -e "s/\"\].*//" -e "s/(Total .*/(Total ...) .../" -e "s/Incoming and Outgoing Score: [0-9]* [0-9]*/Incoming and Outgoing Score: .../" | sed -e "s/$PL1/& PL1/" -e "s/$PL2/& PL2/" -e "s/$PL3/& PL3/ " -e "s/$PL4/& PL4/" | sort -k2 | sed -r "s/^([0-9]+)$/\1 FOREIGN RULE NOT IN CRS/"
         echo
         echo -n "Total Incoming Score: "
         # Here are two ways to get the transaction anomaly score, the first one is follini format, second is spartan format
-        #tail -1 $accesslog | cut -d\" -f11 | cut -d\  -f14 | tr "-" "0"
-        tail -1 $accesslog | awk '{print $NF}' | tr "-" "0"
+	# To use Christian's accesslog format uncomment the following line
+        tail -1 $accesslog | cut -d\" -f11 | cut -d\  -f14 | tr "-" "0"
+	# To use the accesslog format with the anomaly score at the end of the line uncomment the following line
+        #tail -1 $accesslog | awk '{print $NF}' | tr "-" "0"
         echo
 done
