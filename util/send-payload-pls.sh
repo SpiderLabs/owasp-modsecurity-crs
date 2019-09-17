@@ -1,11 +1,11 @@
 #!/bin/bash
 #
-# Script to post a payload against a local webserver at each paranoia level
+# Script to post a payload against a local webserver at each paranoia level.
 #
-# Note: Webserver has to be prepared to take desired PL as Request Header "PL"
+# Note: Webserver has to be prepared to take desired PL as Request Header "PL".
 
-# Warning: Setting the paranoia level using a header without proper authentication and authorization
-# is extremely dangerous, and is not recommended for production
+# WARNING: Setting the paranoia level using a header without proper authentication and authorization
+# is extremely dangerous, and is not recommended for production.
 
 # Check the access log format at https://www.netnea.com/cms/apache-tutorial-5_extending-access-log/
 # This script assumes %{ModSecAnomalyScoreIn}e is the last access log column
@@ -13,6 +13,10 @@
 # 
 # The anomaly score envvar can be set as follows:
 # SecAction "id:90101,phase:5,pass,nolog,setenv:ModSecAnomalyScoreIn=%{TX.anomaly_score}"
+#
+# Sample rule to setup the PL dinamically from localhost"
+#SecRule REMOTE_ADDR "@ipMatch 127.0.0.1,192.168.0.128" "id:90102,phase:1,pass,capture,log,auditlog,msg:'Setting engine to PL%{matched_var}',chain"
+#    SecRule REQUEST_HEADERS:PL "@rx ([1-4])" "setvar:'tx.executing_paranoia_level=%{matched_var}'"
 
 # Path to CRS rule set and local files
 CRS="/usr/share/modsecurity-crs/rules"
