@@ -6,11 +6,11 @@
     enabled: false
     name: 920380.yaml
   tests:
-  - 
+  -
     test_title: 920380-1
     desc: Too many arguments in request (920380) from old modsec regressions
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1

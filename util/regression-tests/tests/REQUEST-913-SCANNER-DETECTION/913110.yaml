@@ -5,12 +5,12 @@
     enabled: true
     name: 913110.yaml
   tests:
-  - 
+  -
     test_title: 913110-1
     desc: Request Indicates a Security Scanner Scanned the Site (913110) from old modsec
       regressions
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1

@@ -5,11 +5,11 @@
     enabled: true
     name: 920300.yaml
   tests:
-  - 
+  -
     test_title: 920300-1
     desc: Request Missing an Accept Header (920300) from old modsec regressions
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1

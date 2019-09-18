@@ -1,15 +1,15 @@
 ---
-  meta: 
+  meta:
     author: "csanders-git"
     enabled: true
     name: "941110.yaml"
     description: "Tests to trigger, or not trigger 941110"
-  tests: 
-    - 
+  tests:
+    -
       test_title: 941110-1
       desc: Test as described in http://www.client9.com/article/five-interesting-injection-attacks/
       stages:
-      - 
+      -
         stage:
           input:
             dest_addr: 127.0.0.1
@@ -21,12 +21,12 @@
               Host: localhost
               Cookie: xyz=<script >alert(1);</script>
           output:
-            log_contains: id "941110" 
-    - 
+            log_contains: id "941110"
+    -
       test_title: 941110-2
       desc: Test as described in http://www.client9.com/article/five-interesting-injection-attacks/
       stages:
-      - 
+      -
         stage:
           input:
             dest_addr: 127.0.0.1
@@ -37,12 +37,12 @@
               User-Agent: ModSecurity CRS 3 Tests
               Host: localhost
           output:
-            log_contains: id "941110"    
-    - 
+            log_contains: id "941110"
+    -
       test_title: 941110-3
       desc: Test as described in http://www.client9.com/article/five-interesting-injection-attacks/
       stages:
-      - 
+      -
         stage:
           input:
             dest_addr: 127.0.0.1
@@ -53,12 +53,12 @@
               User-Agent: "&#60;script+&#62;alert(1);&#60;/script&#62;=value"
               Host: localhost
           output:
-            log_contains: id "941110"        
-    - 
+            log_contains: id "941110"
+    -
       test_title: 941110-4
       desc: Test as described in http://www.client9.com/article/five-interesting-injection-attacks/
       stages:
-      - 
+      -
         stage:
           input:
             dest_addr: 127.0.0.1
@@ -70,7 +70,7 @@
               Host: localhost
               Referer: "<script >alert(1);</script>"
           output:
-            log_contains: id "941110"                      
+            log_contains: id "941110"
     -
       test_title: 941110-5
       desc: XSS in URI / PATH_INFO going undetected - GH issue 1022

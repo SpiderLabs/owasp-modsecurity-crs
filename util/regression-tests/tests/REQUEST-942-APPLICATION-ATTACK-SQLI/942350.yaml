@@ -5,11 +5,11 @@
     enabled: true
     name: 942350.yaml
   tests:
-  - 
+  -
     test_title: 942350-1
     desc: "MySQL UDF injection and other data/structure manipulation"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1

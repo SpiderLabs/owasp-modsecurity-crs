@@ -5,12 +5,12 @@
     enabled: true
     name: 913120.yaml
   tests:
-  - 
+  -
     test_title: 913120-1
     desc: Request Indicates a Security Scanner Scanned the Site (913120) from old modsec
       regressions
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -44,7 +44,7 @@
           uri: /AppScan_fingerprint/MAC_ADDRESS_01234567890.html?9ABCDG1
           version: HTTP/1.0
         output:
-          log_contains: id "913120"          
+          log_contains: id "913120"
   -
     test_title: 913120-3
     desc: "Scanner identification based on uri"

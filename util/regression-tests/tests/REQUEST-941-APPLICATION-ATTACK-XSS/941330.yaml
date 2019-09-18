@@ -5,11 +5,11 @@
     enabled: true
     name: 941330.yaml
   tests:
-  - 
+  -
     test_title: 941330-1
     desc: "IE XSS Filters - Attack"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1

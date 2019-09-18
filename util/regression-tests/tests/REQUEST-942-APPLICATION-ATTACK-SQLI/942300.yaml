@@ -5,11 +5,11 @@
     enabled: true
     name: 942300.yaml
   tests:
-  - 
+  -
     test_title: 942300-1
     desc: "MySQL comments, conditions and ch(a)r injectionss"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
