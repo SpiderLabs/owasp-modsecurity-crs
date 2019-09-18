@@ -20,7 +20,7 @@
                   Content-Type: "application/x-www-form-urlencoded"
               data: "hi=test"
               protocol: "http"
-              stop_magic: True
+              stop_magic: true
               uri: "/"
             output:
               status: [200, 411]
