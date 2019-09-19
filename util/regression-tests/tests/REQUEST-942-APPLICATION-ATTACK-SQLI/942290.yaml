@@ -5,11 +5,11 @@
     enabled: true
     name: 942290.yaml
   tests:
-  - 
+  -
     test_title: 942290-1
     desc: Test as described in http://www.client9.com/article/five-interesting-injection-attacks/
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -25,7 +25,7 @@
     test_title: 942290-2
     desc: "basic MongoDB SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1

@@ -5,11 +5,11 @@
     enabled: true
     name: 942240.yaml
   tests:
-  - 
+  -
     test_title: 942240-1
     desc: "Detects MySQL charset switch and MSSQL DoS attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -22,11 +22,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942240"
-  - 
+  -
     test_title: 942240-2
     desc: "Detects MySQL charset switch and MSSQL DoS attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -39,11 +39,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942240"
-  - 
+  -
     test_title: 942240-3
     desc: "Detects MySQL charset switch and MSSQL DoS attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -56,11 +56,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942240"
-  - 
+  -
     test_title: 942240-4
     desc: "Detects MySQL charset switch and MSSQL DoS attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -73,11 +73,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942240"
-  - 
+  -
     test_title: 942240-5
     desc: "Detects MySQL charset switch and MSSQL DoS attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -90,11 +90,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942240"
-  - 
+  -
     test_title: 942240-6
     desc: "Detects MySQL charset switch and MSSQL DoS attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -107,11 +107,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942240"
-  - 
+  -
     test_title: 942240-7
     desc: "Detects MySQL charset switch and MSSQL DoS attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -124,11 +124,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942240"
-  - 
+  -
     test_title: 942240-8
     desc: "Detects MySQL charset switch and MSSQL DoS attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -141,11 +141,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942240"
-  - 
+  -
     test_title: 942240-9
     desc: "Detects MySQL charset switch and MSSQL DoS attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -158,11 +158,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942240"
-  - 
+  -
     test_title: 942240-10
     desc: "Detects MySQL charset switch and MSSQL DoS attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -175,11 +175,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942240"
-  - 
+  -
     test_title: 942240-11
     desc: "Detects MySQL charset switch and MSSQL DoS attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1

@@ -1,15 +1,15 @@
 ---
-  meta: 
+  meta:
     author: "zmallen"
     enabled: true
     name: "941200.yaml"
     description: "Tests to trigger, or not trigger 941200"
-  tests: 
-    - 
+  tests:
+    -
       test_title: 941200-1
-      desc: Microsoft vmlframe xss, ARGS 
+      desc: Microsoft vmlframe xss, ARGS
       stages:
-      - 
+      -
         stage:
           input:
             dest_addr: 127.0.0.1
@@ -22,11 +22,11 @@
             data: '941200-1=%3Cv%3Avmlframe%20src%3D%22foo.com%2Fsup.fml%22%2F%3E'
           output:
             log_contains: id "941200"
-    - 
+    -
       test_title: 941200-2
-      desc: Microsoft vmlframe xss, ARGS_NAMES 
+      desc: Microsoft vmlframe xss, ARGS_NAMES
       stages:
-      - 
+      -
         stage:
           input:
             dest_addr: 127.0.0.1
@@ -39,11 +39,11 @@
             data: '%3Cv%3Avmlframe%20src%3D%22foo.com%2Fsup.fml%22%2F%3E=941200-2'
           output:
             log_contains: id "941200"
-    - 
+    -
       test_title: 941200-3
-      desc: Microsoft vmlframe xss, REQUEST_COOKIE_NAMES 
+      desc: Microsoft vmlframe xss, REQUEST_COOKIE_NAMES
       stages:
-      - 
+      -
         stage:
           input:
             dest_addr: 127.0.0.1

@@ -5,11 +5,11 @@
     enabled: true
     name: 913100.yaml
   tests:
-  - 
+  -
     test_title: 913100-1
     desc: Request Indicates a Security Scanner Scanned the Site (913100) from old modsec regressions
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -29,11 +29,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "913100"
-  - 
+  -
     test_title: 913100-2
     desc: Request Indicates a Security Scanner Scanned the Site (913100) from old modsec regressions
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -53,11 +53,11 @@
         output:
           log_contains: id "913100"
 
-  - 
+  -
     test_title: 913100-3
     desc: Request Indicates a Security Scanner Scanned the Site (913100) from old modsec regressions
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1

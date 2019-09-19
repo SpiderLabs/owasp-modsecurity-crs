@@ -5,7 +5,7 @@
     enabled: true
     name: 933151.yaml
   tests:
-  - 
+  -
     test_title: 933151-1
     desc: pmf + chain; must run test in PL2!
     stages:
@@ -21,7 +21,7 @@
           uri: /array_diff%20foo%20%28
         output:
           log_contains: id "933151"
-  - 
+  -
     test_title: 933151-2
     desc: pmf + chain; must run test in PL2!
     stages:
@@ -37,7 +37,7 @@
           uri: /?date_ADD%28%29
         output:
           log_contains: id "933151"
-  - 
+  -
     test_title: 933151-3
     desc: non-dangorous PHP functions, removed to reduce FP
     stages:
@@ -53,7 +53,7 @@
           uri: /?foo=filemtime%28%24foo%29
         output:
           no_log_contains: id "933151"
-  - 
+  -
     test_title: 933151-4
     desc: pmf + chain; must run test in PL2!
     stages:
@@ -69,7 +69,7 @@
           uri: /gethost
         output:
           log_contains: id "933151"
-  - 
+  -
     test_title: 933151-5
     desc: No peren after keyword
     stages:
@@ -84,4 +84,4 @@
           uri: /?foo=array_diff
         output:
           no_log_contains: id "933151"
-  
+

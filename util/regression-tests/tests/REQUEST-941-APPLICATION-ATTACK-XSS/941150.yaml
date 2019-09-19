@@ -1,15 +1,15 @@
 ---
-  meta: 
+  meta:
     author: "zmallen"
     enabled: true
     name: "941150.yaml"
     description: "Tests to trigger, or not trigger 941150"
-  tests: 
-    - 
+  tests:
+    -
       test_title: 941150-1
-      desc: Disallowed HTML entities, ARGS 
+      desc: Disallowed HTML entities, ARGS
       stages:
-      - 
+      -
         stage:
           input:
             dest_addr: 127.0.0.1

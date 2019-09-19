@@ -1,15 +1,15 @@
 ---
-  meta: 
+  meta:
     author: "csanders-git"
     enabled: true
     name: "920460.yaml"
     description: "Description"
-  tests: 
-    - 
+  tests:
+    -
       test_title: 920460-1
-      stages: 
-        - 
-          stage: 
+      stages:
+        -
+          stage:
             input:
               dest_addr: "127.0.0.1"
               port: 80

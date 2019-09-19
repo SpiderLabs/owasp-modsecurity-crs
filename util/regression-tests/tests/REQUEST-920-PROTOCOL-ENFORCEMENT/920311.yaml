@@ -1,28 +1,28 @@
 ---
-  meta: 
+  meta:
     author: "csanders-git"
     enabled: true
     name: "920311.yaml"
     description: "Description"
-  tests: 
-    - 
+  tests:
+    -
       test_title: 920311-1
-      stages: 
-        - 
-          stage: 
+      stages:
+        -
+          stage:
             input:
               dest_addr: "127.0.0.1"
               port: 80
               headers:
                   Host: "localhost"
                   Accept: ""
-            output: 
+            output:
               log_contains: "id \"920311\""
-    - 
+    -
       test_title: 920311-2
-      stages: 
-        - 
-          stage: 
+      stages:
+        -
+          stage:
             input:
               dest_addr: "127.0.0.1"
               port: 80
@@ -30,13 +30,13 @@
               headers:
                   Host: "localhost"
                   Accept: ""
-            output: 
-              no_log_contains: "id \"920311\""    
-    - 
+            output:
+              no_log_contains: "id \"920311\""
+    -
       test_title: 920311-3
-      stages: 
-        - 
-          stage: 
+      stages:
+        -
+          stage:
             input:
               dest_addr: "127.0.0.1"
               port: 80
@@ -44,6 +44,6 @@
                   User-Agent: "ModSecurity CRS 3 Tests Enterprise"
                   Host: "localhost"
                   Accept: "text/plain, text/html"
-            output: 
-              no_log_contains: "id \"920311\""                   
-  
+            output:
+              no_log_contains: "id \"920311\""
+

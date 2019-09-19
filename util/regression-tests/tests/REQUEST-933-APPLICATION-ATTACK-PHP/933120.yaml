@@ -5,11 +5,11 @@
     enabled: true
     name: 933120.yaml
   tests:
-  - 
+  -
     test_title: 933120-1
     desc: "PHP Injection Attack: Configuration Directive"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1

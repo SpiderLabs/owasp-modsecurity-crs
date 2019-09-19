@@ -5,11 +5,11 @@
     enabled: true
     name: 931100.yaml
   tests:
-  - 
+  -
     test_title: 931100-1
     desc: Remote File Inclusion Attack (931100) from old modsec regressions
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1

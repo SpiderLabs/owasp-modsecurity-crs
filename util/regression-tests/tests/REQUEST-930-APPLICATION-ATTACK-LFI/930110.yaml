@@ -1,10 +1,10 @@
 ---
-  meta: 
+  meta:
     author: "Christian S.J. Peron"
     enabled: true
     name: "930110.yaml"
     description: "Application attacks: Local file include"
-  tests: 
+  tests:
     -
       test_title: 930110-1
       desc: "Path Traversal Attack (/../)"
