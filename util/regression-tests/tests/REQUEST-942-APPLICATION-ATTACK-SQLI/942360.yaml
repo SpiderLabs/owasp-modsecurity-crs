@@ -5,11 +5,11 @@
     enabled: true
     name: 942360.yaml
   tests:
-  - 
+  -
     test_title: 942360-1
     desc: "concatenated basic SQL injection and SQLLFI"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -18,15 +18,15 @@
           method: POST
           port: 80
           # 23423 as "sdfsdfs" FROM table
-          data: "var=1234%20AS%20%22foobar%22%20FROM%20tablevar2=whatever"  
+          data: "var=1234%20AS%20%22foobar%22%20FROM%20tablevar2=whatever"
           version: HTTP/1.0
         output:
           log_contains: id "942360"
-  - 
+  -
     test_title: 942360-2
     desc: "Detects concatenated basic SQL injection and SQLLFI attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -39,11 +39,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942360"
-  - 
+  -
     test_title: 942360-3
     desc: "Detects concatenated basic SQL injection and SQLLFI attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -56,11 +56,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942360"
-  - 
+  -
     test_title: 942360-4
     desc: "Detects concatenated basic SQL injection and SQLLFI attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -73,11 +73,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942360"
-  - 
+  -
     test_title: 942360-5
     desc: "Detects concatenated basic SQL injection and SQLLFI attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -90,11 +90,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942360"
-  - 
+  -
     test_title: 942360-6
     desc: "Detects concatenated basic SQL injection and SQLLFI attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -107,11 +107,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942360"
-  - 
+  -
     test_title: 942360-7
     desc: "Detects concatenated basic SQL injection and SQLLFI attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -124,11 +124,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942360"
-  - 
+  -
     test_title: 942360-8
     desc: "Detects concatenated basic SQL injection and SQLLFI attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -141,11 +141,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942360"
-  - 
+  -
     test_title: 942360-9
     desc: "Detects concatenated basic SQL injection and SQLLFI attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -158,11 +158,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942360"
-  - 
+  -
     test_title: 942360-10
     desc: "Detects concatenated basic SQL injection and SQLLFI attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -175,11 +175,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942360"
-  - 
+  -
     test_title: 942360-11
     desc: "Detects concatenated basic SQL injection and SQLLFI attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -192,11 +192,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942360"
-  - 
+  -
     test_title: 942360-12
     desc: "Detects concatenated basic SQL injection and SQLLFI attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -209,11 +209,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942360"
-  - 
+  -
     test_title: 942360-13
     desc: "Detects concatenated basic SQL injection and SQLLFI attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -226,11 +226,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942360"
-  - 
+  -
     test_title: 942360-14
     desc: "Detects concatenated basic SQL injection and SQLLFI attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -243,11 +243,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942360"
-  - 
+  -
     test_title: 942360-15
     desc: "Detects concatenated basic SQL injection and SQLLFI attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -260,11 +260,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942360"
-  - 
+  -
     test_title: 942360-16
     desc: "Detects concatenated basic SQL injection and SQLLFI attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -277,11 +277,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942360"
-  - 
+  -
     test_title: 942360-17
     desc: "Detects concatenated basic SQL injection and SQLLFI attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -294,11 +294,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942360"
-  - 
+  -
     test_title: 942360-18
     desc: "Detects concatenated basic SQL injection and SQLLFI attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -311,11 +311,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942360"
-  - 
+  -
     test_title: 942360-19
     desc: "Detects concatenated basic SQL injection and SQLLFI attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -328,11 +328,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942360"
-  - 
+  -
     test_title: 942360-20
     desc: "Detects concatenated basic SQL injection and SQLLFI attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -345,11 +345,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942360"
-  - 
+  -
     test_title: 942360-21
     desc: "Detects concatenated basic SQL injection and SQLLFI attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -362,11 +362,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942360"
-  - 
+  -
     test_title: 942360-22
     desc: "Detects concatenated basic SQL injection and SQLLFI attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -379,11 +379,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942360"
-  - 
+  -
     test_title: 942360-23
     desc: "Detects concatenated basic SQL injection and SQLLFI attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -396,11 +396,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942360"
-  - 
+  -
     test_title: 942360-24
     desc: "Detects concatenated basic SQL injection and SQLLFI attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -413,11 +413,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942360"
-  - 
+  -
     test_title: 942360-25
     desc: "Detects concatenated basic SQL injection and SQLLFI attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -430,11 +430,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942360"
-  - 
+  -
     test_title: 942360-26
     desc: "Detects concatenated basic SQL injection and SQLLFI attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -447,11 +447,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942360"
-  - 
+  -
     test_title: 942360-27
     desc: "Detects concatenated basic SQL injection and SQLLFI attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -464,11 +464,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942360"
-  - 
+  -
     test_title: 942360-28
     desc: "Detects concatenated basic SQL injection and SQLLFI attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1

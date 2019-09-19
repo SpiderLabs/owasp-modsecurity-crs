@@ -9,7 +9,7 @@
     test_title: 941130-1
     desc: XSS in XML Test as described in http://www.client9.com/article/five-interesting-injection-attacks/
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -22,11 +22,11 @@
             Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
         output:
           log_contains: id "941130"
-  - 
+  -
     test_title: 941130-2
     desc: "XSS test for 941130"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -41,11 +41,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "941130"
-  - 
+  -
     test_title: 941130-3
     desc: "XSS test for 941130"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -60,11 +60,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "941130"
-  - 
+  -
     test_title: 941130-4
     desc: "XSS test for 941130"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -79,11 +79,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "941130"
-  - 
+  -
     test_title: 941130-5
     desc: "XSS test for 941130"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -98,11 +98,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "941130"
-  - 
+  -
     test_title: 941130-6
     desc: "XSS test for 941130"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -117,11 +117,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "941130"
-  - 
+  -
     test_title: 941130-7
     desc: "XSS test for 941130"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -136,11 +136,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "941130"
-  - 
+  -
     test_title: 941130-8
     desc: "XSS test for 941130"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -155,11 +155,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "941130"
-  - 
+  -
     test_title: 941130-9
     desc: "XSS test for 941130"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -174,11 +174,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "941130"
-  - 
+  -
     test_title: 941130-10
     desc: "XSS test for 941130"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -193,11 +193,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "941130"
-  - 
+  -
     test_title: 941130-11
     desc: "XSS test for 941130"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -212,11 +212,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "941130"
-  - 
+  -
     test_title: 941130-12
     desc: "XSS test for 941130"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -231,11 +231,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "941130"
-  - 
+  -
     test_title: 941130-13
     desc: "XSS test for 941130"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -250,11 +250,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "941130"
-  - 
+  -
     test_title: 941130-14
     desc: "XSS test for 941130"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -269,11 +269,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "941130"
-  - 
+  -
     test_title: 941130-15
     desc: "XSS test for 941130"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -288,11 +288,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "941130"
-  - 
+  -
     test_title: 941130-16
     desc: "XSS test for 941130"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1

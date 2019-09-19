@@ -5,11 +5,11 @@
     enabled: true
     name: 941320.yaml
   tests:
-  - 
+  -
     test_title: 941320-1
     desc: "XSS Attack - HTML Tag Handler"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -17,7 +17,7 @@
             Host: localhost
           method: POST
           port: 80
-          data: "var=<noscript#"  
+          data: "var=<noscript#"
           version: HTTP/1.0
         output:
           log_contains: id "941320"

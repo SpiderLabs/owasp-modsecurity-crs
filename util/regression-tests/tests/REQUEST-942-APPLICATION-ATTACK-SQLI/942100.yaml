@@ -5,11 +5,11 @@
     enabled: true
     name: 942100.yaml
   tests:
-  - 
+  -
     test_title: 942100-1
     desc: "Simple SQL Injection"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -22,11 +22,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942100"
-  - 
+  -
     test_title: 942100-2
     desc: "Simple SQL injection"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -39,11 +39,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942100"
-  - 
+  -
     test_title: 942100-3
     desc: "Simple SQL injection"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -56,11 +56,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942100"
-  - 
+  -
     test_title: 942100-4
     desc: "Basic SQL injection"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -73,11 +73,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942100"
-  - 
+  -
     test_title: 942100-5
     desc: "Simple SQL injection"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -90,11 +90,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942100"
-  - 
+  -
     test_title: 942100-6
     desc: "Simple SQL injection"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -107,11 +107,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942100"
-  - 
+  -
     test_title: 942100-7
     desc: "Advanced SQL injection"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -124,11 +124,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942100"
-  - 
+  -
     test_title: 942100-8
     desc: "Simple SQL Injection"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -141,11 +141,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942100"
-  - 
+  -
     test_title: 942100-9
     desc: "Simple SQL injection"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -158,11 +158,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942100"
-  - 
+  -
     test_title: 942100-10
     desc: "Advanced SQL Injection"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -175,11 +175,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942100"
-  - 
+  -
     test_title: 942100-11
     desc: "Simple function call"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -192,11 +192,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942100"
-  - 
+  -
     test_title: 942100-12
     desc: "Advanced SQL injection"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -209,11 +209,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942100"
-  - 
+  -
     test_title: 942100-13
     desc: "Advanced injection"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -226,11 +226,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942100"
-  - 
+  -
     test_title: 942100-14
     desc: "Advanced SQL injection"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1

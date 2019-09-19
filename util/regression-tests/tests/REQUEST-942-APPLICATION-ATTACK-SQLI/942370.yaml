@@ -5,11 +5,11 @@
     enabled: true
     name: 942370.yaml
   tests:
-  - 
+  -
     test_title: 942370-1
     desc: "classic SQL injection probings 2/3"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -17,7 +17,7 @@
             Host: localhost
           method: POST
           port: 80
-          data: "var=\"` * 12344"  
+          data: "var=\"` * 12344"
           version: HTTP/1.0
         output:
           log_contains: id "942370"

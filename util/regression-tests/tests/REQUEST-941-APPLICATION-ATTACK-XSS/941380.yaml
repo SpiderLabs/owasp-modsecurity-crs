@@ -5,11 +5,11 @@
     enabled: true
     name: 941380.yaml
   tests:
-  - 
+  -
     test_title: 941380-1
     desc: "AngularJS client side template injection detection"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1

@@ -5,11 +5,11 @@
     enabled: true
     name: 942130.yaml
   tests:
-  - 
+  -
     test_title: 942130-1
     desc: "SQL Injection Attack: SQL Tautology"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1

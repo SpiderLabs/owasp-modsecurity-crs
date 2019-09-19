@@ -6,11 +6,11 @@
     enabled: false
     name: 920390.yaml
   tests:
-  - 
+  -
     test_title: 920390-1
     desc: Total arguments size exceeded (920390) from old modsec regressions
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1

@@ -5,7 +5,7 @@
     enabled: true
     name: 933210.yaml
   tests:
-  - 
+  -
     test_title: 933210-1
     desc: Check for false positive 1
     stages:
@@ -19,7 +19,7 @@
           uri: /?x=%5bACME%5d%3a+this+is%2c+%28another%29+test+%28foo%29bar+or+foo%28bar%29.
         output:
           no_log_contains: id "933210"
-  - 
+  -
     test_title: 933210-2
     desc: Check for false positive 2
     stages:
@@ -34,7 +34,7 @@
         output:
           no_log_contains: id "933210"
 
-  - 
+  -
     test_title: 933210-3
     desc: PHP Variable Function bypass "(system)('uname')"
     stages:
@@ -49,7 +49,7 @@
         output:
           log_contains: id "933210"
 
-  - 
+  -
     test_title: 933210-4
     desc: PHP Variable Function bypass "(sy.(st).em)('uname')"
     stages:
@@ -64,7 +64,7 @@
         output:
           log_contains: id "933210"
 
-  - 
+  -
     test_title: 933210-5
     desc: PHP Variable Function bypass "(string)'system'('uname')"
     stages:
@@ -79,7 +79,7 @@
         output:
           log_contains: id "933210"
 
-  - 
+  -
     test_title: 933210-6
     desc: PHP Variable Function bypass "( string ) 'sys'.'t'.'em' ('uname')"
     stages:
@@ -94,7 +94,7 @@
         output:
           log_contains: id "933210"
 
-  - 
+  -
     test_title: 933210-7
     desc: PHP Variable Function bypass "(string) {[system][0]} ('uname')"
     stages:
@@ -109,7 +109,7 @@
         output:
           log_contains: id "933210"
 
-  - 
+  -
     test_title: 933210-8
     desc: PHP Variable Function bypass "define('x', 'sys' . 'tem');(x)/* comment */('uname')"
     stages:
@@ -124,7 +124,7 @@
         output:
           log_contains: id "933210"
 
-  - 
+  -
     test_title: 933210-9
     desc: PHP Variable Function bypass "$y = 'sys'.'tem';($y)('uname')"
     stages:
@@ -139,7 +139,7 @@
         output:
           log_contains: id "933210"
 
-  - 
+  -
     test_title: 933210-10
     desc: PHP Variable Function bypass "define('z', [['sys' .'tem']]);(z)[0][0]('uname')"
     stages:
@@ -154,7 +154,7 @@
         output:
           log_contains: id "933210"
 
-  - 
+  -
     test_title: 933210-11
     desc: PHP Variable Function bypass "(system)(ls)"
     stages:
@@ -169,7 +169,7 @@
         output:
           log_contains: id "933210"
 
-  - 
+  -
     test_title: 933210-12
     desc: PHP Variable Function bypass "(/* comment */system)(ls/* comment */)"
     stages:
@@ -184,7 +184,7 @@
         output:
           log_contains: id "933210"
 
-  - 
+  -
     test_title: 933210-13
     desc: PHP Variable Function bypass "[system][0](ls)"
     stages:
@@ -199,7 +199,7 @@
         output:
           log_contains: id "933210"
 
-  - 
+  -
     test_title: 933210-14
     desc: PHP Variable Function bypass "[ system ] [ 0 ] ( ls )"
     stages:
@@ -214,7 +214,7 @@
         output:
           log_contains: id "933210"
 
-  - 
+  -
     test_title: 933210-15
     desc: PHP Variable Function bypass "(['system'])[0]('uname')"
     stages:
@@ -229,7 +229,7 @@
         output:
           log_contains: id "933210"
 
-  - 
+  -
     test_title: 933210-16
     desc: PHP Variable Function bypass "(  [  system  ][  0  ])  {/* comment */0}  (  ls  )"
     stages:

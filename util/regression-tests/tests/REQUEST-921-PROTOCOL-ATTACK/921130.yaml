@@ -5,11 +5,11 @@
     enabled: true
     name: 921130.yaml
   tests:
-  - 
+  -
     test_title: 921130-1
     desc: HTTP response splitting (921130) from old modsec regressions
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1

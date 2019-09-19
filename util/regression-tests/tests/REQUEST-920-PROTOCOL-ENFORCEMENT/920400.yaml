@@ -5,11 +5,11 @@
     enabled: true
     name: 920400.yaml
   tests:
-  - 
+  -
     test_title: 920400-1
     desc: Uploaded file size too large (920400)  from old modsec regressions
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -47,6 +47,6 @@
           - '-----------------------------265001916915724--'
         output:
                 # Most web servers simply won't respond to invalid requests like
-                # like this they'll just time out when we get OR type checks 
+                # like this they'll just time out when we get OR type checks
                 # we'll be able to check for both an error or the rule firing
                 expect_error: true
