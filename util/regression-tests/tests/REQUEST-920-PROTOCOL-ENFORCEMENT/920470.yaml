@@ -43,7 +43,7 @@
                   Content-Type: 'text/plain; charset=/gar/bage'
                   Content-Length: 0
             output:
-              log_contains: "id \"920470\""
+              no_log_contains: "id \"920470\""
     - test_title: 920470-4
       stages:
         - stage:
@@ -127,3 +127,45 @@
                   Content-Length: 0
             output:
               no_log_contains: "id \"920470\""
+    - test_title: 920470-10
+      stages:
+        - stage:
+            input:
+              dest_addr: 127.0.0.1
+              port: 80
+              method: POST
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"
+                  Host: "localhost"
+                  Content-Type: 'multipart/mixed; boundary=-----boundary_data:55780(123,45:667)+part'
+                  Content-Length: 0
+            output:
+              no_log_contains: "id \"920470\""
+    - test_title: 920470-11
+      stages:
+        - stage:
+            input:
+              dest_addr: 127.0.0.1
+              port: 80
+              method: POST
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"
+                  Host: "localhost"
+                  Content-Type: 'multipart/mixed; boundary= gc0p4Jq0M2Yt,08/jU534c0p?==:test'
+                  Content-Length: 0
+            output:
+              no_log_contains: "id \"920470\""
+    - test_title: 920470-12
+      stages:
+        - stage:
+            input:
+              dest_addr: 127.0.0.1
+              port: 80
+              method: POST
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"
+                  Host: "localhost"
+                  Content-Type: 'multipart/form-data; boundary=  test_data_123456'
+                  Content-Length: 0
+            output:
+              log_contains: "id \"920470\""
