@@ -16,7 +16,7 @@ New functionality:
  * Add .rdb to default restricted_extensions (Walter Hop)
  * Add .swp to default restricted_extensions (Andrea Menin)
  * Add rule 933200 PHP Wrappers (Andrea Menin)
- * Add send-payload-pls.sh script to test payload against multiple paranoia levels (Christian Folini)
+ * Add send-payload-pls.sh script to test payload against multiple paranoia levels (Christian Folini, Manuel Spartan)
  * Add support for shell evasions with $IFS (Walter Hop, Chaim Sanders)
  * Add unix-shell commands (Christoph Hansen, Chaim Sanders)
  * Also inspect the path for the script tag (Federico G. Schwindt)
