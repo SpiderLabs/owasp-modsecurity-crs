@@ -111,6 +111,7 @@ Fixes and improvements:
  * Pin the ftw version to 1.1.7 for now (Federico G. Schwindt)
  * Prevent bypass 933180 PHP Variable Function (Andrea Menin)
  * Reduce comments, introduction of triggered exploits (Franziska Bühler)
+ * Remove all trailing spaces from ftw yaml test files (Ervin Hegedus)
  * Remove auditlog No other rules specify it. Add missing quotes and drop rev (Federico G. Schwindt)
  * Remove capture, remove tx.0, add transformation functions, fix regex, add presentation link (Andrea Menin)
  * Remove old and unwanted setvar constructs (Federico G. Schwindt)
