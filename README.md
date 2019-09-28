@@ -18,7 +18,7 @@ We strive to make the OWASP ModSecurity CRS accessible to a wide audience of beg
 
 [Create an issue on GitHub](https://github.com/SpiderLabs/owasp-modsecurity-crs/issues) to report a false positive or false negative (evasion). Please include your installed version and the relevant portions of your ModSecurity audit log.
 
-[Sign up for the mailing list](https://lists.owasp.org/mailman/listinfo/owasp-modsecurity-core-rule-set) to ask general usage questions and participate in discussions on the CRS.
+[Sign up for our Google Group](https://groups.google.com/a/owasp.org/forum/#!forum/modsecurity-core-rule-set-project) to ask general usage questions and participate in discussions on the CRS.
 
 [Join the #modsecurity channel on Freenode IRC](https://webchat.freenode.net/?channels=%23modsecurity) to chat about the CRS.
 
