@@ -21,3 +21,19 @@
           version: HTTP/1.0
         output:
           log_contains: id "941290"
+  -
+    test_title: 941290-2
+    desc: "XSS test based on portswigger XSS cheatsheet"
+    stages:
+    -
+      stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: localhost
+          method: POST
+          port: 80
+          data: "payload=<applet onreadystatechange=alert(1)></applet></a>"
+          version: HTTP/1.0
+        output:
+          log_contains: id "941290"
