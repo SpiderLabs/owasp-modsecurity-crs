@@ -74,7 +74,7 @@ services:
       - ./RESPONSE-999-EXCLUSION-RULES-AFTER-CRS.conf:/etc/modsecurity.d/owasp-crs/rules/RESPONSE-999-EXCLUSION-RULES-AFTER-CRS.conf
 
     #######################################################
-    # Add TLS server certificate and key 
+    # Add TLS server certificate and key
     # (only available if SETPROXY was enabled during the
     # parent ModSecurity image)
     #######################################################

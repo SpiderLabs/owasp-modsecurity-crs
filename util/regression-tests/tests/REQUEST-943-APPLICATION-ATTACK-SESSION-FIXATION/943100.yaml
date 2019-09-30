@@ -5,11 +5,11 @@
     enabled: true
     name: 943100.yaml
   tests:
-  - 
+  -
     test_title: 943100-1
     desc: Session Fixation Attack (943100) from old modsec regressions
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1

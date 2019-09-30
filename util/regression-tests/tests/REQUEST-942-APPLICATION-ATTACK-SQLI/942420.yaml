@@ -5,11 +5,11 @@
     enabled: true
     name: 942420.yaml
   tests:
-  - 
+  -
     test_title: 942420-1
     desc: "Restricted SQL Character Anomaly Detection (cookies): # of special characters exceeded (8)"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1

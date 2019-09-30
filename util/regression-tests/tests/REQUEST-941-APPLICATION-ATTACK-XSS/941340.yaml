@@ -5,11 +5,11 @@
     enabled: true
     name: 941340.yaml
   tests:
-  - 
+  -
     test_title: 941340-1
     desc: "IE XSS Filters - Attack"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -17,7 +17,7 @@
             Host: localhost
           method: POST
           port: 80
-          data: "var='  infoo.bar=&var2=whatever"  
+          data: "var='  infoo.bar=&var2=whatever"
           version: HTTP/1.0
         output:
           log_contains: id "941340"

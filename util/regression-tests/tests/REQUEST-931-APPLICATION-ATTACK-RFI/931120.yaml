@@ -5,11 +5,11 @@
     enabled: true
     name: 931120.yaml
   tests:
-  - 
+  -
     test_title: 931120-1
     desc: Remote File Inclusion Attack (931120)
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -56,11 +56,11 @@
             version: HTTP/1.1
           output:
             log_contains: id "931120"
-  - 
+  -
     test_title: 931120-4
     desc: Remote File Inclusion Attack (931120)
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1

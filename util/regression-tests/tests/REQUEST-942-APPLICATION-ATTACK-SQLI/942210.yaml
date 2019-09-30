@@ -5,11 +5,11 @@
     enabled: true
     name: 942210.yaml
   tests:
-  - 
+  -
     test_title: 942210-1
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -22,11 +22,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-2
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -39,11 +39,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-3
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -56,11 +56,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-4
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -73,11 +73,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-5
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -90,11 +90,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-6
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -107,11 +107,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-7
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -124,11 +124,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-8
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -141,11 +141,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-9
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -158,11 +158,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-10
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -175,11 +175,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-11
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -192,11 +192,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-12
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -209,11 +209,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-13
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -226,11 +226,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-14
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -243,11 +243,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-15
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -260,11 +260,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-16
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -277,11 +277,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-17
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -294,11 +294,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-18
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -311,11 +311,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-19
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -328,11 +328,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-20
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -345,11 +345,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-21
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -362,11 +362,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-22
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -379,11 +379,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-23
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -396,11 +396,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-24
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -413,11 +413,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-25
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -430,11 +430,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-26
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -447,11 +447,11 @@
           version: HTTP/1.0
         output:
           no_log_contains: id "942210"
-  - 
+  -
     test_title: 942210-27
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -464,11 +464,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-28
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -481,11 +481,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-29
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -498,11 +498,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-30
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -515,11 +515,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-31
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -532,11 +532,11 @@
           version: HTTP/1.0
         output:
           no_log_contains: id "942210"
-  - 
+  -
     test_title: 942210-32
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -549,11 +549,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-33
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -566,11 +566,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-34
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -583,11 +583,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-35
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -600,11 +600,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-36
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -617,11 +617,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-37
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -634,11 +634,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-38
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -651,11 +651,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-39
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -668,11 +668,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-40
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -685,11 +685,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-41
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -702,11 +702,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-42
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -719,11 +719,11 @@
           version: HTTP/1.0
         output:
           no_log_contains: id "942210"
-  - 
+  -
     test_title: 942210-43
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -736,11 +736,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-44
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -753,11 +753,11 @@
           version: HTTP/1.0
         output:
           no_log_contains: id "942210"
-  - 
+  -
     test_title: 942210-45
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -770,11 +770,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-46
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -787,11 +787,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-47
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -804,11 +804,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-48
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -821,11 +821,11 @@
           version: HTTP/1.0
         output:
           no_log_contains: id "942210"
-  - 
+  -
     test_title: 942210-49
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -838,11 +838,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-50
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -855,11 +855,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-51
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -872,11 +872,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-52
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -889,11 +889,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-53
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -906,11 +906,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-54
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -923,11 +923,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-55
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -940,11 +940,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-56
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -957,11 +957,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-57
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -974,11 +974,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-58
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -991,11 +991,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-59
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -1008,11 +1008,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-60
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -1025,11 +1025,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-61
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -1042,11 +1042,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-62
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -1059,11 +1059,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-63
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -1076,11 +1076,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-64
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -1093,11 +1093,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-65
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -1110,11 +1110,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-66
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -1127,11 +1127,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-67
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -1144,11 +1144,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-68
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -1161,11 +1161,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-69
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -1178,11 +1178,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-70
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -1195,11 +1195,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-71
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -1212,11 +1212,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-72
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -1229,11 +1229,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-73
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -1246,11 +1246,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-74
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -1263,11 +1263,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-75
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -1280,11 +1280,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-76
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -1297,11 +1297,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-77
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -1314,11 +1314,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-78
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -1331,11 +1331,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-79
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -1348,11 +1348,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-80
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -1365,11 +1365,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942210"
-  - 
+  -
     test_title: 942210-81
     desc: "Detects chained SQL injection attempts"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
