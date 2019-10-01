@@ -29,6 +29,16 @@ if "ENFORCE_BODYPROC_URLENCODED" in os.environ:
 EOF
 ) && \
 
+# Enforce Base64 decoding
+$(python <<EOF
+import re
+import os
+if "ENFORCE_BASE64DECODING" in os.environ:
+   out=re.sub('(#SecAction[\S\s]{7}id:900020[\s\S]*tx\.enforce_base64decoding=1\")','SecAction \\\\\n  \"id:900020, \\\\\n   phase:1, \\\\\n   nolog, \\\\\n   pass, \\\\\n   t:none, \\\\\n   setvar:tx.enforce_base64decoding='+os.environ['ENFORCE_BASE64DECODING']+'\"',open('/etc/modsecurity.d/owasp-crs/crs-setup.conf','r').read())
+   open('/etc/modsecurity.d/owasp-crs/crs-setup.conf','w').write(out)
+EOF
+) && \
+
 # Inbound and Outbound Anomaly Score
 $(python <<EOF
 import re
@@ -167,6 +177,7 @@ if "COMBINED_FILE_SIZES" in os.environ:
    open('/etc/modsecurity.d/owasp-crs/crs-setup.conf','w').write(out)
 EOF
 ) && \
+
 
 if [ $WEBSERVER = "Apache" ]; then
   if [ ! -z $PROXY ]; then
