@@ -26,7 +26,7 @@
               version: "HTTP/1.0"
               data: "test=c29tZXRoaW5nIHJlYWxseSBzaW1wbGUh"
             output:
-              no_log_contains: "id \"932160\""
+              no_log_contains: id "932160"
 
     -
       test_title: 932160-1
@@ -49,7 +49,7 @@
               version: "HTTP/1.0"
               data: "test=c29tZXRoaW5nIHJlYWxseSBzaW1wbGUh"
             output:
-              no_log_contains: "id \"932160\""
+              no_log_contains: id "932160"
     -
       test_title: 932160-2
       desc: "Argument test includes base64 encoded malicious payload"
@@ -71,7 +71,8 @@
               version: "HTTP/1.0"
               data: "test=L2V0Yy9wYXNzd2Q="
             output:
-              log_contains: "id \"932160\""
+              status: [403]
+              #log_contains: id "932160"
 
     -
       test_title: 932160-3
@@ -94,4 +95,5 @@
               version: "HTTP/1.0"
               data: "test=L2V0Yy9wYXNzd2Q="
             output:
-              log_contains: "id \"932160\""
+              status: [403]
+              #log_contains: id "932160"
