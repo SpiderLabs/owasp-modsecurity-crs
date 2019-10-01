@@ -5,11 +5,11 @@
     enabled: true
     name: 942470.yaml
   tests:
-  - 
+  -
     test_title: 942470-1
     desc: "SQL Injection Attack"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -22,11 +22,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942470"
-  - 
+  -
     test_title: 942470-2
     desc: "SQL Injection Attack"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -39,11 +39,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942470"
-  - 
+  -
     test_title: 942470-3
     desc: "SQL Injection Attack"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -56,11 +56,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942470"
-  - 
+  -
     test_title: 942470-4
     desc: "SQL Injection Attack"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -73,11 +73,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942470"
-  - 
+  -
     test_title: 942470-5
     desc: "SQL Injection Attack"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -90,11 +90,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942470"
-  - 
+  -
     test_title: 942470-6
     desc: "SQL Injection Attack"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -107,11 +107,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942470"
-  - 
+  -
     test_title: 942470-7
     desc: "SQL Injection Attack"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -124,11 +124,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942470"
-  - 
+  -
     test_title: 942470-8
     desc: "SQL Injection Attack"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -141,11 +141,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942470"
-  - 
+  -
     test_title: 942470-9
     desc: "SQL Injection Attack"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -158,11 +158,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "942470"
-  - 
+  -
     test_title: 942470-10
     desc: "SQL Injection Attack"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1

@@ -1,10 +1,10 @@
 ---
-  meta: 
+  meta:
     author: "Christian S.J. Peron"
     enabled: true
     name: "930100.yaml"
     description: "Application attack LFI"
-  tests: 
+  tests:
     -
       test_title: 930100-1
       desc: "Path Traversal Attack (/../) encoded"

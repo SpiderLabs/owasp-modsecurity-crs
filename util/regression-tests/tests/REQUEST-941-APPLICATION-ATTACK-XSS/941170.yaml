@@ -1,15 +1,15 @@
 ---
-  meta: 
+  meta:
     author: "csanders-git"
     enabled: true
     name: "941170.yaml"
     description: "Tests to trigger, or not trigger 941170"
-  tests: 
-    - 
+  tests:
+    -
       test_title: 941170-1
       desc: XSS in XML Test as described in http://www.client9.com/article/five-interesting-injection-attacks/
       stages:
-      - 
+      -
         stage:
           input:
             dest_addr: 127.0.0.1
@@ -20,4 +20,4 @@
               User-Agent: ModSecurity CRS 3 Tests
               Host: localhost
           output:
-            log_contains: id "941170"                
+            log_contains: id "941170"

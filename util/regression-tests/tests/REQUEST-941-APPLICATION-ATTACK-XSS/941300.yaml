@@ -5,11 +5,11 @@
     enabled: true
     name: 941300.yaml
   tests:
-  - 
+  -
     test_title: 941300-1
     desc: "IE XSS Filters"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -17,7 +17,7 @@
             Host: localhost
           method: GET
           port: 80
-          uri: "/?%3cOBJECT%20data%20%3d=sdffdsa" 
+          uri: "/?%3cOBJECT%20data%20%3d=sdffdsa"
           version: HTTP/1.0
         output:
           log_contains: id "941300"

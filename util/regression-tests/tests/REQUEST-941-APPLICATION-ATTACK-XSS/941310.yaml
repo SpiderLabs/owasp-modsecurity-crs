@@ -5,11 +5,11 @@
     enabled: true
     name: 941310.yaml
   tests:
-  - 
+  -
     test_title: 941310-1
     desc: "US-ASCII Malformed Encoding XSS Filter"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1

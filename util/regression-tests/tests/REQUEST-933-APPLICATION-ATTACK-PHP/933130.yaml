@@ -5,7 +5,7 @@
     enabled: true
     name: 933130.yaml
   tests:
-  - 
+  -
     test_title: 933130-1
     desc: Basic Request nothing should trigger
     stages:
@@ -19,7 +19,7 @@
           uri: /
         output:
           no_log_contains: id "933130"
-  - 
+  -
     test_title: 933130-2
     desc: Trigger a basic request
     stages:
@@ -33,7 +33,7 @@
           uri: /?x=$_SERVER['test'];
         output:
           log_contains: id "933130"
-  - 
+  -
     test_title: 933130-3
     desc: Non-Server Request
     stages:
@@ -46,8 +46,8 @@
           port: 80
           uri: /?x=$_SE%20RVER['test'];
         output:
-          no_log_contains: id "933130"       
-  - 
+          no_log_contains: id "933130"
+  -
     test_title: 933130-4
     desc: SERVER request URLEncoded
     stages:
@@ -61,7 +61,7 @@
           uri: /?x=$_%53ERVER['test'];
         output:
           log_contains: id "933130"
-  - 
+  -
     test_title: 933130-5
     desc: SERVER request URLEncoded
     stages:
@@ -74,8 +74,8 @@
           port: 80
           uri: /?%24_COOKIE=value;
         output:
-          log_contains: id "933130"             
-  - 
+          log_contains: id "933130"
+  -
     test_title: 933130-6
     desc: SERVER index listed with obfuscated SERVER
     stages:
@@ -88,6 +88,6 @@
           port: 80
           uri: /?x=$_%53%20ERVER['request_uri'];
         output:
-          no_log_contains: id "933130"                    
-          
-               
+          no_log_contains: id "933130"
+
+

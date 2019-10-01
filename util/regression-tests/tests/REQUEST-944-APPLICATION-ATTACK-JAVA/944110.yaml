@@ -1,16 +1,16 @@
 ---
-  meta: 
+  meta:
     author: "spartantri"
     enabled: true
     name: "944110.yaml"
     description: "Description"
-  tests: 
-    - 
+  tests:
+    -
       test_title: 944110-1
       desc: Argument test includes keywords java. and Runtime
-      stages: 
-        - 
-          stage: 
+      stages:
+        -
+          stage:
             input:
               dest_addr: "127.0.0.1"
               port: 80
@@ -25,15 +25,15 @@
               method: POST
               version: HTTP/1.0
               data: "test=java.Runtime"
-            output: 
+            output:
               log_contains: "id \"944110\""
 
-    - 
+    -
       test_title: 944110-2
       desc: Argument test includes keywords java. and ProcessBuilder
-      stages: 
-        - 
-          stage: 
+      stages:
+        -
+          stage:
             input:
               dest_addr: "127.0.0.1"
               port: 80
@@ -48,15 +48,15 @@
               method: POST
               version: HTTP/1.0
               data: "test=java.ProcessBuilder"
-            output: 
+            output:
               log_contains: "id \"944110\""
 
-    - 
+    -
       test_title: 944110-3
       desc: Argument name includes keywords java. and Runtime
-      stages: 
-        - 
-          stage: 
+      stages:
+        -
+          stage:
             input:
               dest_addr: "127.0.0.1"
               port: 80
@@ -71,15 +71,15 @@
               method: POST
               version: HTTP/1.0
               data: "java.Runtime=test"
-            output: 
+            output:
               log_contains: "id \"944110\""
 
-    - 
+    -
       test_title: 944110-4
       desc: Argument name includes keywords java. and ProcessBuilder
-      stages: 
-        - 
-          stage: 
+      stages:
+        -
+          stage:
             input:
               dest_addr: "127.0.0.1"
               port: 80
@@ -94,15 +94,15 @@
               method: POST
               version: HTTP/1.0
               data: "java.ProcessBuilder=test"
-            output: 
+            output:
               log_contains: "id \"944110\""
 
-    - 
+    -
       test_title: 944110-5
       desc: Cookie test includes keywords java. and Runtime
-      stages: 
-        - 
-          stage: 
+      stages:
+        -
+          stage:
             input:
               dest_addr: "127.0.0.1"
               port: 80
@@ -118,15 +118,15 @@
               method: POST
               version: HTTP/1.0
               data: "test=value"
-            output: 
+            output:
               log_contains: "id \"944110\""
 
-    - 
+    -
       test_title: 944110-6
       desc: Cookie test includes keywords java. and ProcessBuilder
-      stages: 
-        - 
-          stage: 
+      stages:
+        -
+          stage:
             input:
               dest_addr: "127.0.0.1"
               port: 80
@@ -142,15 +142,15 @@
               method: POST
               version: HTTP/1.0
               data: "test=value"
-            output: 
+            output:
               log_contains: "id \"944110\""
 
-    - 
+    -
       test_title: 944110-7
       desc: Cookie name includes keywords java. and Runtime
-      stages: 
-        - 
-          stage: 
+      stages:
+        -
+          stage:
             input:
               dest_addr: "127.0.0.1"
               port: 80
@@ -166,15 +166,15 @@
               method: POST
               version: HTTP/1.0
               data: "test=value"
-            output: 
+            output:
               log_contains: "id \"944110\""
 
-    - 
+    -
       test_title: 944110-8
       desc: Cookie name includes keywords java. and ProcessBuilder
-      stages: 
-        - 
-          stage: 
+      stages:
+        -
+          stage:
             input:
               dest_addr: "127.0.0.1"
               port: 80
@@ -190,15 +190,15 @@
               method: POST
               version: HTTP/1.0
               data: "test=value"
-            output: 
+            output:
               log_contains: "id \"944110\""
 
-    - 
+    -
       test_title: 944110-9
       desc: Request header test includes keywords java. and Runtime
-      stages: 
-        - 
-          stage: 
+      stages:
+        -
+          stage:
             input:
               dest_addr: "127.0.0.1"
               port: 80
@@ -214,15 +214,15 @@
               method: POST
               version: HTTP/1.0
               data: "test=value"
-            output: 
+            output:
               log_contains: "id \"944110\""
 
-    - 
+    -
       test_title: 944110-10
       desc: Request header test includes keywords java. and ProcessBuilder
-      stages: 
-        - 
-          stage: 
+      stages:
+        -
+          stage:
             input:
               dest_addr: "127.0.0.1"
               port: 80
@@ -238,15 +238,15 @@
               method: POST
               version: HTTP/1.0
               data: "test=value"
-            output: 
+            output:
               log_contains: "id \"944110\""
 
-    - 
+    -
       test_title: 944110-11
       desc: XML element includes keywords java. and Runtime
-      stages: 
-        - 
-          stage: 
+      stages:
+        -
+          stage:
             input:
               dest_addr: "127.0.0.1"
               port: 80
@@ -261,15 +261,15 @@
               method: POST
               version: HTTP/1.0
               data: "<?xml version=\"1.0\"?><xml><java.Runtime attribute_name=\"attribute_value\">value</java.Runtime></xml>"
-            output: 
+            output:
               no_log_contains: "id \"944110\""
 
-    - 
+    -
       test_title: 944110-12
       desc: XML attribute name includes keywords java. and Runtime
-      stages: 
-        - 
-          stage: 
+      stages:
+        -
+          stage:
             input:
               dest_addr: "127.0.0.1"
               port: 80
@@ -284,15 +284,15 @@
               method: POST
               version: HTTP/1.0
               data: "<?xml version=\"1.0\"?><xml><element java.Runtime=\"attribute_value\">element_value</element></xml>"
-            output: 
+            output:
               no_log_contains: "id \"944110\""
 
-    - 
+    -
       test_title: 944110-13
       desc: XML attribute value includes keywords java. and Runtime
-      stages: 
-        - 
-          stage: 
+      stages:
+        -
+          stage:
             input:
               dest_addr: "127.0.0.1"
               port: 80
@@ -307,15 +307,15 @@
               method: POST
               version: HTTP/1.0
               data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"java.lang.string\" attribute2_name=\"Runtime\">element_value</element></xml>"
-            output: 
+            output:
               log_contains: "id \"944110\""
 
-    - 
+    -
       test_title: 944110-14
       desc: XML element value includes keywords java. and Runtime
-      stages: 
-        - 
-          stage: 
+      stages:
+        -
+          stage:
             input:
               dest_addr: "127.0.0.1"
               port: 80
@@ -330,15 +330,15 @@
               method: POST
               version: HTTP/1.0
               data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">java.Runtime</element></xml>"
-            output: 
+            output:
               log_contains: "id \"944110\""
 
-    - 
+    -
       test_title: 944110-15
       desc: XML element includes keywords java. and ProcessBuilder
-      stages: 
-        - 
-          stage: 
+      stages:
+        -
+          stage:
             input:
               dest_addr: "127.0.0.1"
               port: 80
@@ -353,15 +353,15 @@
               method: POST
               version: HTTP/1.0
               data: "<?xml version=\"1.0\"?><xml><java.ProcessBuilder attribute_name=\"attribute_value\">value</java.ProcessBuilder></xml>"
-            output: 
+            output:
               no_log_contains: "id \"944110\""
 
-    - 
+    -
       test_title: 944110-16
       desc: XML attribute name includes keyworda java. and ProcessBuilder
-      stages: 
-        - 
-          stage: 
+      stages:
+        -
+          stage:
             input:
               dest_addr: "127.0.0.1"
               port: 80
@@ -376,15 +376,15 @@
               method: POST
               version: HTTP/1.0
               data: "<?xml version=\"1.0\"?><xml><element java.ProcessBuilder=\"attribute_value\">element_value</element></xml>"
-            output: 
+            output:
               no_log_contains: "id \"944110\""
 
-    - 
+    -
       test_title: 944110-17
       desc: XML attribute value includes keywords java. and ProcessBuilder
-      stages: 
-        - 
-          stage: 
+      stages:
+        -
+          stage:
             input:
               dest_addr: "127.0.0.1"
               port: 80
@@ -399,15 +399,15 @@
               method: POST
               version: HTTP/1.0
               data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"java.lang.string\" attribute_name2=\"ProcessBuilder\">element_value</element></xml>"
-            output: 
+            output:
               log_contains: "id \"944110\""
 
-    - 
+    -
       test_title: 944110-18
       desc: XML element value includes keywords java. and ProcessBuilder
-      stages: 
-        - 
-          stage: 
+      stages:
+        -
+          stage:
             input:
               dest_addr: "127.0.0.1"
               port: 80
@@ -422,5 +422,5 @@
               method: POST
               version: HTTP/1.0
               data: "<?xml version=\"1.0\"?><xml><element attribute_name=\"attribute_value\">java.ProcessBuilder</element></xml>"
-            output: 
+            output:
               log_contains: "id \"944110\""
