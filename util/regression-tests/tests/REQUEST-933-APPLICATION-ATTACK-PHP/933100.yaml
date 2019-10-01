@@ -5,11 +5,11 @@
     enabled: true
     name: 933100.yaml
   tests:
-  - 
+  -
     test_title: 933100-1
     desc: PHP Injection Attack (933100) from old modsec regressions
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -28,11 +28,11 @@
           version: HTTP/1.0
         output:
           log_contains: id "933100"
-  - 
+  -
     test_title: 933100-2
     desc: PHP Injection Attack (933100) from old modsec regressions
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1

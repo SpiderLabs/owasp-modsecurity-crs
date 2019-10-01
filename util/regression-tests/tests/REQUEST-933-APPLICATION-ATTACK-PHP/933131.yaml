@@ -4,8 +4,8 @@
     description: Tests functionality of stricter sibiling 933131
     enabled: true
     name: 933131.yaml
-  tests: 
-  - 
+  tests:
+  -
     test_title: 933131-1
     desc: SERVER request URLEncoded
     stages:
@@ -19,7 +19,7 @@
           uri: /?x=$_%53ERVER['test'];
         output:
           no_log_contains: id "933131"
-  - 
+  -
     test_title: 933131-2
     desc: SERVER request URLEncoded
     stages:
@@ -32,8 +32,8 @@
           port: 80
           uri: /?%24_COOKIE=value;
         output:
-          no_log_contains: id "933131"             
-  - 
+          no_log_contains: id "933131"
+  -
     test_title: 933131-3
     desc: SERVER index listed with obfuscated SERVER
     stages:

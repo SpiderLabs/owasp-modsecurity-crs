@@ -5,11 +5,11 @@
     enabled: true
     name: 942500.yaml
   tests:
-  - 
+  -
     test_title: 942500-1
     desc: "MySQL in-line comment detection"
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1

@@ -5,11 +5,11 @@
     enabled: true
     name: 930120.yaml
   tests:
-  - 
+  -
     test_title: 930120-1
     desc: Remote File Access Attempt (930120) from old modsec regressions
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -30,11 +30,11 @@
           version: HTTP/1.1
         output:
           log_contains: id "930120"
-  - 
+  -
     test_title: 930120-2
     desc: Remote File Access Attempt (930120) from old modsec regressions
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
@@ -55,11 +55,11 @@
           version: HTTP/1.1
         output:
           log_contains: id "930120"
-  - 
+  -
     test_title: 930120-3
     desc: Remote File Access Attempt (930120) from old modsec regressions
     stages:
-    - 
+    -
       stage:
         input:
           dest_addr: 127.0.0.1
