@@ -1,0 +1,97 @@
+---
+  meta:
+    author: "@spartantri"
+    enabled: true
+    name: "930120-b64.yaml"
+    description: "Positive and negative tests for rule 930120 with base64 enoded payloads"
+  tests:
+    -
+      test_title: 930120-5
+      desc: "Argument test includes base64 encoded inocuous payload"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=c29tZXRoaW5nIHJlYWxseSBzaW1wbGUh"
+            output:
+              no_log_contains: "id \"930120\""
+
+    -
+      test_title: 930120-6
+      desc: "Argument test includes base64 encoded inocuous payload"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+              method: "GET"
+              version: "HTTP/1.0"
+              data: "test=c29tZXRoaW5nIHJlYWxseSBzaW1wbGUh"
+            output:
+              no_log_contains: "id \"930120\""
+    -
+      test_title: 930120-7
+      desc: "Argument test includes base64 encoded malicious payload"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+              method: "POST"
+              version: "HTTP/1.0"
+              data: "test=L2V0Yy9wYXNzd2Q="
+            output:
+              log_contains: "id \"930120\""
+
+    -
+      test_title: 930120-8
+      desc: "Argument test includes base64 encoded malicious payload"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                Host: "localhost"
+                User-Agent: "ModSecurity CRS 3 Tests"
+                Accept: "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+                Accept-Charset: "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+                Accept-Encoding: "gzip,deflate"
+                Accept-Language: "en-us,en;q=0.5"
+                Content-Type: "application/x-www-form-urlencoded"
+              method: "GET"
+              version: "HTTP/1.0"
+              data: "test=L2V0Yy9wYXNzd2Q="
+            output:
+              log_contains: "id \"930120\""
