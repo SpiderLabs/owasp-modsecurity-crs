@@ -78,8 +78,8 @@
 (?:<\w[\s\S]*[\s\/]|['\"](?:[\s\S]*[\s\/])?)onaudioend[\s\x08]*?=
 (?:<\w[\s\S]*[\s\/]|['\"](?:[\s\S]*[\s\/])?)onaudioprocess[\s\x08]*?=
 (?:<\w[\s\S]*[\s\/]|['\"](?:[\s\S]*[\s\/])?)onaudiostart[\s\x08]*?=
-(?:<\w[\s\S]*[\s\/]|['\"](?:[\s\S]*[\s\/])?)onbefordeactivate[\s\x08]*?=
 (?:<\w[\s\S]*[\s\/]|['\"](?:[\s\S]*[\s\/])?)onbeforeactivate[\s\x08]*?=
+(?:<\w[\s\S]*[\s\/]|['\"](?:[\s\S]*[\s\/])?)onbeforedeactivate[\s\x08]*?=
 (?:<\w[\s\S]*[\s\/]|['\"](?:[\s\S]*[\s\/])?)onbeforecopy[\s\x08]*?=
 (?:<\w[\s\S]*[\s\/]|['\"](?:[\s\S]*[\s\/])?)onbeforecut[\s\x08]*?=
 (?:<\w[\s\S]*[\s\/]|['\"](?:[\s\S]*[\s\/])?)onbeforeeditfocus[\s\x08]*?=
@@ -287,7 +287,9 @@
 (?:<\w[\s\S]*[\s\/]|['\"](?:[\s\S]*[\s\/])?)ontouchleave[\s\x08]*?=
 (?:<\w[\s\S]*[\s\/]|['\"](?:[\s\S]*[\s\/])?)ontouchmove[\s\x08]*?=
 (?:<\w[\s\S]*[\s\/]|['\"](?:[\s\S]*[\s\/])?)ontouchstart[\s\x08]*?=
+(?:<\w[\s\S]*[\s\/]|['\"](?:[\s\S]*[\s\/])?)ontransitioncancel[\s\x08]*?=
 (?:<\w[\s\S]*[\s\/]|['\"](?:[\s\S]*[\s\/])?)ontransitionend[\s\x08]*?=
+(?:<\w[\s\S]*[\s\/]|['\"](?:[\s\S]*[\s\/])?)ontransitionrun[\s\x08]*?=
 (?:<\w[\s\S]*[\s\/]|['\"](?:[\s\S]*[\s\/])?)onunderflow[\s\x08]*?=
 (?:<\w[\s\S]*[\s\/]|['\"](?:[\s\S]*[\s\/])?)onunload[\s\x08]*?=
 (?:<\w[\s\S]*[\s\/]|['\"](?:[\s\S]*[\s\/])?)onupdateready[\s\x08]*?=
