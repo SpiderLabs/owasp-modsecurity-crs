@@ -2,8 +2,8 @@
 
 == Report Bugs/Issues to GitHub Issues Tracker or the mailinglist ==
 * https://github.com/SpiderLabs/owasp-modsecurity-crs/issues
-or the CRS mailinglist at
-* https://lists.owasp.org/mailman/listinfo/owasp-modsecurity-core-rule-set
+or the CRS Google Group at
+* https://groups.google.com/a/owasp.org/forum/#!forum/modsecurity-core-rule-set-project
 
 * There are still false positives for standard web applications in
   the default install (paranoia level 1). Please report these when
