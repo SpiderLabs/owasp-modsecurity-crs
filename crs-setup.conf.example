@@ -232,6 +232,25 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 #   setvar:tx.enforce_bodyproc_urlencoded=1"
 
 
+# -- [[ Enforce Base64 decoding ]] -----------------------------------
+#
+# Base64 encoding is decoded by many applications to ingest the resulting string
+# into the web applications. Enabling this will perform a base64 decode on ARGS
+# which will result on a decoded payload of at least four character long.
+# All decoded payloads will be added into transaction variables with the name of
+# the decoded matched string
+#
+# Uncomment this rule to change the default:
+#
+#SecAction \
+#  "id:900020,\
+#   phase:1,\
+#   nolog,\
+#   pass,\
+#   t:none,\
+#   setvar:tx.enforce_base64decoding=1"
+
+
 #
 # -- [[ Anomaly Mode Severity Levels ]] ----------------------------------------
 #

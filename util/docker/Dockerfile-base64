@@ -1,0 +1,40 @@
+FROM owasp/modsecurity:2.9-apache
+LABEL maintainer="Chaim Sanders <chaim.sanders@gmail.com>"
+
+ARG COMMIT=v3.3/devb64decoder
+ARG BRANCH=v3.3/devb64decoder
+ARG REPO=spartantri/owasp-modsecurity-crs
+ENV WEBSERVER=Apache
+ENV PARANOIA=1
+ENV EXECUTING_PARANOIA=2
+ENV ANOMALYIN=5
+ENV ANOMALYOUT=4
+ENV ENFORCE_BASE64DECODING=1
+ENV ERRORLOG=/proc/self/fd/2
+ENV ACCESSLOG=/proc/self/fd/1
+
+RUN apt-get update && \
+  apt-get -y install python git ca-certificates iproute2 && \
+  mkdir /opt/owasp-modsecurity-crs-3.3 && \
+  cd /opt/owasp-modsecurity-crs-3.3 && \
+  git init && \
+  git remote add origin https://github.com/${REPO} && \
+  git fetch --depth 1 origin ${BRANCH} && \
+  git checkout ${COMMIT} && \
+  mv crs-setup.conf.example crs-setup.conf && \
+  ln -sv /opt/owasp-modsecurity-crs-3.3 /etc/modsecurity.d/owasp-crs && \
+  printf "include /etc/modsecurity.d/owasp-crs/crs-setup.conf\ninclude /etc/modsecurity.d/owasp-crs/rules/*.conf" >> /etc/modsecurity.d/include.conf && \
+  sed -i -e 's/SecRuleEngine DetectionOnly/SecRuleEngine On/g' /etc/modsecurity.d/modsecurity.conf
+#&& \
+#  sed -i -e 's/#SecDebugLogLevel 3/SecDebugLogLevel 9/' /etc/modsecurity.d/modsecurity.conf && \
+#  sed -i -e 's,#SecDebugLog /opt/modsecurity/var/log/debug.log,SecDebugLog /proc/self/fd/1,' /etc/modsecurity.d/modsecurity.conf
+
+COPY httpd-logging-before-modsec.conf  /usr/local/apache2/conf/extra/httpd-logging-before-modsec.conf
+COPY httpd-logging-after-modsec.conf   /usr/local/apache2/conf/extra/httpd-logging-after-modsec.conf
+COPY docker-entrypoint.sh /
+
+EXPOSE 80
+EXPOSE 443
+
+ENTRYPOINT ["/docker-entrypoint.sh"]
+CMD ["apachectl", "-D", "FOREGROUND"]
