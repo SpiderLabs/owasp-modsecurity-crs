@@ -31,7 +31,7 @@ update\s+load_file\s?[(]?
 end\s*?\);
 [\s(]load_file\s*?\(
 [\"'`]\s+regexp\W
-[\d\W]\s+as\s*?[\"'`\w]+\s*?from
+[\d\W]\s+as\s*?[\"'`\w]+\s+?from
 ^[\W\d]+\s*?create\b
 ^[\W\d]+\s*?delete\b
 ^[\W\d]+\s*?desc\b
