@@ -1,0 +1,43 @@
+---
+  meta:
+    author: "fzipi"
+    enabled: true
+    name: "905120.yaml"
+    description: "Test exception for Monit status check"
+  tests:
+    -
+      test_title: 905120-1
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              method: "GET"
+              uri: /
+              version: HTTP/1.1
+              headers:
+                User-Agent: "Monit 5.26.0"
+                Host: "127.0.0.1"
+                Accept: "*/*"
+                Connection: close
+            output:
+              no_log_contains: "id \"920350\""
+    -
+      test_title: 905120-2
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              method: "GET"
+              uri: /server-status?auto
+              version: HTTP/1.1
+              headers:
+                User-Agent: "Monit 5.26.0"
+                Host: "127.0.0.1"
+                Accept: "*/*"
+                Connection: close
+            output:
+              no_log_contains: "id \"920350\""
