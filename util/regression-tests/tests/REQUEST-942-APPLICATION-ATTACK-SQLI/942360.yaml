@@ -426,7 +426,7 @@
           method: POST
           port: 80
           uri: "/"
-          data: "! Aside from"
+          data: "! As' from"
           version: HTTP/1.0
         output:
           log_contains: id "942360"
@@ -443,7 +443,7 @@
           method: POST
           port: 80
           uri: "/"
-          data: ". Aside from"
+          data: ";  As  not  from"
           version: HTTP/1.0
         output:
           log_contains: id "942360"
@@ -477,7 +477,7 @@
           method: POST
           port: 80
           uri: "/"
-          data: "6 Aside from"
+          data: "6 As\" from"
           version: HTTP/1.0
         output:
           log_contains: id "942360"
