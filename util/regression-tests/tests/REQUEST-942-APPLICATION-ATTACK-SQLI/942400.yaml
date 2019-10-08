@@ -69,7 +69,7 @@
           method: POST
           port: 80
           # AND string comparison operations
-          data: " and 'test'='test'"
+          data: "and 'test'='test'"
           version: HTTP/1.0
         output:
           log_contains: id "942400"
@@ -86,7 +86,7 @@
           method: POST
           port: 80
           # AND decimal comparison operations
-          data: " and 1=1"
+          data: "and 1=1"
           version: HTTP/1.0
         output:
           log_contains: id "942400"
