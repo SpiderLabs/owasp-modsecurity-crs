@@ -14,7 +14,7 @@ please adhere to the following contributing guidelines.
 
 ## Making Changes
 
-* Please base your changes on branch ```v3.2/dev```
+* Please base your changes on branch ```v3.3/dev```
 * Create a topic branch for your feature or bug fix.
 * Please fix only one problem at a time; this will help to quickly test and merge your change. If you intend to fix multiple unrelated problems, please use a separate branch for each problem.
 * Make commits of logical units.
@@ -36,9 +36,9 @@ please adhere to the following contributing guidelines.
             SecRule .. ..\
                 ".."
 ```
- - use quotes even if there is only one action, it improves readability (e.g use `"chain"`, not `chain`, or `"ctl:requestBodyAccess=Off"` instead of `ctl:requestBodyAccess=Off`)
+ - use quotes even if there is only one action, it improves readability (e.g., use `"chain"`, not `chain`, or `"ctl:requestBodyAccess=Off"` instead of `ctl:requestBodyAccess=Off`)
  - always use numbers for phases, instead of names
- - format your `SecMarker` between double quotes, using UPPERCASE and separating words using hyphens. Examples are
+ - format your `SecMarker` between double quotes, using UPPERCASE and separating words using hyphens. Examples are:
 ```
     SecMarker "END-RESPONSE-959-BLOCKING-EVALUATION"
     SecMarker "END-REQUEST-910-IP-REPUTATION"
@@ -75,18 +75,18 @@ please adhere to the following contributing guidelines.
     skipAfter
 ```
 
-## Variables naming conventions
+## Variable naming conventions
 
 * Variable names are lowercase using chars from `[a-z0-9_]`
 * To somewhat reflect the fact that the syntax for variable usage is different when you define it (using setvar) and when you use it, we propose the following visual distinction:
-  * Lowercase letters for collection, dot as separator, variable name. E.g: `setvar:tx.foo_bar_variable`
-  * Capital letters for collection, colon as separator, variable name. E.g: `SecRule TX:foo_bar_variable`
+  * Lowercase letters for collection, dot as separator, variable name. E.g.,: `setvar:tx.foo_bar_variable`
+  * Capital letters for collection, colon as separator, variable name. E.g.,: `SecRule TX:foo_bar_variable`
 
 ## Rules compliance with each Paranoia Level (PL)
 
 Rules in the CRS are organized in Paranoia Levels, which allows you to choose the desired level of rule checks.
 
-Please read file ```crs-setup.conf.example``` for introduction and a more detailed explanation of Paranoia Levels in the section `# -- [[ Paranoia Level Initialization ]]`.
+Please read file ```crs-setup.conf.example``` for an introduction and a more detailed explanation of Paranoia Levels in the section `# -- [[ Paranoia Level Initialization ]]`.
 
 **PL0:**
 
@@ -94,7 +94,7 @@ Please read file ```crs-setup.conf.example``` for introduction and a more detail
 
 **PL1:**
 
-* Default level, keep in mind that most installations will normally use this one. 
+* Default level, keep in mind that most installations will normally use this one
 * If there is a complex memory consuming/evaluation rule it surely will be on upper levels, not this one
 * Normally we will use atomic checks in single rules
 * Confirmed matches only, all scores are allowed
@@ -146,8 +146,8 @@ Among the rules serving a CRS helper functionality are rules that skip rules dep
 
 The blocking or filter rules start with 9XX100 with a step width of 10. E.g. 9XX100, 9XX110, 9XX120 etc. The rule id does not correspond directly with the paranoia level of a rule. Given the size of a rule group and the organization by lower PL rules first, PL2 and above tend to have rule IDs with higher numbers.
 
-Within a rule file / block, there are sometimes smaller groups of rules that belong to together. They are closely linked and very often represent copies of the original rules with a stricter limit (alternatively, they can represent the same rule addressing a different target in a second rule where this was necessary). These are stricter siblings of the base rule. Stricter siblings usually share the first five digits of the rule ID and raise the rule ID by one. E.g. Base rule at 9XX160, stricter sibling at 9XX161.
+Within a rule file / block, there are sometimes smaller groups of rules that belong to together. They are closely linked and very often represent copies of the original rules with a stricter limit (alternatively, they can represent the same rule addressing a different target in a second rule where this was necessary). These are stricter siblings of the base rule. Stricter siblings usually share the first five digits of the rule ID and raise the rule ID by one. E.g., Base rule at 9XX160, stricter sibling at 9XX161.
 
-Stricter siblings often have a different paranoia level. This means that the base rule and the stricter sibling do not reside next to one another in the rule file. Instead they are ordered in their appropriate paranoia level and can be linked via the first digits of the rule id. It is a good practice to introduce stricter siblings together with the base rule in the comments of the base rule and to reference the base rule with the keyword stricter sibling in the comments of the stricter sibling. E.g. "... This is
+Stricter siblings often have a different paranoia level. This means that the base rule and the stricter sibling do not reside next to one another in the rule file. Instead they are ordered in their appropriate paranoia level and can be linked via the first digits of the rule id. It is a good practice to introduce stricter siblings together with the base rule in the comments of the base rule and to reference the base rule with the keyword stricter sibling in the comments of the stricter sibling. E.g., "... This is
 performed in two separate stricter siblings of this rule: 9XXXX1 and 9XXXX2", "This is a stricter sibling of rule 9XXXX0."
 
