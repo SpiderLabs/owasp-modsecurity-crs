@@ -623,8 +623,8 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # To use geolocation, we make use of the MaxMind GeoIP database.
 # This database is not included with the CRS and must be downloaded.
 #
-# There are two formats for the GeoIP database. ModSecurity v2 uses v1 (.dat files),
-# and ModSecurity v3 uses v2 (.mmdb files).
+# There are two formats for the GeoIP database. ModSecurity v2 uses GeoLite (.dat files),
+# and ModSecurity v3 uses GeoLite2 (.mmdb files).
 #
 # If you use ModSecurity 3, MaxMind provides a binary for updating GeoLite2 files, 
 # see https://github.com/maxmind/geoipupdate.
