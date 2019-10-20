@@ -622,20 +622,49 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 #
 # To use geolocation, we make use of the MaxMind GeoIP database.
 # This database is not included with the CRS and must be downloaded.
-# You should also update the database regularly, for instance every month.
-# The CRS contains a tool to download it to util/geo-location/GeoIP.dat:
-#   util/upgrade.py --geoip
 #
-# This product includes GeoLite data created by MaxMind, available from:
-# http://www.maxmind.com.
+# There are two formats for the GeoIP database. ModSecurity v2 uses GeoLite (.dat files),
+# and ModSecurity v3 uses GeoLite2 (.mmdb files).
+#
+# If you use ModSecurity 3, MaxMind provides a binary for updating GeoLite2 files, 
+# see https://github.com/maxmind/geoipupdate.
+#
+# Download the package for your OS, and read https://dev.maxmind.com/geoip/geoipupdate/
+# for configuration options.
+# 
+# Warning: GeoLite (not GeoLite2) databases are considered legacy, and not being updated anymore.
+# See https://support.maxmind.com/geolite-legacy-discontinuation-notice/ for more info.
+#
+# Therefore, if you use ModSecurity v2, you need to regenerate updated .dat files 
+# from CSV files first.
+#
+# You can achieve this using https://github.com/sherpya/geolite2legacy
+# Pick the zip files from maxmind site:
+# https://geolite.maxmind.com/download/geoip/database/GeoLite2-Country-CSV.zip
+#
+# Follow the guidelines for installing the tool and run:
+# ./geolite2legacy.py -i GeoLite2-Country-CSV.zip \
+#                     -f geoname2fips.csv -o /usr/share/GeoliteCountry.dat
+#
+# Update the database regularly, see Step 3 of the configuration link above.
+#
+# By default, when you execute `sudo geoipupdate` on Linux, files from the free database
+# will be downloaded to `/usr/share/GeoIP` (both v1 and v2).
+#
+# Then choose from:
+#   - `GeoLite2-Country.mmdb` (if you are using ModSecurity v3)
+#   - `GeoLiteCountry.dat`    (if you are using ModSecurity v2)
 #
 # Ref: http://blog.spiderlabs.com/2010/10/detecting-malice-with-modsecurity-geolocation-data.html
 # Ref: http://blog.spiderlabs.com/2010/11/detecting-malice-with-modsecurity-ip-forensics.html
 #
-# Uncomment this rule to use this feature:
+# Uncomment only one of the next rules here to use this feature.
+# Choose the one depending on the ModSecurity version you are using, and change the path accordingly:
 #
-#SecGeoLookupDB util/geo-location/GeoIP.dat
-
+# For ModSecurity v3:
+#SecGeoLookupDB /usr/share/GeoIP/GeoLite2-Country.mmdb
+# For ModSecurity v2 (points to the converted one):
+#SecGeoLookupDB /usr/share/GeoIP/GeoLiteCountry.dat
 
 #
 # -=[ Block Countries ]=-
