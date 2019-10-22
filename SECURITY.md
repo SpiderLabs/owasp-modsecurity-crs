@@ -24,7 +24,8 @@ We are interested in hearing any bug reports, false positive alert reports, evas
 These types of non-vulnerability related issues should be submitted via Github. 
 Please include your installed version and the relevant portions of your audit log.
 
-If you’ve found a false negative/bypass, please responsibly disclose the issue by sending an email to security@coreruleset.org.
+If you’ve found a false negative/bypass, please responsibly disclose the issue by sending an email to security@coreruleset.org. You can send us 
+encrypted email using [this key](https://coreruleset.org/security.asc). Please verify the key fingerprint: `3600 6F0E 0BA1 6783 2158 8211 38EE ACA1 AB8A 6E72`.
 
 There are a couple things to verify before you submit an vulnerability:
 
@@ -33,4 +34,4 @@ There are a couple things to verify before you submit an vulnerability:
 
 We are happy to work with the community to provide CVE identifiers for any discovered security issue if requested. 
 
-If in doubt, feel free to reach out to us
+If in doubt, feel free to reach out to us!
