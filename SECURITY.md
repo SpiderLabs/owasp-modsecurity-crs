@@ -2,8 +2,8 @@
 
 ## Supported Versions
 
-OWASP CRS has two major types of releases, Major releases (2.x.x, 3.x.x, 4.x.x) 
-and point releases (2.1.x, 3.2.x).
+OWASP CRS has two types of releases, Major releases (3.0.0, 3.1.0, 3.2.0 etc.) and point releases (3.0.1, 3.0.2 etc.).
+
 For more information see our [wiki](https://github.com/SpiderLabs/owasp-modsecurity-crs/wiki/Release-Policy).
 
 The OWASP CRS officially supports the previous two point releases of the current major release with security patching.
@@ -24,7 +24,7 @@ We are interested in hearing any bug reports, false positive alert reports, evas
 These types of non-vulnerability related issues should be submitted via Github. 
 Please include your installed version and the relevant portions of your audit log.
 
-If you’ve found a false negative/bypass, please responsibly disclose the issue by sending an email to security@coreruleset.org. You can send us 
+If you’ve found a false negative/bypass, please responsibly disclose the issue by sending an email to [security@coreruleset.org](mailto:security@coreruleset.org). You can send us 
 encrypted email using [this key](https://coreruleset.org/security.asc). Please verify the key fingerprint: `3600 6F0E 0BA1 6783 2158 8211 38EE ACA1 AB8A 6E72`.
 
 There are a couple things to verify before you submit an vulnerability:
