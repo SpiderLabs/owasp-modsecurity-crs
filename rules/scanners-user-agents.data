@@ -182,6 +182,9 @@ webtrends security analyzer
 # vuln scanner
 # https://github.com/hhucn/webvulnscan
 webvulnscan
+# vuln scanner
+# https://github.com/xmendez/wfuzz
+Wfuzz
 # web technology scanner
 # https://www.morningstarsecurity.com/research/whatweb
 whatweb
