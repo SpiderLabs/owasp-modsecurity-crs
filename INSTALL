@@ -163,7 +163,7 @@ Installing on Nginx
     include owasp-modsecurity-crs/rules/REQUEST-941-APPLICATION-ATTACK-XSS.conf
     include owasp-modsecurity-crs/rules/REQUEST-942-APPLICATION-ATTACK-SQLI.conf
     include owasp-modsecurity-crs/rules/REQUEST-943-APPLICATION-ATTACK-SESSION-FIXATION.conf
-    include owasp-modsecurity-crs/rules/REQUEST-933-APPLICATION-ATTACK-JAVA.conf
+    include owasp-modsecurity-crs/rules/REQUEST-944-APPLICATION-ATTACK-JAVA.conf
     include owasp-modsecurity-crs/rules/REQUEST-949-BLOCKING-EVALUATION.conf
     include owasp-modsecurity-crs/rules/RESPONSE-950-DATA-LEAKAGES.conf
     include owasp-modsecurity-crs/rules/RESPONSE-951-DATA-LEAKAGES-SQL.conf
