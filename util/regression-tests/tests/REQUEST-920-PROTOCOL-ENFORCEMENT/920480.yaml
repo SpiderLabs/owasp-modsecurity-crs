@@ -192,3 +192,45 @@
     #           data: "test=value"
     #         output:
     #           log_contains: "id \"920480\""
+    - test_title: 920480-14
+      stages:
+        - stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              method: "POST"
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"
+                  Host: "localhost"
+                  Content-Type: "application/x-www-form-urlencoded; charset=\"utf-8\"" # random other IBM charset
+              data: "test=value"
+            output:
+              no_log_contains: "id \"920480\""
+    - test_title: 920480-15
+      stages:
+        - stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              method: "POST"
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"
+                  Host: "localhost"
+                  Content-Type: "application/x-www-form-urlencoded; charset='utf-8'" # random other IBM charset
+              data: "test=value"
+            output:
+              no_log_contains: "id \"920480\""
+    - test_title: 920480-16
+      stages:
+        - stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              method: "POST"
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"
+                  Host: "localhost"
+                  Content-Type: "application/x-www-form-urlencoded; charset=\"garbage\"" # random other IBM charset
+              data: "test=value"
+            output:
+              log_contains: "id \"920480\""
