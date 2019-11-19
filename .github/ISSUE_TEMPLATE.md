@@ -15,9 +15,13 @@
 <!-- a curl command. -->
 <!-- Include any relevant CVEs or research links. -->
 
+## Audit Logs / Triggered Rule Numbers
+<!-- everything you can provide about a blocked request/response -->
+<!-- or, at least, a list of triggered CRS rule numbers.-->
+
 ## Your Environment
-<!--- Include as many relevant details about the environment you -->
-<!--- experienced the bug in: -->
+<!-- Include as many relevant details about the environment you -->
+<!-- experienced the bug in: -->
 * CRS version (e.g. v3.0.2):
 * ModSecurity version (e.g. 2.9.2):
 * Web Server and version (e.g. apache 2.4.27):
