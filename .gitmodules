@@ -1,8 +1,8 @@
-[submodule "documentation/OWASP-CRS-Documentation"]
-	path = documentation/OWASP-CRS-Documentation
+[submodule "docs/OWASP-CRS-Documentation"]
+	path = docs/OWASP-CRS-Documentation
 	url = https://github.com/SpiderLabs/OWASP-CRS-Documentation
 	branch = master
-[submodule "util/regression-tests/OWASP-CRS-regressions"]
-	path = util/regression-tests/OWASP-CRS-regressions
+[submodule "tests/regression/OWASP-CRS-regressions"]
+	path = tests/regression/OWASP-CRS-regressions
 	url = https://github.com/SpiderLabs/OWASP-CRS-regressions
 	branch = master
