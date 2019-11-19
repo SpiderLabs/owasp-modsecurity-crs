@@ -13,18 +13,18 @@ before_install:
     fi
   - docker run -ti -e PARANOIA=5 -d -p 80:80 -v /var/log/apache2:/var/log/apache2/ --name "$TRAVIS_BUILD_ID" modsecurity-crs
 install:
-  - pip install -r ./util/integration/requirements.txt
-  - pip install -r ./util/regression-tests/requirements.txt
+  - pip install -r ./tests/integration/requirements.txt
+  - pip install -r ./tests/regression/requirements.txt
 script:
-  - py.test -vs ./util/integration/format_tests.py
-  - py.test -vs util/regression-tests/CRS_Tests.py --rule=util/regression-tests/tests/test.yaml
-  - py.test -vs util/regression-tests/CRS_Tests.py --ruledir=util/regression-tests/tests/REQUEST-911-METHOD-ENFORCEMENT
-  - py.test -vs util/regression-tests/CRS_Tests.py --ruledir=util/regression-tests/tests/REQUEST-913-SCANNER-DETECTION
-  - py.test -vs util/regression-tests/CRS_Tests.py --ruledir=util/regression-tests/tests/REQUEST-921-PROTOCOL-ATTACK
-  - py.test -vs util/regression-tests/CRS_Tests.py --ruledir=util/regression-tests/tests/REQUEST-930-APPLICATION-ATTACK-LFI
-  - py.test -vs util/regression-tests/CRS_Tests.py --ruledir=util/regression-tests/tests/REQUEST-941-APPLICATION-ATTACK-XSS
-  - py.test -vs util/regression-tests/CRS_Tests.py --ruledir=util/regression-tests/tests/REQUEST-942-APPLICATION-ATTACK-SQLI
-  - py.test -vs util/regression-tests/CRS_Tests.py --ruledir=util/regression-tests/tests/REQUEST-943-APPLICATION-ATTACK-SESSION-FIXATION
+  - py.test -vs ./tests/integration/format_tests.py
+  - py.test -vs tests/regression/CRS_Tests.py --rule=tests/regression/tests/test.yaml
+  - py.test -vs tests/regression/CRS_Tests.py --ruledir=tests/regression/tests/REQUEST-911-METHOD-ENFORCEMENT
+  - py.test -vs tests/regression/CRS_Tests.py --ruledir=tests/regression/tests/REQUEST-913-SCANNER-DETECTION
+  - py.test -vs tests/regression/CRS_Tests.py --ruledir=tests/regression/tests/REQUEST-921-PROTOCOL-ATTACK
+  - py.test -vs tests/regression/CRS_Tests.py --ruledir=tests/regression/tests/REQUEST-930-APPLICATION-ATTACK-LFI
+  - py.test -vs tests/regression/CRS_Tests.py --ruledir=tests/regression/tests/REQUEST-941-APPLICATION-ATTACK-XSS
+  - py.test -vs tests/regression/CRS_Tests.py --ruledir=tests/regression/tests/REQUEST-942-APPLICATION-ATTACK-SQLI
+  - py.test -vs tests/regression/CRS_Tests.py --ruledir=tests/regression/tests/REQUEST-943-APPLICATION-ATTACK-SESSION-FIXATION
 # safelist
 branches:
   only:
