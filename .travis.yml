@@ -13,8 +13,8 @@ before_install:
     fi
   - docker run -ti -e PARANOIA=5 -d -p 80:80 -v /var/log/apache2:/var/log/apache2/ --name "$TRAVIS_BUILD_ID" modsecurity-crs
 install:
-  - pip install -r ./util/integration/requirements.txt
-  - pip install -r ./util/regression-tests/requirements.txt
+  - pip install -r ./tests/integration/requirements.txt
+  - pip install -r ./tests/regression/requirements.txt
 script:
   - |
     docker ps | grep -q modsecurity-crs
@@ -23,8 +23,8 @@ script:
       docker rm -f "$TRAVIS_BUILD_ID"
       exit 1
     fi
-  - py.test -vs ./util/integration/format_tests.py
-  - py.test -vs util/regression-tests/CRS_Tests.py --ruledir_recurse=util/regression-tests/tests/
+  - py.test -vs ./tests/integration/format_tests.py
+  - py.test -vs tests/regression/CRS_Tests.py --ruledir_recurse=tests/regression/tests/
   - docker rm -f "$TRAVIS_BUILD_ID"
 # safelist
 branches:
