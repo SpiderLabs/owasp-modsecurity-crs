@@ -15,13 +15,13 @@ jobs:
   fast_finish: true
   include:
     - install:
-        - pip install -r util/integration/requirements.txt
+        - pip install -r tests/integration/requirements.txt
       before_script:
         - git clone https://github.com/CRS-support/secrules_parsing
         - pip install -r secrules_parsing/requirements.txt
         - python secrules_parsing/secrules_parser.py -c -f rules/*.conf
       script:
-        - py.test -vs util/integration/format_tests.py
+        - py.test -vs tests/integration/format_tests.py
     - &test-common
       env: CONFIG=2.9-apache LOGDIR=/var/log/apache2
       before_install:
@@ -48,11 +48,11 @@ jobs:
             exit 1
           fi
       install:
-        - pip install -r util/regression-tests/requirements.txt
+        - pip install -r tests/regression/requirements.txt
       script:
         - |
-          py.test -vs util/regression-tests/CRS_Tests.py \
-            --config=$CONFIG --ruledir_recurse=util/regression-tests/tests
+          py.test -vs tests/regression/CRS_Tests.py \
+            --config=$CONFIG --ruledir_recurse=tests/regression/tests
         - docker rm -f "$TRAVIS_BUILD_ID"
     - <<: *test-common
       env: CONFIG=3.0-apache LOGDIR=/var/log/apache2
