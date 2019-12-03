@@ -163,7 +163,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 #   likely produce a very high number of FPs which have to be
 #   treated before the site can go productive.
 #
-# Rules in paranoia level 2 or higher will log their PL to the audit log;
+# All rules will log their PL to the audit log;
 # example: [tag "paranoia-level/2"]. This allows you to deduct from the
 # audit log how the WAF behavior is affected by paranoia level.
 #
