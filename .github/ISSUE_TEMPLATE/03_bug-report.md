@@ -6,9 +6,6 @@ labels: 'Bug'
 assignees: ''
 ---
 
-<!-- For help and support please go to Stack Exchange: -->
-<!-- https://security.stackexchange.com/questions/tagged/owasp-crs -->
-
 ### Describe the bug
 
 <!-- A clear and concise description of what the bug is. -->

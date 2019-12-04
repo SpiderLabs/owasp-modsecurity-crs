@@ -1,13 +1,10 @@
 ---
-name: '💡 Feature request'
+name: '🚀 Feature request'
 about: Suggest an idea for this project
 title: ''
 labels: 'Feature Request'
 assignees: ''
 ---
-
-<!-- For help and support please go to Stack Exchange: -->
-<!-- https://security.stackexchange.com/questions/tagged/owasp-crs -->
 
 ### Motivation
 
