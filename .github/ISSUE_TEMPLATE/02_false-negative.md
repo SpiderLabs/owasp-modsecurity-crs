@@ -1,24 +1,20 @@
 ---
-name: 'False positive'
-about: Report a false positive (incorrect blocking)
+name: 'False negative'
+about: Report a false negative (incorrect bypass)
 title: ''
-labels: 'False Positive'
+labels: 'False Negative - Evasion'
 assignees: ''
 ---
 
-<!-- For help and support please go to Stack Exchange: -->
-<!-- https://security.stackexchange.com/questions/tagged/owasp-crs -->
-
 ### Description
 
-<!-- Please provide a copy of the audit log entry. You can usually -->
-<!-- find this at /var/log/modsec_audit.log. -->
+<!-- Please provide the payload you are sending. For complex payloads -->
+<!-- with headers, please include a curl command. -->
 <!-- Include any relevant CVEs or research links. -->
-
-### Audit Logs / Triggered Rule Numbers
-
-<!-- Everything you can provide about a blocked request/response -->
-<!-- or, at least, a list of triggered CRS rule numbers. -->
+<!-- If the bypass works in paranoia level 4, please consider sending -->
+<!-- us an email instead. See -->
+<!-- https://github.com/SpiderLabs/owasp-modsecurity-crs/security/policy -->
+<!-- for details. -->
 
 ### Your Environment
 
