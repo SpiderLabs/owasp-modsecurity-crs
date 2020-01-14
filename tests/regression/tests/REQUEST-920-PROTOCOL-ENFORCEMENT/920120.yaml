@@ -111,30 +111,6 @@
             log_contains: id "920120"
     -
       test_title: 920120-4
-      desc: Attempted multipart/form-data bypass (920120).
-      stages:
-      -
-        stage:
-          input:
-            dest_addr: 127.0.0.1
-            headers:
-              User-Agent: "ModSecurity CRS 3 Tests"
-              Host: "localhost"
-              Content-Type: multipart/form-data; boundary=---------------------------265001916915724
-            method: POST
-            port: 80
-            uri: /
-            data:
-            - '-----------------------------265001916915724'
-            - "Content-Disposition: form-data; name=\"fi'le\"; filename=\"test\""
-            - 'Content-Type: application/octet-stream'
-            - ''
-            - 'helloworld'
-            - '-----------------------------265001916915724--'
-          output:
-            log_contains: id "920120"
-    -
-      test_title: 920120-5
       desc: Attempted multipart/form-data bypass (920120). Negative test.
       stages:
       -
@@ -158,7 +134,7 @@
           output:
             no_log_contains: id "920120"
     -
-      test_title: 920120-6
+      test_title: 920120-5
       desc: Attempted multipart/form-data bypass (920120).
       stages:
       -
@@ -182,7 +158,7 @@
           output:
             log_contains: id "920120"
     -
-      test_title: 920120-7
+      test_title: 920120-6
       desc: Attempted multipart/form-data bypass (920120). Negative test.
       stages:
       -
@@ -206,7 +182,7 @@
           output:
             no_log_contains: id "920120"
     -
-      test_title: 920120-8
+      test_title: 920120-7
       desc: Attempted multipart/form-data bypass (920120). Negative test.
       stages:
       -
@@ -230,7 +206,7 @@
           output:
             no_log_contains: id "920120"
     -
-      test_title: 920120-9
+      test_title: 920120-8
       desc: Attempted multipart/form-data bypass (920120). Negative test.
       stages:
       -
@@ -254,7 +230,7 @@
           output:
             no_log_contains: id "920120"
     -
-      test_title: 920120-10
+      test_title: 920120-9
       desc: Attempted multipart/form-data bypass (920120). Negative test.
       stages:
       -
@@ -278,7 +254,7 @@
           output:
             no_log_contains: id "920120"
     -
-      test_title: 920120-11
+      test_title: 920120-10
       desc: Attempted multipart/form-data bypass (920120).
       stages:
       -
@@ -302,7 +278,7 @@
           output:
             log_contains: id "920120"
     -
-      test_title: 920120-12
+      test_title: 920120-11
       desc: Attempted multipart/form-data bypass (920120).
       stages:
       -
@@ -326,7 +302,7 @@
           output:
             log_contains: id "920120"
     -
-      test_title: 920120-13
+      test_title: 920120-12
       desc: Attempted multipart/form-data bypass (920120).
       stages:
       -
@@ -350,7 +326,7 @@
           output:
             log_contains: id "920120"
     -
-      test_title: 920120-14
+      test_title: 920120-13
       desc: Attempted multipart/form-data bypass (920120).
       stages:
       -
@@ -374,7 +350,7 @@
           output:
             log_contains: id "920120"
     -
-      test_title: 920120-15
+      test_title: 920120-14
       desc: Attempted multipart/form-data bypass (920120).
       stages:
       -
@@ -398,7 +374,7 @@
           output:
             log_contains: id "920120"
     -
-      test_title: 920120-16
+      test_title: 920120-15
       desc: Attempted multipart/form-data bypass (920120).
       stages:
       -
@@ -422,7 +398,7 @@
           output:
             log_contains: id "920120"
     -
-      test_title: 920120-17
+      test_title: 920120-16
       desc: Attempted multipart/form-data bypass (920120).
       stages:
       -
@@ -446,7 +422,7 @@
           output:
             log_contains: id "920120"
     -
-      test_title: 920120-18
+      test_title: 920120-17
       desc: Attempted multipart/form-data bypass (920120).
       stages:
       -
@@ -470,7 +446,7 @@
           output:
             log_contains: id "920120"
     -
-      test_title: 920120-19
+      test_title: 920120-18
       desc: Attempted multipart/form-data bypass (920120).
       stages:
       -
@@ -494,7 +470,7 @@
           output:
             log_contains: id "920120"
     -
-      test_title: 920120-20
+      test_title: 920120-19
       desc: Attempted multipart/form-data bypass (920120).
       stages:
       -
@@ -518,7 +494,7 @@
           output:
             log_contains: id "920120"
     -
-      test_title: 920120-21
+      test_title: 920120-20
       desc: Attempted multipart/form-data bypass (920120).
       stages:
       -
@@ -542,7 +518,7 @@
           output:
             log_contains: id "920120"
     -
-      test_title: 920120-22
+      test_title: 920120-21
       desc: Attempted multipart/form-data bypass (920120).
       stages:
       -
