@@ -517,3 +517,41 @@
           version: HTTP/1.0
         output:
           no_log_contains: id "942360"
+  -
+    test_title: 942360-31
+    desc: GH issue 1605
+    stages:
+    -
+      stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Accept: "*/*"
+            Host: localhost
+            User-Agent: ModSecurity CRS 3 Tests
+          method: POST
+          port: 80
+          uri: /
+          data: "a=/create"
+          version: HTTP/1.0
+        output:
+          no_log_contains: id "942360"
+  -
+    test_title: 942360-32
+    desc: GH issue 1605
+    stages:
+    -
+      stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Accept: "*/*"
+            Host: localhost
+            User-Agent: ModSecurity CRS 3 Tests
+          method: POST
+          port: 80
+          uri: /
+          data: "a=/CREATE TABLE Persons"
+          version: HTTP/1.0
+        output:
+          log_contains: id "942360"
