@@ -26,3 +26,14 @@ assignees: ''
 ### Additional context
 
 <!-- Add any other context about the problem here. -->
+
+### Your Environment
+
+<!-- Include as many relevant details about the environment you -->
+<!-- experienced the bug in: -->
+
+* CRS version (e.g., v3.2.0):
+* Paranoia level setting:
+* ModSecurity version (e.g., 2.9.3):
+* Web Server and version (e.g., apache 2.4.41):
+* Operating System and version:
