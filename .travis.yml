@@ -30,10 +30,10 @@ jobs:
             docker build --build-arg REPO=$TRAVIS_PULL_REQUEST_SLUG \
               --build-arg BRANCH=$TRAVIS_PULL_REQUEST_BRANCH \
               --build-arg COMMIT=$TRAVIS_PULL_REQUEST_SHA \
-              -f ./util/docker/Dockerfile-$CONFIG \
+              -f ./util/docker/Dockerfile \
               -t modsecurity-crs-$CONFIG ./util/docker/
           else
-            docker build -f ./util/docker/Dockerfile-$CONFIG \
+            docker build -f ./util/docker/Dockerfile \
               -t modsecurity-crs-$CONFIG ./util/docker/
           fi
         - |
@@ -66,5 +66,5 @@ branches:
     - v3.2/dev
     - v3.3/dev
 
-notifications:
-  irc: "chat.freenode.net#modsecurity"
+#notifications:
+#  irc: "chat.freenode.net#modsecurity"
