@@ -24,25 +24,11 @@ jobs:
         - py.test -vs tests/integration/format_tests.py
     - &test-common
       env: CONFIG=2.9-apache LOGDIR=/var/log/apache2
-      before_install:
+      script:
         - |
           docker run -ti -e REPO=$TRAVIS_PULL_REQUEST_SLUG -e BRANCH=$TRAVIS_PULL_REQUEST_BRANCH -d -p 80:80 \
             --volume $LOGDIR:$LOGDIR \
             --name "$TRAVIS_BUILD_ID" themiddle/crs-test
-        - |
-          docker ps | grep -q modsecurity-crs
-          if [[ $? -ne 0 ]]; then
-            docker logs "$TRAVIS_BUILD_ID"
-            docker rm -f "$TRAVIS_BUILD_ID"
-            exit 1
-          fi
-      install:
-        - pip install -r tests/regression/requirements.txt
-      script:
-        - |
-          py.test -vs tests/regression/CRS_Tests.py \
-            --config=$CONFIG --ruledir_recurse=tests/regression/tests
-        - docker rm -f "$TRAVIS_BUILD_ID"
     - <<: *test-common
       env: CONFIG=3.0-apache LOGDIR=/var/log/apache2
     - <<: *test-common
