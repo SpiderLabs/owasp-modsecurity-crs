@@ -25,21 +25,10 @@ jobs:
     - &test-common
       env: CONFIG=2.9-apache LOGDIR=/var/log/apache2
       before_install:
-        #- |
-        #  if [[ "$TRAVIS_PULL_REQUEST" != "false" ]]; then
-        #    docker build --build-arg REPO=$TRAVIS_PULL_REQUEST_SLUG \
-        #      --build-arg BRANCH=$TRAVIS_PULL_REQUEST_BRANCH \
-        #      --build-arg COMMIT=$TRAVIS_PULL_REQUEST_SHA \
-        #      -f ./util/docker/Dockerfile \
-        #      -t modsecurity-crs-$CONFIG ./util/docker/
-        #  else
-        #    docker build -f ./util/docker/Dockerfile \
-        #      -t modsecurity-crs-$CONFIG ./util/docker/
-        #  fi
         - |
-          docker run -ti -e PARANOIA=5 -d -p 80:80 \
+          docker run -ti -e REPO=$TRAVIS_PULL_REQUEST_SLUG -e BRANCH=$TRAVIS_PULL_REQUEST_BRANCH -d -p 80:80 \
             --volume $LOGDIR:$LOGDIR \
-            --name "$TRAVIS_BUILD_ID" owasp/modsecurity-crs:latest
+            --name "$TRAVIS_BUILD_ID" themiddle/crs-test
         - |
           docker ps | grep -q modsecurity-crs
           if [[ $? -ne 0 ]]; then
