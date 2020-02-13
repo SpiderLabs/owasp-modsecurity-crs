@@ -1,12 +1,6 @@
 ---
 name: Test Ruleset against matrix
 
-# Trigger the workflow on push or pull request
-# branches:
-#   - v3.1/dev
-#   - v3.2/dev
-#   - v3.3/dev
-
 on:
   push:
     paths:
