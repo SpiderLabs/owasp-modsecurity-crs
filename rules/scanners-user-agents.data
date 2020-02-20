@@ -185,6 +185,9 @@ webvulnscan
 # vuln scanner
 # https://github.com/xmendez/wfuzz
 Wfuzz
+# vuln scanner
+# https://github.com/ffuf/ffuf
+Fuzz Faster U Fool
 # web technology scanner
 # https://www.morningstarsecurity.com/research/whatweb
 whatweb
