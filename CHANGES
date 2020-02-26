@@ -206,7 +206,7 @@ Documentation:
  * Add uploaded file name check; refresh LFI / filename checks (Walter Hop)
  * Introduce critical sibling of 920340 in PL2 (Walter Hop)
  * Fix bypass caused by multiple spaces in RCE rules (Walter Hop)
- * Remove unneded regex capture groups (Federico G. Schwindt)
+ * Remove unneeded regex capture groups (Federico G. Schwindt)
  * Add built-in exceptions for CPanel (Christoph Hansen)
  * Add additional file restrictios for ws_ftp, DS_Store... (Jose Nazario)
  * Fix missing strings in 942410 (Franziska Bühler)
@@ -231,7 +231,7 @@ Documentation:
  * Fixup and small reorg of dokuwiki rule exclusion package (Christian Folini)
  * Make TravisCI tests fail if Apache can't load rules (Felipe Zipitría)
  * Add exclusion rules for Dokuwiki (Matt Bagley, Christian Folini)
- * Inital exclusions for NextCloud installs (Matt Bagley, Christian Folini)
+ * Initial exclusions for NextCloud installs (Matt Bagley, Christian Folini)
  * Added struts-pwn UA to list (Manuel Spartan)
  * Uses MULTIPART_MISSING_SEMICOLON instead of MULTIPART_SEMICOLON_MISSING (Felipe Zimmerle)
  * Add file upload checks (Manuel Spartan)
@@ -250,7 +250,7 @@ Documentation:
  * Syntax fix for setvar crs_exclusions_wordpress (Manuel Spartan)
  * Updated various contributors to developers (Christian Folini)
  * Revise SQL rules by disassembling them into their core protections (Franziska Bühler)
- * Add an exmaple payload to 920220 (coolt)
+ * Add an example payload to 920220 (coolt)
  * Add a missing regex to rule 942310 (Franziska Bühler)
  * Detect GET or HEAD with Transfer-Encoding header (Federico G. Schwindt)
  * Fix broken links in references (Pásztor Gábor)
@@ -269,7 +269,7 @@ Documentation:
  * Updating to reflect OWASP flagship status (Chaim Sanders)
  * Adding Docker support for CRS (Chaim Sanders)
  * Initial Travis deployment (Zack Allen, Walter Hop)
- * Inital commit of regression tests (Chaim Sanders, Walter Hop)
+ * Initial commit of regression tests (Chaim Sanders, Walter Hop)
  * Remove test for 921170 because it won't ever fire (Chaim Sanders, Walter Hop)
  * Update minor incorrectness in asp.net regex (Chaim Sanders, Walter Hop)
  * Add notification for builds against #modsecurity on freenode (Zack Allen, Walter Hop)
@@ -444,7 +444,7 @@ Bug Fixes:
 == Version 2.2.7 - 2012-12-19 ==
 
 Improvements:
-* Added JS Overrides file to identify successfull XSS probes
+* Added JS Overrides file to identify successful XSS probes
 * Added new XSS Detection Rules from Ashar Javed (http://twitter.com/soaj1664ashar)
   - http://jsfiddle.net/U9RmU/4/
 * Updated the SQLi Filters to add in Oracle specific functions
@@ -490,7 +490,7 @@ Security Fixes:
 Improvements:
 * Renamed main config file to modsecurity_crs_10_setup.conf
 * Updated the rule IDs to start from CRS reserved range: 900000
-* Updated rule formatting for readibility
+* Updated rule formatting for readability
 * Updated the CSRF rules to use UNIQUE_ID as the token source
 * Added the zap2modsec.pl script to the /util directory which converts
   OWASP ZAP Scanner XML data into ModSecurity Virtual Patches
@@ -558,7 +558,7 @@ Bug Fixes:
 Improvements:
 * Extensive SQL Injection signature updates as a result of the SQLi Challenge
   http://www.modsecurity.org/demo/challenge.html
-* Updated the SQL Error message detection in reponse bodies
+* Updated the SQL Error message detection in response bodies
 * Updated SQL Injection signatures to include more DB functions
 * Updated the WEAK SQL Injection signatures
 * Added tag AppSensor/RE8 to rule ID 960018
@@ -596,7 +596,7 @@ Improvements:
   http://blog.spiderlabs.com/2011/04/modsecurity-advanced-topic-of-the-week-integrating-content-security-policy-csp.html
 * Global collection in the 10 file now uses the Host Request Header as the collection key.
   This allows for per-site global collections.
-* Added new SpiderLabs Research (SLR) rules directory (slr_rules) for known vulnerabilties.
+* Added new SpiderLabs Research (SLR) rules directory (slr_rules) for known vulnerabilities.
   This includes both converted web rules from Emerging Threats (ET) and from SLR Team.
 * Added new SLR rule packs for known application vulns for WordPress, Joomla and phpBB
 * Added experimental rules for detecting Open Proxy Abuse
@@ -613,7 +613,7 @@ Bug Fixes:
 * Removed rule inversion (!) from rule ID 960902
 * Fixed false negative issue in Response Splitting Rule
 * Fixed false negative issue with @validateByteRange check
-* Updated the TARGETS lising for rule ID 950908
+* Updated the TARGETS listing for rule ID 950908
 * Updated TX data for REQBODY processing
 * Changed the pass action to block in the RFI rules in the 40 generic file
 * Updated RFI regex to catch IP address usage in hostname
@@ -671,7 +671,7 @@ Improvements:
 * Added Credit Card Usage Tracking/Leakage Prevention rule set
 * Added experimental CC Track/PAN Leakage Prevention rule set
 * Added an experimental_rules directory to hold new BETA rules
-* Moved the local exceptions conf file back into base_rules dirctory however
+* Moved the local exceptions conf file back into base_rules directory however
   it has a ".example" extension to prevent overwriting customized versions
   when upgrading
 * Separated out HTTP Parameter Pollution and Restricted Character Anomaly Detection rules to
@@ -736,7 +736,7 @@ Bug Fixes:
 Improvements:
 * Updated the PHPIDS filters
 * Updated the SQL Injection filters to detect boolean attacks (1<2, foo == bar, etc..)
-* Updated the SQL Injection fitlers to account for different quotes
+* Updated the SQL Injection filters to account for different quotes
 * Added UTF-8 encoding validation support to the modsecurity_crs_10_config.conf file
 * Added Rule ID 950109 to detect multiple URL encodings
 * Added two experimental rules to detect anomalous use of special characters
@@ -749,7 +749,7 @@ Bug Fixes:
   https://www.modsecurity.org/tracker/browse/CORERULES-55
 * Fixed the anomaly scoring in the modsecurity_crs_41_phpids_filters.conf file
   https://www.modsecurity.org/tracker/browse/CORERULES-54
-* Updated XSS rule id 958001 to improve the .cookie regex to reduce false postives
+* Updated XSS rule id 958001 to improve the .cookie regex to reduce false positives
   https://www.modsecurity.org/tracker/browse/CORERULES-29
 
 
@@ -1177,7 +1177,7 @@ New Events:
 ModSecurity does not support compressed content at the moment. Thus, the following rules have been added:
 * 960902 - Content-Encoding in request not supported
     Any incoming compressed request will be denied
-* 960903 - Content-Encoding in response not suppoted
+* 960903 - Content-Encoding in response not supported
     An outgoing compressed response will be logged to alert, but ONLY ONCE.
 
 False Positives Fixes:
