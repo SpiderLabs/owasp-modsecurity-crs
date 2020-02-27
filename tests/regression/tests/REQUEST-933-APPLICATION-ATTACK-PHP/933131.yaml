@@ -1,7 +1,7 @@
 ---
   meta:
     author: csanders-git
-    description: Tests functionality of stricter sibiling 933131
+    description: Tests functionality of stricter sibling 933131
     enabled: true
     name: 933131.yaml
   tests:
