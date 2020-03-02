@@ -65,7 +65,7 @@
             User-Agent: "ModSecurity CRS 3 Tests"
           port: 80
           method: POST
-          data: "foo=bar)(&)"
+          data: "foo=bar)(%26)"
           uri: "/"
           port: 80
         output:
@@ -99,7 +99,7 @@
             User-Agent: "ModSecurity CRS 3 Tests"
           port: 80
           method: POST
-          data: "foo=void)(objectClass=users))(&(objectClass=void)"
+          data: "foo=void)(objectClass=users))(%26(objectClass=void)"
           uri: "/"
           port: 80
         output:
