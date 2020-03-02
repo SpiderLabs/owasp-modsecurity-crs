@@ -25,7 +25,7 @@ def main():
     args = parser.parse_args()
 
     if not os.path.isfile((args.fname).encode('utf8')):
-        sys.stderr.write("We were unable to find the file you were trying to upate the ID numbers \
+        sys.stderr.write("We were unable to find the file you were trying to update the ID numbers \
             in, please check your path\n")
         sys.exit(1)
 

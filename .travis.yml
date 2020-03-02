@@ -1,63 +1,23 @@
+os: linux
 language: python
-
 python:
   - 2.7
 
-sudo: required
+# no more required in travis
+#sudo: required
 
 services:
   - docker
 
 jobs:
-  allow_failures:
-    - env: CONFIG=3.0-apache LOGDIR=/var/log/apache2
-    - env: CONFIG=3.0-nginx LOGDIR=/var/log/nginx
-  fast_finish: true
   include:
-    - install:
-        - pip install -r tests/integration/requirements.txt
-      before_script:
-        - git clone https://github.com/CRS-support/secrules_parsing
-        - pip install -r secrules_parsing/requirements.txt
-        - python secrules_parsing/secrules_parser.py -c -f rules/*.conf
       script:
-        - py.test -vs tests/integration/format_tests.py
-    - &test-common
-      env: CONFIG=2.9-apache LOGDIR=/var/log/apache2
-      before_install:
         - |
           if [[ "$TRAVIS_PULL_REQUEST" != "false" ]]; then
-            docker build --build-arg REPO=$TRAVIS_PULL_REQUEST_SLUG \
-              --build-arg BRANCH=$TRAVIS_PULL_REQUEST_BRANCH \
-              --build-arg COMMIT=$TRAVIS_PULL_REQUEST_SHA \
-              -f ./util/docker/Dockerfile-$CONFIG \
-              -t modsecurity-crs-$CONFIG ./util/docker/
+            docker run -ti --name crs-test --entrypoint /docker-entrypoint.sh -e REPO=$TRAVIS_PULL_REQUEST_SLUG -e BRANCH=$TRAVIS_PULL_REQUEST_BRANCH themiddle/crs-test
           else
-            docker build -f ./util/docker/Dockerfile-$CONFIG \
-              -t modsecurity-crs-$CONFIG ./util/docker/
+            docker run -ti --name crs-test --entrypoint /docker-entrypoint.sh -e REPO=$TRAVIS_REPO_SLUG -e BRANCH=$TRAVIS_BRANCH themiddle/crs-test
           fi
-        - |
-          docker run -ti -e PARANOIA=5 -d -p 80:80 \
-            --volume $LOGDIR:$LOGDIR \
-            --name "$TRAVIS_BUILD_ID" modsecurity-crs-$CONFIG
-        - |
-          docker ps | grep -q modsecurity-crs
-          if [[ $? -ne 0 ]]; then
-            docker logs "$TRAVIS_BUILD_ID"
-            docker rm -f "$TRAVIS_BUILD_ID"
-            exit 1
-          fi
-      install:
-        - pip install -r tests/regression/requirements.txt
-      script:
-        - |
-          py.test -vs tests/regression/CRS_Tests.py \
-            --config=$CONFIG --ruledir_recurse=tests/regression/tests
-        - docker rm -f "$TRAVIS_BUILD_ID"
-    - <<: *test-common
-      env: CONFIG=3.0-apache LOGDIR=/var/log/apache2
-    - <<: *test-common
-      env: CONFIG=3.0-nginx LOGDIR=/var/log/nginx
 
 # safelist
 branches:
@@ -65,6 +25,7 @@ branches:
     - v3.1/dev
     - v3.2/dev
     - v3.3/dev
+    - fix-travis
 
-notifications:
-  irc: "chat.freenode.net#modsecurity"
+#notifications:
+#  irc: "chat.freenode.net#modsecurity"

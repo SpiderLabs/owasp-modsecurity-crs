@@ -2,7 +2,7 @@
 
 #############################################
 # -=[ Virtual Patching Converter Script ]=- #
-#      Converts OWASP ZAP XML Ouput         #
+#      Converts OWASP ZAP XML Output         #
 #   https://code.google.com/p/zaproxy/      #
 #                                           #
 #             zap2modsec.pl                 #
@@ -143,7 +143,7 @@ sub parseData
 
 	print URL_LIST "$current_vuln_url\n";
 
-	# Validate url (need seperate sub?)
+	# Validate url (need separate sub?)
 	print "Validating URL: $current_vuln_url\n";
 	if(is_uri(to_string($current_vuln_url))){
 		print "URL is well-formed\n";
