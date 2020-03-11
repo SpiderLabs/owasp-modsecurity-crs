@@ -111,3 +111,18 @@
           version: HTTP/1.1
         output:
           no_log_contains: id "942130"
+  -
+    test_title: 942130-8
+    desc: "SQL Injection Attack: SQL Tautology"
+    stages:
+    -
+      stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: localhost
+          method: GET
+          uri: "/?a=b,1=1"
+          version: HTTP/1.1
+        output:
+          log_contains: id "942130"
