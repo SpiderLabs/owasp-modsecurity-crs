@@ -388,10 +388,9 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 #  setvar:'tx.allowed_methods=GET HEAD POST OPTIONS'"
 
 # Content-Types that a client is allowed to send in a request.
-# Default: application/x-www-form-urlencoded|multipart/form-data|text/xml|\
-# application/xml|application/soap+xml|application/x-amf|application/json|\
-# application/octet-stream|application/csp-report|\
-# application/xss-auditor-report|text/plain
+# Default: application/x-www-form-urlencoded|multipart/form-data||multipart/related|\
+# text/xml|application/xml|application/soap+xml|application/x-amf|application/json|\
+# application/octet-stream|application/csp-report|application/xss-auditor-report|text/plain
 # Uncomment this rule to change the default.
 #SecAction \
 # "id:900220,\
@@ -399,7 +398,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 #  nolog,\
 #  pass,\
 #  t:none,\
-#  setvar:'tx.allowed_request_content_type=application/x-www-form-urlencoded|multipart/form-data|text/xml|application/xml|application/soap+xml|application/x-amf|application/json|application/octet-stream|application/csp-report|application/xss-auditor-report|text/plain'"
+#  setvar:'tx.allowed_request_content_type=application/x-www-form-urlencoded|multipart/form-data|multipart/related|text/xml|application/xml|application/soap+xml|application/x-amf|application/json|application/octet-stream|application/csp-report|application/xss-auditor-report|text/plain'"
 
 # Allowed HTTP versions.
 # Default: HTTP/1.0 HTTP/1.1 HTTP/2 HTTP/2.0
@@ -626,16 +625,16 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # There are two formats for the GeoIP database. ModSecurity v2 uses GeoLite (.dat files),
 # and ModSecurity v3 uses GeoLite2 (.mmdb files).
 #
-# If you use ModSecurity 3, MaxMind provides a binary for updating GeoLite2 files, 
+# If you use ModSecurity 3, MaxMind provides a binary for updating GeoLite2 files,
 # see https://github.com/maxmind/geoipupdate.
 #
 # Download the package for your OS, and read https://dev.maxmind.com/geoip/geoipupdate/
 # for configuration options.
-# 
+#
 # Warning: GeoLite (not GeoLite2) databases are considered legacy, and not being updated anymore.
 # See https://support.maxmind.com/geolite-legacy-discontinuation-notice/ for more info.
 #
-# Therefore, if you use ModSecurity v2, you need to regenerate updated .dat files 
+# Therefore, if you use ModSecurity v2, you need to regenerate updated .dat files
 # from CSV files first.
 #
 # You can achieve this using https://github.com/sherpya/geolite2legacy
