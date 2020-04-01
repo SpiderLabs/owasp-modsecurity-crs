@@ -125,6 +125,9 @@ paros
 # dead 2005?
 pmafind
 prog.customcrawler
+# QQGameHall DoS/Virus/Malware/Adware
+# https://twitter.com/bagder/status/1244982556958826496?s=20
+QQGameHall
 # vuln scanner
 # https://www.qualys.com/suite/web-application-scanning/
 qualys was
