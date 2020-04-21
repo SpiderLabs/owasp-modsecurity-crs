@@ -102,6 +102,6 @@ docker run -dti 80:80 --rm \
    -e MAX_FILE_SIZE=100000 \
    -e COMBINED_FILE_SIZES=1000000 \
    -e PROXY=1 \
-   -e 192.0.2.2:80 \
+   -e UPSTREAM=192.0.2.2:80 \
    owasp/modsecurity-crs
 ```
