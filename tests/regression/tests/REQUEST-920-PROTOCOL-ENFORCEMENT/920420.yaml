@@ -1,6 +1,6 @@
 ---
   meta:
-    author: "csanders-git"
+    author: "csanders-git, Franziska Bühler"
     enabled: true
     name: "920420.yaml"
     description: "Description"
@@ -218,4 +218,37 @@
               data: "test"
             output:
               no_log_contains: "id \"920420\""
+    -
+      test_title: 920420-10
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              method: "OPTIONS"
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"
+                  Host: "localhost"
+                  Content-Type: "application/soap+xml"
+              data: "test"
+            output:
+              no_log_contains: "id \"920420\""
+    -
+      test_title: 920420-11
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              method: "OPTIONS"
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"
+                  Host: "localhost"
+                  Content-Type: "application"
+              data: "test"
+            output:
+              log_contains: "id \"920420\""
+
 
