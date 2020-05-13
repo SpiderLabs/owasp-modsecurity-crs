@@ -6,6 +6,10 @@ on:
     paths:
       - 'rules/**'
       - 'tests/**'
+  pull_request:
+    paths:
+      - 'rules/**'
+      - 'tests/**'
 
 jobs:
   check-syntax:
