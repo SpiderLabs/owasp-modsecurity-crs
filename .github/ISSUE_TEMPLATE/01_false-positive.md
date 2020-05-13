@@ -6,6 +6,10 @@ labels: 'False Positive'
 assignees: ''
 ---
 
+PLEASE DON'T CREATE NEW ISSUES USING THIS REPO.
+
+WE ARE PERFORMING A MIGRATION RIGHT NOW.
+
 ### Description
 
 <!-- Please provide a copy of the audit log entry. You can usually -->
