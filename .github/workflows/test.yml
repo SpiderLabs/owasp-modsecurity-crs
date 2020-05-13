@@ -36,7 +36,7 @@ jobs:
           
           
   # "modsec2-apache", "modsec3-apache", "modsec3-nginx"
-  modsec2-apache:
+  regression:
     runs-on: ubuntu-latest
     strategy:
       # change to true
