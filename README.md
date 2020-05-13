@@ -18,7 +18,7 @@ Please see the [OWASP ModSecurity Core Rule Set page](https://coreruleset.org/) 
 
 We strive to make the OWASP ModSecurity CRS accessible to a wide audience of beginner and experienced users. We are interested in hearing any bug reports, false positive alert reports, evasions, usability issues, and suggestions for new detections.
 
-[Create an issue on GitHub](https://github.com/SpiderLabs/owasp-modsecurity-crs/issues) to report a false positive or false negative (evasion). Please include your installed version and the relevant portions of your ModSecurity audit log.
+[Create an issue on GitHub](https://github.com/coreruleset/coreruleset/issues) to report a false positive or false negative (evasion). Please include your installed version and the relevant portions of your ModSecurity audit log.
 
 [Sign up for our Google Group](https://groups.google.com/a/owasp.org/forum/#!forum/modsecurity-core-rule-set-project) to ask general usage questions and participate in discussions on the CRS. Also [here](https://lists.owasp.org/pipermail/owasp-modsecurity-core-rule-set/index) you can find the archives for the previous mailing list.
 
