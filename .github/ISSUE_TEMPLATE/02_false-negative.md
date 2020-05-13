@@ -6,6 +6,10 @@ labels: 'False Negative - Evasion'
 assignees: ''
 ---
 
+PLEASE DON'T CREATE NEW ISSUES USING THIS REPO.
+
+WE ARE PERFORMING A MIGRATION RIGHT NOW.
+
 ### Description
 
 <!-- Please provide the payload you are sending. For complex payloads -->

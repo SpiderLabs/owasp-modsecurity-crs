@@ -6,6 +6,10 @@ labels: 'Bug'
 assignees: ''
 ---
 
+PLEASE DON'T CREATE NEW ISSUES USING THIS REPO.
+
+WE ARE PERFORMING A MIGRATION RIGHT NOW.
+
 ### Describe the bug
 
 <!-- A clear and concise description of what the bug is. -->
