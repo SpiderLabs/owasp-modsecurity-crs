@@ -6,9 +6,19 @@
 
 **CRS migrated to a new :house: !**
 
-The new repository for CRS resides at https://github.com/coreruleset/coreruleset.
+The OWASP ModSecurity Core Rule Set (CRS) has moved to https://github.com/coreruleset/coreruleset.
 
-This repo will be maintained as a read-only archive for future reference.
+A note on this change:
+
+This project started at Trustwave SpiderLabs over ten years ago, it was created with the idea of making a free ruleset that anyone can use to get started with ModSecurity. Over time it has grown into a community maintained project that no longer needs our direct support- which is the best you can hope for with such a project: Apart from growing a community dedicated fully to maintaining the CRS project, it also freed us up to focus fully on maintaining ModSecurity the engine.
+
+Given that Trustwave SpiderLabs hasn't been the maintainer of the project for a few years now it made sense for it to have its own home on GitHub. As such, in coordination with the CRS team it has moved to the following location: https://github.com/coreruleset/coreruleset
+
+This project is now archived to retain its history and make sure that no links are broken but it will **NOT** be maintained at this location so if you're working directly with GitHub make sure to update your scripts and environments accordingly.
+
+*- Trustwave SpiderLabs*
+
+
 
 # OWASP ModSecurity Core Rule Set (CRS)
 
