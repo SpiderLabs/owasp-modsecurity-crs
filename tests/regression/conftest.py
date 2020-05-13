@@ -7,7 +7,7 @@ import pytest
 
 
 def pytest_addoption(parser):
-    parser.addoption('--config', action='store', default='2.9-apache')
+    parser.addoption('--config', action='store', default='modsec2-apache')
 
 
 @pytest.fixture(scope='session')
