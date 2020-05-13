@@ -6,10 +6,6 @@ labels: 'Feature Request'
 assignees: ''
 ---
 
-PLEASE DON'T CREATE NEW ISSUES USING THIS REPO.
-
-WE ARE PERFORMING A MIGRATION RIGHT NOW.
-
 ### Motivation
 
 <!-- A clear and concise description of what the motivation for the -->
