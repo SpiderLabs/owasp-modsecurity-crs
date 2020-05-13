@@ -1,15 +1,17 @@
 ---
-name: Test Ruleset against matrix
+name: Regression Tests
 
 on:
   push:
     paths:
       - 'rules/**'
       - 'tests/**'
+      - '.github/**'
   pull_request:
     paths:
       - 'rules/**'
       - 'tests/**'
+      - '.github/**'
 
 jobs:
   check-syntax:
