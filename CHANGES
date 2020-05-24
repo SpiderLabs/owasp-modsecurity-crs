@@ -1,9 +1,156 @@
 == OWASP ModSecurity Core Rule Set (CRS) CHANGES ==
 
 == Report Bugs/Issues to GitHub Issues Tracker or the mailinglist ==
-* https://github.com/SpiderLabs/owasp-modsecurity-crs/issues
+* https://github.com/coreruleset/coreruleset/issues
   or the CRS Google Group at
 * https://groups.google.com/a/owasp.org/forum/#!forum/modsecurity-core-rule-set-project
+
+== Version 3.3.0 - 2020-06-16 ==
+
+Important changes:
+ * The format of crs-setup.conf variable "tx.allowed_request_content_type" has been changed to be more in line with the other variables. If you have overridden this variable, please see the example in crs-setup.conf for the correct separator to use.
+
+New functionality:
+ * Block backup files ending with ~ in filename (Menin Andrea)
+ * Detect ffuf vuln scanner (Will Woodson)
+ * Detect SemrushBot crawler (Christian Folini)
+ * Detect WFuzz vuln scanner (#1614) (azurit)
+
+Removed functionality:
+ * None.
+
+Improved compatability:
+ * Changed variable to lowercase (modsec3 behavior fix) (Ervin Hegedus)
+
+Fixes and improvements:
+ * fix(ci): use log_contains instead (Felipe Zipitria)
+ * Move test where it belongs (Federico G. Schwindt)
+ * fix(ci): use docker in DetectionOnly (Felipe Zipitria)
+ * fix(rule): remove dangling whitespace (Felipe Zipitria)
+ * fix(ci): run actions on .github change (Felipe Zipitria)
+ * fix(docs): update badges and links in readme (Felipe Zipitria)
+ * README: update repo link (Walter Hop)
+ * Update README: Copyright 2019 -> 2020 (Christian Folini)
+ * fix(ci): run tests also on PRs (Felipe Zipitria)
+ * fix(ci): change test name and fix default params (Felipe Zipitria)
+ * Restore Travis Status (was in the wrong repo) (Christian Folini)
+ * Remove outdated Travis status after migration (Christian Folini)
+ * feat(ci): adds github actions testing (Felipe Zipitria)
+ * fix(migration): post migration tasks (Felipe Zipitria)
+ * feat(templates): add text to gihub templates about migration. To be reverted after migation is done. (Felipe Zipitria)
+ * Added more explanations to comment of 920300 (Christian Folini)
+ * Added 'ver' action with current version to all necessary rules (Ervin Hegedus)
+ * Update nextcloud excl rules and shorten var (Franziska Bühler)
+ * Change to preferred lowercase var (Franziska Bühler)
+ * Set var to lowercase and change comment (Franziska Bühler)
+ * Resolve issue with allowed_request_content_types (Franziska Bühler)
+ * Allow REPORT requests without Content-Type header in Nextcloud (pyllyukko)
+ * Suppress rule 200002 when editing contacts in Nextcloud (pyllyukko)
+ * XenForo: update exclusions (Walter Hop)
+ * WordPress: exclude additional URL fields in profile editor (Walter Hop)
+ * add www to link (NullIsNot0)
+ * Fix link for 941310 Old link does not work anymore. Change it to new one. (NullIsNot0)
+ * Add Content-Type: multipart/related as allowed default (jeremyjpj0916)
+ * Resolve issue 1722 and fix content-type whitelisting (Franziska Bühler)
+ * make severities and scores consistent (Walter Hop)
+ * add QQGameHall UA (#1731) (theMiddle)
+ * another test (Allan Boll)
+ * Add word boundaries around values in SQL tautologies (942130) (Allan Boll)
+ * Move tests to their own file, while here also correct permissions for 920180. (Federico G. Schwindt)
+ * Rule to check if both C-L and T-E are present (#1310) (Federico G. Schwindt)
+ * Fixes for 2 tests in 921200 (Christian Folini)
+ * XenForo: add exclusions, remove unnecessary chains (#1673) (Walter Hop)
+ * New ldap injection rule 921200 (Christian Folini)
+ * Fix FPs for 942350 (#1706) (Franziska Bühler)
+ * Fix typos found by codespell / Fossies project (#1702) (Simon Studer)
+ * Ignore check of CT header in POST reqest if protocol is HTTP/2 (Ervin Hegedus)
+ * Narrowing down the subpattern .*? in 941130 (Christian Folini)
+ * Restricting a wide regex a bit (Christian Folini)
+ * Drop escapes (Christian Folini)
+ * Fix FP in 941130 and rearrange regex with new regex-assemble file (Christian Folini)
+ * Ignore check of CT header in POST reqest if protocol is HTTP/2 (Ervin Hegedus)
+ * Remove trailing dot in several msg actions (#1678) (nerrehmit)
+ * Replace REQUEST_BODY with ARGS on 930100 and 930110 (#1659) (theMiddle)
+ * Temporary travis workaround to buy time and fix it for good (#1684) (theMiddle)
+ * Add regression tests (Franziska Bühler)
+ * Fix FP with create with 942360 (Franziska Bühler)
+ * Avoid embedded anchors in CRS rule 942330 (Allan Boll)
+ * Update 942450 for less false positives, more tests (#1662) (Will Woodson)
+ * Ensure single ranges are also checked (#1661) (Federico G. Schwindt)
+ * WordPress: also exclude posts/pages endpoint in subdirectories (Walter Hop)
+ * For bugs, also ask for the environment (#1657) (Federico G. Schwindt)
+ * XenForo: fix incorrect escape (Walter Hop)
+ * XenForo: additional exclusions (Walter Hop)
+ * Pattern cleanup across several rules (#1643). Drop unneeded non-capture groups; No need to escape "-" outside character classes And only if it is not at the end. (Federico G. Schwindt)
+ * Improve rule 941350: Previously, this rule will also match on the equivalent to "<..<". Rewrite it so it is only triggered by the equivalent to "<..>", simplifying the pattern quite a bit as a bonus. While here add a link describing the bypass for future reference.
+ * Fix test Was using the equivalent to "<...<" instead of "<...>". (Federico G. Schwindt)
+ * Move the help and support link to contacts (#1647) While here rename to ensure they are presented in the right order and minor cosmetics. (Federico G. Schwindt)
+ * Move remaining regression test data file to new folder, cleanup README (#1646) (Peter Bittner)
+ * Also ask for the paranoia level (Federico G. Schwindt)
+ * Make it a tiny bit more colorful (Federico G. Schwindt)
+ * Spacing (Federico G. Schwindt)
+ * Fix emoji (Federico G. Schwindt)
+ * Switch to multiple templates for github issues (#1644) (Federico G. Schwindt)
+ * Fix paranoia-level log description (theMiddleBlue)
+ * change IRC to Slack (Walter Hop)
+ * fix spacing (Walter Hop)
+ * Moving tests and documentation folders (#1627) (soufianebenali)
+ * add triggered rule (#1636) (theMiddle)
+ * Drop the translate header from the restricted list Fixes #1410. (Federico G. Schwindt)
+ * Mark stale issues (Federico G. Schwindt)
+ * Added support for <? in Rule 933100 (meetug)
+ * Added test cases (NullIsNot0)
+ * Update REQUEST-920-PROTOCOL-ENFORCEMENT.conf (NullIsNot0)
+ * Update re for Rule ID: 920480 Update regular expression (NullIsNot0)
+ * Create SECURITY.md (Chaim Sanders)
+ * Rule: 920480. Make rx recognize charset with quotes. Make rule ID: 920480 recognize not only Content-Type: charset=utf-8 but also charset put in single or double quotes: Content-Type: charset="utf-8" Content-Type: charset='utf-8' (NullIsNot0)
+ * Make rule 933100 RE2 compatible (meetug)
+ * Fix typo in config file inclusion (Felipe Zipitria)
+ * Correct rule 941310 to use single-byte variants and fix FPs (#1596). Fix test to use the single byte characters Add a test that uses utf-8 as well. Change pattern to use the single-byte variants Patterns in ModSecurity are not treated as UTF strings. Fixes #1595. Add negative tests and update descriptions Improve pattern Change it to avoid FPs for \xbc\xbc and \xbe\xbe (i.e. << and >>). Use negated classes for better performance. (Federico G. Schwindt)
+ * Add test for issue #1580 (#1612) (Federico G. Schwindt)
+ * removes t:lowercase (theMiddleBlue)
+ * new rule HTTP Splitting (theMiddleBlue)
+ * Move integration tests to their own job (#1608) Also cleanup branches' list. (Federico G. Schwindt)
+ * Add PL1 tag. (Anna Winkler)
+ * Change version number for full version name (Felipe Zipitria)
+ * Better document legacy convertion procedure Add text with instructions for a simple conversion utility. (Felipe Zipitria)
+ * Correct example text regarding GeoIP. Add maxmind tool for downloading files (Felipe Zipitria)
+ * Ignore configuration files generated by the JetBrains editors (Anna Winkler)
+ * Update name of branch to use for feature branches. Minor syntax updates. (Anna Winkler)
+ * Minor optimisation (Emile-Hugo SPIR)
+ * Also fix the `as herefrom` pattern (Emile-Hugo SPIR)
+ * More conservative fix (Emile-Hugo SPIR)
+ * Update the source file (Emile-Hugo SPIR)
+ * Fix a FP (`, aside from`) (Emile-Hugo SPIR)
+ * regression fix for #1581 (emphazer)
+ * Change order to check ip first in both rules (Felipe Zipitria)
+ * Change chain order (Felipe Zipitria)
+ * Fix spacing in text (Felipe Zipitria)
+ * Add link to mailing list archives (Felipe Zipitria)
+ * Adding new test for 941150 based on XSS cheatsheet by portswigger (Christian Folini)
+ * Adding new test for 941340 based on XSS cheatsheet by portswigger (Christian Folini)
+ * Adding new test for 941280 based on XSS cheatsheet by portswigger (Christian Folini)
+ * Adding new test for 941170 based on XSS cheatsheet by portswigger (Christian Folini)
+ * Adding new test for 941250 based on XSS cheatsheet by portswigger (Christian Folini)
+ * Adding new test for 941220 based on XSS cheatsheet by portswigger (Christian Folini)
+ * Adding new test for 941330 based on XSS cheatsheet by portswigger (Christian Folini)
+ * Adding new test for 941300 based on XSS cheatsheet by portswigger (Christian Folini)
+ * Adding new test for 941230 based on XSS cheatsheet by portswigger (Christian Folini)
+ * Adding new test for 941260 based on XSS cheatsheet by portswigger (Christian Folini)
+ * Adding new test for 941290 based on XSS cheatsheet by portswigger (Christian Folini)
+ * Adding new test for 941270 based on XSS cheatsheet by portswigger (Christian Folini)
+ * Adding new test for 942180 based on XSS cheatsheet by portswigger (Christian Folini)
+ * Update mailing list links to google group (Felipe Zipitria)
+ * Fix typo and add 2 new entries to 941160 (Franziska Bühler)
+ * Switch to dates in YYYY-MM-DD format IOW iso 8601. While here add newlines and drop empty categories. (Federico G. Schwindt)
+ * Update badges, add v3.3 and remove v3.0 (#1557) (Federico G. Schwindt)
+ * Rearange characters and add positive and negative test cases. Moved the dash to the end of the character set to avoid escaping it. Added test with all the new characters and a test for multiple whitespaces. Allowed a previously blocked charset. (Tim Herren)
+ * 920470: include chars from rfc 2046 RFC 2046 allows additional chars for the boundary. \d removed as it is covered by \w in the regex. Removed unnecessary escapes. (Tim Herren)
+ * Fix bypass in 931130 Don't rely on beginsWith as it might allow attackers to create subdomains matching the prefix. Add tests to cover this and other cases. The latter fixes #1404. (Federico G. Schwindt)
+ * adds .swp to restricted ext (theMiddleBlue)
+ * fix rule regex due to remove t:removeComments (theMiddleBlue)
+ * 920470: include chars from rfc 2046 RFC 2046 allows additional chars for the boundary. \d removed as it is covered by \w in the regex. Removed unnecessary escapes. (Tim Herren)
+ * update Dockerfiles and Travis to use v3.3/dev (Walter Hop)
 
 == Version 3.2.0 - 2019-09-24 ==
 
@@ -323,7 +470,7 @@ Documentation:
  * Fixed comment for arg limit check rule 920370 (Christian Folini)
  * Created CONTRIBUTORS file
  * Added Christoph Hansen (emphazer) to CONTRIBUTORS file
- * Added Franziska Bühler (franbuehler) to CONTRIBUTORS file
+ * Added Franziska Bühler (Franziska Bühler) to CONTRIBUTORS file
  * Fixed bug with DoS rule 912160 (@loudly-soft, Christian Folini)
 
 
