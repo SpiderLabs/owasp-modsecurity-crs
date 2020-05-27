@@ -15,6 +15,8 @@ New functionality:
  * Detect ffuf vuln scanner (Will Woodson)
  * Detect SemrushBot crawler (Christian Folini)
  * Detect WFuzz vuln scanner (#1614) (azurit)
+ * New ldap injection rule 921200 (Christian Folini)
+ * new rule HTTP Splitting (theMiddleBlue)
 
 Removed functionality:
  * None.
@@ -60,7 +62,6 @@ Fixes and improvements:
  * Rule to check if both C-L and T-E are present (#1310) (Federico G. Schwindt)
  * Fixes for 2 tests in 921200 (Christian Folini)
  * XenForo: add exclusions, remove unnecessary chains (#1673) (Walter Hop)
- * New ldap injection rule 921200 (Christian Folini)
  * Fix FPs for 942350 (#1706) (Franziska Bühler)
  * Fix typos found by codespell / Fossies project (#1702) (Simon Studer)
  * Ignore check of CT header in POST reqest if protocol is HTTP/2 (Ervin Hegedus)
@@ -109,7 +110,6 @@ Fixes and improvements:
  * Correct rule 941310 to use single-byte variants and fix FPs (#1596). Fix test to use the single byte characters Add a test that uses utf-8 as well. Change pattern to use the single-byte variants Patterns in ModSecurity are not treated as UTF strings. Fixes #1595. Add negative tests and update descriptions Improve pattern Change it to avoid FPs for \xbc\xbc and \xbe\xbe (i.e. << and >>). Use negated classes for better performance. (Federico G. Schwindt)
  * Add test for issue #1580 (#1612) (Federico G. Schwindt)
  * removes t:lowercase (theMiddleBlue)
- * new rule HTTP Splitting (theMiddleBlue)
  * Move integration tests to their own job (#1608) Also cleanup branches' list. (Federico G. Schwindt)
  * Add PL1 tag. (Anna Winkler)
  * Change version number for full version name (Felipe Zipitria)
