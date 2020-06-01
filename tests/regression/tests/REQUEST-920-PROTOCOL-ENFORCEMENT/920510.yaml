@@ -1,0 +1,37 @@
+---
+  meta:
+    author: "Andrea Menin"
+    enabled: true
+    name: "920510.yaml"
+    description: "Cache-Control directives whitelist"
+  tests:
+    - test_title: 920510-1
+      desc: "block request with a response cache-control directive in request"
+      stages:
+        - stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              method: "GET"
+              uri: "/"
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"
+                  Host: "localhost"
+                  Cache-Control: "private"
+            output:
+              log_contains: "id \"920510\""
+    - test_title: 920510-2
+      desc: "block request with an invalid cache-control directive in request"
+      stages:
+        - stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              method: "GET"
+              uri: "/"
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"
+                  Host: "localhost"
+                  Cache-Control: "foo=bar"
+            output:
+              log_contains: "id \"920510\""
