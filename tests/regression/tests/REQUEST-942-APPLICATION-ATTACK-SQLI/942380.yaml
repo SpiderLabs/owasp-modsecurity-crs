@@ -562,7 +562,7 @@
           method: POST
           port: 80
           uri: "/"
-          data: "execute syste"
+          data: "execute system"
           version: HTTP/1.0
         output:
           log_contains: id "942380"
