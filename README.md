@@ -3,6 +3,7 @@
 ![GHA build v3.1/dev](https://github.com/coreruleset/coreruleset/workflows/Test%20Ruleset%20against%20matrix/badge.svg?branch=v3.1%2Fdev)
 [![OWASP Flagship](https://img.shields.io/badge/owasp-flagship%20project-38a047.svg)](https://owasp.org/projects/)
 [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/1390/badge)](https://bestpractices.coreinfrastructure.org/projects/1390)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 
 
