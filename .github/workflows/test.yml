@@ -14,33 +14,6 @@ on:
       - '.github/**'
 
 jobs:
-  check-syntax:
-    runs-on: ubuntu-latest
-    strategy:
-      # change to true
-      fail-fast: true
-    # check why is failing and change afterwards
-    continue-on-error: true
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v2
-
-      - name: Set up Python 3
-        uses: actions/setup-python@v1
-        with:
-          python-version: 3.6
-
-      - name: "Check syntax"
-        run: |
-          python -V
-          pip install --upgrade setuptools
-          pip install -r tests/integration/requirements.txt
-          git clone https://github.com/CRS-support/secrules_parsing
-          pip install -r secrules_parsing/requirements.txt
-          python secrules_parsing/secrules_parser.py -c -f rules/*.conf
-          py.test -vs tests/integration/format_tests.py
-          
-          
   # "modsec2-apache", "modsec3-apache", "modsec3-nginx"
   regression:
     runs-on: ubuntu-latest
@@ -99,4 +72,3 @@ jobs:
         run: |
           docker-compose -f ./tests/docker-compose.yml stop "${CONFIG}"
           docker-compose -f ./tests/docker-compose.yml down
-

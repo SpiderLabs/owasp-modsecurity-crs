@@ -629,4 +629,3 @@
           uri: /?foo=system%20something%28%29
         output:
           log_contains: id "933160"
-

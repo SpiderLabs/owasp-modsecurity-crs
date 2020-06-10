@@ -7,7 +7,7 @@
   tests:
     -
       test_title: 941350-1
-      desc: GH issue #1514
+      desc: GH issue 1514
       stages:
       -
         stage:

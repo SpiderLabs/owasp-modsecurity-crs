@@ -89,5 +89,3 @@
           uri: /?x=$_%53%20ERVER['request_uri'];
         output:
           no_log_contains: id "933130"
-
-

@@ -46,4 +46,3 @@
                   Accept: "text/plain, text/html"
             output:
               no_log_contains: "id \"920311\""
-

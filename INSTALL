@@ -303,4 +303,3 @@ OWASP CRS Configuration
     crs-setup.conf file. There are many other options that have to
     do with aspects of web application security that are beyond
     this document but are well explained in crs-setup.conf.
-

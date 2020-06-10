@@ -46,8 +46,8 @@
                   User-Agent: "ModSecurity CRS 3 Tests"
                   Host: "localhost"
             output:
-              status: [403,400]
-              #log_contains: "id \"920430\""
+              status: [403, 400]
+              # log_contains: "id \"920430\""
     -
       test_title: 920430-4
       stages:
@@ -92,8 +92,8 @@
                   User-Agent: "ModSecurity CRS 3 Tests #FN"
                   Host: "localhost"
             output:
-              status: [403,400]
-              #log_contains: "id \"920430\""
+              status: [403, 400]
+              # log_contains: "id \"920430\""
     -
       test_title: 920430-7
       stages:
@@ -107,8 +107,8 @@
                   User-Agent: "ModSecurity CRS 3 Tests"
                   Host: "localhost"
             output:
-              status: [403,400]
-              #log_contains: "id \"920430\""
+              status: [403, 400]
+              # log_contains: "id \"920430\""
 
     -
       test_title: 920430-8
@@ -181,4 +181,4 @@
             version: JUNK/1.0
           output:
              status: [403, 400]
-                  #log_contains: id "920430"
+             # log_contains: id "920430"

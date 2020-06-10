@@ -197,4 +197,3 @@
                   Content-Length: 0
             output:
               no_log_contains: "id \"920470\""
-

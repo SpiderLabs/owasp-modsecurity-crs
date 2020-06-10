@@ -36,5 +36,3 @@
               stop_magic: true
             output:
               expect_error: true
-
-

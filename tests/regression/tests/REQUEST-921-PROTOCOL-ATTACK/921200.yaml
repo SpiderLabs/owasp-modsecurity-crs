@@ -63,7 +63,6 @@
           headers:
             Host: "localhost"
             User-Agent: "ModSecurity CRS 3 Tests"
-          port: 80
           method: POST
           data: "foo=bar)(%26)"
           uri: "/"
@@ -80,7 +79,6 @@
           headers:
             Host: "localhost"
             User-Agent: "ModSecurity CRS 3 Tests"
-          port: 80
           method: POST
           data: "foo=printer)(uid=*)"
           uri: "/"
@@ -97,7 +95,6 @@
           headers:
             Host: "localhost"
             User-Agent: "ModSecurity CRS 3 Tests"
-          port: 80
           method: POST
           data: "foo=void)(objectClass=users))(%26(objectClass=void)"
           uri: "/"
@@ -114,7 +111,6 @@
           headers:
             Host: "localhost"
             User-Agent: "ModSecurity CRS 3 Tests"
-          port: 80
           method: POST
           data: "foo=eb9adbd87d)!(sn=*"
           uri: "/"
@@ -131,7 +127,6 @@
           headers:
             Host: "localhost"
             User-Agent: "ModSecurity CRS 3 Tests"
-          port: 80
           method: POST
           data: "foo=*)!(sn=*"
           uri: "/"
@@ -148,7 +143,6 @@
           headers:
             Host: "localhost"
             User-Agent: "ModSecurity CRS 3 Tests"
-          port: 80
           method: POST
           data: "foo=*)(uid=*))(|(uid=*"
           uri: "/"
@@ -165,7 +159,6 @@
           headers:
             Host: "localhost"
             User-Agent: "ModSecurity CRS 3 Tests"
-          port: 80
           method: POST
           data: "foo=aaa*aaa)(cn>=bob)"
           uri: "/"
