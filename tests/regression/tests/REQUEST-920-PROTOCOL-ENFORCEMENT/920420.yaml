@@ -250,5 +250,3 @@
               data: "test"
             output:
               log_contains: "id \"920420\""
-
-

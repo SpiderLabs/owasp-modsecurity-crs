@@ -161,4 +161,3 @@
           uri: /serialize9
         output:
           log_contains: id "933170"
-

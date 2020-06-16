@@ -158,7 +158,8 @@
               headers:
                   User-Agent: "ModSecurity CRS 3 Tests"
                   Host: "localhost"
-                  Content-Type: "application/x-www-form-urlencoded;charset=ibm038" # random other IBM charset
+                  # random other IBM charset
+                  Content-Type: "application/x-www-form-urlencoded;charset=ibm038"
               data: "test=value"
             output:
               log_contains: "id \"920480\""
@@ -202,7 +203,8 @@
               headers:
                   User-Agent: "ModSecurity CRS 3 Tests"
                   Host: "localhost"
-                  Content-Type: "application/x-www-form-urlencoded; charset=\"utf-8\"" # random other IBM charset
+                  # random other IBM charset
+                  Content-Type: "application/x-www-form-urlencoded; charset=\"utf-8\""
               data: "test=value"
             output:
               no_log_contains: "id \"920480\""
@@ -216,7 +218,8 @@
               headers:
                   User-Agent: "ModSecurity CRS 3 Tests"
                   Host: "localhost"
-                  Content-Type: "application/x-www-form-urlencoded; charset='utf-8'" # random other IBM charset
+                  # random other IBM charset
+                  Content-Type: "application/x-www-form-urlencoded; charset='utf-8'"
               data: "test=value"
             output:
               no_log_contains: "id \"920480\""
@@ -230,7 +233,8 @@
               headers:
                   User-Agent: "ModSecurity CRS 3 Tests"
                   Host: "localhost"
-                  Content-Type: "application/x-www-form-urlencoded; charset=\"garbage\"" # random other IBM charset
+                  # random other IBM charset
+                  Content-Type: "application/x-www-form-urlencoded; charset=\"garbage\""
               data: "test=value"
             output:
               log_contains: "id \"920480\""

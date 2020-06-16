@@ -150,7 +150,7 @@
               uri: "/index.html:80?I=Like&Apples=Today#tag"
               version: "HTTP/1.1"
             output:
-              status: [400,403]
+              status: [400, 403]
     -
       # Normal Options request with path
       test_title: 920100-9
@@ -205,7 +205,7 @@
               uri: "\\"
               version: "HTTP/1.1"
             output:
-              status: [403,400]
+              status: [403, 400]
               #log_contains: "id \"920100\""
     -
       test_title: 920100-12
@@ -246,8 +246,8 @@
             uri: \index.html
             version: HTTP\1.0
           output:
-             status: [403,400]
-                  #log_contains: id "920100"
+             status: [403, 400]
+             # log_contains: id "920100"
     -
       test_title: 920100-14
       desc: Invalid HTTP Request Line (920100) - Test 3 from old modsec regressions
@@ -283,5 +283,5 @@
               User-Agent: ModSecurity CRS 3 Tests
               Host: localhost
           output:
-            status: [403,400]
-                  #log_contains: id "920100"
+            status: [403, 400]
+            # log_contains: id "920100"

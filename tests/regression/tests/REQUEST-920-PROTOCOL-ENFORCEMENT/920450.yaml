@@ -110,5 +110,3 @@
                   Range: "test"
             output:
               no_log_contains: "id \"920450\""
-
-
