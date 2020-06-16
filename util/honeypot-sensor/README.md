@@ -1,6 +1,6 @@
 The purpose of these files is to turn your current ModSecurity host into
 a pseudo-honeypot sensor by doing the following:
- 
+
 1. Instructs Apache to listen for traffic on multiple unused ports
       - 8000
       - 8080

@@ -31,4 +31,3 @@
                   Host: "localhost"
             output:
               no_log_contains: "id \"920330\""
-

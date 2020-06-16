@@ -650,4 +650,3 @@ int init_cgi()
 
 	return 0;
 }
-

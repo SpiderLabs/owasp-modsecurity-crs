@@ -1,10 +1,10 @@
 @.+=\s*?\(\s*?select
-\d+\s*?or\s*?\d+\s*?[\-+]
-\d+\s*?xor\s*?\d+\s*?[\-+]
-\d+\s*?div\s*?\d+\s*?[\-+]
-\d+\s*?like\s*?\d+\s*?[\-+]
-\d+\s*?between\s*?\d+\s*?[\-+]
-\d+\s*?and\s*?\d+\s*?[\-+]
+\d\s*?or\s*?\d+\s*?[\-+]
+\d\s*?xor\s*?\d+\s*?[\-+]
+\d\s*?div\s*?\d+\s*?[\-+]
+\d\s*?like\s*?\d+\s*?[\-+]
+\d\s*?between\s*?\d+\s*?[\-+]
+\d\s*?and\s*?\d+\s*?[\-+]
 \/\w+;?\s+having\W
 \/\w+;?\s+and\W
 \/\w+;?\s+or\W

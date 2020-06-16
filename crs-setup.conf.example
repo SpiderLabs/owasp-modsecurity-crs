@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------
-# OWASP ModSecurity Core Rule Set ver.3.2.0
-# Copyright (c) 2006-2019 Trustwave and contributors. All rights reserved.
+# OWASP ModSecurity Core Rule Set ver.3.3.0
+# Copyright (c) 2006-2020 Trustwave and contributors. All rights reserved.
 #
 # The OWASP ModSecurity Core Rule Set is distributed under
 # Apache Software License (ASL) version 2
@@ -88,7 +88,7 @@
 
 # Default: Anomaly Scoring mode, log to error log, log to ModSecurity audit log
 # - By default, offending requests are blocked with an error 403 response.
-# - To change the disruptive action, see RESPONSE-999-EXCEPTIONS.conf.example
+# - To change the disruptive action, see RESPONSE-999-EXCLUSION-RULES-AFTER-CRS.conf.example
 #   and review section 'Changing the Disruptive Action for Anomaly Mode'.
 # - In Apache, you can use ErrorDocument to show a friendly error page or
 #   perform a redirect: https://httpd.apache.org/docs/2.4/custom-error.html
@@ -98,7 +98,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 
 # Example: Anomaly Scoring mode, log only to ModSecurity audit log
 # - By default, offending requests are blocked with an error 403 response.
-# - To change the disruptive action, see RESPONSE-999-EXCEPTIONS.conf.example
+# - To change the disruptive action, see RESPONSE-999-EXCLUSION-RULES-AFTER-CRS.conf.example
 #   and review section 'Changing the Disruptive Action for Anomaly Mode'.
 # - In Apache, you can use ErrorDocument to show a friendly error page or
 #   perform a redirect: https://httpd.apache.org/docs/2.4/custom-error.html
@@ -569,7 +569,7 @@ SecDefaultAction "phase:2,log,auditlog,pass"
 # entry in the audit log (for performance reasons), but an error log entry is
 # written.  If you want to disable the error log entry, then issue the
 # following directive somewhere after the inclusion of the CRS
-# (E.g., RESPONSE-999-EXCEPTIONS.conf).
+# (E.g., RESPONSE-999-EXCLUSION-RULES-AFTER-CRS.conf).
 #
 # SecRuleUpdateActionById 901150 "nolog"
 #
@@ -825,4 +825,4 @@ SecAction \
   nolog,\
   pass,\
   t:none,\
-  setvar:tx.crs_setup_version=320"
+  setvar:tx.crs_setup_version=330"
